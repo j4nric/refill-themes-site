@@ -591,12 +591,15 @@ def page_support(lang: str) -> str:
 
 def page_legal(lang: str) -> str:
     if lang == "de":
-        inner = """<div class="placeholder" role="note">
-  <p class="label">Platzhalter</p>
-  <p><strong>Angaben folgen.</strong> Die Anbieterkennzeichnung nach § 5 DDG (Name und Anschrift, Kontakt, gegebenenfalls Registereintrag und Umsatzsteuer-Identifikationsnummer) wird hier ergänzt, bevor die Seite öffentlich beworben wird.</p>
-</div>
+        inner = """<h2 id="angaben-gemaess-5-ddg">Angaben gemäß § 5 DDG</h2>
+<p>Jan Richter<br>Landsberger Allee 212<br>10367 Berlin<br>Deutschland</p>
 <h2 id="kontakt">Kontakt</h2>
-<p>E-Mail: <a href="mailto:support@refill-themes.com">support@refill-themes.com</a></p>"""
+<p>E-Mail: <a href="mailto:support@refill-themes.com">support@refill-themes.com</a></p>
+<h2 id="verantwortlich-fuer-den-inhalt">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+<p>Jan Richter, Anschrift wie oben</p>
+<h2 id="verbraucherstreitbeilegung">Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+"""
         return page_simple(lang, "legal", "Impressum", "Impressum von refill-themes.com.", inner)
     de_link = href(key_of("legal", "en"), key_of("legal", "de"))
     inner = f"""<p class="lead">The legal notice (Impressum) required by German law is published in German.</p>
