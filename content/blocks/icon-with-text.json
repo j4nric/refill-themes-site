@@ -1,0 +1,877 @@
+{
+ "slug": "icon-with-text",
+ "kind": "block",
+ "source": "blocks/icon-with-text.liquid",
+ "source_sha1": "f33662734f74",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Icon with text",
+  "category": "Benefits and comparison",
+  "settings": [
+   {
+    "type": "select",
+    "id": "icon_source",
+    "label": "Icon source",
+    "default": "library",
+    "options": [
+     {
+      "value": "none",
+      "label": "No icon"
+     },
+     {
+      "value": "library",
+      "label": "Icon library"
+     },
+     {
+      "value": "image",
+      "label": "Custom image"
+     },
+     {
+      "value": "text",
+      "label": "Free text"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon",
+    "label": "Icon",
+    "default": "check",
+    "options": [
+     {
+      "value": "check",
+      "label": "Check"
+     },
+     {
+      "value": "truck",
+      "label": "Delivery"
+     },
+     {
+      "value": "leaf",
+      "label": "Leaf"
+     },
+     {
+      "value": "flask",
+      "label": "Lab"
+     },
+     {
+      "value": "box",
+      "label": "Package"
+     },
+     {
+      "value": "calendar",
+      "label": "Calendar"
+     },
+     {
+      "value": "shield",
+      "label": "Shield"
+     },
+     {
+      "value": "refresh",
+      "label": "Repeat"
+     },
+     {
+      "value": "clock",
+      "label": "Clock"
+     },
+     {
+      "value": "heart",
+      "label": "Heart"
+     },
+     {
+      "value": "star",
+      "label": "Star"
+     },
+     {
+      "value": "cup",
+      "label": "Cup"
+     },
+     {
+      "value": "paw",
+      "label": "Paw"
+     },
+     {
+      "value": "drop",
+      "label": "Drop"
+     },
+     {
+      "value": "refill",
+      "label": "Refill"
+     },
+     {
+      "value": "thermometer",
+      "label": "Thermometer"
+     },
+     {
+      "value": "flame",
+      "label": "Flame"
+     },
+     {
+      "value": "info",
+      "label": "Info"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Icon library"
+     }
+    ]
+   },
+   {
+    "type": "image_picker",
+    "id": "icon_image",
+    "label": "Icon image",
+    "info": "Fitted into the icon size. A square SVG or PNG with a transparent background works best.",
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Custom image"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "icon_text",
+    "label": "Icon text",
+    "info": "A short character, number or emoji on one line, e.g. “01” or “★”. Treated as decoration and not read out by screen readers.",
+    "default": "01",
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_text_size",
+    "label": "Font size",
+    "default": "l",
+    "options": [
+     {
+      "value": "xs",
+      "label": "Extra small"
+     },
+     {
+      "value": "s",
+      "label": "Small"
+     },
+     {
+      "value": "m",
+      "label": "Medium"
+     },
+     {
+      "value": "l",
+      "label": "Large"
+     },
+     {
+      "value": "xl",
+      "label": "Extra large"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_text_font",
+    "label": "Font",
+    "default": "heading",
+    "options": [
+     {
+      "value": "heading",
+      "label": "Heading font"
+     },
+     {
+      "value": "body",
+      "label": "Body font"
+     },
+     {
+      "value": "data",
+      "label": "Data font"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_text_weight",
+    "label": "Weight",
+    "default": "default",
+    "options": [
+     {
+      "value": "default",
+      "label": "Same as font"
+     },
+     {
+      "value": "regular",
+      "label": "Regular"
+     },
+     {
+      "value": "bold",
+      "label": "Bold"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_color",
+    "label": "Icon color",
+    "info": "For library icons and free text. “Scheme color” uses the text color.",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Scheme color"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Scheme: secondary text"
+     },
+     {
+      "value": "signal",
+      "label": "Scheme: accent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     },
+     {
+      "value": "custom",
+      "label": "Custom color"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Icon library"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "icon_color_custom",
+    "label": "Custom color",
+    "visible_if": [
+     {
+      "setting": "icon_color",
+      "label": "Icon color",
+      "op": "is",
+      "value": "Custom color"
+     },
+     "and",
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is_not",
+      "value": "No icon"
+     },
+     "and",
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is_not",
+      "value": "Custom image"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Free shipping on qualifying orders"
+   },
+   {
+    "type": "richtext",
+    "id": "text",
+    "label": "Text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Direction",
+    "info": "“Side by side on mobile” applies below 600 px width of the surrounding area: in columns once they stack, otherwise in a group or section narrower than 600 px. The icon then sits in its own column before the text.",
+    "default": "row",
+    "options": [
+     {
+      "value": "stack",
+      "label": "Stacked"
+     },
+     {
+      "value": "row",
+      "label": "Side by side"
+     },
+     {
+      "value": "stack_narrow_row",
+      "label": "Stacked, side by side on mobile"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_size",
+    "label": "Icon size",
+    "default": "s",
+    "options": [
+     {
+      "value": "s",
+      "label": "Small"
+     },
+     {
+      "value": "m",
+      "label": "Medium"
+     },
+     {
+      "value": "l",
+      "label": "Large"
+     },
+     {
+      "value": "xl",
+      "label": "Extra large"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Icon library"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Custom image"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_align",
+    "label": "Vertical icon alignment",
+    "info": "Applies when the icon sits next to the text.",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "Top"
+     },
+     {
+      "value": "center",
+      "label": "Middle"
+     },
+     {
+      "value": "end",
+      "label": "Bottom"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Direction",
+      "op": "is_not",
+      "value": "Stacked"
+     },
+     "and",
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is_not",
+      "value": "No icon"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Icon mit Text",
+  "category": "Vorteile & Vergleich",
+  "settings": [
+   {
+    "type": "select",
+    "id": "icon_source",
+    "label": "Icon-Quelle",
+    "default": "library",
+    "options": [
+     {
+      "value": "none",
+      "label": "Kein Icon"
+     },
+     {
+      "value": "library",
+      "label": "Icon-Bibliothek"
+     },
+     {
+      "value": "image",
+      "label": "Eigenes Bild"
+     },
+     {
+      "value": "text",
+      "label": "Freitext"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon",
+    "label": "Icon",
+    "default": "check",
+    "options": [
+     {
+      "value": "check",
+      "label": "Haken"
+     },
+     {
+      "value": "truck",
+      "label": "Lieferung"
+     },
+     {
+      "value": "leaf",
+      "label": "Blatt"
+     },
+     {
+      "value": "flask",
+      "label": "Labor"
+     },
+     {
+      "value": "box",
+      "label": "Paket"
+     },
+     {
+      "value": "calendar",
+      "label": "Kalender"
+     },
+     {
+      "value": "shield",
+      "label": "Schild"
+     },
+     {
+      "value": "refresh",
+      "label": "Wiederholung"
+     },
+     {
+      "value": "clock",
+      "label": "Uhr"
+     },
+     {
+      "value": "heart",
+      "label": "Herz"
+     },
+     {
+      "value": "star",
+      "label": "Stern"
+     },
+     {
+      "value": "cup",
+      "label": "Tasse"
+     },
+     {
+      "value": "paw",
+      "label": "Pfote"
+     },
+     {
+      "value": "drop",
+      "label": "Tropfen"
+     },
+     {
+      "value": "refill",
+      "label": "Nachfüllen"
+     },
+     {
+      "value": "thermometer",
+      "label": "Thermometer"
+     },
+     {
+      "value": "flame",
+      "label": "Flamme"
+     },
+     {
+      "value": "info",
+      "label": "Info"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Icon-Bibliothek"
+     }
+    ]
+   },
+   {
+    "type": "image_picker",
+    "id": "icon_image",
+    "label": "Bild für das Icon",
+    "info": "Wird in die Icon-Größe eingepasst. Am besten eignet sich ein quadratisches SVG oder PNG mit transparentem Hintergrund.",
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Eigenes Bild"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "icon_text",
+    "label": "Text des Icons",
+    "info": "Ein kurzes Zeichen, eine Zahl oder ein Emoji in einer Zeile, z. B. „01“ oder „★“. Gilt als Schmuck und wird von Screenreadern nicht vorgelesen.",
+    "default": "01",
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_text_size",
+    "label": "Schriftgröße",
+    "default": "l",
+    "options": [
+     {
+      "value": "xs",
+      "label": "Sehr klein"
+     },
+     {
+      "value": "s",
+      "label": "Klein"
+     },
+     {
+      "value": "m",
+      "label": "Mittel"
+     },
+     {
+      "value": "l",
+      "label": "Groß"
+     },
+     {
+      "value": "xl",
+      "label": "Sehr groß"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_text_font",
+    "label": "Schrift",
+    "default": "heading",
+    "options": [
+     {
+      "value": "heading",
+      "label": "Überschriften-Schrift"
+     },
+     {
+      "value": "body",
+      "label": "Fließtext-Schrift"
+     },
+     {
+      "value": "data",
+      "label": "Daten-Schrift"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_text_weight",
+    "label": "Stärke",
+    "default": "default",
+    "options": [
+     {
+      "value": "default",
+      "label": "Wie die Schrift"
+     },
+     {
+      "value": "regular",
+      "label": "Normal"
+     },
+     {
+      "value": "bold",
+      "label": "Fett"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_color",
+    "label": "Icon-Farbe",
+    "info": "Für Bibliotheks-Icon und Freitext. „Schema-Farbe“ übernimmt die Textfarbe.",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Schema-Farbe"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Schema: Sekundärtext"
+     },
+     {
+      "value": "signal",
+      "label": "Schema: Akzent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     },
+     {
+      "value": "custom",
+      "label": "Eigene Farbe"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Icon-Bibliothek"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "icon_color_custom",
+    "label": "Eigene Farbe",
+    "visible_if": [
+     {
+      "setting": "icon_color",
+      "label": "Icon-Farbe",
+      "op": "is",
+      "value": "Eigene Farbe"
+     },
+     "and",
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is_not",
+      "value": "Kein Icon"
+     },
+     "and",
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is_not",
+      "value": "Eigenes Bild"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Kostenloser Versand ab Mindestbestellwert"
+   },
+   {
+    "type": "richtext",
+    "id": "text",
+    "label": "Text",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Richtung",
+    "info": "„Am Handy nebeneinander“ gilt unter 600 px Breite des umgebenden Bereichs: in Spalten, sobald sie untereinander stehen, sonst in einer Gruppe oder einem Abschnitt schmaler als 600 px. Das Icon steht dann als eigene Spalte vor dem Text.",
+    "default": "row",
+    "options": [
+     {
+      "value": "stack",
+      "label": "Untereinander"
+     },
+     {
+      "value": "row",
+      "label": "Nebeneinander"
+     },
+     {
+      "value": "stack_narrow_row",
+      "label": "Untereinander, am Handy nebeneinander"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_size",
+    "label": "Icon-Größe",
+    "default": "s",
+    "options": [
+     {
+      "value": "s",
+      "label": "Klein"
+     },
+     {
+      "value": "m",
+      "label": "Mittel"
+     },
+     {
+      "value": "l",
+      "label": "Groß"
+     },
+     {
+      "value": "xl",
+      "label": "Sehr groß"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Icon-Bibliothek"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Eigenes Bild"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "icon_align",
+    "label": "Vertikale Ausrichtung des Icons",
+    "info": "Gilt, wenn das Icon neben dem Text steht.",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "Oben"
+     },
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "end",
+      "label": "Unten"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Richtung",
+      "op": "is_not",
+      "value": "Untereinander"
+     },
+     "and",
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is_not",
+      "value": "Kein Icon"
+     }
+    ]
+   }
+  ]
+ }
+}

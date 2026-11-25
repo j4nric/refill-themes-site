@@ -25,8 +25,12 @@ Beim Push auf `main` baut `.github/workflows/pages.yml` die Seite, prüft die Li
 | `content/handbuch/{en,de}/NN-name.md` | Kapitel (Kopie aus dem Theme-Repo – dort bearbeiten, nicht hier) |
 | `assets/style.css` | die einzige CSS-Datei (Tokens nach `DESIGN.md` des Themes, Systemschriften) |
 | `assets/favicon.svg` | Favicon |
+| `editor_panel.py` | liest Block-Schemas aus dem Theme-Repo → `content/blocks/<block>.json`, `content/blocks/index.json`; erzeugt den Nachbau der Editor-Seitenleiste |
+| `content/blocks/texts.json` | Texte der Block-Seiten (Einleitung, Klickweg, Tipps, Alt-Texte); jeder Eintrag hier wird zur Block-Seite |
+| `shots.mjs`, `shots.config.json` | Screenshots aus den Demo-Shops → `assets/shots/<de\|en>/`, Maße in `content/shots.json` |
 
-Adressen: Englisch ist Hauptsprache (`/`), Deutsch unter `/de/`. Handbuch `/docs/<kapitel>/` bzw.
+Adressen: Englisch ist Hauptsprache (`/`), Deutsch unter `/de/`. Handbuch-Einstieg „Was möchten Sie tun?“ `/docs/`,
+Block-Galerie `/docs/blocks/`, Block-Seiten `/docs/blocks/<block>/` (jeweils auch unter `/de/`), Kapitel `/docs/<kapitel>/` bzw.
 `/de/docs/<kapitel>/` (Kapitelname = Dateiname ohne Nummer), Änderungsprotokoll `/changelog/` bzw. `/de/changelog/`
 (aus `16-changelog.md`), Support `/support/`, Datenschutz `/privacy/` bzw. `/de/datenschutz/`, Impressum
 `/de/impressum/` (englisch `/legal-notice/` als Verweis).
@@ -41,6 +45,47 @@ Die ids sind Schnittstelle: Info-Texte im Theme-Editor verlinken z. B. auf
 `https://refill-themes.com/de/docs/sections-and-blocks/#seitenvorlagen`. Überschriften daher nur mit Bedacht umbenennen.
 Links zwischen Kapiteln im Markdown (`06-product-page.md#häufig-zusammen-gekauft`) rechnet `build.py` auf dieselben ids
 um; `check_links.py` meldet Sprungmarken, die es nicht gibt.
+
+## Block-Seiten: Editor-Nachbau und Screenshots
+
+Eine Block-Seite hat immer denselben Aufbau: „So sieht es aus“ (Bilder Computer/Handy), „Wo finde ich das?“
+(Klickweg), „So stellen Sie es ein“ (Nachbau der Editor-Seitenleiste), „Tipps“. Pilot: `image-banner`, `text`,
+`icon-with-text`.
+
+**Editor-Nachbau** – nach jeder Änderung eines Blocks im Theme neu erzeugen (braucht das Theme-Repo daneben):
+
+```sh
+python3 editor_panel.py --theme ../cadence-theme                    # Pilot-Blöcke + Block-Liste der Galerie
+python3 editor_panel.py --theme ../cadence-theme image-banner text  # nur diese
+python3 editor_panel.py --print text de                             # HTML einer Seitenleiste ansehen
+```
+
+Das Skript liest das `{% schema %}` aus `blocks/<name>.liquid` (oder `sections/<name>.liquid`), löst die
+`t:`-Schlüssel über `locales/en.default.schema.json` und `locales/de.schema.json` auf und schreibt
+`content/blocks/<name>.json`. `build.py` braucht das Theme-Repo nicht. Jede Einstellung bekommt auf der Block-Seite die
+Sprungmarke `#<setting_id>` (z. B. `/de/docs/blocks/image-banner/#layout`); eingebettet woanders `#<block>-<setting_id>`
+(`render_panel(data, lang, prefix="image-banner-")`). Info-Texte im Editor können darauf verlinken – Setting-IDs im
+Theme daher nicht leichtfertig umbenennen. Fehlt eine Übersetzung, meldet das Skript den Schlüssel.
+
+**Screenshots** (Node, Playwright mit Chromium, Python mit Pillow für WebP):
+
+```sh
+export STOREFRONT_PASSWORD=…        # Passwort der Demo-Shops; nie committen oder ausgeben
+node shots.mjs                      # Pilot-Blöcke, de + en, Computer (1280) und Handy (390)
+node shots.mjs --only text          # nur ein Block
+node shots.mjs --gallery            # Vorschaubilder aller Blöcke der Galerie
+node shots.mjs --candidates text --out /tmp/text   # alle Fundstellen eines Blocks zum Aussuchen
+node shots.mjs --discover           # Seitenadressen der Demo-Vorlagen neu ermitteln (Sitemap)
+```
+
+Welche Fundstelle ein Pilot-Block zeigt (Shop, Vorlage, Abschnitt, Block, Ausschnitt `block` oder `section` mit
+gestrichelter Markierung), steht in `shots.config.json` → `pilots`; einzelne Galerie-Bilder lassen sich unter
+`gallery` festlegen. Deutsche Bilder kommen von den deutschen Shopseiten, englische von `/en/…`. Ausgabe:
+`assets/shots/<de|en>/<block>-<shop>-<desktop|mobile>.webp` und `assets/shots/<de|en>/thumbs/<block>.webp`, je unter
+150 KB. Danach `python3 build.py && python3 check_links.py`, dann Bilder und `content/shots.json` committen.
+
+Neuer Block: `editor_panel.py <block>`, Eintrag in `content/blocks/texts.json`, Fundstelle in `shots.config.json`,
+`node shots.mjs --only <block>`.
 
 ## Handbuch aus dem Theme-Repo übernehmen
 
@@ -58,7 +103,8 @@ Das Skript kopiert geänderte Kapitel und löscht Kapitel, die es im Theme-Repo 
 
 ## Datenschutz
 
-Keine Cookies, kein Tracking, keine externen Schriften oder Skripte, kein JavaScript. Bitte so lassen – die
+Keine Cookies, kein Tracking, keine externen Schriften oder Skripte, kein JavaScript (auch nicht auf den Block-Seiten:
+der Editor-Nachbau ist reines HTML/CSS, die Optionen klappen mit `<details>` auf). Bitte so lassen – die
 Datenschutzerklärung (`/privacy/`, `/de/datenschutz/`) setzt das voraus.
 
 ## Offen

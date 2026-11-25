@@ -1,0 +1,64 @@
+{
+ "shops": {
+  "nordform": {
+   "name": "Nordform",
+   "preset": "refill",
+   "domain": "refill-he5yfhpj.myshopify.com"
+  },
+  "kessel-und-blatt": {
+   "name": "Kessel & Blatt",
+   "preset": "mortar",
+   "domain": "refill-theme-mortar-yet9zi14.myshopify.com"
+  },
+  "ostra": {
+   "name": "OSTRA",
+   "preset": "pumice",
+   "domain": "refill-theme-pumice-it3mghum.myshopify.com"
+  }
+ },
+ "pages": {
+  "nordform": {
+   "product.json": "/products/magnesium-bisglycinat",
+   "404.json": "/pages/gibt-es-nicht"
+  },
+  "kessel-und-blatt": {
+   "product.json": "/products/darjeeling-ff",
+   "page.faq.json": "/pages/faq",
+   "page.json": "/pages/versand",
+   "404.json": "/pages/gibt-es-nicht"
+  },
+  "ostra": {
+   "product.json": "/products/reinigungsgel-aloe",
+   "404.json": "/pages/gibt-es-nicht"
+  }
+ },
+ "pilots": {
+  "image-banner": {
+   "shop": "kessel-und-blatt",
+   "template": "page.about.json",
+   "section": "garten",
+   "block": "garten-banner",
+   "scope": "block"
+  },
+  "text": {
+   "shop": "kessel-und-blatt",
+   "template": "index.json",
+   "section": "erntebrief",
+   "block": "brief-text",
+   "scope": "section",
+   "highlight": true
+  },
+  "icon-with-text": {
+   "shop": "ostra",
+   "template": "index.json",
+   "section": "cycle",
+   "block": "c-1",
+   "scope": "section",
+   "highlight": true
+  }
+ },
+ "gallery": {},
+ "gallery_prefer": [
+  "index.json"
+ ]
+}

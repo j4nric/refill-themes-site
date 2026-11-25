@@ -1,0 +1,1031 @@
+[
+ {
+  "slug": "accordion",
+  "name": {
+   "en": "Collapsible content",
+   "de": "Aufklappbare Inhalte"
+  },
+  "category": {
+   "en": "Collapsibles and tabs",
+   "de": "Aufklappen & Tabs"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "article-content",
+  "name": {
+   "en": "Blog post: content",
+   "de": "Blogbeitrag: Inhalt"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "badge",
+  "name": {
+   "en": "Badge",
+   "de": "Badge"
+  },
+  "category": {
+   "en": "Text",
+   "de": "Text"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "blog-posts",
+  "name": {
+   "en": "Blog posts",
+   "de": "Blogbeiträge"
+  },
+  "category": {
+   "en": "Text",
+   "de": "Text"
+  },
+  "demo_uses": 8
+ },
+ {
+  "slug": "breadcrumbs",
+  "name": {
+   "en": "Breadcrumbs",
+   "de": "Brotkrumen"
+  },
+  "category": {
+   "en": "Layout",
+   "de": "Layout"
+  },
+  "demo_uses": 59
+ },
+ {
+  "slug": "bundle-builder",
+  "name": {
+   "en": "Build a set",
+   "de": "Set zusammenstellen"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "bundle-contents",
+  "name": {
+   "en": "Set contents (bundle)",
+   "de": "Set-Inhalt (Bundle)"
+  },
+  "category": {
+   "en": "Product: content",
+   "de": "Produkt: Inhalte"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "button",
+  "name": {
+   "en": "Button",
+   "de": "Button"
+  },
+  "category": {
+   "en": "Buttons and promotions",
+   "de": "Buttons & Aktionen"
+  },
+  "demo_uses": 63
+ },
+ {
+  "slug": "buy-buttons",
+  "name": {
+   "en": "Buy buttons",
+   "de": "Kauf-Buttons"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 15
+ },
+ {
+  "slug": "carousel",
+  "name": {
+   "en": "Carousel",
+   "de": "Karussell"
+  },
+  "category": {
+   "en": "Layout",
+   "de": "Layout"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "cart-items",
+  "name": {
+   "en": "Cart: items",
+   "de": "Warenkorb: Positionen"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "cart-summary",
+  "name": {
+   "en": "Cart: summary",
+   "de": "Warenkorb: Übersicht"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "collection-header",
+  "name": {
+   "en": "Collection: header",
+   "de": "Kollektion: Kopfbereich"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "collection-list",
+  "name": {
+   "en": "Collection list",
+   "de": "Kollektionsliste"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 5
+ },
+ {
+  "slug": "collection-nav",
+  "name": {
+   "en": "Subcollections",
+   "de": "Unterkollektionen"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 1
+ },
+ {
+  "slug": "collection-products",
+  "name": {
+   "en": "Collection: product list",
+   "de": "Kollektion: Produktliste"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "columns",
+  "name": {
+   "en": "Columns",
+   "de": "Spalten"
+  },
+  "category": {
+   "en": "Layout",
+   "de": "Layout"
+  },
+  "demo_uses": 44
+ },
+ {
+  "slug": "comparison-table",
+  "name": {
+   "en": "Comparison table",
+   "de": "Vergleichstabelle"
+  },
+  "category": {
+   "en": "Benefits and comparison",
+   "de": "Vorteile & Vergleich"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "contact-form",
+  "name": {
+   "en": "Contact form",
+   "de": "Kontaktformular"
+  },
+  "category": {
+   "en": "Forms",
+   "de": "Formulare"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "countdown",
+  "name": {
+   "en": "Countdown",
+   "de": "Countdown"
+  },
+  "category": {
+   "en": "Buttons and promotions",
+   "de": "Buttons & Aktionen"
+  },
+  "demo_uses": 5
+ },
+ {
+  "slug": "counter-bar",
+  "name": {
+   "en": "Counter bar",
+   "de": "Zähler-Leiste"
+  },
+  "category": {
+   "en": "Benefits and comparison",
+   "de": "Vorteile & Vergleich"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "custom-liquid",
+  "name": {
+   "en": "Custom Liquid",
+   "de": "Eigenes Liquid"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 1
+ },
+ {
+  "slug": "data-table",
+  "name": {
+   "en": "Facts table",
+   "de": "Datentafel"
+  },
+  "category": {
+   "en": "Product: facts",
+   "de": "Produkt: Angaben"
+  },
+  "demo_uses": 11
+ },
+ {
+  "slug": "delivery-estimate",
+  "name": {
+   "en": "Delivery date",
+   "de": "Lieferdatum"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 11
+ },
+ {
+  "slug": "divider",
+  "name": {
+   "en": "Divider",
+   "de": "Trennlinie"
+  },
+  "category": {
+   "en": "Layout",
+   "de": "Layout"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "events",
+  "name": {
+   "en": "Events",
+   "de": "Termine"
+  },
+  "category": {
+   "en": "Events",
+   "de": "Termine"
+  },
+  "demo_uses": 2
+ },
+ {
+  "slug": "faq",
+  "name": {
+   "en": "FAQ",
+   "de": "FAQ"
+  },
+  "category": {
+   "en": "Collapsibles and tabs",
+   "de": "Aufklappen & Tabs"
+  },
+  "demo_uses": 10
+ },
+ {
+  "slug": "featured-product",
+  "name": {
+   "en": "Featured product",
+   "de": "Hervorgehobenes Produkt"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "frequently-bought",
+  "name": {
+   "en": "Often bought together",
+   "de": "Häufig zusammen gekauft"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 5
+ },
+ {
+  "slug": "group",
+  "name": {
+   "en": "Group",
+   "de": "Gruppe"
+  },
+  "category": {
+   "en": "Layout",
+   "de": "Layout"
+  },
+  "demo_uses": 113
+ },
+ {
+  "slug": "heading",
+  "name": {
+   "en": "Heading",
+   "de": "Überschrift"
+  },
+  "category": {
+   "en": "Text",
+   "de": "Text"
+  },
+  "demo_uses": 104
+ },
+ {
+  "slug": "icon-with-text",
+  "name": {
+   "en": "Icon with text",
+   "de": "Icon mit Text"
+  },
+  "category": {
+   "en": "Benefits and comparison",
+   "de": "Vorteile & Vergleich"
+  },
+  "demo_uses": 22
+ },
+ {
+  "slug": "image",
+  "name": {
+   "en": "Image",
+   "de": "Bild"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 7
+ },
+ {
+  "slug": "image-banner",
+  "name": {
+   "en": "Image with text",
+   "de": "Bild mit Text"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 5
+ },
+ {
+  "slug": "image-hotspots",
+  "name": {
+   "en": "Shoppable image",
+   "de": "Bild mit Markierungen"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "info-popup",
+  "name": {
+   "en": "Info pop-up",
+   "de": "Info-Popup"
+  },
+  "category": {
+   "en": "Collapsibles and tabs",
+   "de": "Aufklappen & Tabs"
+  },
+  "demo_uses": 9
+ },
+ {
+  "slug": "ingredient-index",
+  "name": {
+   "en": "Ingredients: glossary",
+   "de": "Inhaltsstoffe: Lexikon"
+  },
+  "category": {
+   "en": "Ingredients",
+   "de": "Inhaltsstoffe"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "ingredient-profile",
+  "name": {
+   "en": "Ingredient: profile",
+   "de": "Inhaltsstoff: Steckbrief"
+  },
+  "category": {
+   "en": "Ingredients",
+   "de": "Inhaltsstoffe"
+  },
+  "demo_uses": 2
+ },
+ {
+  "slug": "ingredient-spotlight",
+  "name": {
+   "en": "Ingredients: spotlight",
+   "de": "Inhaltsstoffe: Im Fokus"
+  },
+  "category": {
+   "en": "Ingredients",
+   "de": "Inhaltsstoffe"
+  },
+  "demo_uses": 5
+ },
+ {
+  "slug": "line-animation",
+  "name": {
+   "en": "Line animation",
+   "de": "Linien-Animation"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 1
+ },
+ {
+  "slug": "line-art",
+  "name": {
+   "en": "Line art",
+   "de": "Linien-Grafik"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "logo-list",
+  "name": {
+   "en": "Logo list",
+   "de": "Logo-Leiste"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 2
+ },
+ {
+  "slug": "mandatory-info",
+  "name": {
+   "en": "Mandatory information",
+   "de": "Pflichtangaben"
+  },
+  "category": {
+   "en": "Product: facts",
+   "de": "Produkt: Angaben"
+  },
+  "demo_uses": 11
+ },
+ {
+  "slug": "marquee",
+  "name": {
+   "en": "Scrolling text",
+   "de": "Laufband"
+  },
+  "category": {
+   "en": "Buttons and promotions",
+   "de": "Buttons & Aktionen"
+  },
+  "demo_uses": 1
+ },
+ {
+  "slug": "metafield-content",
+  "name": {
+   "en": "Metafield content",
+   "de": "Metafeld-Inhalt"
+  },
+  "category": {
+   "en": "Product: content",
+   "de": "Produkt: Inhalte"
+  },
+  "demo_uses": 14
+ },
+ {
+  "slug": "newsletter",
+  "name": {
+   "en": "Newsletter signup",
+   "de": "Newsletter-Anmeldung"
+  },
+  "category": {
+   "en": "Forms",
+   "de": "Formulare"
+  },
+  "demo_uses": 7
+ },
+ {
+  "slug": "origin-map",
+  "name": {
+   "en": "Origin map",
+   "de": "Herkunftskarte"
+  },
+  "category": {
+   "en": "Ingredients",
+   "de": "Inhaltsstoffe"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "page-content",
+  "name": {
+   "en": "Page: content",
+   "de": "Seite: Inhalt"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 30
+ },
+ {
+  "slug": "password-form",
+  "name": {
+   "en": "Password page: form",
+   "de": "Passwortseite: Formular"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "pickup-availability",
+  "name": {
+   "en": "Pickup availability",
+   "de": "Abholung im Geschäft"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 10
+ },
+ {
+  "slug": "product-compare",
+  "name": {
+   "en": "Product comparison",
+   "de": "Produktvergleich"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "product-compare-toggle",
+  "name": {
+   "en": "Compare checkbox",
+   "de": "Häkchen „Vergleichen“"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "product-description",
+  "name": {
+   "en": "Product description",
+   "de": "Produktbeschreibung"
+  },
+  "category": {
+   "en": "Product: content",
+   "de": "Produkt: Inhalte"
+  },
+  "demo_uses": 15
+ },
+ {
+  "slug": "product-details",
+  "name": {
+   "en": "Metafield collapsible",
+   "de": "Aufklapper aus Metafeld"
+  },
+  "category": null,
+  "demo_uses": 3
+ },
+ {
+  "slug": "product-finder",
+  "name": {
+   "en": "Product finder",
+   "de": "Produktfinder"
+  },
+  "category": {
+   "en": "Forms",
+   "de": "Formulare"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "product-grid",
+  "name": {
+   "en": "Products from collection",
+   "de": "Produkte aus Kollektion"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 14
+ },
+ {
+  "slug": "product-media",
+  "name": {
+   "en": "Product media",
+   "de": "Produktbilder"
+  },
+  "category": {
+   "en": "Product: content",
+   "de": "Produkt: Inhalte"
+  },
+  "demo_uses": 15
+ },
+ {
+  "slug": "product-metrics",
+  "name": {
+   "en": "Key figures",
+   "de": "Kennzahlen"
+  },
+  "category": {
+   "en": "Product: content",
+   "de": "Produkt: Inhalte"
+  },
+  "demo_uses": 7
+ },
+ {
+  "slug": "product-price",
+  "name": {
+   "en": "Price",
+   "de": "Preis"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 15
+ },
+ {
+  "slug": "product-rating",
+  "name": {
+   "en": "Rating stars",
+   "de": "Bewertungssterne"
+  },
+  "category": {
+   "en": "Product: content",
+   "de": "Produkt: Inhalte"
+  },
+  "demo_uses": 12
+ },
+ {
+  "slug": "product-safety",
+  "name": {
+   "en": "Product safety",
+   "de": "Produktsicherheit"
+  },
+  "category": {
+   "en": "Product: facts",
+   "de": "Produkt: Angaben"
+  },
+  "demo_uses": 12
+ },
+ {
+  "slug": "product-title",
+  "name": {
+   "en": "Product title",
+   "de": "Produkttitel"
+  },
+  "category": {
+   "en": "Product: content",
+   "de": "Produkt: Inhalte"
+  },
+  "demo_uses": 15
+ },
+ {
+  "slug": "profile-scales",
+  "name": {
+   "en": "Profile scales",
+   "de": "Profil-Skalen"
+  },
+  "category": {
+   "en": "Product: facts",
+   "de": "Produkt: Angaben"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "purchase-options",
+  "name": {
+   "en": "Purchase options",
+   "de": "Kaufoptionen"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 9
+ },
+ {
+  "slug": "quantity-tiers",
+  "name": {
+   "en": "Quantity tiers",
+   "de": "Mengenstaffel"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "quick-order",
+  "name": {
+   "en": "Quick order list",
+   "de": "Schnellbestellliste"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 2
+ },
+ {
+  "slug": "quote",
+  "name": {
+   "en": "Quote",
+   "de": "Zitat"
+  },
+  "category": {
+   "en": "Text",
+   "de": "Text"
+  },
+  "demo_uses": 12
+ },
+ {
+  "slug": "recently-viewed",
+  "name": {
+   "en": "Recently viewed",
+   "de": "Zuletzt angesehen"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 10
+ },
+ {
+  "slug": "reorder",
+  "name": {
+   "en": "Reorder",
+   "de": "Erneut bestellen"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "routine",
+  "name": {
+   "en": "Routine with products",
+   "de": "Routine mit Produkten"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "savings-calculator",
+  "name": {
+   "en": "Savings calculator",
+   "de": "Ersparnisrechner"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 5
+ },
+ {
+  "slug": "search-header",
+  "name": {
+   "en": "Search: header",
+   "de": "Suche: Kopfbereich"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "search-results",
+  "name": {
+   "en": "Search: results",
+   "de": "Suche: Ergebnisse"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  },
+  "demo_uses": 3
+ },
+ {
+  "slug": "spacer",
+  "name": {
+   "en": "Spacer",
+   "de": "Leerraum"
+  },
+  "category": {
+   "en": "Layout",
+   "de": "Layout"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "sticky-buy-bar",
+  "name": {
+   "en": "Sticky buy bar",
+   "de": "Fixierte Kaufleiste"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 12
+ },
+ {
+  "slug": "store-locator",
+  "name": {
+   "en": "Store locator",
+   "de": "Standorte"
+  },
+  "category": {
+   "en": "Locations",
+   "de": "Standorte"
+  },
+  "demo_uses": 2
+ },
+ {
+  "slug": "supply-calculator",
+  "name": {
+   "en": "Supply calculator",
+   "de": "Reichweitenrechner"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 5
+ },
+ {
+  "slug": "tabs",
+  "name": {
+   "en": "Tabs",
+   "de": "Registerkarten (Tabs)"
+  },
+  "category": {
+   "en": "Collapsibles and tabs",
+   "de": "Aufklappen & Tabs"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "text",
+  "name": {
+   "en": "Text",
+   "de": "Text"
+  },
+  "category": {
+   "en": "Text",
+   "de": "Text"
+  },
+  "demo_uses": 77
+ },
+ {
+  "slug": "timeline",
+  "name": {
+   "en": "Timeline",
+   "de": "Zeitleiste"
+  },
+  "category": {
+   "en": "Benefits and comparison",
+   "de": "Vorteile & Vergleich"
+  },
+  "demo_uses": 6
+ },
+ {
+  "slug": "trust-badges",
+  "name": {
+   "en": "Badges and certificates",
+   "de": "Siegel & Zertifikate"
+  },
+  "category": {
+   "en": "Product: facts",
+   "de": "Produkt: Angaben"
+  },
+  "demo_uses": 4
+ },
+ {
+  "slug": "usage-guide",
+  "name": {
+   "en": "Usage",
+   "de": "Anwendung"
+  },
+  "category": {
+   "en": "Product: facts",
+   "de": "Produkt: Angaben"
+  },
+  "demo_uses": 9
+ },
+ {
+  "slug": "usp-list",
+  "name": {
+   "en": "Benefit list (USPs)",
+   "de": "Vorteilsliste (USPs)"
+  },
+  "category": {
+   "en": "Benefits and comparison",
+   "de": "Vorteile & Vergleich"
+  },
+  "demo_uses": 9
+ },
+ {
+  "slug": "variant-picker",
+  "name": {
+   "en": "Variant picker",
+   "de": "Variantenauswahl"
+  },
+  "category": {
+   "en": "Product: buying",
+   "de": "Produkt: Kauf"
+  },
+  "demo_uses": 14
+ },
+ {
+  "slug": "video",
+  "name": {
+   "en": "Video",
+   "de": "Video"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 2
+ },
+ {
+  "slug": "video-reels",
+  "name": {
+   "en": "Video reels",
+   "de": "Video-Reels"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 3
+ }
+]

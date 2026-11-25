@@ -1,0 +1,643 @@
+{
+ "slug": "image-banner",
+ "kind": "block",
+ "source": "blocks/image-banner.liquid",
+ "source_sha1": "169dfdc767ba",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Image with text",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+   },
+   {
+    "type": "text",
+    "id": "alt",
+    "label": "Alternative text",
+    "info": "Describes the image for screen readers. Empty: the image's alt text from Shopify.",
+    "visible_if": [
+     {
+      "setting": "image",
+      "label": "Image",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "priority",
+    "label": "Load immediately (image at the top of the page)",
+    "info": "Turn on only for the first large image on the page.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "image",
+      "label": "Image",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "video",
+      "label": "Video instead of image",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "video",
+    "id": "video",
+    "label": "Video instead of image",
+    "info": "Plays muted on a loop once visible, with a pause button. The image above becomes the still image (before the start and with “Reduce motion”); empty: the video’s preview image. Recommended: under 30 seconds and 10 MB – some browsers load the whole file. With data saver on, only the still image is shown."
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Layout",
+    "default": "image_left",
+    "options": [
+     {
+      "value": "image_left",
+      "label": "Image left"
+     },
+     {
+      "value": "image_right",
+      "label": "Image right"
+     },
+     {
+      "value": "image_top",
+      "label": "Image on top"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "aspect_ratio",
+    "label": "Aspect ratio",
+    "default": "4 / 3",
+    "options": [
+     {
+      "value": "adapt",
+      "label": "Original"
+     },
+     {
+      "value": "2 / 3",
+      "label": "2 : 3"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 3",
+      "label": "4 : 3"
+     },
+     {
+      "value": "3 / 2",
+      "label": "3 : 2"
+     },
+     {
+      "value": "16 / 9",
+      "label": "16 : 9"
+     },
+     {
+      "value": "21 / 9",
+      "label": "21 : 9"
+     },
+     {
+      "value": "3 / 1",
+      "label": "3 : 1"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_height",
+    "label": "Image height",
+    "info": "From a width of 750 px: fixed height relative to the screen instead of the aspect ratio; the image is cropped to fit (see image position). Narrower, the aspect ratio applies.",
+    "default": "ratio",
+    "options": [
+     {
+      "value": "ratio",
+      "label": "From aspect ratio"
+     },
+     {
+      "value": "small",
+      "label": "Small (a third of the screen)"
+     },
+     {
+      "value": "half",
+      "label": "Half the screen"
+     },
+     {
+      "value": "large",
+      "label": "Large (three quarters of the screen)"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_width",
+    "label": "Image column width",
+    "default": "50",
+    "options": [
+     {
+      "value": "33",
+      "label": "One third"
+     },
+     {
+      "value": "40",
+      "label": "40%"
+     },
+     {
+      "value": "50",
+      "label": "Half"
+     },
+     {
+      "value": "60",
+      "label": "60%"
+     },
+     {
+      "value": "67",
+      "label": "Two thirds"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is_not",
+      "value": "Image on top"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Image position",
+    "info": "Which part stays visible when the image is cropped. A focal point set in Shopify (Content › Files › image) takes priority.",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Center"
+     },
+     {
+      "value": "top",
+      "label": "Top"
+     },
+     {
+      "value": "bottom",
+      "label": "Bottom"
+     },
+     {
+      "value": "left",
+      "label": "Left"
+     },
+     {
+      "value": "right",
+      "label": "Right"
+     },
+     {
+      "value": "left top",
+      "label": "Top left"
+     },
+     {
+      "value": "right top",
+      "label": "Top right"
+     },
+     {
+      "value": "left bottom",
+      "label": "Bottom left"
+     },
+     {
+      "value": "right bottom",
+      "label": "Bottom right"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "vertical_alignment",
+    "label": "Vertical alignment",
+    "default": "center",
+    "options": [
+     {
+      "value": "start",
+      "label": "Top"
+     },
+     {
+      "value": "center",
+      "label": "Middle"
+     },
+     {
+      "value": "end",
+      "label": "Bottom"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is_not",
+      "value": "Image on top"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "use_color_scheme",
+    "label": "Own color scheme for the text panel",
+    "info": "Off: the text panel uses the section’s color scheme.",
+    "default": false
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Text panel color scheme",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Own color scheme for the text panel",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Motion"
+   },
+   {
+    "type": "select",
+    "id": "parallax",
+    "label": "Parallax",
+    "info": "The image scrolls a little slower than the page. On works without the theme setting as long as animations are turned on. Never with reduced motion; only in Chrome, Edge and Safari 26.",
+    "default": "theme",
+    "options": [
+     {
+      "value": "theme",
+      "label": "As in theme settings"
+     },
+     {
+      "value": "on",
+      "label": "On"
+     },
+     {
+      "value": "off",
+      "label": "Off"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "text_motion",
+    "label": "Text animation in the text area",
+    "info": "Automatic: the text appears right away when the image loads immediately (banner at the top), otherwise as in theme settings. Show right away: never delayed, even if the text area starts below the visible area.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatic"
+     },
+     {
+      "value": "animate",
+      "label": "As in theme settings"
+     },
+     {
+      "value": "static",
+      "label": "Show right away"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Bild mit Text",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Bild"
+   },
+   {
+    "type": "text",
+    "id": "alt",
+    "label": "Alternativtext",
+    "info": "Beschreibt das Bild für Screenreader. Leer: Alternativtext aus Shopify.",
+    "visible_if": [
+     {
+      "setting": "image",
+      "label": "Bild",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "priority",
+    "label": "Sofort laden (Bild ganz oben auf der Seite)",
+    "info": "Nur für das erste große Bild der Seite einschalten.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "image",
+      "label": "Bild",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "video",
+      "label": "Video statt Bild",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "video",
+    "id": "video",
+    "label": "Video statt Bild",
+    "info": "Läuft stumm in Schleife, sobald es sichtbar ist, mit Knopf zum Anhalten. Das Bild oben ist dann das Standbild (vor dem Start und bei „Bewegung reduzieren“); leer: Vorschaubild des Videos. Empfohlen: unter 30 Sekunden und 10 MB – manche Browser laden die ganze Datei. Im Datensparmodus steht nur das Standbild."
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Anordnung",
+    "default": "image_left",
+    "options": [
+     {
+      "value": "image_left",
+      "label": "Bild links"
+     },
+     {
+      "value": "image_right",
+      "label": "Bild rechts"
+     },
+     {
+      "value": "image_top",
+      "label": "Bild oben"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "aspect_ratio",
+    "label": "Seitenverhältnis",
+    "default": "4 / 3",
+    "options": [
+     {
+      "value": "adapt",
+      "label": "Original"
+     },
+     {
+      "value": "2 / 3",
+      "label": "2 : 3"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 3",
+      "label": "4 : 3"
+     },
+     {
+      "value": "3 / 2",
+      "label": "3 : 2"
+     },
+     {
+      "value": "16 / 9",
+      "label": "16 : 9"
+     },
+     {
+      "value": "21 / 9",
+      "label": "21 : 9"
+     },
+     {
+      "value": "3 / 1",
+      "label": "3 : 1"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_height",
+    "label": "Bildhöhe",
+    "info": "Ab 750 px Breite: feste Höhe im Verhältnis zur Bildschirmhöhe statt aus dem Seitenverhältnis, das Bild wird passend beschnitten (siehe Bildausrichtung). Schmaler gilt das Seitenverhältnis.",
+    "default": "ratio",
+    "options": [
+     {
+      "value": "ratio",
+      "label": "Aus dem Seitenverhältnis"
+     },
+     {
+      "value": "small",
+      "label": "Klein (ein Drittel des Bildschirms)"
+     },
+     {
+      "value": "half",
+      "label": "Halbe Bildschirmhöhe"
+     },
+     {
+      "value": "large",
+      "label": "Groß (drei Viertel des Bildschirms)"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_width",
+    "label": "Breite der Bildspalte",
+    "default": "50",
+    "options": [
+     {
+      "value": "33",
+      "label": "Ein Drittel"
+     },
+     {
+      "value": "40",
+      "label": "40 %"
+     },
+     {
+      "value": "50",
+      "label": "Hälfte"
+     },
+     {
+      "value": "60",
+      "label": "60 %"
+     },
+     {
+      "value": "67",
+      "label": "Zwei Drittel"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is_not",
+      "value": "Bild oben"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Bildausrichtung",
+    "info": "Welcher Teil sichtbar bleibt, wenn das Bild beschnitten wird. Ein Fokuspunkt aus Shopify (Inhalte › Dateien › Bild) hat Vorrang.",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "top",
+      "label": "Oben"
+     },
+     {
+      "value": "bottom",
+      "label": "Unten"
+     },
+     {
+      "value": "left",
+      "label": "Links"
+     },
+     {
+      "value": "right",
+      "label": "Rechts"
+     },
+     {
+      "value": "left top",
+      "label": "Oben links"
+     },
+     {
+      "value": "right top",
+      "label": "Oben rechts"
+     },
+     {
+      "value": "left bottom",
+      "label": "Unten links"
+     },
+     {
+      "value": "right bottom",
+      "label": "Unten rechts"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "vertical_alignment",
+    "label": "Vertikale Ausrichtung",
+    "default": "center",
+    "options": [
+     {
+      "value": "start",
+      "label": "Oben"
+     },
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "end",
+      "label": "Unten"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is_not",
+      "value": "Bild oben"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "use_color_scheme",
+    "label": "Eigenes Farbschema für die Textfläche",
+    "info": "Aus: Die Textfläche übernimmt das Farbschema des Abschnitts.",
+    "default": false
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema der Textfläche",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Eigenes Farbschema für die Textfläche",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Bewegung"
+   },
+   {
+    "type": "select",
+    "id": "parallax",
+    "label": "Parallax",
+    "info": "Das Bild scrollt etwas langsamer als die Seite. An wirkt auch ohne die Theme-Einstellung, solange Animationen eingeschaltet sind. Nie bei reduzierter Bewegung; nur in Chrome, Edge und Safari 26.",
+    "default": "theme",
+    "options": [
+     {
+      "value": "theme",
+      "label": "Wie Theme-Einstellungen"
+     },
+     {
+      "value": "on",
+      "label": "An"
+     },
+     {
+      "value": "off",
+      "label": "Aus"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "text_motion",
+    "label": "Text-Animation der Textfläche",
+    "info": "Automatisch: Der Text steht sofort da, wenn das Bild sofort geladen wird (Aufmacher ganz oben), sonst wie in den Theme-Einstellungen. Sofort zeigen: nie verzögert, auch wenn die Textfläche unter dem sichtbaren Bereich beginnt.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatisch"
+     },
+     {
+      "value": "animate",
+      "label": "Wie Theme-Einstellungen"
+     },
+     {
+      "value": "static",
+      "label": "Sofort zeigen"
+     }
+    ]
+   }
+  ]
+ }
+}

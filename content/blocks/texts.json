@@ -1,0 +1,84 @@
+{
+ "image-banner": {
+  "de": {
+   "lead": "Ein großes Bild und daneben Ihr Text. Gut für den Anfang einer Seite.",
+   "page": "Oben die Seite wählen, z. B. „Startseite“",
+   "alt_desktop": "Block „Bild mit Text“ am Computer: links ein Teegarten im Morgenlicht, rechts Überschrift „Wir kaufen dort, wo wir die Gärten kennen“ und ein kurzer Text.",
+   "alt_mobile": "Derselbe Block am Handy: das Bild oben, Überschrift und Text darunter.",
+   "where_note": "Überschrift, Text und Buttons sind eigene Blöcke **im** Block „Bild mit Text“. Sie fügen sie dort mit „Block hinzufügen“ ein.",
+   "tips": [
+    "Nur beim ersten Bild ganz oben auf der Seite „Sofort laden“ einschalten. Dann erscheint die Seite schneller.",
+    "Wird Wichtiges abgeschnitten? Ändern Sie die „Bildausrichtung“, z. B. auf „Oben“.",
+    "Am Handy steht das Bild immer über dem Text."
+   ],
+   "more": ["getting-started", "startseite", "Startseite gestalten"]
+  },
+  "en": {
+   "lead": "A large image with your text next to it. Good for the start of a page.",
+   "page": "Choose the page at the top, e.g. “Home page”",
+   "alt_desktop": "“Image with text” block on a computer: a tea garden in morning light on the left, the heading “We buy where we know the gardens” and a short text on the right.",
+   "alt_mobile": "The same block on a phone: the image at the top, heading and text below.",
+   "where_note": "Heading, text and buttons are separate blocks **inside** “Image with text”. Add them there with “Add block”.",
+   "tips": [
+    "Turn on “Load immediately” only for the first image at the very top of a page. The page then appears faster.",
+    "Is something important cut off? Change “Image position”, for example to “Top”.",
+    "On phones the image is always above the text."
+   ],
+   "more": ["getting-started", "home-page", "Design your home page"]
+  }
+ },
+ "text": {
+  "de": {
+   "lead": "Ein Absatz Text. Für Erklärungen unter einer Überschrift.",
+   "page": "Oben die Seite wählen, z. B. „Startseite“",
+   "alt_desktop": "Abschnitt „Der Erntebrief“ am Computer. Der Block „Text“ ist gestrichelt markiert: „Einmal im Monat: welche Ernte gerade ankommt …“.",
+   "alt_mobile": "Derselbe Abschnitt am Handy, der Block „Text“ gestrichelt markiert.",
+   "tips": [
+    "Wörter in doppelten eckigen Klammern werden hervorgehoben, z. B. [[nachfüllen]].",
+    "„Gedämpft“ bei „Textfarbe“ eignet sich für Hinweise und Kleingedrucktes.",
+    "Für Überschriften nehmen Sie den Block „Überschrift“, nicht „Text“ mit fetter Schrift."
+   ],
+   "more": ["sections-and-blocks", "text", "Alle Text-Blöcke"]
+  },
+  "en": {
+   "lead": "A paragraph of text. For explanations below a heading.",
+   "page": "Choose the page at the top, e.g. “Home page”",
+   "alt_desktop": "The “Harvest letter” section on a computer. The “Text” block has a dashed outline: “Once a month: which harvest is arriving …”.",
+   "alt_mobile": "The same section on a phone, the “Text” block with a dashed outline.",
+   "tips": [
+    "Words in double square brackets are highlighted, e.g. [[refill]].",
+    "“Muted” under “Text color” suits notes and small print.",
+    "Use the “Heading” block for headings, not “Text” in bold."
+   ],
+   "more": ["sections-and-blocks", "text", "All text blocks"]
+  }
+ },
+ "icon-with-text": {
+  "de": {
+   "lead": "Ein kleines Symbol mit Überschrift und kurzem Text. Ideal für Vorteile oder Schritte.",
+   "page": "Oben die Seite wählen, z. B. „Startseite“",
+   "alt_desktop": "Abschnitt „In drei Schritten zur vollen Flasche“ am Computer: drei Blöcke „Icon mit Text“ nebeneinander, der erste gestrichelt markiert.",
+   "alt_mobile": "Derselbe Abschnitt am Handy: die drei Blöcke untereinander.",
+   "where_note": "Mehrere Blöcke nebeneinander: Legen Sie sie in einen Block „Spalten“.",
+   "tips": [
+    "Zwei bis vier Blöcke nebeneinander wirken am ruhigsten.",
+    "Gleiche „Icon-Größe“ in allen Blöcken eines Abschnitts.",
+    "Kurze Überschrift, ein Satz Text – mehr liest am Handy kaum jemand."
+   ],
+   "more": ["sections-and-blocks", "vorteile-vergleich", "Weitere Blöcke für Vorteile"]
+  },
+  "en": {
+   "lead": "A small icon with a heading and a short text. Ideal for benefits or steps.",
+   "page": "Choose the page at the top, e.g. “Home page”",
+   "alt_desktop": "The section “Three steps to a full bottle” on a computer: three “Icon with text” blocks side by side, the first with a dashed outline.",
+   "alt_mobile": "The same section on a phone: the three blocks stacked.",
+   "where_note": "Several blocks side by side: put them in a “Columns” block.",
+   "tips": [
+    "Two to four blocks side by side look calmest.",
+    "Use the same “Icon size” in all blocks of a section.",
+    "A short heading and one sentence – on phones, hardly anyone reads more."
+   ],
+   "more": ["sections-and-blocks", "benefits-and-comparison", "More blocks for benefits"]
+  }
+ }
+}
