@@ -1,0 +1,199 @@
+{
+ "slug": "heading",
+ "kind": "block",
+ "source": "blocks/heading.liquid",
+ "source_sha1": "cc38a57950e4",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Heading",
+  "category": "Text",
+  "settings": [
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Eyebrow text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "inline_richtext",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Heading"
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Size",
+    "default": "2xl",
+    "options": [
+     {
+      "value": "xl",
+      "label": "Small"
+     },
+     {
+      "value": "2xl",
+      "label": "Medium"
+     },
+     {
+      "value": "3xl",
+      "label": "Large"
+     },
+     {
+      "value": "4xl",
+      "label": "Extra large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "tag",
+    "label": "Heading level (SEO)",
+    "info": "Use one H1 per page. Levels structure the page for screen readers and search engines.",
+    "default": "h2",
+    "options": [
+     {
+      "value": "h1",
+      "label": "H1 – Page title"
+     },
+     {
+      "value": "h2",
+      "label": "H2 – Section"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Subsection"
+     },
+     {
+      "value": "p",
+      "label": "Normal text"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Match group alignment",
+    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own.",
+    "default": true
+   },
+   {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Alignment",
+    "default": "left",
+    "visible_if": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Match group alignment",
+      "op": "off"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Match group alignment",
+      "op": "off"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Überschrift",
+  "category": "Text",
+  "settings": [
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Dachzeile",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "inline_richtext",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Überschrift"
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Größe",
+    "default": "2xl",
+    "options": [
+     {
+      "value": "xl",
+      "label": "Klein"
+     },
+     {
+      "value": "2xl",
+      "label": "Mittel"
+     },
+     {
+      "value": "3xl",
+      "label": "Groß"
+     },
+     {
+      "value": "4xl",
+      "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "tag",
+    "label": "Gliederungsebene (SEO)",
+    "info": "Pro Seite eine H1 verwenden. Die Ebenen gliedern die Seite für Screenreader und Suchmaschinen.",
+    "default": "h2",
+    "options": [
+     {
+      "value": "h1",
+      "label": "H1 – Seitentitel"
+     },
+     {
+      "value": "h2",
+      "label": "H2 – Abschnitt"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Unterpunkt"
+     },
+     {
+      "value": "p",
+      "label": "Normaler Text"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Ausrichtung wie Gruppe",
+    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen.",
+    "default": true
+   },
+   {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Ausrichtung",
+    "default": "left",
+    "visible_if": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Ausrichtung wie Gruppe",
+      "op": "off"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Ausrichtung wie Gruppe",
+      "op": "off"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "block": "search-header",
+ "shop": "nordform",
+ "template": "search.json",
+ "section": "main",
+ "id": "search-header",
+ "de": {
+  "desktop": {
+   "file": "de/search-header-desktop.webp",
+   "width": 1521,
+   "height": 205,
+   "bytes": 5622,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/search-header-desktop-800.webp",
+   "width": 800,
+   "height": 108,
+   "bytes": 2834,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/search-header.webp",
+   "width": 640,
+   "height": 86,
+   "bytes": 2164,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/search-header-mobile.webp",
+   "width": 748,
+   "height": 294,
+   "bytes": 6270,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/search-header-desktop.webp",
+   "width": 1521,
+   "height": 205,
+   "bytes": 4674,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/search-header-desktop-800.webp",
+   "width": 800,
+   "height": 108,
+   "bytes": 2408,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/search-header.webp",
+   "width": 640,
+   "height": 86,
+   "bytes": 1908,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/search-header-mobile.webp",
+   "width": 748,
+   "height": 294,
+   "bytes": 5596,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

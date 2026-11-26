@@ -1,0 +1,99 @@
+{
+ "block": "profile-scales",
+ "shop": "kessel-und-blatt",
+ "template": "product.json",
+ "section": "main",
+ "id": "profile-scales",
+ "de": {
+  "desktop": {
+   "file": "de/profile-scales-desktop.webp",
+   "width": 588,
+   "height": 516,
+   "bytes": 10110,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/profile-scales-desktop-800.webp",
+   "width": 588,
+   "height": 516,
+   "bytes": 10110,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/profile-scales.webp",
+   "width": 588,
+   "height": 480,
+   "bytes": 8436,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 5.1,
+    "y": 5.3,
+    "box": [
+     1.7,
+     2,
+     96.5,
+     6.9
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/profile-scales-mobile.webp",
+   "width": 748,
+   "height": 818,
+   "bytes": 15240,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/profile-scales-desktop.webp",
+   "width": 588,
+   "height": 516,
+   "bytes": 9452,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/profile-scales-desktop-800.webp",
+   "width": 588,
+   "height": 516,
+   "bytes": 9452,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/profile-scales.webp",
+   "width": 588,
+   "height": 480,
+   "bytes": 8308,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 5.1,
+    "y": 5.3,
+    "box": [
+     1.7,
+     2,
+     96.5,
+     6.9
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/profile-scales-mobile.webp",
+   "width": 748,
+   "height": 818,
+   "bytes": 14208,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

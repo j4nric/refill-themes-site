@@ -1,0 +1,113 @@
+{
+ "slug": "usage-guide",
+ "kind": "block",
+ "source": "blocks/usage-guide.liquid",
+ "source_sha1": "4ce7c2fdc30a",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Usage",
+  "category": "Product: facts",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "How to use"
+   },
+   {
+    "type": "textarea",
+    "id": "steps",
+    "label": "Steps (if the metafield is empty)",
+    "info": "One step per line."
+   },
+   {
+    "type": "header",
+    "content": "Key values"
+   },
+   {
+    "type": "paragraph",
+    "content": "Shown above the steps, e.g. 85 °C · 3 min · 2 g / 250 ml for tea, cold · 30 s · 10 g / 500 ml for a powder or 37 °C · 15 min · 1 scoop for a bath. Empty fields are hidden."
+   },
+   {
+    "type": "text",
+    "id": "temperature",
+    "label": "Temperature"
+   },
+   {
+    "type": "text",
+    "id": "time",
+    "label": "Time"
+   },
+   {
+    "type": "text",
+    "id": "amount",
+    "label": "Amount"
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafield: steps",
+    "info": "Multi-line text, one step per line. Format namespace.key, found under Settings → Custom data.",
+    "default": "custom.usage"
+   }
+  ]
+ },
+ "de": {
+  "name": "Anwendung",
+  "category": "Produkt: Angaben",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Anwendung"
+   },
+   {
+    "type": "textarea",
+    "id": "steps",
+    "label": "Schritte (wenn kein Metafeld befüllt ist)",
+    "info": "Ein Schritt pro Zeile."
+   },
+   {
+    "type": "header",
+    "content": "Kennwerte"
+   },
+   {
+    "type": "paragraph",
+    "content": "Erscheinen über den Schritten, z. B. 85 °C · 3 min · 2 g / 250 ml für Tee, kalt · 30 s · 10 g / 500 ml für ein Pulver oder 37 °C · 15 min · 1 Messlöffel für ein Bad. Leere Felder entfallen."
+   },
+   {
+    "type": "text",
+    "id": "temperature",
+    "label": "Temperatur"
+   },
+   {
+    "type": "text",
+    "id": "time",
+    "label": "Zeit"
+   },
+   {
+    "type": "text",
+    "id": "amount",
+    "label": "Menge"
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafeld: Schritte",
+    "info": "Mehrzeiliger Text, ein Schritt pro Zeile. Format namespace.schlüssel, zu finden unter Einstellungen → Benutzerdefinierte Daten.",
+    "default": "custom.usage"
+   }
+  ]
+ }
+}

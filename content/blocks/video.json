@@ -1,0 +1,229 @@
+{
+ "slug": "video",
+ "kind": "block",
+ "source": "blocks/video.liquid",
+ "source_sha1": "e1173e7de2eb",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Video",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "video",
+    "id": "video",
+    "label": "Video from Shopify",
+    "info": "Not shown if a YouTube/Vimeo link is entered below."
+   },
+   {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "Play muted in a loop",
+    "info": "Paused when the visitor prefers reduced motion.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "video",
+      "label": "Video from Shopify",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "video",
+      "label": "Video from Shopify",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "YouTube/Vimeo"
+   },
+   {
+    "type": "video_url",
+    "id": "video_url",
+    "label": "Or YouTube/Vimeo link"
+   },
+   {
+    "type": "image_picker",
+    "id": "cover",
+    "label": "Cover image (YouTube/Vimeo)",
+    "visible_if": [
+     {
+      "setting": "video_url",
+      "label": "Or YouTube/Vimeo link",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "video_url",
+      "label": "Or YouTube/Vimeo link",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "title",
+    "label": "Button label",
+    "visible_if": [
+     {
+      "setting": "video_url",
+      "label": "Or YouTube/Vimeo link",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "video_url",
+      "label": "Or YouTube/Vimeo link",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "select",
+    "id": "aspect_ratio",
+    "label": "Aspect ratio",
+    "default": "16 / 9",
+    "options": [
+     {
+      "value": "16 / 9",
+      "label": "16 : 9"
+     },
+     {
+      "value": "4 / 3",
+      "label": "4 : 3"
+     },
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "9 / 16",
+      "label": "9 : 16"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Video",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "video",
+    "id": "video",
+    "label": "Video aus Shopify",
+    "info": "Entfällt, wenn unten ein YouTube-/Vimeo-Link eingetragen ist."
+   },
+   {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "Stumm in Schleife abspielen",
+    "info": "Pausiert, wenn Besucher reduzierte Bewegung eingestellt haben.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "video",
+      "label": "Video aus Shopify",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "video",
+      "label": "Video aus Shopify",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "YouTube/Vimeo"
+   },
+   {
+    "type": "video_url",
+    "id": "video_url",
+    "label": "Oder YouTube-/Vimeo-Link"
+   },
+   {
+    "type": "image_picker",
+    "id": "cover",
+    "label": "Vorschaubild (YouTube/Vimeo)",
+    "visible_if": [
+     {
+      "setting": "video_url",
+      "label": "Oder YouTube-/Vimeo-Link",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "video_url",
+      "label": "Oder YouTube-/Vimeo-Link",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "title",
+    "label": "Beschriftung des Buttons",
+    "visible_if": [
+     {
+      "setting": "video_url",
+      "label": "Oder YouTube-/Vimeo-Link",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "video_url",
+      "label": "Oder YouTube-/Vimeo-Link",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "select",
+    "id": "aspect_ratio",
+    "label": "Seitenverhältnis",
+    "default": "16 / 9",
+    "options": [
+     {
+      "value": "16 / 9",
+      "label": "16 : 9"
+     },
+     {
+      "value": "4 / 3",
+      "label": "4 : 3"
+     },
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "9 / 16",
+      "label": "9 : 16"
+     }
+    ]
+   }
+  ]
+ }
+}

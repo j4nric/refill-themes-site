@@ -1,0 +1,391 @@
+{
+ "slug": "featured-product",
+ "kind": "block",
+ "source": "blocks/featured-product.liquid",
+ "source_sha1": "16d3bd83a839",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Featured product",
+  "category": "Products and collections",
+  "settings": [
+   {
+    "type": "product",
+    "id": "product",
+    "label": "Product",
+    "info": "All parts of this block show the selected product. App blocks appear below the buy buttons."
+   },
+   {
+    "type": "header",
+    "content": "Content"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_media",
+    "label": "Show gallery",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "media_layout",
+    "label": "Layout on large screens",
+    "default": "slider",
+    "options": [
+     {
+      "value": "slider",
+      "label": "Slider"
+     },
+     {
+      "value": "grid",
+      "label": "Grid"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Show gallery",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "media_ratio",
+    "label": "Aspect ratio",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Show gallery",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "media_priority",
+    "label": "Load immediately (image at the top of the page)",
+    "info": "Turn on only for the first large image on the page.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Show gallery",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_title",
+    "label": "Show title",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_vendor",
+    "label": "Show brand",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "show_title",
+      "label": "Show title",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_price",
+    "label": "Show price",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_picker",
+    "label": "Show variant picker",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "picker_style",
+    "label": "Style",
+    "default": "tiles",
+    "options": [
+     {
+      "value": "tiles",
+      "label": "Tiles"
+     },
+     {
+      "value": "rows",
+      "label": "Rows"
+     },
+     {
+      "value": "images",
+      "label": "Images (variant images)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_picker",
+      "label": "Show variant picker",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_purchase_options",
+    "label": "Show purchase options",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_supply_calculator",
+    "label": "Show supply calculator",
+    "info": "Like the “Supply calculator” block, with the subscription interval of this block’s purchase options. Needs “Servings per pack”.",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "show_buy_buttons",
+    "label": "Show buy buttons",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_quantity",
+    "label": "Show quantity",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "show_buy_buttons",
+      "label": "Show buy buttons",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_dynamic_checkout",
+    "label": "Show dynamic checkout buttons",
+    "info": "e.g. PayPal, Apple Pay, Shop Pay. Hidden for products with subscriptions.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "show_buy_buttons",
+      "label": "Show buy buttons",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_link",
+    "label": "Show “View details” link",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Hervorgehobenes Produkt",
+  "category": "Produkte & Kollektionen",
+  "settings": [
+   {
+    "type": "product",
+    "id": "product",
+    "label": "Produkt",
+    "info": "Alle Teile dieses Blocks zeigen das gewählte Produkt. App-Blocks erscheinen unter den Kauf-Buttons."
+   },
+   {
+    "type": "header",
+    "content": "Inhalt"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_media",
+    "label": "Galerie anzeigen",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "media_layout",
+    "label": "Anordnung auf großen Bildschirmen",
+    "default": "slider",
+    "options": [
+     {
+      "value": "slider",
+      "label": "Slider"
+     },
+     {
+      "value": "grid",
+      "label": "Raster"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Galerie anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "media_ratio",
+    "label": "Seitenverhältnis",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Galerie anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "media_priority",
+    "label": "Sofort laden (Bild ganz oben auf der Seite)",
+    "info": "Nur für das erste große Bild der Seite einschalten.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Galerie anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_title",
+    "label": "Titel anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_vendor",
+    "label": "Marke anzeigen",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "show_title",
+      "label": "Titel anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_price",
+    "label": "Preis anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_picker",
+    "label": "Variantenauswahl anzeigen",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "picker_style",
+    "label": "Stil",
+    "default": "tiles",
+    "options": [
+     {
+      "value": "tiles",
+      "label": "Kacheln"
+     },
+     {
+      "value": "rows",
+      "label": "Zeilen"
+     },
+     {
+      "value": "images",
+      "label": "Bilder (Variantenbilder)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_picker",
+      "label": "Variantenauswahl anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_purchase_options",
+    "label": "Kaufoptionen (Abo) anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_supply_calculator",
+    "label": "Reichweitenrechner anzeigen",
+    "info": "Wie der Block „Reichweitenrechner“, mit dem Abo-Intervall der Kaufoptionen dieses Blocks. Braucht „Portionen pro Packung“.",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "show_buy_buttons",
+    "label": "Kauf-Buttons anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_quantity",
+    "label": "Menge anzeigen",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "show_buy_buttons",
+      "label": "Kauf-Buttons anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_dynamic_checkout",
+    "label": "Dynamische Checkout-Buttons anzeigen",
+    "info": "z. B. PayPal, Apple Pay, Shop Pay. Bei Produkten mit Abo ausgeblendet.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "show_buy_buttons",
+      "label": "Kauf-Buttons anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_link",
+    "label": "Link „Details ansehen“ anzeigen",
+    "default": true
+   }
+  ]
+ }
+}

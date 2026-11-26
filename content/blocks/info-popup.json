@@ -1,0 +1,329 @@
+{
+ "slug": "info-popup",
+ "kind": "block",
+ "source": "blocks/info-popup.liquid",
+ "source_sha1": "3ec4c2195148",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Info pop-up",
+  "category": "Collapsibles and tabs",
+  "settings": [
+   {
+    "type": "select",
+    "id": "kind",
+    "label": "Type",
+    "info": "Sets the label and icon when no custom text is entered below.",
+    "default": "info",
+    "options": [
+     {
+      "value": "info",
+      "label": "General"
+     },
+     {
+      "value": "dosage",
+      "label": "Dosage table"
+     },
+     {
+      "value": "size",
+      "label": "Size chart"
+     },
+     {
+      "value": "table",
+      "label": "Table"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Label",
+    "info": "Text of the link or button. Empty = name of the type (e.g. “Size chart”) in the store language."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Window title",
+    "info": "Empty = label."
+   },
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Style",
+    "default": "link",
+    "options": [
+     {
+      "value": "link",
+      "label": "Text link"
+     },
+     {
+      "value": "button",
+      "label": "Button"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_icon",
+    "label": "Show icon",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Content"
+   },
+   {
+    "type": "select",
+    "id": "source",
+    "label": "Source",
+    "default": "text",
+    "options": [
+     {
+      "value": "text",
+      "label": "Text"
+     },
+     {
+      "value": "page",
+      "label": "Page"
+     },
+     {
+      "value": "metafield",
+      "label": "Product metafield"
+     }
+    ]
+   },
+   {
+    "type": "richtext",
+    "id": "content",
+    "label": "Text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Add the content of the window here – or choose a page or a product metafield as the source.",
+    "visible_if": [
+     {
+      "setting": "source",
+      "label": "Source",
+      "op": "is",
+      "value": "Text"
+     }
+    ]
+   },
+   {
+    "type": "page",
+    "id": "page",
+    "label": "Page",
+    "info": "With the source “Page”. Tables in the page content appear as a data table in the window – suited to size, dosage or feeding tables."
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafield (namespace.key)",
+    "info": "Product metafield of type rich text, multi-line text, page, file (image) or metaobject, e.g. custom.dosage_table.",
+    "visible_if": [
+     {
+      "setting": "source",
+      "label": "Source",
+      "op": "is",
+      "value": "Product metafield"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "source",
+      "label": "Source",
+      "op": "is",
+      "value": "Product metafield"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "metaobject_field",
+    "label": "Metaobject field",
+    "info": "Metaobject references only: key of the field with the content (rich text, text or image).",
+    "default": "content",
+    "visible_if": [
+     {
+      "setting": "source",
+      "label": "Source",
+      "op": "is",
+      "value": "Product metafield"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "source",
+      "label": "Source",
+      "op": "is",
+      "value": "Product metafield"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Info-Popup",
+  "category": "Aufklappen & Tabs",
+  "settings": [
+   {
+    "type": "select",
+    "id": "kind",
+    "label": "Art",
+    "info": "Bestimmt Beschriftung und Symbol, wenn unten kein eigener Text steht.",
+    "default": "info",
+    "options": [
+     {
+      "value": "info",
+      "label": "Allgemein"
+     },
+     {
+      "value": "dosage",
+      "label": "Dosiertabelle"
+     },
+     {
+      "value": "size",
+      "label": "Größentabelle"
+     },
+     {
+      "value": "table",
+      "label": "Tabelle"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Beschriftung",
+    "info": "Text des Links bzw. Buttons. Leer = Bezeichnung der Art (z. B. „Größentabelle“) in der Sprache des Shops."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Titel im Fenster",
+    "info": "Leer = Beschriftung."
+   },
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Darstellung",
+    "default": "link",
+    "options": [
+     {
+      "value": "link",
+      "label": "Textlink"
+     },
+     {
+      "value": "button",
+      "label": "Button"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_icon",
+    "label": "Symbol zeigen",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Inhalt"
+   },
+   {
+    "type": "select",
+    "id": "source",
+    "label": "Quelle",
+    "default": "text",
+    "options": [
+     {
+      "value": "text",
+      "label": "Text"
+     },
+     {
+      "value": "page",
+      "label": "Seite"
+     },
+     {
+      "value": "metafield",
+      "label": "Produkt-Metafeld"
+     }
+    ]
+   },
+   {
+    "type": "richtext",
+    "id": "content",
+    "label": "Text",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Fügen Sie hier den Inhalt des Fensters ein – oder wählen Sie als Quelle eine Seite oder ein Produkt-Metafeld.",
+    "visible_if": [
+     {
+      "setting": "source",
+      "label": "Quelle",
+      "op": "is",
+      "value": "Text"
+     }
+    ]
+   },
+   {
+    "type": "page",
+    "id": "page",
+    "label": "Seite",
+    "info": "Bei der Quelle „Seite“. Tabellen im Seiteninhalt erscheinen im Fenster als Datentabelle – geeignet für Größen-, Dosier- oder Fütterungstabellen."
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafeld (namespace.key)",
+    "info": "Produkt-Metafeld vom Typ Rich Text, mehrzeiliger Text, Seite, Datei (Bild) oder Metaobjekt, z. B. custom.dosage_table.",
+    "visible_if": [
+     {
+      "setting": "source",
+      "label": "Quelle",
+      "op": "is",
+      "value": "Produkt-Metafeld"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "source",
+      "label": "Quelle",
+      "op": "is",
+      "value": "Produkt-Metafeld"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "metaobject_field",
+    "label": "Feld im Metaobjekt",
+    "info": "Nur bei Metaobjekt-Verweisen: Schlüssel des Felds mit dem Inhalt (Rich Text, Text oder Bild).",
+    "default": "content",
+    "visible_if": [
+     {
+      "setting": "source",
+      "label": "Quelle",
+      "op": "is",
+      "value": "Produkt-Metafeld"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "source",
+      "label": "Quelle",
+      "op": "is",
+      "value": "Produkt-Metafeld"
+     }
+    ]
+   }
+  ]
+ }
+}

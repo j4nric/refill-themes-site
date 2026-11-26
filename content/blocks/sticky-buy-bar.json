@@ -1,0 +1,39 @@
+{
+ "slug": "sticky-buy-bar",
+ "kind": "block",
+ "source": "blocks/sticky-buy-bar.liquid",
+ "source_sha1": "4621d870b711",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Sticky buy bar",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Appears while scrolling once the buy buttons are out of view. Requires the “Buy buttons” block."
+   },
+   {
+    "type": "checkbox",
+    "id": "desktop",
+    "label": "Also on large screens",
+    "default": false
+   }
+  ]
+ },
+ "de": {
+  "name": "Fixierte Kaufleiste",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Erscheint beim Scrollen, sobald die Kauf-Buttons nicht mehr sichtbar sind. Braucht den Block „Kauf-Buttons“."
+   },
+   {
+    "type": "checkbox",
+    "id": "desktop",
+    "label": "Auch auf großen Bildschirmen",
+    "default": false
+   }
+  ]
+ }
+}

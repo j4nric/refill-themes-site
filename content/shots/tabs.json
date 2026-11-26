@@ -1,0 +1,73 @@
+{
+ "block": "tabs",
+ "shop": "ostra",
+ "template": "index.json",
+ "section": "tabs",
+ "id": "tabs",
+ "de": {
+  "desktop": {
+   "file": "de/tabs-desktop.webp",
+   "width": 1440,
+   "height": 1179,
+   "bytes": 53434,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/tabs-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 24552,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/tabs.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 17850,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/tabs-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 50564,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/tabs-desktop.webp",
+   "width": 1440,
+   "height": 1179,
+   "bytes": 63636,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/tabs-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 29708,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/tabs.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 21154,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/tabs-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 49328,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

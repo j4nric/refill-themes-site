@@ -1,0 +1,99 @@
+{
+ "block": "bundle-contents",
+ "shop": "nordform",
+ "template": "product.bundle.json",
+ "section": "main",
+ "id": "bundle-contents",
+ "de": {
+  "desktop": {
+   "file": "de/bundle-contents-desktop.webp",
+   "width": 621,
+   "height": 391,
+   "bytes": 12860,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/bundle-contents-desktop-800.webp",
+   "width": 621,
+   "height": 391,
+   "bytes": 12860,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/bundle-contents.webp",
+   "width": 621,
+   "height": 391,
+   "bytes": 12860,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 5,
+    "box": [
+     1.7,
+     2.7,
+     96.7,
+     4.6
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/bundle-contents-mobile.webp",
+   "width": 748,
+   "height": 740,
+   "bytes": 20770,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/bundle-contents-desktop.webp",
+   "width": 621,
+   "height": 391,
+   "bytes": 13556,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/bundle-contents-desktop-800.webp",
+   "width": 621,
+   "height": 391,
+   "bytes": 13556,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/bundle-contents.webp",
+   "width": 621,
+   "height": 391,
+   "bytes": 13556,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 4.9,
+    "box": [
+     1.7,
+     2.6,
+     96.7,
+     4.6
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/bundle-contents-mobile.webp",
+   "width": 748,
+   "height": 740,
+   "bytes": 22886,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

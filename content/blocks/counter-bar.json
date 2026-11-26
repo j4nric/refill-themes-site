@@ -1,0 +1,197 @@
+{
+ "slug": "counter-bar",
+ "kind": "block",
+ "source": "blocks/counter-bar.liquid",
+ "source_sha1": "d99f5561b895",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Counter bar",
+  "category": "Benefits and comparison",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Key figures without a product, e.g. customers, shipping time or years in business. Values in the entries below."
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Value size",
+    "default": "2xl",
+    "options": [
+     {
+      "value": "lg",
+      "label": "Small (like key figures)"
+     },
+     {
+      "value": "2xl",
+      "label": "Medium"
+     },
+     {
+      "value": "3xl",
+      "label": "Large"
+     },
+     {
+      "value": "4xl",
+      "label": "Extra large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "label_position",
+    "label": "Label",
+    "default": "below",
+    "options": [
+     {
+      "value": "above",
+      "label": "Above the value"
+     },
+     {
+      "value": "below",
+      "label": "Below the value"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "alignment",
+    "label": "Alignment",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "Start"
+     },
+     {
+      "value": "center",
+      "label": "Center"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Columns on small screens",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Line on top",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "count_up",
+    "label": "Count up when visible",
+    "info": "Only below the first screen, never with “reduce motion”. Without JavaScript the final value is shown.",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Zähler-Leiste",
+  "category": "Vorteile & Vergleich",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Kennzahlen ohne Produktbezug, z. B. Kundinnen, Versandzeit oder Jahre am Markt. Werte in den Einträgen darunter."
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Größe der Werte",
+    "default": "2xl",
+    "options": [
+     {
+      "value": "lg",
+      "label": "Klein (wie Kennzahlenleiste)"
+     },
+     {
+      "value": "2xl",
+      "label": "Mittel"
+     },
+     {
+      "value": "3xl",
+      "label": "Groß"
+     },
+     {
+      "value": "4xl",
+      "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "label_position",
+    "label": "Beschriftung",
+    "default": "below",
+    "options": [
+     {
+      "value": "above",
+      "label": "Über dem Wert"
+     },
+     {
+      "value": "below",
+      "label": "Unter dem Wert"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "alignment",
+    "label": "Ausrichtung",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "Am Anfang"
+     },
+     {
+      "value": "center",
+      "label": "Mittig"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Spalten auf kleinen Bildschirmen",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Linie oben",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "count_up",
+    "label": "Beim Erscheinen hochzählen",
+    "info": "Nur Zahlen unterhalb des ersten Bildschirms, nie bei „Bewegung reduzieren“. Ohne JavaScript steht der Endwert da.",
+    "default": true
+   }
+  ]
+ }
+}

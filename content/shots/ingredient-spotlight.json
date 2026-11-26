@@ -1,0 +1,99 @@
+{
+ "block": "ingredient-spotlight",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "ingredients",
+ "id": "ingredients-spotlight",
+ "de": {
+  "desktop": {
+   "file": "de/ingredient-spotlight-desktop.webp",
+   "width": 1521,
+   "height": 451,
+   "bytes": 36104,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/ingredient-spotlight-desktop-800.webp",
+   "width": 800,
+   "height": 237,
+   "bytes": 14882,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/ingredient-spotlight.webp",
+   "width": 640,
+   "height": 190,
+   "bytes": 10922,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 57.7,
+    "box": [
+     0.7,
+     54.1,
+     18.2,
+     7.1
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/ingredient-spotlight-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 57358,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/ingredient-spotlight-desktop.webp",
+   "width": 1521,
+   "height": 424,
+   "bytes": 35098,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/ingredient-spotlight-desktop-800.webp",
+   "width": 800,
+   "height": 223,
+   "bytes": 14924,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/ingredient-spotlight.webp",
+   "width": 640,
+   "height": 178,
+   "bytes": 10656,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 61.4,
+    "box": [
+     0.7,
+     57.6,
+     18.2,
+     7.6
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/ingredient-spotlight-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 55554,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

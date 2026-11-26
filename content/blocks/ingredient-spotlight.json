@@ -1,0 +1,75 @@
+{
+ "slug": "ingredient-spotlight",
+ "kind": "block",
+ "source": "blocks/ingredient-spotlight.liquid",
+ "source_sha1": "2fe4b837452c",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Ingredients: spotlight",
+  "category": "Ingredients",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Key ingredients"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rules",
+    "label": "Line above each ingredient",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafield: ingredients (list of metaobjects)",
+    "info": "Format namespace.key. Find it under Settings → Custom data.",
+    "default": "custom.key_ingredients"
+   },
+   {
+    "type": "paragraph",
+    "content": "Metaobject fields: name, form, source, description, image. If the metafield is empty, the ingredient blocks are shown."
+   }
+  ]
+ },
+ "de": {
+  "name": "Inhaltsstoffe: Im Fokus",
+  "category": "Inhaltsstoffe",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Wichtige Inhaltsstoffe"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rules",
+    "label": "Linie über jedem Inhaltsstoff",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafeld: Inhaltsstoffe (Liste von Metaobjekten)",
+    "info": "Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten.",
+    "default": "custom.key_ingredients"
+   },
+   {
+    "type": "paragraph",
+    "content": "Felder der Metaobjekte: name, form, source, description, image. Ist das Metafeld leer, erscheinen die Inhaltsstoff-Blöcke."
+   }
+  ]
+ }
+}

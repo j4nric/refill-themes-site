@@ -1,0 +1,163 @@
+{
+ "slug": "delivery-estimate",
+ "kind": "block",
+ "source": "blocks/delivery-estimate.liquid",
+ "source_sha1": "e31710d0675f",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Delivery date",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "One line with the estimated delivery date (“Estimated delivery by Wed, 25 Nov”), with the order cut-off on shipping days. Calculated in the browser from cut-off, handling time, transit time and holidays. The subscription timeline in purchase options uses the same date."
+   },
+   {
+    "type": "header",
+    "content": "Shipping"
+   },
+   {
+    "type": "range",
+    "id": "cutoff",
+    "label": "Order cut-off for same-day dispatch (hour)",
+    "default": 14,
+    "min": 0,
+    "max": 23,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "processing_days",
+    "label": "Processing time (business days)",
+    "default": 0,
+    "min": 0,
+    "max": 10,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Delivery"
+   },
+   {
+    "type": "range",
+    "id": "min_days",
+    "label": "Transit time minimum (business days)",
+    "default": 1,
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "max_days",
+    "label": "Transit time maximum (business days)",
+    "info": "Must be at least as large as “Transit time minimum”.",
+    "default": 2,
+    "min": 1,
+    "max": 14,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "saturday",
+    "label": "Deliver on Saturdays",
+    "default": true
+   },
+   {
+    "type": "textarea",
+    "id": "holidays",
+    "label": "Days without dispatch or delivery",
+    "info": "One date per line as YYYY-MM-DD, e.g. public holidays (2026-12-25). Empty by default. Update every year."
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "text",
+    "id": "days_metafield",
+    "label": "Metafield: product delivery time",
+    "info": "Business days as a number or range, e.g. 3 or 3-5 (text or integer), format namespace.key. Replaces the transit time above for this product.",
+    "default": "custom.delivery_days"
+   }
+  ]
+ },
+ "de": {
+  "name": "Lieferdatum",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Eine Zeile mit dem voraussichtlichen Liefertermin („Voraussichtlich geliefert bis Mi., 25.11.“), am Bestelltag mit Bestellschluss. Gerechnet im Browser aus Bestellschluss, Bearbeitungszeit, Laufzeit und Feiertagen. Die Abo-Zeitleiste der Kaufoptionen nutzt denselben Termin."
+   },
+   {
+    "type": "header",
+    "content": "Versand"
+   },
+   {
+    "type": "range",
+    "id": "cutoff",
+    "label": "Bestellschluss für Versand am selben Tag (Uhr)",
+    "default": 14,
+    "min": 0,
+    "max": 23,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "processing_days",
+    "label": "Bearbeitungszeit (Werktage)",
+    "default": 0,
+    "min": 0,
+    "max": 10,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Zustellung"
+   },
+   {
+    "type": "range",
+    "id": "min_days",
+    "label": "Laufzeit mindestens (Werktage)",
+    "default": 1,
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "max_days",
+    "label": "Laufzeit höchstens (Werktage)",
+    "info": "Muss mindestens so groß sein wie „Laufzeit mindestens“.",
+    "default": 2,
+    "min": 1,
+    "max": 14,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "saturday",
+    "label": "Zustellung auch samstags",
+    "default": true
+   },
+   {
+    "type": "textarea",
+    "id": "holidays",
+    "label": "Tage ohne Versand und Zustellung",
+    "info": "Ein Datum pro Zeile im Format JJJJ-MM-TT, z. B. Feiertage (2026-12-25). Standardmäßig leer. Jedes Jahr neu eintragen."
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "text",
+    "id": "days_metafield",
+    "label": "Metafeld: Lieferzeit des Produkts",
+    "info": "Werktage als Zahl oder Spanne, z. B. 3 oder 3-5 (Text oder Ganzzahl), Format namespace.schlüssel. Ersetzt für dieses Produkt die Laufzeit oben.",
+    "default": "custom.delivery_days"
+   }
+  ]
+ }
+}

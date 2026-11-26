@@ -1,0 +1,111 @@
+{
+ "slug": "supply-calculator",
+ "kind": "block",
+ "source": "blocks/supply-calculator.liquid",
+ "source_sha1": "d086dc9dec53",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Supply calculator",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Customers enter their usage and see how long a pack lasts, plus the matching subscription interval. Uses “Servings per pack” and “Servings per day” (Theme settings → Product data). Hidden without these values."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Empty: “How long does it last?” Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "inline_richtext",
+    "id": "intro",
+    "label": "Text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "select",
+    "id": "period",
+    "label": "Enter usage per",
+    "info": "Default; customers can switch.",
+    "default": "day",
+    "options": [
+     {
+      "value": "day",
+      "label": "Day"
+     },
+     {
+      "value": "week",
+      "label": "Week"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Input label",
+    "info": "Empty: matches “Serving label” in Theme settings, e.g. “Number of cups”."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_plan",
+    "label": "Recommend matching subscription interval",
+    "info": "For products with subscription plans: the plan with the longest interval the supply still covers, and a button that selects it in the “Purchase options” block.",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Reichweitenrechner",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Kunden geben ihren Verbrauch ein und sehen, wie lange eine Packung reicht, dazu das passende Abo-Intervall. Rechnet mit „Portionen pro Packung“ und „Portionen pro Tag“ (Theme-Einstellungen → Produktdaten). Ohne diese Angaben ausgeblendet."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Leer: „Wie lange reicht das?“ Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "inline_richtext",
+    "id": "intro",
+    "label": "Text",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "select",
+    "id": "period",
+    "label": "Verbrauch eingeben pro",
+    "info": "Voreinstellung; Kunden können wechseln.",
+    "default": "day",
+    "options": [
+     {
+      "value": "day",
+      "label": "Tag"
+     },
+     {
+      "value": "week",
+      "label": "Woche"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Bezeichnung des Eingabefelds",
+    "info": "Leer: passend zur „Bezeichnung der Portion“ in den Theme-Einstellungen, z. B. „Anzahl Tassen“."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_plan",
+    "label": "Passendes Abo-Intervall empfehlen",
+    "info": "Bei Produkten mit Abo-Plänen: Plan mit dem längsten Intervall, das der Vorrat noch abdeckt, und ein Knopf, der ihn im Block „Kaufoptionen“ auswählt.",
+    "default": true
+   }
+  ]
+ }
+}

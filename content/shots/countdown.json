@@ -1,0 +1,99 @@
+{
+ "block": "countdown",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "abo-woche",
+ "id": "abo-woche-countdown",
+ "de": {
+  "desktop": {
+   "file": "de/countdown-desktop.webp",
+   "width": 1600,
+   "height": 334,
+   "bytes": 26580,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/countdown-desktop-800.webp",
+   "width": 800,
+   "height": 167,
+   "bytes": 10644,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/countdown.webp",
+   "width": 640,
+   "height": 134,
+   "bytes": 7330,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "expired_text",
+    "x": 33.4,
+    "y": 37.5,
+    "box": [
+     34.6,
+     34.8,
+     29.6,
+     5.4
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/countdown-mobile.webp",
+   "width": 748,
+   "height": 720,
+   "bytes": 38958,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/countdown-desktop.webp",
+   "width": 1600,
+   "height": 334,
+   "bytes": 28980,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/countdown-desktop-800.webp",
+   "width": 800,
+   "height": 167,
+   "bytes": 11732,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/countdown.webp",
+   "width": 640,
+   "height": 134,
+   "bytes": 8072,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "expired_text",
+    "x": 33.4,
+    "y": 37.5,
+    "box": [
+     34.6,
+     34.8,
+     29.6,
+     5.4
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/countdown-mobile.webp",
+   "width": 748,
+   "height": 768,
+   "bytes": 43344,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

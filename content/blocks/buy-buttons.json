@@ -1,0 +1,189 @@
+{
+ "slug": "buy-buttons",
+ "kind": "block",
+ "source": "blocks/buy-buttons.liquid",
+ "source_sha1": "4e81400fd044",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Buy buttons",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_quantity",
+    "label": "Show quantity",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_dynamic_checkout",
+    "label": "Show dynamic checkout buttons",
+    "info": "e.g. PayPal, Apple Pay, Shop Pay. Hidden for products with subscriptions.",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "dynamic_checkout_style",
+    "label": "Style of the “Buy it now” button",
+    "info": "Applies to the button without a brand logo. Branded buttons (Shop Pay, PayPal, Apple Pay, Google Pay) only take the theme's corners and height; their colors and hover are set by the provider.",
+    "default": "secondary",
+    "options": [
+     {
+      "value": "secondary",
+      "label": "Outline (like secondary buttons)"
+     },
+     {
+      "value": "primary",
+      "label": "Filled (like primary buttons)"
+     },
+     {
+      "value": "shopify",
+      "label": "Shopify default"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_dynamic_checkout",
+      "label": "Show dynamic checkout buttons",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Stock and availability"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_inventory",
+    "label": "Show stock status",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "low_stock_threshold",
+    "label": "Low stock below",
+    "default": 5,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "show_inventory",
+      "label": "Show stock status",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_restock",
+    "label": "Show back-in-stock request",
+    "info": "For sold-out variants: sends you an email via the contact form with product, variant and the customer's address.",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Advanced"
+   },
+   {
+    "type": "text",
+    "id": "preorder_metafield",
+    "label": "Metafield: expected ship date (pre-order)",
+    "info": "Shown when a variant is sold out but can still be ordered (continue selling). Variant or product metafield in the format namespace.key (Settings → Custom data).",
+    "default": "custom.preorder_date"
+   }
+  ]
+ },
+ "de": {
+  "name": "Kauf-Buttons",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_quantity",
+    "label": "Menge anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_dynamic_checkout",
+    "label": "Dynamische Checkout-Buttons anzeigen",
+    "info": "z. B. PayPal, Apple Pay, Shop Pay. Bei Produkten mit Abo ausgeblendet.",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "dynamic_checkout_style",
+    "label": "Stil des Knopfs „Jetzt kaufen“",
+    "info": "Gilt für den Knopf ohne Markenlogo. Gebrandete Knöpfe (Shop Pay, PayPal, Apple Pay, Google Pay) übernehmen nur Ecken und Höhe der Theme-Buttons; Farben und Hover legt der Anbieter fest.",
+    "default": "secondary",
+    "options": [
+     {
+      "value": "secondary",
+      "label": "Umriss (wie Sekundär-Buttons)"
+     },
+     {
+      "value": "primary",
+      "label": "Fläche (wie Primär-Buttons)"
+     },
+     {
+      "value": "shopify",
+      "label": "Shopify-Standard"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_dynamic_checkout",
+      "label": "Dynamische Checkout-Buttons anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Bestand und Verfügbarkeit"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_inventory",
+    "label": "Bestand anzeigen",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "low_stock_threshold",
+    "label": "Geringer Bestand unter",
+    "default": 5,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "show_inventory",
+      "label": "Bestand anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_restock",
+    "label": "Benachrichtigung bei Verfügbarkeit anbieten",
+    "info": "Bei ausverkauften Varianten: schickt Ihnen über das Kontaktformular eine E-Mail mit Produkt, Variante und Kundenadresse.",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Erweitert"
+   },
+   {
+    "type": "text",
+    "id": "preorder_metafield",
+    "label": "Metafeld: voraussichtlicher Versand (Vorbestellung)",
+    "info": "Erscheint, wenn eine Variante ausverkauft ist, aber weiter verkauft wird. Varianten- oder Produkt-Metafeld im Format namespace.schlüssel (Einstellungen → Benutzerdefinierte Daten).",
+    "default": "custom.preorder_date"
+   }
+  ]
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "block": "frequently-bought",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "frequently-bought",
+ "de": {
+  "desktop": {
+   "file": "de/frequently-bought-desktop.webp",
+   "width": 621,
+   "height": 408,
+   "bytes": 14242,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/frequently-bought-desktop-800.webp",
+   "width": 621,
+   "height": 408,
+   "bytes": 14242,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/frequently-bought.webp",
+   "width": 621,
+   "height": 408,
+   "bytes": 14242,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 6.7,
+    "box": [
+     1.7,
+     2.8,
+     96.7,
+     7.9
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/frequently-bought-mobile.webp",
+   "width": 748,
+   "height": 718,
+   "bytes": 22210,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/frequently-bought-desktop.webp",
+   "width": 621,
+   "height": 408,
+   "bytes": 13510,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/frequently-bought-desktop-800.webp",
+   "width": 621,
+   "height": 408,
+   "bytes": 13510,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/frequently-bought.webp",
+   "width": 621,
+   "height": 408,
+   "bytes": 13510,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 6.6,
+    "box": [
+     1.7,
+     2.7,
+     96.7,
+     7.9
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/frequently-bought-mobile.webp",
+   "width": 748,
+   "height": 644,
+   "bytes": 21034,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

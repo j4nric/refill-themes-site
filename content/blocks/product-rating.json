@@ -1,0 +1,79 @@
+{
+ "slug": "product-rating",
+ "kind": "block",
+ "source": "blocks/product-rating.liquid",
+ "source_sha1": "9682a91c83b5",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Rating stars",
+  "category": "Product: content",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Stars from the standard metafields reviews.rating and reviews.rating_count that review apps fill. No app scripts needed. Hidden without reviews."
+   },
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_value",
+    "label": "Show number (e.g. 4.6)",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_count",
+    "label": "Show number of reviews",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Link to reviews"
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Reviews section anchor",
+    "info": "ID of the app block with the reviews on this page, e.g. reviews. Empty = stars without a link."
+   }
+  ]
+ },
+ "de": {
+  "name": "Bewertungssterne",
+  "category": "Produkt: Inhalte",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Sterne aus den Standard-Metafeldern reviews.rating und reviews.rating_count, die Bewertungs-Apps befüllen. Keine App-Skripte nötig. Ohne Bewertungen bleibt der Block ausgeblendet."
+   },
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_value",
+    "label": "Zahl zeigen (z. B. 4,6)",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_count",
+    "label": "Anzahl der Bewertungen zeigen",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Link zu den Bewertungen"
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Anker des Bewertungsbereichs",
+    "info": "ID des App-Blocks mit den Bewertungen auf dieser Seite, z. B. reviews. Leer = Sterne ohne Link."
+   }
+  ]
+ }
+}

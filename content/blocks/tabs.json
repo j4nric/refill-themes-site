@@ -1,0 +1,83 @@
+{
+ "slug": "tabs",
+ "kind": "block",
+ "source": "blocks/tabs.liquid",
+ "source_sha1": "0667ec773e51",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Tabs",
+  "category": "Collapsibles and tabs",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Each tab is a separate block. Empty tabs are hidden."
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Space between tabs and content",
+    "default": "6",
+    "options": [
+     {
+      "value": "2",
+      "label": "Extra small"
+     },
+     {
+      "value": "4",
+      "label": "Small"
+     },
+     {
+      "value": "6",
+      "label": "Medium"
+     },
+     {
+      "value": "8",
+      "label": "Large"
+     },
+     {
+      "value": "12",
+      "label": "Extra large"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Registerkarten (Tabs)",
+  "category": "Aufklappen & Tabs",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Jeder Tab ist ein eigener Block. Leere Tabs werden ausgeblendet."
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Abstand zwischen Reitern und Inhalt",
+    "default": "6",
+    "options": [
+     {
+      "value": "2",
+      "label": "Sehr klein"
+     },
+     {
+      "value": "4",
+      "label": "Klein"
+     },
+     {
+      "value": "6",
+      "label": "Mittel"
+     },
+     {
+      "value": "8",
+      "label": "Groß"
+     },
+     {
+      "value": "12",
+      "label": "Sehr groß"
+     }
+    ]
+   }
+  ]
+ }
+}

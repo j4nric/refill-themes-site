@@ -1,0 +1,67 @@
+{
+ "slug": "bundle-contents",
+ "kind": "block",
+ "source": "blocks/bundle-contents.liquid",
+ "source_sha1": "99d182a9ed36",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Set contents (bundle)",
+  "category": "Product: content",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "text",
+    "id": "reference_metafield",
+    "label": "Metafield: products in the bundle",
+    "info": "Variant metafield in the format namespace.key. Find it under Settings → Custom data → Variants.",
+    "default": "custom.component_reference"
+   },
+   {
+    "type": "text",
+    "id": "quantity_metafield",
+    "label": "Metafield: quantities",
+    "info": "Variant metafield in the format namespace.key. Find it under Settings → Custom data → Variants.",
+    "default": "custom.component_quantities"
+   }
+  ]
+ },
+ "de": {
+  "name": "Set-Inhalt (Bundle)",
+  "category": "Produkt: Inhalte",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "text",
+    "id": "reference_metafield",
+    "label": "Metafeld: Produkte im Bundle",
+    "info": "Varianten-Metafeld im Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten → Varianten.",
+    "default": "custom.component_reference"
+   },
+   {
+    "type": "text",
+    "id": "quantity_metafield",
+    "label": "Metafeld: Mengen",
+    "info": "Varianten-Metafeld im Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten → Varianten.",
+    "default": "custom.component_quantities"
+   }
+  ]
+ }
+}

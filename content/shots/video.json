@@ -1,0 +1,73 @@
+{
+ "block": "video",
+ "shop": "kessel-und-blatt",
+ "template": "index.json",
+ "section": "video",
+ "id": "video",
+ "de": {
+  "desktop": {
+   "file": "de/video-desktop.webp",
+   "width": 781,
+   "height": 449,
+   "bytes": 3998,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/video-desktop-800.webp",
+   "width": 781,
+   "height": 449,
+   "bytes": 3998,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/video.webp",
+   "width": 640,
+   "height": 368,
+   "bytes": 2860,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/video-mobile.webp",
+   "width": 780,
+   "height": 472,
+   "bytes": 4618,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/video-desktop.webp",
+   "width": 781,
+   "height": 449,
+   "bytes": 3914,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/video-desktop-800.webp",
+   "width": 781,
+   "height": 449,
+   "bytes": 3914,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/video.webp",
+   "width": 640,
+   "height": 368,
+   "bytes": 2996,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/video-mobile.webp",
+   "width": 780,
+   "height": 472,
+   "bytes": 4522,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

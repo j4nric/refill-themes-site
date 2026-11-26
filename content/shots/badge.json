@@ -1,0 +1,99 @@
+{
+ "block": "badge",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "abo-woche",
+ "id": "abo-woche-badge",
+ "de": {
+  "desktop": {
+   "file": "de/badge-desktop.webp",
+   "width": 1600,
+   "height": 334,
+   "bytes": 26670,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/badge-desktop-800.webp",
+   "width": 800,
+   "height": 167,
+   "bytes": 10652,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/badge.webp",
+   "width": 640,
+   "height": 134,
+   "bytes": 7304,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 2,
+    "y": 20.6,
+    "box": [
+     2.5,
+     15.3,
+     7,
+     10.7
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/badge-mobile.webp",
+   "width": 748,
+   "height": 720,
+   "bytes": 38958,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/badge-desktop.webp",
+   "width": 1600,
+   "height": 334,
+   "bytes": 28986,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/badge-desktop-800.webp",
+   "width": 800,
+   "height": 167,
+   "bytes": 11728,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/badge.webp",
+   "width": 640,
+   "height": 134,
+   "bytes": 8070,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 2,
+    "y": 20.6,
+    "box": [
+     2.5,
+     15.3,
+     11.9,
+     10.7
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/badge-mobile.webp",
+   "width": 748,
+   "height": 768,
+   "bytes": 43344,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

@@ -1,0 +1,567 @@
+{
+ "slug": "collection-products",
+ "kind": "block",
+ "source": "blocks/collection-products.liquid",
+ "source_sha1": "636f1871d12a",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Collection: product list",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Columns on large screens",
+    "default": 3,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Columns on small screens",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_ratio",
+    "label": "Image aspect ratio",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "9 / 16",
+      "label": "9 : 16"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_fit",
+    "label": "Image fit",
+    "info": "“Show whole image” suits cut-out product images; photos with their own background otherwise show bars when the aspect ratio differs.",
+    "default": "cover",
+    "options": [
+     {
+      "value": "cover",
+      "label": "Fill frame (crop)"
+     },
+     {
+      "value": "contain",
+      "label": "Show whole image"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "first_row_loading",
+    "label": "First row images",
+    "info": "Automatic: load immediately when the collection has no image. If the collection header hides its image, choose “Immediately”.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatic"
+     },
+     {
+      "value": "eager",
+      "label": "Immediately"
+     },
+     {
+      "value": "lazy",
+      "label": "Lazy"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_metrics",
+    "label": "Show key figures (serving, servings)",
+    "info": "Uses the metafields set in theme settings → Product data. Price per day has its own switch.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: amount per serving",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Metafield: servings per pack",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_per_day",
+    "label": "Show price per day or serving",
+    "info": "Only for products with a single price and a servings metafield.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: servings per pack",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Show profile scales (e.g. scent, texture)",
+    "info": "Only when “Show profile scales on product cards” is on in theme settings.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Show unit price",
+    "info": "Price per unit of measure, e.g. €16.86/100 g. Usually required in the EU for goods sold by weight, volume or length: only turn off if it isn’t needed here.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Show “Compare” checkbox",
+    "info": "Only when the “Compare” checkbox is on in theme settings (product cards).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Filtering and sorting"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_filters",
+    "label": "Show filters",
+    "info": "Set up filters in the Search & Discovery app.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_sort",
+    "label": "Show sorting",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "default_sort",
+    "label": "Default sorting",
+    "default": "collection",
+    "options": [
+     {
+      "value": "collection",
+      "label": "As set in the collection"
+     },
+     {
+      "value": "manual",
+      "label": "Featured (manual)"
+     },
+     {
+      "value": "best-selling",
+      "label": "Best selling"
+     },
+     {
+      "value": "title-ascending",
+      "label": "Alphabetically, A–Z"
+     },
+     {
+      "value": "title-descending",
+      "label": "Alphabetically, Z–A"
+     },
+     {
+      "value": "price-ascending",
+      "label": "Price, low to high"
+     },
+     {
+      "value": "price-descending",
+      "label": "Price, high to low"
+     },
+     {
+      "value": "created-ascending",
+      "label": "Date, old to new"
+     },
+     {
+      "value": "created-descending",
+      "label": "Date, new to old"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "Pages load fastest with the collection's own sorting (Admin › Collection › Products › Sort). A different choice here is applied through an instant redirect when the collection is opened (one extra page request)."
+   },
+   {
+    "type": "header",
+    "content": "Pagination"
+   },
+   {
+    "type": "range",
+    "id": "products_per_page",
+    "label": "Products per page",
+    "default": 24,
+    "min": 8,
+    "max": 48,
+    "step": 4
+   },
+   {
+    "type": "select",
+    "id": "pagination",
+    "label": "Pagination",
+    "default": "pages",
+    "options": [
+     {
+      "value": "pages",
+      "label": "Page numbers"
+     },
+     {
+      "value": "load_more",
+      "label": "“Load more” button"
+     },
+     {
+      "value": "infinite",
+      "label": "Automatically on scroll"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "“Automatically” loads up to five pages in a row, then the “Load more” button appears again so the footer stays reachable. Without JavaScript, links to the next page are shown."
+   }
+  ]
+ },
+ "de": {
+  "name": "Kollektion: Produktliste",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Spalten auf großen Bildschirmen",
+    "default": 3,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Spalten auf kleinen Bildschirmen",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_ratio",
+    "label": "Bild-Seitenverhältnis",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "9 / 16",
+      "label": "9 : 16"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_fit",
+    "label": "Bildanpassung",
+    "info": "„Ganzes Bild zeigen“ eignet sich für freigestellte Produktbilder; bei Fotos mit eigenem Hintergrund entstehen sonst Balken, wenn das Seitenverhältnis abweicht.",
+    "default": "cover",
+    "options": [
+     {
+      "value": "cover",
+      "label": "Feld füllen (zuschneiden)"
+     },
+     {
+      "value": "contain",
+      "label": "Ganzes Bild zeigen"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "first_row_loading",
+    "label": "Bilder der ersten Reihe",
+    "info": "Automatisch: sofort laden, wenn die Kollektion kein Bild hat. Blendet der Kollektionskopf sein Bild aus, „Sofort“ wählen.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatisch"
+     },
+     {
+      "value": "eager",
+      "label": "Sofort"
+     },
+     {
+      "value": "lazy",
+      "label": "Verzögert"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_metrics",
+    "label": "Kennzahlen anzeigen (Portion, Portionen)",
+    "info": "Nutzt die Metafelder aus Theme-Einstellungen → Produktdaten. Der Preis pro Tag hat einen eigenen Schalter.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Menge je Portion",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Metafeld: Portionen pro Packung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_per_day",
+    "label": "Preis pro Tag bzw. Portion anzeigen",
+    "info": "Nur bei Produkten mit einheitlichem Preis und Portionen-Metafeld.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Portionen pro Packung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Profil-Skalen zeigen (z. B. Duft, Textur)",
+    "info": "Nur wenn „Profil-Skalen in Produktkarten zeigen“ in den Theme-Einstellungen aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Grundpreis zeigen",
+    "info": "Preis je Mengeneinheit, z. B. 16,86 €/100 g. In der EU für Waren nach Gewicht, Volumen oder Länge meist Pflicht: nur abschalten, wenn er hier nicht nötig ist.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Häkchen „Vergleichen“ zeigen",
+    "info": "Nur wenn das Häkchen „Vergleichen“ in den Theme-Einstellungen (Produktkarten) aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Filter & Sortierung"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_filters",
+    "label": "Filter anzeigen",
+    "info": "Filter richten Sie in der App Search & Discovery ein.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_sort",
+    "label": "Sortierung anzeigen",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "default_sort",
+    "label": "Standard-Sortierung",
+    "default": "collection",
+    "options": [
+     {
+      "value": "collection",
+      "label": "Wie in der Kollektion festgelegt"
+     },
+     {
+      "value": "manual",
+      "label": "Ausgewählt (manuell)"
+     },
+     {
+      "value": "best-selling",
+      "label": "Meistverkauft"
+     },
+     {
+      "value": "title-ascending",
+      "label": "Alphabetisch, A–Z"
+     },
+     {
+      "value": "title-descending",
+      "label": "Alphabetisch, Z–A"
+     },
+     {
+      "value": "price-ascending",
+      "label": "Preis, niedrig nach hoch"
+     },
+     {
+      "value": "price-descending",
+      "label": "Preis, hoch nach niedrig"
+     },
+     {
+      "value": "created-ascending",
+      "label": "Datum, alt nach neu"
+     },
+     {
+      "value": "created-descending",
+      "label": "Datum, neu nach alt"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "Am schnellsten laden Seiten mit der Sortierung der Kollektion (Verwaltung › Kollektion › Produkte › Sortieren). Eine abweichende Auswahl hier wird beim Öffnen der Kollektion über eine sofortige Weiterleitung angewendet (zusätzliche Seitenanfrage)."
+   },
+   {
+    "type": "header",
+    "content": "Seitennavigation"
+   },
+   {
+    "type": "range",
+    "id": "products_per_page",
+    "label": "Produkte pro Seite",
+    "default": 24,
+    "min": 8,
+    "max": 48,
+    "step": 4
+   },
+   {
+    "type": "select",
+    "id": "pagination",
+    "label": "Seitennavigation",
+    "default": "pages",
+    "options": [
+     {
+      "value": "pages",
+      "label": "Seitenzahlen"
+     },
+     {
+      "value": "load_more",
+      "label": "Button „Mehr laden“"
+     },
+     {
+      "value": "infinite",
+      "label": "Automatisch beim Scrollen"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "„Automatisch“ lädt bis zu fünf Seiten nacheinander, danach erscheint wieder der Button „Mehr laden“, damit die Fußzeile erreichbar bleibt. Ohne JavaScript gibt es Links auf die nächste Seite."
+   }
+  ]
+ }
+}

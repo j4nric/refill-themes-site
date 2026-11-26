@@ -1,0 +1,73 @@
+{
+ "block": "accordion",
+ "shop": "ostra",
+ "template": "product.json",
+ "section": "details",
+ "id": "more",
+ "de": {
+  "desktop": {
+   "file": "de/accordion-desktop.webp",
+   "width": 700,
+   "height": 280,
+   "bytes": 5544,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/accordion-desktop-800.webp",
+   "width": 700,
+   "height": 280,
+   "bytes": 5544,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/accordion.webp",
+   "width": 640,
+   "height": 256,
+   "bytes": 4906,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/accordion-mobile.webp",
+   "width": 748,
+   "height": 448,
+   "bytes": 9254,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/accordion-desktop.webp",
+   "width": 700,
+   "height": 280,
+   "bytes": 4950,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/accordion-desktop-800.webp",
+   "width": 700,
+   "height": 280,
+   "bytes": 4950,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/accordion.webp",
+   "width": 640,
+   "height": 256,
+   "bytes": 4500,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/accordion-mobile.webp",
+   "width": 748,
+   "height": 448,
+   "bytes": 8392,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

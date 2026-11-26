@@ -1,0 +1,73 @@
+{
+ "block": "ingredient-profile",
+ "shop": "kessel-und-blatt",
+ "template": "page.ingredients.json",
+ "section": "beispiele",
+ "id": "darjeeling",
+ "de": {
+  "desktop": {
+   "file": "de/ingredient-profile-desktop.webp",
+   "width": 700,
+   "height": 463,
+   "bytes": 21358,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/ingredient-profile-desktop-800.webp",
+   "width": 700,
+   "height": 463,
+   "bytes": 21358,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/ingredient-profile.webp",
+   "width": 640,
+   "height": 423,
+   "bytes": 20132,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/ingredient-profile-mobile.webp",
+   "width": 748,
+   "height": 1644,
+   "bytes": 51018,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/ingredient-profile-desktop.webp",
+   "width": 700,
+   "height": 463,
+   "bytes": 20476,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/ingredient-profile-desktop-800.webp",
+   "width": 700,
+   "height": 463,
+   "bytes": 20476,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/ingredient-profile.webp",
+   "width": 640,
+   "height": 423,
+   "bytes": 19634,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/ingredient-profile-mobile.webp",
+   "width": 748,
+   "height": 1592,
+   "bytes": 49788,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

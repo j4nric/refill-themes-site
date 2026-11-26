@@ -1,0 +1,99 @@
+{
+ "block": "carousel",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "principles",
+ "id": "principles-carousel",
+ "de": {
+  "desktop": {
+   "file": "de/carousel-desktop.webp",
+   "width": 1521,
+   "height": 183,
+   "bytes": 18370,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/carousel-desktop-800.webp",
+   "width": 800,
+   "height": 96,
+   "bytes": 8478,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/carousel.webp",
+   "width": 640,
+   "height": 77,
+   "bytes": 5934,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "quote",
+    "x": 2,
+    "y": 15.7,
+    "box": [
+     0.7,
+     6.1,
+     31.6,
+     47.8
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/carousel-mobile.webp",
+   "width": 748,
+   "height": 286,
+   "bytes": 11014,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/carousel-desktop.webp",
+   "width": 1521,
+   "height": 183,
+   "bytes": 18426,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/carousel-desktop-800.webp",
+   "width": 800,
+   "height": 96,
+   "bytes": 8416,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/carousel.webp",
+   "width": 640,
+   "height": 77,
+   "bytes": 5916,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "quote",
+    "x": 2,
+    "y": 15.7,
+    "box": [
+     0.7,
+     6.1,
+     31.6,
+     47.8
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/carousel-mobile.webp",
+   "width": 748,
+   "height": 286,
+   "bytes": 11250,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

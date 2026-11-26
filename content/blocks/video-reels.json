@@ -1,0 +1,79 @@
+{
+ "slug": "video-reels",
+ "kind": "block",
+ "source": "blocks/video-reels.liquid",
+ "source_sha1": "62d5ab07ce10",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Video reels",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "Play muted while visible",
+    "info": "Never with reduced motion or data saver. Each video has a pause button; a click opens it full screen with sound.",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "per_view",
+    "label": "Items visible on large screens",
+    "default": 4,
+    "min": 2,
+    "max": 6,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "per_view_mobile",
+    "label": "Items visible on small screens",
+    "default": 2,
+    "min": 1,
+    "max": 3,
+    "step": 1
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Name for screen readers"
+   }
+  ]
+ },
+ "de": {
+  "name": "Video-Reels",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "Stumm abspielen, solange sichtbar",
+    "info": "Nie bei „Bewegung reduzieren“ und im Datensparmodus. Jedes Video hat einen Knopf zum Anhalten; ein Klick öffnet es mit Ton im Vollbild.",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "per_view",
+    "label": "Sichtbare Elemente auf großen Bildschirmen",
+    "default": 4,
+    "min": 2,
+    "max": 6,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "per_view_mobile",
+    "label": "Sichtbare Elemente auf kleinen Bildschirmen",
+    "default": 2,
+    "min": 1,
+    "max": 3,
+    "step": 1
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Name für Screenreader"
+   }
+  ]
+ }
+}

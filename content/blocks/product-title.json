@@ -1,0 +1,133 @@
+{
+ "slug": "product-title",
+ "kind": "block",
+ "source": "blocks/product-title.liquid",
+ "source_sha1": "4ac62cf3e05c",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Product title",
+  "category": "Product: content",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_vendor",
+    "label": "Show brand",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "vendor_position",
+    "label": "Brand position",
+    "default": "above",
+    "options": [
+     {
+      "value": "above",
+      "label": "Above title"
+     },
+     {
+      "value": "below",
+      "label": "Below title"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_vendor",
+      "label": "Show brand",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "vendor_link",
+    "label": "Link brand",
+    "info": "Links to the automatic page listing all products of this brand.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "show_vendor",
+      "label": "Show brand",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_subtitle",
+    "label": "Show subtitle",
+    "info": "Uses the metafield set in Theme settings → Product data.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: subtitle",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Produkttitel",
+  "category": "Produkt: Inhalte",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_vendor",
+    "label": "Marke anzeigen",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "vendor_position",
+    "label": "Position der Marke",
+    "default": "above",
+    "options": [
+     {
+      "value": "above",
+      "label": "Über dem Titel"
+     },
+     {
+      "value": "below",
+      "label": "Unter dem Titel"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_vendor",
+      "label": "Marke anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "vendor_link",
+    "label": "Marke verlinken",
+    "info": "Führt auf die automatische Seite aller Produkte dieser Marke.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "show_vendor",
+      "label": "Marke anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_subtitle",
+    "label": "Unterzeile anzeigen",
+    "info": "Nutzt das Metafeld aus Theme-Einstellungen → Produktdaten.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Unterzeile",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,325 @@
+{
+ "slug": "bundle-builder",
+ "kind": "block",
+ "source": "blocks/bundle-builder.liquid",
+ "source_sha1": "4093ac290f3d",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Build a set",
+  "category": "Products and collections",
+  "settings": [
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Collection"
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Number of products",
+    "info": "Up to 50 available products of the collection.",
+    "default": 6,
+    "min": 2,
+    "max": 50,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "collection",
+      "label": "Collection",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "collection",
+      "label": "Collection",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "visible_count",
+    "label": "Visible",
+    "info": "More products appear under “Show more”.",
+    "default": 50,
+    "min": 2,
+    "max": 50,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "collection",
+      "label": "Collection",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "collection",
+      "label": "Collection",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "variant_mode",
+    "label": "Variant",
+    "default": "choose",
+    "options": [
+     {
+      "value": "choose",
+      "label": "Customer chooses"
+     },
+     {
+      "value": "first_available",
+      "label": "First available variant"
+     },
+     {
+      "value": "option_value",
+      "label": "Variant with option value"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "variant_option_value",
+    "label": "Option value",
+    "info": "E.g. 100 g. Products without this value use the first available variant; if the value is sold out, the product is left out.",
+    "placeholder": "100 g",
+    "visible_if": [
+     {
+      "setting": "variant_mode",
+      "label": "Variant",
+      "op": "is",
+      "value": "Variant with option value"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "variant_mode",
+      "label": "Variant",
+      "op": "is",
+      "value": "Variant with option value"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Build your set"
+   },
+   {
+    "type": "text",
+    "id": "offer",
+    "label": "Offer text",
+    "info": "Describe the discount you set up as an automatic discount in Shopify. Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Choose your products, then add the set to your cart."
+   },
+   {
+    "type": "header",
+    "content": "Set rules"
+   },
+   {
+    "type": "range",
+    "id": "min_items",
+    "label": "Minimum quantity in the set (pieces)",
+    "default": 3,
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "min_products",
+    "label": "Minimum number of different products",
+    "info": "Prevents reaching the minimum with a single product. Match your discount rule in Shopify.",
+    "default": 1,
+    "min": 1,
+    "max": 6,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "min_items",
+      "label": "Minimum quantity in the set (pieces)",
+      "op": ">",
+      "value": "1"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "max_per_item",
+    "label": "Maximum quantity per product (pieces)",
+    "default": 5,
+    "min": 1,
+    "max": 10,
+    "step": 1
+   }
+  ]
+ },
+ "de": {
+  "name": "Set zusammenstellen",
+  "category": "Produkte & Kollektionen",
+  "settings": [
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Kollektion"
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Anzahl Produkte",
+    "info": "Bis zu 50 verfügbare Produkte der Kollektion.",
+    "default": 6,
+    "min": 2,
+    "max": 50,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "collection",
+      "label": "Kollektion",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "collection",
+      "label": "Kollektion",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "visible_count",
+    "label": "Sichtbar",
+    "info": "Weitere Produkte stehen unter „Weitere anzeigen“.",
+    "default": 50,
+    "min": 2,
+    "max": 50,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "collection",
+      "label": "Kollektion",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "collection",
+      "label": "Kollektion",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "variant_mode",
+    "label": "Variante",
+    "default": "choose",
+    "options": [
+     {
+      "value": "choose",
+      "label": "Kundschaft wählt"
+     },
+     {
+      "value": "first_available",
+      "label": "Erste verfügbare Variante"
+     },
+     {
+      "value": "option_value",
+      "label": "Variante mit Optionswert"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "variant_option_value",
+    "label": "Optionswert",
+    "info": "Z. B. 100 g. Produkte ohne diesen Wert nehmen die erste verfügbare Variante; ist der Wert ausverkauft, entfällt das Produkt.",
+    "placeholder": "100 g",
+    "visible_if": [
+     {
+      "setting": "variant_mode",
+      "label": "Variante",
+      "op": "is",
+      "value": "Variante mit Optionswert"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "variant_mode",
+      "label": "Variante",
+      "op": "is",
+      "value": "Variante mit Optionswert"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Stell dein Set zusammen"
+   },
+   {
+    "type": "text",
+    "id": "offer",
+    "label": "Angebotstext",
+    "info": "Beschreiben Sie den Rabatt, den Sie als automatischen Rabatt in Shopify angelegt haben. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Wähle deine Produkte und lege das Set in den Warenkorb."
+   },
+   {
+    "type": "header",
+    "content": "Set-Regeln"
+   },
+   {
+    "type": "range",
+    "id": "min_items",
+    "label": "Mindestmenge im Set (Stück)",
+    "default": 3,
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "min_products",
+    "label": "Davon mindestens verschiedene Produkte",
+    "info": "Verhindert, dass die Mindestanzahl mit einem einzigen Produkt erreicht wird. Die Rabattregel in Shopify sollte dazu passen.",
+    "default": 1,
+    "min": 1,
+    "max": 6,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "min_items",
+      "label": "Mindestmenge im Set (Stück)",
+      "op": ">",
+      "value": "1"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "max_per_item",
+    "label": "Höchstmenge pro Produkt (Stück)",
+    "default": 5,
+    "min": 1,
+    "max": 10,
+    "step": 1
+   }
+  ]
+ }
+}

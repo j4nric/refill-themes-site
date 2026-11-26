@@ -1,0 +1,73 @@
+{
+ "block": "store-locator",
+ "shop": "kessel-und-blatt",
+ "template": "page.standorte.json",
+ "section": "main",
+ "id": "store-locator",
+ "de": {
+  "desktop": {
+   "file": "de/store-locator-desktop.webp",
+   "width": 1440,
+   "height": 1250,
+   "bytes": 78936,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/store-locator-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 29304,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/store-locator.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 21752,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/store-locator-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 82336,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/store-locator-desktop.webp",
+   "width": 1440,
+   "height": 1250,
+   "bytes": 60642,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/store-locator-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 25610,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/store-locator.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 17338,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/store-locator-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 70832,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

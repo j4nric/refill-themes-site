@@ -1,0 +1,63 @@
+{
+ "slug": "breadcrumbs",
+ "kind": "block",
+ "source": "blocks/breadcrumbs.liquid",
+ "source_sha1": "915d2d0242a6",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Breadcrumbs",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Shows the path to the current page, e.g. Home › Collection › Product. A product’s parent collection: metafield, otherwise the collection the visitor came from, otherwise the product’s first collection."
+   },
+   {
+    "type": "checkbox",
+    "id": "remember_collection",
+    "label": "Use last visited collection",
+    "info": "Stored only in the visitor’s browser for the session; applies when the product is in that collection and no metafield is set.",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "text",
+    "id": "parent_metafield",
+    "label": "Metafield: parent collection",
+    "info": "Product metafield of type collection, format namespace.key. Create the definition in Settings → Custom data → Products.",
+    "default": "custom.breadcrumb_collection"
+   }
+  ]
+ },
+ "de": {
+  "name": "Brotkrumen",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Zeigt den Pfad zur aktuellen Seite, z. B. Startseite › Kollektion › Produkt. Eltern-Kollektion eines Produkts: Metafeld, sonst die Kollektion, aus der jemand kommt, sonst die erste Kollektion des Produkts."
+   },
+   {
+    "type": "checkbox",
+    "id": "remember_collection",
+    "label": "Zuletzt besuchte Kollektion verwenden",
+    "info": "Nur im Browser der Kundschaft und für die Sitzung gespeichert; gilt, wenn das Produkt in dieser Kollektion liegt und kein Metafeld gesetzt ist.",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "text",
+    "id": "parent_metafield",
+    "label": "Metafeld: Eltern-Kollektion",
+    "info": "Produkt-Metafeld vom Typ Kollektion, Format namespace.schlüssel. Definition anlegen unter Einstellungen → Benutzerdefinierte Daten → Produkte.",
+    "default": "custom.breadcrumb_collection"
+   }
+  ]
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "block": "variant-picker",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "variant-picker",
+ "de": {
+  "desktop": {
+   "file": "de/variant-picker-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 25068,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/variant-picker-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 25068,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/variant-picker.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 20370,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "style",
+    "x": 4.9,
+    "y": 45.2,
+    "box": [
+     1.7,
+     42.1,
+     96.7,
+     16
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/variant-picker-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 32176,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/variant-picker-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 24488,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/variant-picker-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 24488,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/variant-picker.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 19936,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "style",
+    "x": 4.9,
+    "y": 45.1,
+    "box": [
+     1.7,
+     42.1,
+     96.7,
+     16
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/variant-picker-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 31346,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "block": "marquee",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "marquee",
+ "id": "marquee",
+ "de": {
+  "desktop": {
+   "file": "de/marquee-desktop.webp",
+   "width": 1600,
+   "height": 160,
+   "bytes": 17762,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/marquee-desktop-800.webp",
+   "width": 800,
+   "height": 80,
+   "bytes": 7438,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/marquee.webp",
+   "width": 640,
+   "height": 64,
+   "bytes": 5666,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/marquee-mobile.webp",
+   "width": 780,
+   "height": 256,
+   "bytes": 7622,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/marquee-desktop.webp",
+   "width": 1600,
+   "height": 160,
+   "bytes": 17372,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/marquee-desktop-800.webp",
+   "width": 800,
+   "height": 80,
+   "bytes": 7336,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/marquee.webp",
+   "width": 640,
+   "height": 64,
+   "bytes": 5532,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/marquee-mobile.webp",
+   "width": 780,
+   "height": 256,
+   "bytes": 7602,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

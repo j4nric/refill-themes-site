@@ -1,0 +1,53 @@
+{
+ "slug": "cart-items",
+ "kind": "block",
+ "source": "blocks/cart-items.liquid",
+ "source_sha1": "d9e35063f793",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Cart: items",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Lists the items in the cart with title and quantity selector. Belongs on the cart page."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_upsell",
+    "label": "Show recommended products",
+    "info": "“Goes well with” below the items. Source and number: Theme settings › Cart.",
+    "default": true
+   },
+   {
+    "type": "collection",
+    "id": "empty_collection",
+    "label": "Suggestions when empty",
+    "info": "Shows up to four products from this collection when nothing was found or the cart is empty."
+   }
+  ]
+ },
+ "de": {
+  "name": "Warenkorb: Positionen",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Listet die Artikel im Warenkorb mit Titel und Mengenauswahl. Gehört auf die Warenkorbseite."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_upsell",
+    "label": "Empfohlene Produkte zeigen",
+    "info": "„Passt dazu“ unter den Positionen. Quelle und Anzahl: Theme-Einstellungen › Warenkorb.",
+    "default": true
+   },
+   {
+    "type": "collection",
+    "id": "empty_collection",
+    "label": "Vorschläge, wenn leer",
+    "info": "Zeigt bis zu vier Produkte dieser Kollektion, wenn nichts gefunden wurde bzw. der Warenkorb leer ist."
+   }
+  ]
+ }
+}

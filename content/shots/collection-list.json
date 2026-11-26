@@ -1,0 +1,99 @@
+{
+ "block": "collection-list",
+ "shop": "kessel-und-blatt",
+ "template": "index.json",
+ "section": "sorten",
+ "id": "sorten-list",
+ "de": {
+  "desktop": {
+   "file": "de/collection-list-desktop.webp",
+   "width": 1440,
+   "height": 405,
+   "bytes": 40708,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/collection-list-desktop-800.webp",
+   "width": 800,
+   "height": 225,
+   "bytes": 18268,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/collection-list.webp",
+   "width": 640,
+   "height": 180,
+   "bytes": 13448,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "collections",
+    "x": 2.1,
+    "y": 7,
+    "box": [
+     0.7,
+     2.6,
+     98.6,
+     95
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/collection-list-mobile.webp",
+   "width": 748,
+   "height": 1638,
+   "bytes": 53624,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/collection-list-desktop.webp",
+   "width": 1440,
+   "height": 405,
+   "bytes": 29022,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/collection-list-desktop-800.webp",
+   "width": 800,
+   "height": 225,
+   "bytes": 13748,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/collection-list.webp",
+   "width": 640,
+   "height": 180,
+   "bytes": 9838,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "collections",
+    "x": 2.1,
+    "y": 7,
+    "box": [
+     0.7,
+     2.6,
+     98.6,
+     95
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/collection-list-mobile.webp",
+   "width": 748,
+   "height": 1638,
+   "bytes": 52730,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

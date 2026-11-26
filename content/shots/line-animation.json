@@ -1,0 +1,73 @@
+{
+ "block": "line-animation",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "compare",
+ "id": "compare-lines",
+ "de": {
+  "desktop": {
+   "file": "de/line-animation-desktop.webp",
+   "width": 741,
+   "height": 320,
+   "bytes": 7490,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/line-animation-desktop-800.webp",
+   "width": 741,
+   "height": 320,
+   "bytes": 7490,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/line-animation.webp",
+   "width": 640,
+   "height": 276,
+   "bytes": 6278,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/line-animation-mobile.webp",
+   "width": 748,
+   "height": 512,
+   "bytes": 9510,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/line-animation-desktop.webp",
+   "width": 741,
+   "height": 320,
+   "bytes": 7560,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/line-animation-desktop-800.webp",
+   "width": 741,
+   "height": 320,
+   "bytes": 7560,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/line-animation.webp",
+   "width": 640,
+   "height": 276,
+   "bytes": 6312,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/line-animation-mobile.webp",
+   "width": 748,
+   "height": 512,
+   "bytes": 9518,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

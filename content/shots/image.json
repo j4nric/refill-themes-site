@@ -1,0 +1,99 @@
+{
+ "block": "image",
+ "shop": "kessel-und-blatt",
+ "template": "index.json",
+ "section": "ernte",
+ "id": "ernte-image",
+ "de": {
+  "desktop": {
+   "file": "de/image-desktop.webp",
+   "width": 700,
+   "height": 403,
+   "bytes": 47054,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/image-desktop-800.webp",
+   "width": 700,
+   "height": 403,
+   "bytes": 47054,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/image.webp",
+   "width": 640,
+   "height": 368,
+   "bytes": 42098,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 4.4,
+    "y": 6.9,
+    "box": [
+     1.5,
+     2.5,
+     97.1,
+     95
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/image-mobile.webp",
+   "width": 748,
+   "height": 436,
+   "bytes": 53742,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/image-desktop.webp",
+   "width": 700,
+   "height": 403,
+   "bytes": 48048,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/image-desktop-800.webp",
+   "width": 700,
+   "height": 403,
+   "bytes": 48048,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/image.webp",
+   "width": 640,
+   "height": 368,
+   "bytes": 42054,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 4.4,
+    "y": 7,
+    "box": [
+     1.5,
+     2.7,
+     97.1,
+     95
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/image-mobile.webp",
+   "width": 748,
+   "height": 436,
+   "bytes": 53558,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

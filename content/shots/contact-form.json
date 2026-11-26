@@ -1,0 +1,73 @@
+{
+ "block": "contact-form",
+ "shop": "nordform",
+ "template": "page.contact.json",
+ "section": "main",
+ "id": "contact-form",
+ "de": {
+  "desktop": {
+   "file": "de/contact-form-desktop.webp",
+   "width": 820,
+   "height": 495,
+   "bytes": 3858,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/contact-form-desktop-800.webp",
+   "width": 800,
+   "height": 483,
+   "bytes": 3864,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/contact-form.webp",
+   "width": 640,
+   "height": 386,
+   "bytes": 2874,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/contact-form-mobile.webp",
+   "width": 748,
+   "height": 962,
+   "bytes": 6450,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/contact-form-desktop.webp",
+   "width": 820,
+   "height": 495,
+   "bytes": 3408,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/contact-form-desktop-800.webp",
+   "width": 800,
+   "height": 483,
+   "bytes": 3386,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/contact-form.webp",
+   "width": 640,
+   "height": 386,
+   "bytes": 2528,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/contact-form-mobile.webp",
+   "width": 748,
+   "height": 962,
+   "bytes": 5990,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

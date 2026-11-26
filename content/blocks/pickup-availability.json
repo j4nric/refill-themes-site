@@ -1,0 +1,53 @@
+{
+ "slug": "pickup-availability",
+ "kind": "block",
+ "source": "blocks/pickup-availability.liquid",
+ "source_sha1": "6f7f21a0ede3",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Pickup availability",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Only appears when local pickup is turned on under Settings → Shipping and delivery."
+   },
+   {
+    "type": "checkbox",
+    "id": "link_locations",
+    "label": "Link store locator locations",
+    "info": "Lists the locations where the variant is ready for pickup, linked to the “Locations” page. A location matches a store_location entry with the same name or with its name in the “Shopify location” field. Shows the distance if the customer shared their position in the store locator.",
+    "default": false
+   },
+   {
+    "type": "page",
+    "id": "locations_page",
+    "label": "Locations page",
+    "info": "Only with “Link store locator locations”: page with the store locator block. Empty: names only, without links."
+   }
+  ]
+ },
+ "de": {
+  "name": "Abholung im Geschäft",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Erscheint nur, wenn Abholung unter Einstellungen → Versand und Zustellung aktiviert ist."
+   },
+   {
+    "type": "checkbox",
+    "id": "link_locations",
+    "label": "Standorte des Store-Locators verlinken",
+    "info": "Listet die Standorte, an denen die Variante abholbereit ist, mit Link zur Seite „Standorte“. Ein Standort passt zu einem Eintrag store_location mit demselben Namen oder mit seinem Namen im Feld „Shopify-Standort“. Zeigt die Entfernung, wenn die Position im Store-Locator freigegeben wurde.",
+    "default": false
+   },
+   {
+    "type": "page",
+    "id": "locations_page",
+    "label": "Seite „Standorte“",
+    "info": "Nur mit „Standorte des Store-Locators verlinken“: Seite mit dem Block „Standorte“. Leer: nur die Namen, ohne Link."
+   }
+  ]
+ }
+}

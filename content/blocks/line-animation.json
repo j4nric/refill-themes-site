@@ -1,0 +1,253 @@
+{
+ "slug": "line-animation",
+ "kind": "block",
+ "source": "blocks/line-animation.liquid",
+ "source_sha1": "99a5bae05abe",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Line animation",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Decorative wave lines that move sideways while scrolling. They stand still with “Reduce motion” and without JavaScript."
+   },
+   {
+    "type": "range",
+    "id": "lines",
+    "label": "Number of lines",
+    "default": 4,
+    "min": 1,
+    "max": 6,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "color",
+    "label": "Color",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Scheme: text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Scheme: secondary text"
+     },
+     {
+      "value": "signal",
+      "label": "Scheme: accent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "line_width",
+    "label": "Line width",
+    "default": 4,
+    "min": 1,
+    "max": 8,
+    "step": 1,
+    "unit": "px"
+   },
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "range",
+    "id": "width",
+    "label": "Width",
+    "default": 50,
+    "min": 20,
+    "max": 100,
+    "step": 5,
+    "unit": "%"
+   },
+   {
+    "type": "range",
+    "id": "height",
+    "label": "Height",
+    "default": 240,
+    "min": 80,
+    "max": 400,
+    "step": 20,
+    "unit": "px"
+   },
+   {
+    "type": "select",
+    "id": "alignment",
+    "label": "Alignment",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "Left"
+     },
+     {
+      "value": "center",
+      "label": "Center"
+     },
+     {
+      "value": "end",
+      "label": "Right"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "scroll_distance",
+    "label": "Movement while scrolling",
+    "info": "How far the waves travel while the block passes through the screen. Higher: faster.",
+    "default": 900,
+    "min": 300,
+    "max": 1500,
+    "step": 100
+   }
+  ]
+ },
+ "de": {
+  "name": "Linien-Animation",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Dekorative Wellenlinien, die beim Scrollen seitlich wandern. Bei „Bewegung reduzieren“ und ohne JavaScript stehen sie still."
+   },
+   {
+    "type": "range",
+    "id": "lines",
+    "label": "Anzahl der Linien",
+    "default": 4,
+    "min": 1,
+    "max": 6,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "color",
+    "label": "Farbe",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Schema: Text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Schema: Sekundärtext"
+     },
+     {
+      "value": "signal",
+      "label": "Schema: Akzent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "line_width",
+    "label": "Strichstärke",
+    "default": 4,
+    "min": 1,
+    "max": 8,
+    "step": 1,
+    "unit": "px"
+   },
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "range",
+    "id": "width",
+    "label": "Breite",
+    "default": 50,
+    "min": 20,
+    "max": 100,
+    "step": 5,
+    "unit": "%"
+   },
+   {
+    "type": "range",
+    "id": "height",
+    "label": "Höhe",
+    "default": 240,
+    "min": 80,
+    "max": 400,
+    "step": 20,
+    "unit": "px"
+   },
+   {
+    "type": "select",
+    "id": "alignment",
+    "label": "Ausrichtung",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "Links"
+     },
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "end",
+      "label": "Rechts"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "scroll_distance",
+    "label": "Bewegung beim Scrollen",
+    "info": "Wie weit die Wellen wandern, während der Block durch den Bildschirm läuft. Höher: schneller.",
+    "default": 900,
+    "min": 300,
+    "max": 1500,
+    "step": 100
+   }
+  ]
+ }
+}

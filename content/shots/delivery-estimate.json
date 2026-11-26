@@ -1,0 +1,73 @@
+{
+ "block": "delivery-estimate",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "delivery-estimate",
+ "de": {
+  "desktop": {
+   "file": "de/delivery-estimate-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 21904,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/delivery-estimate-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 21904,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/delivery-estimate.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 19792,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/delivery-estimate-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 33080,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/delivery-estimate-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 22528,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/delivery-estimate-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 22528,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/delivery-estimate.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 19924,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/delivery-estimate-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 28372,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

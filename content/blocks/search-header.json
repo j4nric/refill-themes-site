@@ -1,0 +1,27 @@
+{
+ "slug": "search-header",
+ "kind": "block",
+ "source": "blocks/search-header.liquid",
+ "source_sha1": "796deaaa7200",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Search: header",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Title with the search term and a search field. Belongs on the search page."
+   }
+  ]
+ },
+ "de": {
+  "name": "Suche: Kopfbereich",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Titel mit Suchbegriff und Suchfeld. Gehört auf die Suchseite."
+   }
+  ]
+ }
+}

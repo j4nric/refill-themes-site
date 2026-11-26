@@ -1,0 +1,43 @@
+{
+ "slug": "collection-header",
+ "kind": "block",
+ "source": "blocks/collection-header.liquid",
+ "source_sha1": "613e75d6b87b",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Collection: header",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_description",
+    "label": "Show description",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Show collection image",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Kollektion: Kopfbereich",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_description",
+    "label": "Beschreibung anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Kollektionsbild anzeigen",
+    "default": true
+   }
+  ]
+ }
+}

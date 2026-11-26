@@ -1,0 +1,139 @@
+{
+ "slug": "quantity-tiers",
+ "kind": "block",
+ "source": "blocks/quantity-tiers.liquid",
+ "source_sha1": "0504ac429a74",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Quantity tiers",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "select",
+    "id": "mode",
+    "label": "Tier type",
+    "default": "variants",
+    "options": [
+     {
+      "value": "variants",
+      "label": "Pack sizes (variants)"
+     },
+     {
+      "value": "quantity",
+      "label": "Quantity discount"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "text",
+    "id": "option_name",
+    "label": "Variant option",
+    "info": "e.g. Pack size. Empty: the last option.",
+    "visible_if": [
+     {
+      "setting": "mode",
+      "label": "Tier type",
+      "op": "is",
+      "value": "Pack sizes (variants)"
+     }
+    ]
+   },
+   {
+    "type": "textarea",
+    "id": "tiers",
+    "label": "Tiers",
+    "info": "One tier per line: quantity | discount in %. Create the matching automatic discount in Shopify.",
+    "default": "1 | 0\n3 | 0\n6 | 0",
+    "visible_if": [
+     {
+      "setting": "mode",
+      "label": "Tier type",
+      "op": "is",
+      "value": "Quantity discount"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "mode",
+      "label": "Tier type",
+      "op": "is",
+      "value": "Quantity discount"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Mengenstaffel",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "select",
+    "id": "mode",
+    "label": "Art der Staffel",
+    "default": "variants",
+    "options": [
+     {
+      "value": "variants",
+      "label": "Packungsgrößen (Varianten)"
+     },
+     {
+      "value": "quantity",
+      "label": "Mengenrabatt"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "text",
+    "id": "option_name",
+    "label": "Varianten-Option",
+    "info": "z. B. Packungsgröße. Leer: die letzte Option.",
+    "visible_if": [
+     {
+      "setting": "mode",
+      "label": "Art der Staffel",
+      "op": "is",
+      "value": "Packungsgrößen (Varianten)"
+     }
+    ]
+   },
+   {
+    "type": "textarea",
+    "id": "tiers",
+    "label": "Stufen",
+    "info": "Eine Stufe pro Zeile: Menge | Rabatt in %. Den passenden automatischen Rabatt in Shopify anlegen.",
+    "default": "1 | 0\n3 | 0\n6 | 0",
+    "visible_if": [
+     {
+      "setting": "mode",
+      "label": "Art der Staffel",
+      "op": "is",
+      "value": "Mengenrabatt"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "mode",
+      "label": "Art der Staffel",
+      "op": "is",
+      "value": "Mengenrabatt"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "block": "product-finder",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "finder",
+ "id": "finder",
+ "de": {
+  "desktop": {
+   "file": "de/product-finder-desktop.webp",
+   "width": 1521,
+   "height": 581,
+   "bytes": 20176,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/product-finder-desktop-800.webp",
+   "width": 800,
+   "height": 306,
+   "bytes": 9060,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/product-finder.webp",
+   "width": 640,
+   "height": 244,
+   "bytes": 6448,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "label",
+    "x": 2,
+    "y": 90.3,
+    "box": [
+     0.7,
+     87.3,
+     8.3,
+     10.9
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/product-finder-mobile.webp",
+   "width": 748,
+   "height": 1452,
+   "bytes": 29334,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/product-finder-desktop.webp",
+   "width": 1521,
+   "height": 581,
+   "bytes": 19638,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/product-finder-desktop-800.webp",
+   "width": 800,
+   "height": 306,
+   "bytes": 8908,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/product-finder.webp",
+   "width": 640,
+   "height": 244,
+   "bytes": 6392,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "label",
+    "x": 2,
+    "y": 90.4,
+    "box": [
+     0.7,
+     87.4,
+     7.1,
+     10.9
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/product-finder-mobile.webp",
+   "width": 748,
+   "height": 1452,
+   "bytes": 28888,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

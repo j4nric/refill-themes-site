@@ -1,0 +1,65 @@
+{
+ "slug": "marquee",
+ "kind": "block",
+ "source": "blocks/marquee.liquid",
+ "source_sha1": "dff273a34969",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Scrolling text",
+  "category": "Buttons and promotions",
+  "settings": [
+   {
+    "type": "textarea",
+    "id": "items",
+    "label": "Texts",
+    "info": "One text per line. Stops for visitors who prefer reduced motion. Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Free shipping on qualifying orders\nSecure payment\nFast delivery\nPersonal service"
+   },
+   {
+    "type": "select",
+    "id": "speed",
+    "label": "Speed",
+    "default": "slow",
+    "options": [
+     {
+      "value": "slow",
+      "label": "Slow"
+     },
+     {
+      "value": "normal",
+      "label": "Normal"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Laufband",
+  "category": "Buttons & Aktionen",
+  "settings": [
+   {
+    "type": "textarea",
+    "id": "items",
+    "label": "Texte",
+    "info": "Ein Text pro Zeile. Steht still für Besucher mit reduzierter Bewegung. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Kostenloser Versand ab Mindestbestellwert\nSichere Bezahlung\nSchnelle Lieferung\nPersönlicher Service"
+   },
+   {
+    "type": "select",
+    "id": "speed",
+    "label": "Geschwindigkeit",
+    "default": "slow",
+    "options": [
+     {
+      "value": "slow",
+      "label": "Langsam"
+     },
+     {
+      "value": "normal",
+      "label": "Normal"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "slug": "product-safety",
+ "kind": "block",
+ "source": "blocks/product-safety.liquid",
+ "source_sha1": "383910fb4135",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Product safety",
+  "category": "Product: facts",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Manufacturer details must be shown on the product page (EU General Product Safety Regulation)."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "open",
+    "label": "Open by default",
+    "default": false
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.key. Find it under Settings → Custom data."
+   },
+   {
+    "type": "text",
+    "id": "manufacturer_metafield",
+    "label": "Metafield: manufacturer (overrides theme settings)",
+    "default": "custom.manufacturer"
+   },
+   {
+    "type": "text",
+    "id": "safety_metafield",
+    "label": "Metafield: safety information",
+    "default": "custom.safety_information"
+   }
+  ]
+ },
+ "de": {
+  "name": "Produktsicherheit",
+  "category": "Produkt: Angaben",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Herstellerangaben müssen auf der Produktseite stehen (EU-Produktsicherheitsverordnung)."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "open",
+    "label": "Standardmäßig geöffnet",
+    "default": false
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten."
+   },
+   {
+    "type": "text",
+    "id": "manufacturer_metafield",
+    "label": "Metafeld: Hersteller (überschreibt Theme-Einstellungen)",
+    "default": "custom.manufacturer"
+   },
+   {
+    "type": "text",
+    "id": "safety_metafield",
+    "label": "Metafeld: Sicherheitshinweise",
+    "default": "custom.safety_information"
+   }
+  ]
+ }
+}

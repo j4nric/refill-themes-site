@@ -1,0 +1,99 @@
+{
+ "block": "video-reels",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "reels",
+ "id": "reels-carousel",
+ "de": {
+  "desktop": {
+   "file": "de/video-reels-desktop.webp",
+   "width": 1521,
+   "height": 900,
+   "bytes": 33892,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/video-reels-desktop-800.webp",
+   "width": 800,
+   "height": 473,
+   "bytes": 15388,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/video-reels.webp",
+   "width": 640,
+   "height": 379,
+   "bytes": 11650,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "label",
+    "x": 2,
+    "y": 95.9,
+    "box": [
+     0.7,
+     93.9,
+     23.2,
+     5
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/video-reels-mobile.webp",
+   "width": 748,
+   "height": 1168,
+   "bytes": 28196,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/video-reels-desktop.webp",
+   "width": 1521,
+   "height": 900,
+   "bytes": 34072,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/video-reels-desktop-800.webp",
+   "width": 800,
+   "height": 473,
+   "bytes": 15344,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/video-reels.webp",
+   "width": 640,
+   "height": 379,
+   "bytes": 11264,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "label",
+    "x": 2,
+    "y": 95.8,
+    "box": [
+     0.7,
+     93.9,
+     23.2,
+     5
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/video-reels-mobile.webp",
+   "width": 748,
+   "height": 1168,
+   "bytes": 28566,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

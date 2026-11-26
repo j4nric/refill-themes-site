@@ -1,0 +1,27 @@
+{
+ "slug": "product-compare-toggle",
+ "kind": "block",
+ "source": "blocks/product-compare-toggle.liquid",
+ "source_sha1": "1f9a4fdf8abb",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Compare checkbox",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Adds the product to the comparison (up to four products, kept for the browser session). A bar shows the selection and leads to the comparison view. Hidden without JavaScript."
+   }
+  ]
+ },
+ "de": {
+  "name": "Häkchen „Vergleichen“",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Nimmt das Produkt in den Vergleich auf (bis zu vier Produkte, gilt für die Browsersitzung). Eine Leiste zeigt die Auswahl und führt zur Vergleichsansicht. Ohne JavaScript ausgeblendet."
+   }
+  ]
+ }
+}

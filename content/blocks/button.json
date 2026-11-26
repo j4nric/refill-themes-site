@@ -1,0 +1,177 @@
+{
+ "slug": "button",
+ "kind": "block",
+ "source": "blocks/button.liquid",
+ "source_sha1": "b3efd8f7f663",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Button",
+  "category": "Buttons and promotions",
+  "settings": [
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Label",
+    "default": "Shop now"
+   },
+   {
+    "type": "url",
+    "id": "link",
+    "label": "Link",
+    "visible_if": [
+     {
+      "setting": "label",
+      "label": "Label",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Style",
+    "default": "primary",
+    "options": [
+     {
+      "value": "primary",
+      "label": "Primary"
+     },
+     {
+      "value": "secondary",
+      "label": "Secondary"
+     },
+     {
+      "value": "tertiary",
+      "label": "Tertiary"
+     },
+     {
+      "value": "link",
+      "label": "Text link"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "label",
+      "label": "Label",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Button size",
+    "default": "normal",
+    "options": [
+     {
+      "value": "normal",
+      "label": "Normal"
+     },
+     {
+      "value": "small",
+      "label": "Small"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "label",
+      "label": "Label",
+      "op": "filled"
+     },
+     "and",
+     {
+      "setting": "style",
+      "label": "Style",
+      "op": "is_not",
+      "value": "Text link"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Button",
+  "category": "Buttons & Aktionen",
+  "settings": [
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Beschriftung",
+    "default": "Jetzt einkaufen"
+   },
+   {
+    "type": "url",
+    "id": "link",
+    "label": "Link",
+    "visible_if": [
+     {
+      "setting": "label",
+      "label": "Beschriftung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Stil",
+    "default": "primary",
+    "options": [
+     {
+      "value": "primary",
+      "label": "Primär"
+     },
+     {
+      "value": "secondary",
+      "label": "Sekundär"
+     },
+     {
+      "value": "tertiary",
+      "label": "Tertiär"
+     },
+     {
+      "value": "link",
+      "label": "Textlink"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "label",
+      "label": "Beschriftung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Button-Größe",
+    "default": "normal",
+    "options": [
+     {
+      "value": "normal",
+      "label": "Normal"
+     },
+     {
+      "value": "small",
+      "label": "Klein"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "label",
+      "label": "Beschriftung",
+      "op": "filled"
+     },
+     "and",
+     {
+      "setting": "style",
+      "label": "Stil",
+      "op": "is_not",
+      "value": "Textlink"
+     }
+    ]
+   }
+  ]
+ }
+}

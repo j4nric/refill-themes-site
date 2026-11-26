@@ -1,0 +1,345 @@
+{
+ "slug": "events",
+ "kind": "block",
+ "source": "blocks/events.liquid",
+ "source_sha1": "48b281478af4",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Events",
+  "category": "Events",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Shows upcoming metaobjects of the type “Event” (event), sorted by start; past events disappear on their own. Definition and fields: theme documentation, “Events”. Up to 250 entries."
+   },
+   {
+    "type": "select",
+    "id": "heading_tag",
+    "label": "Heading level of event titles",
+    "default": "h3",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Section"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Subsection"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Minor subsection"
+     },
+     {
+      "value": "p",
+      "label": "Normal text"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "View"
+   },
+   {
+    "type": "select",
+    "id": "default_view",
+    "label": "Initial view",
+    "info": "Without JavaScript, the list is always shown.",
+    "default": "list",
+    "options": [
+     {
+      "value": "list",
+      "label": "List"
+     },
+     {
+      "value": "calendar",
+      "label": "Month calendar"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_view_toggle",
+    "label": "Show list/calendar switch",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Events in the list",
+    "info": "Further events appear with “Show all events”. The calendar always shows all of them.",
+    "default": 10,
+    "min": 3,
+    "max": 50,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "only_kind",
+    "label": "Only this type",
+    "default": "all",
+    "options": [
+     {
+      "value": "all",
+      "label": "All types"
+     },
+     {
+      "value": "tasting",
+      "label": "Tasting"
+     },
+     {
+      "value": "workshop",
+      "label": "Workshop"
+     },
+     {
+      "value": "refill-day",
+      "label": "Refill day"
+     },
+     {
+      "value": "online",
+      "label": "Online"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_filter",
+    "label": "Filter by type",
+    "info": "Appears when the events have at least two types.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "only_kind",
+      "label": "Only this type",
+      "op": "is",
+      "value": "All types"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Event content"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Image",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_location",
+    "label": "Location",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_seats",
+    "label": "Places",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_description",
+    "label": "Description",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_product",
+    "label": "Linked product (e.g. ticket)",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_add_to_calendar",
+    "label": "“Add to calendar”",
+    "info": "Downloads an .ics file for Apple Calendar, Outlook and Google Calendar. Without JavaScript, the link opens a Google Calendar template.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_empty",
+    "label": "Message without upcoming events",
+    "info": "Shows “No events right now”. When turned off, the block is hidden.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "structured_data",
+    "label": "Structured data (Event)",
+    "info": "Helps search engines recognize the date, location and tickets of each event.",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Termine",
+  "category": "Termine",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Zeigt kommende Metaobjekte vom Typ „Termin“ (event), nach Beginn sortiert; vergangene Termine verschwinden von selbst. Definition und Felder: Theme-Dokumentation, „Termine“. Bis zu 250 Einträge."
+   },
+   {
+    "type": "select",
+    "id": "heading_tag",
+    "label": "Gliederungsebene der Termintitel",
+    "default": "h3",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Abschnitt"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Unterpunkt"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Unter-Unterpunkt"
+     },
+     {
+      "value": "p",
+      "label": "Normaler Text"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Ansicht"
+   },
+   {
+    "type": "select",
+    "id": "default_view",
+    "label": "Startansicht",
+    "info": "Ohne JavaScript erscheint immer die Liste.",
+    "default": "list",
+    "options": [
+     {
+      "value": "list",
+      "label": "Liste"
+     },
+     {
+      "value": "calendar",
+      "label": "Monatskalender"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_view_toggle",
+    "label": "Umschalter Liste/Kalender",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Termine in der Liste",
+    "info": "Weitere Termine erscheinen mit „Alle Termine zeigen“. Der Kalender zeigt immer alle.",
+    "default": 10,
+    "min": 3,
+    "max": 50,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "only_kind",
+    "label": "Nur diese Art zeigen",
+    "default": "all",
+    "options": [
+     {
+      "value": "all",
+      "label": "Alle Arten"
+     },
+     {
+      "value": "tasting",
+      "label": "Verkostung"
+     },
+     {
+      "value": "workshop",
+      "label": "Workshop"
+     },
+     {
+      "value": "refill-day",
+      "label": "Nachfüll-Tag"
+     },
+     {
+      "value": "online",
+      "label": "Online"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_filter",
+    "label": "Filter nach Art",
+    "info": "Erscheint, wenn die Termine mindestens zwei Arten haben.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "only_kind",
+      "label": "Nur diese Art zeigen",
+      "op": "is",
+      "value": "Alle Arten"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Inhalt der Termine"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Bild",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_location",
+    "label": "Ort",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_seats",
+    "label": "Plätze",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_description",
+    "label": "Beschreibung",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_product",
+    "label": "Verknüpftes Produkt (z. B. Ticket)",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_add_to_calendar",
+    "label": "„In den Kalender“",
+    "info": "Lädt eine .ics-Datei für Apple Kalender, Outlook und Google Kalender herunter. Ohne JavaScript öffnet der Link eine Vorlage in Google Kalender.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_empty",
+    "label": "Hinweis ohne kommende Termine",
+    "info": "Zeigt „Gerade keine Termine“. Ausgeschaltet verschwindet der Block.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "structured_data",
+    "label": "Strukturierte Daten (Event)",
+    "info": "Hilft Suchmaschinen, Datum, Ort und Tickets jedes Termins zu erkennen.",
+    "default": true
+   }
+  ]
+ }
+}

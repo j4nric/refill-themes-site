@@ -1,0 +1,73 @@
+{
+ "block": "comparison-table",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "compare",
+ "id": "compare-table",
+ "de": {
+  "desktop": {
+   "file": "de/comparison-table-desktop.webp",
+   "width": 741,
+   "height": 513,
+   "bytes": 14074,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/comparison-table-desktop-800.webp",
+   "width": 741,
+   "height": 513,
+   "bytes": 14074,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/comparison-table.webp",
+   "width": 640,
+   "height": 443,
+   "bytes": 11484,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/comparison-table-mobile.webp",
+   "width": 748,
+   "height": 1006,
+   "bytes": 23100,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/comparison-table-desktop.webp",
+   "width": 741,
+   "height": 498,
+   "bytes": 12770,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/comparison-table-desktop-800.webp",
+   "width": 741,
+   "height": 498,
+   "bytes": 12770,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/comparison-table.webp",
+   "width": 640,
+   "height": 430,
+   "bytes": 10920,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/comparison-table-mobile.webp",
+   "width": 748,
+   "height": 958,
+   "bytes": 21064,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

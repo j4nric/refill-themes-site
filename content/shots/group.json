@@ -1,0 +1,99 @@
+{
+ "block": "group",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "hero",
+ "id": "hero-buttons",
+ "de": {
+  "desktop": {
+   "file": "de/group-desktop.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 25268,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/group-desktop-800.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 25268,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/group.webp",
+   "width": 640,
+   "height": 477,
+   "bytes": 20170,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "button",
+    "x": 3.9,
+    "y": 65.9,
+    "box": [
+     6.5,
+     62.8,
+     31.7,
+     11
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/group-mobile.webp",
+   "width": 652,
+   "height": 252,
+   "bytes": 6532,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/group-desktop.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 24634,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/group-desktop-800.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 24634,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/group.webp",
+   "width": 640,
+   "height": 477,
+   "bytes": 21752,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "button",
+    "x": 3.9,
+    "y": 65.8,
+    "box": [
+     6.5,
+     62.8,
+     26.9,
+     11
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/group-mobile.webp",
+   "width": 652,
+   "height": 252,
+   "bytes": 6048,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

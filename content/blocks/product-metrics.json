@@ -1,0 +1,195 @@
+{
+ "slug": "product-metrics",
+ "kind": "block",
+ "source": "blocks/product-metrics.liquid",
+ "source_sha1": "922787fbbf3a",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Key figures",
+  "category": "Product: content",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Serving, servings and price per day or serving come from the metafields in Theme settings → Product data. Add up to two more figures here, also connected to a metafield. A value like “3/5” is shown as a scale."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_per_day",
+    "label": "Show price per day or serving",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: servings per pack",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_supply",
+    "label": "Show supply duration (“Lasts 30 days – until …”)",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: servings per pack",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Additional key figure 1"
+   },
+   {
+    "type": "text",
+    "id": "label_1",
+    "label": "Label (e.g. Strength)"
+   },
+   {
+    "type": "text",
+    "id": "value_1",
+    "label": "Value (e.g. 250 ml or 3/5 for a scale)",
+    "visible_if": [
+     {
+      "setting": "label_1",
+      "label": "Label (e.g. Strength)",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "label_1",
+      "label": "Label (e.g. Strength)",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Additional key figure 2"
+   },
+   {
+    "type": "text",
+    "id": "label_2",
+    "label": "Label (e.g. Contents)"
+   },
+   {
+    "type": "text",
+    "id": "value_2",
+    "label": "Value (e.g. 250 ml or 3/5 for a scale)",
+    "visible_if": [
+     {
+      "setting": "label_2",
+      "label": "Label (e.g. Contents)",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "label_2",
+      "label": "Label (e.g. Contents)",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Kennzahlen",
+  "category": "Produkt: Inhalte",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Portion, Portionen und Preis pro Tag bzw. Portion kommen aus den Metafeldern unter Theme-Einstellungen → Produktdaten. Hier lassen sich bis zu zwei weitere Werte ergänzen, auch verbunden mit einem Metafeld. Ein Wert wie „3/5“ erscheint als Skala."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_per_day",
+    "label": "Preis pro Tag bzw. Portion anzeigen",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Portionen pro Packung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_supply",
+    "label": "Reichweite anzeigen („Reicht 30 Tage – bis …“)",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Portionen pro Packung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Zusätzliche Kennzahl 1"
+   },
+   {
+    "type": "text",
+    "id": "label_1",
+    "label": "Bezeichnung (z. B. Stärke)"
+   },
+   {
+    "type": "text",
+    "id": "value_1",
+    "label": "Wert (z. B. 250 ml oder 3/5 für eine Skala)",
+    "visible_if": [
+     {
+      "setting": "label_1",
+      "label": "Bezeichnung (z. B. Stärke)",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "label_1",
+      "label": "Bezeichnung (z. B. Stärke)",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Zusätzliche Kennzahl 2"
+   },
+   {
+    "type": "text",
+    "id": "label_2",
+    "label": "Bezeichnung (z. B. Inhalt)"
+   },
+   {
+    "type": "text",
+    "id": "value_2",
+    "label": "Wert (z. B. 250 ml oder 3/5 für eine Skala)",
+    "visible_if": [
+     {
+      "setting": "label_2",
+      "label": "Bezeichnung (z. B. Inhalt)",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "label_2",
+      "label": "Bezeichnung (z. B. Inhalt)",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ }
+}

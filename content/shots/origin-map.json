@@ -1,0 +1,73 @@
+{
+ "block": "origin-map",
+ "shop": "kessel-und-blatt",
+ "template": "index.json",
+ "section": "herkunft",
+ "id": "herkunft-map",
+ "de": {
+  "desktop": {
+   "file": "de/origin-map-desktop.webp",
+   "width": 1440,
+   "height": 1121,
+   "bytes": 28440,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/origin-map-desktop-800.webp",
+   "width": 800,
+   "height": 623,
+   "bytes": 13226,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/origin-map.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 9362,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/origin-map-mobile.webp",
+   "width": 748,
+   "height": 2262,
+   "bytes": 40946,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/origin-map-desktop.webp",
+   "width": 1440,
+   "height": 1121,
+   "bytes": 28840,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/origin-map-desktop-800.webp",
+   "width": 800,
+   "height": 623,
+   "bytes": 13520,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/origin-map.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 9574,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/origin-map-mobile.webp",
+   "width": 748,
+   "height": 2262,
+   "bytes": 42502,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

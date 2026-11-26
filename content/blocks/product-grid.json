@@ -1,0 +1,357 @@
+{
+ "slug": "product-grid",
+ "kind": "block",
+ "source": "blocks/product-grid.liquid",
+ "source_sha1": "b28307871497",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Products from collection",
+  "category": "Products and collections",
+  "settings": [
+   {
+    "type": "header",
+    "content": "Content"
+   },
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Collection"
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Number of products",
+    "default": 4,
+    "min": 2,
+    "max": 12,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Columns on large screens",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Columns on small screens",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_ratio",
+    "label": "Image aspect ratio",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "9 / 16",
+      "label": "9 : 16"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_fit",
+    "label": "Image fit",
+    "info": "“Show whole image” suits cut-out product images; photos with their own background otherwise show bars when the aspect ratio differs.",
+    "default": "cover",
+    "options": [
+     {
+      "value": "cover",
+      "label": "Fill frame (crop)"
+     },
+     {
+      "value": "contain",
+      "label": "Show whole image"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_metrics",
+    "label": "Show key figures (serving, servings)",
+    "info": "Uses the metafields set in theme settings → Product data. Price per day has its own switch.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: amount per serving",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Metafield: servings per pack",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_per_day",
+    "label": "Show price per day or serving",
+    "info": "Only for products with a single price and a servings metafield.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: servings per pack",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Show profile scales (e.g. scent, texture)",
+    "info": "Only when “Show profile scales on product cards” is on in theme settings.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Show unit price",
+    "info": "Price per unit of measure, e.g. €16.86/100 g. Usually required in the EU for goods sold by weight, volume or length: only turn off if it isn’t needed here.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Show “Compare” checkbox",
+    "info": "Only when the “Compare” checkbox is on in theme settings (product cards).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Produkte aus Kollektion",
+  "category": "Produkte & Kollektionen",
+  "settings": [
+   {
+    "type": "header",
+    "content": "Inhalt"
+   },
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Kollektion"
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Anzahl Produkte",
+    "default": 4,
+    "min": 2,
+    "max": 12,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Spalten auf großen Bildschirmen",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Spalten auf kleinen Bildschirmen",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_ratio",
+    "label": "Bild-Seitenverhältnis",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "9 / 16",
+      "label": "9 : 16"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_fit",
+    "label": "Bildanpassung",
+    "info": "„Ganzes Bild zeigen“ eignet sich für freigestellte Produktbilder; bei Fotos mit eigenem Hintergrund entstehen sonst Balken, wenn das Seitenverhältnis abweicht.",
+    "default": "cover",
+    "options": [
+     {
+      "value": "cover",
+      "label": "Feld füllen (zuschneiden)"
+     },
+     {
+      "value": "contain",
+      "label": "Ganzes Bild zeigen"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_metrics",
+    "label": "Kennzahlen anzeigen (Portion, Portionen)",
+    "info": "Nutzt die Metafelder aus Theme-Einstellungen → Produktdaten. Der Preis pro Tag hat einen eigenen Schalter.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Menge je Portion",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Metafeld: Portionen pro Packung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_per_day",
+    "label": "Preis pro Tag bzw. Portion anzeigen",
+    "info": "Nur bei Produkten mit einheitlichem Preis und Portionen-Metafeld.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Portionen pro Packung",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Profil-Skalen zeigen (z. B. Duft, Textur)",
+    "info": "Nur wenn „Profil-Skalen in Produktkarten zeigen“ in den Theme-Einstellungen aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Grundpreis zeigen",
+    "info": "Preis je Mengeneinheit, z. B. 16,86 €/100 g. In der EU für Waren nach Gewicht, Volumen oder Länge meist Pflicht: nur abschalten, wenn er hier nicht nötig ist.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Häkchen „Vergleichen“ zeigen",
+    "info": "Nur wenn das Häkchen „Vergleichen“ in den Theme-Einstellungen (Produktkarten) aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ }
+}

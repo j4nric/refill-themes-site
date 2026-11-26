@@ -1,0 +1,119 @@
+{
+ "slug": "store-locator",
+ "kind": "block",
+ "source": "blocks/store-locator.liquid",
+ "source_sha1": "956fdd35a820",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Store locator",
+  "category": "Locations",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Shows metaobjects of the type “Location” (store_location): shops, refill stations, stockists. Definition and fields: theme documentation, “Locations”. Up to 250 entries."
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Layout",
+    "info": "“Map alongside” places the map next to the search and list when there is enough room (from about 900 px).",
+    "default": "stacked",
+    "options": [
+     {
+      "value": "stacked",
+      "label": "Stacked"
+     },
+     {
+      "value": "side",
+      "label": "Map alongside"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Space between parts",
+    "info": "For more space at one spot, add a Spacer block between two parts.",
+    "default": "6",
+    "options": [
+     {
+      "value": "2",
+      "label": "Extra small"
+     },
+     {
+      "value": "4",
+      "label": "Small"
+     },
+     {
+      "value": "6",
+      "label": "Medium"
+     },
+     {
+      "value": "8",
+      "label": "Large"
+     },
+     {
+      "value": "12",
+      "label": "Extra large"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Standorte",
+  "category": "Standorte",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Zeigt die Metaobjekte vom Typ „Standort“ (store_location): Läden, Nachfüllstationen, Verkaufsstellen. Definition und Felder: Theme-Dokumentation, „Standorte“. Bis zu 250 Einträge."
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Layout",
+    "info": "„Karte daneben“ stellt die Karte rechts neben Suche und Liste, sobald der Platz reicht (ab etwa 900 px).",
+    "default": "stacked",
+    "options": [
+     {
+      "value": "stacked",
+      "label": "Untereinander"
+     },
+     {
+      "value": "side",
+      "label": "Karte daneben"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Abstand zwischen den Teilen",
+    "info": "Für mehr Abstand an einer Stelle einen Block Leerraum zwischen zwei Teile setzen.",
+    "default": "6",
+    "options": [
+     {
+      "value": "2",
+      "label": "Sehr klein"
+     },
+     {
+      "value": "4",
+      "label": "Klein"
+     },
+     {
+      "value": "6",
+      "label": "Mittel"
+     },
+     {
+      "value": "8",
+      "label": "Groß"
+     },
+     {
+      "value": "12",
+      "label": "Sehr groß"
+     }
+    ]
+   }
+  ]
+ }
+}

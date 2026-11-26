@@ -1,0 +1,123 @@
+{
+ "block": "product-title",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "product-title",
+ "de": {
+  "desktop": {
+   "file": "de/product-title-desktop.webp",
+   "width": 621,
+   "height": 609,
+   "bytes": 27114,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/product-title-desktop-800.webp",
+   "width": 621,
+   "height": 609,
+   "bytes": 27114,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/product-title.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 24376,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_vendor",
+    "x": 4.9,
+    "y": 3.2,
+    "box": [
+     1.7,
+     1.8,
+     96.7,
+     3
+    ],
+    "n": 1
+   },
+   {
+    "setting": "show_subtitle",
+    "x": 4.9,
+    "y": 20.3,
+    "box": [
+     1.7,
+     17.5,
+     96.7,
+     6.3
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/product-title-mobile.webp",
+   "width": 748,
+   "height": 264,
+   "bytes": 10784,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/product-title-desktop.webp",
+   "width": 621,
+   "height": 609,
+   "bytes": 26714,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/product-title-desktop-800.webp",
+   "width": 621,
+   "height": 609,
+   "bytes": 26714,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/product-title.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 25464,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_vendor",
+    "x": 4.9,
+    "y": 3.2,
+    "box": [
+     1.7,
+     1.7,
+     96.7,
+     3
+    ],
+    "n": 1
+   },
+   {
+    "setting": "show_subtitle",
+    "x": 4.9,
+    "y": 20.3,
+    "box": [
+     1.7,
+     17.4,
+     96.7,
+     6.3
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/product-title-mobile.webp",
+   "width": 748,
+   "height": 264,
+   "bytes": 10810,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

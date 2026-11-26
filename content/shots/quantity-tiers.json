@@ -1,0 +1,73 @@
+{
+ "block": "quantity-tiers",
+ "shop": "nordform",
+ "template": "product.multipack.json",
+ "section": "main",
+ "id": "quantity-tiers",
+ "de": {
+  "desktop": {
+   "file": "de/quantity-tiers-desktop.webp",
+   "width": 621,
+   "height": 228,
+   "bytes": 9240,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/quantity-tiers-desktop-800.webp",
+   "width": 621,
+   "height": 228,
+   "bytes": 9240,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/quantity-tiers.webp",
+   "width": 621,
+   "height": 228,
+   "bytes": 9240,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/quantity-tiers-mobile.webp",
+   "width": 748,
+   "height": 614,
+   "bytes": 15856,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/quantity-tiers-desktop.webp",
+   "width": 621,
+   "height": 228,
+   "bytes": 7964,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/quantity-tiers-desktop-800.webp",
+   "width": 621,
+   "height": 228,
+   "bytes": 7964,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/quantity-tiers.webp",
+   "width": 621,
+   "height": 228,
+   "bytes": 7964,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/quantity-tiers-mobile.webp",
+   "width": 748,
+   "height": 614,
+   "bytes": 14056,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

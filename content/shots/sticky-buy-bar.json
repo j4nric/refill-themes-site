@@ -1,0 +1,73 @@
+{
+ "block": "sticky-buy-bar",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "sticky-buy-bar",
+ "de": {
+  "desktop": {
+   "file": "de/sticky-buy-bar-desktop.webp",
+   "width": 1600,
+   "height": 314,
+   "bytes": 22428,
+   "quality": 80,
+   "how": "fixed"
+  },
+  "desktop_small": {
+   "file": "de/sticky-buy-bar-desktop-800.webp",
+   "width": 800,
+   "height": 157,
+   "bytes": 9194,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/sticky-buy-bar.webp",
+   "width": 640,
+   "height": 126,
+   "bytes": 6698,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/sticky-buy-bar-mobile.webp",
+   "width": 780,
+   "height": 548,
+   "bytes": 16060,
+   "quality": 80,
+   "how": "fixed"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sticky-buy-bar-desktop.webp",
+   "width": 1600,
+   "height": 314,
+   "bytes": 15332,
+   "quality": 80,
+   "how": "fixed"
+  },
+  "desktop_small": {
+   "file": "en/sticky-buy-bar-desktop-800.webp",
+   "width": 800,
+   "height": 157,
+   "bytes": 6414,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/sticky-buy-bar.webp",
+   "width": 640,
+   "height": 126,
+   "bytes": 4548,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/sticky-buy-bar-mobile.webp",
+   "width": 780,
+   "height": 490,
+   "bytes": 20006,
+   "quality": 80,
+   "how": "fixed"
+  }
+ }
+}

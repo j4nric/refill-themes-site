@@ -1,0 +1,99 @@
+{
+ "block": "routine",
+ "shop": "ostra",
+ "template": "index.json",
+ "section": "routine",
+ "id": "routine",
+ "de": {
+  "desktop": {
+   "file": "de/routine-desktop.webp",
+   "width": 1440,
+   "height": 636,
+   "bytes": 40628,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/routine-desktop-800.webp",
+   "width": 800,
+   "height": 353,
+   "bytes": 18914,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/routine.webp",
+   "width": 640,
+   "height": 283,
+   "bytes": 13716,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2.1,
+    "y": 4.4,
+    "box": [
+     0.7,
+     1.6,
+     98.6,
+     7.7
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/routine-mobile.webp",
+   "width": 748,
+   "height": 2438,
+   "bytes": 66438,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/routine-desktop.webp",
+   "width": 1440,
+   "height": 579,
+   "bytes": 36364,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/routine-desktop-800.webp",
+   "width": 800,
+   "height": 322,
+   "bytes": 16880,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/routine.webp",
+   "width": 640,
+   "height": 257,
+   "bytes": 12348,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2.1,
+    "y": 4.8,
+    "box": [
+     0.7,
+     1.8,
+     98.6,
+     8.4
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/routine-mobile.webp",
+   "width": 748,
+   "height": 2264,
+   "bytes": 59708,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

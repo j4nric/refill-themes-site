@@ -1,0 +1,493 @@
+{
+ "slug": "line-art",
+ "kind": "block",
+ "source": "blocks/line-art.liquid",
+ "source_sha1": "a796309f418a",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Line art",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Decorative line motif, e.g. next to images, between columns or under a heading. Scroll motion needs no extra script. With “Reduce motion” the motif stays still and fully drawn."
+   },
+   {
+    "type": "select",
+    "id": "motif",
+    "label": "Motif",
+    "default": "waves",
+    "options": [
+     {
+      "value": "waves",
+      "label": "Waves"
+     },
+     {
+      "value": "cycle",
+      "label": "Cycle (arrow ring)"
+     },
+     {
+      "value": "contours",
+      "label": "Contour lines"
+     },
+     {
+      "value": "path_dots",
+      "label": "Path with dots"
+     },
+     {
+      "value": "connector",
+      "label": "Connector line"
+     },
+     {
+      "value": "swash",
+      "label": "Swash (underline)"
+     },
+     {
+      "value": "corners",
+      "label": "Frame corners"
+     },
+     {
+      "value": "branch",
+      "label": "Branch with leaf veins"
+     },
+     {
+      "value": "steam",
+      "label": "Steam curls"
+     },
+     {
+      "value": "drops",
+      "label": "Drop with ripples"
+     },
+     {
+      "value": "scale",
+      "label": "Measuring scale"
+     },
+     {
+      "value": "orbit",
+      "label": "Orbit"
+     },
+     {
+      "value": "arrow",
+      "label": "Curved arrow"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "behavior",
+    "label": "On scroll",
+    "default": "draw",
+    "options": [
+     {
+      "value": "draw",
+      "label": "Draw (line appears as you scroll)"
+     },
+     {
+      "value": "drift",
+      "label": "Drift (parallax)"
+     },
+     {
+      "value": "wave",
+      "label": "Wave (moves sideways)"
+     },
+     {
+      "value": "rotate",
+      "label": "Rotate"
+     },
+     {
+      "value": "travel",
+      "label": "Dot travels along"
+     },
+     {
+      "value": "still",
+      "label": "Still (no motion)"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "select",
+    "id": "color",
+    "label": "Color",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Scheme: text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Scheme: secondary text"
+     },
+     {
+      "value": "rule",
+      "label": "Scheme: line"
+     },
+     {
+      "value": "signal",
+      "label": "Scheme: accent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "stroke",
+    "label": "Line weight",
+    "default": "medium",
+    "options": [
+     {
+      "value": "fine",
+      "label": "Fine"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "heavy",
+      "label": "Bold"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "width",
+    "label": "Width",
+    "default": 100,
+    "min": 10,
+    "max": 100,
+    "step": 5,
+    "unit": "%"
+   },
+   {
+    "type": "select",
+    "id": "alignment",
+    "label": "Alignment",
+    "default": "center",
+    "options": [
+     {
+      "value": "start",
+      "label": "Left"
+     },
+     {
+      "value": "center",
+      "label": "Center"
+     },
+     {
+      "value": "end",
+      "label": "Right"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "flip",
+    "label": "Mirror",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "horizontal",
+      "label": "Horizontal"
+     },
+     {
+      "value": "vertical",
+      "label": "Vertical"
+     },
+     {
+      "value": "both",
+      "label": "Both"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "repeat",
+    "label": "Repeats side by side",
+    "default": 1,
+    "min": 1,
+    "max": 4,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "opacity",
+    "label": "Opacity",
+    "default": 100,
+    "min": 10,
+    "max": 100,
+    "step": 10,
+    "unit": "%"
+   }
+  ]
+ },
+ "de": {
+  "name": "Linien-Grafik",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Dekoratives Linien-Motiv, z. B. neben Bildern, zwischen Spalten oder unter einer Überschrift. Die Bewegung beim Scrollen braucht kein zusätzliches Skript. Bei „Bewegung reduzieren“ steht das Motiv fertig gezeichnet still."
+   },
+   {
+    "type": "select",
+    "id": "motif",
+    "label": "Motiv",
+    "default": "waves",
+    "options": [
+     {
+      "value": "waves",
+      "label": "Wellen"
+     },
+     {
+      "value": "cycle",
+      "label": "Kreislauf (Pfeilring)"
+     },
+     {
+      "value": "contours",
+      "label": "Höhenlinien"
+     },
+     {
+      "value": "path_dots",
+      "label": "Pfad mit Punkten"
+     },
+     {
+      "value": "connector",
+      "label": "Verbindungslinie"
+     },
+     {
+      "value": "swash",
+      "label": "Schwung (Unterstreichung)"
+     },
+     {
+      "value": "corners",
+      "label": "Rahmen-Ecken"
+     },
+     {
+      "value": "branch",
+      "label": "Zweig mit Blattadern"
+     },
+     {
+      "value": "steam",
+      "label": "Dampf-Kringel"
+     },
+     {
+      "value": "drops",
+      "label": "Tropfen mit Ringen"
+     },
+     {
+      "value": "scale",
+      "label": "Messlinien (Skala)"
+     },
+     {
+      "value": "orbit",
+      "label": "Orbit"
+     },
+     {
+      "value": "arrow",
+      "label": "Geschwungener Pfeil"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "behavior",
+    "label": "Beim Scrollen",
+    "default": "draw",
+    "options": [
+     {
+      "value": "draw",
+      "label": "Zeichnen (Strich entsteht beim Scrollen)"
+     },
+     {
+      "value": "drift",
+      "label": "Mitlaufen (Parallaxe)"
+     },
+     {
+      "value": "wave",
+      "label": "Welle (wandert seitlich)"
+     },
+     {
+      "value": "rotate",
+      "label": "Drehen"
+     },
+     {
+      "value": "travel",
+      "label": "Punkt läuft entlang"
+     },
+     {
+      "value": "still",
+      "label": "Ruhig (ohne Bewegung)"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "select",
+    "id": "color",
+    "label": "Farbe",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Schema: Text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Schema: Sekundärtext"
+     },
+     {
+      "value": "rule",
+      "label": "Schema: Linie"
+     },
+     {
+      "value": "signal",
+      "label": "Schema: Akzent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "stroke",
+    "label": "Strichstärke",
+    "default": "medium",
+    "options": [
+     {
+      "value": "fine",
+      "label": "Fein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "heavy",
+      "label": "Kräftig"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "width",
+    "label": "Breite",
+    "default": 100,
+    "min": 10,
+    "max": 100,
+    "step": 5,
+    "unit": "%"
+   },
+   {
+    "type": "select",
+    "id": "alignment",
+    "label": "Ausrichtung",
+    "default": "center",
+    "options": [
+     {
+      "value": "start",
+      "label": "Links"
+     },
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "end",
+      "label": "Rechts"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "flip",
+    "label": "Spiegeln",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "Nicht spiegeln"
+     },
+     {
+      "value": "horizontal",
+      "label": "Waagerecht"
+     },
+     {
+      "value": "vertical",
+      "label": "Senkrecht"
+     },
+     {
+      "value": "both",
+      "label": "Beides"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "repeat",
+    "label": "Wiederholungen nebeneinander",
+    "default": 1,
+    "min": 1,
+    "max": 4,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "opacity",
+    "label": "Deckkraft",
+    "default": 100,
+    "min": 10,
+    "max": 100,
+    "step": 10,
+    "unit": "%"
+   }
+  ]
+ }
+}

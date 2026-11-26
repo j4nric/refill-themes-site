@@ -1,0 +1,99 @@
+{
+ "block": "ingredient-index",
+ "shop": "nordform",
+ "template": "page.ingredients.json",
+ "section": "main",
+ "id": "index",
+ "de": {
+  "desktop": {
+   "file": "de/ingredient-index-desktop.webp",
+   "width": 1521,
+   "height": 1250,
+   "bytes": 36510,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/ingredient-index-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 14862,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/ingredient-index.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 10414,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 10.7,
+    "box": [
+     0.7,
+     9.3,
+     3.9,
+     6.8
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/ingredient-index-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 56876,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/ingredient-index-desktop.webp",
+   "width": 1521,
+   "height": 1250,
+   "bytes": 41112,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/ingredient-index-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 16220,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/ingredient-index.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 11208,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 10.8,
+    "box": [
+     0.7,
+     9.4,
+     3.9,
+     6.8
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/ingredient-index-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 60854,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

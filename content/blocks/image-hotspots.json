@@ -1,0 +1,599 @@
+{
+ "slug": "image-hotspots",
+ "kind": "block",
+ "source": "blocks/image-hotspots.liquid",
+ "source_sha1": "3a2934fb45c8",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Shoppable image",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+   },
+   {
+    "type": "text",
+    "id": "alt",
+    "label": "Alternative text",
+    "info": "Describes the image for screen readers. Empty: the image's alt text from Shopify.",
+    "visible_if": [
+     {
+      "setting": "image",
+      "label": "Image",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "image",
+      "label": "Image",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "aspect_ratio",
+    "label": "Aspect ratio",
+    "info": "Marker positions refer to the visible image area. With “Original” the whole image is visible.",
+    "default": "adapt",
+    "options": [
+     {
+      "value": "adapt",
+      "label": "Original"
+     },
+     {
+      "value": "2 / 3",
+      "label": "2 : 3"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 3",
+      "label": "4 : 3"
+     },
+     {
+      "value": "3 / 2",
+      "label": "3 : 2"
+     },
+     {
+      "value": "16 / 9",
+      "label": "16 : 9"
+     },
+     {
+      "value": "21 / 9",
+      "label": "21 : 9"
+     },
+     {
+      "value": "3 / 1",
+      "label": "3 : 1"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Image position",
+    "info": "Which part stays visible when the image is cropped. A focal point set in Shopify (Content › Files › image) takes priority.",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Center"
+     },
+     {
+      "value": "top",
+      "label": "Top"
+     },
+     {
+      "value": "bottom",
+      "label": "Bottom"
+     },
+     {
+      "value": "left",
+      "label": "Left"
+     },
+     {
+      "value": "right",
+      "label": "Right"
+     },
+     {
+      "value": "left top",
+      "label": "Top left"
+     },
+     {
+      "value": "right top",
+      "label": "Top right"
+     },
+     {
+      "value": "left bottom",
+      "label": "Bottom left"
+     },
+     {
+      "value": "right bottom",
+      "label": "Bottom right"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "aspect_ratio",
+      "label": "Aspect ratio",
+      "op": "is_not",
+      "value": "Original"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "aspect_ratio",
+      "label": "Aspect ratio",
+      "op": "is_not",
+      "value": "Original"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Layout",
+    "info": "Columns from a block width of 750 px: the list always sits next to the image, and a marker jumps to its entry. Narrower, the list sits below the image.",
+    "default": "stacked",
+    "options": [
+     {
+      "value": "stacked",
+      "label": "Image, card at marker"
+     },
+     {
+      "value": "columns_2",
+      "label": "2 columns: image and list"
+     },
+     {
+      "value": "columns_3",
+      "label": "3 columns: image across two, list"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "list_columns",
+    "label": "Products on desktop",
+    "info": "List next to the image from a block width of 750 px. Two columns work best with the “2 columns” layout.",
+    "default": "1",
+    "options": [
+     {
+      "value": "1",
+      "label": "1 column"
+     },
+     {
+      "value": "2",
+      "label": "2 columns"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is_not",
+      "value": "Image, card at marker"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is_not",
+      "value": "Image, card at marker"
+     }
+    ]
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Marker color scheme",
+    "info": "Markers use the scheme’s accent color, with border and number in “Text on accent”.",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "dot_style",
+    "label": "Marker style",
+    "info": "Numbers get smaller below a block width of 750 px. “Small dot” covers the least of the image; the list below the image then has no numbers.",
+    "default": "number",
+    "options": [
+     {
+      "value": "number",
+      "label": "Number"
+     },
+     {
+      "value": "dot",
+      "label": "Small dot"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Shop the look"
+   },
+   {
+    "type": "checkbox",
+    "id": "look_add",
+    "label": "Add all products to cart",
+    "info": "Lists the products of the markers below the image with checkboxes, options, total price and one button. Sold-out products are shown but cannot be selected.",
+    "default": false
+   },
+   {
+    "type": "text",
+    "id": "look_heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Shop the look",
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "look_heading_tag",
+    "label": "Heading level (SEO)",
+    "default": "h2",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Section"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Subsection"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Minor subsection"
+     },
+     {
+      "value": "p",
+      "label": "Normal text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "look_heading",
+      "label": "Heading",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Bild mit Markierungen",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Bild"
+   },
+   {
+    "type": "text",
+    "id": "alt",
+    "label": "Alternativtext",
+    "info": "Beschreibt das Bild für Screenreader. Leer: Alternativtext aus Shopify.",
+    "visible_if": [
+     {
+      "setting": "image",
+      "label": "Bild",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "image",
+      "label": "Bild",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "aspect_ratio",
+    "label": "Seitenverhältnis",
+    "info": "Die Positionen der Markierungen beziehen sich auf den sichtbaren Bildausschnitt. Bei „Original“ ist das ganze Bild sichtbar.",
+    "default": "adapt",
+    "options": [
+     {
+      "value": "adapt",
+      "label": "Original"
+     },
+     {
+      "value": "2 / 3",
+      "label": "2 : 3"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 3",
+      "label": "4 : 3"
+     },
+     {
+      "value": "3 / 2",
+      "label": "3 : 2"
+     },
+     {
+      "value": "16 / 9",
+      "label": "16 : 9"
+     },
+     {
+      "value": "21 / 9",
+      "label": "21 : 9"
+     },
+     {
+      "value": "3 / 1",
+      "label": "3 : 1"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Bildausrichtung",
+    "info": "Welcher Teil sichtbar bleibt, wenn das Bild beschnitten wird. Ein Fokuspunkt aus Shopify (Inhalte › Dateien › Bild) hat Vorrang.",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "top",
+      "label": "Oben"
+     },
+     {
+      "value": "bottom",
+      "label": "Unten"
+     },
+     {
+      "value": "left",
+      "label": "Links"
+     },
+     {
+      "value": "right",
+      "label": "Rechts"
+     },
+     {
+      "value": "left top",
+      "label": "Oben links"
+     },
+     {
+      "value": "right top",
+      "label": "Oben rechts"
+     },
+     {
+      "value": "left bottom",
+      "label": "Unten links"
+     },
+     {
+      "value": "right bottom",
+      "label": "Unten rechts"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "aspect_ratio",
+      "label": "Seitenverhältnis",
+      "op": "is_not",
+      "value": "Original"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "aspect_ratio",
+      "label": "Seitenverhältnis",
+      "op": "is_not",
+      "value": "Original"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Anordnung",
+    "info": "Spalten ab 750 px Breite des Blocks: Die Liste steht immer neben dem Bild, ein Punkt springt zu seinem Eintrag. Schmaler steht die Liste unter dem Bild.",
+    "default": "stacked",
+    "options": [
+     {
+      "value": "stacked",
+      "label": "Bild, Karte am Punkt"
+     },
+     {
+      "value": "columns_2",
+      "label": "2 Spalten: Bild und Liste"
+     },
+     {
+      "value": "columns_3",
+      "label": "3 Spalten: Bild über zwei, Liste"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "list_columns",
+    "label": "Produkte am Desktop",
+    "info": "Liste neben dem Bild ab 750 px Breite des Blocks. Zwei Spalten passen am besten zur Anordnung „2 Spalten“.",
+    "default": "1",
+    "options": [
+     {
+      "value": "1",
+      "label": "1 Spalte"
+     },
+     {
+      "value": "2",
+      "label": "2 Spalten"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is_not",
+      "value": "Bild, Karte am Punkt"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is_not",
+      "value": "Bild, Karte am Punkt"
+     }
+    ]
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema der Punkte",
+    "info": "Punkte in der Akzentfarbe des Schemas, Rand und Nummer in „Text auf Akzent“.",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "dot_style",
+    "label": "Darstellung der Punkte",
+    "info": "Nummern werden unter 750 px Blockbreite kleiner. „Kleiner Punkt“ verdeckt das Bild am wenigsten; die Liste unter dem Bild steht dann ohne Nummern.",
+    "default": "number",
+    "options": [
+     {
+      "value": "number",
+      "label": "Nummer"
+     },
+     {
+      "value": "dot",
+      "label": "Kleiner Punkt"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Den ganzen Look kaufen"
+   },
+   {
+    "type": "checkbox",
+    "id": "look_add",
+    "label": "Alle Produkte in den Warenkorb",
+    "info": "Listet die Produkte der Markierungen unter dem Bild mit Häkchen, Auswahl, Gesamtpreis und einem Knopf. Ausverkaufte Produkte stehen dabei, sind aber nicht wählbar.",
+    "default": false
+   },
+   {
+    "type": "text",
+    "id": "look_heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Den ganzen Look kaufen",
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "look_heading_tag",
+    "label": "Gliederungsebene (SEO)",
+    "default": "h2",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Abschnitt"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Unterpunkt"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Unter-Unterpunkt"
+     },
+     {
+      "value": "p",
+      "label": "Normaler Text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "look_heading",
+      "label": "Überschrift",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ }
+}

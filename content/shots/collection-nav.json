@@ -1,0 +1,73 @@
+{
+ "block": "collection-nav",
+ "shop": "nordform",
+ "template": "collection.json",
+ "section": "main",
+ "id": "collection-nav",
+ "de": {
+  "desktop": {
+   "file": "de/collection-nav-desktop.webp",
+   "width": 1521,
+   "height": 575,
+   "bytes": 35944,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/collection-nav-desktop-800.webp",
+   "width": 800,
+   "height": 302,
+   "bytes": 17176,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/collection-nav.webp",
+   "width": 640,
+   "height": 242,
+   "bytes": 12958,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/collection-nav-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 21226,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/collection-nav-desktop.webp",
+   "width": 1521,
+   "height": 575,
+   "bytes": 33380,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/collection-nav-desktop-800.webp",
+   "width": 800,
+   "height": 302,
+   "bytes": 14764,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/collection-nav.webp",
+   "width": 640,
+   "height": 242,
+   "bytes": 11534,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/collection-nav-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 19374,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

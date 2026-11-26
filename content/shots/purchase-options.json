@@ -1,0 +1,123 @@
+{
+ "block": "purchase-options",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "purchase-options",
+ "de": {
+  "desktop": {
+   "file": "de/purchase-options-desktop.webp",
+   "width": 621,
+   "height": 658,
+   "bytes": 30096,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/purchase-options-desktop-800.webp",
+   "width": 621,
+   "height": 625,
+   "bytes": 27624,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/purchase-options.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 21488,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_timeline",
+    "x": 4.9,
+    "y": 82.9,
+    "box": [
+     1.7,
+     80.2,
+     96.7,
+     18.2
+    ],
+    "n": 1
+   },
+   {
+    "setting": "match_supply",
+    "x": 4.9,
+    "y": 8.5,
+    "box": [
+     1.7,
+     5.9,
+     96.7,
+     13.2
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/purchase-options-mobile.webp",
+   "width": 748,
+   "height": 1278,
+   "bytes": 50184,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/purchase-options-desktop.webp",
+   "width": 621,
+   "height": 658,
+   "bytes": 29058,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/purchase-options-desktop-800.webp",
+   "width": 621,
+   "height": 625,
+   "bytes": 26972,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/purchase-options.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 21470,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_timeline",
+    "x": 4.9,
+    "y": 82.9,
+    "box": [
+     1.7,
+     80.2,
+     96.7,
+     18.2
+    ],
+    "n": 1
+   },
+   {
+    "setting": "match_supply",
+    "x": 4.9,
+    "y": 8.5,
+    "box": [
+     1.7,
+     5.8,
+     96.7,
+     13.2
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/purchase-options-mobile.webp",
+   "width": 748,
+   "height": 1244,
+   "bytes": 48944,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

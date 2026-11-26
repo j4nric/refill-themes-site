@@ -1,0 +1,417 @@
+{
+ "slug": "data-table",
+ "kind": "block",
+ "source": "blocks/data-table.liquid",
+ "source_sha1": "013e7b768d6d",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Facts table",
+  "category": "Product: facts",
+  "settings": [
+   {
+    "type": "select",
+    "id": "table_type",
+    "label": "Table type",
+    "info": "Sets the heading, column headers and footnote. The rows stay the same.",
+    "default": "custom",
+    "options": [
+     {
+      "value": "supplements",
+      "label": "Supplements (amount · % NRV)"
+     },
+     {
+      "value": "food",
+      "label": "Food (per 100 g · per serving)"
+     },
+     {
+      "value": "feed",
+      "label": "Pet food (analytical constituents)"
+     },
+     {
+      "value": "feeding",
+      "label": "Feeding guide (weight · amount)"
+     },
+     {
+      "value": "composition",
+      "label": "Composition (ingredient · share or function)"
+     },
+     {
+      "value": "custom",
+      "label": "Custom columns"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Empty: default of the table type. Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "text",
+    "id": "column_1",
+    "label": "Column header 1",
+    "info": "Composition: empty headers use the defaults Ingredient · Share · Function. Custom columns: shown as entered.",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Custom columns"
+     },
+     "or",
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Composition (ingredient · share or function)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "column_2",
+    "label": "Column header 2",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Custom columns"
+     },
+     "or",
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Composition (ingredient · share or function)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "column_3",
+    "label": "Column header 3",
+    "info": "Empty: no third column.",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Custom columns"
+     },
+     "or",
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Composition (ingredient · share or function)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "footnote",
+    "label": "Footnote",
+    "info": "Empty: default of the table type (e.g. NRV explanation, reference intake). Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "animate_numbers",
+    "label": "Roll in numbers when first visible",
+    "info": "Once per page view. Skipped with “Reduce motion” and without JavaScript; the values stay the same.",
+    "default": true
+   },
+   {
+    "type": "textarea",
+    "id": "rows",
+    "label": "Rows (if the metafield is empty)",
+    "info": "One row per line: Name | Value | third column (optional). Start a line with - to indent it."
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "select",
+    "id": "composition_source",
+    "label": "Source",
+    "default": "table",
+    "options": [
+     {
+      "value": "table",
+      "label": "Facts table metafield (rows)"
+     },
+     {
+      "value": "text",
+      "label": "Text metafield (list, e.g. INCI)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Composition (ingredient · share or function)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Composition (ingredient · share or function)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "text_metafield",
+    "label": "Metafield: ingredient list (text)",
+    "info": "Single- or multi-line text, e.g. custom.inci. Entries separated by commas or line breaks; the order stays as entered.",
+    "default": "custom.inci",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Composition (ingredient · share or function)"
+     },
+     "and",
+     {
+      "setting": "composition_source",
+      "label": "Source",
+      "op": "is",
+      "value": "Text metafield (list, e.g. INCI)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "table_type",
+      "label": "Table type",
+      "op": "is",
+      "value": "Composition (ingredient · share or function)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafield: rows (list of metaobjects)",
+    "info": "Format namespace.key. Find it under Settings → Custom data.",
+    "default": "custom.data_table"
+   },
+   {
+    "type": "paragraph",
+    "content": "Metaobject fields: label, amount (second column), nrv (third column), indent (optional: ingredient with field name)."
+   }
+  ]
+ },
+ "de": {
+  "name": "Datentafel",
+  "category": "Produkt: Angaben",
+  "settings": [
+   {
+    "type": "select",
+    "id": "table_type",
+    "label": "Tafeltyp",
+    "info": "Bestimmt Überschrift, Spaltenköpfe und Fußnote. Die Zeilen bleiben gleich.",
+    "default": "custom",
+    "options": [
+     {
+      "value": "supplements",
+      "label": "Nahrungsergänzung (Menge · % NRV)"
+     },
+     {
+      "value": "food",
+      "label": "Lebensmittel (pro 100 g · pro Portion)"
+     },
+     {
+      "value": "feed",
+      "label": "Futtermittel (analytische Bestandteile)"
+     },
+     {
+      "value": "feeding",
+      "label": "Fütterungstabelle (Gewicht · Menge)"
+     },
+     {
+      "value": "composition",
+      "label": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     },
+     {
+      "value": "custom",
+      "label": "Eigene Spalten"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Leer: Standard des Tafeltyps. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "text",
+    "id": "column_1",
+    "label": "Spaltenkopf 1",
+    "info": "Zusammensetzung: Leere Spaltenköpfe zeigen die Standards Bestandteil · Anteil · Funktion. Eigene Spalten: wie eingetragen.",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Eigene Spalten"
+     },
+     "or",
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "column_2",
+    "label": "Spaltenkopf 2",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Eigene Spalten"
+     },
+     "or",
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "column_3",
+    "label": "Spaltenkopf 3",
+    "info": "Leer: dritte Spalte entfällt.",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Eigene Spalten"
+     },
+     "or",
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "footnote",
+    "label": "Fußnote",
+    "info": "Leer: Standard des Tafeltyps (z. B. NRV-Erklärung, Referenzmenge). Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "animate_numbers",
+    "label": "Zahlen beim ersten Sichtbarwerden einrollen",
+    "info": "Einmal je Seitenaufruf. Entfällt bei „Bewegung reduzieren“ und ohne JavaScript; die Werte bleiben gleich.",
+    "default": true
+   },
+   {
+    "type": "textarea",
+    "id": "rows",
+    "label": "Zeilen (wenn kein Metafeld befüllt ist)",
+    "info": "Eine Zeile je Eintrag: Name | Wert | dritte Spalte (optional). Mit - am Anfang wird die Zeile eingerückt."
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "select",
+    "id": "composition_source",
+    "label": "Quelle",
+    "default": "table",
+    "options": [
+     {
+      "value": "table",
+      "label": "Datentafel-Metafeld (Zeilen)"
+     },
+     {
+      "value": "text",
+      "label": "Text-Metafeld (Liste, z. B. INCI)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "text_metafield",
+    "label": "Metafeld: Zutatenliste (Text)",
+    "info": "Ein- oder mehrzeiliger Text, z. B. custom.inci. Einträge durch Komma oder Zeilenumbruch getrennt; die Reihenfolge bleibt.",
+    "default": "custom.inci",
+    "visible_if": [
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     },
+     "and",
+     {
+      "setting": "composition_source",
+      "label": "Quelle",
+      "op": "is",
+      "value": "Text-Metafeld (Liste, z. B. INCI)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "table_type",
+      "label": "Tafeltyp",
+      "op": "is",
+      "value": "Zusammensetzung (Bestandteil · Anteil oder Funktion)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafeld: Zeilen (Liste von Metaobjekten)",
+    "info": "Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten.",
+    "default": "custom.data_table"
+   },
+   {
+    "type": "paragraph",
+    "content": "Felder der Metaobjekte: label, amount (zweite Spalte), nrv (dritte Spalte), indent (optional: ingredient mit Feld name)."
+   }
+  ]
+ }
+}

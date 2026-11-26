@@ -1,0 +1,73 @@
+{
+ "block": "pickup-availability",
+ "shop": "ostra",
+ "template": "product.json",
+ "section": "main",
+ "id": "pickup",
+ "de": {
+  "desktop": {
+   "file": "de/pickup-availability-desktop.webp",
+   "width": 588,
+   "height": 594,
+   "bytes": 30020,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/pickup-availability-desktop-800.webp",
+   "width": 588,
+   "height": 594,
+   "bytes": 30020,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/pickup-availability.webp",
+   "width": 588,
+   "height": 480,
+   "bytes": 27156,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/pickup-availability-mobile.webp",
+   "width": 748,
+   "height": 268,
+   "bytes": 12216,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/pickup-availability-desktop.webp",
+   "width": 588,
+   "height": 575,
+   "bytes": 26240,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/pickup-availability-desktop-800.webp",
+   "width": 588,
+   "height": 575,
+   "bytes": 26240,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/pickup-availability.webp",
+   "width": 588,
+   "height": 480,
+   "bytes": 23992,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/pickup-availability-mobile.webp",
+   "width": 748,
+   "height": 268,
+   "bytes": 12010,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

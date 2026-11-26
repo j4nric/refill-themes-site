@@ -1,0 +1,99 @@
+{
+ "block": "supply-calculator",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "supply-calculator",
+ "de": {
+  "desktop": {
+   "file": "de/supply-calculator-desktop.webp",
+   "width": 621,
+   "height": 544,
+   "bytes": 23616,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/supply-calculator-desktop-800.webp",
+   "width": 621,
+   "height": 544,
+   "bytes": 23616,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/supply-calculator.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 22138,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 4.8,
+    "box": [
+     1.7,
+     1.8,
+     96.7,
+     5.9
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/supply-calculator-mobile.webp",
+   "width": 748,
+   "height": 964,
+   "bytes": 37940,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/supply-calculator-desktop.webp",
+   "width": 621,
+   "height": 490,
+   "bytes": 20746,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/supply-calculator-desktop-800.webp",
+   "width": 621,
+   "height": 490,
+   "bytes": 20746,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/supply-calculator.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 20734,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 5.3,
+    "box": [
+     1.7,
+     2.1,
+     96.7,
+     6.6
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/supply-calculator-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 33444,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

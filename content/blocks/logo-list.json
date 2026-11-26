@@ -1,0 +1,151 @@
+{
+ "slug": "logo-list",
+ "kind": "block",
+ "source": "blocks/logo-list.liquid",
+ "source_sha1": "93e9a70ef10d",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Logo list",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "As seen in"
+   },
+   {
+    "type": "checkbox",
+    "id": "monochrome",
+    "label": "Single color in text color",
+    "info": "For logos with a transparent background (PNG, SVG). Otherwise grayscale.",
+    "default": false
+   },
+   {
+    "type": "range",
+    "id": "logo_height",
+    "label": "Logo height",
+    "default": 28,
+    "min": 16,
+    "max": 64,
+    "step": 4,
+    "unit": "px"
+   },
+   {
+    "type": "checkbox",
+    "id": "autoscroll",
+    "label": "Scroll automatically",
+    "info": "For long lists: logos scroll slowly and endlessly, pausing on hover and focus. Stays still for visitors with reduced motion.",
+    "default": false
+   },
+   {
+    "type": "select",
+    "id": "scroll_speed",
+    "label": "Speed",
+    "default": "slow",
+    "options": [
+     {
+      "value": "slow",
+      "label": "Slow"
+     },
+     {
+      "value": "normal",
+      "label": "Normal"
+     },
+     {
+      "value": "fast",
+      "label": "Fast"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "autoscroll",
+      "label": "Scroll automatically",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "autoscroll",
+      "label": "Scroll automatically",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Logo-Leiste",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Bekannt aus"
+   },
+   {
+    "type": "checkbox",
+    "id": "monochrome",
+    "label": "Einfarbig in Textfarbe",
+    "info": "Für Logos mit transparentem Hintergrund (PNG, SVG). Sonst Graustufen.",
+    "default": false
+   },
+   {
+    "type": "range",
+    "id": "logo_height",
+    "label": "Logohöhe",
+    "default": 28,
+    "min": 16,
+    "max": 64,
+    "step": 4,
+    "unit": "px"
+   },
+   {
+    "type": "checkbox",
+    "id": "autoscroll",
+    "label": "Automatisch durchlaufen",
+    "info": "Für lange Listen: Logos laufen langsam und endlos durch, halten beim Überfahren und bei Fokus an. Steht still für Besucher mit reduzierter Bewegung.",
+    "default": false
+   },
+   {
+    "type": "select",
+    "id": "scroll_speed",
+    "label": "Geschwindigkeit",
+    "default": "slow",
+    "options": [
+     {
+      "value": "slow",
+      "label": "Langsam"
+     },
+     {
+      "value": "normal",
+      "label": "Normal"
+     },
+     {
+      "value": "fast",
+      "label": "Schnell"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "autoscroll",
+      "label": "Automatisch durchlaufen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "autoscroll",
+      "label": "Automatisch durchlaufen",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ }
+}

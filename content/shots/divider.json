@@ -1,0 +1,73 @@
+{
+ "block": "divider",
+ "shop": "nordform",
+ "template": "page.aktion.json",
+ "section": "terms",
+ "id": "terms-divider",
+ "de": {
+  "desktop": {
+   "file": "de/divider-desktop.webp",
+   "width": 1600,
+   "height": 224,
+   "bytes": 25014,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/divider-desktop-800.webp",
+   "width": 800,
+   "height": 112,
+   "bytes": 9460,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/divider.webp",
+   "width": 640,
+   "height": 90,
+   "bytes": 6728,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/divider-mobile.webp",
+   "width": 780,
+   "height": 444,
+   "bytes": 26394,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/divider-desktop.webp",
+   "width": 1600,
+   "height": 224,
+   "bytes": 24528,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/divider-desktop-800.webp",
+   "width": 800,
+   "height": 112,
+   "bytes": 9282,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/divider.webp",
+   "width": 640,
+   "height": 90,
+   "bytes": 6830,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/divider-mobile.webp",
+   "width": 780,
+   "height": 444,
+   "bytes": 25748,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

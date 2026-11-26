@@ -1,0 +1,75 @@
+{
+ "slug": "contact-form",
+ "kind": "block",
+ "source": "blocks/contact-form.liquid",
+ "source_sha1": "3b0d0b8f2c2b",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Contact form",
+  "category": "Forms",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_phone",
+    "label": "Show phone field",
+    "default": false
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Width",
+    "default": "narrow",
+    "options": [
+     {
+      "value": "narrow",
+      "label": "Reading width"
+     },
+     {
+      "value": "full",
+      "label": "Full column width"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Kontaktformular",
+  "category": "Formulare",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_phone",
+    "label": "Telefonfeld anzeigen",
+    "default": false
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Breite",
+    "default": "narrow",
+    "options": [
+     {
+      "value": "narrow",
+      "label": "Lesebreite"
+     },
+     {
+      "value": "full",
+      "label": "Volle Spaltenbreite"
+     }
+    ]
+   }
+  ]
+ }
+}

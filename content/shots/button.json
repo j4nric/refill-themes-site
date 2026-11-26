@@ -1,0 +1,99 @@
+{
+ "block": "button",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "hero",
+ "id": "hero-button-1",
+ "de": {
+  "desktop": {
+   "file": "de/button-desktop.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 22048,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/button-desktop-800.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 22048,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/button.webp",
+   "width": 640,
+   "height": 477,
+   "bytes": 17780,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "label",
+    "x": 3.9,
+    "y": 65.9,
+    "box": [
+     6.5,
+     62.8,
+     31.7,
+     11
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/button-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 28196,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/button-desktop.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 22150,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/button-desktop-800.webp",
+   "width": 771,
+   "height": 575,
+   "bytes": 22150,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/button.webp",
+   "width": 640,
+   "height": 477,
+   "bytes": 18708,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "label",
+    "x": 3.9,
+    "y": 65.8,
+    "box": [
+     6.5,
+     62.8,
+     26.9,
+     11
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/button-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 31634,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

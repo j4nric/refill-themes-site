@@ -1,0 +1,123 @@
+{
+ "block": "quote",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "principles",
+ "id": "q-1",
+ "de": {
+  "desktop": {
+   "file": "de/quote-desktop.webp",
+   "width": 1521,
+   "height": 378,
+   "bytes": 27548,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/quote-desktop-800.webp",
+   "width": 800,
+   "height": 199,
+   "bytes": 12382,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/quote.webp",
+   "width": 640,
+   "height": 159,
+   "bytes": 9112,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 3.5,
+    "y": 48.6,
+    "box": [
+     2.2,
+     44,
+     30,
+     14.4
+    ],
+    "n": 1
+   },
+   {
+    "setting": "author",
+    "x": 3.5,
+    "y": 64.7,
+    "box": [
+     2.2,
+     62.3,
+     30,
+     4.8
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/quote-mobile.webp",
+   "width": 748,
+   "height": 636,
+   "bytes": 21872,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/quote-desktop.webp",
+   "width": 1521,
+   "height": 378,
+   "bytes": 25354,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/quote-desktop-800.webp",
+   "width": 800,
+   "height": 199,
+   "bytes": 11378,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/quote.webp",
+   "width": 640,
+   "height": 159,
+   "bytes": 8162,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 3.5,
+    "y": 48.6,
+    "box": [
+     2.2,
+     44,
+     30,
+     14.4
+    ],
+    "n": 1
+   },
+   {
+    "setting": "author",
+    "x": 3.5,
+    "y": 64.7,
+    "box": [
+     2.2,
+     62.3,
+     30,
+     4.8
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/quote-mobile.webp",
+   "width": 748,
+   "height": 582,
+   "bytes": 17412,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

@@ -1,0 +1,389 @@
+{
+ "slug": "product-finder",
+ "kind": "block",
+ "source": "blocks/product-finder.liquid",
+ "source_sha1": "1d8d7cefb76c",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Product finder",
+  "category": "Forms",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Add “Question” blocks for a finder with several steps: each answer sets a filter of the collection (filters from the Search & Discovery app). With “Answer option” blocks it stays one question with links."
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Eyebrow text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Product finder"
+   },
+   {
+    "type": "text",
+    "id": "question",
+    "label": "Question",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "What are you looking for?"
+   },
+   {
+    "type": "select",
+    "id": "heading_tag",
+    "label": "Heading level (SEO)",
+    "default": "h2",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Section"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Subsection"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Minor subsection"
+     },
+     {
+      "value": "p",
+      "label": "Normal text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "question",
+      "label": "Question",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Questions (several steps)"
+   },
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Collection for the results",
+    "info": "Empty = all products. The answers’ filters must be enabled for collections in the Search & Discovery app."
+   },
+   {
+    "type": "select",
+    "id": "result_mode",
+    "label": "After the last question",
+    "default": "redirect",
+    "options": [
+     {
+      "value": "redirect",
+      "label": "Open the filtered collection"
+     },
+     {
+      "value": "inline",
+      "label": "Show products here"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "results_limit",
+    "label": "Products shown",
+    "default": 4,
+    "min": 2,
+    "max": 8,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Show profile scales (e.g. scent, texture)",
+    "info": "Only when “Show profile scales on product cards” is on in theme settings.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Show unit price",
+    "info": "Price per unit of measure, e.g. €16.86/100 g. Usually required in the EU for goods sold by weight, volume or length: only turn off if it isn’t needed here.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Show “Compare” checkbox",
+    "info": "Only when the “Compare” checkbox is on in theme settings (product cards).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Produktfinder",
+  "category": "Formulare",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Mit Blöcken „Frage“ wird der Finder mehrstufig: Jede Antwort setzt einen Filter der Kollektion (Filter der App Search & Discovery). Mit Blöcken „Antwortmöglichkeit“ bleibt es bei einer Frage mit Links."
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Dachzeile",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Produktfinder"
+   },
+   {
+    "type": "text",
+    "id": "question",
+    "label": "Frage",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Wonach suchst du?"
+   },
+   {
+    "type": "select",
+    "id": "heading_tag",
+    "label": "Gliederungsebene (SEO)",
+    "default": "h2",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Abschnitt"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Unterpunkt"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Unter-Unterpunkt"
+     },
+     {
+      "value": "p",
+      "label": "Normaler Text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "question",
+      "label": "Frage",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Fragen (mehrstufig)"
+   },
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Kollektion für die Ergebnisse",
+    "info": "Leer = alle Produkte. Die Filter der Antworten müssen für Kollektionen in der App Search & Discovery aktiv sein."
+   },
+   {
+    "type": "select",
+    "id": "result_mode",
+    "label": "Nach der letzten Frage",
+    "default": "redirect",
+    "options": [
+     {
+      "value": "redirect",
+      "label": "Gefilterte Kollektion öffnen"
+     },
+     {
+      "value": "inline",
+      "label": "Produkte hier anzeigen"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "results_limit",
+    "label": "Angezeigte Produkte",
+    "default": 4,
+    "min": 2,
+    "max": 8,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Profil-Skalen zeigen (z. B. Duft, Textur)",
+    "info": "Nur wenn „Profil-Skalen in Produktkarten zeigen“ in den Theme-Einstellungen aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Grundpreis zeigen",
+    "info": "Preis je Mengeneinheit, z. B. 16,86 €/100 g. In der EU für Waren nach Gewicht, Volumen oder Länge meist Pflicht: nur abschalten, wenn er hier nicht nötig ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Häkchen „Vergleichen“ zeigen",
+    "info": "Nur wenn das Häkchen „Vergleichen“ in den Theme-Einstellungen (Produktkarten) aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     }
+    ]
+   }
+  ]
+ }
+}

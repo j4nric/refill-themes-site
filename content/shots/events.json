@@ -1,0 +1,73 @@
+{
+ "block": "events",
+ "shop": "kessel-und-blatt",
+ "template": "page.termine.json",
+ "section": "main",
+ "id": "events",
+ "de": {
+  "desktop": {
+   "file": "de/events-desktop.webp",
+   "width": 1440,
+   "height": 1250,
+   "bytes": 63172,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/events-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 27104,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/events.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 18464,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/events-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 99254,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/events-desktop.webp",
+   "width": 1440,
+   "height": 1250,
+   "bytes": 61702,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/events-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 26674,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/events.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 18086,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/events-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 101174,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

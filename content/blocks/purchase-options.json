@@ -1,0 +1,69 @@
+{
+ "slug": "purchase-options",
+ "kind": "block",
+ "source": "blocks/purchase-options.liquid",
+ "source_sha1": "3a9a5e9cd647",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Purchase options",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Only appears for products with subscription options from a subscription app."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_timeline",
+    "label": "Show delivery timeline",
+    "info": "For the selected subscription: ordered today, delivery date (from the “Delivery date” block) and the following deliveries.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "match_supply",
+    "label": "Recommend interval matching the supply",
+    "info": "Marks the subscription plan whose delivery interval best matches how long the pack lasts, and preselects it when “Preselect subscription” is on. Shows a note if the chosen interval is longer than the pack lasts. Needs the servings metafields (Theme settings → Product data).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafield: servings per pack",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Kaufoptionen",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Erscheint nur bei Produkten mit Abo-Optionen aus einer Abo-App."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_timeline",
+    "label": "Lieferzeitleiste anzeigen",
+    "info": "Beim gewählten Abo: heute bestellt, Liefertermin (aus dem Block „Lieferdatum“) und die folgenden Lieferungen.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "match_supply",
+    "label": "Intervall passend zur Reichweite empfehlen",
+    "info": "Markiert den Abo-Plan, dessen Lieferintervall am besten zur Reichweite der Packung passt, und wählt ihn bei „Abo vorauswählen“ vor. Hinweis, wenn das gewählte Intervall länger ist als die Packung reicht. Braucht die Metafelder für Portionen (Theme-Einstellungen → Produktdaten).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Metafeld: Portionen pro Packung",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,481 @@
+{
+ "slug": "mandatory-info",
+ "kind": "block",
+ "source": "blocks/mandatory-info.liquid",
+ "source_sha1": "c3e3d516d3a4",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Mandatory information",
+  "category": "Product: facts",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Groups the mandatory information customers expect before buying. The product type sets the labels and the checklist in the editor. A filling aid, not legal advice."
+   },
+   {
+    "type": "select",
+    "id": "product_kind",
+    "label": "Product type",
+    "info": "General: designation, contents, usage, notes, manufacturer. Food and food supplements: ingredients with highlighted allergens. Cosmetics: ingredients (INCI), period after opening, responsible person. Feed: animal species, feed type, composition, additives.",
+    "default": "other",
+    "options": [
+     {
+      "value": "supplement",
+      "label": "Food supplement"
+     },
+     {
+      "value": "food",
+      "label": "Food (e.g. coffee, tea, spices)"
+     },
+     {
+      "value": "cosmetic",
+      "label": "Cosmetics"
+     },
+     {
+      "value": "feed",
+      "label": "Pet food"
+     },
+     {
+      "value": "other",
+      "label": "General (other products)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "open",
+    "label": "Open by default",
+    "default": false
+   },
+   {
+    "type": "header",
+    "content": "Default information (fallback)"
+   },
+   {
+    "type": "text",
+    "id": "default_designation",
+    "label": "Default designation",
+    "info": "Applies when the product has no designation metafield, e.g. the legal name of your range."
+   },
+   {
+    "type": "textarea",
+    "id": "default_warnings",
+    "label": "Default warnings",
+    "info": "Used when the product has no warnings metafield."
+   },
+   {
+    "type": "text",
+    "id": "defaults_exclude_tag",
+    "label": "Exclusion tag for default information",
+    "info": "Products with this tag get no default designation and no default notes. A metafield value “-” hides a single item.",
+    "visible_if": [
+     {
+      "setting": "default_designation",
+      "label": "Default designation",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "default_warnings",
+      "label": "Default warnings",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "default_designation",
+      "label": "Default designation",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "default_warnings",
+      "label": "Default warnings",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.key. Find it under Settings → Custom data."
+   },
+   {
+    "type": "text",
+    "id": "designation_metafield",
+    "label": "Metafield: designation",
+    "default": "custom.legal_name"
+   },
+   {
+    "type": "text",
+    "id": "ingredients_metafield",
+    "label": "Metafield: ingredients or composition (mark allergens with *asterisks* or bold)",
+    "default": "custom.other_ingredients"
+   },
+   {
+    "type": "text",
+    "id": "net_quantity_metafield",
+    "label": "Metafield: net quantity",
+    "info": "Empty: taken from the variant's unit price quantity.",
+    "default": "custom.net_quantity"
+   },
+   {
+    "type": "text",
+    "id": "usage_metafield",
+    "label": "Metafield: recommended use",
+    "default": "custom.usage"
+   },
+   {
+    "type": "text",
+    "id": "warnings_metafield",
+    "label": "Metafield: warnings",
+    "default": "custom.warnings"
+   },
+   {
+    "type": "text",
+    "id": "manufacturer_metafield",
+    "label": "Metafield: manufacturer (overrides theme settings)",
+    "default": "custom.manufacturer"
+   },
+   {
+    "type": "text",
+    "id": "pao_metafield",
+    "label": "Metafield: period after opening (e.g. 12 M)",
+    "default": "custom.pao",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Cosmetics"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Cosmetics"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "animal_species_metafield",
+    "label": "Metafield: animal species",
+    "default": "custom.animal_species",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Pet food"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Pet food"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "feed_type_metafield",
+    "label": "Metafield: type of feed (e.g. complete feed)",
+    "default": "custom.feed_type",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Pet food"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Pet food"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "additives_metafield",
+    "label": "Metafield: additives",
+    "default": "custom.additives",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Pet food"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Product type",
+      "op": "is",
+      "value": "Pet food"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Pflichtangaben",
+  "category": "Produkt: Angaben",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Bündelt die vor dem Kauf üblichen Pflichtangaben an einer Stelle. Die Produktart bestimmt Bezeichnungen und die Prüfliste im Editor. Hilfe beim Ausfüllen, keine Rechtsberatung."
+   },
+   {
+    "type": "select",
+    "id": "product_kind",
+    "label": "Produktart",
+    "info": "Allgemein: Bezeichnung, Inhalt, Anwendung, Hinweise, Hersteller. Lebensmittel und Nahrungsergänzung: Zutaten mit hervorgehobenen Allergenen. Kosmetik: Inhaltsstoffe (INCI), Haltbarkeit nach dem Öffnen, verantwortliche Person. Futtermittel: Tierart, Futtermittelart, Zusammensetzung, Zusatzstoffe.",
+    "default": "other",
+    "options": [
+     {
+      "value": "supplement",
+      "label": "Nahrungsergänzung"
+     },
+     {
+      "value": "food",
+      "label": "Lebensmittel (z. B. Kaffee, Tee, Gewürze)"
+     },
+     {
+      "value": "cosmetic",
+      "label": "Kosmetik"
+     },
+     {
+      "value": "feed",
+      "label": "Futtermittel"
+     },
+     {
+      "value": "other",
+      "label": "Allgemein (sonstige Produkte)"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "open",
+    "label": "Standardmäßig geöffnet",
+    "default": false
+   },
+   {
+    "type": "header",
+    "content": "Standardangaben (Rückfall)"
+   },
+   {
+    "type": "text",
+    "id": "default_designation",
+    "label": "Standard-Bezeichnung",
+    "info": "Gilt, wenn das Produkt kein Metafeld für die Bezeichnung hat, z. B. die rechtliche Bezeichnung Ihres Sortiments."
+   },
+   {
+    "type": "textarea",
+    "id": "default_warnings",
+    "label": "Standard-Hinweise",
+    "info": "Gilt, wenn das Produkt kein Metafeld für Hinweise hat."
+   },
+   {
+    "type": "text",
+    "id": "defaults_exclude_tag",
+    "label": "Ausschluss-Tag für Standardangaben",
+    "info": "Produkte mit diesem Tag erhalten keine Standard-Bezeichnung und keine Standard-Hinweise. Ein Metafeld-Wert „-“ blendet eine einzelne Angabe aus.",
+    "visible_if": [
+     {
+      "setting": "default_designation",
+      "label": "Standard-Bezeichnung",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "default_warnings",
+      "label": "Standard-Hinweise",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "default_designation",
+      "label": "Standard-Bezeichnung",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "default_warnings",
+      "label": "Standard-Hinweise",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten."
+   },
+   {
+    "type": "text",
+    "id": "designation_metafield",
+    "label": "Metafeld: Bezeichnung",
+    "default": "custom.legal_name"
+   },
+   {
+    "type": "text",
+    "id": "ingredients_metafield",
+    "label": "Metafeld: Zutaten bzw. Inhaltsstoffe (Allergene mit *Sternchen* oder fett markieren)",
+    "default": "custom.other_ingredients"
+   },
+   {
+    "type": "text",
+    "id": "net_quantity_metafield",
+    "label": "Metafeld: Nettofüllmenge",
+    "info": "Leer: aus der Füllmenge des Grundpreises der Variante.",
+    "default": "custom.net_quantity"
+   },
+   {
+    "type": "text",
+    "id": "usage_metafield",
+    "label": "Metafeld: Verzehr- bzw. Anwendungsempfehlung",
+    "default": "custom.usage"
+   },
+   {
+    "type": "text",
+    "id": "warnings_metafield",
+    "label": "Metafeld: Hinweise",
+    "default": "custom.warnings"
+   },
+   {
+    "type": "text",
+    "id": "manufacturer_metafield",
+    "label": "Metafeld: Hersteller (überschreibt Theme-Einstellungen)",
+    "default": "custom.manufacturer"
+   },
+   {
+    "type": "text",
+    "id": "pao_metafield",
+    "label": "Metafeld: Haltbarkeit nach dem Öffnen (z. B. 12 M)",
+    "default": "custom.pao",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Kosmetik"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Kosmetik"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "animal_species_metafield",
+    "label": "Metafeld: Tierart",
+    "default": "custom.animal_species",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Futtermittel"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Futtermittel"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "feed_type_metafield",
+    "label": "Metafeld: Futtermittelart (z. B. Alleinfuttermittel)",
+    "default": "custom.feed_type",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Futtermittel"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Futtermittel"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "additives_metafield",
+    "label": "Metafeld: Zusatzstoffe",
+    "default": "custom.additives",
+    "visible_if": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Futtermittel"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "product_kind",
+      "label": "Produktart",
+      "op": "is",
+      "value": "Futtermittel"
+     }
+    ]
+   }
+  ]
+ }
+}

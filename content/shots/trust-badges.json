@@ -1,0 +1,73 @@
+{
+ "block": "trust-badges",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "trust-badges",
+ "de": {
+  "desktop": {
+   "file": "de/trust-badges-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 24308,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/trust-badges-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 24308,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/trust-badges.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 22864,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/trust-badges-mobile.webp",
+   "width": 748,
+   "height": 236,
+   "bytes": 6762,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/trust-badges-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 22710,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/trust-badges-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 22710,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/trust-badges.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 21556,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/trust-badges-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 32622,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

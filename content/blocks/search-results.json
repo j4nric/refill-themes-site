@@ -1,0 +1,287 @@
+{
+ "slug": "search-results",
+ "kind": "block",
+ "source": "blocks/search-results.liquid",
+ "source_sha1": "a74565f96270",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Search: results",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Columns on large screens",
+    "default": 3,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Columns on small screens",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_metrics",
+    "label": "Show key figures (serving, servings)",
+    "info": "Uses the metafields set in theme settings → Product data. Price per day has its own switch.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Show profile scales (e.g. scent, texture)",
+    "info": "Only when “Show profile scales on product cards” is on in theme settings.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Show unit price",
+    "info": "Price per unit of measure, e.g. €16.86/100 g. Usually required in the EU for goods sold by weight, volume or length: only turn off if it isn’t needed here.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Show “Compare” checkbox",
+    "info": "Only when the “Compare” checkbox is on in theme settings (product cards).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Pagination"
+   },
+   {
+    "type": "range",
+    "id": "results_per_page",
+    "label": "Results per page",
+    "default": 24,
+    "min": 8,
+    "max": 48,
+    "step": 4
+   },
+   {
+    "type": "select",
+    "id": "pagination",
+    "label": "Pagination",
+    "default": "pages",
+    "options": [
+     {
+      "value": "pages",
+      "label": "Page numbers"
+     },
+     {
+      "value": "load_more",
+      "label": "“Load more” button"
+     },
+     {
+      "value": "infinite",
+      "label": "Automatically on scroll"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "“Automatically” loads up to five pages in a row, then the “Load more” button appears again so the footer stays reachable. Without JavaScript, links to the next page are shown."
+   },
+   {
+    "type": "header",
+    "content": "No results"
+   },
+   {
+    "type": "collection",
+    "id": "empty_collection",
+    "label": "Suggestions when empty",
+    "info": "Shows up to four products from this collection when nothing was found or the cart is empty."
+   }
+  ]
+ },
+ "de": {
+  "name": "Suche: Ergebnisse",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Spalten auf großen Bildschirmen",
+    "default": 3,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Spalten auf kleinen Bildschirmen",
+    "default": "2",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_metrics",
+    "label": "Kennzahlen anzeigen (Portion, Portionen)",
+    "info": "Nutzt die Metafelder aus Theme-Einstellungen → Produktdaten. Der Preis pro Tag hat einen eigenen Schalter.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Profil-Skalen zeigen (z. B. Duft, Textur)",
+    "info": "Nur wenn „Profil-Skalen in Produktkarten zeigen“ in den Theme-Einstellungen aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Grundpreis zeigen",
+    "info": "Preis je Mengeneinheit, z. B. 16,86 €/100 g. In der EU für Waren nach Gewicht, Volumen oder Länge meist Pflicht: nur abschalten, wenn er hier nicht nötig ist.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Häkchen „Vergleichen“ zeigen",
+    "info": "Nur wenn das Häkchen „Vergleichen“ in den Theme-Einstellungen (Produktkarten) aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Seitennavigation"
+   },
+   {
+    "type": "range",
+    "id": "results_per_page",
+    "label": "Ergebnisse pro Seite",
+    "default": 24,
+    "min": 8,
+    "max": 48,
+    "step": 4
+   },
+   {
+    "type": "select",
+    "id": "pagination",
+    "label": "Seitennavigation",
+    "default": "pages",
+    "options": [
+     {
+      "value": "pages",
+      "label": "Seitenzahlen"
+     },
+     {
+      "value": "load_more",
+      "label": "Button „Mehr laden“"
+     },
+     {
+      "value": "infinite",
+      "label": "Automatisch beim Scrollen"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "„Automatisch“ lädt bis zu fünf Seiten nacheinander, danach erscheint wieder der Button „Mehr laden“, damit die Fußzeile erreichbar bleibt. Ohne JavaScript gibt es Links auf die nächste Seite."
+   },
+   {
+    "type": "header",
+    "content": "Keine Treffer"
+   },
+   {
+    "type": "collection",
+    "id": "empty_collection",
+    "label": "Vorschläge, wenn leer",
+    "info": "Zeigt bis zu vier Produkte dieser Kollektion, wenn nichts gefunden wurde bzw. der Warenkorb leer ist."
+   }
+  ]
+ }
+}

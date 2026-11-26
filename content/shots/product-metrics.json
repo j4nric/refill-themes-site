@@ -1,0 +1,73 @@
+{
+ "block": "product-metrics",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "product-metrics",
+ "de": {
+  "desktop": {
+   "file": "de/product-metrics-desktop.webp",
+   "width": 621,
+   "height": 579,
+   "bytes": 21120,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/product-metrics-desktop-800.webp",
+   "width": 621,
+   "height": 579,
+   "bytes": 21120,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/product-metrics.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 19228,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/product-metrics-mobile.webp",
+   "width": 748,
+   "height": 326,
+   "bytes": 7910,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/product-metrics-desktop.webp",
+   "width": 621,
+   "height": 591,
+   "bytes": 21642,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/product-metrics-desktop-800.webp",
+   "width": 621,
+   "height": 591,
+   "bytes": 21642,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/product-metrics.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 18688,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/product-metrics-mobile.webp",
+   "width": 748,
+   "height": 326,
+   "bytes": 7880,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

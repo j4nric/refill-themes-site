@@ -1,0 +1,383 @@
+{
+ "slug": "group",
+ "kind": "block",
+ "source": "blocks/group.liquid",
+ "source_sha1": "6c6e4fcabba0",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Group",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Groups blocks together. For equal-width columns that wrap on mobile, use the “Columns” block."
+   },
+   {
+    "type": "header",
+    "content": "Arrangement"
+   },
+   {
+    "type": "select",
+    "id": "layout_direction",
+    "label": "Direction",
+    "default": "vertical",
+    "options": [
+     {
+      "value": "vertical",
+      "label": "Stacked"
+     },
+     {
+      "value": "horizontal",
+      "label": "Side by side"
+     }
+    ]
+   },
+   {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Horizontal alignment",
+    "info": "Applies to blocks in the group with “Match group alignment” turned on.",
+    "default": "left",
+    "visible_if": [
+     {
+      "setting": "layout_direction",
+      "label": "Direction",
+      "op": "is_not",
+      "value": "Side by side"
+     },
+     "or",
+     {
+      "setting": "fill_width",
+      "label": "Use full width",
+      "op": "off"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "fill_width",
+    "label": "Use full width",
+    "info": "Side by side: first block at the start, last at the end, with the space spread between them (e.g. heading left, link right). Stacked: blocks take the full width.",
+    "default": false
+   },
+   {
+    "type": "select",
+    "id": "vertical_alignment",
+    "label": "Vertical alignment",
+    "default": "center",
+    "options": [
+     {
+      "value": "start",
+      "label": "Top"
+     },
+     {
+      "value": "center",
+      "label": "Middle"
+     },
+     {
+      "value": "end",
+      "label": "Bottom"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout_direction",
+      "label": "Direction",
+      "op": "is",
+      "value": "Side by side"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout_direction",
+      "label": "Direction",
+      "op": "is",
+      "value": "Side by side"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Spacing between blocks",
+    "default": "4",
+    "options": [
+     {
+      "value": "0",
+      "label": "None"
+     },
+     {
+      "value": "2",
+      "label": "Extra small"
+     },
+     {
+      "value": "4",
+      "label": "Small"
+     },
+     {
+      "value": "6",
+      "label": "Medium"
+     },
+     {
+      "value": "8",
+      "label": "Large"
+     },
+     {
+      "value": "12",
+      "label": "Extra large"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "select",
+    "id": "padding",
+    "label": "Inner spacing",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_border",
+    "label": "Show border line",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "use_color_scheme",
+    "label": "Use own color scheme",
+    "default": false
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Use own color scheme",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Use own color scheme",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Gruppe",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Fasst Blöcke zusammen. Für gleich breite Spalten, die auf dem Handy umbrechen, eignet sich der Block „Spalten“."
+   },
+   {
+    "type": "header",
+    "content": "Anordnung"
+   },
+   {
+    "type": "select",
+    "id": "layout_direction",
+    "label": "Richtung",
+    "default": "vertical",
+    "options": [
+     {
+      "value": "vertical",
+      "label": "Untereinander"
+     },
+     {
+      "value": "horizontal",
+      "label": "Nebeneinander"
+     }
+    ]
+   },
+   {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Horizontale Ausrichtung",
+    "info": "Gilt für Blöcke in der Gruppe, bei denen „Ausrichtung wie Gruppe“ an ist.",
+    "default": "left",
+    "visible_if": [
+     {
+      "setting": "layout_direction",
+      "label": "Richtung",
+      "op": "is_not",
+      "value": "Nebeneinander"
+     },
+     "or",
+     {
+      "setting": "fill_width",
+      "label": "Volle Breite nutzen",
+      "op": "off"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "fill_width",
+    "label": "Volle Breite nutzen",
+    "info": "Nebeneinander: erster Block am Anfang, letzter am Ende, der Abstand verteilt sich dazwischen (z. B. Überschrift links, Link rechts). Untereinander: Die Blöcke nehmen die ganze Breite ein.",
+    "default": false
+   },
+   {
+    "type": "select",
+    "id": "vertical_alignment",
+    "label": "Vertikale Ausrichtung",
+    "default": "center",
+    "options": [
+     {
+      "value": "start",
+      "label": "Oben"
+     },
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "end",
+      "label": "Unten"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout_direction",
+      "label": "Richtung",
+      "op": "is",
+      "value": "Nebeneinander"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout_direction",
+      "label": "Richtung",
+      "op": "is",
+      "value": "Nebeneinander"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Abstand zwischen Blöcken",
+    "default": "4",
+    "options": [
+     {
+      "value": "0",
+      "label": "Keiner"
+     },
+     {
+      "value": "2",
+      "label": "Sehr klein"
+     },
+     {
+      "value": "4",
+      "label": "Klein"
+     },
+     {
+      "value": "6",
+      "label": "Mittel"
+     },
+     {
+      "value": "8",
+      "label": "Groß"
+     },
+     {
+      "value": "12",
+      "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "select",
+    "id": "padding",
+    "label": "Innenabstand",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keiner"
+     },
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_border",
+    "label": "Rahmenlinie anzeigen",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "use_color_scheme",
+    "label": "Eigenes Farbschema verwenden",
+    "default": false
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Eigenes Farbschema verwenden",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Eigenes Farbschema verwenden",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ }
+}

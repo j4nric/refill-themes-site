@@ -1,0 +1,331 @@
+{
+ "slug": "origin-map",
+ "kind": "block",
+ "source": "blocks/origin-map.liquid",
+ "source_sha1": "3819b98d5c4e",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Origin map",
+  "category": "Ingredients",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Shows metaobjects of type “origin” as points on a map and as a list. A click opens the detail card with text and products. Fields: see the theme documentation, “Origin map”."
+   },
+   {
+    "type": "text",
+    "id": "category",
+    "label": "Only this category",
+    "info": "Optional. Only shows entries whose “category” field has exactly this value, e.g. “Tea” (not case-sensitive). Empty: all entries."
+   },
+   {
+    "type": "select",
+    "id": "region",
+    "label": "Map area",
+    "info": "Automatic: map of Europe if all points are in Europe, otherwise world map, cropped to the points.",
+    "default": "fit",
+    "options": [
+     {
+      "value": "fit",
+      "label": "Automatic (around all points)"
+     },
+     {
+      "value": "world",
+      "label": "World"
+     },
+     {
+      "value": "europe",
+      "label": "Europe"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Layout",
+    "info": "Next to the map from about 750 px block width, below it on narrower screens.",
+    "default": "side",
+    "options": [
+     {
+      "value": "side",
+      "label": "List next to the map"
+     },
+     {
+      "value": "stacked",
+      "label": "List below the map"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Map"
+   },
+   {
+    "type": "select",
+    "id": "point_color",
+    "label": "Point color",
+    "default": "signal",
+    "options": [
+     {
+      "value": "signal",
+      "label": "Scheme: accent"
+     },
+     {
+      "value": "ink",
+      "label": "Scheme: text"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "land_color",
+    "label": "Land color",
+    "default": "rule",
+    "options": [
+     {
+      "value": "rule",
+      "label": "Scheme: line"
+     },
+     {
+      "value": "media",
+      "label": "Scheme: media background"
+     },
+     {
+      "value": "selection",
+      "label": "Scheme: selection"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Detail card"
+   },
+   {
+    "type": "select",
+    "id": "heading_tag",
+    "label": "Detail card heading",
+    "default": "h3",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Section"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Subsection"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Minor subsection"
+     },
+     {
+      "value": "p",
+      "label": "Normal text"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Show image",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_products",
+    "label": "Show products",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "products_limit",
+    "label": "Maximum products",
+    "default": 4,
+    "min": 1,
+    "max": 8,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "show_products",
+      "label": "Show products",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Herkunftskarte",
+  "category": "Inhaltsstoffe",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Zeigt Metaobjekte vom Typ „origin“ als Punkte auf einer Karte und als Liste. Ein Klick öffnet die Detailkarte mit Text und Produkten. Felder: siehe Theme-Dokumentation, „Herkunftskarte“."
+   },
+   {
+    "type": "text",
+    "id": "category",
+    "label": "Nur diese Kategorie",
+    "info": "Optional. Zeigt nur Einträge, deren Feld „category“ genau diesen Wert hat, z. B. „Tee“ (Groß- und Kleinschreibung egal). Leer: alle Einträge."
+   },
+   {
+    "type": "select",
+    "id": "region",
+    "label": "Kartenausschnitt",
+    "info": "Automatisch: Europakarte, wenn alle Punkte in Europa liegen, sonst Weltkarte, jeweils auf die Punkte zugeschnitten.",
+    "default": "fit",
+    "options": [
+     {
+      "value": "fit",
+      "label": "Automatisch (um alle Punkte)"
+     },
+     {
+      "value": "world",
+      "label": "Welt"
+     },
+     {
+      "value": "europe",
+      "label": "Europa"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Anordnung",
+    "info": "Neben der Karte ab etwa 750 px Blockbreite, schmaler darunter.",
+    "default": "side",
+    "options": [
+     {
+      "value": "side",
+      "label": "Liste neben der Karte"
+     },
+     {
+      "value": "stacked",
+      "label": "Liste unter der Karte"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Karte"
+   },
+   {
+    "type": "select",
+    "id": "point_color",
+    "label": "Farbe der Punkte",
+    "default": "signal",
+    "options": [
+     {
+      "value": "signal",
+      "label": "Schema: Akzent"
+     },
+     {
+      "value": "ink",
+      "label": "Schema: Text"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "land_color",
+    "label": "Farbe der Landflächen",
+    "default": "rule",
+    "options": [
+     {
+      "value": "rule",
+      "label": "Schema: Linie"
+     },
+     {
+      "value": "media",
+      "label": "Schema: Bildfläche"
+     },
+     {
+      "value": "selection",
+      "label": "Schema: Auswahl"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Detailkarte"
+   },
+   {
+    "type": "select",
+    "id": "heading_tag",
+    "label": "Überschrift der Detailkarte",
+    "default": "h3",
+    "options": [
+     {
+      "value": "h2",
+      "label": "H2 – Abschnitt"
+     },
+     {
+      "value": "h3",
+      "label": "H3 – Unterpunkt"
+     },
+     {
+      "value": "h4",
+      "label": "H4 – Unter-Unterpunkt"
+     },
+     {
+      "value": "p",
+      "label": "Normaler Text"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Bild zeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_products",
+    "label": "Produkte zeigen",
+    "default": true
+   },
+   {
+    "type": "range",
+    "id": "products_limit",
+    "label": "Höchstzahl Produkte",
+    "default": 4,
+    "min": 1,
+    "max": 8,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "show_products",
+      "label": "Produkte zeigen",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "block": "breadcrumbs",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "breadcrumbs",
+ "id": "breadcrumbs",
+ "de": {
+  "desktop": {
+   "file": "de/breadcrumbs-desktop.webp",
+   "width": 1600,
+   "height": 74,
+   "bytes": 9246,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/breadcrumbs-desktop-800.webp",
+   "width": 800,
+   "height": 37,
+   "bytes": 3742,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/breadcrumbs.webp",
+   "width": 640,
+   "height": 30,
+   "bytes": 3050,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/breadcrumbs-mobile.webp",
+   "width": 780,
+   "height": 156,
+   "bytes": 8518,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/breadcrumbs-desktop.webp",
+   "width": 1600,
+   "height": 74,
+   "bytes": 8508,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/breadcrumbs-desktop-800.webp",
+   "width": 800,
+   "height": 37,
+   "bytes": 3392,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/breadcrumbs.webp",
+   "width": 640,
+   "height": 30,
+   "bytes": 2724,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/breadcrumbs-mobile.webp",
+   "width": 780,
+   "height": 156,
+   "bytes": 8004,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

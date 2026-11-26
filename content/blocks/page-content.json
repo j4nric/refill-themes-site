@@ -1,0 +1,39 @@
+{
+ "slug": "page-content",
+ "kind": "block",
+ "source": "blocks/page-content.liquid",
+ "source_sha1": "405918428673",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Page: content",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Shows the page title and text. Edit the text under Online Store → Pages."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_title",
+    "label": "Show page title",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Seite: Inhalt",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Zeigt Titel und Text der Seite. Den Text bearbeiten Sie unter Onlineshop → Seiten."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_title",
+    "label": "Seitentitel anzeigen",
+    "default": true
+   }
+  ]
+ }
+}

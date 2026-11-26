@@ -1,0 +1,73 @@
+{
+ "block": "logo-list",
+ "shop": "ostra",
+ "template": "index.json",
+ "section": "press",
+ "id": "press",
+ "de": {
+  "desktop": {
+   "file": "de/logo-list-desktop.webp",
+   "width": 1600,
+   "height": 259,
+   "bytes": 18360,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/logo-list-desktop-800.webp",
+   "width": 800,
+   "height": 130,
+   "bytes": 8078,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/logo-list.webp",
+   "width": 640,
+   "height": 104,
+   "bytes": 5040,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/logo-list-mobile.webp",
+   "width": 748,
+   "height": 382,
+   "bytes": 8998,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/logo-list-desktop.webp",
+   "width": 1600,
+   "height": 259,
+   "bytes": 17112,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/logo-list-desktop-800.webp",
+   "width": 800,
+   "height": 130,
+   "bytes": 8020,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/logo-list.webp",
+   "width": 640,
+   "height": 104,
+   "bytes": 5206,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/logo-list-mobile.webp",
+   "width": 748,
+   "height": 382,
+   "bytes": 8742,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

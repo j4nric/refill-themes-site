@@ -1,0 +1,59 @@
+{
+ "slug": "divider",
+ "kind": "block",
+ "source": "blocks/divider.liquid",
+ "source_sha1": "a6b70e132531",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Divider",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Style",
+    "default": "rule",
+    "options": [
+     {
+      "value": "rule",
+      "label": "Fine"
+     },
+     {
+      "value": "ink",
+      "label": "Text color"
+     },
+     {
+      "value": "heavy",
+      "label": "Heavy"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Trennlinie",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Stil",
+    "default": "rule",
+    "options": [
+     {
+      "value": "rule",
+      "label": "Fein"
+     },
+     {
+      "value": "ink",
+      "label": "Textfarbe"
+     },
+     {
+      "value": "heavy",
+      "label": "Kräftig"
+     }
+    ]
+   }
+  ]
+ }
+}

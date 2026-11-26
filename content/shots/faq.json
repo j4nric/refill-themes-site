@@ -1,0 +1,73 @@
+{
+ "block": "faq",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "faq",
+ "id": "faq-list",
+ "de": {
+  "desktop": {
+   "file": "de/faq-desktop.webp",
+   "width": 741,
+   "height": 370,
+   "bytes": 9024,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/faq-desktop-800.webp",
+   "width": 741,
+   "height": 370,
+   "bytes": 9024,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/faq.webp",
+   "width": 640,
+   "height": 320,
+   "bytes": 7634,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/faq-mobile.webp",
+   "width": 748,
+   "height": 618,
+   "bytes": 14584,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/faq-desktop.webp",
+   "width": 741,
+   "height": 370,
+   "bytes": 8718,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/faq-desktop-800.webp",
+   "width": 741,
+   "height": 370,
+   "bytes": 8718,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/faq.webp",
+   "width": 640,
+   "height": 320,
+   "bytes": 7384,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/faq-mobile.webp",
+   "width": 748,
+   "height": 618,
+   "bytes": 14110,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "block": "image-hotspots",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "look",
+ "id": "look",
+ "de": {
+  "desktop": {
+   "file": "de/image-hotspots-desktop.webp",
+   "width": 1521,
+   "height": 1250,
+   "bytes": 46652,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/image-hotspots-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 19064,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/image-hotspots.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 13492,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 2,
+    "y": 3,
+    "box": [
+     0.7,
+     0.9,
+     98.7,
+     67.6
+    ],
+    "n": 1
+   },
+   {
+    "setting": "look_heading",
+    "x": 2,
+    "y": 72.1,
+    "box": [
+     0.7,
+     70.8,
+     98.7,
+     2.6
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/image-hotspots-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 72822,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/image-hotspots-desktop.webp",
+   "width": 1521,
+   "height": 1250,
+   "bytes": 45036,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/image-hotspots-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 18222,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/image-hotspots.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 12950,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 2,
+    "y": 3,
+    "box": [
+     0.7,
+     0.9,
+     98.7,
+     67.6
+    ],
+    "n": 1
+   },
+   {
+    "setting": "look_heading",
+    "x": 2,
+    "y": 72.1,
+    "box": [
+     0.7,
+     70.8,
+     98.7,
+     2.6
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/image-hotspots-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 70212,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

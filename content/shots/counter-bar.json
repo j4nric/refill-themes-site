@@ -1,0 +1,73 @@
+{
+ "block": "counter-bar",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "hero",
+ "id": "hero-counters",
+ "de": {
+  "desktop": {
+   "file": "de/counter-bar-desktop.webp",
+   "width": 691,
+   "height": 195,
+   "bytes": 4846,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/counter-bar-desktop-800.webp",
+   "width": 691,
+   "height": 195,
+   "bytes": 4846,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/counter-bar.webp",
+   "width": 640,
+   "height": 181,
+   "bytes": 4306,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/counter-bar-mobile.webp",
+   "width": 652,
+   "height": 304,
+   "bytes": 7190,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/counter-bar-desktop.webp",
+   "width": 691,
+   "height": 195,
+   "bytes": 5646,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/counter-bar-desktop-800.webp",
+   "width": 691,
+   "height": 195,
+   "bytes": 5646,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/counter-bar.webp",
+   "width": 640,
+   "height": 181,
+   "bytes": 5274,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/counter-bar-mobile.webp",
+   "width": 652,
+   "height": 332,
+   "bytes": 8274,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

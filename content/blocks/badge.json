@@ -1,0 +1,105 @@
+{
+ "slug": "badge",
+ "kind": "block",
+ "source": "blocks/badge.liquid",
+ "source_sha1": "464363834b7d",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Badge",
+  "category": "Text",
+  "settings": [
+   {
+    "type": "text",
+    "id": "text",
+    "label": "Text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "New"
+   },
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Style",
+    "default": "neutral",
+    "options": [
+     {
+      "value": "neutral",
+      "label": "Outline"
+     },
+     {
+      "value": "signal",
+      "label": "Accent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Badge",
+  "category": "Text",
+  "settings": [
+   {
+    "type": "text",
+    "id": "text",
+    "label": "Text",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Neu"
+   },
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Stil",
+    "default": "neutral",
+    "options": [
+     {
+      "value": "neutral",
+      "label": "Rahmen"
+     },
+     {
+      "value": "signal",
+      "label": "Akzent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "block": "timeline",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "subscription",
+ "id": "subscription-timeline",
+ "de": {
+  "desktop": {
+   "file": "de/timeline-desktop.webp",
+   "width": 751,
+   "height": 443,
+   "bytes": 20852,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/timeline-desktop-800.webp",
+   "width": 751,
+   "height": 443,
+   "bytes": 20852,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/timeline.webp",
+   "width": 640,
+   "height": 378,
+   "bytes": 16184,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/timeline-mobile.webp",
+   "width": 748,
+   "height": 956,
+   "bytes": 32718,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/timeline-desktop.webp",
+   "width": 751,
+   "height": 411,
+   "bytes": 18400,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/timeline-desktop-800.webp",
+   "width": 751,
+   "height": 411,
+   "bytes": 18400,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/timeline.webp",
+   "width": 640,
+   "height": 350,
+   "bytes": 15172,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/timeline-mobile.webp",
+   "width": 748,
+   "height": 908,
+   "bytes": 29308,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

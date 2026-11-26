@@ -1,0 +1,293 @@
+{
+ "slug": "product-media",
+ "kind": "block",
+ "source": "blocks/product-media.liquid",
+ "source_sha1": "b9eccfae0eaa",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Product media",
+  "category": "Product: content",
+  "settings": [
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Layout on large screens",
+    "info": "On phones always a swipeable strip with a counter (the slider keeps its thumbnails or dots).",
+    "default": "grid",
+    "options": [
+     {
+      "value": "grid",
+      "label": "Grid"
+     },
+     {
+      "value": "stack",
+      "label": "Stacked"
+     },
+     {
+      "value": "columns",
+      "label": "Even grid (2 columns)"
+     },
+     {
+      "value": "mosaic",
+      "label": "Mosaic (one large, two small)"
+     },
+     {
+      "value": "slider",
+      "label": "Slider"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "thumbnails",
+    "label": "Thumbnails",
+    "default": "bottom",
+    "options": [
+     {
+      "value": "bottom",
+      "label": "Below"
+     },
+     {
+      "value": "top",
+      "label": "Above"
+     },
+     {
+      "value": "left",
+      "label": "Left"
+     },
+     {
+      "value": "right",
+      "label": "Right"
+     },
+     {
+      "value": "none",
+      "label": "None (dots or counter)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Layout on large screens",
+      "op": "is",
+      "value": "Slider"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Layout on large screens",
+      "op": "is",
+      "value": "Slider"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "indicator",
+    "label": "Show position as",
+    "default": "counter",
+    "options": [
+     {
+      "value": "counter",
+      "label": "Counter (1 / 4)"
+     },
+     {
+      "value": "dots",
+      "label": "Dots"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Layout on large screens",
+      "op": "is",
+      "value": "Slider"
+     },
+     "and",
+     {
+      "setting": "thumbnails",
+      "label": "Thumbnails",
+      "op": "is",
+      "value": "None (dots or counter)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Layout on large screens",
+      "op": "is",
+      "value": "Slider"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "ratio",
+    "label": "Aspect ratio",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "fullscreen",
+    "label": "Full screen on image click",
+    "info": "The gallery fills the screen while the product info slides aside. Swipe, arrows, zoom; close with ×, Escape or by scrolling.",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Produktbilder",
+  "category": "Produkt: Inhalte",
+  "settings": [
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Anordnung auf großen Bildschirmen",
+    "info": "Am Handy immer als Wischleiste mit Zähler (im Slider mit seinen Vorschaubildern oder Punkten).",
+    "default": "grid",
+    "options": [
+     {
+      "value": "grid",
+      "label": "Raster"
+     },
+     {
+      "value": "stack",
+      "label": "Untereinander"
+     },
+     {
+      "value": "columns",
+      "label": "Raster gleichmäßig (2 Spalten)"
+     },
+     {
+      "value": "mosaic",
+      "label": "Mosaik (ein großes, zwei kleine)"
+     },
+     {
+      "value": "slider",
+      "label": "Slider"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "thumbnails",
+    "label": "Vorschaubilder",
+    "default": "bottom",
+    "options": [
+     {
+      "value": "bottom",
+      "label": "Unten"
+     },
+     {
+      "value": "top",
+      "label": "Oben"
+     },
+     {
+      "value": "left",
+      "label": "Links"
+     },
+     {
+      "value": "right",
+      "label": "Rechts"
+     },
+     {
+      "value": "none",
+      "label": "Keine (Punkte oder Zähler)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Anordnung auf großen Bildschirmen",
+      "op": "is",
+      "value": "Slider"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Anordnung auf großen Bildschirmen",
+      "op": "is",
+      "value": "Slider"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "indicator",
+    "label": "Position anzeigen als",
+    "default": "counter",
+    "options": [
+     {
+      "value": "counter",
+      "label": "Zähler (1 / 4)"
+     },
+     {
+      "value": "dots",
+      "label": "Punkte"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Anordnung auf großen Bildschirmen",
+      "op": "is",
+      "value": "Slider"
+     },
+     "and",
+     {
+      "setting": "thumbnails",
+      "label": "Vorschaubilder",
+      "op": "is",
+      "value": "Keine (Punkte oder Zähler)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Anordnung auf großen Bildschirmen",
+      "op": "is",
+      "value": "Slider"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "ratio",
+    "label": "Seitenverhältnis",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "fullscreen",
+    "label": "Vollbild beim Klick auf ein Bild",
+    "info": "Die Galerie füllt den Bildschirm, die Produktinfo gleitet zur Seite. Wischen, Pfeile, Vergrößern; schließen mit ×, Escape oder Scrollen.",
+    "default": true
+   }
+  ]
+ }
+}

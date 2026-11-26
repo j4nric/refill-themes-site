@@ -1,0 +1,151 @@
+{
+ "slug": "ingredient-profile",
+ "kind": "block",
+ "source": "blocks/ingredient-profile.liquid",
+ "source_sha1": "08c2c583d6a9",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Ingredient: profile",
+  "category": "Ingredients",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Shows name, up to three details (e.g. form and source), description and image of an ingredient. On ingredient pages, the current entry is used automatically."
+   },
+   {
+    "type": "text",
+    "id": "ingredient_handle",
+    "label": "Ingredient handle",
+    "info": "Only needed outside ingredient pages. Handle of the entry under Content › Metaobjects › Ingredient, for example magnesium, darjeeling or shea-butter."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Show image",
+    "default": true
+   },
+   {
+    "type": "text",
+    "id": "overline",
+    "label": "Overline",
+    "info": "Short label above the name. Empty = “Ingredient”. Example: Growing region, Raw material."
+   },
+   {
+    "type": "header",
+    "content": "Details"
+   },
+   {
+    "type": "paragraph",
+    "content": "Each detail shows one field of the ingredient metaobject. Key: field key, e.g. form, source, vegan, function or altitude. Empty key: detail hidden. Yes/no fields appear as “Yes” or “No”."
+   },
+   {
+    "type": "text",
+    "id": "field_1_label",
+    "label": "Detail 1: label",
+    "info": "Empty: default label for form, source and vegan, otherwise the key."
+   },
+   {
+    "type": "text",
+    "id": "field_1_key",
+    "label": "Detail 1: field key",
+    "default": "form"
+   },
+   {
+    "type": "text",
+    "id": "field_2_label",
+    "label": "Detail 2: label",
+    "info": "Empty: default label for form, source and vegan, otherwise the key."
+   },
+   {
+    "type": "text",
+    "id": "field_2_key",
+    "label": "Detail 2: field key",
+    "default": "source"
+   },
+   {
+    "type": "text",
+    "id": "field_3_label",
+    "label": "Detail 3: label",
+    "info": "Empty: default label for form, source and vegan, otherwise the key."
+   },
+   {
+    "type": "text",
+    "id": "field_3_key",
+    "label": "Detail 3: field key",
+    "default": "vegan"
+   }
+  ]
+ },
+ "de": {
+  "name": "Inhaltsstoff: Steckbrief",
+  "category": "Inhaltsstoffe",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Zeigt Name, bis zu drei Angaben (z. B. Form und Herkunft), Beschreibung und Bild eines Inhaltsstoffs. Auf Inhaltsstoff-Seiten automatisch der jeweilige Eintrag."
+   },
+   {
+    "type": "text",
+    "id": "ingredient_handle",
+    "label": "Handle des Inhaltsstoffs",
+    "info": "Nur außerhalb von Inhaltsstoff-Seiten nötig. Handle des Eintrags unter Inhalt › Metaobjekte › Inhaltsstoff, z. B. magnesium, darjeeling oder shea-butter."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Bild anzeigen",
+    "default": true
+   },
+   {
+    "type": "text",
+    "id": "overline",
+    "label": "Überzeile",
+    "info": "Kurze Bezeichnung über dem Namen. Leer = „Inhaltsstoff“. Beispiel: Anbaugebiet, Rohstoff."
+   },
+   {
+    "type": "header",
+    "content": "Angaben"
+   },
+   {
+    "type": "paragraph",
+    "content": "Jede Angabe zeigt ein Feld des Metaobjekts Inhaltsstoff. Schlüssel: Feldschlüssel, z. B. form, source, vegan, function oder altitude. Leerer Schlüssel: Angabe entfällt. Ja/Nein-Felder erscheinen als „Ja“ oder „Nein“."
+   },
+   {
+    "type": "text",
+    "id": "field_1_label",
+    "label": "Angabe 1: Beschriftung",
+    "info": "Leer: Standardbeschriftung bei form, source und vegan, sonst der Schlüssel."
+   },
+   {
+    "type": "text",
+    "id": "field_1_key",
+    "label": "Angabe 1: Feldschlüssel",
+    "default": "form"
+   },
+   {
+    "type": "text",
+    "id": "field_2_label",
+    "label": "Angabe 2: Beschriftung",
+    "info": "Leer: Standardbeschriftung bei form, source und vegan, sonst der Schlüssel."
+   },
+   {
+    "type": "text",
+    "id": "field_2_key",
+    "label": "Angabe 2: Feldschlüssel",
+    "default": "source"
+   },
+   {
+    "type": "text",
+    "id": "field_3_label",
+    "label": "Angabe 3: Beschriftung",
+    "info": "Leer: Standardbeschriftung bei form, source und vegan, sonst der Schlüssel."
+   },
+   {
+    "type": "text",
+    "id": "field_3_key",
+    "label": "Angabe 3: Feldschlüssel",
+    "default": "vegan"
+   }
+  ]
+ }
+}

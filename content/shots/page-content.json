@@ -1,0 +1,73 @@
+{
+ "block": "page-content",
+ "shop": "nordform",
+ "template": "page.json",
+ "section": "main",
+ "id": "page-content",
+ "de": {
+  "desktop": {
+   "file": "de/page-content-desktop.webp",
+   "width": 1521,
+   "height": 621,
+   "bytes": 37440,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/page-content-desktop-800.webp",
+   "width": 800,
+   "height": 327,
+   "bytes": 16978,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/page-content.webp",
+   "width": 640,
+   "height": 261,
+   "bytes": 11948,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/page-content-mobile.webp",
+   "width": 748,
+   "height": 1214,
+   "bytes": 57618,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/page-content-desktop.webp",
+   "width": 1521,
+   "height": 621,
+   "bytes": 34862,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/page-content-desktop-800.webp",
+   "width": 800,
+   "height": 327,
+   "bytes": 15658,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/page-content.webp",
+   "width": 640,
+   "height": 261,
+   "bytes": 10616,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/page-content-mobile.webp",
+   "width": 748,
+   "height": 1116,
+   "bytes": 51904,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

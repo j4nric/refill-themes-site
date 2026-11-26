@@ -1,0 +1,195 @@
+{
+ "block": "featured-product",
+ "shop": "kessel-und-blatt",
+ "template": "index.json",
+ "section": "tee-des-monats",
+ "id": "monat-product",
+ "de": {
+  "desktop": {
+   "file": "de/featured-product-desktop.webp",
+   "width": 1440,
+   "height": 1250,
+   "bytes": 82524,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/featured-product-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 34980,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/featured-product.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 22842,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_media",
+    "x": 2.1,
+    "y": 22.5,
+    "box": [
+     0.7,
+     21.1,
+     55.1,
+     72.3
+    ],
+    "n": 1
+   },
+   {
+    "setting": "show_title",
+    "x": 58.6,
+    "y": 3,
+    "box": [
+     60,
+     0.8,
+     39.4,
+     5.1
+    ],
+    "n": 2
+   },
+   {
+    "setting": "show_price",
+    "x": 58.6,
+    "y": 9.7,
+    "box": [
+     60,
+     8.3,
+     39.4,
+     8.7
+    ],
+    "n": 3
+   },
+   {
+    "setting": "show_picker",
+    "x": 58.6,
+    "y": 20.8,
+    "box": [
+     60,
+     19.4,
+     39.4,
+     7.5
+    ],
+    "n": 4
+   },
+   {
+    "setting": "show_purchase_options",
+    "x": 58.6,
+    "y": 30.7,
+    "box": [
+     60,
+     29.3,
+     39.4,
+     32.3
+    ],
+    "n": 5
+   }
+  ],
+  "mobile": {
+   "file": "de/featured-product-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 66290,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/featured-product-desktop.webp",
+   "width": 1440,
+   "height": 1250,
+   "bytes": 62522,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/featured-product-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 25846,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/featured-product.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 17938,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_media",
+    "x": 2.1,
+    "y": 23.3,
+    "box": [
+     0.7,
+     21.9,
+     55.1,
+     72.3
+    ],
+    "n": 1
+   },
+   {
+    "setting": "show_title",
+    "x": 58.6,
+    "y": 3,
+    "box": [
+     60,
+     0.9,
+     39.4,
+     5.1
+    ],
+    "n": 2
+   },
+   {
+    "setting": "show_price",
+    "x": 58.6,
+    "y": 9.7,
+    "box": [
+     60,
+     8.3,
+     39.4,
+     8.7
+    ],
+    "n": 3
+   },
+   {
+    "setting": "show_picker",
+    "x": 58.6,
+    "y": 20.9,
+    "box": [
+     60,
+     19.5,
+     39.4,
+     7.5
+    ],
+    "n": 4
+   },
+   {
+    "setting": "show_purchase_options",
+    "x": 58.6,
+    "y": 30.7,
+    "box": [
+     60,
+     29.3,
+     39.4,
+     32.3
+    ],
+    "n": 5
+   }
+  ],
+  "mobile": {
+   "file": "en/featured-product-mobile.webp",
+   "width": 748,
+   "height": 2800,
+   "bytes": 68794,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

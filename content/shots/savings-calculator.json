@@ -1,0 +1,99 @@
+{
+ "block": "savings-calculator",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "savings-calculator",
+ "de": {
+  "desktop": {
+   "file": "de/savings-calculator-desktop.webp",
+   "width": 621,
+   "height": 365,
+   "bytes": 13058,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/savings-calculator-desktop-800.webp",
+   "width": 621,
+   "height": 365,
+   "bytes": 13058,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/savings-calculator.webp",
+   "width": 621,
+   "height": 365,
+   "bytes": 13058,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 7.2,
+    "box": [
+     1.7,
+     2.7,
+     96.7,
+     8.8
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/savings-calculator-mobile.webp",
+   "width": 748,
+   "height": 634,
+   "bytes": 20700,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/savings-calculator-desktop.webp",
+   "width": 621,
+   "height": 365,
+   "bytes": 13250,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/savings-calculator-desktop-800.webp",
+   "width": 621,
+   "height": 365,
+   "bytes": 13250,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/savings-calculator.webp",
+   "width": 621,
+   "height": 365,
+   "bytes": 13250,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 4.9,
+    "y": 7.4,
+    "box": [
+     1.7,
+     3,
+     96.7,
+     8.8
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/savings-calculator-mobile.webp",
+   "width": 748,
+   "height": 596,
+   "bytes": 21322,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

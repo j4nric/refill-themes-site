@@ -1,0 +1,39 @@
+{
+ "slug": "ingredient-index",
+ "kind": "block",
+ "source": "blocks/ingredient-index.liquid",
+ "source_sha1": "2ddb8c2a1013",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Ingredients: glossary",
+  "category": "Ingredients",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Lists all ingredients from A to Z. For a page per ingredient, turn on “Web pages” under Settings → Custom data → Metaobjects → Ingredient. Up to 250 entries."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   }
+  ]
+ },
+ "de": {
+  "name": "Inhaltsstoffe: Lexikon",
+  "category": "Inhaltsstoffe",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Listet alle Inhaltsstoffe von A bis Z. Für eigene Seiten je Inhaltsstoff unter Einstellungen → Benutzerdefinierte Daten → Metaobjekte → Inhaltsstoff „Webseiten“ aktivieren. Bis zu 250 Einträge."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   }
+  ]
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "slug": "spacer",
+ "kind": "block",
+ "source": "blocks/spacer.liquid",
+ "source_sha1": "54b775e2fe99",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Spacer",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Height",
+    "default": "m",
+    "options": [
+     {
+      "value": "s",
+      "label": "Small"
+     },
+     {
+      "value": "m",
+      "label": "Medium"
+     },
+     {
+      "value": "l",
+      "label": "Large"
+     },
+     {
+      "value": "xl",
+      "label": "Extra large"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Leerraum",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Höhe",
+    "default": "m",
+    "options": [
+     {
+      "value": "s",
+      "label": "Klein"
+     },
+     {
+      "value": "m",
+      "label": "Mittel"
+     },
+     {
+      "value": "l",
+      "label": "Groß"
+     },
+     {
+      "value": "xl",
+      "label": "Sehr groß"
+     }
+    ]
+   }
+  ]
+ }
+}

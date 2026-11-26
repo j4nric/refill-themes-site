@@ -1,56 +1,748 @@
 {
- "image-banner": {
+ "accordion": {
   "de": {
-   "lead": "Ein großes Bild und daneben Ihr Text. Gut für den Anfang einer Seite.",
-   "page": "Oben die Seite wählen, z. B. „Startseite“",
-   "alt_desktop": "Block „Bild mit Text“ am Computer: links ein Teegarten im Morgenlicht, rechts Überschrift „Wir kaufen dort, wo wir die Gärten kennen“ und ein kurzer Text.",
-   "alt_mobile": "Derselbe Block am Handy: das Bild oben, Überschrift und Text darunter.",
-   "where_note": "Überschrift, Text und Buttons sind eigene Blöcke **im** Block „Bild mit Text“. Sie fügen sie dort mit „Block hinzufügen“ ein.",
+   "lead": "Einträge, die sich per Klick aufklappen. Gut für längere Erklärungen, die nicht alle sofort sichtbar sein müssen.",
    "tips": [
-    "Nur beim ersten Bild ganz oben auf der Seite „Sofort laden“ einschalten. Dann erscheint die Seite schneller.",
-    "Wird Wichtiges abgeschnitten? Ändern Sie die „Bildausrichtung“, z. B. auf „Oben“.",
-    "Am Handy steht das Bild immer über dem Text."
+    "Mit „Immer nur ein Eintrag offen“ schließt sich der vorige Eintrag, wenn ein neuer aufgeht.",
+    "Mit einer „Sprungmarke“ (z. B. versand) führt ein Link mit #versand direkt hierher."
    ],
-   "more": ["getting-started", "startseite", "Startseite gestalten"]
+   "more": [
+    "sections-and-blocks",
+    "aufklappen-tabs",
+    "Alle Blöcke zum Aufklappen"
+   ]
   },
   "en": {
-   "lead": "A large image with your text next to it. Good for the start of a page.",
-   "page": "Choose the page at the top, e.g. “Home page”",
-   "alt_desktop": "“Image with text” block on a computer: a tea garden in morning light on the left, the heading “We buy where we know the gardens” and a short text on the right.",
-   "alt_mobile": "The same block on a phone: the image at the top, heading and text below.",
-   "where_note": "Heading, text and buttons are separate blocks **inside** “Image with text”. Add them there with “Add block”.",
+   "lead": "Entries that open with a click. Good for longer explanations that don’t all need to be visible at once.",
    "tips": [
-    "Turn on “Load immediately” only for the first image at the very top of a page. The page then appears faster.",
-    "Is something important cut off? Change “Image position”, for example to “Top”.",
-    "On phones the image is always above the text."
+    "With “Only one entry open at a time”, the previous entry closes when a new one opens.",
+    "With an “Anchor” (e.g. shipping), a link to #shipping jumps straight here."
    ],
-   "more": ["getting-started", "home-page", "Design your home page"]
+   "more": [
+    "sections-and-blocks",
+    "collapsible-and-tabs",
+    "All collapsible blocks"
+   ]
   }
  },
- "text": {
+ "article-content": {
   "de": {
-   "lead": "Ein Absatz Text. Für Erklärungen unter einer Überschrift.",
-   "page": "Oben die Seite wählen, z. B. „Startseite“",
-   "alt_desktop": "Abschnitt „Der Erntebrief“ am Computer. Der Block „Text“ ist gestrichelt markiert: „Einmal im Monat: welche Ernte gerade ankommt …“.",
-   "alt_mobile": "Derselbe Abschnitt am Handy, der Block „Text“ gestrichelt markiert.",
+   "lead": "Der Inhalt eines Blogbeitrags: Titel, Bild und Text. Gehört in die Vorlage „Blogbeitrag“.",
    "tips": [
-    "Wörter in doppelten eckigen Klammern werden hervorgehoben, z. B. [[nachfüllen]].",
-    "„Gedämpft“ bei „Textfarbe“ eignet sich für Hinweise und Kleingedrucktes.",
-    "Für Überschriften nehmen Sie den Block „Überschrift“, nicht „Text“ mit fetter Schrift."
+    "Den Text selbst schreiben Sie im Shopify-Admin unter Onlineshop › Blogbeiträge, nicht im Editor."
    ],
-   "more": ["sections-and-blocks", "text", "Alle Text-Blöcke"]
+   "more": [
+    "sections-and-blocks",
+    "seitenvorlagen",
+    "Blöcke für Seitenvorlagen"
+   ]
   },
   "en": {
-   "lead": "A paragraph of text. For explanations below a heading.",
-   "page": "Choose the page at the top, e.g. “Home page”",
-   "alt_desktop": "The “Harvest letter” section on a computer. The “Text” block has a dashed outline: “Once a month: which harvest is arriving …”.",
-   "alt_mobile": "The same section on a phone, the “Text” block with a dashed outline.",
+   "lead": "The content of a blog post: title, image and text. Belongs in the “Blog post” template.",
    "tips": [
-    "Words in double square brackets are highlighted, e.g. [[refill]].",
-    "“Muted” under “Text color” suits notes and small print.",
-    "Use the “Heading” block for headings, not “Text” in bold."
+    "You write the text itself in the Shopify admin under Online Store › Blog posts, not in the editor."
    ],
-   "more": ["sections-and-blocks", "text", "All text blocks"]
+   "more": [
+    "sections-and-blocks",
+    "page-templates",
+    "Blocks for page templates"
+   ]
+  }
+ },
+ "badge": {
+  "de": {
+   "lead": "Ein kleines Label, z. B. „Neu“ oder „Vegan“. Mit Rahmen oder in der Akzentfarbe.",
+   "tips": [
+    "Wörter in doppelten eckigen Klammern werden hervorgehoben, z. B. [[nachfüllen]]."
+   ]
+  },
+  "en": {
+   "lead": "A small label, e.g. “New” or “Vegan”. With an outline or in the accent color.",
+   "tips": [
+    "Words in double square brackets are highlighted, e.g. [[refill]]."
+   ]
+  }
+ },
+ "blog-posts": {
+  "de": {
+   "lead": "Zeigt Beiträge aus einem Blog: als Raster, als Liste oder mit dem neuesten Beitrag groß.",
+   "tips": [
+    "Lassen Sie „Überschrift“ leer, wenn darüber schon ein Block „Überschrift“ steht.",
+    "Der Link „Alle Beiträge“ lässt sich ausblenden, umbenennen oder als Button zeigen."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "Alle Text-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "Shows posts from a blog: as a grid, as a list or with the newest post large.",
+   "tips": [
+    "Leave “Heading” empty if a “Heading” block already sits above it.",
+    "The “All posts” link can be hidden, renamed or shown as a button."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "All text blocks"
+   ]
+  }
+ },
+ "breadcrumbs": {
+  "de": {
+   "lead": "Der Pfad zur aktuellen Seite, z. B. Startseite › Kollektion › Produkt. Hilft beim Zurückfinden.",
+   "tips": [
+    "Mit „Zuletzt besuchte Kollektion verwenden“ zeigt der Pfad die Kollektion, aus der die Kundschaft kam.",
+    "Eine feste Eltern-Kollektion legen Sie über ein Produkt-Metafeld vom Typ Kollektion fest."
+   ],
+   "more": [
+    "product-page",
+    "brotkrumen",
+    "Brotkrumen auf der Produktseite"
+   ]
+  },
+  "en": {
+   "lead": "The path to the current page, e.g. Home › Collection › Product. Helps visitors find their way back.",
+   "tips": [
+    "With “Use last visited collection”, the path shows the collection the customer came from.",
+    "To set a fixed parent collection, use a product metafield of type collection."
+   ],
+   "more": [
+    "product-page",
+    "breadcrumbs",
+    "Breadcrumbs on the product page"
+   ]
+  }
+ },
+ "bundle-builder": {
+  "de": {
+   "lead": "Kundschaft wählt mehrere Produkte aus einer Kollektion und legt sie zusammen in den Warenkorb.",
+   "tips": [
+    "Den Rabatt legen Sie in Shopify als automatischen Rabatt an. Der „Angebotstext“ beschreibt ihn nur.",
+    "„Sichtbar“ legt fest, wie viele Produkte sofort zu sehen sind. Die übrigen stehen unter „Weitere anzeigen“.",
+    "„Davon mindestens verschiedene Produkte“ verhindert, dass jemand nur ein Produkt mehrfach nimmt."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "set-zusammenstellen",
+    "Set zusammenstellen"
+   ]
+  },
+  "en": {
+   "lead": "Customers choose several products from a collection and add them to the cart together.",
+   "tips": [
+    "Create the discount in Shopify as an automatic discount. The “Offer text” only describes it.",
+    "“Visible” sets how many products show at once. The rest are under “Show more”.",
+    "“Minimum number of different products” stops customers from reaching the minimum with one product."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "build-a-set",
+    "Build a set"
+   ]
+  }
+ },
+ "bundle-contents": {
+  "de": {
+   "lead": "Zeigt, was in einem festen Set steckt, z. B. aus der App Shopify Bundles.",
+   "tips": [
+    "Die Inhalte kommen aus Varianten-Metafeldern. Sie finden sie unter Einstellungen › Benutzerdefinierte Daten › Varianten."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "feste-bundles",
+    "Feste Bundles"
+   ]
+  },
+  "en": {
+   "lead": "Shows what a fixed bundle contains, e.g. from the Shopify Bundles app.",
+   "tips": [
+    "The contents come from variant metafields. You find them under Settings › Custom data › Variants."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "fixed-bundles",
+    "Fixed bundles"
+   ]
+  }
+ },
+ "button": {
+  "de": {
+   "lead": "Ein Link als Button oder als Textlink. Zum Beispiel „Jetzt entdecken“.",
+   "tips": [
+    "Wichtigster Button: Stil „Primär“. Weitere Buttons daneben: „Sekundär“ oder „Tertiär“.",
+    "Wie der Tertiär-Button aussieht, legen Sie unter Theme-Einstellungen › „Buttons“ fest."
+   ],
+   "more": [
+    "getting-started",
+    "buttons",
+    "Buttons einstellen"
+   ]
+  },
+  "en": {
+   "lead": "A link shown as a button or as a text link. For example “Shop now”.",
+   "tips": [
+    "Most important button: style “Primary”. Further buttons next to it: “Secondary” or “Tertiary”.",
+    "You set what the tertiary button looks like under Theme settings › “Buttons”."
+   ],
+   "more": [
+    "getting-started",
+    "buttons",
+    "Setting up buttons"
+   ]
+  }
+ },
+ "buy-buttons": {
+  "de": {
+   "lead": "Menge und „In den Warenkorb“, dazu schnelle Bezahl-Buttons wie PayPal oder Apple Pay.",
+   "tips": [
+    "Bei Produkten mit Abo sind die schnellen Bezahl-Buttons ausgeblendet.",
+    "„Benachrichtigung bei Verfügbarkeit anbieten“: Bei ausverkauften Varianten bekommen Sie eine E-Mail mit der Adresse der Kundschaft."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "dynamische-checkout-buttons",
+    "Schnelle Bezahl-Buttons"
+   ]
+  },
+  "en": {
+   "lead": "Quantity and “Add to cart”, plus quick payment buttons such as PayPal or Apple Pay.",
+   "tips": [
+    "Quick payment buttons are hidden for products with a subscription.",
+    "“Show back-in-stock request”: for sold-out variants you get an email with the customer’s address."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "dynamic-checkout-buttons",
+    "Dynamic checkout buttons"
+   ]
+  }
+ },
+ "carousel": {
+  "de": {
+   "lead": "Eine Reihe von Blöcken zum Blättern, z. B. Zitate oder Bilder.",
+   "tips": [
+    "Bei Folien mit Text oder Produktkarten wählen Sie „Unter den Folien“ als Position der Steuerung.",
+    "„Schriftgröße“ und „Schriftdicke“ unter „Zitate“ gelten für alle Zitate im Karussell."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "layout",
+    "Alle Layout-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "A row of blocks to swipe through, e.g. quotes or images.",
+   "tips": [
+    "For slides with text or product cards, choose “Below the slides” as the position of the controls.",
+    "“Font size” and “Font weight” under “Quotes” apply to all quotes in the carousel."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "layout",
+    "All layout blocks"
+   ]
+  }
+ },
+ "cart-items": {
+  "de": {
+   "lead": "Die Artikel im Warenkorb mit Menge, Abo-Wechsel und auf Wunsch Empfehlungen.",
+   "tips": [
+    "„Empfohlene Produkte zeigen“ zeigt „Passt dazu“. Quelle und Anzahl stellen Sie unter Theme-Einstellungen › Warenkorb ein.",
+    "„Vorschläge, wenn leer“ zeigt bis zu vier Produkte einer Kollektion, wenn der Warenkorb leer ist."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "warenkorbseite",
+    "Die Warenkorbseite"
+   ]
+  },
+  "en": {
+   "lead": "The items in the cart with quantity, subscription switch and optional recommendations.",
+   "tips": [
+    "“Show recommended products” shows “Goes well with”. Set source and number under Theme settings › Cart.",
+    "“Suggestions when empty” shows up to four products from a collection when the cart is empty."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "cart-page",
+    "The cart page"
+   ]
+  }
+ },
+ "cart-summary": {
+  "de": {
+   "lead": "Zwischensumme und Weiter zur Kasse, dazu Fortschrittsbalken, Geschenkverpackung und Bestellnotiz.",
+   "tips": [
+    "Die Stufen des Fortschrittsbalkens legen Sie unter Theme-Einstellungen › „Warenkorb“ fest.",
+    "Für die Geschenkverpackung legen Sie ein Produkt „Geschenkverpackung“ mit Preis an."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "fortschrittsbalken-mit-stufen",
+    "Fortschrittsbalken mit Stufen"
+   ]
+  },
+  "en": {
+   "lead": "Subtotal and checkout, plus progress bar, gift wrap and order note.",
+   "tips": [
+    "Set the tiers of the progress bar under Theme settings › “Cart”.",
+    "For gift wrap, create a product “Gift wrap” with a price."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "progress-bar-with-tiers",
+    "Progress bar with tiers"
+   ]
+  }
+ },
+ "collection-header": {
+  "de": {
+   "lead": "Titel, Beschreibung und Bild oben auf einer Kollektionsseite.",
+   "tips": [
+    "Hat die Kollektion kein Bild, entfällt die Bildspalte von selbst."
+   ],
+   "more": [
+    "collections",
+    "kollektionsseite",
+    "Die Kollektionsseite"
+   ]
+  },
+  "en": {
+   "lead": "Title, description and image at the top of a collection page.",
+   "tips": [
+    "If the collection has no image, the image column disappears by itself."
+   ],
+   "more": [
+    "collections",
+    "collection-page",
+    "The collection page"
+   ]
+  }
+ },
+ "collection-list": {
+  "de": {
+   "lead": "Kollektionen als Kacheln mit Bild, z. B. auf der Startseite.",
+   "tips": [
+    "Lassen Sie „Kollektionen“ leer, erscheinen alle Kollektionen mit Produkten.",
+    "Bei Fotos mit eigenem Hintergrund passt „Feld füllen“ besser als „Ganzes Bild zeigen“."
+   ],
+   "more": [
+    "collections",
+    "kollektionsliste",
+    "Kollektionsliste"
+   ]
+  },
+  "en": {
+   "lead": "Collections as tiles with an image, e.g. on the home page.",
+   "tips": [
+    "Leave “Collections” empty to show all collections with products.",
+    "For photos with their own background, “Fill frame (crop)” fits better than “Show whole image”."
+   ],
+   "more": [
+    "collections",
+    "collection-list",
+    "Collection list"
+   ]
+  }
+ },
+ "collection-nav": {
+  "de": {
+   "lead": "Eine Leiste mit Unterkollektionen, z. B. „Vitamine“ und „Mineralstoffe“ unter „Nahrungsergänzung“.",
+   "tips": [
+    "Die Leiste nimmt zuerst das Kollektions-Metafeld, dann die feste Auswahl, zuletzt das Menü.",
+    "Am einfachsten: das Menü der Kopfzeile wählen. Die Leiste zeigt dann die Ebene der aktuellen Kollektion."
+   ],
+   "more": [
+    "collections",
+    "unterkollektionen",
+    "Unterkollektionen einrichten"
+   ]
+  },
+  "en": {
+   "lead": "A bar of subcollections, e.g. “Vitamins” and “Minerals” under “Supplements”.",
+   "tips": [
+    "The bar uses the collection metafield first, then the fixed selection, and finally the menu.",
+    "Easiest: choose the header menu. The bar then shows the level of the current collection."
+   ],
+   "more": [
+    "collections",
+    "subcollections",
+    "Setting up subcollections"
+   ]
+  }
+ },
+ "collection-products": {
+  "de": {
+   "lead": "Die Produkte einer Kollektion mit Filtern, Sortierung und Seitenzahlen.",
+   "tips": [
+    "Filter richten Sie in der App Search & Discovery ein.",
+    "„Grundpreis zeigen“ ist in der EU für Waren nach Gewicht oder Volumen meist Pflicht. Lassen Sie es an."
+   ],
+   "more": [
+    "collections",
+    "produktliste",
+    "Die Produktliste"
+   ]
+  },
+  "en": {
+   "lead": "The products of a collection with filters, sorting and page numbers.",
+   "tips": [
+    "You set up filters in the Search & Discovery app.",
+    "“Show unit price” is usually required in the EU for goods sold by weight or volume. Leave it on."
+   ],
+   "more": [
+    "collections",
+    "product-list",
+    "The product list"
+   ]
+  }
+ },
+ "columns": {
+  "de": {
+   "lead": "Gleich breite Spalten nebeneinander. Am Handy stehen sie untereinander.",
+   "tips": [
+    "Legen Sie andere Blöcke in die Spalten, z. B. „Icon mit Text“."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "gruppe-und-spalten",
+    "Gruppe und Spalten"
+   ]
+  },
+  "en": {
+   "lead": "Equal-width columns side by side. On phones they stack.",
+   "tips": [
+    "Put other blocks into the columns, e.g. “Icon with text”."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "group-and-columns",
+    "Group and columns"
+   ]
+  }
+ },
+ "comparison-table": {
+  "de": {
+   "lead": "Zwei Spalten im Vergleich, z. B. „Unser Produkt“ und „Andere“.",
+   "tips": [
+    "Eine Zeile je Merkmal: Merkmal | Wert 1 | Wert 2.",
+    "„ja“ und „nein“ werden automatisch zu ✓ und –."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "vorteile-vergleich",
+    "Blöcke für Vorteile und Vergleich"
+   ]
+  },
+  "en": {
+   "lead": "Two columns compared, e.g. “Our product” and “Others”.",
+   "tips": [
+    "One row per feature: feature | value 1 | value 2.",
+    "“yes” and “no” automatically become ✓ and –."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "benefits-and-comparison",
+    "Blocks for benefits and comparison"
+   ]
+  }
+ },
+ "contact-form": {
+  "de": {
+   "lead": "Das Kontaktformular von Shopify, auf Wunsch mit Telefonfeld.",
+   "tips": []
+  },
+  "en": {
+   "lead": "Shopify’s contact form, optionally with a phone field.",
+   "tips": []
+  }
+ },
+ "countdown": {
+  "de": {
+   "lead": "Zeigt die Zeit bis zu einem Datum, z. B. bis Bestellschluss.",
+   "tips": [
+    "Datum im Format JJJJ-MM-TT HH:MM eingeben. Es gilt die Zeitzone des Shops.",
+    "Wiederkehrende Enden („Jede Woche“) sind für Fristen wie den Bestellschluss gedacht, nicht für Angebote.",
+    "Ohne „Text nach Ablauf“ verschwindet der Block, wenn die Zeit um ist."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "buttons-aktionen",
+    "Buttons und Aktionen"
+   ]
+  },
+  "en": {
+   "lead": "Shows the time left until a date, e.g. until the order cut-off.",
+   "tips": [
+    "Enter the date as YYYY-MM-DD HH:MM. The store’s time zone applies.",
+    "Repeating ends (“Every week”) are meant for deadlines like the order cut-off, not for offers.",
+    "Without “Text after the end”, the block disappears when the time is up."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "buttons-and-promotions",
+    "Buttons and promotions"
+   ]
+  }
+ },
+ "counter-bar": {
+  "de": {
+   "lead": "Große Zahlen mit Beschriftung, z. B. „48 h · Versandzeit“.",
+   "tips": [
+    "Je Zahl fügen Sie einen Unterblock „Zähler“ hinzu.",
+    "„Beim Erscheinen hochzählen“ wirkt nur weiter unten auf der Seite und nie bei „Bewegung reduzieren“."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "vorteile-vergleich",
+    "Blöcke für Vorteile und Vergleich"
+   ]
+  },
+  "en": {
+   "lead": "Large numbers with a label, e.g. “48 h · shipping time”.",
+   "tips": [
+    "Add one “Counter” sub-block per number.",
+    "“Count up when visible” only works further down the page and never with reduced motion."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "benefits-and-comparison",
+    "Blocks for benefits and comparison"
+   ]
+  }
+ },
+ "custom-liquid": {
+  "de": {
+   "lead": "Eigener Code, z. B. von einer App oder Agentur.",
+   "tips": [
+    "Fehlerhafter Code kann die Seite stören."
+   ]
+  },
+  "en": {
+   "lead": "Your own code, e.g. from an app or agency.",
+   "tips": [
+    "Faulty code can break the page."
+   ]
+  }
+ },
+ "data-table": {
+  "de": {
+   "lead": "Eine Tabelle mit Produktangaben, z. B. Nährstoffe je Tagesdosis oder Nährwerte je 100 g.",
+   "tips": [
+    "Der „Tafeltyp“ bestimmt Überschrift, Spaltenköpfe und Fußnote.",
+    "Ohne Metafeld tragen Sie die Zeilen direkt ein: Name | Wert | dritte Spalte. Ein - am Anfang rückt die Zeile ein."
+   ],
+   "more": [
+    "product-data",
+    "datentafel-einrichten",
+    "Datentafel einrichten"
+   ]
+  },
+  "en": {
+   "lead": "A table of product facts, e.g. nutrients per daily dose or nutrition per 100 g.",
+   "tips": [
+    "The “Table type” sets heading, column titles and footnote.",
+    "Without a metafield, enter the rows directly: name | value | third column. A - at the start indents the row."
+   ],
+   "more": [
+    "product-data",
+    "setting-up-the-facts-table",
+    "Setting up the facts table"
+   ]
+  }
+ },
+ "delivery-estimate": {
+  "de": {
+   "lead": "Eine Zeile wie „Voraussichtlich geliefert bis Mi., 25.11.“.",
+   "tips": [
+    "Tragen Sie Feiertage unter „Tage ohne Versand und Zustellung“ ein, ein Datum pro Zeile. Jedes Jahr neu.",
+    "„Laufzeit höchstens“ muss mindestens so groß sein wie „Laufzeit mindestens“."
+   ],
+   "more": [
+    "product-page",
+    "lieferdatum",
+    "Lieferdatum"
+   ]
+  },
+  "en": {
+   "lead": "One line such as “Estimated delivery by Wed, Nov 25”.",
+   "tips": [
+    "Enter holidays under “Days without dispatch or delivery”, one date per line. Update them every year.",
+    "“Transit time maximum” must be at least “Transit time minimum”."
+   ],
+   "more": [
+    "product-page",
+    "delivery-date",
+    "Delivery date"
+   ]
+  }
+ },
+ "divider": {
+  "de": {
+   "lead": "Eine waagerechte Linie zwischen Inhalten.",
+   "tips": [],
+   "more": [
+    "sections-and-blocks",
+    "layout",
+    "Alle Layout-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "A horizontal line between content.",
+   "tips": [],
+   "more": [
+    "sections-and-blocks",
+    "layout",
+    "All layout blocks"
+   ]
+  }
+ },
+ "events": {
+  "de": {
+   "lead": "Termine als Liste oder Kalender, z. B. Verkostungen oder Workshops.",
+   "tips": [
+    "Ohne kommende Termine zeigt der Block „Gerade keine Termine“ – oder verschwindet, wenn Sie das ausschalten.",
+    "„In den Kalender“ lädt eine Datei für Apple Kalender, Outlook und Google Kalender."
+   ]
+  },
+  "en": {
+   "lead": "Events as a list or calendar, e.g. tastings or workshops.",
+   "tips": [
+    "Without upcoming events the block shows “No events right now” – or disappears if you turn that off.",
+    "“Add to calendar” downloads a file for Apple Calendar, Outlook and Google Calendar."
+   ]
+  }
+ },
+ "faq": {
+  "de": {
+   "lead": "Fragen und Antworten zum Aufklappen. Suchmaschinen erkennen sie als FAQ.",
+   "tips": [
+    "Je Frage fügen Sie einen Unterblock „Frage“ hinzu.",
+    "Mit einer „Sprungmarke“ (z. B. versand) führt ein Link mit #versand direkt hierher."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "aufklappen-tabs",
+    "Alle Blöcke zum Aufklappen"
+   ]
+  },
+  "en": {
+   "lead": "Questions and answers that open with a click. Search engines recognise them as an FAQ.",
+   "tips": [
+    "Add one “Question” sub-block per question.",
+    "With an “Anchor” (e.g. shipping), a link to #shipping jumps straight here."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "collapsible-and-tabs",
+    "All collapsible blocks"
+   ]
+  }
+ },
+ "featured-product": {
+  "de": {
+   "lead": "Ein Produkt mit Bildern, Preis und Kauf-Button auf einer beliebigen Seite.",
+   "tips": [
+    "Jeder Teil lässt sich einzeln ausschalten, z. B. die Kaufoptionen.",
+    "„Sofort laden“ nur einschalten, wenn der Block ganz oben auf der Seite steht."
+   ],
+   "more": [
+    "product-page",
+    "hervorgehobenes-produkt",
+    "Hervorgehobenes Produkt"
+   ]
+  },
+  "en": {
+   "lead": "One product with images, price and buy button on any page.",
+   "tips": [
+    "Each part can be turned off on its own, e.g. the purchase options.",
+    "Only turn on “Load immediately” if the block is at the very top of the page."
+   ],
+   "more": [
+    "product-page",
+    "featured-product",
+    "Featured product"
+   ]
+  }
+ },
+ "frequently-bought": {
+  "de": {
+   "lead": "Das Produkt der Seite plus bis zu drei passende Produkte, mit „Alle hinzufügen“.",
+   "tips": [
+    "Der Block ändert keine Preise. Einen Rabatt legen Sie selbst als automatischen Rabatt an.",
+    "Quelle „Automatisch“ nutzt die ergänzenden Produkte aus der App Search & Discovery."
+   ],
+   "more": [
+    "product-page",
+    "haeufig-zusammen-gekauft",
+    "Häufig zusammen gekauft"
+   ]
+  },
+  "en": {
+   "lead": "The product on the page plus up to three matching products, with “Add all”.",
+   "tips": [
+    "The block doesn’t change prices. Create any discount yourself as an automatic discount.",
+    "Source “Automatic” uses the complementary products from the Search & Discovery app."
+   ],
+   "more": [
+    "product-page",
+    "often-bought-together",
+    "Often bought together"
+   ]
+  }
+ },
+ "group": {
+  "de": {
+   "lead": "Fasst Blöcke zusammen, untereinander oder nebeneinander. Auf Wunsch mit Rahmen und eigenem Farbschema.",
+   "tips": [
+    "„Volle Breite nutzen“ bei „nebeneinander“: z. B. Überschrift links, Link rechts.",
+    "Die „Horizontale Ausrichtung“ gilt für Blöcke, bei denen „Ausrichtung wie Gruppe“ an ist."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "gruppe-und-spalten",
+    "Gruppe und Spalten"
+   ]
+  },
+  "en": {
+   "lead": "Combines blocks, stacked or side by side. Optionally with a border and its own color scheme.",
+   "tips": [
+    "“Use full width” with side by side: e.g. heading on the left, link on the right.",
+    "“Horizontal alignment” applies to blocks that have “Match group alignment” turned on."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "group-and-columns",
+    "Group and columns"
+   ]
+  }
+ },
+ "heading": {
+  "de": {
+   "lead": "Eine Überschrift, auf Wunsch mit kleiner Dachzeile darüber.",
+   "tips": [
+    "Pro Seite nur eine Überschrift mit der Gliederungsebene H1.",
+    "Wörter in doppelten eckigen Klammern werden hervorgehoben, z. B. [[nachfüllen]]."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "Alle Text-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "A heading, optionally with a small eyebrow line above it.",
+   "tips": [
+    "Use only one heading with level H1 per page.",
+    "Words in double square brackets are highlighted, e.g. [[refill]]."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "All text blocks"
+   ]
   }
  },
  "icon-with-text": {
@@ -65,7 +757,11 @@
     "Gleiche „Icon-Größe“ in allen Blöcken eines Abschnitts.",
     "Kurze Überschrift, ein Satz Text – mehr liest am Handy kaum jemand."
    ],
-   "more": ["sections-and-blocks", "vorteile-vergleich", "Weitere Blöcke für Vorteile"]
+   "more": [
+    "sections-and-blocks",
+    "vorteile-vergleich",
+    "Weitere Blöcke für Vorteile"
+   ]
   },
   "en": {
    "lead": "A small icon with a heading and a short text. Ideal for benefits or steps.",
@@ -78,7 +774,1291 @@
     "Use the same “Icon size” in all blocks of a section.",
     "A short heading and one sentence – on phones, hardly anyone reads more."
    ],
-   "more": ["sections-and-blocks", "benefits-and-comparison", "More blocks for benefits"]
+   "more": [
+    "sections-and-blocks",
+    "benefits-and-comparison",
+    "More blocks for benefits"
+   ]
+  }
+ },
+ "image": {
+  "de": {
+   "lead": "Ein einzelnes Bild, auf Wunsch mit Link.",
+   "tips": [
+    "Schreiben Sie einen „Alternativtext“: Er beschreibt das Bild für Menschen, die es nicht sehen.",
+    "„Sofort laden“ nur beim ersten großen Bild ganz oben einschalten.",
+    "„Bildausrichtung“ bestimmt, welcher Teil sichtbar bleibt, wenn das Bild beschnitten wird."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "medien",
+    "Alle Medien-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "A single image, optionally with a link.",
+   "tips": [
+    "Write an “Alt text”: it describes the image for people who can’t see it.",
+    "Only turn on “Load immediately” for the first large image at the very top.",
+    "“Image position” decides which part stays visible when the image is cropped."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "media",
+    "All media blocks"
+   ]
+  }
+ },
+ "image-banner": {
+  "de": {
+   "lead": "Ein großes Bild und daneben Ihr Text. Gut für den Anfang einer Seite.",
+   "page": "Oben die Seite wählen, z. B. „Startseite“",
+   "alt_desktop": "Block „Bild mit Text“ am Computer: links ein Teegarten im Morgenlicht, rechts Überschrift „Wir kaufen dort, wo wir die Gärten kennen“ und ein kurzer Text.",
+   "alt_mobile": "Derselbe Block am Handy: das Bild oben, Überschrift und Text darunter.",
+   "where_note": "Überschrift, Text und Buttons sind eigene Blöcke **im** Block „Bild mit Text“. Sie fügen sie dort mit „Block hinzufügen“ ein.",
+   "tips": [
+    "Nur beim ersten Bild ganz oben auf der Seite „Sofort laden“ einschalten. Dann erscheint die Seite schneller.",
+    "Wird Wichtiges abgeschnitten? Ändern Sie die „Bildausrichtung“, z. B. auf „Oben“.",
+    "Am Handy steht das Bild immer über dem Text."
+   ],
+   "more": [
+    "getting-started",
+    "startseite",
+    "Startseite gestalten"
+   ]
+  },
+  "en": {
+   "lead": "A large image with your text next to it. Good for the start of a page.",
+   "page": "Choose the page at the top, e.g. “Home page”",
+   "alt_desktop": "“Image with text” block on a computer: a tea garden in morning light on the left, the heading “We buy where we know the gardens” and a short text on the right.",
+   "alt_mobile": "The same block on a phone: the image at the top, heading and text below.",
+   "where_note": "Heading, text and buttons are separate blocks **inside** “Image with text”. Add them there with “Add block”.",
+   "tips": [
+    "Turn on “Load immediately” only for the first image at the very top of a page. The page then appears faster.",
+    "Is something important cut off? Change “Image position”, for example to “Top”.",
+    "On phones the image is always above the text."
+   ],
+   "more": [
+    "getting-started",
+    "home-page",
+    "Design your home page"
+   ]
+  }
+ },
+ "image-hotspots": {
+  "de": {
+   "lead": "Ein Bild mit nummerierten Punkten. Ein Klick auf einen Punkt zeigt das Produkt dazu.",
+   "tips": [
+    "Die Position jedes Punkts stellen Sie mit „Waagerecht“ und „Senkrecht“ in Prozent ein.",
+    "Am Handy steht statt der Karten eine nummerierte Liste unter dem Bild.",
+    "„Alle Produkte in den Warenkorb“ listet die Produkte unter dem Bild mit einem Knopf für alle."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "medien",
+    "Alle Medien-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "An image with numbered dots. Clicking a dot shows the matching product.",
+   "tips": [
+    "Set each dot’s position with “Horizontal” and “Vertical” in percent.",
+    "On phones a numbered list below the image replaces the cards.",
+    "“Add all products to cart” lists the products below the image with one button for all."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "media",
+    "All media blocks"
+   ]
+  }
+ },
+ "info-popup": {
+  "de": {
+   "lead": "Ein Link oder Button öffnet ein Fenster, z. B. mit einer Größen- oder Dosiertabelle.",
+   "tips": [
+    "Der Inhalt kommt aus Text, einer Seite oder einem Produkt-Metafeld.",
+    "Tabellen aus einer Seite erscheinen im Fenster als Datentabelle."
+   ],
+   "more": [
+    "product-page",
+    "info-popup-groessen-und-dosiertabelle",
+    "Info-Popup"
+   ]
+  },
+  "en": {
+   "lead": "A link or button opens a window, e.g. with a size chart or dosage table.",
+   "tips": [
+    "The content comes from text, a page or a product metafield.",
+    "Tables from a page appear as a data table in the window."
+   ],
+   "more": [
+    "product-page",
+    "info-pop-up-size-chart-and-dosage-table",
+    "Info pop-up"
+   ]
+  }
+ },
+ "ingredient-index": {
+  "de": {
+   "lead": "Alle Inhaltsstoffe von A bis Z, mit Sprungleiste.",
+   "tips": [
+    "Der Block gehört auf die Übersichtsseite des Lexikons."
+   ],
+   "more": [
+    "ingredient-glossary",
+    "schritt-3-uebersichtsseite-az-anlegen",
+    "Übersichtsseite anlegen"
+   ]
+  },
+  "en": {
+   "lead": "All ingredients from A to Z, with a jump bar.",
+   "tips": [
+    "The block belongs on the glossary overview page."
+   ],
+   "more": [
+    "ingredient-glossary",
+    "step-3-create-the-az-overview-page",
+    "Create the overview page"
+   ]
+  }
+ },
+ "ingredient-profile": {
+  "de": {
+   "lead": "Ein Inhaltsstoff im Detail, z. B. auf seiner Lexikon-Seite.",
+   "tips": [
+    "Auf Inhaltsstoff-Seiten zeigt der Block den Eintrag der Seite. Anderswo tragen Sie den Handle ein, z. B. magnesium."
+   ],
+   "more": [
+    "ingredient-glossary",
+    "die-bloecke-im-detail",
+    "Die Lexikon-Blöcke im Detail"
+   ]
+  },
+  "en": {
+   "lead": "One ingredient in detail, e.g. on its glossary page.",
+   "tips": [
+    "On ingredient pages the block shows that page’s entry. Elsewhere, enter the handle, e.g. magnesium."
+   ],
+   "more": [
+    "ingredient-glossary",
+    "the-blocks-in-detail",
+    "The glossary blocks in detail"
+   ]
+  }
+ },
+ "ingredient-spotlight": {
+  "de": {
+   "lead": "Die wichtigsten Inhaltsstoffe eines Produkts mit Bild, Herkunft und kurzem Text.",
+   "tips": [
+    "Die Inhaltsstoffe kommen aus einem Metafeld mit einer Liste von Metaobjekten."
+   ],
+   "more": [
+    "product-data",
+    "inhaltsstoffe",
+    "Inhaltsstoffe einrichten"
+   ]
+  },
+  "en": {
+   "lead": "The key ingredients of a product with image, source and a short text.",
+   "tips": [
+    "The ingredients come from a metafield with a list of metaobjects."
+   ],
+   "more": [
+    "product-data",
+    "ingredients",
+    "Setting up ingredients"
+   ]
+  }
+ },
+ "line-animation": {
+  "de": {
+   "lead": "Wellenlinien, die sich beim Scrollen bewegen. Reiner Schmuck.",
+   "tips": [
+    "„Bewegung beim Scrollen“: Je höher der Wert, desto schneller wandern die Wellen."
+   ],
+   "more": [
+    "animation",
+    "linien-grafik-und-dekor",
+    "Linien und Dekor"
+   ]
+  },
+  "en": {
+   "lead": "Wavy lines that move as you scroll. Pure decoration.",
+   "tips": [
+    "“Movement while scrolling”: the higher the value, the faster the waves move."
+   ],
+   "more": [
+    "animation",
+    "line-art-and-decoration",
+    "Line art and decoration"
+   ]
+  }
+ },
+ "line-art": {
+  "de": {
+   "lead": "Ein Linien-Motiv als Schmuck, z. B. neben einem Bild oder unter einer Überschrift.",
+   "tips": [
+    "13 Motive zur Wahl, z. B. Wellen, Zweig oder Pfeil. Die Höhe folgt dem Motiv."
+   ],
+   "more": [
+    "animation",
+    "linien-grafik-und-dekor",
+    "Linien und Dekor"
+   ]
+  },
+  "en": {
+   "lead": "A line motif as decoration, e.g. next to an image or below a heading.",
+   "tips": [
+    "13 motifs to choose from, e.g. waves, branch or arrow. The height follows the motif."
+   ],
+   "more": [
+    "animation",
+    "line-art-and-decoration",
+    "Line art and decoration"
+   ]
+  }
+ },
+ "logo-list": {
+  "de": {
+   "lead": "Logos von Partnern oder Presse in einer Reihe.",
+   "tips": [
+    "„Einfarbig in Textfarbe“ passt für Logos mit transparentem Hintergrund (PNG, SVG).",
+    "Bei vielen Logos: „Automatisch durchlaufen“."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "medien",
+    "Alle Medien-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "Partner or press logos in a row.",
+   "tips": [
+    "“Single color in text color” suits logos with a transparent background (PNG, SVG).",
+    "With many logos: “Scroll automatically”."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "media",
+    "All media blocks"
+   ]
+  }
+ },
+ "mandatory-info": {
+  "de": {
+   "lead": "Pflichtangaben je nach Produktart: Bezeichnung, Zutaten, Füllmenge, Hinweise und Hersteller.",
+   "tips": [
+    "Wählen Sie die „Produktart“: Lebensmittel, Kosmetik, Futtermittel oder Allgemein.",
+    "Ohne Metafeld für die Füllmenge nimmt der Block die Füllmenge aus dem Grundpreis der Variante."
+   ],
+   "more": [
+    "compliance",
+    "2-block-pflichtangaben",
+    "Block „Pflichtangaben“"
+   ]
+  },
+  "en": {
+   "lead": "Mandatory information by product type: name, ingredients, net quantity, warnings and manufacturer.",
+   "tips": [
+    "Choose the “Product type”: food, cosmetics, animal feed or general.",
+    "Without a net quantity metafield, the block uses the quantity from the variant’s unit price."
+   ],
+   "more": [
+    "compliance",
+    "2-mandatory-information-block",
+    "The “Mandatory information” block"
+   ]
+  }
+ },
+ "marquee": {
+  "de": {
+   "lead": "Eine Textzeile, die langsam durchläuft.",
+   "tips": [
+    "Ein Text pro Zeile.",
+    "Bei „Bewegung reduzieren“ steht das Band still. Es hat außerdem einen Pause-Button."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "buttons-aktionen",
+    "Buttons und Aktionen"
+   ]
+  },
+  "en": {
+   "lead": "A line of text that scrolls slowly.",
+   "tips": [
+    "One text per line.",
+    "With reduced motion the band stands still. It also has a pause button."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "buttons-and-promotions",
+    "Buttons and promotions"
+   ]
+  }
+ },
+ "metafield-content": {
+  "de": {
+   "lead": "Zeigt ein Produkt-Metafeld als Text, Liste oder Tabelle, z. B. Pflegehinweise.",
+   "tips": [
+    "Format des Metafelds: namespace.schlüssel, z. B. custom.care.",
+    "Ist das Metafeld leer, erscheint der Text aus dem Block.",
+    "„Aufklappbar“ funktioniert nur mit Überschrift."
+   ],
+   "more": [
+    "product-page",
+    "metafeld-inhalt",
+    "Metafeld-Inhalt"
+   ]
+  },
+  "en": {
+   "lead": "Shows a product metafield as text, list or table, e.g. care instructions.",
+   "tips": [
+    "Metafield format: namespace.key, e.g. custom.care.",
+    "If the metafield is empty, the text from the block appears.",
+    "“Collapsible” only works with a heading."
+   ],
+   "more": [
+    "product-page",
+    "metafield-content",
+    "Metafield content"
+   ]
+  }
+ },
+ "newsletter": {
+  "de": {
+   "lead": "Ein E-Mail-Feld für die Newsletter-Anmeldung.",
+   "tips": [
+    "Mit „Kunden-Tags“ erkennen Sie später, wo sich jemand angemeldet hat. Mehrere Tags mit Komma trennen."
+   ]
+  },
+  "en": {
+   "lead": "An email field for newsletter signup.",
+   "tips": [
+    "With “Customer tags” you can tell later where someone signed up. Separate several tags with commas."
+   ]
+  }
+ },
+ "origin-map": {
+  "de": {
+   "lead": "Eine Karte mit Punkten, woher Ihre Rohstoffe kommen.",
+   "tips": [
+    "„Nur diese Kategorie“ zeigt nur Einträge mit diesem Wert, z. B. „Tee“.",
+    "Ab etwa 750 px Breite steht die Liste neben der Karte, schmaler darunter."
+   ]
+  },
+  "en": {
+   "lead": "A map with dots showing where your raw materials come from.",
+   "tips": [
+    "“Only this category” shows only entries with that value, e.g. “Tea”.",
+    "From about 750 px wide the list sits next to the map, narrower below it."
+   ]
+  }
+ },
+ "page-content": {
+  "de": {
+   "lead": "Titel und Text einer Seite aus dem Shopify-Admin.",
+   "tips": [
+    "Den Text schreiben Sie im Admin unter Onlineshop › Seiten."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "seitenvorlagen",
+    "Blöcke für Seitenvorlagen"
+   ]
+  },
+  "en": {
+   "lead": "Title and text of a page from the Shopify admin.",
+   "tips": [
+    "You write the text in the admin under Online Store › Pages."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "page-templates",
+    "Blocks for page templates"
+   ]
+  }
+ },
+ "password-form": {
+  "de": {
+   "lead": "Die Passwortseite, solange der Shop noch nicht geöffnet ist: Logo, Überschrift, Nachricht und Passwortfeld.",
+   "tips": [
+    "Ohne eigenes „Logo“ nimmt der Block das Logo aus Einstellungen › Marke, sonst den Shopnamen."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "seitenvorlagen",
+    "Blöcke für Seitenvorlagen"
+   ]
+  },
+  "en": {
+   "lead": "The password page while your store isn’t open yet: logo, heading, message and password field.",
+   "tips": [
+    "Without its own “Logo”, the block uses the logo from Settings › Brand, otherwise the store name."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "page-templates",
+    "Blocks for page templates"
+   ]
+  }
+ },
+ "pickup-availability": {
+  "de": {
+   "lead": "Zeigt, wo das Produkt zur Abholung bereitliegt. Nur wenn Abholung im Geschäft aktiviert ist.",
+   "tips": [
+    "Mit „Standorte des Store-Locators verlinken“ führt der Name des Standorts zur Seite „Standorte“."
+   ]
+  },
+  "en": {
+   "lead": "Shows where the product is ready for pickup. Only when local pickup is turned on.",
+   "tips": [
+    "With “Link store locator locations”, the location name leads to the “Locations” page."
+   ]
+  }
+ },
+ "product-compare": {
+  "de": {
+   "lead": "Mehrere Produkte nebeneinander im Vergleich, Zeile für Zeile.",
+   "tips": [
+    "„Unterschiede standardmäßig hervorheben“ markiert Zeilen mit unterschiedlichen Werten.",
+    "Vorgeschlagene Vergleiche: eine Zeile je Vergleich, „Titel | handle-a, handle-b“."
+   ]
+  },
+  "en": {
+   "lead": "Several products compared side by side, row by row.",
+   "tips": [
+    "“Highlight differences by default” marks rows with different values.",
+    "Suggested comparisons: one line per comparison, “Title | handle-a, handle-b”."
+   ]
+  }
+ },
+ "product-compare-toggle": {
+  "de": {
+   "lead": "Ein Häkchen „Vergleichen“ auf der Produktseite. Damit kommt das Produkt in den Produktvergleich.",
+   "tips": []
+  },
+  "en": {
+   "lead": "A “Compare” checkbox on the product page. It adds the product to the product comparison.",
+   "tips": []
+  }
+ },
+ "product-description": {
+  "de": {
+   "lead": "Die Beschreibung des Produkts aus dem Shopify-Admin, auf Wunsch zum Aufklappen.",
+   "tips": [
+    "Den Text schreiben Sie im Admin beim Produkt."
+   ],
+   "more": [
+    "product-page",
+    "aufbau-der-vorlage",
+    "Aufbau der Produktseite"
+   ]
+  },
+  "en": {
+   "lead": "The product description from the Shopify admin, optionally collapsible.",
+   "tips": [
+    "You write the text in the admin on the product."
+   ],
+   "more": [
+    "product-page",
+    "how-the-template-is-set-up",
+    "How the product page is set up"
+   ]
+  }
+ },
+ "product-details": {
+  "de": {
+   "lead": "Ein Aufklapper mit Inhalt aus einem Metafeld. Nur noch in älteren Vorlagen.",
+   "tips": [
+    "Für Neues nehmen Sie „Metafeld-Inhalt“ mit „Aufklappbar“."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "nicht-mehr-im-picker",
+    "Nicht mehr im Picker"
+   ]
+  },
+  "en": {
+   "lead": "A collapsible row with content from a metafield. Only in older templates.",
+   "tips": [
+    "For new content, use “Metafield content” with “Collapsible”."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "no-longer-in-the-picker",
+    "No longer in the picker"
+   ]
+  }
+ },
+ "product-finder": {
+  "de": {
+   "lead": "Eine Frage mit Antworten, die zu passenden Produkten führen.",
+   "tips": [
+    "Die Filter der Antworten müssen in der App Search & Discovery für Kollektionen aktiv sein."
+   ]
+  },
+  "en": {
+   "lead": "A question with answers that lead to matching products.",
+   "tips": [
+    "The answers’ filters must be active for collections in the Search & Discovery app."
+   ]
+  }
+ },
+ "product-grid": {
+  "de": {
+   "lead": "Produktkarten aus einer Kollektion als Raster, z. B. „Bestseller“ auf der Startseite.",
+   "tips": [
+    "Mit dem Unterblock „Brecher-Kachel“ setzen Sie eine Aktions-Kachel ins Raster.",
+    "„Grundpreis zeigen“ ist in der EU für Waren nach Gewicht oder Volumen meist Pflicht. Lassen Sie es an."
+   ],
+   "more": [
+    "collections",
+    "produktkarten",
+    "Produktkarten einstellen"
+   ]
+  },
+  "en": {
+   "lead": "Product cards from a collection as a grid, e.g. “Bestsellers” on the home page.",
+   "tips": [
+    "Use the “Promo tile” sub-block to add a promotion tile to the grid.",
+    "“Show unit price” is usually required in the EU for goods sold by weight or volume. Leave it on."
+   ],
+   "more": [
+    "collections",
+    "product-cards",
+    "Setting up product cards"
+   ]
+  }
+ },
+ "product-media": {
+  "de": {
+   "lead": "Die Bilder und Videos des Produkts als Galerie.",
+   "tips": [
+    "Am Handy sind die Bilder immer eine Wischleiste mit Zähler.",
+    "„Vollbild beim Klick auf ein Bild“: Die Galerie füllt dann den Bildschirm."
+   ],
+   "more": [
+    "product-page",
+    "produktbilder",
+    "Produktbilder"
+   ]
+  },
+  "en": {
+   "lead": "The product’s images and videos as a gallery.",
+   "tips": [
+    "On phones the images are always a swipe row with a counter.",
+    "“Full screen on image click”: the gallery then fills the screen."
+   ],
+   "more": [
+    "product-page",
+    "product-media",
+    "Product media"
+   ]
+  }
+ },
+ "product-metrics": {
+  "de": {
+   "lead": "Kennzahlen wie Portion, Portionen, Preis pro Tag und Reichweite.",
+   "tips": [
+    "Die Werte kommen aus Metafeldern. Welche, legen Sie unter Theme-Einstellungen › Produktdaten fest.",
+    "Bis zu zwei eigene Werte sind möglich."
+   ],
+   "more": [
+    "product-data",
+    "kennzahlen-portion-preis-pro-tag-reichweite",
+    "Kennzahlen einrichten"
+   ]
+  },
+  "en": {
+   "lead": "Key figures such as serving, servings, price per day and supply duration.",
+   "tips": [
+    "The values come from metafields. You choose which ones under Theme settings › Product data.",
+    "Up to two custom values are possible."
+   ],
+   "more": [
+    "product-data",
+    "key-figures-serving-price-per-day-supply-duration",
+    "Setting up key figures"
+   ]
+  }
+ },
+ "product-price": {
+  "de": {
+   "lead": "Preis, Streichpreis und Grundpreis des Produkts.",
+   "tips": [
+    "Die Farbe des Streichpreises stellen Sie unter Theme-Einstellungen › Markenfarben › Preise ein."
+   ],
+   "more": [
+    "product-page",
+    "titel-und-preis",
+    "Titel und Preis"
+   ]
+  },
+  "en": {
+   "lead": "The product’s price, compare-at price and unit price.",
+   "tips": [
+    "Set the color of the compare-at price under Theme settings › Brand colors › Prices."
+   ],
+   "more": [
+    "product-page",
+    "title-and-price",
+    "Title and price"
+   ]
+  }
+ },
+ "product-rating": {
+  "de": {
+   "lead": "Sterne mit Durchschnitt und Anzahl der Bewertungen.",
+   "tips": [
+    "Die Werte kommen aus einer Bewertungs-App. Ohne Bewertungen erscheint nichts.",
+    "Tragen Sie den „Anker des Bewertungsbereichs“ ein, führen die Sterne zu den Bewertungen."
+   ],
+   "more": [
+    "product-page",
+    "bewertungssterne",
+    "Bewertungssterne"
+   ]
+  },
+  "en": {
+   "lead": "Stars with the average and number of reviews.",
+   "tips": [
+    "The values come from a reviews app. Without reviews nothing shows.",
+    "Enter the “Reviews section anchor” to make the stars lead to the reviews."
+   ],
+   "more": [
+    "product-page",
+    "rating-stars",
+    "Rating stars"
+   ]
+  }
+ },
+ "product-safety": {
+  "de": {
+   "lead": "Angaben zur Produktsicherheit (GPSR): Hersteller, verantwortliche Person, Sicherheitshinweise.",
+   "tips": [
+    "Sicherheitshinweise tragen Sie im Produkt-Metafeld custom.safety_information ein.",
+    "Den Hersteller legen Sie für alle Produkte in den Theme-Einstellungen fest. Für einzelne Produkte geht es mit dem Metafeld custom.manufacturer."
+   ],
+   "more": [
+    "compliance",
+    "1-hersteller-gpsr",
+    "Hersteller (GPSR)"
+   ]
+  },
+  "en": {
+   "lead": "Product safety information (GPSR): manufacturer, responsible person, safety notes.",
+   "tips": [
+    "Enter safety notes in the product metafield custom.safety_information.",
+    "Set the manufacturer for all products in the theme settings. For single products, use the metafield custom.manufacturer."
+   ],
+   "more": [
+    "compliance",
+    "1-manufacturer-gpsr",
+    "Manufacturer (GPSR)"
+   ]
+  }
+ },
+ "product-title": {
+  "de": {
+   "lead": "Der Name des Produkts, auf Wunsch mit Marke und Unterzeile.",
+   "tips": [
+    "„Marke verlinken“ führt zur Seite mit allen Produkten dieser Marke.",
+    "Die Unterzeile kommt aus einem Metafeld. Welches, legen Sie unter Theme-Einstellungen › Produktdaten fest."
+   ],
+   "more": [
+    "product-page",
+    "titel-und-preis",
+    "Titel und Preis"
+   ]
+  },
+  "en": {
+   "lead": "The product’s name, optionally with brand and subtitle.",
+   "tips": [
+    "“Link brand” leads to the page with all products of that brand.",
+    "The subtitle comes from a metafield. You choose which one under Theme settings › Product data."
+   ],
+   "more": [
+    "product-page",
+    "title-and-price",
+    "Title and price"
+   ]
+  }
+ },
+ "profile-scales": {
+  "de": {
+   "lead": "Skalen wie Duft, Textur oder Stärke, z. B. 3 von 5.",
+   "tips": [
+    "Hat das Produkt Werte im Metafeld, ersetzen sie die Einträge im Block."
+   ],
+   "more": [
+    "product-data",
+    "profil-skalen",
+    "Profil-Skalen"
+   ]
+  },
+  "en": {
+   "lead": "Scales such as scent, texture or strength, e.g. 3 out of 5.",
+   "tips": [
+    "If the product has values in the metafield, they replace the entries in the block."
+   ],
+   "more": [
+    "product-data",
+    "profile-scales",
+    "Profile scales"
+   ]
+  }
+ },
+ "purchase-options": {
+  "de": {
+   "lead": "Einmalkauf oder Abo, mit Ersparnis und Lieferzeitleiste.",
+   "tips": [
+    "Das Abo erscheint erst, wenn das Produkt einen Abo-Plan hat.",
+    "„Intervall passend zur Reichweite empfehlen“ braucht die Metafelder für Portionen."
+   ],
+   "more": [
+    "subscriptions",
+    "2-kaufoptionen-auf-der-produktseite",
+    "Kaufoptionen einrichten"
+   ]
+  },
+  "en": {
+   "lead": "One-time purchase or subscription, with savings and delivery timeline.",
+   "tips": [
+    "The subscription only appears once the product has a subscription plan.",
+    "“Recommend interval matching the supply” needs the servings metafields."
+   ],
+   "more": [
+    "subscriptions",
+    "2-purchase-options-on-the-product-page",
+    "Setting up purchase options"
+   ]
+  }
+ },
+ "quantity-tiers": {
+  "de": {
+   "lead": "Packungsgrößen oder Mengenrabatt, mit Preis je Stufe.",
+   "tips": [
+    "Eine Stufe pro Zeile: Menge | Rabatt in %.",
+    "Den Rabatt legen Sie in Shopify als automatischen Rabatt an."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "mengenstaffel",
+    "Mengenstaffel"
+   ]
+  },
+  "en": {
+   "lead": "Pack sizes or quantity discount, with a price per tier.",
+   "tips": [
+    "One tier per line: quantity | discount in %.",
+    "Create the discount in Shopify as an automatic discount."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "quantity-tiers",
+    "Quantity tiers"
+   ]
+  }
+ },
+ "quick-order": {
+  "de": {
+   "lead": "Eine Liste zum schnellen Bestellen vieler Produkte, z. B. für Geschäftskunden.",
+   "tips": [
+    "Mit „Bestellung per Liste einfügen“ fügt die Kundschaft Zeilen wie „Artikelnummer; Menge“ ein."
+   ]
+  },
+  "en": {
+   "lead": "A list for ordering many products quickly, e.g. for business customers.",
+   "tips": [
+    "With “Paste order list”, customers paste lines such as “SKU; quantity”."
+   ]
+  }
+ },
+ "quote": {
+  "de": {
+   "lead": "Ein Zitat mit Name und Rolle, z. B. eine Kundenstimme.",
+   "tips": [
+    "Ohne „Name der Person“ erscheint das Zitat ohne Namenszeile.",
+    "Im Karussell übernimmt „Standard“ die Schrift des Karussells."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "Alle Text-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "A quote with name and role, e.g. a customer testimonial.",
+   "tips": [
+    "Without “Person’s name” the quote appears without a name line.",
+    "In a carousel, “Default” takes the carousel’s font settings."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "All text blocks"
+   ]
+  }
+ },
+ "recently-viewed": {
+  "de": {
+   "lead": "Die zuletzt angesehenen Produkte. Gespeichert nur im Browser der Kundschaft.",
+   "tips": [
+    "Der Block erscheint erst, wenn jemand schon andere Produkte angesehen hat."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "produkte-kollektionen",
+    "Produkte und Kollektionen"
+   ]
+  },
+  "en": {
+   "lead": "The products a customer viewed recently. Stored only in the customer’s browser.",
+   "tips": [
+    "The block only appears once someone has viewed other products."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "products-and-collections",
+    "Products and collections"
+   ]
+  }
+ },
+ "reorder": {
+  "de": {
+   "lead": "Die letzte Bestellung mit einem Klick erneut in den Warenkorb. Nur für angemeldete Kundschaft.",
+   "tips": [
+    "Gäste sehen den Block nicht. Der leere Abschnitt klappt dann ein.",
+    "Produkte, die es nur im Abo gibt, werden nicht übernommen."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "erneut-bestellen",
+    "Erneut bestellen"
+   ]
+  },
+  "en": {
+   "lead": "The last order back in the cart with one click. Only for signed-in customers.",
+   "tips": [
+    "Guests don’t see the block. The empty section then collapses.",
+    "Products that are only available as a subscription are left out."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "reorder",
+    "Reorder"
+   ]
+  }
+ },
+ "routine": {
+  "de": {
+   "lead": "Eine Routine in Schritten, je Schritt ein Produkt, z. B. Reinigen, Pflegen, Schützen.",
+   "tips": [
+    "„Alle in den Warenkorb“ legt alle verfügbaren Produkte auf einmal in den Warenkorb.",
+    "Für einen Rabatt legen Sie eine automatische Rabattaktion an."
+   ],
+   "more": [
+    "product-page",
+    "routine-mit-produkten",
+    "Routine mit Produkten"
+   ]
+  },
+  "en": {
+   "lead": "A routine in steps with one product per step, e.g. cleanse, care, protect.",
+   "tips": [
+    "“Add all to cart” adds all available products at once.",
+    "For a discount, create an automatic discount."
+   ],
+   "more": [
+    "product-page",
+    "routine-with-products",
+    "Routine with products"
+   ]
+  }
+ },
+ "savings-calculator": {
+  "de": {
+   "lead": "Rechnet vor, was das Abo im Vergleich zum Einzelkauf spart.",
+   "tips": [
+    "Ohne Eingabefeld rechnet der Block mit dem Wert aus dem Reichweitenrechner oder mit den Produktdaten."
+   ],
+   "more": [
+    "subscriptions",
+    "ersparnisrechner",
+    "Ersparnisrechner"
+   ]
+  },
+  "en": {
+   "lead": "Shows how much the subscription saves compared to one-time purchases.",
+   "tips": [
+    "Without an input field, the block uses the value from the supply calculator or the product data."
+   ],
+   "more": [
+    "subscriptions",
+    "savings-calculator",
+    "Savings calculator"
+   ]
+  }
+ },
+ "search-header": {
+  "de": {
+   "lead": "Titel mit dem Suchbegriff und ein Suchfeld oben auf der Suchseite.",
+   "tips": [],
+   "more": [
+    "collections",
+    "suchseite",
+    "Die Suchseite"
+   ]
+  },
+  "en": {
+   "lead": "Title with the search terms and a search field at the top of the search page.",
+   "tips": [],
+   "more": [
+    "collections",
+    "search-page",
+    "The search page"
+   ]
+  }
+ },
+ "search-results": {
+  "de": {
+   "lead": "Die Treffer einer Suche: Produkte, Seiten und Beiträge, mit Filtern.",
+   "tips": [
+    "„Vorschläge, wenn leer“ zeigt bis zu vier Produkte, wenn nichts gefunden wurde."
+   ],
+   "more": [
+    "collections",
+    "suchseite",
+    "Die Suchseite"
+   ]
+  },
+  "en": {
+   "lead": "The search results: products, pages and posts, with filters.",
+   "tips": [
+    "“Suggestions when empty” shows up to four products when nothing was found."
+   ],
+   "more": [
+    "collections",
+    "search-page",
+    "The search page"
+   ]
+  }
+ },
+ "spacer": {
+  "de": {
+   "lead": "Zusätzlicher Abstand nach oben und unten.",
+   "tips": [],
+   "more": [
+    "sections-and-blocks",
+    "layout",
+    "Alle Layout-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "Additional vertical space.",
+   "tips": [],
+   "more": [
+    "sections-and-blocks",
+    "layout",
+    "All layout blocks"
+   ]
+  }
+ },
+ "sticky-buy-bar": {
+  "de": {
+   "lead": "Eine Kaufleiste am unteren Rand, sobald die Kauf-Buttons aus dem Bild scrollen.",
+   "tips": [
+    "Auf großen Bildschirmen erscheint die Leiste nur, wenn Sie „Auch auf großen Bildschirmen“ einschalten."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "produkt-kauf",
+    "Blöcke für den Kauf"
+   ]
+  },
+  "en": {
+   "lead": "A buy bar at the bottom of the screen once the buy buttons scroll out of view.",
+   "tips": [
+    "On large screens the bar only appears if you turn on “Also on large screens”."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "product-buying",
+    "Blocks for buying"
+   ]
+  }
+ },
+ "store-locator": {
+  "de": {
+   "lead": "Ihre Geschäfte mit Karte, Suche und Liste.",
+   "tips": [
+    "„Karte daneben“ stellt die Karte rechts neben die Liste, sobald der Platz reicht."
+   ]
+  },
+  "en": {
+   "lead": "Your stores with map, search and list.",
+   "tips": [
+    "“Map alongside” puts the map next to the search and list when there is enough room."
+   ]
+  }
+ },
+ "supply-calculator": {
+  "de": {
+   "lead": "Rechnet aus, wie lange eine Packung reicht.",
+   "tips": [
+    "„Passendes Abo-Intervall empfehlen“ schlägt das passende Abo vor und wählt es per Knopf aus."
+   ],
+   "more": [
+    "subscriptions",
+    "reichweitenrechner-wie-lange-reicht-das",
+    "Reichweitenrechner"
+   ]
+  },
+  "en": {
+   "lead": "Works out how long a pack lasts.",
+   "tips": [
+    "“Recommend matching subscription interval” suggests the right subscription and selects it with a button."
+   ],
+   "more": [
+    "subscriptions",
+    "supply-calculator-how-long-does-it-last",
+    "Supply calculator"
+   ]
+  }
+ },
+ "tabs": {
+  "de": {
+   "lead": "Inhalte in Registerkarten nebeneinander, z. B. Beschreibung, Anwendung, Inhaltsstoffe.",
+   "tips": [
+    "Ein Tab kann an ein Produkt-Metafeld gebunden werden und weitere Blöcke enthalten."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "aufklappen-tabs",
+    "Alle Blöcke zum Aufklappen"
+   ]
+  },
+  "en": {
+   "lead": "Content in tabs side by side, e.g. description, usage, ingredients.",
+   "tips": [
+    "A tab can be connected to a product metafield and hold further blocks."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "collapsible-and-tabs",
+    "All collapsible blocks"
+   ]
+  }
+ },
+ "text": {
+  "de": {
+   "lead": "Ein Absatz Text. Für Erklärungen unter einer Überschrift.",
+   "page": "Oben die Seite wählen, z. B. „Startseite“",
+   "alt_desktop": "Abschnitt „Der Erntebrief“ am Computer. Der Block „Text“ ist gestrichelt markiert: „Einmal im Monat: welche Ernte gerade ankommt …“.",
+   "alt_mobile": "Derselbe Abschnitt am Handy, der Block „Text“ gestrichelt markiert.",
+   "tips": [
+    "Wörter in doppelten eckigen Klammern werden hervorgehoben, z. B. [[nachfüllen]].",
+    "„Gedämpft“ bei „Textfarbe“ eignet sich für Hinweise und Kleingedrucktes.",
+    "Für Überschriften nehmen Sie den Block „Überschrift“, nicht „Text“ mit fetter Schrift."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "Alle Text-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "A paragraph of text. For explanations below a heading.",
+   "page": "Choose the page at the top, e.g. “Home page”",
+   "alt_desktop": "The “Harvest letter” section on a computer. The “Text” block has a dashed outline: “Once a month: which harvest is arriving …”.",
+   "alt_mobile": "The same section on a phone, the “Text” block with a dashed outline.",
+   "tips": [
+    "Words in double square brackets are highlighted, e.g. [[refill]].",
+    "“Muted” under “Text color” suits notes and small print.",
+    "Use the “Heading” block for headings, not “Text” in bold."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "text",
+    "All text blocks"
+   ]
+  }
+ },
+ "timeline": {
+  "de": {
+   "lead": "Schritte mit Zeitpunkt, z. B. wie eine Bestellung oder ein Abo abläuft.",
+   "tips": [
+    "Mit „Hinweis“ ergänzen Sie eine kurze Zeile, z. B. „Lieferung an Werktagen“."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "vorteile-vergleich",
+    "Blöcke für Vorteile und Vergleich"
+   ]
+  },
+  "en": {
+   "lead": "Steps with a point in time, e.g. how an order or a subscription works.",
+   "tips": [
+    "Use “Note” to add a short line, e.g. “Deliveries on working days”."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "benefits-and-comparison",
+    "Blocks for benefits and comparison"
+   ]
+  }
+ },
+ "trust-badges": {
+  "de": {
+   "lead": "Siegel und Zertifikate als Liste, auf Wunsch mit Prüfbericht zum Herunterladen.",
+   "tips": [
+    "Ohne Metafeld tragen Sie die Siegel direkt ein: ein Siegel pro Zeile."
+   ],
+   "more": [
+    "product-data",
+    "siegel-und-pruefbericht",
+    "Siegel und Prüfbericht"
+   ]
+  },
+  "en": {
+   "lead": "Seals and certificates as a list, optionally with a lab report to download.",
+   "tips": [
+    "Without a metafield, enter the seals directly: one seal per line."
+   ],
+   "more": [
+    "product-data",
+    "trust-badges-and-lab-report",
+    "Trust badges and lab report"
+   ]
+  }
+ },
+ "usage-guide": {
+  "de": {
+   "lead": "Schritte zur Anwendung oder Zubereitung, dazu bis zu drei Werte wie Temperatur und Zeit.",
+   "tips": [
+    "Ohne Metafeld tragen Sie die Schritte direkt ein: ein Schritt pro Zeile."
+   ],
+   "more": [
+    "product-data",
+    "anwendung-und-zubereitung",
+    "Anwendung und Zubereitung"
+   ]
+  },
+  "en": {
+   "lead": "Steps for use or preparation, plus up to three values such as temperature and time.",
+   "tips": [
+    "Without a metafield, enter the steps directly: one step per line."
+   ],
+   "more": [
+    "product-data",
+    "usage",
+    "Usage"
+   ]
+  }
+ },
+ "usp-list": {
+  "de": {
+   "lead": "Eine kurze Liste mit Icons, z. B. „Versand in 1–2 Werktagen“ unter den Kauf-Buttons.",
+   "tips": [
+    "Je Vorteil ein Unterblock „Vorteil“ – oder alle aus einem Produkt-Metafeld.",
+    "„Icon und Text zentrieren“ stellt das Icon über den Text."
+   ],
+   "more": [
+    "product-page",
+    "vorteilsliste-usps",
+    "Vorteilsliste"
+   ]
+  },
+  "en": {
+   "lead": "A short list with icons, e.g. “Ships in 1–2 working days” below the buy buttons.",
+   "tips": [
+    "One “Benefit” sub-block per benefit – or all of them from a product metafield.",
+    "“Center icon and text” puts the icon above the text."
+   ],
+   "more": [
+    "product-page",
+    "benefit-list-usps",
+    "Benefit list"
+   ]
+  }
+ },
+ "variant-picker": {
+  "de": {
+   "lead": "Die Auswahl von Größe, Farbe oder Sorte: als Kacheln, Zeilen oder Bilder.",
+   "tips": [
+    "„Bilder“ zeigt bei Optionen wie Farbe das Variantenbild als Auswahl.",
+    "Farbfelder schalten Sie unter Theme-Einstellungen › „Produktdaten“ › „Farbfelder anzeigen“ ab."
+   ],
+   "more": [
+    "product-page",
+    "variantenauswahl",
+    "Variantenauswahl"
+   ]
+  },
+  "en": {
+   "lead": "The choice of size, color or flavor: as tiles, rows or images.",
+   "tips": [
+    "“Images” shows the variant image as the choice for options such as color.",
+    "Turn off swatches under Theme settings › “Product data” › “Show color swatches”."
+   ],
+   "more": [
+    "product-page",
+    "variant-picker",
+    "Variant picker"
+   ]
+  }
+ },
+ "video": {
+  "de": {
+   "lead": "Ein Video aus Shopify, YouTube oder Vimeo.",
+   "tips": [
+    "YouTube und Vimeo laden erst nach einem Klick.",
+    "„Stumm in Schleife abspielen“ pausiert bei „Bewegung reduzieren“."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "medien",
+    "Alle Medien-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "A video from Shopify, YouTube or Vimeo.",
+   "tips": [
+    "YouTube and Vimeo only load after a click.",
+    "“Play muted in a loop” pauses with reduced motion."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "media",
+    "All media blocks"
+   ]
+  }
+ },
+ "video-reels": {
+  "de": {
+   "lead": "Kurze Hochkant-Videos in einer Reihe, wie Reels.",
+   "tips": [
+    "Ein Klick öffnet ein Video mit Ton im Vollbild.",
+    "Bei „Bewegung reduzieren“ und im Datensparmodus spielen die Videos nicht von selbst."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "medien",
+    "Alle Medien-Blöcke"
+   ]
+  },
+  "en": {
+   "lead": "Short portrait videos in a row, like reels.",
+   "tips": [
+    "A click opens a video with sound in full screen.",
+    "With reduced motion and in data saver mode, the videos don’t play by themselves."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "media",
+    "All media blocks"
+   ]
   }
  }
 }

@@ -1,0 +1,73 @@
+{
+ "block": "mandatory-info",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "mandatory-info",
+ "de": {
+  "desktop": {
+   "file": "de/mandatory-info-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 21790,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/mandatory-info-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 21790,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/mandatory-info.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 17816,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/mandatory-info-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 33390,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/mandatory-info-desktop.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 23810,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/mandatory-info-desktop-800.webp",
+   "width": 621,
+   "height": 575,
+   "bytes": 23810,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/mandatory-info.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 20180,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/mandatory-info-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 33724,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

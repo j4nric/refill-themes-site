@@ -1,0 +1,73 @@
+{
+ "block": "custom-liquid",
+ "shop": "nordform",
+ "template": "page.aktion.json",
+ "section": "terms",
+ "id": "terms-liquid",
+ "de": {
+  "desktop": {
+   "file": "de/custom-liquid-desktop.webp",
+   "width": 1600,
+   "height": 224,
+   "bytes": 16426,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/custom-liquid-desktop-800.webp",
+   "width": 800,
+   "height": 112,
+   "bytes": 6530,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/custom-liquid.webp",
+   "width": 640,
+   "height": 90,
+   "bytes": 4414,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/custom-liquid-mobile.webp",
+   "width": 780,
+   "height": 444,
+   "bytes": 25908,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/custom-liquid-desktop.webp",
+   "width": 1600,
+   "height": 224,
+   "bytes": 16510,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/custom-liquid-desktop-800.webp",
+   "width": 800,
+   "height": 112,
+   "bytes": 6338,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/custom-liquid.webp",
+   "width": 640,
+   "height": 90,
+   "bytes": 4120,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/custom-liquid-mobile.webp",
+   "width": 780,
+   "height": 444,
+   "bytes": 25308,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

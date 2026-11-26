@@ -1,0 +1,123 @@
+{
+ "block": "columns",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "compare",
+ "id": "compare-columns",
+ "de": {
+  "desktop": {
+   "file": "de/columns-desktop.webp",
+   "width": 1521,
+   "height": 513,
+   "bytes": 31564,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/columns-desktop-800.webp",
+   "width": 800,
+   "height": 270,
+   "bytes": 13896,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/columns.webp",
+   "width": 640,
+   "height": 216,
+   "bytes": 10472,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "group",
+    "x": 2,
+    "y": 5.5,
+    "box": [
+     0.7,
+     2.1,
+     47.4,
+     96.1
+    ],
+    "n": 1
+   },
+   {
+    "block": "comparison-table",
+    "x": 50.7,
+    "y": 5.5,
+    "box": [
+     52,
+     2.1,
+     47.4,
+     96.1
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/columns-mobile.webp",
+   "width": 748,
+   "height": 1870,
+   "bytes": 47412,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/columns-desktop.webp",
+   "width": 1521,
+   "height": 498,
+   "bytes": 30300,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/columns-desktop-800.webp",
+   "width": 800,
+   "height": 262,
+   "bytes": 13626,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/columns.webp",
+   "width": 640,
+   "height": 210,
+   "bytes": 9992,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "group",
+    "x": 2,
+    "y": 5.6,
+    "box": [
+     0.7,
+     2.1,
+     47.4,
+     95.9
+    ],
+    "n": 1
+   },
+   {
+    "block": "comparison-table",
+    "x": 50.7,
+    "y": 5.6,
+    "box": [
+     52,
+     2.1,
+     47.4,
+     95.9
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/columns-mobile.webp",
+   "width": 748,
+   "height": 1820,
+   "bytes": 46340,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

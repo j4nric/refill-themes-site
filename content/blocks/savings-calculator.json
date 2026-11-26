@@ -1,0 +1,181 @@
+{
+ "slug": "savings-calculator",
+ "kind": "block",
+ "source": "blocks/savings-calculator.liquid",
+ "source_sha1": "905de38efb2b",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Savings calculator",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Compares subscription and one-time purchase over a year: packs from usage and “Servings per pack”, price of the selected variant and of the matching plan with all its price adjustments. Shares the usage with the supply calculator on the same page. Hidden without servings, or without a subscription benefit and packaging figure."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Empty: “Subscribe or buy once?” Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "inline_richtext",
+    "id": "intro",
+    "label": "Text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_usage",
+    "label": "Let customers enter their usage",
+    "info": "Off: uses the value from the supply calculator on the same page, otherwise “Servings per day” from the product data.",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "period",
+    "label": "Enter usage per",
+    "info": "Default; customers can switch.",
+    "default": "day",
+    "options": [
+     {
+      "value": "day",
+      "label": "Day"
+     },
+     {
+      "value": "week",
+      "label": "Week"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Input label",
+    "info": "Empty: matches “Serving label” in Theme settings, e.g. “Number of cups”.",
+    "visible_if": [
+     {
+      "setting": "show_usage",
+      "label": "Let customers enter their usage",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_note",
+    "label": "Show estimate note",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Packaging"
+   },
+   {
+    "type": "text",
+    "id": "packaging_metafield",
+    "label": "Metafield: packaging saved per pack (g)",
+    "info": "namespace.key, number type, e.g. custom.packaging_saved. Variant metafield before product metafield (e.g. only on the refill pouch)."
+   },
+   {
+    "type": "text",
+    "id": "packaging_saved",
+    "label": "Packaging saved per pack (g)",
+    "info": "Number in grams, used when the metafield is empty. Empty: figure is hidden."
+   },
+   {
+    "type": "text",
+    "id": "packaging_label",
+    "label": "Label",
+    "info": "Empty: “Less packaging”."
+   }
+  ]
+ },
+ "de": {
+  "name": "Ersparnisrechner",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Vergleicht Abo und Einzelkauf über ein Jahr: Packungen aus Verbrauch und „Portionen pro Packung“, Preis der gewählten Variante und des passenden Abo-Plans mit allen Preisanpassungen. Teilt den Verbrauch mit dem Reichweitenrechner derselben Seite. Ohne Portionen, oder ohne Abo-Vorteil und Verpackungsangabe, ausgeblendet."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Leer: „Abo oder Einzelkauf?“ Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "inline_richtext",
+    "id": "intro",
+    "label": "Text",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_usage",
+    "label": "Verbrauch eingeben lassen",
+    "info": "Aus: rechnet mit dem Wert aus dem Reichweitenrechner derselben Seite, sonst mit „Portionen pro Tag“ aus den Produktdaten.",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "period",
+    "label": "Verbrauch eingeben pro",
+    "info": "Voreinstellung; Kunden können wechseln.",
+    "default": "day",
+    "options": [
+     {
+      "value": "day",
+      "label": "Tag"
+     },
+     {
+      "value": "week",
+      "label": "Woche"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Bezeichnung des Eingabefelds",
+    "info": "Leer: passend zur „Bezeichnung der Portion“ in den Theme-Einstellungen, z. B. „Anzahl Tassen“.",
+    "visible_if": [
+     {
+      "setting": "show_usage",
+      "label": "Verbrauch eingeben lassen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_note",
+    "label": "Hinweis zur Schätzung anzeigen",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Verpackung"
+   },
+   {
+    "type": "text",
+    "id": "packaging_metafield",
+    "label": "Metafeld: gesparte Verpackung je Packung (g)",
+    "info": "namespace.schlüssel, Typ Zahl, z. B. custom.packaging_saved. Varianten-Metafeld vor Produkt-Metafeld (z. B. nur beim Nachfüllbeutel)."
+   },
+   {
+    "type": "text",
+    "id": "packaging_saved",
+    "label": "Gesparte Verpackung je Packung (g)",
+    "info": "Zahl in Gramm, gilt, wenn das Metafeld leer ist. Leer: Kennzahl entfällt."
+   },
+   {
+    "type": "text",
+    "id": "packaging_label",
+    "label": "Bezeichnung",
+    "info": "Leer: „Weniger Verpackung“."
+   }
+  ]
+ }
+}

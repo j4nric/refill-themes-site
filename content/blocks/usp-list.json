@@ -1,0 +1,339 @@
+{
+ "slug": "usp-list",
+ "kind": "block",
+ "source": "blocks/usp-list.liquid",
+ "source_sha1": "a3fe6339aedf",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Benefit list (USPs)",
+  "category": "Benefits and comparison",
+  "settings": [
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Layout",
+    "default": "stack",
+    "options": [
+     {
+      "value": "stack",
+      "label": "Stacked"
+     },
+     {
+      "value": "row",
+      "label": "Side by side"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "columns",
+    "label": "Columns",
+    "info": "At most this many columns; fewer in narrow areas and on mobile, down to one.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatic"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     },
+     {
+      "value": "3",
+      "label": "3"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is",
+      "value": "Side by side"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is",
+      "value": "Side by side"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "centered",
+    "label": "Center icon and text",
+    "info": "The icon then sits above the text.",
+    "default": false
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafield: benefits",
+    "info": "List of single-line texts or multi-line text (one line per benefit), format namespace.key. When filled, it replaces this block’s entries. Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "custom.usps"
+   },
+   {
+    "type": "select",
+    "id": "icon",
+    "label": "Icon",
+    "info": "For the benefits from the metafield. Entries in the block each have their own icon.",
+    "default": "check",
+    "options": [
+     {
+      "value": "check",
+      "label": "Check"
+     },
+     {
+      "value": "truck",
+      "label": "Delivery"
+     },
+     {
+      "value": "leaf",
+      "label": "Leaf"
+     },
+     {
+      "value": "flask",
+      "label": "Lab"
+     },
+     {
+      "value": "box",
+      "label": "Package"
+     },
+     {
+      "value": "calendar",
+      "label": "Calendar"
+     },
+     {
+      "value": "shield",
+      "label": "Shield"
+     },
+     {
+      "value": "refresh",
+      "label": "Repeat"
+     },
+     {
+      "value": "clock",
+      "label": "Clock"
+     },
+     {
+      "value": "heart",
+      "label": "Heart"
+     },
+     {
+      "value": "star",
+      "label": "Star"
+     },
+     {
+      "value": "cup",
+      "label": "Cup"
+     },
+     {
+      "value": "paw",
+      "label": "Paw"
+     },
+     {
+      "value": "drop",
+      "label": "Drop"
+     },
+     {
+      "value": "refill",
+      "label": "Refill"
+     },
+     {
+      "value": "thermometer",
+      "label": "Thermometer"
+     },
+     {
+      "value": "flame",
+      "label": "Flame"
+     },
+     {
+      "value": "info",
+      "label": "Info"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "metafield",
+      "label": "Metafield: benefits",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Vorteilsliste (USPs)",
+  "category": "Vorteile & Vergleich",
+  "settings": [
+   {
+    "type": "select",
+    "id": "layout",
+    "label": "Anordnung",
+    "default": "stack",
+    "options": [
+     {
+      "value": "stack",
+      "label": "Untereinander"
+     },
+     {
+      "value": "row",
+      "label": "Nebeneinander"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "columns",
+    "label": "Spalten",
+    "info": "Höchstens so viele Spalten; in schmalen Bereichen und am Handy weniger, bis zu einer.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatisch"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     },
+     {
+      "value": "3",
+      "label": "3"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is",
+      "value": "Nebeneinander"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is",
+      "value": "Nebeneinander"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "centered",
+    "label": "Icon und Text zentrieren",
+    "info": "Das Icon steht dann über dem Text.",
+    "default": false
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafeld: Vorteile",
+    "info": "Liste einzeiliger Texte oder mehrzeiliger Text (eine Zeile je Vorteil), Format namespace.schlüssel. Ist es befüllt, ersetzt es die Einträge dieses Blocks. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "custom.usps"
+   },
+   {
+    "type": "select",
+    "id": "icon",
+    "label": "Icon",
+    "info": "Für die Vorteile aus dem Metafeld. Einträge im Block haben je ein eigenes Icon.",
+    "default": "check",
+    "options": [
+     {
+      "value": "check",
+      "label": "Haken"
+     },
+     {
+      "value": "truck",
+      "label": "Lieferung"
+     },
+     {
+      "value": "leaf",
+      "label": "Blatt"
+     },
+     {
+      "value": "flask",
+      "label": "Labor"
+     },
+     {
+      "value": "box",
+      "label": "Paket"
+     },
+     {
+      "value": "calendar",
+      "label": "Kalender"
+     },
+     {
+      "value": "shield",
+      "label": "Schild"
+     },
+     {
+      "value": "refresh",
+      "label": "Wiederholung"
+     },
+     {
+      "value": "clock",
+      "label": "Uhr"
+     },
+     {
+      "value": "heart",
+      "label": "Herz"
+     },
+     {
+      "value": "star",
+      "label": "Stern"
+     },
+     {
+      "value": "cup",
+      "label": "Tasse"
+     },
+     {
+      "value": "paw",
+      "label": "Pfote"
+     },
+     {
+      "value": "drop",
+      "label": "Tropfen"
+     },
+     {
+      "value": "refill",
+      "label": "Nachfüllen"
+     },
+     {
+      "value": "thermometer",
+      "label": "Thermometer"
+     },
+     {
+      "value": "flame",
+      "label": "Flamme"
+     },
+     {
+      "value": "info",
+      "label": "Info"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "metafield",
+      "label": "Metafeld: Vorteile",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ }
+}

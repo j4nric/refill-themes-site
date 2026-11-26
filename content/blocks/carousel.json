@@ -1,0 +1,309 @@
+{
+ "slug": "carousel",
+ "kind": "block",
+ "source": "blocks/carousel.liquid",
+ "source_sha1": "b7024323adf7",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Carousel",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "range",
+    "id": "per_view",
+    "label": "Items visible on large screens",
+    "default": 3,
+    "min": 1,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "per_view_mobile",
+    "label": "Items visible on small screens",
+    "default": 1,
+    "min": 1,
+    "max": 3,
+    "step": 1
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Name for screen readers"
+   },
+   {
+    "type": "select",
+    "id": "controls_position",
+    "label": "Controls position",
+    "info": "“On the slides” places the arrows and counter in the bottom corner of the slider (about 150 × 44 px) and suits images. For slides with text, product cards or videos with their own controls at the bottom, choose “Below the slides”. “On the slides, mobile only” applies while the carousel is narrower than 750 px, so also in narrow columns on desktop.",
+    "default": "below",
+    "options": [
+     {
+      "value": "below",
+      "label": "Below the slides"
+     },
+     {
+      "value": "overlay",
+      "label": "On the slides"
+     },
+     {
+      "value": "overlay_mobile",
+      "label": "On the slides, mobile only"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Autoplay"
+   },
+   {
+    "type": "select",
+    "id": "autoplay",
+    "label": "Advance automatically",
+    "info": "By time: loops, with a pause button; pauses while the pointer or focus is on the carousel. On scroll: slides change with scroll depth while the carousel passes through the window. Both stop as soon as visitors browse themselves and are off for reduced motion.",
+    "default": "off",
+    "options": [
+     {
+      "value": "off",
+      "label": "Off"
+     },
+     {
+      "value": "time",
+      "label": "By time"
+     },
+     {
+      "value": "scroll",
+      "label": "On scroll"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "autoplay_seconds",
+    "label": "Time per page",
+    "default": 6,
+    "min": 3,
+    "max": 12,
+    "step": 1,
+    "unit": "s",
+    "visible_if": [
+     {
+      "setting": "autoplay",
+      "label": "Advance automatically",
+      "op": "is",
+      "value": "By time"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "autoplay",
+      "label": "Advance automatically",
+      "op": "is",
+      "value": "By time"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Quotes"
+   },
+   {
+    "type": "select",
+    "id": "quote_size",
+    "label": "Font size",
+    "info": "Applies to all quotes in the carousel. A quote with its own setting (not “Default”) keeps it.",
+    "default": "m",
+    "options": [
+     {
+      "value": "s",
+      "label": "Small"
+     },
+     {
+      "value": "m",
+      "label": "Medium"
+     },
+     {
+      "value": "l",
+      "label": "Large"
+     },
+     {
+      "value": "xl",
+      "label": "Extra large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "quote_weight",
+    "label": "Font weight",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Same as heading font"
+     },
+     {
+      "value": "normal",
+      "label": "Regular"
+     },
+     {
+      "value": "bold",
+      "label": "Bold"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Karussell",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "range",
+    "id": "per_view",
+    "label": "Sichtbare Elemente auf großen Bildschirmen",
+    "default": 3,
+    "min": 1,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "per_view_mobile",
+    "label": "Sichtbare Elemente auf kleinen Bildschirmen",
+    "default": 1,
+    "min": 1,
+    "max": 3,
+    "step": 1
+   },
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Name für Screenreader"
+   },
+   {
+    "type": "select",
+    "id": "controls_position",
+    "label": "Position der Steuerung",
+    "info": "„Auf den Folien“ legt Pfeile und Zähler unten in die Ecke der Leiste (etwa 150 × 44 px) und passt zu Bildern. Bei Folien mit Text, Produktkarten oder Videos mit eigener Steuerung am unteren Rand „Unter den Folien“ wählen. „Auf den Folien, nur am Handy“ gilt, solange das Karussell schmaler als 750 px ist, also auch in schmalen Spalten am Desktop.",
+    "default": "below",
+    "options": [
+     {
+      "value": "below",
+      "label": "Unter den Folien"
+     },
+     {
+      "value": "overlay",
+      "label": "Auf den Folien"
+     },
+     {
+      "value": "overlay_mobile",
+      "label": "Auf den Folien, nur am Handy"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Automatisch weiterblättern"
+   },
+   {
+    "type": "select",
+    "id": "autoplay",
+    "label": "Weiterblättern",
+    "info": "Nach Zeit: in Schleife, mit Knopf zum Anhalten; hält, solange Mauszeiger oder Fokus auf dem Karussell liegen. Beim Scrollen: Die Folien wechseln mit der Scrolltiefe, während das Karussell durch das Fenster läuft. Beides endet, sobald Besucher selbst blättern, und entfällt bei „Bewegung reduzieren“.",
+    "default": "off",
+    "options": [
+     {
+      "value": "off",
+      "label": "Aus"
+     },
+     {
+      "value": "time",
+      "label": "Nach Zeit"
+     },
+     {
+      "value": "scroll",
+      "label": "Beim Scrollen"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "autoplay_seconds",
+    "label": "Zeit je Seite",
+    "default": 6,
+    "min": 3,
+    "max": 12,
+    "step": 1,
+    "unit": "s",
+    "visible_if": [
+     {
+      "setting": "autoplay",
+      "label": "Weiterblättern",
+      "op": "is",
+      "value": "Nach Zeit"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "autoplay",
+      "label": "Weiterblättern",
+      "op": "is",
+      "value": "Nach Zeit"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Zitate"
+   },
+   {
+    "type": "select",
+    "id": "quote_size",
+    "label": "Schriftgröße",
+    "info": "Gilt für alle Zitate im Karussell. Ein Zitat mit eigener Einstellung (nicht „Standard“) behält diese.",
+    "default": "m",
+    "options": [
+     {
+      "value": "s",
+      "label": "Klein"
+     },
+     {
+      "value": "m",
+      "label": "Mittel"
+     },
+     {
+      "value": "l",
+      "label": "Groß"
+     },
+     {
+      "value": "xl",
+      "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "quote_weight",
+    "label": "Schriftdicke",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Wie Überschriften-Schrift"
+     },
+     {
+      "value": "normal",
+      "label": "Normal"
+     },
+     {
+      "value": "bold",
+      "label": "Fett"
+     }
+    ]
+   }
+  ]
+ }
+}

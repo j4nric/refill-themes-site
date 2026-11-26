@@ -1,0 +1,129 @@
+{
+ "slug": "columns",
+ "kind": "block",
+ "source": "blocks/columns.liquid",
+ "source_sha1": "4bf69cb788cd",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Columns",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Columns on large screens",
+    "default": 3,
+    "min": 2,
+    "max": 4,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Columns on small screens",
+    "default": "1",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Spacing between columns",
+    "default": "8",
+    "options": [
+     {
+      "value": "4",
+      "label": "Small"
+     },
+     {
+      "value": "6",
+      "label": "Medium"
+     },
+     {
+      "value": "8",
+      "label": "Large"
+     },
+     {
+      "value": "12",
+      "label": "Extra large"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rules",
+    "label": "Lines between columns",
+    "default": false
+   }
+  ]
+ },
+ "de": {
+  "name": "Spalten",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Spalten auf großen Bildschirmen",
+    "default": 3,
+    "min": 2,
+    "max": 4,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "columns_mobile",
+    "label": "Spalten auf kleinen Bildschirmen",
+    "default": "1",
+    "options": [
+     {
+      "value": "1",
+      "label": "1"
+     },
+     {
+      "value": "2",
+      "label": "2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "gap",
+    "label": "Abstand zwischen Spalten",
+    "default": "8",
+    "options": [
+     {
+      "value": "4",
+      "label": "Klein"
+     },
+     {
+      "value": "6",
+      "label": "Mittel"
+     },
+     {
+      "value": "8",
+      "label": "Groß"
+     },
+     {
+      "value": "12",
+      "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rules",
+    "label": "Linien zwischen Spalten",
+    "default": false
+   }
+  ]
+ }
+}

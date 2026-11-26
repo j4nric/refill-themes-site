@@ -1,0 +1,73 @@
+{
+ "block": "newsletter",
+ "shop": "kessel-und-blatt",
+ "template": "index.json",
+ "section": "erntebrief",
+ "id": "brief-newsletter",
+ "de": {
+  "desktop": {
+   "file": "de/newsletter-desktop.webp",
+   "width": 1440,
+   "height": 498,
+   "bytes": 26496,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/newsletter-desktop-800.webp",
+   "width": 800,
+   "height": 277,
+   "bytes": 12454,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/newsletter.webp",
+   "width": 640,
+   "height": 221,
+   "bytes": 8806,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/newsletter-mobile.webp",
+   "width": 748,
+   "height": 596,
+   "bytes": 37962,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/newsletter-desktop.webp",
+   "width": 1440,
+   "height": 498,
+   "bytes": 26384,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/newsletter-desktop-800.webp",
+   "width": 800,
+   "height": 277,
+   "bytes": 11960,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/newsletter.webp",
+   "width": 640,
+   "height": 221,
+   "bytes": 8380,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/newsletter-mobile.webp",
+   "width": 748,
+   "height": 596,
+   "bytes": 37648,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

@@ -1,0 +1,157 @@
+{
+ "slug": "variant-picker",
+ "kind": "block",
+ "source": "blocks/variant-picker.liquid",
+ "source_sha1": "ac8076f3623b",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Variant picker",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Style",
+    "info": "“Images” shows the image as the choice for options whose values have different variant images (e.g. color); other options stay tiles.",
+    "default": "tiles",
+    "options": [
+     {
+      "value": "tiles",
+      "label": "Tiles"
+     },
+     {
+      "value": "rows",
+      "label": "Rows"
+     },
+     {
+      "value": "images",
+      "label": "Images (variant images)"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Size",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "borderless",
+    "label": "Tiles without border",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "style",
+      "label": "Style",
+      "op": "is_not",
+      "value": "Rows"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "swatch_only",
+    "label": "Show swatch only",
+    "info": "The name appears above the choice and as a tooltip. Swatches come from the option values (category metafield “Color” in Shopify) and follow the theme setting “Show swatches”.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Show color swatches",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Variantenauswahl",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "select",
+    "id": "style",
+    "label": "Stil",
+    "info": "„Bilder“ zeigt bei Optionen mit unterschiedlichen Variantenbildern (z. B. Farbe) das Bild als Auswahl; andere Optionen bleiben Kacheln.",
+    "default": "tiles",
+    "options": [
+     {
+      "value": "tiles",
+      "label": "Kacheln"
+     },
+     {
+      "value": "rows",
+      "label": "Zeilen"
+     },
+     {
+      "value": "images",
+      "label": "Bilder (Variantenbilder)"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Größe",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "borderless",
+    "label": "Kacheln ohne Rahmen",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "style",
+      "label": "Stil",
+      "op": "is_not",
+      "value": "Zeilen"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "swatch_only",
+    "label": "Bei Farbfeldern nur das Feld zeigen",
+    "info": "Der Name steht über der Auswahl und als Tooltip. Farbfelder kommen aus den Optionswerten (Kategorie-Metafeld „Farbe“ in Shopify) und folgen der Theme-Einstellung „Farbfelder anzeigen“.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Farbfelder anzeigen",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ }
+}

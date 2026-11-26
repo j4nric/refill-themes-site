@@ -1,0 +1,147 @@
+{
+ "slug": "product-price",
+ "kind": "block",
+ "source": "blocks/product-price.liquid",
+ "source_sha1": "69121b4ae361",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Price",
+  "category": "Product: buying",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_tax_note",
+    "label": "Show tax and shipping note",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_installments",
+    "label": "Show Shop Pay Installments",
+    "info": "Shopify’s banner below the price when Shop Pay Installments is active and the product is eligible.",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "compare_color_source",
+    "label": "Compare-at price color",
+    "info": "“Same as theme setting” follows Theme settings → Brand colors → Prices.",
+    "default": "custom",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Same as theme setting"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     },
+     {
+      "value": "custom",
+      "label": "Custom color"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "compare_color",
+    "label": "Custom color",
+    "info": "Leave empty to use the theme setting “Compare-at price”.",
+    "visible_if": [
+     {
+      "setting": "compare_color_source",
+      "label": "Compare-at price color",
+      "op": "is",
+      "value": "Custom color"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Preis",
+  "category": "Produkt: Kauf",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_tax_note",
+    "label": "Hinweis zu Steuern und Versand anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_installments",
+    "label": "Shop Pay Ratenzahlung anzeigen",
+    "info": "Hinweis von Shopify unter dem Preis, wenn Shop Pay Ratenzahlung im Shop aktiv ist und das Produkt infrage kommt.",
+    "default": true
+   },
+   {
+    "type": "select",
+    "id": "compare_color_source",
+    "label": "Farbe des Streichpreises",
+    "info": "„Wie Theme-Einstellung“ folgt Theme-Einstellungen → Markenfarben → Preise.",
+    "default": "custom",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Wie Theme-Einstellung"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     },
+     {
+      "value": "custom",
+      "label": "Eigene Farbe"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "compare_color",
+    "label": "Eigene Farbe",
+    "info": "Leer lassen für die Theme-Einstellung „Streichpreis“.",
+    "visible_if": [
+     {
+      "setting": "compare_color_source",
+      "label": "Farbe des Streichpreises",
+      "op": "is",
+      "value": "Eigene Farbe"
+     }
+    ]
+   }
+  ]
+ }
+}

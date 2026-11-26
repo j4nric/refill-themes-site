@@ -1,0 +1,147 @@
+{
+ "block": "image-banner",
+ "shop": "kessel-und-blatt",
+ "template": "page.about.json",
+ "section": "garten",
+ "id": "garten-banner",
+ "de": {
+  "desktop": {
+   "file": "de/image-banner-desktop.webp",
+   "width": 1600,
+   "height": 614,
+   "bytes": 90054,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/image-banner-desktop-800.webp",
+   "width": 800,
+   "height": 307,
+   "bytes": 37666,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/image-banner.webp",
+   "width": 640,
+   "height": 246,
+   "bytes": 27412,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 2,
+    "y": 4.7,
+    "box": [
+     0,
+     1.8,
+     49.4,
+     96.6
+    ],
+    "n": 1
+   },
+   {
+    "block": "heading",
+    "x": 50.7,
+    "y": 21.9,
+    "box": [
+     51.9,
+     19.1,
+     44.4,
+     26.2
+    ],
+    "n": 2
+   },
+   {
+    "block": "text",
+    "x": 50.7,
+    "y": 51.4,
+    "box": [
+     51.9,
+     48.5,
+     44.4,
+     32.7
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "de/image-banner-mobile.webp",
+   "width": 780,
+   "height": 1358,
+   "bytes": 99572,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/image-banner-desktop.webp",
+   "width": 1600,
+   "height": 614,
+   "bytes": 89170,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/image-banner-desktop-800.webp",
+   "width": 800,
+   "height": 307,
+   "bytes": 36724,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/image-banner.webp",
+   "width": 640,
+   "height": 246,
+   "bytes": 26474,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 2,
+    "y": 4.7,
+    "box": [
+     0,
+     1.8,
+     49.4,
+     96.6
+    ],
+    "n": 1
+   },
+   {
+    "block": "heading",
+    "x": 50.7,
+    "y": 21.9,
+    "box": [
+     51.9,
+     19.1,
+     44.4,
+     26.2
+    ],
+    "n": 2
+   },
+   {
+    "block": "text",
+    "x": 50.7,
+    "y": 51.4,
+    "box": [
+     51.9,
+     48.5,
+     44.4,
+     32.7
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "en/image-banner-mobile.webp",
+   "width": 780,
+   "height": 1416,
+   "bytes": 99404,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

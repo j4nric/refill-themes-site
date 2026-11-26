@@ -1,0 +1,195 @@
+{
+ "slug": "quote",
+ "kind": "block",
+ "source": "blocks/quote.liquid",
+ "source_sha1": "5ddd45983d93",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Quote",
+  "category": "Text",
+  "settings": [
+   {
+    "type": "richtext",
+    "id": "text",
+    "label": "Quote",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Fast delivery and exactly as described – I’ll order again."
+   },
+   {
+    "type": "text",
+    "id": "author",
+    "label": "Person’s name",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "placeholder": "Customer name"
+   },
+   {
+    "type": "text",
+    "id": "role",
+    "label": "Role or place",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "visible_if": [
+     {
+      "setting": "author",
+      "label": "Person’s name",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "author",
+      "label": "Person’s name",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Font size",
+    "info": "“Default” uses the setting of the carousel the quote is in, otherwise M and the weight of the heading font.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Default"
+     },
+     {
+      "value": "s",
+      "label": "Small"
+     },
+     {
+      "value": "m",
+      "label": "Medium"
+     },
+     {
+      "value": "l",
+      "label": "Large"
+     },
+     {
+      "value": "xl",
+      "label": "Extra large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "weight",
+    "label": "Font weight",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Default"
+     },
+     {
+      "value": "normal",
+      "label": "Regular"
+     },
+     {
+      "value": "bold",
+      "label": "Bold"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Zitat",
+  "category": "Text",
+  "settings": [
+   {
+    "type": "richtext",
+    "id": "text",
+    "label": "Zitat",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Schnelle Lieferung und genau wie beschrieben – gerne wieder."
+   },
+   {
+    "type": "text",
+    "id": "author",
+    "label": "Name der Person",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "placeholder": "Kundenname"
+   },
+   {
+    "type": "text",
+    "id": "role",
+    "label": "Rolle oder Ort",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "visible_if": [
+     {
+      "setting": "author",
+      "label": "Name der Person",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "author",
+      "label": "Name der Person",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "select",
+    "id": "size",
+    "label": "Schriftgröße",
+    "info": "„Standard“ übernimmt die Einstellung des Karussells, in dem das Zitat steht, sonst M und die Dicke der Überschriften-Schrift.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Standard"
+     },
+     {
+      "value": "s",
+      "label": "Klein"
+     },
+     {
+      "value": "m",
+      "label": "Mittel"
+     },
+     {
+      "value": "l",
+      "label": "Groß"
+     },
+     {
+      "value": "xl",
+      "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "weight",
+    "label": "Schriftdicke",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Standard"
+     },
+     {
+      "value": "normal",
+      "label": "Normal"
+     },
+     {
+      "value": "bold",
+      "label": "Fett"
+     }
+    ]
+   }
+  ]
+ }
+}

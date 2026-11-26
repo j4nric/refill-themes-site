@@ -1,0 +1,415 @@
+{
+ "slug": "countdown",
+ "kind": "block",
+ "source": "blocks/countdown.liquid",
+ "source_sha1": "08e005b4d0b2",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Countdown",
+  "category": "Buttons and promotions",
+  "settings": [
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Label",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Offer ends in"
+   },
+   {
+    "type": "select",
+    "id": "end_mode",
+    "label": "Repeat",
+    "info": "Recurring ends never expire: after 0 the timer starts over with the next date. Use them for recurring deadlines such as an order cut-off time, not for offers: a countdown that keeps restarting misleads customers.",
+    "default": "once",
+    "options": [
+     {
+      "value": "once",
+      "label": "Once (date)"
+     },
+     {
+      "value": "weekly",
+      "label": "Every week"
+     },
+     {
+      "value": "month_end",
+      "label": "End of every month"
+     },
+     {
+      "value": "interval",
+      "label": "Every N days from date"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "end",
+    "label": "End date",
+    "info": "Format: YYYY-MM-DD HH:MM in the store’s time zone. After the end the block is hidden (unless a text after the end is set). For “Every N days”: the first end.",
+    "placeholder": "2026-12-31 23:59",
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Once (date)"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Every N days from date"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "empty"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "interval_days",
+    "label": "Interval in days",
+    "default": 7,
+    "min": 1,
+    "max": 60,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Every N days from date"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Every N days from date"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "weekday",
+    "label": "Weekday",
+    "default": "7",
+    "options": [
+     {
+      "value": "1",
+      "label": "Monday"
+     },
+     {
+      "value": "2",
+      "label": "Tuesday"
+     },
+     {
+      "value": "3",
+      "label": "Wednesday"
+     },
+     {
+      "value": "4",
+      "label": "Thursday"
+     },
+     {
+      "value": "5",
+      "label": "Friday"
+     },
+     {
+      "value": "6",
+      "label": "Saturday"
+     },
+     {
+      "value": "7",
+      "label": "Sunday"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Every week"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Every week"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "end_time",
+    "label": "Time",
+    "info": "Format HH:MM (24-hour) in the store’s time zone, e.g. 23:59.",
+    "default": "23:59",
+    "placeholder": "23:59",
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Every week"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "End of every month"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Every week"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "End of every month"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "expired_text",
+    "label": "Text after the end (empty: hide block)",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "is",
+      "value": "Once (date)"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Repeat",
+      "op": "empty"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Countdown",
+  "category": "Buttons & Aktionen",
+  "settings": [
+   {
+    "type": "text",
+    "id": "label",
+    "label": "Label",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Angebot endet in"
+   },
+   {
+    "type": "select",
+    "id": "end_mode",
+    "label": "Wiederholung",
+    "info": "Wiederkehrende Enden laufen nie ab: Nach 0 beginnt der Zähler mit dem nächsten Termin. Gedacht für wiederkehrende Fristen wie den Bestellschluss, nicht für Angebote: Ein Countdown, der immer neu beginnt, führt Kunden in die Irre.",
+    "default": "once",
+    "options": [
+     {
+      "value": "once",
+      "label": "Einmalig (Datum)"
+     },
+     {
+      "value": "weekly",
+      "label": "Jede Woche"
+     },
+     {
+      "value": "month_end",
+      "label": "Jedes Monatsende"
+     },
+     {
+      "value": "interval",
+      "label": "Alle N Tage ab Datum"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "end",
+    "label": "Enddatum",
+    "info": "Format: JJJJ-MM-TT HH:MM in der Zeitzone des Shops. Nach Ablauf wird der Block ausgeblendet (außer bei Text nach Ablauf). Bei „Alle N Tage“: das erste Ende.",
+    "placeholder": "2026-12-31 23:59",
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Einmalig (Datum)"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Alle N Tage ab Datum"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "empty"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "interval_days",
+    "label": "Abstand in Tagen",
+    "default": 7,
+    "min": 1,
+    "max": 60,
+    "step": 1,
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Alle N Tage ab Datum"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Alle N Tage ab Datum"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "weekday",
+    "label": "Wochentag",
+    "default": "7",
+    "options": [
+     {
+      "value": "1",
+      "label": "Montag"
+     },
+     {
+      "value": "2",
+      "label": "Dienstag"
+     },
+     {
+      "value": "3",
+      "label": "Mittwoch"
+     },
+     {
+      "value": "4",
+      "label": "Donnerstag"
+     },
+     {
+      "value": "5",
+      "label": "Freitag"
+     },
+     {
+      "value": "6",
+      "label": "Samstag"
+     },
+     {
+      "value": "7",
+      "label": "Sonntag"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Jede Woche"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Jede Woche"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "end_time",
+    "label": "Uhrzeit",
+    "info": "Format HH:MM (24 Stunden) in der Zeitzone des Shops, z. B. 23:59.",
+    "default": "23:59",
+    "placeholder": "23:59",
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Jede Woche"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Jedes Monatsende"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Jede Woche"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Jedes Monatsende"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "expired_text",
+    "label": "Text nach Ablauf (leer: Block ausblenden)",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "visible_if": [
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "is",
+      "value": "Einmalig (Datum)"
+     },
+     "or",
+     {
+      "setting": "end_mode",
+      "label": "Wiederholung",
+      "op": "empty"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,231 @@
+{
+ "slug": "collection-list",
+ "kind": "block",
+ "source": "blocks/collection-list.liquid",
+ "source_sha1": "3a3027983418",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Collection list",
+  "category": "Products and collections",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "is_page_title",
+    "label": "Use as page title (H1)",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "heading",
+      "label": "Heading",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "heading",
+      "label": "Heading",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "collection_list",
+    "id": "collections",
+    "label": "Collections",
+    "info": "Leave empty to show all collections with products."
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Maximum number",
+    "info": "On the All collections page without a selection: collections per page, with page navigation.",
+    "default": 12,
+    "min": 2,
+    "max": 50,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Columns on large screens",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "image_ratio",
+    "label": "Image aspect ratio",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "3 / 2",
+      "label": "3 : 2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_fit",
+    "label": "Image fit",
+    "info": "“Show whole image” crops nothing; “Fill frame” suits photos with their own background.",
+    "default": "contain",
+    "options": [
+     {
+      "value": "contain",
+      "label": "Show whole image"
+     },
+     {
+      "value": "cover",
+      "label": "Fill frame (crop)"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_source",
+    "label": "Image",
+    "info": "“First product” shows the main image of the first product in the collection’s sort order, consistent even when collection images are mood shots. If an image is missing, the other one is used.",
+    "default": "collection",
+    "options": [
+     {
+      "value": "collection",
+      "label": "Collection image"
+     },
+     {
+      "value": "product",
+      "label": "First product"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Kollektionsliste",
+  "category": "Produkte & Kollektionen",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "checkbox",
+    "id": "is_page_title",
+    "label": "Als Seitentitel verwenden (H1)",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "heading",
+      "label": "Überschrift",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "heading",
+      "label": "Überschrift",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "collection_list",
+    "id": "collections",
+    "label": "Kollektionen",
+    "info": "Leer lassen, um alle Kollektionen mit Produkten anzuzeigen."
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Höchstanzahl",
+    "info": "Auf der Seite „Alle Kollektionen“ ohne Auswahl: Kollektionen je Seite, mit Seitennavigation.",
+    "default": 12,
+    "min": 2,
+    "max": 50,
+    "step": 1
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Spalten auf großen Bildschirmen",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "select",
+    "id": "image_ratio",
+    "label": "Bild-Seitenverhältnis",
+    "default": "1 / 1",
+    "options": [
+     {
+      "value": "1 / 1",
+      "label": "1 : 1"
+     },
+     {
+      "value": "4 / 5",
+      "label": "4 : 5"
+     },
+     {
+      "value": "3 / 2",
+      "label": "3 : 2"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_fit",
+    "label": "Bildanpassung",
+    "info": "„Ganzes Bild zeigen“ schneidet nichts ab; „Feld füllen“ eignet sich für Fotos mit eigenem Hintergrund.",
+    "default": "contain",
+    "options": [
+     {
+      "value": "contain",
+      "label": "Ganzes Bild zeigen"
+     },
+     {
+      "value": "cover",
+      "label": "Feld füllen (zuschneiden)"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_source",
+    "label": "Bild",
+    "info": "„Erstes Produkt“ zeigt das Hauptbild des ersten Produkts in der Sortierung der Kollektion, einheitlich auch bei Stimmungsbildern als Kollektionsbild. Fehlt das Bild, gilt jeweils das andere.",
+    "default": "collection",
+    "options": [
+     {
+      "value": "collection",
+      "label": "Kollektionsbild"
+     },
+     {
+      "value": "product",
+      "label": "Erstes Produkt"
+     }
+    ]
+   }
+  ]
+ }
+}

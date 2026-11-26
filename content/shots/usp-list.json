@@ -1,0 +1,99 @@
+{
+ "block": "usp-list",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "usps",
+ "de": {
+  "desktop": {
+   "file": "de/usp-list-desktop.webp",
+   "width": 621,
+   "height": 576,
+   "bytes": 26424,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/usp-list-desktop-800.webp",
+   "width": 621,
+   "height": 576,
+   "bytes": 26424,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/usp-list.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 21504,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "icon",
+    "x": 3.7,
+    "y": 43.5,
+    "box": [
+     1.7,
+     41.4,
+     4,
+     4.3
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/usp-list-mobile.webp",
+   "width": 748,
+   "height": 922,
+   "bytes": 38450,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/usp-list-desktop.webp",
+   "width": 621,
+   "height": 576,
+   "bytes": 26202,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/usp-list-desktop-800.webp",
+   "width": 621,
+   "height": 576,
+   "bytes": 26202,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/usp-list.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 20460,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "icon",
+    "x": 3.7,
+    "y": 43.5,
+    "box": [
+     1.7,
+     41.3,
+     4,
+     4.3
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/usp-list-mobile.webp",
+   "width": 748,
+   "height": 922,
+   "bytes": 39114,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

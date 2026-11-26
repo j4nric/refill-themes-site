@@ -1,0 +1,99 @@
+{
+ "block": "metafield-content",
+ "shop": "ostra",
+ "template": "product.json",
+ "section": "details",
+ "id": "usage",
+ "de": {
+  "desktop": {
+   "file": "de/metafield-content-desktop.webp",
+   "width": 700,
+   "height": 575,
+   "bytes": 21016,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/metafield-content-desktop-800.webp",
+   "width": 700,
+   "height": 575,
+   "bytes": 21016,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/metafield-content.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 17010,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 2.2,
+    "y": 55.4,
+    "box": [
+     5.1,
+     52.4,
+     90,
+     20.5
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/metafield-content-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 30992,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/metafield-content-desktop.webp",
+   "width": 700,
+   "height": 575,
+   "bytes": 18950,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/metafield-content-desktop-800.webp",
+   "width": 700,
+   "height": 575,
+   "bytes": 18950,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/metafield-content.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 15752,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 2.2,
+    "y": 55.5,
+    "box": [
+     5.1,
+     52.4,
+     90,
+     20.5
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/metafield-content-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 28516,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

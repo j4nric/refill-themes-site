@@ -1,0 +1,73 @@
+{
+ "block": "line-art",
+ "shop": "nordform",
+ "template": "page.abo.json",
+ "section": "timeline",
+ "id": "timeline-path",
+ "de": {
+  "desktop": {
+   "file": "de/line-art-desktop.webp",
+   "width": 751,
+   "height": 191,
+   "bytes": 2564,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/line-art-desktop-800.webp",
+   "width": 751,
+   "height": 191,
+   "bytes": 2564,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/line-art.webp",
+   "width": 640,
+   "height": 163,
+   "bytes": 2054,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/line-art-mobile.webp",
+   "width": 748,
+   "height": 927,
+   "bytes": 29320,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/line-art-desktop.webp",
+   "width": 751,
+   "height": 191,
+   "bytes": 2532,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/line-art-desktop-800.webp",
+   "width": 751,
+   "height": 191,
+   "bytes": 2532,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/line-art.webp",
+   "width": 640,
+   "height": 163,
+   "bytes": 2094,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/line-art-mobile.webp",
+   "width": 748,
+   "height": 927,
+   "bytes": 32526,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

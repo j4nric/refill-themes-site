@@ -1,0 +1,73 @@
+{
+ "block": "spacer",
+ "shop": "ostra",
+ "template": "index.json",
+ "section": "hero",
+ "id": "hero-spacer",
+ "de": {
+  "desktop": {
+   "file": "de/spacer-desktop.webp",
+   "width": 1440,
+   "height": 575,
+   "bytes": 55892,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/spacer-desktop-800.webp",
+   "width": 800,
+   "height": 319,
+   "bytes": 27766,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/spacer.webp",
+   "width": 640,
+   "height": 256,
+   "bytes": 21108,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "de/spacer-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 33926,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/spacer-desktop.webp",
+   "width": 1440,
+   "height": 575,
+   "bytes": 55590,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/spacer-desktop-800.webp",
+   "width": 800,
+   "height": 319,
+   "bytes": 26762,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/spacer.webp",
+   "width": 640,
+   "height": 256,
+   "bytes": 20734,
+   "quality": 80
+  },
+  "markers": [],
+  "mobile": {
+   "file": "en/spacer-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 35904,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

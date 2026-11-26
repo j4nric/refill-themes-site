@@ -1,0 +1,99 @@
+{
+ "block": "text",
+ "shop": "kessel-und-blatt",
+ "template": "index.json",
+ "section": "erntebrief",
+ "id": "brief-text",
+ "de": {
+  "desktop": {
+   "file": "de/text-desktop.webp",
+   "width": 1581,
+   "height": 478,
+   "bytes": 27782,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/text-desktop-800.webp",
+   "width": 800,
+   "height": 242,
+   "bytes": 10748,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/text.webp",
+   "width": 640,
+   "height": 193,
+   "bytes": 7988,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 3.8,
+    "y": 53.6,
+    "box": [
+     5.1,
+     49.9,
+     43,
+     25.2
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/text-mobile.webp",
+   "width": 780,
+   "height": 820,
+   "bytes": 37900,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/text-desktop.webp",
+   "width": 1581,
+   "height": 478,
+   "bytes": 26296,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/text-desktop-800.webp",
+   "width": 800,
+   "height": 242,
+   "bytes": 10480,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/text.webp",
+   "width": 640,
+   "height": 193,
+   "bytes": 7564,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "text",
+    "x": 3.8,
+    "y": 53.5,
+    "box": [
+     5.1,
+     49.8,
+     43,
+     25.2
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/text-mobile.webp",
+   "width": 780,
+   "height": 820,
+   "bytes": 37520,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

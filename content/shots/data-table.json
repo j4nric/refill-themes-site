@@ -1,0 +1,99 @@
+{
+ "block": "data-table",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "facts",
+ "id": "facts-table",
+ "de": {
+  "desktop": {
+   "file": "de/data-table-desktop.webp",
+   "width": 741,
+   "height": 443,
+   "bytes": 10838,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/data-table-desktop-800.webp",
+   "width": 741,
+   "height": 443,
+   "bytes": 10838,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/data-table.webp",
+   "width": 640,
+   "height": 383,
+   "bytes": 9586,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 7.3,
+    "y": 10.3,
+    "box": [
+     4.6,
+     6.7,
+     90.8,
+     7.3
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/data-table-mobile.webp",
+   "width": 748,
+   "height": 700,
+   "bytes": 17678,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/data-table-desktop.webp",
+   "width": 741,
+   "height": 443,
+   "bytes": 11430,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/data-table-desktop-800.webp",
+   "width": 741,
+   "height": 443,
+   "bytes": 11430,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/data-table.webp",
+   "width": 640,
+   "height": 383,
+   "bytes": 10196,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 7.3,
+    "y": 10.3,
+    "box": [
+     4.6,
+     6.7,
+     90.8,
+     7.3
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/data-table-mobile.webp",
+   "width": 748,
+   "height": 700,
+   "bytes": 18298,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

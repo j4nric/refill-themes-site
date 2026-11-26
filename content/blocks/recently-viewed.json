@@ -1,0 +1,161 @@
+{
+ "slug": "recently-viewed",
+ "kind": "block",
+ "source": "blocks/recently-viewed.liquid",
+ "source_sha1": "1b90864f61c6",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Recently viewed",
+  "category": "Products and collections",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Shows the products a visitor viewed last (stored in their browser only)."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Recently viewed"
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Number of products",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Show profile scales (e.g. scent, texture)",
+    "info": "Only when “Show profile scales on product cards” is on in theme settings.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Show unit price",
+    "info": "Price per unit of measure, e.g. €16.86/100 g. Usually required in the EU for goods sold by weight, volume or length: only turn off if it isn’t needed here.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Show “Compare” checkbox",
+    "info": "Only when the “Compare” checkbox is on in theme settings (product cards).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Zuletzt angesehen",
+  "category": "Produkte & Kollektionen",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Zeigt die Produkte, die ein Besucher zuletzt angesehen hat (nur in seinem Browser gespeichert)."
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Zuletzt angesehen"
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Anzahl Produkte",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Profil-Skalen zeigen (z. B. Duft, Textur)",
+    "info": "Nur wenn „Profil-Skalen in Produktkarten zeigen“ in den Theme-Einstellungen aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Grundpreis zeigen",
+    "info": "Preis je Mengeneinheit, z. B. 16,86 €/100 g. In der EU für Waren nach Gewicht, Volumen oder Länge meist Pflicht: nur abschalten, wenn er hier nicht nötig ist.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Häkchen „Vergleichen“ zeigen",
+    "info": "Nur wenn das Häkchen „Vergleichen“ in den Theme-Einstellungen (Produktkarten) aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ]
+   }
+  ]
+ }
+}

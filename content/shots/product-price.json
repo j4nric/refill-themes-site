@@ -1,0 +1,123 @@
+{
+ "block": "product-price",
+ "shop": "nordform",
+ "template": "product.json",
+ "section": "main",
+ "id": "product-price",
+ "de": {
+  "desktop": {
+   "file": "de/product-price-desktop.webp",
+   "width": 621,
+   "height": 577,
+   "bytes": 25376,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "de/product-price-desktop-800.webp",
+   "width": 621,
+   "height": 577,
+   "bytes": 25376,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/product-price.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 24104,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_tax_note",
+    "x": 4.9,
+    "y": 55.6,
+    "box": [
+     1.7,
+     53.6,
+     96.7,
+     4
+    ],
+    "n": 1
+   },
+   {
+    "setting": "compare_color_source",
+    "x": 26.9,
+    "y": 45.9,
+    "box": [
+     30.2,
+     43.8,
+     13.5,
+     4.2
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/product-price-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 31578,
+   "quality": 80,
+   "how": "context"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/product-price-desktop.webp",
+   "width": 621,
+   "height": 577,
+   "bytes": 25980,
+   "quality": 80,
+   "how": "context"
+  },
+  "desktop_small": {
+   "file": "en/product-price-desktop-800.webp",
+   "width": 621,
+   "height": 577,
+   "bytes": 25980,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/product-price.webp",
+   "width": 621,
+   "height": 480,
+   "bytes": 25068,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "show_tax_note",
+    "x": 4.9,
+    "y": 55.6,
+    "box": [
+     1.7,
+     53.5,
+     96.7,
+     4
+    ],
+    "n": 1
+   },
+   {
+    "setting": "compare_color_source",
+    "x": 26.9,
+    "y": 45.8,
+    "box": [
+     30.2,
+     43.7,
+     13.5,
+     4.2
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/product-price-mobile.webp",
+   "width": 748,
+   "height": 920,
+   "bytes": 33138,
+   "quality": 80,
+   "how": "context"
+  }
+ }
+}

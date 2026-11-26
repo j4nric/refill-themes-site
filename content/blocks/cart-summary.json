@@ -1,0 +1,69 @@
+{
+ "slug": "cart-summary",
+ "kind": "block",
+ "source": "blocks/cart-summary.liquid",
+ "source_sha1": "049b0d40e811",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Cart: summary",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_note",
+    "label": "Show order note",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "show_sample",
+    "label": "Show free sample",
+    "info": "Collection, threshold and number under theme settings › Cart › “Free sample”.",
+    "default": true
+   },
+   {
+    "type": "product",
+    "id": "gift_wrap_product",
+    "label": "Gift wrap (product)",
+    "info": "Create a “Gift wrap” product with a price (no shipping, not in collections). The cart then shows a toggle; customers write the card message in the order note."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_dynamic_checkout",
+    "label": "Show dynamic checkout buttons",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Warenkorb: Übersicht",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_note",
+    "label": "Bestellnotiz anzeigen",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "show_sample",
+    "label": "Gratisprobe zeigen",
+    "info": "Kollektion, Schwelle und Anzahl unter Theme-Einstellungen › Warenkorb › „Gratisprobe“.",
+    "default": true
+   },
+   {
+    "type": "product",
+    "id": "gift_wrap_product",
+    "label": "Geschenkverpackung (Produkt)",
+    "info": "Legen Sie ein Produkt „Geschenkverpackung“ mit Preis an (ohne Versand, nicht in Kollektionen). Im Warenkorb erscheint dann ein Schalter; die Grußkarte schreiben Kunden in die Bestellnotiz."
+   },
+   {
+    "type": "checkbox",
+    "id": "show_dynamic_checkout",
+    "label": "Dynamische Checkout-Buttons anzeigen",
+    "default": true
+   }
+  ]
+ }
+}

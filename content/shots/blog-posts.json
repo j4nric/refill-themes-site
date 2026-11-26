@@ -1,0 +1,99 @@
+{
+ "block": "blog-posts",
+ "shop": "nordform",
+ "template": "index.json",
+ "section": "journal",
+ "id": "journal-posts",
+ "de": {
+  "desktop": {
+   "file": "de/blog-posts-desktop.webp",
+   "width": 1521,
+   "height": 613,
+   "bytes": 30454,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "de/blog-posts-desktop-800.webp",
+   "width": 800,
+   "height": 322,
+   "bytes": 14374,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/thumbs/blog-posts.webp",
+   "width": 640,
+   "height": 258,
+   "bytes": 10546,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 80.1,
+    "box": [
+     0.7,
+     77.4,
+     31.6,
+     5.3
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "de/blog-posts-mobile.webp",
+   "width": 748,
+   "height": 2492,
+   "bytes": 48950,
+   "quality": 80,
+   "how": "block"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/blog-posts-desktop.webp",
+   "width": 1521,
+   "height": 613,
+   "bytes": 29272,
+   "quality": 80,
+   "how": "block"
+  },
+  "desktop_small": {
+   "file": "en/blog-posts-desktop-800.webp",
+   "width": 800,
+   "height": 322,
+   "bytes": 13974,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/thumbs/blog-posts.webp",
+   "width": 640,
+   "height": 258,
+   "bytes": 10326,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 80.1,
+    "box": [
+     0.7,
+     77.4,
+     31.6,
+     5.3
+    ],
+    "n": 1
+   }
+  ],
+  "mobile": {
+   "file": "en/blog-posts-mobile.webp",
+   "width": 748,
+   "height": 2536,
+   "bytes": 47444,
+   "quality": 80,
+   "how": "block"
+  }
+ }
+}

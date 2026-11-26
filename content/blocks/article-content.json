@@ -1,0 +1,43 @@
+{
+ "slug": "article-content",
+ "kind": "block",
+ "source": "blocks/article-content.liquid",
+ "source_sha1": "02a3b45db9bd",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Blog post: content",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Show image",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_author",
+    "label": "Show author",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Blogbeitrag: Inhalt",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "checkbox",
+    "id": "show_image",
+    "label": "Bild anzeigen",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_author",
+    "label": "Autor anzeigen",
+    "default": true
+   }
+  ]
+ }
+}

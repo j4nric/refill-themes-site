@@ -1,0 +1,33 @@
+{
+ "slug": "newsletter",
+ "kind": "block",
+ "source": "blocks/newsletter.liquid",
+ "source_sha1": "64d61e000396",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Newsletter signup",
+  "category": "Forms",
+  "settings": [
+   {
+    "type": "text",
+    "id": "tags",
+    "label": "Customer tags",
+    "info": "Added to the customer on signup, comma-separated.",
+    "default": "newsletter"
+   }
+  ]
+ },
+ "de": {
+  "name": "Newsletter-Anmeldung",
+  "category": "Formulare",
+  "settings": [
+   {
+    "type": "text",
+    "id": "tags",
+    "label": "Kunden-Tags",
+    "info": "Werden dem Kunden bei der Anmeldung zugewiesen, kommagetrennt.",
+    "default": "newsletter"
+   }
+  ]
+ }
+}

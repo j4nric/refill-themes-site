@@ -1,0 +1,75 @@
+{
+ "slug": "comparison-table",
+ "kind": "block",
+ "source": "blocks/comparison-table.liquid",
+ "source_sha1": "3c4be74658a1",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Comparison table",
+  "category": "Benefits and comparison",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Comparison"
+   },
+   {
+    "type": "text",
+    "id": "column_1",
+    "label": "Column 1",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Our product"
+   },
+   {
+    "type": "text",
+    "id": "column_2",
+    "label": "Column 2",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Typical alternative"
+   },
+   {
+    "type": "textarea",
+    "id": "rows",
+    "label": "Rows",
+    "info": "One row per line: Feature | Value 1 | Value 2. yes/no become ✓ and –.",
+    "default": "Free shipping | yes | no\nPersonal advice | yes | no\n30-day returns | yes | no"
+   }
+  ]
+ },
+ "de": {
+  "name": "Vergleichstabelle",
+  "category": "Vorteile & Vergleich",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Vergleich"
+   },
+   {
+    "type": "text",
+    "id": "column_1",
+    "label": "Spalte 1",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Unser Produkt"
+   },
+   {
+    "type": "text",
+    "id": "column_2",
+    "label": "Spalte 2",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Übliche Alternative"
+   },
+   {
+    "type": "textarea",
+    "id": "rows",
+    "label": "Zeilen",
+    "info": "Eine Zeile je Merkmal: Merkmal | Wert 1 | Wert 2. ja/nein werden zu ✓ und –.",
+    "default": "Kostenloser Versand | ja | nein\nPersönliche Beratung | ja | nein\nRückgabe in 30 Tagen | ja | nein"
+   }
+  ]
+ }
+}

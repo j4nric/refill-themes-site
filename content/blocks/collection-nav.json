@@ -1,0 +1,87 @@
+{
+ "slug": "collection-nav",
+ "kind": "block",
+ "source": "blocks/collection-nav.liquid",
+ "source_sha1": "1ecdbe4381cf",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Subcollections",
+  "category": "Products and collections",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Source in this order: subcollections from the collection metafield (under “Data source”), otherwise the selected collections, otherwise the menu."
+   },
+   {
+    "type": "collection_list",
+    "id": "collections",
+    "label": "Collections (fallback)",
+    "info": "Shown on all collection pages without subcollections in the metafield. Leave empty to use the menu."
+   },
+   {
+    "type": "link_list",
+    "id": "menu",
+    "label": "Menu",
+    "info": "Last fallback. Ideally the header menu: the bar shows the level the current collection is in. A dedicated menu without the collection is shown as is. Empty: main menu.",
+    "visible_if": [
+     {
+      "setting": "collections",
+      "label": "Collections (fallback)",
+      "op": "empty"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafield: subcollections",
+    "info": "Format namespace.key. Create it under Settings › Custom data › Collections › Add definition: type “Collection”, “List of values”. Then pick the subcollections in each collection.",
+    "default": "custom.subcollections"
+   }
+  ]
+ },
+ "de": {
+  "name": "Unterkollektionen",
+  "category": "Produkte & Kollektionen",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Quelle in dieser Reihenfolge: Unterkollektionen aus dem Metafeld der Kollektion (unter „Datenquelle“), sonst die gewählten Kollektionen, sonst das Menü."
+   },
+   {
+    "type": "collection_list",
+    "id": "collections",
+    "label": "Kollektionen (Rückfall)",
+    "info": "Erscheinen auf allen Kollektionsseiten ohne Unterkollektionen im Metafeld. Leer lassen, um das Menü zu verwenden."
+   },
+   {
+    "type": "link_list",
+    "id": "menu",
+    "label": "Menü",
+    "info": "Letzter Rückfall. Am besten das Menü des Headers: Die Leiste zeigt die Ebene, in der die aktuelle Kollektion steht. Ein eigenes Menü ohne die Kollektion wird direkt angezeigt. Leer: Hauptmenü.",
+    "visible_if": [
+     {
+      "setting": "collections",
+      "label": "Kollektionen (Rückfall)",
+      "op": "empty"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafeld: Unterkollektionen",
+    "info": "Format namespace.schlüssel. Anlegen unter Einstellungen › Benutzerdefinierte Daten › Kollektionen › Definition hinzufügen: Typ „Kollektion“, „Liste mit Werten“. Danach in jeder Kollektion die Unterkollektionen auswählen.",
+    "default": "custom.subcollections"
+   }
+  ]
+ }
+}

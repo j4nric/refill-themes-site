@@ -1,0 +1,83 @@
+{
+ "slug": "trust-badges",
+ "kind": "block",
+ "source": "blocks/trust-badges.liquid",
+ "source_sha1": "585201e800ab",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Badges and certificates",
+  "category": "Product: facts",
+  "settings": [
+   {
+    "type": "textarea",
+    "id": "badges",
+    "label": "Badges (if the metafield is empty)",
+    "info": "One badge per line."
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.key. Find it under Settings → Custom data."
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafield: badges (list of texts)",
+    "default": "custom.certifications"
+   },
+   {
+    "type": "text",
+    "id": "report_metafield",
+    "label": "Metafield: lab report (file)",
+    "default": "custom.lab_report"
+   },
+   {
+    "type": "text",
+    "id": "report_label",
+    "label": "Link text for the report",
+    "info": "Empty: “View report” in the store language. For example “View lab report” or “View certificate”."
+   }
+  ]
+ },
+ "de": {
+  "name": "Siegel & Zertifikate",
+  "category": "Produkt: Angaben",
+  "settings": [
+   {
+    "type": "textarea",
+    "id": "badges",
+    "label": "Siegel (wenn kein Metafeld befüllt ist)",
+    "info": "Ein Siegel pro Zeile."
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten."
+   },
+   {
+    "type": "text",
+    "id": "metafield",
+    "label": "Metafeld: Siegel (Liste von Texten)",
+    "default": "custom.certifications"
+   },
+   {
+    "type": "text",
+    "id": "report_metafield",
+    "label": "Metafeld: Prüfbericht (Datei)",
+    "default": "custom.lab_report"
+   },
+   {
+    "type": "text",
+    "id": "report_label",
+    "label": "Linktext zum Nachweis",
+    "info": "Leer: „Nachweis ansehen“ in der Sprache des Shops. Zum Beispiel „Prüfbericht ansehen“ oder „Zertifikat ansehen“."
+   }
+  ]
+ }
+}

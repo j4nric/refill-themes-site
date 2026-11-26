@@ -1,0 +1,31 @@
+{
+ "slug": "custom-liquid",
+ "kind": "block",
+ "source": "blocks/custom-liquid.liquid",
+ "source_sha1": "c867e28d12a4",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Custom Liquid",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "liquid",
+    "id": "liquid",
+    "label": "Liquid code",
+    "info": "For code from apps or agencies. Faulty code can break the page."
+   }
+  ]
+ },
+ "de": {
+  "name": "Eigenes Liquid",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "liquid",
+    "id": "liquid",
+    "label": "Liquid-Code",
+    "info": "Für Code von Apps oder Agenturen. Fehlerhafter Code kann die Seite stören."
+   }
+  ]
+ }
+}
