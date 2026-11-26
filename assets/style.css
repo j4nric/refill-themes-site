@@ -398,6 +398,9 @@ main:focus-visible { outline: none; }
 }
 a.mk:hover { background: #16191c; }
 @media (max-width: 599px) { .mk { width: 22px; height: 22px; font-size: 12px; } }
+/* Punkt ohne Platz im Bild: links neben das Bild setzen (am Handy auf die Kante, damit nichts seitlich überläuft) */
+.mk--out { transform: translate(-50%, -50%); }
+@media (min-width: 750px) { .mk--out { transform: translate(calc(-100% - 6px), -50%); } }
 .markers__title { font-size: var(--text-md); margin: 0; }
 .markers__intro { margin: var(--space-1) 0 0; font-size: var(--text-sm); color: var(--color-ink-soft); }
 .markers__list { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: var(--space-2); }

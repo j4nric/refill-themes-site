@@ -721,11 +721,18 @@ def look_html(lang: str, slug: str, blocks: BlockSet, key: str, name: str, tx: d
         for m in markers:
             target = (f'#{m["setting"]}' if m.get("setting") in ids
                       else href(key, blocks.key(lang, m["block"])) if m.get("block") in blocks.by_slug else None)
-            style = f'left:{m["x"]}%;top:{m["y"]}%'
-            if target:
-                dots.append(f'<a class="mk" href="{target}" style="{style}" tabindex="-1" aria-hidden="true">{m["n"]}</a>')
+            box = m.get("box")
+            # Punkt liegt im Element (kein Platz links daneben): auf die Ecke oben links setzen, damit er keinen Text verdeckt
+            if box and m["x"] > box[0]:
+                style = f'left:{box[0]}%;top:{m["y"]}%'
+                cls = "mk mk--out"
             else:
-                dots.append(f'<span class="mk" style="{style}" aria-hidden="true">{m["n"]}</span>')
+                style = f'left:{m["x"]}%;top:{m["y"]}%'
+                cls = "mk"
+            if target:
+                dots.append(f'<a class="{cls}" href="{target}" style="{style}" tabindex="-1" aria-hidden="true">{m["n"]}</a>')
+            else:
+                dots.append(f'<span class="{cls}" style="{style}" aria-hidden="true">{m["n"]}</span>')
         big = href(key, "assets/shots/" + desk["file"])
         parts.append(
             f'<figure class="shot shot--desktop"><div class="shot__frame">'
