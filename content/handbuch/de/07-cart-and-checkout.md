@@ -118,13 +118,13 @@ Unter **„Name des Attributs“** legen Sie je Angabe fest, wie sie in der Best
 
 ### Preise auf dem Lieferschein ausblenden
 
-Das Häkchen speichert nur den Wunsch als Attribut. Den Lieferschein erzeugt Shopify aus Ihrer Vorlage; das Theme kann ihn nicht ändern. Damit der Lieferschein den Wunsch befolgt, setzen Sie unter **Einstellungen → Versand und Zustellung → Lieferscheinvorlage** die Preis-Spalten in eine Bedingung, z. B.:
+Das Häkchen speichert nur den Wunsch als Attribut. Den Lieferschein erzeugt Shopify aus Ihrer Vorlage; das Theme kann ihn nicht ändern. Damit der Lieferschein den Wunsch befolgt, öffnen Sie **Einstellungen → Versand und Zustellung**, ganz unten unter **„Dokumente“** die Vorlage **„Packing Slip“** (Lieferschein), und setzen Sie dort die Preis-Spalten in eine Bedingung, z. B.:
 
 ```liquid
 {% if order.attributes["Hide prices"] == blank %} … Preis … {% endif %}
 ```
 
-Verwenden Sie den Attributnamen, den Sie eingestellt haben. Die Geschenknachricht drucken Sie dort mit `{{ order.attributes["Gift message"] }}`. Prüfen Sie die Vorlage mit einer Testbestellung.
+Verwenden Sie den Attributnamen, den Sie eingestellt haben. Die Geschenknachricht drucken Sie dort mit `{{ order.attributes["Gift message"] }}`. Der Lieferschein liest die Attribute der Bestellung (mit einer Testbestellung geprüft). Shopifys Standard-Lieferschein zeigt keine Preise; die Bedingung brauchen Sie nur, wenn Ihre Vorlage Preise druckt. Prüfen Sie Ihre Vorlage mit einer Testbestellung: Bestellung öffnen → „Drucken“ → „Lieferscheine drucken“.
 
 ## Fortschrittsbalken mit Stufen
 

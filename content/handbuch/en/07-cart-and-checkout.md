@@ -119,13 +119,13 @@ Under **“Attribute name”** you set how each choice is named on the order (de
 
 ### Hide prices on the packing slip
 
-The checkbox only saves the request as an attribute. Shopify creates the packing slip from your template; the theme cannot change it. For the packing slip to follow the request, go to **Settings → Shipping and delivery → Packing slip template** and wrap the price columns in a condition, e.g.:
+The checkbox only saves the request as an attribute. Shopify creates the packing slip from your template; the theme cannot change it. For the packing slip to follow the request, go to **Settings → Shipping and delivery**, open the **“Packing Slip”** template under **“Documents”** at the bottom, and wrap the price columns in a condition, e.g.:
 
 ```liquid
 {% if order.attributes["Hide prices"] == blank %} … price … {% endif %}
 ```
 
-Use the attribute name you have set. You can print the gift message there with `{{ order.attributes["Gift message"] }}`. Check the template with a test order.
+Use the attribute name you have set. You can print the gift message there with `{{ order.attributes["Gift message"] }}`. The packing slip can read the order’s attributes (verified with a test order). Shopify’s default packing slip shows no prices; you only need the condition if your template prints them. Check your template with a test order: open the order → “Print” → “Print packing slips”.
 
 ## Progress bar with tiers
 
