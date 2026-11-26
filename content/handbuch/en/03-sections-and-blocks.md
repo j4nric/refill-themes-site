@@ -90,7 +90,7 @@ There are also sections with a fixed purpose that only appear in their template:
 
 ## Group and columns
 
-**“Group”** combines blocks. In the picker it appears as **“Stacked items”** and **“Items side by side”**.
+**“Group”** combines blocks. In the picker it appears as **“Group: stacked”** and **“Group: side by side”** (search: “Group”).
 
 - **“Direction”**: “Stacked” or “Side by side”. Side by side, all content shares the space and wraps when it gets narrow; buttons and badges keep their width.
 - **“Horizontal alignment”** (buttons left, center, right), **“Vertical alignment”** (side by side only), **“Spacing between blocks”**.
@@ -104,6 +104,16 @@ There are also sections with a fixed purpose that only appear in their template:
 - **“Lines between columns”** for the factual data sheet look.
 
 Rule of thumb: use “Columns” for grids of equal tiles, and “Group” for text next to a button or an image next to text.
+
+### Moving an existing block into a group or column
+
+Dragging in the theme editor only changes a block's order within its current parent (section, group, columns). You can't drag an existing block into another group or column – a different nesting level; it snaps back to its place. This is a limit of the Shopify editor, not of the theme: “Group” and “Columns” accept every block. Shopify has announced moving blocks across levels but hasn't released it yet.
+
+Workaround:
+
+1. In the target (e.g. the group), **“Add block”** and add the same block again.
+2. Copy the settings and sub-blocks (e.g. the hotspots of “Shoppable image”) from the old block.
+3. Delete the old block.
 
 ## All blocks by picker category
 
@@ -123,7 +133,7 @@ The **“Add block”** picker sorts blocks into 13 categories; within a categor
 | Text | Formatted text in three sizes, normal or muted. “Match group alignment” (default) or its own “Alignment”. |
 | Quote | Quote with name and role; without **“Person’s name”** it appears without a name line, and “Role or place” only shows with a name. Under **“Appearance”**: **“Font size”** (S–XL) and **“Font weight”** (“Regular”, “Bold”); **“Default”** uses the setting of the carousel the quote is in. |
 | Badge | Small label, “Outline” or “Accent”. |
-| Blog posts | Posts of a blog. **“Layout”**: “Grid” (default), “List” (image left, text right, posts separated by lines) or “First post large” (the newest across the full width, the grid below); **“Columns”**: “Automatic” (as many as fit well) or fixed 2, 3 or 4 – fewer in narrow areas. Leave **“Heading”** empty if a separate “Heading” block sits above; **“Use blog title as heading”** (shown while the field is empty) uses the blog’s name instead. The **“All posts”** link can be hidden, renamed (“Link text”) and shown as a button (“Button style”, “Button size”; default text link). |
+| Blog posts | Posts of a blog. **“Layout”**: “Grid” (default), “List” (image left, text right, posts separated by lines) or “First post large” (the newest across the full width, the grid below); **“Columns”**: “Automatic” (as many as fit well) or fixed 2, 3 or 4 – fewer in narrow areas. With “First post large”, **“Image / content split”** sets how wide the first post’s image is: “Default” (60 / 40, as before) or 50 / 50, 40 / 60, 67 / 33, 33 / 67. Aligned with the grid below: 50 / 50 for 2 or 4 columns, 67 / 33 for 3. Leave **“Heading”** empty if a separate “Heading” block sits above; **“Use blog title as heading”** (shown while the field is empty) uses the blog’s name instead. The **“All posts”** link can be hidden, renamed (“Link text”) and shown as a button (“Button style”, “Button size”; default text link). |
 
 ### Buttons and promotions
 
@@ -138,8 +148,8 @@ The **“Add block”** picker sorts blocks into 13 categories; within a categor
 | Block | Purpose |
 |---|---|
 | Image | Single image with aspect ratio (2:3 to 3:1), fit, **“Image position”** for the crop and optional link. |
-| Image with text | Image and text panel side by side or stacked; the panel holds further blocks (heading, text, button …). It uses the section’s color scheme; turn on **“Own color scheme for the text panel”** to give it its own. With **“Video instead of image”** a muted looping video plays in the image area, just like the section’s background video (starts when visible, pause button, still image only with “Reduce motion”); the image then serves as the still image. Display: aspect ratio (2:3 to 3:1) or **“Image height”** relative to the screen (a third, half, three quarters; from 750 px width), **“Image column width”** (one third to two thirds) and **“Image position”** (a focal point set in Shopify takes priority). Under “Motion”: **“Parallax”** (as in theme settings, on or off) and **“Text animation in the text area”** – “Automatic” shows the text of a top banner (with “Load immediately”) without delay. |
-| Shoppable image | Image with numbered markers (“Hotspot”), each linked to a product or a custom entry (title, text, link). Clicking a marker opens a card with image, name, price, “View” and optional quick buy; on phones a numbered list below the image is shown instead. Set each marker’s position with “Horizontal”/“Vertical” in %, plus an optional “Label” and the “Marker color scheme”. **“Layout”** “2 columns” or “3 columns” puts the list next to the image from 750 px width (a marker jumps to its entry); **“Products on desktop”** shows this list in 1 or 2 columns. Aspect ratio and **“Image position”** as for the image block. |
+| Image with text | Image and text panel side by side or stacked; the panel holds further blocks (heading, text, button …). It uses the section’s color scheme; turn on **“Own color scheme for the text panel”** to give it its own. With **“Video instead of image”** a muted looping video plays in the image area, just like the section’s background video (starts when visible, pause button, still image only with “Reduce motion”); the image then serves as the still image. Display: aspect ratio (2:3 to 3:1) or **“Image height”** relative to the screen (a third, half, three quarters; from 750 px width), **“Image column width”** (one third to two thirds) and **“Image position”** (a focal point set in Shopify takes priority). Under “Motion”: **“Parallax”** (as in theme settings, on or off; “On” also works when animations are turned off in the theme settings, never with “Reduce motion”, see [Animation](08-animation.md#theme-settings-animation)) and **“Text animation in the text area”** – “Automatic” shows the text of a top banner (with “Load immediately”) without delay. |
+| Shoppable image | Image with numbered markers (“Hotspot”), each linked to a product or a custom entry (title, text, link). Clicking a marker opens a card with image, name, price, “View” and optional quick buy; on phones a numbered list below the image is shown instead. Set each marker’s position with “Horizontal”/“Vertical” in %, plus an optional “Label” and the “Marker color scheme”. **“Layout”** “2 columns” or “3 columns” puts the list next to the image from 750 px width (a marker jumps to its entry); **“Product list columns”** shows the products in 1, 2 or 3 columns – with every layout, including the “Add all products to cart” list; each column stays at least about 240 px wide (160 px next to the image), phones show one column. Aspect ratio and **“Image position”** as for the image block. |
 | Video | Video from Shopify or YouTube/Vimeo; external videos load only after a click. Newly added blocks start with a Shopify sample video – replace the link. |
 | Logo list | Partner or press logos, optionally single-color in the text color. **“Scroll automatically”** for long lists: the logos move slowly and endlessly (“Speed” Slow, Normal or Fast), pause on hover, keyboard focus and with the pause button, and stay still for reduced motion. |
 | Line art | Decorative line motif from 13 motifs (waves, cycle, contour lines, path with dots, connector line, swash, frame corners, branch, steam curls, drop with ripples, measuring scale, orbit, curved arrow), e.g. next to an image, between columns or under a heading. Settings: “Motif”, “On scroll”, “Color”, “Line weight” (Fine / Medium / Bold), “Width” in % of the column, “Match group alignment” (default) or its own “Alignment”, “Mirror”, “Repeats side by side”, “Opacity”. The height follows the motif. See [Animation](08-animation.md#line-art-and-decoration). |
@@ -148,11 +158,11 @@ The **“Add block”** picker sorts blocks into 13 categories; within a categor
 
 | Block | Purpose |
 |---|---|
-| Stacked items / Items side by side | The “Group” block: combines blocks, optionally with a border and its own color scheme. |
+| Group: stacked / Group: side by side | The “Group” block: combines blocks, optionally with a border and its own color scheme. |
 | Columns | Equal-width columns that wrap on small screens. |
 | Carousel | Horizontally scrollable row of any blocks, without automatic rotation. Under **“Quotes”**, **“Font size”** and **“Font weight”** set the look of all quotes in it. |
 | Divider | Horizontal line between content. |
-| Spacer | Additional vertical space. |
+| Spacer | Additional space in the chosen **“Size”**. **“Direction”**: “Automatic” (horizontal space in a “Side by side” group, vertical otherwise), “Vertical (height)” or “Horizontal (width)”. |
 | Breadcrumbs | Path to the current page, e.g. Home › Collection › Product. |
 
 ### Collapsible and tabs
@@ -164,7 +174,7 @@ The **“Add block”** picker sorts blocks into 13 categories; within a categor
 | Tabs | Content in tabs; a tab can be connected to a product metafield and hold further blocks. **“Bottom spacing”** per tab: space below the content and between further blocks, e.g. before a product grid (default Medium). |
 
 **Look of all collapsibles** (“Collapsible content”, “FAQ” and the collapsible product blocks “Product description”, “Product details”, “Metafield content”, “Mandatory information”, “Product safety”): each entry is a panel of its own with 8 px between panels and a small dot with a plus on the right. An open entry gets a tinted background, its title and minus turn to the signal color. Colors come from the section’s color scheme (panels: role “Background behind product images”, open: “Selection”), the rounding from **Theme settings → “Layout” → “Corners” → “Cards, images and panels”**: square, subtle (dot with 4 px rounding) or soft (round dot). There is no separate setting. Opening is subtly animated, except with “Reduce motion”. Filters on collection and search pages stay plain lists with lines.
-| Info pop-up / Dosage table / Size chart | A link or button opens a window with content from text, a page or a product metafield – a size chart, for example. Replaces size chart apps. See [Product page](06-product-page.md#info-pop-up-size-chart-and-dosage-table). |
+| Info pop-up / Info pop-up: table / Info pop-up: dosage table / Info pop-up: size chart | A link or button opens a window with content from text, a page or a product metafield – a size chart, for example. Replaces size chart apps. See [Product page](06-product-page.md#info-pop-up-size-chart-and-dosage-table). |
 
 ### Benefits and comparison
 
@@ -189,12 +199,12 @@ The **“Add block”** picker sorts blocks into 13 categories; within a categor
 | Block | Purpose |
 |---|---|
 | Products from collection | Product cards of a collection as a grid. **“Show key figures”** and **“Show price per day or serving”** can be switched separately. The **“Promo tile”** child block adds a promotional tile to the grid, see [Collections](05-collections.md#promo-tile). |
-| Featured product | A chosen product with gallery (“Slider” by default, or “Grid”), price, variants, purchase options and buy buttons on any page; every part can be switched on or off. Also a section template. See [Product page](06-product-page.md#featured-product). |
+| Featured product | A chosen product with gallery (“Slider” by default, or “Grid”), price, variants, purchase options and buy buttons on any page; every part can be switched on or off. **“Image / content split”** (default as on the product page, or fixed 50 / 50 to 33 / 67) aligns the gallery with columns below. Also a section template. See [Product page](06-product-page.md#featured-product). |
 | Collection list | Collections as tiles; left empty, all collections with products. Paginated on the “All collections” page. |
 | Subcollections | Subcollections as a bar: from a collection metafield, otherwise from a fixed selection, otherwise from the menu. See [Collections](05-collections.md#subcollections). |
 | Build a set | Customers choose several products from a collection and add them to the cart together. Up to 50 products; **“Visible”** sets how many show at once, the rest sit under “Show … more products”. **“Variant”**: “Customer chooses” (default), “First available variant” or “Variant with option value” (e.g. `100 g`; products without this value use the first available variant, if the value is sold out the product is left out). |
-| Reorder | Last order of signed-in customers, back in the cart with one click. |
-| Recently viewed | Recently visited products, stored only in the visitor's browser. |
+| Reorder | Last order of signed-in customers, back in the cart with one click. **“Show with sample data in the editor”** (off by default) shows a sample order with up to three products from your store in the theme editor so you can see the styling; the store never shows sample data. |
+| Recently viewed | Recently visited products, stored only in the visitor's browser. **“Show with sample data in the editor”** (off by default) shows products from your store as sample cards in the theme editor; never in the store. |
 
 How product cards look in every grid (image motion on hover, variants on the card, rating stars, badges) is set centrally: [Collections and product cards](05-collections.md#product-cards).
 
@@ -244,6 +254,7 @@ The three product categories show data of the current product and only work on p
 | Ingredient: profile | One ingredient in detail, e.g. on its glossary page. |
 | Ingredient: products | Products that contain a specific ingredient. |
 | Ingredients: glossary | All ingredients from A to Z with a jump bar. |
+| Origin map | Growing regions and sources of raw materials (“origin” metaobjects) as points on a map and as a list; a click opens the detail card. **“Map height”**: “Automatic” (area around the points, as before) or fixed “Low (2 : 1)”, “Medium (3 : 2)”, “Tall (4 : 3)” – the visible area is extended for this, all points stay visible. |
 
 ### Page templates
 

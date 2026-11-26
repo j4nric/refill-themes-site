@@ -2,7 +2,7 @@
  "slug": "image-banner",
  "kind": "block",
  "source": "blocks/image-banner.liquid",
- "source_sha1": "0b0b65ade11e",
+ "source_sha1": "8bd567c61eb6",
  "accepts_blocks": true,
  "en": {
   "name": "Image with text",
@@ -312,7 +312,7 @@
     "type": "select",
     "id": "parallax",
     "label": "Parallax",
-    "info": "The image scrolls a little slower than the page. On works without the theme setting as long as animations are turned on. Never with reduced motion; only in Chrome, Edge and Safari 26.",
+    "info": "The image scrolls a little slower than the page. “On” also works with animations turned off (main switch) and without the theme setting, never with reduced motion. In browsers without scroll timelines (Firefox, Safari before 26) a small script takes over.",
     "default": "theme",
     "options": [
      {
@@ -660,7 +660,7 @@
     "type": "select",
     "id": "parallax",
     "label": "Parallax",
-    "info": "Das Bild scrollt etwas langsamer als die Seite. An wirkt auch ohne die Theme-Einstellung, solange Animationen eingeschaltet sind. Nie bei reduzierter Bewegung; nur in Chrome, Edge und Safari 26.",
+    "info": "Das Bild scrollt etwas langsamer als die Seite. „An“ wirkt auch bei ausgeschalteten Animationen (Hauptschalter) und ohne die Theme-Einstellung, nie bei reduzierter Bewegung. In Browsern ohne Scroll-Timelines (Firefox, Safari vor 26) übernimmt ein kleines Skript.",
     "default": "theme",
     "options": [
      {

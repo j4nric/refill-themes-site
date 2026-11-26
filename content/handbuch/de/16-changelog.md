@@ -6,6 +6,28 @@ Versionen nach Semantic Versioning. Ab der ersten veröffentlichten Version werd
 
 Erste vollständige Fassung aller Seiten und Kernfunktionen.
 
+### 26. November 2026
+
+Rückmeldungen aus dem Theme-Editor (Runde X, Editor-Komfort).
+
+**Neu**
+- **„Erneut bestellen“** und **„Zuletzt angesehen“:** **„Im Editor mit Beispieldaten zeigen“** (Standard aus) – im Theme-Editor erscheinen Beispielprodukte aus Ihrem Shop, damit Sie die Gestaltung sehen. Im Shop nie.
+
+**Geändert**
+- Vorlagen im Block-Picker heißen jetzt **„Gruppe: untereinander“** / **„Gruppe: nebeneinander“** (vorher „Elemente untereinander/nebeneinander“) und **„Info-Popup: Tabelle“**, **„Info-Popup: Dosiertabelle“**, **„Info-Popup: Größentabelle“**. Die Suche nach „Gruppe“ bzw. „Info-Popup“ findet sie.
+- Handbuch: [warum sich ein Block nicht in eine Gruppe ziehen lässt](03-sections-and-blocks.md#bestehenden-block-in-eine-gruppe-oder-spalte-verschieben).
+
+Rückmeldungen aus dem Theme-Editor (Runde X, Darstellung und Layout).
+
+**Neu**
+- **Leerraum:** Einstellung **„Richtung“** – in einer Gruppe „Nebeneinander“ wird er automatisch zum waagerechten Abstand. Siehe [Abschnitte und Blöcke](03-sections-and-blocks.md#gruppe-und-spalten).
+- **Herkunftskarte:** **„Kartenhöhe“** (Automatisch, Niedrig, Mittel, Hoch).
+- **Blogbeiträge** („Erster Beitrag groß“) und **Hervorgehobenes Produkt:** **„Aufteilung Bild / Inhalt“**, damit Bild und Text bündig mit Spalten darunter abschließen. Der Standard bleibt wie bisher.
+
+**Geändert**
+- **Parallax** läuft jetzt auch in Firefox und älterem Safari. Im Block „Bild mit Text“ wirkt „Parallax: An“ auch bei ausgeschalteten Animationen (nie bei „Bewegung reduzieren“).
+- **Bild mit Markierungen:** **„Spalten der Produktliste“** (vorher „Produkte am Desktop“) mit 1, 2 oder 3 Spalten, bei jeder Anordnung und auch für „Alle Produkte in den Warenkorb“.
+
 ### 25. November 2026
 
 Rückmeldungen aus dem Theme-Editor (Runde W).

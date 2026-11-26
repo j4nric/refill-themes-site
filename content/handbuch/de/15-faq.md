@@ -119,6 +119,10 @@ Prüfen Sie im Block „Lieferdatum“ **„Bestellschluss für Versand am selbe
 
 Bei ausverkauften Varianten können Kunden ihre E-Mail-Adresse hinterlassen (Block „Kauf-Buttons“ → **„Benachrichtigung bei Verfügbarkeit anbieten“**). Sie erhalten eine Nachricht über das Kontaktformular des Shops mit Produkt, Variante, SKU und der Adresse des Kunden. Den Kunden benachrichtigen Sie selbst, sobald die Ware wieder da ist.
 
+## Ein Block lässt sich nicht in eine Gruppe ziehen
+
+Der Theme-Editor verschiebt Blöcke per Ziehen nur innerhalb ihres Eltern-Elements. Legen Sie den Block in der Gruppe neu an und löschen Sie den alten, siehe [Bestehenden Block in eine Gruppe oder Spalte verschieben](03-sections-and-blocks.md#bestehenden-block-in-eine-gruppe-oder-spalte-verschieben).
+
 ## Support
 
 Antworten auf weitere Fragen erhalten Sie unter [support@refill-themes.com](mailto:support@refill-themes.com). Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite, am besten mit Screenshot.

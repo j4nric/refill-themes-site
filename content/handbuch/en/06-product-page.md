@@ -169,7 +169,7 @@ The theme does not grant a routine discount. To offer one, create an automatic d
 
 ## Info pop-up: size chart and dosage table
 
-A link or button opens a window with extra information – a size chart, a dosage or feeding table, or a grind-size guide. The picker (category “Collapsible and tabs”) has three versions: **“Info pop-up”**, **“Dosage table”** and **“Size chart”**.
+A link or button opens a window with extra information – a size chart, a dosage or feeding table, or a grind-size guide. The picker (category “Collapsible and tabs”) has four versions: **“Info pop-up”**, **“Info pop-up: table”**, **“Info pop-up: dosage table”** and **“Info pop-up: size chart”**.
 
 | Setting | Effect |
 |---|---|
@@ -184,7 +184,7 @@ A link or button opens a window with extra information – a size chart, a dosag
 **One size chart for all products (page):**
 
 1. Admin → **Online Store → Pages → Add page**, e.g. “Size chart”. Build the table in the page editor (table icon in the toolbar).
-2. Product page → **“Add block”** → **“Size chart”** → **“Page”**: select that page.
+2. Product page → **“Add block”** → **“Info pop-up: size chart”** → **“Page”**: select that page.
 
 **A table per product (metafield):** choose **“Product metafield”** as the source and enter the key. Supported types are rich text, single- and multi-line text, page reference, file (image) and metaobject reference – for metaobjects the block reads the field named in **“Metaobject field”** (default `content`).
 

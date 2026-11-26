@@ -2,7 +2,7 @@
  "slug": "featured-product",
  "kind": "block",
  "source": "blocks/featured-product.liquid",
- "source_sha1": "16d3bd83a839",
+ "source_sha1": "a288d3b76aac",
  "accepts_blocks": true,
  "en": {
   "name": "Featured product",
@@ -37,6 +37,46 @@
      {
       "value": "grid",
       "label": "Grid"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Show gallery",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "media_split",
+    "label": "Image / content split",
+    "info": "Default as on the product page (about 60 / 40). 50 / 50 aligns with two columns below.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Default"
+     },
+     {
+      "value": "50_50",
+      "label": "50 / 50"
+     },
+     {
+      "value": "60_40",
+      "label": "60 / 40"
+     },
+     {
+      "value": "40_60",
+      "label": "40 / 60"
+     },
+     {
+      "value": "67_33",
+      "label": "67 / 33"
+     },
+     {
+      "value": "33_67",
+      "label": "33 / 67"
      }
     ],
     "visible_if": [
@@ -229,6 +269,46 @@
      {
       "value": "grid",
       "label": "Raster"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_media",
+      "label": "Galerie anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "media_split",
+    "label": "Aufteilung Bild / Inhalt",
+    "info": "Standard wie die Produktseite (etwa 60 / 40). 50 / 50 schließt bündig mit zwei Spalten darunter ab.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Standard"
+     },
+     {
+      "value": "50_50",
+      "label": "50 / 50"
+     },
+     {
+      "value": "60_40",
+      "label": "60 / 40"
+     },
+     {
+      "value": "40_60",
+      "label": "40 / 60"
+     },
+     {
+      "value": "67_33",
+      "label": "67 / 33"
+     },
+     {
+      "value": "33_67",
+      "label": "33 / 67"
      }
     ],
     "visible_if": [

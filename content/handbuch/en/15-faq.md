@@ -119,6 +119,10 @@ In the “Delivery date” block, check **“Order cut-off for same-day dispatch
 
 For sold-out variants, customers can leave their email address (“Buy buttons” block → **“Show back-in-stock request”**). You receive a message via the store's contact form with product, variant, SKU and the customer's address. You notify the customer yourself once the product is back.
 
+## A block can't be dragged into a group
+
+The theme editor only moves blocks by dragging within their current parent. Add the block again inside the group and delete the old one, see [Moving an existing block into a group or column](03-sections-and-blocks.md#moving-an-existing-block-into-a-group-or-column).
+
 ## Support
 
 For further questions, contact [support@refill-themes.com](mailto:support@refill-themes.com). Please include your store address (`…myshopify.com`), the theme version and the page concerned, ideally with a screenshot.

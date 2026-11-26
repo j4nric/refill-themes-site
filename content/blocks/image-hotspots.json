@@ -2,7 +2,7 @@
  "slug": "image-hotspots",
  "kind": "block",
  "source": "blocks/image-hotspots.liquid",
- "source_sha1": "3a2934fb45c8",
+ "source_sha1": "0b1901bd4ac5",
  "accepts_blocks": true,
  "en": {
   "name": "Shoppable image",
@@ -165,8 +165,8 @@
    {
     "type": "select",
     "id": "list_columns",
-    "label": "Products on desktop",
-    "info": "List next to the image from a block width of 750 px. Two columns work best with the “2 columns” layout.",
+    "label": "Product list columns",
+    "info": "Applies to the list below or next to the image and to “Add all products to cart”. One column on phones.",
     "default": "1",
     "options": [
      {
@@ -176,23 +176,10 @@
      {
       "value": "2",
       "label": "2 columns"
-     }
-    ],
-    "visible_if": [
+     },
      {
-      "setting": "layout",
-      "label": "Layout",
-      "op": "is_not",
-      "value": "Image, card at marker"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "layout",
-      "label": "Layout",
-      "op": "is_not",
-      "value": "Image, card at marker"
+      "value": "3",
+      "label": "3 columns"
      }
     ]
    },
@@ -461,8 +448,8 @@
    {
     "type": "select",
     "id": "list_columns",
-    "label": "Produkte am Desktop",
-    "info": "Liste neben dem Bild ab 750 px Breite des Blocks. Zwei Spalten passen am besten zur Anordnung „2 Spalten“.",
+    "label": "Spalten der Produktliste",
+    "info": "Gilt für die Liste unter oder neben dem Bild und für „Alle Produkte in den Warenkorb“. Am Handy eine Spalte.",
     "default": "1",
     "options": [
      {
@@ -472,23 +459,10 @@
      {
       "value": "2",
       "label": "2 Spalten"
-     }
-    ],
-    "visible_if": [
+     },
      {
-      "setting": "layout",
-      "label": "Anordnung",
-      "op": "is_not",
-      "value": "Bild, Karte am Punkt"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "layout",
-      "label": "Anordnung",
-      "op": "is_not",
-      "value": "Bild, Karte am Punkt"
+      "value": "3",
+      "label": "3 Spalten"
      }
     ]
    },

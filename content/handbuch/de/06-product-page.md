@@ -169,7 +169,7 @@ Das Theme gewährt keinen Routine-Rabatt. Möchten Sie einen anbieten, legen Sie
 
 ## Info-Popup: Größen- und Dosiertabelle
 
-Ein Link oder Button öffnet ein Fenster mit Zusatzinformationen – etwa eine Größentabelle, Dosier- oder Fütterungstabelle oder einen Mahlgrad-Überblick. Im Picker (Kategorie „Aufklappen & Tabs“) gibt es drei Vorlagen: **„Info-Popup“**, **„Dosiertabelle“** und **„Größentabelle“**.
+Ein Link oder Button öffnet ein Fenster mit Zusatzinformationen – etwa eine Größentabelle, Dosier- oder Fütterungstabelle oder einen Mahlgrad-Überblick. Im Picker (Kategorie „Aufklappen & Tabs“) gibt es vier Vorlagen: **„Info-Popup“**, **„Info-Popup: Tabelle“**, **„Info-Popup: Dosiertabelle“** und **„Info-Popup: Größentabelle“**.
 
 | Einstellung | Wirkung |
 |---|---|
@@ -184,7 +184,7 @@ Ein Link oder Button öffnet ein Fenster mit Zusatzinformationen – etwa eine G
 **Größentabelle für alle Produkte (Seite):**
 
 1. Admin → **Onlineshop → Seiten → Seite hinzufügen**, z. B. „Größentabelle“. Die Tabelle im Seiteneditor anlegen (Tabellen-Symbol in der Werkzeugleiste).
-2. Produktseite → **„Block hinzufügen“** → **„Größentabelle“** → **„Seite“**: diese Seite wählen.
+2. Produktseite → **„Block hinzufügen“** → **„Info-Popup: Größentabelle“** → **„Seite“**: diese Seite wählen.
 
 **Tabelle je Produkt (Metafeld):** Quelle **„Produkt-Metafeld“** und den Schlüssel eintragen. Unterstützt werden Rich Text, ein- und mehrzeiliger Text, Seiten-Verweis, Datei (Bild) und Metaobjekt-Verweis – bei Metaobjekten liest der Block das Feld aus **„Feld im Metaobjekt“** (Standard `content`).
 

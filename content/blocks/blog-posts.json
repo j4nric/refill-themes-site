@@ -2,7 +2,7 @@
  "slug": "blog-posts",
  "kind": "block",
  "source": "blocks/blog-posts.liquid",
- "source_sha1": "aff1cc61fe3a",
+ "source_sha1": "5d5f723de0fd",
  "accepts_blocks": false,
  "en": {
   "name": "Blog posts",
@@ -210,6 +210,52 @@
       "label": "Layout",
       "op": "is_not",
       "value": "List"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "lead_split",
+    "label": "Image / content split",
+    "info": "For the first post. Default: 60 / 40. Aligned with the grid below: 50 / 50 for 2 or 4 columns, 67 / 33 for 3.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Default"
+     },
+     {
+      "value": "50_50",
+      "label": "50 / 50"
+     },
+     {
+      "value": "40_60",
+      "label": "40 / 60"
+     },
+     {
+      "value": "67_33",
+      "label": "67 / 33"
+     },
+     {
+      "value": "33_67",
+      "label": "33 / 67"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is",
+      "value": "First post large"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is",
+      "value": "First post large"
      }
     ]
    },
@@ -433,6 +479,52 @@
       "label": "Darstellung",
       "op": "is_not",
       "value": "Liste"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "lead_split",
+    "label": "Aufteilung Bild / Inhalt",
+    "info": "Für den ersten Beitrag. Standard: 60 / 40. Bündig mit dem Raster darunter: 50 / 50 bei 2 oder 4 Spalten, 67 / 33 bei 3.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Standard"
+     },
+     {
+      "value": "50_50",
+      "label": "50 / 50"
+     },
+     {
+      "value": "40_60",
+      "label": "40 / 60"
+     },
+     {
+      "value": "67_33",
+      "label": "67 / 33"
+     },
+     {
+      "value": "33_67",
+      "label": "33 / 67"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "layout",
+      "label": "Darstellung",
+      "op": "is",
+      "value": "Erster Beitrag groß"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "layout",
+      "label": "Darstellung",
+      "op": "is",
+      "value": "Erster Beitrag groß"
      }
     ]
    },

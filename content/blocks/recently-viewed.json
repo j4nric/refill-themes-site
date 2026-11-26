@@ -2,12 +2,19 @@
  "slug": "recently-viewed",
  "kind": "block",
  "source": "blocks/recently-viewed.liquid",
- "source_sha1": "1b90864f61c6",
+ "source_sha1": "00a5502aaa54",
  "accepts_blocks": false,
  "en": {
   "name": "Recently viewed",
   "category": "Products and collections",
   "settings": [
+   {
+    "type": "checkbox",
+    "id": "editor_preview",
+    "label": "Show with sample data in the editor",
+    "info": "For styling in the theme editor only. The store never shows sample data.",
+    "default": false
+   },
    {
     "type": "paragraph",
     "content": "Shows the products a visitor viewed last (stored in their browser only)."
@@ -85,6 +92,13 @@
   "name": "Zuletzt angesehen",
   "category": "Produkte & Kollektionen",
   "settings": [
+   {
+    "type": "checkbox",
+    "id": "editor_preview",
+    "label": "Im Editor mit Beispieldaten zeigen",
+    "info": "Nur zum Gestalten im Theme-Editor. Im Shop erscheinen nie Beispieldaten.",
+    "default": false
+   },
    {
     "type": "paragraph",
     "content": "Zeigt die Produkte, die ein Besucher zuletzt angesehen hat (nur in seinem Browser gespeichert)."

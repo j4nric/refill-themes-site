@@ -2,7 +2,7 @@
  "slug": "spacer",
  "kind": "block",
  "source": "blocks/spacer.liquid",
- "source_sha1": "54b775e2fe99",
+ "source_sha1": "659e859a232e",
  "accepts_blocks": false,
  "en": {
   "name": "Spacer",
@@ -11,7 +11,7 @@
    {
     "type": "select",
     "id": "size",
-    "label": "Height",
+    "label": "Size",
     "default": "m",
     "options": [
      {
@@ -31,6 +31,27 @@
       "label": "Extra large"
      }
     ]
+   },
+   {
+    "type": "select",
+    "id": "direction",
+    "label": "Direction",
+    "info": "Automatic: a width in a “Side by side” group, otherwise a height.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatic"
+     },
+     {
+      "value": "vertical",
+      "label": "Vertical (height)"
+     },
+     {
+      "value": "horizontal",
+      "label": "Horizontal (width)"
+     }
+    ]
    }
   ]
  },
@@ -41,7 +62,7 @@
    {
     "type": "select",
     "id": "size",
-    "label": "Höhe",
+    "label": "Größe",
     "default": "m",
     "options": [
      {
@@ -59,6 +80,27 @@
      {
       "value": "xl",
       "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "direction",
+    "label": "Richtung",
+    "info": "Automatisch: in einer Gruppe „Nebeneinander“ als Breite, sonst als Höhe.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatisch"
+     },
+     {
+      "value": "vertical",
+      "label": "Vertikal (Höhe)"
+     },
+     {
+      "value": "horizontal",
+      "label": "Horizontal (Breite)"
      }
     ]
    }

@@ -21,7 +21,7 @@ In the theme editor, effects never hide anything, so you can see and edit all co
 | “Fly in product rows” | Product cards in grids arrive one after another from the side – from the right when scrolling down, from the left when scrolling up. | off |
 | “Text animation” | Text builds up the first time it scrolls into view. “Headings only”: large headings word by word or line by line. “Headings + accents”: also profile scales, timelines, key figures, steps, benefits and text highlights (the marker follows the scroll). “All text”: also body text and quotes, paragraph by paragraph. | Off |
 | “Build up headings” (older setting) | Replaced by “Text animation” and only applies while “Off” is selected there. Large headings appear **“By word”** or **“By line”** (setting “Build-up”). The full text stays available to search engines and screen readers. | off |
-| “Parallax images” | Images in the “Image with text” block and in the “Image” block (fit “Fill area”) move slightly slower than the page. | off |
+| “Parallax images” | Images in the “Image with text” block and in the “Image” block (fit “Fill area”) move slightly slower than the page. In the “Image with text” block, parallax can be switched on or off per block; “On” works there without this setting and without the main switch. | off |
 | **Feedback and transitions** | | |
 | “Hover and buttons” | On hover, the hover color of primary and secondary buttons slides in from the side instead of switching; buttons give slightly when pressed, footer links get a growing underline. Mouse only. Without this setting, buttons only change color on hover. | off |
 | “Page transition” | “Crossfade”, “Rise”, “Slide” or “No transition” when moving between pages. | Crossfade |
@@ -32,7 +32,7 @@ Settings such as “Style” or “Build-up” only appear once their effect is 
 
 **Recommendation:** switch effects on one at a time and check them on a phone. More than two or three effects at once pull attention away from the product. Each style ships with a subtle selection (see [Theme styles](02-presets.md)).
 
-**Browsers:** parallax and the smooth scroll story run in Chrome, Edge and Safari 26 or later; elsewhere images stay still and the scroll story uses soft crossfades instead. Page transitions show in Chrome, Edge and Safari 18.2 or later; other browsers change pages without a transition.
+**Browsers:** the smooth scroll story runs in Chrome, Edge and Safari 26 or later; elsewhere it uses soft crossfades instead. Parallax works in all browsers: Chrome, Edge and Safari 26 or later compute it themselves, in Firefox and older Safari a small script takes over that only loads when parallax is on. Page transitions show in Chrome, Edge and Safari 18.2 or later; other browsers change pages without a transition.
 
 ## “Scroll story” section
 

@@ -2,7 +2,7 @@
  "slug": "origin-map",
  "kind": "block",
  "source": "blocks/origin-map.liquid",
- "source_sha1": "3819b98d5c4e",
+ "source_sha1": "ebca338781fb",
  "accepts_blocks": false,
  "en": {
   "name": "Origin map",
@@ -59,6 +59,31 @@
    {
     "type": "header",
     "content": "Map"
+   },
+   {
+    "type": "select",
+    "id": "map_height",
+    "label": "Map height",
+    "info": "The visible area is extended, all points stay visible.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatic"
+     },
+     {
+      "value": "low",
+      "label": "Low (2 : 1)"
+     },
+     {
+      "value": "medium",
+      "label": "Medium (3 : 2)"
+     },
+     {
+      "value": "high",
+      "label": "Tall (4 : 3)"
+     }
+    ]
    },
    {
     "type": "select",
@@ -221,6 +246,31 @@
    {
     "type": "header",
     "content": "Karte"
+   },
+   {
+    "type": "select",
+    "id": "map_height",
+    "label": "Kartenhöhe",
+    "info": "Der Ausschnitt wird erweitert, alle Punkte bleiben sichtbar.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatisch"
+     },
+     {
+      "value": "low",
+      "label": "Niedrig (2 : 1)"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel (3 : 2)"
+     },
+     {
+      "value": "high",
+      "label": "Hoch (4 : 3)"
+     }
+    ]
    },
    {
     "type": "select",

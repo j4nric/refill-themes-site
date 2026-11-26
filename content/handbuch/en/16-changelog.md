@@ -6,6 +6,28 @@ Versions follow semantic versioning. From the first published version on, settin
 
 First complete version of all pages and core features.
 
+### November 26, 2026
+
+Feedback from the theme editor (round X, editor comfort).
+
+**New**
+- **“Reorder”** and **“Recently viewed”:** **“Show with sample data in the editor”** (off by default) – the theme editor shows sample products from your store so you can see the styling. Never in the store.
+
+**Changed**
+- Picker presets are now called **“Group: stacked”** / **“Group: side by side”** (previously “Stacked items” / “Items side by side”) and **“Info pop-up: table”**, **“Info pop-up: dosage table”**, **“Info pop-up: size chart”**. Searching for “Group” or “Info pop-up” finds them.
+- Guide: [why a block can't be dragged into a group](03-sections-and-blocks.md#moving-an-existing-block-into-a-group-or-column).
+
+Feedback from the theme editor (round X, display and layout).
+
+**New**
+- **Spacer:** **“Direction”** setting – in a “Side by side” group it automatically becomes horizontal space. See [Sections and blocks](03-sections-and-blocks.md#group-and-columns).
+- **Origin map:** **“Map height”** (Automatic, Low, Medium, Tall).
+- **Blog posts** (“First post large”) and **Featured product:** **“Image / content split”**, so image and text align with columns below. The default stays as before.
+
+**Changed**
+- **Parallax** now also works in Firefox and older Safari. In the “Image with text” block, “Parallax: On” also works with animations turned off (never with “Reduce motion”).
+- **Shoppable image:** **“Product list columns”** (previously “Products on desktop”) with 1, 2 or 3 columns, for every layout and also for “Add all products to cart”.
+
 ### November 25, 2026
 
 Feedback from the theme editor (round W).
