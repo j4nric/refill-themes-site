@@ -1,0 +1,174 @@
+{
+ "slug": "custom-code",
+ "kind": "section",
+ "source": "sections/custom-code.liquid",
+ "source_sha1": "0891ee0f028a",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Custom Liquid",
+  "category": "Page templates",
+  "settings": [
+   {
+    "type": "liquid",
+    "id": "custom_liquid",
+    "label": "Liquid code",
+    "info": "For code from apps or agencies. Faulty code can break the page."
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Spacing above and below",
+    "default": "medium",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Width",
+    "default": "page",
+    "options": [
+     {
+      "value": "page",
+      "label": "Page width"
+     },
+     {
+      "value": "full",
+      "label": "Full width"
+     },
+     {
+      "value": "narrow",
+      "label": "Narrow (reading width)"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Line above section",
+    "default": false
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Anchor",
+    "info": "Name without # or spaces, e.g. shipping. A button or link to #shipping jumps here."
+   }
+  ]
+ },
+ "de": {
+  "name": "Eigenes Liquid",
+  "category": "Seitenvorlagen",
+  "settings": [
+   {
+    "type": "liquid",
+    "id": "custom_liquid",
+    "label": "Liquid-Code",
+    "info": "Für Code von Apps oder Agenturen. Fehlerhafter Code kann die Seite stören."
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Abstand oben und unten",
+    "default": "medium",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keiner"
+     },
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Breite",
+    "default": "page",
+    "options": [
+     {
+      "value": "page",
+      "label": "Seitenbreite"
+     },
+     {
+      "value": "full",
+      "label": "Volle Breite"
+     },
+     {
+      "value": "narrow",
+      "label": "Schmal (Lesebreite)"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Linie über dem Abschnitt",
+    "default": false
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Sprungmarke",
+    "info": "Name ohne # und Leerzeichen, z. B. versand. Ein Knopf oder Link mit #versand springt hierher."
+   }
+  ]
+ },
+ "subblocks": [],
+ "theme_blocks": false,
+ "where": {
+  "group": null,
+  "templates": [
+   "page"
+  ],
+  "demo_disabled": false,
+  "enabled_on": null,
+  "has_preset": true
+ }
+}

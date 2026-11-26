@@ -28,9 +28,13 @@ Beim Push auf `main` baut `.github/workflows/pages.yml` die Seite, prüft die Li
 | `editor_panel.py` | liest Block-Schemas aus dem Theme-Repo → `content/blocks/<block>.json`, `content/blocks/index.json`; erzeugt den Nachbau der Editor-Seitenleiste |
 | `content/blocks/texts.json` | Texte der Block-Seiten (Einleitung, Tipps, Verweis ins Handbuch; optional Klickweg, Hinweis, Alt-Texte) – für jeden Block der Galerie Pflicht |
 | `shots.mjs`, `shots.config.json` | Screenshots aus den Demo-Shops → `assets/shots/<de\|en>/`, Maße, Quelle und Markierungen in `content/shots/<block>.json` |
+| `content/sections/<section>.json`, `index.json` | Abschnitte (Sections) samt ihrer eigenen Blöcke, von `editor_panel.py --sections` |
+| `content/sections/texts.json` | Texte der Abschnitts-Seiten (Einleitung, Tipps, Verweis, Kurztexte der eigenen Blöcke; optional Hinweis zur Fundstelle) – Pflicht für jeden Abschnitt |
+| `content/shots/sections/<section>.json` | Bilder und Markierungen der Abschnitte (`shots.mjs --sections`), Bilder in `assets/shots/<de\|en>/sections/` |
 
 Adressen: Englisch ist Hauptsprache (`/`), Deutsch unter `/de/`. Handbuch-Einstieg „Was möchten Sie tun?“ `/docs/`,
-Block-Galerie `/docs/blocks/`, Block-Seiten `/docs/blocks/<block>/` für alle 86 Blöcke (jeweils auch unter `/de/`), Kapitel `/docs/<kapitel>/` bzw.
+Block-Galerie `/docs/blocks/`, Block-Seiten `/docs/blocks/<block>/` für alle 86 Blöcke, Abschnitts-Galerie `/docs/sections/`,
+Abschnitts-Seiten `/docs/sections/<section>/` für 13 Abschnitte (jeweils auch unter `/de/`), Kapitel `/docs/<kapitel>/` bzw.
 `/de/docs/<kapitel>/` (Kapitelname = Dateiname ohne Nummer), Änderungsprotokoll `/changelog/` bzw. `/de/changelog/`
 (aus `16-changelog.md`), Support `/support/`, Datenschutz `/privacy/` bzw. `/de/datenschutz/`, Impressum
 `/de/impressum/` (englisch `/legal-notice/` als Verweis).
@@ -125,6 +129,41 @@ Bedarf Fundstelle/Markierungen in `shots.config.json`, `node shots.mjs --only <b
 erste Vorkommen, und nur eindeutige Stellen: erste Spalte einer Tabelle mit Spaltenkopf „Block“ und Namen in
 Anführungszeichen direkt neben dem Wort Block (Block „Gruppe“, “Group” block). Die Markdown-Dateien bleiben unverändert.
 
+## Abschnitts-Seiten (Sections)
+
+Jeder Abschnitt mit Einstellungen (`sections/*.liquid` mit mindestens einer Einstellung; Teil-Updates wie
+`*-partial` fallen weg) hat eine Seite unter `/docs/sections/<section>/` (en, de) mit demselben Aufbau wie die
+Block-Seiten. Die Galerie `/docs/sections/` gruppiert nach Fundstelle: Bereich Kopfzeile, Bereich Fußzeile,
+Hauptabschnitte der Vorlagen (Produkt, Kollektion, Suche, Warenkorb) und Abschnitte zum Hinzufügen. Den Klickweg
+bestimmen die Section-Gruppen (`header-group.json`, `footer-group.json`) und Vorlagen der Demo-Stile:
+Anpassen → (Seite) → Bereich „Kopfzeile“/„Vorlage“/„Fußzeile“ → (Abschnitt hinzufügen → Kategorie) → Abschnitt.
+
+**Eigene Blöcke** eines Abschnitts (private Blöcke `_name`, z. B. `_header-logo`, auch statische wie `_footer-bottom`)
+stehen auf der Abschnitts-Seite unter „So stellen Sie es ein“ als Unterabschnitte, jeweils mit Editor-Nachbau:
+
+| Sprungmarke | Beispiel |
+|---|---|
+| Einstellung des Abschnitts: `#<setting_id>` | `/de/docs/sections/header/#sticky` |
+| eigener Block: `#<block ohne _>` | `/de/docs/sections/header/#header-logo` |
+| Einstellung im eigenen Block: `#<block ohne _>-<setting_id>` | `/de/docs/sections/header/#header-logo-logo_height`, `/docs/sections/footer/#footer-bottom-show_policies` |
+
+`build.py` bricht ab, wenn eine Sprungmarke auf einer Abschnitts-Seite doppelt vorkommt. Kapitel verlinken
+Abschnittsnamen beim ersten Vorkommen je h2 wie bei den Blöcken (Abschnitt „Kopfzeile“, “Header” section).
+
+```sh
+python3 editor_panel.py --theme ../cadence-theme --sections            # alle Abschnitte + content/sections/index.json
+python3 editor_panel.py --theme ../cadence-theme --sections header     # nur diesen
+node shots.mjs --sections                                             # Bilder aller Abschnitte
+node shots.mjs --sections --only header,footer --lang de --variant desktop
+```
+
+Fundstelle und Markierungen: `shots.config.json` → `sections` (Shop, Vorlage der Seite, Abschnitts-ID; Zusätze
+`top`, `hover` – Mega-Menü öffnen –, `union` – weitere Elemente ins Bild –, `dialog` – Popup öffnen –, `wait`, `cart`,
+`unavailable`). Markierungen: `{"setting": …}` (Abschnitt), `{"block": "_header-logo"}` bzw. mit `setting` (eigener
+Block), `{"block": "product-media"}` (Block mit eigener Block-Seite). Neuer Abschnitt im Theme: `editor_panel.py
+--sections`, Eintrag in `content/sections/texts.json` (sonst bricht `build.py` ab), Fundstelle in `shots.config.json`,
+`node shots.mjs --sections --only <abschnitt>`.
+
 ## Handbuch aus dem Theme-Repo übernehmen
 
 Das Handbuch wird im Theme-Repo gepflegt (`docs/handbuch/{de,en}/`). Zum Aktualisieren:
@@ -142,7 +181,7 @@ Das Skript kopiert geänderte Kapitel und löscht Kapitel, die es im Theme-Repo 
 ## Datenschutz
 
 Keine Cookies, kein Tracking, keine externen Schriften oder Skripte. JavaScript nur als kleines Inline-Skript auf den
-Block-Seiten (zugeklapptes Feld bei Sprungmarke öffnen, Bild groß im `<dialog>`); es speichert nichts und lädt nichts
+Block- und Abschnitts-Seiten (zugeklapptes Feld bei Sprungmarke öffnen, Bild groß im `<dialog>`); es speichert nichts und lädt nichts
 nach, die Seiten funktionieren ohne. Bitte so lassen – die Datenschutzerklärung (`/privacy/`, `/de/datenschutz/`)
 setzt das voraus.
 
@@ -151,6 +190,7 @@ setzt das voraus.
 - **Impressum:** `/de/impressum/` ist ein markierter Platzhalter („Angaben folgen“). Die Angaben in `build.py`,
   Funktion `page_legal`, eintragen.
 - Demo-Shops und Theme-Store-Link auf der Startseite (`HOME` in `build.py`), sobald sie öffentlich sind.
-- Seiten für Sections (`sections/*.liquid`: Kopfzeile, Fußzeile, Produktempfehlungen …) nach dem Muster der
-  Block-Seiten; `editor_panel.py` liest Sections schon, es fehlen Galerie, Texte und Fundstellen in `shots.mjs`.
+- Bild für den Abschnitt „Altersabfrage“: In allen Demo-Shops ist er ausgeblendet; die Seite zeigt einen Hinweis.
+- Der Warenkorb-Drawer ist kein Abschnitt (Theme-Einstellungen → „Warenkorb“) und hat darum keine Abschnitts-Seite;
+  die Seite „Warenkorb“ verweist darauf.
 - Bilder für „Erneut bestellen“ (braucht ein Kundenkonto mit Bestellung) und „Passwortseite: Formular“.

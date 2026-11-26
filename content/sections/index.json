@@ -1,0 +1,127 @@
+[
+ {
+  "slug": "age-verification",
+  "name": {
+   "en": "Age verification",
+   "de": "Altersabfrage"
+  },
+  "category": {
+   "en": "Forms",
+   "de": "Formulare"
+  }
+ },
+ {
+  "slug": "announcement-bar",
+  "name": {
+   "en": "Announcement bar",
+   "de": "Ankündigungsleiste"
+  },
+  "category": {
+   "en": "Buttons and promotions",
+   "de": "Buttons & Aktionen"
+  }
+ },
+ {
+  "slug": "cart",
+  "name": {
+   "en": "Cart",
+   "de": "Warenkorb"
+  },
+  "category": null
+ },
+ {
+  "slug": "collection",
+  "name": {
+   "en": "Collection",
+   "de": "Kollektion"
+  },
+  "category": null
+ },
+ {
+  "slug": "custom-code",
+  "name": {
+   "en": "Custom Liquid",
+   "de": "Eigenes Liquid"
+  },
+  "category": {
+   "en": "Page templates",
+   "de": "Seitenvorlagen"
+  }
+ },
+ {
+  "slug": "custom-section",
+  "name": {
+   "en": "Section",
+   "de": "Abschnitt"
+  },
+  "category": {
+   "en": "Layout",
+   "de": "Layout"
+  }
+ },
+ {
+  "slug": "footer",
+  "name": {
+   "en": "Footer",
+   "de": "Fußzeile"
+  },
+  "category": null
+ },
+ {
+  "slug": "header",
+  "name": {
+   "en": "Header",
+   "de": "Kopfzeile"
+  },
+  "category": null
+ },
+ {
+  "slug": "popup",
+  "name": {
+   "en": "Popup",
+   "de": "Popup"
+  },
+  "category": {
+   "en": "Buttons and promotions",
+   "de": "Buttons & Aktionen"
+  }
+ },
+ {
+  "slug": "product-recommendations",
+  "name": {
+   "en": "Product recommendations",
+   "de": "Produktempfehlungen"
+  },
+  "category": {
+   "en": "Products and collections",
+   "de": "Produkte & Kollektionen"
+  }
+ },
+ {
+  "slug": "product",
+  "name": {
+   "en": "Product",
+   "de": "Produkt"
+  },
+  "category": null
+ },
+ {
+  "slug": "scroll-story",
+  "name": {
+   "en": "Scroll story",
+   "de": "Scroll-Story"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  }
+ },
+ {
+  "slug": "search",
+  "name": {
+   "en": "Search",
+   "de": "Suche"
+  },
+  "category": null
+ }
+]

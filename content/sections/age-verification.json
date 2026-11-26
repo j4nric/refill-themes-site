@@ -1,0 +1,176 @@
+{
+ "slug": "age-verification",
+ "kind": "section",
+ "source": "sections/age-verification.liquid",
+ "source_sha1": "237d935a2526",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Age verification",
+  "category": "Forms",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Asks for the visitor’s age on the first visit. This is a prompt, not a technical lock – check the rules for your industry."
+   },
+   {
+    "type": "range",
+    "id": "min_age",
+    "label": "Minimum age",
+    "default": 18,
+    "min": 16,
+    "max": 21,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Texts"
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "[age] is replaced by the minimum age. Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Are you at least [age] years old?"
+   },
+   {
+    "type": "richtext",
+    "id": "text",
+    "label": "Text",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Some products in this store are intended for adults only."
+   },
+   {
+    "type": "text",
+    "id": "confirm_label",
+    "label": "Button: confirm",
+    "default": "Yes, I am [age] or older"
+   },
+   {
+    "type": "text",
+    "id": "decline_label",
+    "label": "Button: decline",
+    "default": "No"
+   },
+   {
+    "type": "header",
+    "content": "Behavior"
+   },
+   {
+    "type": "url",
+    "id": "decline_url",
+    "label": "Link when declined",
+    "info": "Empty: the dialog stays open and shows a short notice."
+   },
+   {
+    "type": "range",
+    "id": "remember_days",
+    "label": "Remember answer (days)",
+    "default": 30,
+    "min": 1,
+    "max": 90,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   }
+  ]
+ },
+ "de": {
+  "name": "Altersabfrage",
+  "category": "Formulare",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Fragt beim ersten Besuch das Alter ab. Das ist eine Abfrage, keine technische Sperre – prüfen Sie die Regeln Ihrer Branche."
+   },
+   {
+    "type": "range",
+    "id": "min_age",
+    "label": "Mindestalter",
+    "default": 18,
+    "min": 16,
+    "max": 21,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Texte"
+   },
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "[age] wird durch das Mindestalter ersetzt. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Bist du mindestens [age] Jahre alt?"
+   },
+   {
+    "type": "richtext",
+    "id": "text",
+    "label": "Text",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Einige Produkte in diesem Shop sind nur für Erwachsene bestimmt."
+   },
+   {
+    "type": "text",
+    "id": "confirm_label",
+    "label": "Button: bestätigen",
+    "default": "Ja, ich bin [age] oder älter"
+   },
+   {
+    "type": "text",
+    "id": "decline_label",
+    "label": "Button: ablehnen",
+    "default": "Nein"
+   },
+   {
+    "type": "header",
+    "content": "Verhalten"
+   },
+   {
+    "type": "url",
+    "id": "decline_url",
+    "label": "Ziel bei Ablehnung",
+    "info": "Leer: Der Dialog bleibt offen und zeigt einen kurzen Hinweis."
+   },
+   {
+    "type": "range",
+    "id": "remember_days",
+    "label": "Antwort merken (Tage)",
+    "default": 30,
+    "min": 1,
+    "max": 90,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   }
+  ]
+ },
+ "subblocks": [],
+ "theme_blocks": false,
+ "where": {
+  "group": "footer",
+  "templates": [],
+  "demo_disabled": true,
+  "enabled_on": {
+   "groups": [
+    "footer"
+   ]
+  },
+  "has_preset": true
+ }
+}

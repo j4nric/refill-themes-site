@@ -1,0 +1,146 @@
+{
+ "section": "search",
+ "shop": "nordform",
+ "template": "search.json",
+ "id": "main",
+ "de": {
+  "desktop": {
+   "file": "de/sections/search-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 68278,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/search-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 27144,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/search.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 19618,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "breadcrumbs",
+    "x": 2,
+    "y": 4.5,
+    "box": [
+     2.5,
+     3.2,
+     94.9,
+     2.7
+    ],
+    "n": 1
+   },
+   {
+    "block": "search-header",
+    "x": 2,
+    "y": 13.1,
+    "box": [
+     2.5,
+     11.7,
+     94.9,
+     4.6
+    ],
+    "n": 2
+   },
+   {
+    "block": "search-results",
+    "x": 2,
+    "y": 28.4,
+    "box": [
+     2.5,
+     27,
+     94.9,
+     7.4
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/search-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 71758,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/search-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 60436,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/search-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 23970,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/search.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 17060,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "breadcrumbs",
+    "x": 2,
+    "y": 5,
+    "box": [
+     2.5,
+     3.7,
+     94.9,
+     2.7
+    ],
+    "n": 1
+   },
+   {
+    "block": "search-header",
+    "x": 2,
+    "y": 13.6,
+    "box": [
+     2.5,
+     12.2,
+     94.9,
+     4.6
+    ],
+    "n": 2
+   },
+   {
+    "block": "search-results",
+    "x": 2,
+    "y": 28.8,
+    "box": [
+     2.5,
+     27.4,
+     94.9,
+     7.4
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/search-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 65524,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

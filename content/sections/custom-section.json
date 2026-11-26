@@ -1,0 +1,1158 @@
+{
+ "slug": "custom-section",
+ "kind": "section",
+ "source": "sections/custom-section.liquid",
+ "source_sha1": "7b23da2f7bd7",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Section",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Spacing above and below",
+    "default": "medium",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Width",
+    "default": "page",
+    "options": [
+     {
+      "value": "page",
+      "label": "Page width"
+     },
+     {
+      "value": "full",
+      "label": "Full width"
+     },
+     {
+      "value": "narrow",
+      "label": "Narrow (reading width)"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Line above section",
+    "default": false
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Anchor",
+    "info": "Name without # or spaces, e.g. shipping. A button or link to #shipping jumps here."
+   },
+   {
+    "type": "header",
+    "content": "Decoration"
+   },
+   {
+    "type": "paragraph",
+    "content": "Line motif behind the content. Does not shift the layout, does not catch clicks and is hidden from screen readers."
+   },
+   {
+    "type": "select",
+    "id": "decor_motif",
+    "label": "Motif",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "waves",
+      "label": "Waves"
+     },
+     {
+      "value": "cycle",
+      "label": "Cycle (arrow ring)"
+     },
+     {
+      "value": "contours",
+      "label": "Contour lines"
+     },
+     {
+      "value": "path_dots",
+      "label": "Path with dots"
+     },
+     {
+      "value": "connector",
+      "label": "Connector line"
+     },
+     {
+      "value": "swash",
+      "label": "Swash (underline)"
+     },
+     {
+      "value": "corners",
+      "label": "Frame corners"
+     },
+     {
+      "value": "branch",
+      "label": "Branch with leaf veins"
+     },
+     {
+      "value": "steam",
+      "label": "Steam curls"
+     },
+     {
+      "value": "drops",
+      "label": "Drop with ripples"
+     },
+     {
+      "value": "scale",
+      "label": "Measuring scale"
+     },
+     {
+      "value": "orbit",
+      "label": "Orbit"
+     },
+     {
+      "value": "arrow",
+      "label": "Curved arrow"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_position",
+    "label": "Position",
+    "default": "top_end",
+    "options": [
+     {
+      "value": "background",
+      "label": "Background (full area)"
+     },
+     {
+      "value": "top_end",
+      "label": "Top right corner"
+     },
+     {
+      "value": "top_start",
+      "label": "Top left corner"
+     },
+     {
+      "value": "bottom_end",
+      "label": "Bottom right corner"
+     },
+     {
+      "value": "bottom_start",
+      "label": "Bottom left corner"
+     },
+     {
+      "value": "edge_start",
+      "label": "Left edge"
+     },
+     {
+      "value": "edge_end",
+      "label": "Right edge"
+     },
+     {
+      "value": "heading",
+      "label": "Behind the heading (top)"
+     },
+     {
+      "value": "transition",
+      "label": "Transition to the next section (bottom edge)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "decor_size",
+    "label": "Size",
+    "info": "Width of the motif relative to the section. Not used for “Background”.",
+    "default": 40,
+    "min": 10,
+    "max": 100,
+    "step": 5,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_color",
+    "label": "Color",
+    "default": "rule",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Scheme: text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Scheme: secondary text"
+     },
+     {
+      "value": "rule",
+      "label": "Scheme: line"
+     },
+     {
+      "value": "signal",
+      "label": "Scheme: accent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "decor_opacity",
+    "label": "Opacity",
+    "default": 100,
+    "min": 10,
+    "max": 100,
+    "step": 10,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_behavior",
+    "label": "On scroll",
+    "default": "draw",
+    "options": [
+     {
+      "value": "draw",
+      "label": "Draw (line appears as you scroll)"
+     },
+     {
+      "value": "drift",
+      "label": "Drift (parallax)"
+     },
+     {
+      "value": "wave",
+      "label": "Wave (moves sideways)"
+     },
+     {
+      "value": "rotate",
+      "label": "Rotate"
+     },
+     {
+      "value": "travel",
+      "label": "Dot travels along"
+     },
+     {
+      "value": "still",
+      "label": "Still (no motion)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_stroke",
+    "label": "Line weight",
+    "default": "fine",
+    "options": [
+     {
+      "value": "fine",
+      "label": "Fine"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "heavy",
+      "label": "Bold"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_flip",
+    "label": "Mirror",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "horizontal",
+      "label": "Horizontal"
+     },
+     {
+      "value": "vertical",
+      "label": "Vertical"
+     },
+     {
+      "value": "both",
+      "label": "Both"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "None"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Background"
+   },
+   {
+    "type": "video",
+    "id": "background_video",
+    "label": "Background video",
+    "info": "Plays muted on a loop behind the content and only starts once the section is visible. A pause button appears in the bottom right corner. With “Reduce motion” only the still image is shown. Recommended: under 30 seconds and 10 MB – some browsers load the whole file. With data saver on, only the still image is shown."
+   },
+   {
+    "type": "image_picker",
+    "id": "background_video_poster",
+    "label": "Still image",
+    "info": "Shown before the video starts and with “Reduce motion”. Empty: the video’s preview image.",
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "background_video_overlay",
+    "label": "Overlay",
+    "info": "Color scheme background over the video: lightens light schemes, darkens dark ones. Set it high enough to keep text readable (at least 4.5 : 1).",
+    "default": 50,
+    "min": 0,
+    "max": 90,
+    "step": 5,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "background_video_position",
+    "label": "Focal point",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Center"
+     },
+     {
+      "value": "top",
+      "label": "Top"
+     },
+     {
+      "value": "bottom",
+      "label": "Bottom"
+     },
+     {
+      "value": "left",
+      "label": "Left"
+     },
+     {
+      "value": "right",
+      "label": "Right"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "background_video_priority",
+    "label": "Load still image immediately (section at the top)",
+    "info": "Only turn on if this section is the first on the page. The video itself is never preloaded.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Background video",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Abschnitt",
+  "category": "Layout",
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Abstand oben und unten",
+    "default": "medium",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keiner"
+     },
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Breite",
+    "default": "page",
+    "options": [
+     {
+      "value": "page",
+      "label": "Seitenbreite"
+     },
+     {
+      "value": "full",
+      "label": "Volle Breite"
+     },
+     {
+      "value": "narrow",
+      "label": "Schmal (Lesebreite)"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Linie über dem Abschnitt",
+    "default": false
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Sprungmarke",
+    "info": "Name ohne # und Leerzeichen, z. B. versand. Ein Knopf oder Link mit #versand springt hierher."
+   },
+   {
+    "type": "header",
+    "content": "Dekor"
+   },
+   {
+    "type": "paragraph",
+    "content": "Linien-Motiv hinter dem Inhalt. Verschiebt nichts, fängt keine Klicks ab und ist für Screenreader unsichtbar."
+   },
+   {
+    "type": "select",
+    "id": "decor_motif",
+    "label": "Motiv",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keins"
+     },
+     {
+      "value": "waves",
+      "label": "Wellen"
+     },
+     {
+      "value": "cycle",
+      "label": "Kreislauf (Pfeilring)"
+     },
+     {
+      "value": "contours",
+      "label": "Höhenlinien"
+     },
+     {
+      "value": "path_dots",
+      "label": "Pfad mit Punkten"
+     },
+     {
+      "value": "connector",
+      "label": "Verbindungslinie"
+     },
+     {
+      "value": "swash",
+      "label": "Schwung (Unterstreichung)"
+     },
+     {
+      "value": "corners",
+      "label": "Rahmen-Ecken"
+     },
+     {
+      "value": "branch",
+      "label": "Zweig mit Blattadern"
+     },
+     {
+      "value": "steam",
+      "label": "Dampf-Kringel"
+     },
+     {
+      "value": "drops",
+      "label": "Tropfen mit Ringen"
+     },
+     {
+      "value": "scale",
+      "label": "Messlinien (Skala)"
+     },
+     {
+      "value": "orbit",
+      "label": "Orbit"
+     },
+     {
+      "value": "arrow",
+      "label": "Geschwungener Pfeil"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_position",
+    "label": "Position",
+    "default": "top_end",
+    "options": [
+     {
+      "value": "background",
+      "label": "Hintergrund (ganze Fläche)"
+     },
+     {
+      "value": "top_end",
+      "label": "Ecke oben rechts"
+     },
+     {
+      "value": "top_start",
+      "label": "Ecke oben links"
+     },
+     {
+      "value": "bottom_end",
+      "label": "Ecke unten rechts"
+     },
+     {
+      "value": "bottom_start",
+      "label": "Ecke unten links"
+     },
+     {
+      "value": "edge_start",
+      "label": "Rand links"
+     },
+     {
+      "value": "edge_end",
+      "label": "Rand rechts"
+     },
+     {
+      "value": "heading",
+      "label": "Hinter der Überschrift (oben)"
+     },
+     {
+      "value": "transition",
+      "label": "Übergang zum nächsten Abschnitt (Unterkante)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "decor_size",
+    "label": "Größe",
+    "info": "Breite des Motivs im Verhältnis zum Abschnitt. Gilt nicht für „Hintergrund“.",
+    "default": 40,
+    "min": 10,
+    "max": 100,
+    "step": 5,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_color",
+    "label": "Farbe",
+    "default": "rule",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Schema: Text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Schema: Sekundärtext"
+     },
+     {
+      "value": "rule",
+      "label": "Schema: Linie"
+     },
+     {
+      "value": "signal",
+      "label": "Schema: Akzent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "decor_opacity",
+    "label": "Deckkraft",
+    "default": 100,
+    "min": 10,
+    "max": 100,
+    "step": 10,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_behavior",
+    "label": "Beim Scrollen",
+    "default": "draw",
+    "options": [
+     {
+      "value": "draw",
+      "label": "Zeichnen (Strich entsteht beim Scrollen)"
+     },
+     {
+      "value": "drift",
+      "label": "Mitlaufen (Parallaxe)"
+     },
+     {
+      "value": "wave",
+      "label": "Welle (wandert seitlich)"
+     },
+     {
+      "value": "rotate",
+      "label": "Drehen"
+     },
+     {
+      "value": "travel",
+      "label": "Punkt läuft entlang"
+     },
+     {
+      "value": "still",
+      "label": "Ruhig (ohne Bewegung)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_stroke",
+    "label": "Strichstärke",
+    "default": "fine",
+    "options": [
+     {
+      "value": "fine",
+      "label": "Fein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "heavy",
+      "label": "Kräftig"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "decor_flip",
+    "label": "Spiegeln",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "Nicht spiegeln"
+     },
+     {
+      "value": "horizontal",
+      "label": "Waagerecht"
+     },
+     {
+      "value": "vertical",
+      "label": "Senkrecht"
+     },
+     {
+      "value": "both",
+      "label": "Beides"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "decor_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Keins"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Hintergrund"
+   },
+   {
+    "type": "video",
+    "id": "background_video",
+    "label": "Hintergrundvideo",
+    "info": "Läuft stumm in Schleife hinter dem Inhalt und startet erst, wenn der Abschnitt sichtbar ist. Unten rechts erscheint ein Knopf zum Anhalten. Bei „Bewegung reduzieren“ steht nur das Vorschaubild. Empfohlen: unter 30 Sekunden und 10 MB – manche Browser laden die ganze Datei. Im Datensparmodus steht nur das Standbild."
+   },
+   {
+    "type": "image_picker",
+    "id": "background_video_poster",
+    "label": "Vorschaubild",
+    "info": "Steht vor dem Start und bei „Bewegung reduzieren“. Leer: Vorschaubild des Videos.",
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "background_video_overlay",
+    "label": "Überlagerung",
+    "info": "Hintergrundfarbe des Farbschemas über dem Video: hellt bei hellen Schemata auf, dunkelt bei dunklen ab. So hoch stellen, dass Text gut lesbar bleibt (mind. 4,5 : 1).",
+    "default": 50,
+    "min": 0,
+    "max": 90,
+    "step": 5,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "background_video_position",
+    "label": "Bildausschnitt",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "top",
+      "label": "Oben"
+     },
+     {
+      "value": "bottom",
+      "label": "Unten"
+     },
+     {
+      "value": "left",
+      "label": "Links"
+     },
+     {
+      "value": "right",
+      "label": "Rechts"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "background_video_priority",
+    "label": "Standbild sofort laden (Abschnitt ganz oben)",
+    "info": "Nur einschalten, wenn dieser Abschnitt der erste der Seite ist. Das Video selbst lädt nie vorab.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background_video",
+      "label": "Hintergrundvideo",
+      "op": "filled"
+     }
+    ]
+   }
+  ]
+ },
+ "subblocks": [],
+ "theme_blocks": true,
+ "where": {
+  "group": null,
+  "templates": [
+   "404",
+   "article",
+   "blog",
+   "cart",
+   "index",
+   "list-collections",
+   "page",
+   "password",
+   "product"
+  ],
+  "demo_disabled": false,
+  "enabled_on": null,
+  "has_preset": true
+ }
+}

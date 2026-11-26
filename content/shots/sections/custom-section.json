@@ -1,0 +1,146 @@
+{
+ "section": "custom-section",
+ "shop": "nordform",
+ "template": "index.json",
+ "id": "subscription",
+ "de": {
+  "desktop": {
+   "file": "de/sections/custom-section-desktop.webp",
+   "width": 1581,
+   "height": 503,
+   "bytes": 31086,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/custom-section-desktop-800.webp",
+   "width": 800,
+   "height": 255,
+   "bytes": 12790,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/custom-section.webp",
+   "width": 640,
+   "height": 204,
+   "bytes": 8844,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "color_scheme",
+    "x": 2,
+    "y": 3.6,
+    "box": [
+     0,
+     0.2,
+     100,
+     99.9
+    ],
+    "n": 1
+   },
+   {
+    "setting": "width",
+    "x": 9.3,
+    "y": 3.6,
+    "box": [
+     2.5,
+     0.2,
+     94.9,
+     99.9
+    ],
+    "n": 2
+   },
+   {
+    "setting": "decor_motif",
+    "x": 13.3,
+    "y": 3.6,
+    "box": [
+     0,
+     0.2,
+     100,
+     99.9
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/custom-section-mobile.webp",
+   "width": 780,
+   "height": 1570,
+   "bytes": 51140,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/custom-section-desktop.webp",
+   "width": 1581,
+   "height": 471,
+   "bytes": 30152,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/custom-section-desktop-800.webp",
+   "width": 800,
+   "height": 238,
+   "bytes": 12564,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/custom-section.webp",
+   "width": 640,
+   "height": 191,
+   "bytes": 8888,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "color_scheme",
+    "x": 2,
+    "y": 3.8,
+    "box": [
+     0,
+     0,
+     100,
+     100
+    ],
+    "n": 1
+   },
+   {
+    "setting": "width",
+    "x": 9.3,
+    "y": 3.8,
+    "box": [
+     2.5,
+     0,
+     94.9,
+     100
+    ],
+    "n": 2
+   },
+   {
+    "setting": "decor_motif",
+    "x": 13.3,
+    "y": 3.8,
+    "box": [
+     0,
+     0,
+     100,
+     100
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/custom-section-mobile.webp",
+   "width": 780,
+   "height": 1472,
+   "bytes": 49978,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

@@ -1,0 +1,176 @@
+{
+ "section": "scroll-story",
+ "shop": "nordform",
+ "template": "page.about.json",
+ "id": "story",
+ "de": {
+  "desktop": {
+   "file": "de/sections/scroll-story-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 79850,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/scroll-story-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 33592,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/scroll-story.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 23942,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "_story-slide",
+    "setting": "label",
+    "x": 4.8,
+    "y": 16.6,
+    "box": [
+     6.1,
+     15.9,
+     5,
+     1.4
+    ],
+    "n": 1
+   },
+   {
+    "block": "_story-slide",
+    "setting": "heading",
+    "x": 8.8,
+    "y": 20.3,
+    "box": [
+     6.1,
+     18.9,
+     37.9,
+     9.2
+    ],
+    "n": 2
+   },
+   {
+    "block": "_story-slide",
+    "setting": "image",
+    "x": 48.7,
+    "y": 3,
+    "box": [
+     50,
+     0.1,
+     50,
+     47.4
+    ],
+    "n": 3
+   },
+   {
+    "setting": "show_index",
+    "x": 8.8,
+    "y": 13.6,
+    "box": [
+     6.1,
+     12.9,
+     6,
+     1.4
+    ],
+    "n": 4
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/scroll-story-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 101190,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/scroll-story-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 78286,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/scroll-story-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 32664,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/scroll-story.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 22738,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "_story-slide",
+    "setting": "label",
+    "x": 4.8,
+    "y": 16.6,
+    "box": [
+     6.1,
+     15.9,
+     7.5,
+     1.4
+    ],
+    "n": 1
+   },
+   {
+    "block": "_story-slide",
+    "setting": "heading",
+    "x": 8.8,
+    "y": 20.3,
+    "box": [
+     6.1,
+     18.9,
+     37.9,
+     9.2
+    ],
+    "n": 2
+   },
+   {
+    "block": "_story-slide",
+    "setting": "image",
+    "x": 48.7,
+    "y": 3,
+    "box": [
+     50,
+     0,
+     50,
+     47.4
+    ],
+    "n": 3
+   },
+   {
+    "setting": "show_index",
+    "x": 8.8,
+    "y": 13.5,
+    "box": [
+     6.1,
+     12.8,
+     6,
+     1.4
+    ],
+    "n": 4
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/scroll-story-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 100750,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

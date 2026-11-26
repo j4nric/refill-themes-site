@@ -1,0 +1,103 @@
+{
+ "slug": "announcement-bar",
+ "kind": "section",
+ "source": "sections/announcement-bar.liquid",
+ "source_sha1": "096afd63f742",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Announcement bar",
+  "category": "Buttons and promotions",
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-4"
+   }
+  ]
+ },
+ "de": {
+  "name": "Ankündigungsleiste",
+  "category": "Buttons & Aktionen",
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-4"
+   }
+  ]
+ },
+ "subblocks": [
+  {
+   "slug": "_announcement",
+   "kind": "block",
+   "source": "blocks/_announcement.liquid",
+   "source_sha1": "4b9066b8ffb2",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Announcement",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+      "default": "Free shipping on qualifying orders"
+     },
+     {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+     },
+     {
+      "type": "text",
+      "id": "code",
+      "label": "Discount code",
+      "info": "Shown with a “Copy” button. Create the discount under Discounts; customers redeem it at checkout."
+     }
+    ]
+   },
+   "de": {
+    "name": "Ankündigung",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+      "default": "Kostenloser Versand ab Mindestbestellwert"
+     },
+     {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+     },
+     {
+      "type": "text",
+      "id": "code",
+      "label": "Gutscheincode",
+      "info": "Erscheint mit Knopf „Kopieren“. Den Rabatt legen Sie unter Rabatte an; eingelöst wird er an der Kasse."
+     }
+    ]
+   },
+   "type": "_announcement",
+   "anchor": "announcement",
+   "parent": null
+  }
+ ],
+ "theme_blocks": false,
+ "where": {
+  "group": "header",
+  "templates": [],
+  "demo_disabled": false,
+  "enabled_on": {
+   "groups": [
+    "header"
+   ]
+  },
+  "has_preset": true
+ }
+}

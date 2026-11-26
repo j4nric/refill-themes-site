@@ -1,0 +1,126 @@
+{
+ "section": "announcement-bar",
+ "shop": "nordform",
+ "template": "index.json",
+ "id": "announcement-bar",
+ "de": {
+  "desktop": {
+   "file": "de/sections/announcement-bar-desktop.webp",
+   "width": 1581,
+   "height": 131,
+   "bytes": 14944,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/announcement-bar-desktop-800.webp",
+   "width": 800,
+   "height": 66,
+   "bytes": 6350,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/announcement-bar.webp",
+   "width": 640,
+   "height": 53,
+   "bytes": 4354,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "_announcement",
+    "setting": "text",
+    "x": 5.7,
+    "y": 19,
+    "box": [
+     7,
+     10.2,
+     31.5,
+     17.7
+    ],
+    "n": 1
+   },
+   {
+    "block": "_announcement",
+    "setting": "code",
+    "x": 38.1,
+    "y": 19,
+    "box": [
+     39.4,
+     7.6,
+     13.2,
+     22.9
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/announcement-bar-mobile.webp",
+   "width": 780,
+   "height": 286,
+   "bytes": 9786,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/announcement-bar-desktop.webp",
+   "width": 1581,
+   "height": 160,
+   "bytes": 16562,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/announcement-bar-desktop-800.webp",
+   "width": 800,
+   "height": 81,
+   "bytes": 6616,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/announcement-bar.webp",
+   "width": 640,
+   "height": 65,
+   "bytes": 5012,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "_announcement",
+    "setting": "text",
+    "x": 9.2,
+    "y": 15.6,
+    "box": [
+     10.5,
+     8.4,
+     43.4,
+     14.5
+    ],
+    "n": 1
+   },
+   {
+    "block": "_announcement",
+    "setting": "code",
+    "x": 53.6,
+    "y": 15.6,
+    "box": [
+     54.8,
+     6.3,
+     10.7,
+     18.8
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/announcement-bar-mobile.webp",
+   "width": 780,
+   "height": 322,
+   "bytes": 11314,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

@@ -1,0 +1,222 @@
+{
+ "section": "header",
+ "shop": "nordform",
+ "template": "index.json",
+ "id": "header",
+ "de": {
+  "desktop": {
+   "file": "de/sections/header-desktop.webp",
+   "width": 1581,
+   "height": 798,
+   "bytes": 31424,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/header-desktop-800.webp",
+   "width": 800,
+   "height": 404,
+   "bytes": 12276,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/header.webp",
+   "width": 640,
+   "height": 323,
+   "bytes": 9322,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "_header-logo",
+    "x": 2,
+    "y": 11.3,
+    "box": [
+     2.5,
+     9.7,
+     7,
+     3.1
+    ],
+    "n": 1
+   },
+   {
+    "block": "_header-menu",
+    "x": 10.8,
+    "y": 10,
+    "box": [
+     12.1,
+     7.8,
+     59.6,
+     6.9
+    ],
+    "n": 2
+   },
+   {
+    "block": "_header-menu",
+    "setting": "show_counts",
+    "x": 21.4,
+    "y": 34.8,
+    "box": [
+     22.7,
+     33.7,
+     1.1,
+     2.3
+    ],
+    "n": 3
+   },
+   {
+    "block": "_header-menu",
+    "setting": "teaser_label",
+    "x": 74.1,
+    "y": 30.5,
+    "box": [
+     75.3,
+     29.4,
+     22.1,
+     2.3
+    ],
+    "n": 4
+   },
+   {
+    "block": "_header-actions",
+    "x": 72.9,
+    "y": 10,
+    "box": [
+     74.2,
+     7.8,
+     23.3,
+     6.9
+    ],
+    "n": 5
+   },
+   {
+    "setting": "panel_animation",
+    "x": 2,
+    "y": 23.7,
+    "box": [
+     2.5,
+     21.5,
+     94.9,
+     5.4
+    ],
+    "n": 6
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/header-mobile.webp",
+   "width": 780,
+   "height": 286,
+   "bytes": 9786,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/header-desktop.webp",
+   "width": 1581,
+   "height": 826,
+   "bytes": 31774,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/header-desktop-800.webp",
+   "width": 800,
+   "height": 418,
+   "bytes": 12132,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/header.webp",
+   "width": 640,
+   "height": 334,
+   "bytes": 9188,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "_header-logo",
+    "x": 2,
+    "y": 14.3,
+    "box": [
+     2.5,
+     12.8,
+     7,
+     3
+    ],
+    "n": 1
+   },
+   {
+    "block": "_header-menu",
+    "x": 10.8,
+    "y": 13.1,
+    "box": [
+     12.1,
+     11,
+     60.9,
+     6.7
+    ],
+    "n": 2
+   },
+   {
+    "block": "_header-menu",
+    "setting": "show_counts",
+    "x": 21.4,
+    "y": 37,
+    "box": [
+     22.7,
+     35.9,
+     1.1,
+     2.2
+    ],
+    "n": 3
+   },
+   {
+    "block": "_header-menu",
+    "setting": "teaser_label",
+    "x": 74.1,
+    "y": 32.9,
+    "box": [
+     75.3,
+     31.8,
+     22.1,
+     2.2
+    ],
+    "n": 4
+   },
+   {
+    "block": "_header-actions",
+    "x": 74.2,
+    "y": 13.1,
+    "box": [
+     75.5,
+     11,
+     22,
+     6.7
+    ],
+    "n": 5
+   },
+   {
+    "setting": "panel_animation",
+    "x": 2,
+    "y": 26.3,
+    "box": [
+     2.5,
+     24.1,
+     94.9,
+     5.2
+    ],
+    "n": 6
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/header-mobile.webp",
+   "width": 780,
+   "height": 322,
+   "bytes": 11430,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

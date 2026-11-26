@@ -1,0 +1,146 @@
+{
+ "section": "popup",
+ "shop": "ostra",
+ "template": "index.json",
+ "id": "popup",
+ "de": {
+  "desktop": {
+   "file": "de/sections/popup-desktop.webp",
+   "width": 1600,
+   "height": 1125,
+   "bytes": 71460,
+   "quality": 80,
+   "how": "dialog"
+  },
+  "desktop_small": {
+   "file": "de/sections/popup-desktop-800.webp",
+   "width": 800,
+   "height": 562,
+   "bytes": 27864,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/popup.webp",
+   "width": 640,
+   "height": 450,
+   "bytes": 20724,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 23.2,
+    "y": 32.1,
+    "box": [
+     24.5,
+     30.6,
+     19.9,
+     38.9
+    ],
+    "n": 1
+   },
+   {
+    "block": "heading",
+    "x": 45.1,
+    "y": 35.7,
+    "box": [
+     46.3,
+     34.1,
+     26.2,
+     8.7
+    ],
+    "n": 2
+   },
+   {
+    "block": "newsletter",
+    "x": 45.1,
+    "y": 56.1,
+    "box": [
+     46.3,
+     54.6,
+     26.2,
+     12.2
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/popup-mobile.webp",
+   "width": 780,
+   "height": 1688,
+   "bytes": 57918,
+   "quality": 80,
+   "how": "dialog"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/popup-desktop.webp",
+   "width": 1600,
+   "height": 1125,
+   "bytes": 71202,
+   "quality": 80,
+   "how": "dialog"
+  },
+  "desktop_small": {
+   "file": "en/sections/popup-desktop-800.webp",
+   "width": 800,
+   "height": 562,
+   "bytes": 27694,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/popup.webp",
+   "width": 640,
+   "height": 450,
+   "bytes": 20490,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "image",
+    "x": 23.2,
+    "y": 32.1,
+    "box": [
+     24.5,
+     30.6,
+     19.9,
+     38.9
+    ],
+    "n": 1
+   },
+   {
+    "block": "heading",
+    "x": 45.1,
+    "y": 35.7,
+    "box": [
+     46.3,
+     34.1,
+     26.2,
+     8.7
+    ],
+    "n": 2
+   },
+   {
+    "block": "newsletter",
+    "x": 45.1,
+    "y": 56.1,
+    "box": [
+     46.3,
+     54.6,
+     26.2,
+     12.2
+    ],
+    "n": 3
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/popup-mobile.webp",
+   "width": 780,
+   "height": 1688,
+   "bytes": 56752,
+   "quality": 80,
+   "how": "dialog"
+  }
+ }
+}

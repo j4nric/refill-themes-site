@@ -1,0 +1,3531 @@
+{
+ "slug": "header",
+ "kind": "section",
+ "source": "sections/header.liquid",
+ "source_sha1": "784550bbb305",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Header",
+  "category": null,
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Line below header",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Drop-down panels"
+   },
+   {
+    "type": "select",
+    "id": "panel_animation",
+    "label": "Animation",
+    "default": "fade",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "fade",
+      "label": "Fade in"
+     },
+     {
+      "value": "slide",
+      "label": "Slide down"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "On scroll"
+   },
+   {
+    "type": "select",
+    "id": "sticky",
+    "label": "Sticky header",
+    "default": "scroll_up",
+    "options": [
+     {
+      "value": "off",
+      "label": "Scrolls with the page"
+     },
+     {
+      "value": "always",
+      "label": "Always visible"
+     },
+     {
+      "value": "scroll_up",
+      "label": "Show when scrolling up"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "The following settings apply while the header sticks to the top of the screen. Set the logo size and a separate logo file in the “Logo” block."
+   },
+   {
+    "type": "select",
+    "id": "sticky_background_source",
+    "label": "Background when sticky",
+    "default": "custom",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Scheme color"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     },
+     {
+      "value": "custom",
+      "label": "Custom color"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Sticky header",
+      "op": "is_not",
+      "value": "Scrolls with the page"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "sticky_background",
+    "label": "Background when sticky",
+    "info": "Empty: same as the color scheme. With transparency, the content underneath is blurred.",
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Sticky header",
+      "op": "is_not",
+      "value": "Scrolls with the page"
+     },
+     "and",
+     {
+      "setting": "sticky_background_source",
+      "label": "Background when sticky",
+      "op": "is",
+      "value": "Custom color"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "sticky_text_source",
+    "label": "Text when sticky",
+    "default": "custom",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Scheme color"
+     },
+     {
+      "value": "auto",
+      "label": "Matching the background brand color (black/white)"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     },
+     {
+      "value": "custom",
+      "label": "Custom color"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Sticky header",
+      "op": "is_not",
+      "value": "Scrolls with the page"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "sticky_text",
+    "label": "Text color when sticky",
+    "info": "Empty: same as the color scheme. Keep enough contrast to the background (at least 4.5:1).",
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Sticky header",
+      "op": "is_not",
+      "value": "Scrolls with the page"
+     },
+     "and",
+     {
+      "setting": "sticky_text_source",
+      "label": "Text when sticky",
+      "op": "is",
+      "value": "Custom color"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "sticky_text_size",
+    "label": "Text and height when sticky",
+    "default": "100",
+    "options": [
+     {
+      "value": "100",
+      "label": "Unchanged"
+     },
+     {
+      "value": "90",
+      "label": "Slightly smaller (90%)"
+     },
+     {
+      "value": "80",
+      "label": "Compact (80%)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Sticky header",
+      "op": "is_not",
+      "value": "Scrolls with the page"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Kopfzeile",
+  "category": null,
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Linie unter der Kopfzeile",
+    "default": true
+   },
+   {
+    "type": "header",
+    "content": "Aufklappende Bereiche"
+   },
+   {
+    "type": "select",
+    "id": "panel_animation",
+    "label": "Animation",
+    "default": "fade",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keine"
+     },
+     {
+      "value": "fade",
+      "label": "Einblenden"
+     },
+     {
+      "value": "slide",
+      "label": "Aufklappen"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Beim Scrollen"
+   },
+   {
+    "type": "select",
+    "id": "sticky",
+    "label": "Kopfzeile beim Scrollen",
+    "default": "scroll_up",
+    "options": [
+     {
+      "value": "off",
+      "label": "Scrollt mit"
+     },
+     {
+      "value": "always",
+      "label": "Immer sichtbar"
+     },
+     {
+      "value": "scroll_up",
+      "label": "Beim Hochscrollen einblenden"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "Die folgenden Einstellungen gelten, solange die Kopfzeile oben am Bildschirm klebt. Logo-Größe und eigene Logodatei stellen Sie im Block „Logo“ ein."
+   },
+   {
+    "type": "select",
+    "id": "sticky_background_source",
+    "label": "Hintergrund beim Kleben",
+    "default": "custom",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Schema-Farbe"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     },
+     {
+      "value": "custom",
+      "label": "Eigene Farbe"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Kopfzeile beim Scrollen",
+      "op": "is_not",
+      "value": "Scrollt mit"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "sticky_background",
+    "label": "Hintergrund beim Kleben",
+    "info": "Leer: wie das Farbschema. Mit Transparenz wird der Inhalt darunter weichgezeichnet.",
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Kopfzeile beim Scrollen",
+      "op": "is_not",
+      "value": "Scrollt mit"
+     },
+     "and",
+     {
+      "setting": "sticky_background_source",
+      "label": "Hintergrund beim Kleben",
+      "op": "is",
+      "value": "Eigene Farbe"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "sticky_text_source",
+    "label": "Text beim Kleben",
+    "default": "custom",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Schema-Farbe"
+     },
+     {
+      "value": "auto",
+      "label": "Passend zur Markenfarbe des Hintergrunds (Schwarz/Weiß)"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     },
+     {
+      "value": "custom",
+      "label": "Eigene Farbe"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Kopfzeile beim Scrollen",
+      "op": "is_not",
+      "value": "Scrollt mit"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "sticky_text",
+    "label": "Textfarbe beim Kleben",
+    "info": "Leer: wie das Farbschema. Auf ausreichenden Kontrast zum Hintergrund achten (mindestens 4,5 : 1).",
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Kopfzeile beim Scrollen",
+      "op": "is_not",
+      "value": "Scrollt mit"
+     },
+     "and",
+     {
+      "setting": "sticky_text_source",
+      "label": "Text beim Kleben",
+      "op": "is",
+      "value": "Eigene Farbe"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "sticky_text_size",
+    "label": "Text und Höhe beim Kleben",
+    "default": "100",
+    "options": [
+     {
+      "value": "100",
+      "label": "Unverändert"
+     },
+     {
+      "value": "90",
+      "label": "Etwas kleiner (90 %)"
+     },
+     {
+      "value": "80",
+      "label": "Kompakt (80 %)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "sticky",
+      "label": "Kopfzeile beim Scrollen",
+      "op": "is_not",
+      "value": "Scrollt mit"
+     }
+    ]
+   }
+  ]
+ },
+ "subblocks": [
+  {
+   "slug": "_header-logo",
+   "kind": "block",
+   "source": "blocks/_header-logo.liquid",
+   "source_sha1": "cf28b8a20f39",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Logo",
+    "category": null,
+    "settings": [
+     {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+     },
+     {
+      "type": "select",
+      "id": "logo_sizing",
+      "label": "Size logo by",
+      "info": "Height: the logo always has the same height and its width follows the aspect ratio, so square logos fit too. Width: the previous setting.",
+      "default": "height",
+      "options": [
+       {
+        "value": "height",
+        "label": "Height (recommended)"
+       },
+       {
+        "value": "width",
+        "label": "Width (previous)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Logo height on desktop",
+      "info": "From a window width of 990 px. The width follows the image’s aspect ratio. Without an image, the height sets the font size of the store name.",
+      "default": 32,
+      "min": 16,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Size logo by",
+        "op": "is_not",
+        "value": "Width (previous)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "logo_height_mobile",
+      "label": "Logo height on mobile",
+      "default": 28,
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Size logo by",
+        "op": "is_not",
+        "value": "Width (previous)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "width",
+      "label": "Logo width",
+      "info": "Applies to logo images, including the custom logo while stuck. Without an image, the store name appears as text.",
+      "default": 120,
+      "min": 60,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Size logo by",
+        "op": "is",
+        "value": "Width (previous)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "logo_sizing",
+        "label": "Size logo by",
+        "op": "is",
+        "value": "Width (previous)"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "On scroll"
+     },
+     {
+      "type": "range",
+      "id": "sticky_logo_height",
+      "label": "Logo height when sticky",
+      "info": "Applies to the separate sticky logo, otherwise to the regular logo – on desktop and mobile.",
+      "default": 28,
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Size logo by",
+        "op": "is_not",
+        "value": "Width (previous)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "sticky_logo_scale",
+      "label": "Logo size when sticky",
+      "default": 100,
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Size logo by",
+        "op": "is",
+        "value": "Width (previous)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "logo_sizing",
+        "label": "Size logo by",
+        "op": "is",
+        "value": "Width (previous)"
+       }
+      ]
+     },
+     {
+      "type": "image_picker",
+      "id": "sticky_logo",
+      "label": "Separate logo when sticky",
+      "info": "Optional, e.g. a logo mark instead of the wordmark or a light version for a dark background."
+     }
+    ]
+   },
+   "de": {
+    "name": "Logo",
+    "category": null,
+    "settings": [
+     {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo-Bild"
+     },
+     {
+      "type": "select",
+      "id": "logo_sizing",
+      "label": "Logo-Größe nach",
+      "info": "Höhe: Das Logo ist immer gleich hoch, die Breite ergibt sich aus dem Seitenverhältnis – auch quadratische Logos passen. Breite: bisherige Einstellung.",
+      "default": "height",
+      "options": [
+       {
+        "value": "height",
+        "label": "Höhe (empfohlen)"
+       },
+       {
+        "value": "width",
+        "label": "Breite (bisher)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Logo-Höhe Desktop",
+      "info": "Ab 990 px Fensterbreite. Die Breite folgt dem Seitenverhältnis des Bildes. Ohne Bild bestimmt die Höhe die Schriftgröße des Shopnamens.",
+      "default": 32,
+      "min": 16,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Logo-Größe nach",
+        "op": "is_not",
+        "value": "Breite (bisher)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "logo_height_mobile",
+      "label": "Logo-Höhe Handy",
+      "default": 28,
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Logo-Größe nach",
+        "op": "is_not",
+        "value": "Breite (bisher)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "width",
+      "label": "Logo-Breite",
+      "info": "Gilt für Logo-Bilder, auch für das eigene Logo beim Kleben. Ohne Bild erscheint der Shopname als Text.",
+      "default": 120,
+      "min": 60,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Logo-Größe nach",
+        "op": "is",
+        "value": "Breite (bisher)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "logo_sizing",
+        "label": "Logo-Größe nach",
+        "op": "is",
+        "value": "Breite (bisher)"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Beim Scrollen"
+     },
+     {
+      "type": "range",
+      "id": "sticky_logo_height",
+      "label": "Logo-Höhe beim Kleben",
+      "info": "Gilt für das eigene Logo beim Kleben, sonst für das normale Logo – auf Desktop und Handy.",
+      "default": 28,
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Logo-Größe nach",
+        "op": "is_not",
+        "value": "Breite (bisher)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "sticky_logo_scale",
+      "label": "Logo-Größe beim Kleben",
+      "default": 100,
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "visible_if": [
+       {
+        "setting": "logo_sizing",
+        "label": "Logo-Größe nach",
+        "op": "is",
+        "value": "Breite (bisher)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "logo_sizing",
+        "label": "Logo-Größe nach",
+        "op": "is",
+        "value": "Breite (bisher)"
+       }
+      ]
+     },
+     {
+      "type": "image_picker",
+      "id": "sticky_logo",
+      "label": "Eigenes Logo beim Kleben",
+      "info": "Optional, z. B. eine Bildmarke statt der Wortmarke oder eine helle Fassung für einen dunklen Hintergrund."
+     }
+    ]
+   },
+   "type": "_header-logo",
+   "anchor": "header-logo",
+   "parent": null
+  },
+  {
+   "slug": "_header-menu",
+   "kind": "block",
+   "source": "blocks/_header-menu.liquid",
+   "source_sha1": "97b348b37e70",
+   "accepts_blocks": true,
+   "en": {
+    "name": "Menu",
+    "category": null,
+    "settings": [
+     {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+     },
+     {
+      "type": "header",
+      "content": "Submenus"
+     },
+     {
+      "type": "checkbox",
+      "id": "open_on_hover",
+      "label": "Open submenus on hover",
+      "default": true
+     },
+     {
+      "type": "select",
+      "id": "submenu_style",
+      "label": "Submenu style",
+      "info": "Automatic: submenus with one level as a slim list below the menu item, the mega menu for a third level, link images or a featured column. Applies from 990 px; the mobile menu stays the same.",
+      "default": "auto",
+      "options": [
+       {
+        "value": "auto",
+        "label": "Automatic"
+       },
+       {
+        "value": "mega",
+        "label": "Classic: mega menu"
+       },
+       {
+        "value": "list",
+        "label": "List like dropdowns"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mega_width",
+      "label": "Width",
+      "default": "full",
+      "options": [
+       {
+        "value": "full",
+        "label": "Full page"
+       },
+       {
+        "value": "content",
+        "label": "Fit content, below the menu item"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mega_columns",
+      "label": "Columns",
+      "default": "auto",
+      "options": [
+       {
+        "value": "auto",
+        "label": "Automatic"
+       },
+       {
+        "value": "2",
+        "label": "2"
+       },
+       {
+        "value": "3",
+        "label": "3"
+       },
+       {
+        "value": "4",
+        "label": "4"
+       },
+       {
+        "value": "5",
+        "label": "5"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "third_level",
+      "label": "Third level in the mega menu",
+      "info": "On hover: third-level links expand below their second-level link when it is hovered with the mouse or reached with the keyboard. On touch devices they stay visible.",
+      "default": "always",
+      "options": [
+       {
+        "value": "always",
+        "label": "Always visible"
+       },
+       {
+        "value": "hover",
+        "label": "Expand on hover"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "submenu_text_size",
+      "label": "Submenu text size",
+      "info": "Second-level links in the mega menu and in the list. “Small” helps with long names that would otherwise wrap.",
+      "default": "medium",
+      "options": [
+       {
+        "value": "small",
+        "label": "Small"
+       },
+       {
+        "value": "medium",
+        "label": "Medium"
+       },
+       {
+        "value": "large",
+        "label": "Large"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_counts",
+      "label": "Show product counts",
+      "info": "Shows the number of products next to collections in the menu.",
+      "default": true
+     },
+     {
+      "type": "select",
+      "id": "link_images",
+      "label": "Images on links",
+      "info": "Image of the linked collection or product (second level). Other links have no image.",
+      "default": "none",
+      "options": [
+       {
+        "value": "none",
+        "label": "None"
+       },
+       {
+        "value": "thumb",
+        "label": "Small, next to the title"
+       },
+       {
+        "value": "tile",
+        "label": "Large, above the title"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "tile_items",
+      "label": "Image tiles for these menu items",
+      "info": "Titles or handles of top-level menu items, separated by commas. These submenus show large images of the linked collections or products above the title, at most four per row when Columns is “Automatic”. All others follow “Images on links”."
+     },
+     {
+      "type": "select",
+      "id": "link_image_ratio",
+      "label": "Image ratio",
+      "default": "1 / 1",
+      "options": [
+       {
+        "value": "1 / 1",
+        "label": "Square (1:1)"
+       },
+       {
+        "value": "4 / 5",
+        "label": "Portrait (4:5)"
+       },
+       {
+        "value": "3 / 2",
+        "label": "Landscape (3:2)"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "link_images",
+        "label": "Images on links",
+        "op": "is",
+        "value": "Large, above the title"
+       },
+       "or",
+       {
+        "setting": "tile_items",
+        "label": "Image tiles for these menu items",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "link_images",
+        "label": "Images on links",
+        "op": "is",
+        "value": "Large, above the title"
+       },
+       "or",
+       {
+        "setting": "tile_items",
+        "label": "Image tiles for these menu items",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "color_scheme",
+      "id": "panel_scheme",
+      "label": "Menu panel color scheme",
+      "default": "scheme-1"
+     },
+     {
+      "type": "header",
+      "content": "Feature in submenu"
+     },
+     {
+      "type": "select",
+      "id": "feature_type",
+      "label": "Content",
+      "default": "product",
+      "options": [
+       {
+        "value": "product",
+        "label": "Product"
+       },
+       {
+        "value": "collection",
+        "label": "Collection"
+       },
+       {
+        "value": "image",
+        "label": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "product",
+      "id": "teaser_product",
+      "label": "Product",
+      "info": "Used with content “Product”. Empty: no feature."
+     },
+     {
+      "type": "collection",
+      "id": "feature_collection",
+      "label": "Collection",
+      "info": "Used with content “Collection”. Shows the collection image, title and product count."
+     },
+     {
+      "type": "image_picker",
+      "id": "feature_image",
+      "label": "Image",
+      "visible_if": [
+       {
+        "setting": "feature_type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "feature_type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "feature_heading",
+      "label": "Heading",
+      "visible_if": [
+       {
+        "setting": "feature_type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "feature_type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "url",
+      "id": "feature_link",
+      "label": "Link",
+      "visible_if": [
+       {
+        "setting": "feature_type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "feature_type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "teaser_label",
+      "label": "Eyebrow text",
+      "info": "Small line above the feature, for example “New in”. For a product without input: the vendor.",
+      "visible_if": [
+       {
+        "setting": "teaser_product",
+        "label": "Product",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Collection",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Image",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Heading",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "teaser_product",
+        "label": "Product",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Collection",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Image",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Heading",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "feature_position",
+      "label": "Position",
+      "default": "end",
+      "options": [
+       {
+        "value": "end",
+        "label": "Right (end)"
+       },
+       {
+        "value": "start",
+        "label": "Left (start)"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "teaser_product",
+        "label": "Product",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Collection",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Image",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Heading",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "teaser_product",
+        "label": "Product",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Collection",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Image",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Heading",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "feature_items",
+      "label": "Only for these menu items",
+      "info": "Titles or handles of top-level menu items, separated by commas. Empty: in all submenus.",
+      "visible_if": [
+       {
+        "setting": "teaser_product",
+        "label": "Product",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Collection",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Image",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Heading",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "teaser_product",
+        "label": "Product",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Collection",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Image",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Heading",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Highlighted menu items"
+     },
+     {
+      "type": "text",
+      "id": "highlight_items",
+      "label": "Menu items",
+      "info": "Titles or handles separated by commas, for example Sale, New. Not case-sensitive.",
+      "placeholder": "Sale, New"
+     },
+     {
+      "type": "select",
+      "id": "highlight_color_source",
+      "label": "Highlight color",
+      "default": "custom",
+      "options": [
+       {
+        "value": "scheme",
+        "label": "Color scheme accent"
+       },
+       {
+        "value": "accent_1",
+        "label": "Brand color: accent 1"
+       },
+       {
+        "value": "accent_2",
+        "label": "Brand color: accent 2"
+       },
+       {
+        "value": "sale",
+        "label": "Brand color: promotion / sale"
+       },
+       {
+        "value": "highlight",
+        "label": "Brand color: highlight"
+       },
+       {
+        "value": "success",
+        "label": "Brand color: success / seal"
+       },
+       {
+        "value": "custom",
+        "label": "Custom color"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Color",
+      "info": "Empty: the color scheme’s accent color. Make sure there is enough contrast with the background (at least 4.5:1).",
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       },
+       "and",
+       {
+        "setting": "highlight_color_source",
+        "label": "Highlight color",
+        "op": "is",
+        "value": "Custom color"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "highlight_style",
+      "label": "Highlight style",
+      "info": "Underlined, dashed or bold sets highlighted menu items apart from the current page. The line uses the chosen color, the text keeps the text color.",
+      "default": "color",
+      "options": [
+       {
+        "value": "color",
+        "label": "Color"
+       },
+       {
+        "value": "underline",
+        "label": "Underlined"
+       },
+       {
+        "value": "dashed",
+        "label": "Dashed underline"
+       },
+       {
+        "value": "bold",
+        "label": "Bold"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "highlight_badge",
+      "label": "Badge text",
+      "info": "Short text next to highlighted menu items, for example “New”. Empty: no badge.",
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menu items",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Appearance (desktop)"
+     },
+     {
+      "type": "select",
+      "id": "link_style",
+      "label": "Link style",
+      "default": "underline",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text (accent color on hover)"
+       },
+       {
+        "value": "underline",
+        "label": "Underline on hover"
+       },
+       {
+        "value": "pill",
+        "label": "Filled (like buttons)"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "link_gap",
+      "label": "Spacing between items",
+      "default": "medium",
+      "options": [
+       {
+        "value": "small",
+        "label": "Small"
+       },
+       {
+        "value": "medium",
+        "label": "Medium"
+       },
+       {
+        "value": "large",
+        "label": "Large"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "text_size",
+      "label": "Font size",
+      "default": "medium",
+      "options": [
+       {
+        "value": "small",
+        "label": "Small"
+       },
+       {
+        "value": "medium",
+        "label": "Medium"
+       },
+       {
+        "value": "large",
+        "label": "Large"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Uppercase",
+      "default": false
+     },
+     {
+      "type": "checkbox",
+      "id": "show_chevrons",
+      "label": "Show arrows for submenus",
+      "info": "Without arrows, submenus still open on click, keyboard or hover.",
+      "default": true
+     },
+     {
+      "type": "header",
+      "content": "Mobile menu"
+     },
+     {
+      "type": "select",
+      "id": "mobile_localization",
+      "label": "Country and language in menu",
+      "info": "At the end of the mobile menu if the store offers more than one country or language. Uses the country filter from “Search, account, cart”.",
+      "default": "both",
+      "options": [
+       {
+        "value": "both",
+        "label": "Country and language"
+       },
+       {
+        "value": "country",
+        "label": "Country/region only"
+       },
+       {
+        "value": "language",
+        "label": "Language only"
+       },
+       {
+        "value": "none",
+        "label": "Off"
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "content": "Add images with text and link as “Image” blocks in this menu. They only appear in the mobile menu."
+     },
+     {
+      "type": "select",
+      "id": "mobile_tiles_position",
+      "label": "Image position",
+      "default": "after",
+      "options": [
+       {
+        "value": "before",
+        "label": "Before the menu"
+       },
+       {
+        "value": "between",
+        "label": "Between menu items"
+       },
+       {
+        "value": "after",
+        "label": "After the menu"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "mobile_tiles_after",
+      "label": "After menu item",
+      "default": 2,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "visible_if": [
+       {
+        "setting": "mobile_tiles_position",
+        "label": "Image position",
+        "op": "is",
+        "value": "Between menu items"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "mobile_tiles_position",
+        "label": "Image position",
+        "op": "is",
+        "value": "Between menu items"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mobile_tiles_columns",
+      "label": "Image columns",
+      "default": "2",
+      "options": [
+       {
+        "value": "1",
+        "label": "1"
+       },
+       {
+        "value": "2",
+        "label": "2"
+       },
+       {
+        "value": "3",
+        "label": "3"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mobile_tiles_ratio",
+      "label": "Image ratio",
+      "default": "4 / 5",
+      "options": [
+       {
+        "value": "1 / 1",
+        "label": "Square (1:1)"
+       },
+       {
+        "value": "4 / 5",
+        "label": "Portrait (4:5)"
+       },
+       {
+        "value": "3 / 2",
+        "label": "Landscape (3:2)"
+       },
+       {
+        "value": "16 / 9",
+        "label": "Wide (16:9)"
+       }
+      ]
+     }
+    ]
+   },
+   "de": {
+    "name": "Menü",
+    "category": null,
+    "settings": [
+     {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menü",
+      "default": "main-menu"
+     },
+     {
+      "type": "header",
+      "content": "Untermenüs"
+     },
+     {
+      "type": "checkbox",
+      "id": "open_on_hover",
+      "label": "Untermenüs beim Überfahren öffnen",
+      "default": true
+     },
+     {
+      "type": "select",
+      "id": "submenu_style",
+      "label": "Darstellung der Untermenüs",
+      "info": "Automatisch: Untermenüs mit einer Ebene als schlanke Liste unter dem Menüpunkt, das Mega-Menü bei einer dritten Ebene, Bildern an Links oder einer Hervorhebungsspalte. Gilt ab 990 px Breite; das mobile Menü bleibt gleich.",
+      "default": "auto",
+      "options": [
+       {
+        "value": "auto",
+        "label": "Automatisch"
+       },
+       {
+        "value": "mega",
+        "label": "Klassisch: Mega-Menü"
+       },
+       {
+        "value": "list",
+        "label": "Liste wie Auswahlfelder"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mega_width",
+      "label": "Breite",
+      "default": "full",
+      "options": [
+       {
+        "value": "full",
+        "label": "Ganze Seite"
+       },
+       {
+        "value": "content",
+        "label": "Nach Inhalt, unter dem Menüpunkt"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mega_columns",
+      "label": "Spalten",
+      "default": "auto",
+      "options": [
+       {
+        "value": "auto",
+        "label": "Automatisch"
+       },
+       {
+        "value": "2",
+        "label": "2"
+       },
+       {
+        "value": "3",
+        "label": "3"
+       },
+       {
+        "value": "4",
+        "label": "4"
+       },
+       {
+        "value": "5",
+        "label": "5"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "third_level",
+      "label": "Dritte Ebene im Mega-Menü",
+      "info": "Beim Überfahren: Die Links der dritten Ebene klappen unter dem Link der zweiten Ebene auf, sobald er mit der Maus überfahren oder per Tastatur erreicht wird. Auf Touch-Geräten bleiben sie sichtbar.",
+      "default": "always",
+      "options": [
+       {
+        "value": "always",
+        "label": "Immer sichtbar"
+       },
+       {
+        "value": "hover",
+        "label": "Beim Überfahren aufklappen"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "submenu_text_size",
+      "label": "Schriftgröße der Untermenüs",
+      "info": "Links der zweiten Ebene im Mega-Menü und in der Liste. „Klein“ hilft bei langen Namen, die sonst umbrechen.",
+      "default": "medium",
+      "options": [
+       {
+        "value": "small",
+        "label": "Klein"
+       },
+       {
+        "value": "medium",
+        "label": "Mittel"
+       },
+       {
+        "value": "large",
+        "label": "Groß"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_counts",
+      "label": "Produktanzahl anzeigen",
+      "info": "Zeigt bei Kollektionen im Menü die Anzahl der Produkte.",
+      "default": true
+     },
+     {
+      "type": "select",
+      "id": "link_images",
+      "label": "Bilder an Links",
+      "info": "Bild der verlinkten Kollektion bzw. des Produkts (zweite Ebene). Andere Links bleiben ohne Bild.",
+      "default": "none",
+      "options": [
+       {
+        "value": "none",
+        "label": "Keine"
+       },
+       {
+        "value": "thumb",
+        "label": "Klein neben dem Titel"
+       },
+       {
+        "value": "tile",
+        "label": "Groß über dem Titel"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "tile_items",
+      "label": "Bildkacheln bei diesen Menüpunkten",
+      "info": "Titel oder Handles der Hauptmenüpunkte, durch Komma getrennt. Diese Untermenüs zeigen große Bilder der verlinkten Kollektionen bzw. Produkte über dem Titel, bei Spalten „Automatisch“ höchstens vier nebeneinander. Die übrigen folgen „Bilder an Links“."
+     },
+     {
+      "type": "select",
+      "id": "link_image_ratio",
+      "label": "Bildformat",
+      "default": "1 / 1",
+      "options": [
+       {
+        "value": "1 / 1",
+        "label": "Quadratisch (1:1)"
+       },
+       {
+        "value": "4 / 5",
+        "label": "Hochformat (4:5)"
+       },
+       {
+        "value": "3 / 2",
+        "label": "Querformat (3:2)"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "link_images",
+        "label": "Bilder an Links",
+        "op": "is",
+        "value": "Groß über dem Titel"
+       },
+       "or",
+       {
+        "setting": "tile_items",
+        "label": "Bildkacheln bei diesen Menüpunkten",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "link_images",
+        "label": "Bilder an Links",
+        "op": "is",
+        "value": "Groß über dem Titel"
+       },
+       "or",
+       {
+        "setting": "tile_items",
+        "label": "Bildkacheln bei diesen Menüpunkten",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "color_scheme",
+      "id": "panel_scheme",
+      "label": "Farbschema des Menüs",
+      "default": "scheme-1"
+     },
+     {
+      "type": "header",
+      "content": "Hervorhebung im Untermenü"
+     },
+     {
+      "type": "select",
+      "id": "feature_type",
+      "label": "Inhalt",
+      "default": "product",
+      "options": [
+       {
+        "value": "product",
+        "label": "Produkt"
+       },
+       {
+        "value": "collection",
+        "label": "Kollektion"
+       },
+       {
+        "value": "image",
+        "label": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "product",
+      "id": "teaser_product",
+      "label": "Produkt",
+      "info": "Gilt bei Inhalt „Produkt“. Leer: keine Hervorhebung."
+     },
+     {
+      "type": "collection",
+      "id": "feature_collection",
+      "label": "Kollektion",
+      "info": "Gilt bei Inhalt „Kollektion“. Zeigt Kollektionsbild, Titel und Produktanzahl."
+     },
+     {
+      "type": "image_picker",
+      "id": "feature_image",
+      "label": "Bild",
+      "visible_if": [
+       {
+        "setting": "feature_type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "feature_type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "feature_heading",
+      "label": "Titel",
+      "visible_if": [
+       {
+        "setting": "feature_type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "feature_type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "url",
+      "id": "feature_link",
+      "label": "Link",
+      "visible_if": [
+       {
+        "setting": "feature_type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "feature_type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "teaser_label",
+      "label": "Dachzeile",
+      "info": "Kleine Zeile über der Hervorhebung, z. B. „Neu im Sortiment“. Beim Produkt ohne Eingabe: Hersteller.",
+      "visible_if": [
+       {
+        "setting": "teaser_product",
+        "label": "Produkt",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Kollektion",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Bild",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Titel",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "teaser_product",
+        "label": "Produkt",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Kollektion",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Bild",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Titel",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "feature_position",
+      "label": "Position",
+      "default": "end",
+      "options": [
+       {
+        "value": "end",
+        "label": "Rechts (am Ende)"
+       },
+       {
+        "value": "start",
+        "label": "Links (am Anfang)"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "teaser_product",
+        "label": "Produkt",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Kollektion",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Bild",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Titel",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "teaser_product",
+        "label": "Produkt",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Kollektion",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Bild",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Titel",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "feature_items",
+      "label": "Nur bei diesen Menüpunkten",
+      "info": "Titel oder Handles der Hauptmenüpunkte, durch Komma getrennt. Leer: bei allen Untermenüs.",
+      "visible_if": [
+       {
+        "setting": "teaser_product",
+        "label": "Produkt",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Kollektion",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Bild",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Titel",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "teaser_product",
+        "label": "Produkt",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_collection",
+        "label": "Kollektion",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_image",
+        "label": "Bild",
+        "op": "filled"
+       },
+       "or",
+       {
+        "setting": "feature_heading",
+        "label": "Titel",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Hervorgehobene Menüpunkte"
+     },
+     {
+      "type": "text",
+      "id": "highlight_items",
+      "label": "Menüpunkte",
+      "info": "Titel oder Handles, durch Komma getrennt, z. B. Sale, Neu. Groß- und Kleinschreibung spielt keine Rolle.",
+      "placeholder": "Sale, Neu"
+     },
+     {
+      "type": "select",
+      "id": "highlight_color_source",
+      "label": "Farbe der Hervorhebung",
+      "default": "custom",
+      "options": [
+       {
+        "value": "scheme",
+        "label": "Akzent des Farbschemas"
+       },
+       {
+        "value": "accent_1",
+        "label": "Markenfarbe: Akzent 1"
+       },
+       {
+        "value": "accent_2",
+        "label": "Markenfarbe: Akzent 2"
+       },
+       {
+        "value": "sale",
+        "label": "Markenfarbe: Aktion / Sale"
+       },
+       {
+        "value": "highlight",
+        "label": "Markenfarbe: Hervorhebung"
+       },
+       {
+        "value": "success",
+        "label": "Markenfarbe: Erfolg / Siegel"
+       },
+       {
+        "value": "custom",
+        "label": "Eigene Farbe"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Farbe",
+      "info": "Leer: Signalfarbe des Farbschemas. Auf Kontrast zum Hintergrund achten (mindestens 4,5 : 1).",
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       },
+       "and",
+       {
+        "setting": "highlight_color_source",
+        "label": "Farbe der Hervorhebung",
+        "op": "is",
+        "value": "Eigene Farbe"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "highlight_style",
+      "label": "Stil der Hervorhebung",
+      "info": "Unterstrichen, gestrichelt oder fett unterscheidet hervorgehobene Menüpunkte von der aktuellen Seite. Die Linie hat die gewählte Farbe, der Text bleibt in der Textfarbe.",
+      "default": "color",
+      "options": [
+       {
+        "value": "color",
+        "label": "Farbe"
+       },
+       {
+        "value": "underline",
+        "label": "Unterstrichen"
+       },
+       {
+        "value": "dashed",
+        "label": "Gestrichelt unterstrichen"
+       },
+       {
+        "value": "bold",
+        "label": "Fett"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "highlight_badge",
+      "label": "Badge-Text",
+      "info": "Kurzer Text neben hervorgehobenen Menüpunkten, z. B. „Neu“. Leer: kein Badge.",
+      "visible_if": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "highlight_items",
+        "label": "Menüpunkte",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Darstellung (Desktop)"
+     },
+     {
+      "type": "select",
+      "id": "link_style",
+      "label": "Link-Stil",
+      "default": "underline",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text (Akzentfarbe beim Überfahren)"
+       },
+       {
+        "value": "underline",
+        "label": "Unterstrichen beim Überfahren"
+       },
+       {
+        "value": "pill",
+        "label": "Fläche (wie Buttons)"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "link_gap",
+      "label": "Abstand zwischen Menüpunkten",
+      "default": "medium",
+      "options": [
+       {
+        "value": "small",
+        "label": "Klein"
+       },
+       {
+        "value": "medium",
+        "label": "Mittel"
+       },
+       {
+        "value": "large",
+        "label": "Groß"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "text_size",
+      "label": "Schriftgröße",
+      "default": "medium",
+      "options": [
+       {
+        "value": "small",
+        "label": "Klein"
+       },
+       {
+        "value": "medium",
+        "label": "Mittel"
+       },
+       {
+        "value": "large",
+        "label": "Groß"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Großbuchstaben",
+      "default": false
+     },
+     {
+      "type": "checkbox",
+      "id": "show_chevrons",
+      "label": "Pfeile bei Untermenüs zeigen",
+      "info": "Ohne Pfeile öffnen sich Untermenüs weiterhin per Klick, Tastatur oder beim Überfahren.",
+      "default": true
+     },
+     {
+      "type": "header",
+      "content": "Mobiles Menü"
+     },
+     {
+      "type": "select",
+      "id": "mobile_localization",
+      "label": "Land und Sprache im Menü",
+      "info": "Am Ende des mobilen Menüs, wenn der Shop mehr als ein Land bzw. eine Sprache anbietet. Nutzt den Länderfilter aus „Suche, Konto, Warenkorb“.",
+      "default": "both",
+      "options": [
+       {
+        "value": "both",
+        "label": "Land und Sprache"
+       },
+       {
+        "value": "country",
+        "label": "Nur Land/Region"
+       },
+       {
+        "value": "language",
+        "label": "Nur Sprache"
+       },
+       {
+        "value": "none",
+        "label": "Aus"
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "content": "Bilder mit Text und Link fügen Sie als Blöcke „Bild“ in diesem Menü hinzu. Sie erscheinen nur im mobilen Menü."
+     },
+     {
+      "type": "select",
+      "id": "mobile_tiles_position",
+      "label": "Position der Bilder",
+      "default": "after",
+      "options": [
+       {
+        "value": "before",
+        "label": "Vor dem Menü"
+       },
+       {
+        "value": "between",
+        "label": "Zwischen den Menüpunkten"
+       },
+       {
+        "value": "after",
+        "label": "Nach dem Menü"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "mobile_tiles_after",
+      "label": "Nach Menüpunkt",
+      "default": 2,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "visible_if": [
+       {
+        "setting": "mobile_tiles_position",
+        "label": "Position der Bilder",
+        "op": "is",
+        "value": "Zwischen den Menüpunkten"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "mobile_tiles_position",
+        "label": "Position der Bilder",
+        "op": "is",
+        "value": "Zwischen den Menüpunkten"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mobile_tiles_columns",
+      "label": "Spalten der Bilder",
+      "default": "2",
+      "options": [
+       {
+        "value": "1",
+        "label": "1"
+       },
+       {
+        "value": "2",
+        "label": "2"
+       },
+       {
+        "value": "3",
+        "label": "3"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "mobile_tiles_ratio",
+      "label": "Bildformat",
+      "default": "4 / 5",
+      "options": [
+       {
+        "value": "1 / 1",
+        "label": "Quadratisch (1:1)"
+       },
+       {
+        "value": "4 / 5",
+        "label": "Hochformat (4:5)"
+       },
+       {
+        "value": "3 / 2",
+        "label": "Querformat (3:2)"
+       },
+       {
+        "value": "16 / 9",
+        "label": "Breit (16:9)"
+       }
+      ]
+     }
+    ]
+   },
+   "type": "_header-menu",
+   "anchor": "header-menu",
+   "parent": null
+  },
+  {
+   "slug": "_header-menu-feature",
+   "kind": "block",
+   "source": "blocks/_header-menu-feature.liquid",
+   "source_sha1": "aba7fcb21be4",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Submenu feature",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Separate column in the submenu of a top-level menu item, on large screens only. The first matching feature is used for each menu item; up to 8 are shown."
+     },
+     {
+      "type": "text",
+      "id": "menu_item",
+      "label": "Menu item",
+      "info": "Title or handle of a top-level menu item with a submenu, for example “Tea”."
+     },
+     {
+      "type": "select",
+      "id": "type",
+      "label": "Content",
+      "default": "product",
+      "options": [
+       {
+        "value": "product",
+        "label": "Product"
+       },
+       {
+        "value": "collection",
+        "label": "Collection"
+       },
+       {
+        "value": "image",
+        "label": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Used with content “Product”. Empty: no feature."
+     },
+     {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Used with content “Collection”. Shows the collection image, title and product count."
+     },
+     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "visible_if": [
+       {
+        "setting": "type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "visible_if": [
+       {
+        "setting": "type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "visible_if": [
+       {
+        "setting": "type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "type",
+        "label": "Content",
+        "op": "is",
+        "value": "Image with link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow text",
+      "info": "Small line above the feature, for example “New in”. For a product without input: the vendor."
+     }
+    ]
+   },
+   "de": {
+    "name": "Hervorhebung",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Eigene Spalte im Untermenü eines Hauptmenüpunkts, nur auf großen Bildschirmen. Je Menüpunkt gilt die erste passende Hervorhebung, höchstens 8 werden angezeigt."
+     },
+     {
+      "type": "text",
+      "id": "menu_item",
+      "label": "Menüpunkt",
+      "info": "Titel oder Handle eines Hauptmenüpunkts mit Untermenü, z. B. „Tee“."
+     },
+     {
+      "type": "select",
+      "id": "type",
+      "label": "Inhalt",
+      "default": "product",
+      "options": [
+       {
+        "value": "product",
+        "label": "Produkt"
+       },
+       {
+        "value": "collection",
+        "label": "Kollektion"
+       },
+       {
+        "value": "image",
+        "label": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "product",
+      "id": "product",
+      "label": "Produkt",
+      "info": "Gilt bei Inhalt „Produkt“. Leer: keine Hervorhebung."
+     },
+     {
+      "type": "collection",
+      "id": "collection",
+      "label": "Kollektion",
+      "info": "Gilt bei Inhalt „Kollektion“. Zeigt Kollektionsbild, Titel und Produktanzahl."
+     },
+     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild",
+      "visible_if": [
+       {
+        "setting": "type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Titel",
+      "visible_if": [
+       {
+        "setting": "type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "visible_if": [
+       {
+        "setting": "type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "type",
+        "label": "Inhalt",
+        "op": "is",
+        "value": "Bild mit Link"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "label",
+      "label": "Dachzeile",
+      "info": "Kleine Zeile über der Hervorhebung, z. B. „Neu im Sortiment“. Beim Produkt ohne Eingabe: Hersteller."
+     }
+    ]
+   },
+   "type": "_header-menu-feature",
+   "anchor": "header-menu-feature",
+   "parent": "_header-menu"
+  },
+  {
+   "slug": "_header-menu-tile",
+   "kind": "block",
+   "source": "blocks/_header-menu-tile.liquid",
+   "source_sha1": "871baece6a26",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Image (mobile menu)",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Only appears in the mobile menu. Set the position, columns and image ratio in the “Menu” block."
+     },
+     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+     },
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+     },
+     {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+     },
+     {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+     }
+    ]
+   },
+   "de": {
+    "name": "Bild (mobiles Menü)",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Erscheint nur im mobilen Menü. Position, Spalten und Bildformat stellen Sie im Block „Menü“ ein."
+     },
+     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild"
+     },
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Titel"
+     },
+     {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+     },
+     {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+     }
+    ]
+   },
+   "type": "_header-menu-tile",
+   "anchor": "header-menu-tile",
+   "parent": "_header-menu"
+  },
+  {
+   "slug": "_header-actions",
+   "kind": "block",
+   "source": "blocks/_header-actions.liquid",
+   "source_sha1": "13008df78dc5",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Search, account, cart",
+    "category": null,
+    "settings": [
+     {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show search",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_account",
+      "label": "Show account",
+      "default": true
+     },
+     {
+      "type": "header",
+      "content": "Display"
+     },
+     {
+      "type": "select",
+      "id": "search_display",
+      "label": "Search",
+      "default": "text",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text"
+       },
+       {
+        "value": "icon",
+        "label": "Icon"
+       },
+       {
+        "value": "icon_text",
+        "label": "Icon and text"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Show search",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "account_display",
+      "label": "Account",
+      "default": "text",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text"
+       },
+       {
+        "value": "icon",
+        "label": "Icon"
+       },
+       {
+        "value": "icon_text",
+        "label": "Icon and text"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_account",
+        "label": "Show account",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "cart_display",
+      "label": "Cart",
+      "default": "text",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text"
+       },
+       {
+        "value": "icon",
+        "label": "Icon"
+       },
+       {
+        "value": "icon_text",
+        "label": "Icon and text"
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "content": "Choose how the cart count appears (brackets, bubble, dot, number) under Theme settings › Cart. It also applies in the cart drawer and on the cart page."
+     },
+     {
+      "type": "header",
+      "content": "Search"
+     },
+     {
+      "type": "select",
+      "id": "search_style",
+      "label": "Style",
+      "info": "Suggestions always appear in the panel. Live search shows a field in the header from 1200 px; when space is tight and on smaller screens it expands.",
+      "default": "panel",
+      "options": [
+       {
+        "value": "panel",
+        "label": "Panel below the header"
+       },
+       {
+        "value": "expand",
+        "label": "Field expands in the header"
+       },
+       {
+        "value": "inline",
+        "label": "Live search in the header"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Show search",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "link_list",
+      "id": "search_menu",
+      "label": "Quick links",
+      "info": "Menu shown in the panel while the search field is empty. The menu title is used as the heading.",
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Show search",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "collection",
+      "id": "search_collection",
+      "label": "Product suggestions",
+      "info": "Only with search turned on: up to 4 products from this collection while the search field is empty."
+     },
+     {
+      "type": "header",
+      "content": "Country and language"
+     },
+     {
+      "type": "checkbox",
+      "id": "show_country",
+      "label": "Show country/region",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_language",
+      "label": "Show language",
+      "default": true
+     },
+     {
+      "type": "select",
+      "id": "localization_style",
+      "label": "Style",
+      "info": "Default: one button with short codes that opens country and language side by side. “In the announcement bar” needs the “Announcement bar” section in the header; if it is missing or hidden, the default style is shown. On mobile the selection is always in the mobile menu.",
+      "default": "dropdown",
+      "options": [
+       {
+        "value": "dropdown",
+        "label": "One button, two columns"
+       },
+       {
+        "value": "split",
+        "label": "Two buttons"
+       },
+       {
+        "value": "announcement",
+        "label": "In the announcement bar"
+       },
+       {
+        "value": "panel",
+        "label": "Panel below the header (previous style)"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_language",
+        "label": "Show language",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "localization_icon",
+      "label": "Icon",
+      "default": "flag",
+      "options": [
+       {
+        "value": "flag",
+        "label": "Flag of the current country"
+       },
+       {
+        "value": "globe",
+        "label": "Globe"
+       },
+       {
+        "value": "none",
+        "label": "No icon"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "localization_style",
+        "label": "Style",
+        "op": "is_not",
+        "value": "Two buttons"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_flags",
+      "label": "Flags in the country list",
+      "default": true,
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_localization_mobile",
+      "label": "Also show in the header on phones",
+      "info": "As an icon next to the cart. The selector in the mobile menu stays as well.",
+      "default": false,
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_language",
+        "label": "Show language",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "country_filter",
+      "label": "Countries in the selector",
+      "default": "all",
+      "options": [
+       {
+        "value": "all",
+        "label": "All countries in your markets"
+       },
+       {
+        "value": "include",
+        "label": "Only these countries"
+       },
+       {
+        "value": "exclude",
+        "label": "All except these countries"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "country_codes",
+      "label": "Country codes",
+      "info": "ISO codes separated by commas, e.g. DE, AT, CH. With “Only these countries” this order is kept; the current country always appears. Applies to the header and mobile menu, not the footer.",
+      "placeholder": "US, CA, GB",
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region",
+        "op": "on"
+       },
+       "and",
+       {
+        "setting": "country_filter",
+        "label": "Countries in the selector",
+        "op": "is_not",
+        "value": "All countries in your markets"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "country_filter",
+        "label": "Countries in the selector",
+        "op": "is_not",
+        "value": "All countries in your markets"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Panels"
+     },
+     {
+      "type": "color_scheme",
+      "id": "panel_scheme",
+      "label": "Search and country/language color scheme",
+      "info": "For a consistent look, choose the same scheme as the menu (“Menu” block).",
+      "default": "scheme-1",
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Show search",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_country",
+        "label": "Show country/region",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_language",
+        "label": "Show language",
+        "op": "on"
+       }
+      ]
+     }
+    ]
+   },
+   "de": {
+    "name": "Suche, Konto, Warenkorb",
+    "category": null,
+    "settings": [
+     {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Suche anzeigen",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_account",
+      "label": "Konto anzeigen",
+      "default": true
+     },
+     {
+      "type": "header",
+      "content": "Darstellung"
+     },
+     {
+      "type": "select",
+      "id": "search_display",
+      "label": "Suche",
+      "default": "text",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text"
+       },
+       {
+        "value": "icon",
+        "label": "Symbol"
+       },
+       {
+        "value": "icon_text",
+        "label": "Symbol und Text"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Suche anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "account_display",
+      "label": "Konto",
+      "default": "text",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text"
+       },
+       {
+        "value": "icon",
+        "label": "Symbol"
+       },
+       {
+        "value": "icon_text",
+        "label": "Symbol und Text"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_account",
+        "label": "Konto anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "cart_display",
+      "label": "Warenkorb",
+      "default": "text",
+      "options": [
+       {
+        "value": "text",
+        "label": "Text"
+       },
+       {
+        "value": "icon",
+        "label": "Symbol"
+       },
+       {
+        "value": "icon_text",
+        "label": "Symbol und Text"
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "content": "Wie die Anzahl im Warenkorb erscheint (Klammern, Blase, Punkt, Zahl), stellen Sie unter Theme-Einstellungen › Warenkorb ein. Das gilt auch im Warenkorb-Drawer und auf der Warenkorbseite."
+     },
+     {
+      "type": "header",
+      "content": "Suche"
+     },
+     {
+      "type": "select",
+      "id": "search_style",
+      "label": "Darstellung",
+      "info": "Vorschläge erscheinen immer im Panel. Die Live-Suche steht ab 1200 px als Feld in der Kopfzeile; bei Platzmangel und auf kleineren Bildschirmen klappt sie aus.",
+      "default": "panel",
+      "options": [
+       {
+        "value": "panel",
+        "label": "Panel unter der Kopfzeile"
+       },
+       {
+        "value": "expand",
+        "label": "Feld klappt in der Kopfzeile aus"
+       },
+       {
+        "value": "inline",
+        "label": "Live-Suche in der Kopfzeile"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Suche anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "link_list",
+      "id": "search_menu",
+      "label": "Schnelllinks",
+      "info": "Menü, das bei leerem Suchfeld im Panel erscheint. Der Menütitel ist die Überschrift.",
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Suche anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "collection",
+      "id": "search_collection",
+      "label": "Produktvorschläge",
+      "info": "Nur bei eingeschalteter Suche: bis zu 4 Produkte dieser Kollektion bei leerem Suchfeld."
+     },
+     {
+      "type": "header",
+      "content": "Land und Sprache"
+     },
+     {
+      "type": "checkbox",
+      "id": "show_country",
+      "label": "Land/Region anzeigen",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_language",
+      "label": "Sprache anzeigen",
+      "default": true
+     },
+     {
+      "type": "select",
+      "id": "localization_style",
+      "label": "Darstellung",
+      "info": "Standard: ein Knopf mit Kürzeln, Land und Sprache nebeneinander in einer Liste. „In der Ankündigungsleiste“ braucht die Section „Ankündigungsleiste“ in der Kopfzeile; fehlt sie oder ist sie ausgeblendet, erscheint die Standard-Darstellung. Am Handy steht die Auswahl immer im mobilen Menü.",
+      "default": "dropdown",
+      "options": [
+       {
+        "value": "dropdown",
+        "label": "Ein Knopf, zwei Spalten"
+       },
+       {
+        "value": "split",
+        "label": "Zwei Knöpfe"
+       },
+       {
+        "value": "announcement",
+        "label": "In der Ankündigungsleiste"
+       },
+       {
+        "value": "panel",
+        "label": "Panel unter der Kopfzeile (bisherige Darstellung)"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Land/Region anzeigen",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_language",
+        "label": "Sprache anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "localization_icon",
+      "label": "Symbol",
+      "default": "flag",
+      "options": [
+       {
+        "value": "flag",
+        "label": "Flagge des aktuellen Landes"
+       },
+       {
+        "value": "globe",
+        "label": "Globus"
+       },
+       {
+        "value": "none",
+        "label": "Kein Symbol"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "localization_style",
+        "label": "Darstellung",
+        "op": "is_not",
+        "value": "Zwei Knöpfe"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_flags",
+      "label": "Flaggen in der Länderliste",
+      "default": true,
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Land/Region anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_localization_mobile",
+      "label": "Auch am Handy in der Kopfzeile zeigen",
+      "info": "Als Symbol neben dem Warenkorb. Die Auswahl im mobilen Menü bleibt bestehen.",
+      "default": false,
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Land/Region anzeigen",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_language",
+        "label": "Sprache anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "country_filter",
+      "label": "Länder in der Auswahl",
+      "default": "all",
+      "options": [
+       {
+        "value": "all",
+        "label": "Alle Länder der Märkte"
+       },
+       {
+        "value": "include",
+        "label": "Nur diese Länder"
+       },
+       {
+        "value": "exclude",
+        "label": "Alle außer diesen Ländern"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Land/Region anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "country_codes",
+      "label": "Ländercodes",
+      "info": "ISO-Codes mit Komma, z. B. DE, AT, CH. Bei „Nur diese Länder“ gilt diese Reihenfolge; das aktuelle Land erscheint immer. Gilt für Kopfzeile und mobiles Menü, nicht für die Fußzeile.",
+      "placeholder": "DE, AT, CH",
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Land/Region anzeigen",
+        "op": "on"
+       },
+       "and",
+       {
+        "setting": "country_filter",
+        "label": "Länder in der Auswahl",
+        "op": "is_not",
+        "value": "Alle Länder der Märkte"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "country_filter",
+        "label": "Länder in der Auswahl",
+        "op": "is_not",
+        "value": "Alle Länder der Märkte"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Panels"
+     },
+     {
+      "type": "color_scheme",
+      "id": "panel_scheme",
+      "label": "Farbschema von Suche und Land/Sprache",
+      "info": "Für ein einheitliches Bild dasselbe Schema wie beim Menü wählen (Block „Menü“).",
+      "default": "scheme-1",
+      "visible_if": [
+       {
+        "setting": "show_search",
+        "label": "Suche anzeigen",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_country",
+        "label": "Land/Region anzeigen",
+        "op": "on"
+       },
+       "or",
+       {
+        "setting": "show_language",
+        "label": "Sprache anzeigen",
+        "op": "on"
+       }
+      ]
+     }
+    ]
+   },
+   "type": "_header-actions",
+   "anchor": "header-actions",
+   "parent": null
+  }
+ ],
+ "theme_blocks": false,
+ "where": {
+  "group": "header",
+  "templates": [],
+  "demo_disabled": false,
+  "enabled_on": null,
+  "has_preset": false
+ }
+}

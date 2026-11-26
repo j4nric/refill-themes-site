@@ -1,0 +1,741 @@
+{
+ "slug": "scroll-story",
+ "kind": "section",
+ "source": "sections/scroll-story.liquid",
+ "source_sha1": "a387c4ecea5e",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Scroll story",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Slides blend into each other while scrolling; image and text stay in place. Keep texts short: each slide fills the screen. With reduced motion the slides are stacked."
+   },
+   {
+    "type": "header",
+    "content": "Animation"
+   },
+   {
+    "type": "select",
+    "id": "transition",
+    "label": "Transition",
+    "default": "zoom",
+    "options": [
+     {
+      "value": "fade",
+      "label": "Crossfade"
+     },
+     {
+      "value": "zoom",
+      "label": "Crossfade with image zoom"
+     },
+     {
+      "value": "slide",
+      "label": "Image slides in"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pace",
+    "label": "Slide change",
+    "info": "All at once: the next slide appears in full as soon as it reaches the top – no half-finished states. With scrolling: image and text blend continuously as you scroll (browsers without scroll animations always change all at once).",
+    "default": "switch",
+    "options": [
+     {
+      "value": "switch",
+      "label": "All at once (recommended)"
+     },
+     {
+      "value": "scrub",
+      "label": "With scrolling"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "step",
+    "label": "Scroll distance per slide",
+    "info": "How far visitors scroll until the next slide is fully shown.",
+    "default": "medium",
+    "options": [
+     {
+      "value": "short",
+      "label": "Short"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "long",
+      "label": "Long"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "snap",
+    "label": "Snap to slides",
+    "info": "After scrolling, the page stops on the nearest full slide.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_arrows",
+    "label": "Up and down arrows",
+    "info": "Jump straight to the previous or next slide.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "Animations are turned off (Theme settings › Animation): slides are stacked, transition and scroll distance do not apply."
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "select",
+    "id": "media_position",
+    "label": "Image (desktop)",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "First"
+     },
+     {
+      "value": "end",
+      "label": "Last"
+     },
+     {
+      "value": "alternate",
+      "label": "Alternating"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_index",
+    "label": "Number slides (01, 02 …)",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Scroll-Story",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Folien gehen beim Scrollen ineinander über, Bild und Text bleiben dabei stehen. Kurze Texte wählen: jede Folie füllt den Bildschirm. Bei „Bewegung reduzieren“ stehen die Folien untereinander."
+   },
+   {
+    "type": "header",
+    "content": "Animation"
+   },
+   {
+    "type": "select",
+    "id": "transition",
+    "label": "Übergang",
+    "default": "zoom",
+    "options": [
+     {
+      "value": "fade",
+      "label": "Überblenden"
+     },
+     {
+      "value": "zoom",
+      "label": "Überblenden mit Bild-Zoom"
+     },
+     {
+      "value": "slide",
+      "label": "Bild gleitet herein"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pace",
+    "label": "Wechsel",
+    "info": "Auf einmal: Die nächste Folie erscheint vollständig, sobald sie oben ankommt – kein halber Zwischenstand. Mit dem Scrollen: Bild und Text gehen stufenlos ineinander über (Browser ohne Scroll-Animationen wechseln immer auf einmal).",
+    "default": "switch",
+    "options": [
+     {
+      "value": "switch",
+      "label": "Auf einmal (empfohlen)"
+     },
+     {
+      "value": "scrub",
+      "label": "Mit dem Scrollen"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "step",
+    "label": "Scrollweg je Folie",
+    "info": "Wie weit gescrollt wird, bis die nächste Folie vollständig da ist.",
+    "default": "medium",
+    "options": [
+     {
+      "value": "short",
+      "label": "Kurz"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "long",
+      "label": "Lang"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "snap",
+    "label": "An Folien einrasten",
+    "info": "Nach dem Scrollen hält die Seite auf der nächsten ganzen Folie.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_arrows",
+    "label": "Pfeile hoch und runter",
+    "info": "Springen direkt zur vorigen bzw. nächsten Folie.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": "Animationen sind ausgeschaltet (Theme-Einstellungen › Animation): Die Folien stehen untereinander, Übergang und Scrollweg entfallen."
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "select",
+    "id": "media_position",
+    "label": "Bild (Desktop)",
+    "default": "start",
+    "options": [
+     {
+      "value": "start",
+      "label": "Vorne"
+     },
+     {
+      "value": "end",
+      "label": "Hinten"
+     },
+     {
+      "value": "alternate",
+      "label": "Abwechselnd"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_index",
+    "label": "Folien nummerieren (01, 02 …)",
+    "default": true
+   }
+  ]
+ },
+ "subblocks": [
+  {
+   "slug": "_story-slide",
+   "kind": "block",
+   "source": "blocks/_story-slide.liquid",
+   "source_sha1": "8500edf120a0",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Slide",
+    "category": null,
+    "settings": [
+     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+     },
+     {
+      "type": "checkbox",
+      "id": "priority",
+      "label": "Load image immediately",
+      "info": "Only for the first slide when the scroll story is at the very top of the page.",
+      "default": false,
+      "visible_if": [
+       {
+        "setting": "image",
+        "label": "Image",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "image",
+        "label": "Image",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+     },
+     {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+      "default": "One statement per slide"
+     },
+     {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level (SEO)",
+      "default": "h2",
+      "options": [
+       {
+        "value": "h2",
+        "label": "H2 – Section"
+       },
+       {
+        "value": "h3",
+        "label": "H3 – Subsection"
+       },
+       {
+        "value": "h4",
+        "label": "H4 – Minor subsection"
+       },
+       {
+        "value": "p",
+        "label": "Normal text"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "heading",
+        "label": "Heading",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+      "default": "One or two sentences that can be read while scrolling."
+     },
+     {
+      "type": "header",
+      "content": "Button"
+     },
+     {
+      "type": "text",
+      "id": "button_label",
+      "label": "Label"
+     },
+     {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link",
+      "visible_if": [
+       {
+        "setting": "button_label",
+        "label": "Label",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "button_label",
+        "label": "Label",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style",
+      "default": "primary",
+      "options": [
+       {
+        "value": "primary",
+        "label": "Primary"
+       },
+       {
+        "value": "secondary",
+        "label": "Secondary"
+       },
+       {
+        "value": "tertiary",
+        "label": "Tertiary"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "button_label",
+        "label": "Label",
+        "op": "filled"
+       },
+       "and",
+       {
+        "setting": "button_link",
+        "label": "Link",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "button_label",
+        "label": "Label",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button size",
+      "default": "normal",
+      "options": [
+       {
+        "value": "normal",
+        "label": "Normal"
+       },
+       {
+        "value": "small",
+        "label": "Small"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "button_label",
+        "label": "Label",
+        "op": "filled"
+       },
+       "and",
+       {
+        "setting": "button_link",
+        "label": "Link",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "button_label",
+        "label": "Label",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Design"
+     },
+     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+     }
+    ]
+   },
+   "de": {
+    "name": "Folie",
+    "category": null,
+    "settings": [
+     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild"
+     },
+     {
+      "type": "checkbox",
+      "id": "priority",
+      "label": "Bild sofort laden",
+      "info": "Nur für die erste Folie, wenn die Scroll-Story ganz oben auf der Seite steht.",
+      "default": false,
+      "visible_if": [
+       {
+        "setting": "image",
+        "label": "Bild",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "image",
+        "label": "Bild",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "label",
+      "label": "Kleine Überschrift",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+     },
+     {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+      "default": "Eine Aussage pro Folie"
+     },
+     {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Gliederungsebene (SEO)",
+      "default": "h2",
+      "options": [
+       {
+        "value": "h2",
+        "label": "H2 – Abschnitt"
+       },
+       {
+        "value": "h3",
+        "label": "H3 – Unterpunkt"
+       },
+       {
+        "value": "h4",
+        "label": "H4 – Unter-Unterpunkt"
+       },
+       {
+        "value": "p",
+        "label": "Normaler Text"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "heading",
+        "label": "Überschrift",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+      "default": "Ein bis zwei Sätze, die beim Scrollen gelesen werden können."
+     },
+     {
+      "type": "header",
+      "content": "Button"
+     },
+     {
+      "type": "text",
+      "id": "button_label",
+      "label": "Beschriftung"
+     },
+     {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link",
+      "visible_if": [
+       {
+        "setting": "button_label",
+        "label": "Beschriftung",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "button_label",
+        "label": "Beschriftung",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "button_style",
+      "label": "Stil",
+      "default": "primary",
+      "options": [
+       {
+        "value": "primary",
+        "label": "Primär"
+       },
+       {
+        "value": "secondary",
+        "label": "Sekundär"
+       },
+       {
+        "value": "tertiary",
+        "label": "Tertiär"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "button_label",
+        "label": "Beschriftung",
+        "op": "filled"
+       },
+       "and",
+       {
+        "setting": "button_link",
+        "label": "Link",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "button_label",
+        "label": "Beschriftung",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button-Größe",
+      "default": "normal",
+      "options": [
+       {
+        "value": "normal",
+        "label": "Normal"
+       },
+       {
+        "value": "small",
+        "label": "Klein"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "button_label",
+        "label": "Beschriftung",
+        "op": "filled"
+       },
+       "and",
+       {
+        "setting": "button_link",
+        "label": "Link",
+        "op": "filled"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "button_label",
+        "label": "Beschriftung",
+        "op": "filled"
+       }
+      ]
+     },
+     {
+      "type": "header",
+      "content": "Gestaltung"
+     },
+     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Farbschema",
+      "default": "scheme-1"
+     }
+    ]
+   },
+   "type": "_story-slide",
+   "anchor": "story-slide",
+   "parent": null
+  }
+ ],
+ "theme_blocks": false,
+ "where": {
+  "group": null,
+  "templates": [
+   "page"
+  ],
+  "demo_disabled": false,
+  "enabled_on": null,
+  "has_preset": true
+ }
+}

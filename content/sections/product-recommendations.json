@@ -1,0 +1,332 @@
+{
+ "slug": "product-recommendations",
+ "kind": "section",
+ "source": "sections/product-recommendations.liquid",
+ "source_sha1": "ce3fa893e44d",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Product recommendations",
+  "category": "Products and collections",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "You may also like"
+   },
+   {
+    "type": "select",
+    "id": "intent",
+    "label": "Recommendation type",
+    "info": "Complementary products are set up in the Search & Discovery app.",
+    "default": "related",
+    "options": [
+     {
+      "value": "related",
+      "label": "Similar products"
+     },
+     {
+      "value": "complementary",
+      "label": "Complementary products"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Number of products",
+    "default": 4,
+    "min": 2,
+    "max": 8,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Appearance"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Columns on large screens",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Show profile scales (e.g. scent, texture)",
+    "info": "Only when “Show profile scales on product cards” is on in theme settings.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Show unit price",
+    "info": "Price per unit of measure, e.g. €16.86/100 g. Usually required in the EU for goods sold by weight, volume or length: only turn off if it isn’t needed here.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Show “Compare” checkbox",
+    "info": "Only when the “Compare” checkbox is on in theme settings (product cards).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Spacing above and below",
+    "default": "medium",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Width",
+    "default": "page",
+    "options": [
+     {
+      "value": "page",
+      "label": "Page width"
+     },
+     {
+      "value": "full",
+      "label": "Full width"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Line above section",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Produktempfehlungen",
+  "category": "Produkte & Kollektionen",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Das könnte dir auch gefallen"
+   },
+   {
+    "type": "select",
+    "id": "intent",
+    "label": "Art der Empfehlung",
+    "info": "Ergänzende Produkte richten Sie in der App Search & Discovery ein.",
+    "default": "related",
+    "options": [
+     {
+      "value": "related",
+      "label": "Ähnliche Produkte"
+     },
+     {
+      "value": "complementary",
+      "label": "Ergänzende Produkte"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Anzahl Produkte",
+    "default": 4,
+    "min": 2,
+    "max": 8,
+    "step": 1
+   },
+   {
+    "type": "header",
+    "content": "Darstellung"
+   },
+   {
+    "type": "range",
+    "id": "columns",
+    "label": "Spalten auf großen Bildschirmen",
+    "default": 4,
+    "min": 2,
+    "max": 5,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Profil-Skalen zeigen (z. B. Duft, Textur)",
+    "info": "Nur wenn „Profil-Skalen in Produktkarten zeigen“ in den Theme-Einstellungen aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Grundpreis zeigen",
+    "info": "Preis je Mengeneinheit, z. B. 16,86 €/100 g. In der EU für Waren nach Gewicht, Volumen oder Länge meist Pflicht: nur abschalten, wenn er hier nicht nötig ist.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Häkchen „Vergleichen“ zeigen",
+    "info": "Nur wenn das Häkchen „Vergleichen“ in den Theme-Einstellungen (Produktkarten) aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Abstand oben und unten",
+    "default": "medium",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keiner"
+     },
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "width",
+    "label": "Breite",
+    "default": "page",
+    "options": [
+     {
+      "value": "page",
+      "label": "Seitenbreite"
+     },
+     {
+      "value": "full",
+      "label": "Volle Breite"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_rule",
+    "label": "Linie über dem Abschnitt",
+    "default": true
+   }
+  ]
+ },
+ "subblocks": [],
+ "theme_blocks": false,
+ "where": {
+  "group": null,
+  "templates": [
+   "product"
+  ],
+  "demo_disabled": false,
+  "enabled_on": {
+   "templates": [
+    "product"
+   ]
+  },
+  "has_preset": true
+ }
+}

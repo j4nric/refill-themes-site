@@ -10,6 +10,8 @@ Seiten (en = Hauptsprache, de unter /de/):
     /docs/<kapitel>/      /de/docs/<kapitel>/    ein Kapitel aus content/handbuch/<lang>/NN-<kapitel>.md
     /docs/blocks/         /de/docs/blocks/       Block-Galerie (content/blocks/index.json)
     /docs/blocks/<block>/ /de/docs/blocks/<block>/  Block-Seite (content/blocks/<block>.json + texts.json)
+    /docs/sections/       /de/docs/sections/     Abschnitts-Galerie (content/sections/index.json)
+    /docs/sections/<s>/   /de/docs/sections/<s>/ Abschnitts-Seite (content/sections/<s>.json + texts.json)
     /changelog/           /de/changelog/         aus 16-changelog.md
     /support/             /de/support/
     /privacy/             /de/datenschutz/
@@ -39,11 +41,12 @@ import json
 
 import markdown
 
-from editor_panel import render_panel
+from editor_panel import mark_html, render_panel
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content" / "handbuch"
 BLOCKS = ROOT / "content" / "blocks"
+SECTIONS = ROOT / "content" / "sections"
 SHOTS_MANIFEST = ROOT / "content" / "shots.json"
 SHOTS_CONFIG = ROOT / "shots.config.json"
 ASSETS = ROOT / "assets"
@@ -129,6 +132,24 @@ T = {
         "path_page": "Choose the page at the top",
         "path_add_block": "Add block",
         "home_desc": "Refill is a Shopify theme for products people buy again and again: supplements, tea, coffee and spices, natural cosmetics, pet food. Subscriptions, pack sizes, reorder and clear product facts are built in.",
+        "all_sections": "All sections",
+        "sections": "Sections",
+        "sections_title": "Sections",
+        "sections_lead": "Sections are the large building blocks of a page: header and footer, the main sections of the templates and the “Section” that holds your blocks. Click a section to see what it looks like and how to set it up.",
+        "sections_card": "{n} sections: header, footer, templates",
+        "sec_groups": {"header": "Header area", "footer": "Footer area", "main": "Main sections of the templates", "add": "To add to any page"},
+        "path_area": "“{area}” area in the sidebar",
+        "areas": {"header": "Header", "footer": "Footer", "template": "Template"},
+        "path_add_section": "Add section",
+        "note_fixed": "This section is a fixed part of the “{tpl}” template; it is not offered under “Add section”.",
+        "note_only_tpl": "Only available on “{tpl}” pages.",
+        "unavail_disabled": "The section is hidden in the demo stores – that’s why there is no picture here.",
+        "blocks_in_section": "Blocks in this section:",
+        "sub_title": "“{name}” block",
+        "sub_in": "inside the “{parent}” block",
+        "sub_marker": "{name} (block)",
+        "alt_desktop_sec": "“{name}” section on a computer, example from the demo store {shop}.",
+        "alt_mobile_sec": "“{name}” section on a phone.",
     },
     "de": {
         "skip": "Zum Inhalt springen",
@@ -188,6 +209,24 @@ T = {
         "path_page": "Oben die Seite wählen",
         "path_add_block": "Block hinzufügen",
         "home_desc": "Refill ist ein Shopify-Theme für Produkte, die Kunden regelmäßig nachkaufen: Nahrungsergänzung, Tee, Kaffee und Gewürze, Naturkosmetik, Tiernahrung. Abo, Packungsgrößen, „Erneut bestellen“ und klare Produktangaben sind eingebaut.",
+        "all_sections": "Alle Abschnitte",
+        "sections": "Abschnitte",
+        "sections_title": "Abschnitte",
+        "sections_lead": "Abschnitte sind die großen Bausteine einer Seite: Kopf- und Fußzeile, die Hauptabschnitte der Vorlagen und der „Abschnitt“, der Ihre Blöcke aufnimmt. Klicken Sie auf einen Abschnitt: Sie sehen, wie er aussieht und wie Sie ihn einstellen.",
+        "sections_card": "{n} Abschnitte: Kopfzeile, Fußzeile, Vorlagen",
+        "sec_groups": {"header": "Bereich Kopfzeile", "footer": "Bereich Fußzeile", "main": "Hauptabschnitte der Vorlagen", "add": "Zum Hinzufügen auf jeder Seite"},
+        "path_area": "Bereich „{area}“ in der Seitenleiste",
+        "areas": {"header": "Kopfzeile", "footer": "Fußzeile", "template": "Vorlage"},
+        "path_add_section": "Abschnitt hinzufügen",
+        "note_fixed": "Dieser Abschnitt gehört fest zur Vorlage „{tpl}“; unter „Abschnitt hinzufügen“ gibt es ihn nicht.",
+        "note_only_tpl": "Nur auf Seiten der Vorlage „{tpl}“ verfügbar.",
+        "unavail_disabled": "In den Demo-Shops ist der Abschnitt ausgeblendet – darum gibt es hier kein Bild.",
+        "blocks_in_section": "Blöcke in diesem Abschnitt:",
+        "sub_title": "Block „{name}“",
+        "sub_in": "im Block „{parent}“",
+        "sub_marker": "{name} (Block)",
+        "alt_desktop_sec": "Abschnitt „{name}“ am Computer, Beispiel aus dem Demo-Shop {shop}.",
+        "alt_mobile_sec": "Abschnitt „{name}“ am Handy.",
     },
 }
 
@@ -201,8 +240,10 @@ EDITOR_PAGE = {
            "page": "Seiten › Standardseite", "cart": "Warenkorb", "search": "Suche", "password": "Passwort", "404": "404-Seite"},
 }
 TEMPLATE_NAME = {
-    "en": {"cart": "Cart", "collection": "Collection", "search": "Search", "article": "Blog post", "page": "Page", "password": "Password"},
-    "de": {"cart": "Warenkorb", "collection": "Kollektion", "search": "Suche", "article": "Beitrag", "page": "Seite", "password": "Passwort"},
+    "en": {"cart": "Cart", "collection": "Collection", "search": "Search", "article": "Blog post", "page": "Page", "password": "Password",
+           "product": "Product"},
+    "de": {"cart": "Warenkorb", "collection": "Kollektion", "search": "Suche", "article": "Beitrag", "page": "Seite", "password": "Passwort",
+           "product": "Produkt"},
 }
 # Blöcke ohne Bild: Vorlage für den Klickweg
 FALLBACK_TEMPLATE = {"reorder": "index.json", "password-form": "password.json"}
@@ -365,7 +406,7 @@ def layout(*, lang: str, key: str | None, page: str | None, title: str, descript
     def nav_item(name: str, label: str) -> str:
         target = key_of(name, lang)
         current = page == name
-        if name == "docs" and page in ("chapter", "blocks", "block"):
+        if name == "docs" and page in ("chapter", "blocks", "block", "sections", "section"):
             current = True
         aria = ' aria-current="page"' if page == name else (' aria-current="true"' if current else "")
         return f'<li><a href="{href(k, target)}"{aria}>{esc(label)}</a></li>'
@@ -557,7 +598,8 @@ def page_home(lang: str, chapters: list[Chapter], version: str) -> str:
 
 
 def docs_sidebar(lang: str, key: str, chapters: list[Chapter], current: Chapter | None,
-                 blocks: "BlockSet | None" = None, current_block: str | None = None) -> tuple[str, str]:
+                 blocks: "BlockSet | None" = None, current_block: str | None = None,
+                 sections: "SectionSet | None" = None, current_section: str | None = None) -> tuple[str, str]:
     t = T[lang]
     items = []
     for c in chapters:
@@ -574,6 +616,16 @@ def docs_sidebar(lang: str, key: str, chapters: list[Chapter], current: Chapter 
             b_items.append(f'<li><a href="{href(key, blocks.key(lang, current_block))}" aria-current="page">'
                            f'<span class="data" aria-hidden="true">□</span> {esc(blocks.name(lang, current_block))}</a></li>')
         blk = f'<p class="label docs-nav__sub">{esc(t["blocks"])}</p><ul class="chapter-list">{"".join(b_items)}</ul>'
+    sections = sections if sections is not None else SITE_SECTIONS
+    if sections is not None and sections.slugs:
+        gkey = sections.gallery_key(lang)
+        aria = ' aria-current="page"' if current_section == "" else ""
+        s_items = [f'<li><a href="{href(key, gkey)}"{aria}><span class="data" aria-hidden="true">▤</span> '
+                   f'{esc(t["all_sections"])} <span class="data docs-nav__count">{len(sections.slugs)}</span></a></li>']
+        if current_section:
+            s_items.append(f'<li><a href="{href(key, sections.key(lang, current_section))}" aria-current="page">'
+                           f'<span class="data" aria-hidden="true">□</span> {esc(sections.name(lang, current_section))}</a></li>')
+        blk += f'<p class="label docs-nav__sub">{esc(t["sections"])}</p><ul class="chapter-list">{"".join(s_items)}</ul>'
     desktop = (f'<nav class="docs-nav docs-nav--wide" aria-label="{esc(t["docs_title"])}"><p class="label">{esc(t["chapters"])}</p>'
                f'{lst}{blk}</nav>')
     mobile = (
@@ -586,6 +638,7 @@ def docs_sidebar(lang: str, key: str, chapters: list[Chapter], current: Chapter 
 # --------------------------------------------------------------------------- Blöcke
 
 SHOTS_DATA = ROOT / "content" / "shots"
+SITE_SECTIONS = None  # SectionSet, in main() gesetzt; erscheint in der Seitenleiste aller Handbuch-Seiten
 
 
 class BlockSet:
@@ -634,6 +687,17 @@ class BlockSet:
 
     def template(self, slug: str) -> str | None:
         return self.shots.get(slug, {}).get("template") or FALLBACK_TEMPLATE.get(slug)
+
+    def marker(self, lang: str, key: str, slug: str, m: dict) -> tuple[str, str | None]:
+        """Markierung im Bild → (Text, Linkziel oder None)."""
+        data = self.data[slug]
+        ids = {s_["id"] for s_ in data[lang]["settings"] if "id" in s_}
+        label = marker_label(m, data, lang, self)
+        if m.get("setting") in ids:
+            return label, f'#{m["setting"]}'
+        if m.get("block") in self.by_slug:
+            return label, href(key, self.key(lang, m["block"]))
+        return label, None
 
 
 def img_tag(key: str, info: dict, alt: str, cls: str = "", sizes: str = "", small: dict | None = None,
@@ -699,8 +763,10 @@ def marker_label(m: dict, data: dict, lang: str, blocks: BlockSet) -> str:
     return T[lang]["block_marker"].format(name=blocks.name(lang, m["block"]) if m["block"] in blocks.by_slug else m["block"])
 
 
-def look_html(lang: str, slug: str, blocks: BlockSet, key: str, name: str, tx: dict) -> str:
+def look_html(lang: str, slug: str, blocks, key: str, name: str, tx: dict) -> str:
+    """„So sieht es aus“ – für Block-Seiten (BlockSet) und Abschnitts-Seiten (SectionSet)."""
     t = T[lang]
+    sec = isinstance(blocks, SectionSet)
     shot = blocks.shots.get(slug, {})
     if shot.get("unavailable"):
         return f'<p class="notice">{esc(t["unavail_" + shot["unavailable"]])}</p>'
@@ -708,19 +774,16 @@ def look_html(lang: str, slug: str, blocks: BlockSet, key: str, name: str, tx: d
     mob = blocks.image(lang, slug, "mobile")
     if not desk and not mob:
         return f'<p class="notice">{esc(t["shot_missing"])}</p>'
-    data = blocks.data[slug]
     shop = blocks.shops.get(shot.get("shop"), {}).get("name", "")
     markers = shot.get(lang, {}).get("markers", []) if desk else []
-    ids = {s_["id"] for s_ in data[lang]["settings"] if "id" in s_}
     zoom_sr = f'<span class="visually-hidden"> ({esc(t["shot_zoom"])})</span>'
     parts = []
     if desk:
-        alt = tx.get("alt_desktop") or t["alt_desktop"].format(name=name, shop=shop)
+        alt = tx.get("alt_desktop") or t["alt_desktop_sec" if sec else "alt_desktop"].format(name=name, shop=shop)
         small = blocks.image(lang, slug, "desktop_small")
         dots = []
         for m in markers:
-            target = (f'#{m["setting"]}' if m.get("setting") in ids
-                      else href(key, blocks.key(lang, m["block"])) if m.get("block") in blocks.by_slug else None)
+            target = blocks.marker(lang, key, slug, m)[1]
             box = m.get("box")
             # Punkt liegt im Element (kein Platz links daneben): auf die Ecke oben links setzen, damit er keinen Text verdeckt
             if box and m["x"] > box[0]:
@@ -741,7 +804,7 @@ def look_html(lang: str, slug: str, blocks: BlockSet, key: str, name: str, tx: d
             f'<figcaption class="label">{esc(t["shot_desktop"])}</figcaption></figure>')
     side = []
     if mob:
-        alt = tx.get("alt_mobile") or t["alt_mobile"].format(name=name)
+        alt = tx.get("alt_mobile") or t["alt_mobile_sec" if sec else "alt_mobile"].format(name=name)
         big = href(key, "assets/shots/" + mob["file"])
         side.append(f'<figure class="shot shot--mobile"><a class="shot__zoom" href="{big}" data-zoom>'
                     f'{img_tag(key, mob, alt, sizes="260px")}{zoom_sr}</a>'
@@ -750,11 +813,8 @@ def look_html(lang: str, slug: str, blocks: BlockSet, key: str, name: str, tx: d
     if markers:
         lis = []
         for m in markers:
-            label = esc(marker_label(m, data, lang, blocks))
-            if m.get("setting") in ids:
-                label = f'<a href="#{m["setting"]}">{label}</a>'
-            elif m.get("block") in blocks.by_slug:
-                label = f'<a href="{href(key, blocks.key(lang, m["block"]))}">{label}</a>'
+            text, target = blocks.marker(lang, key, slug, m)
+            label = f'<a href="{target}">{esc(text)}</a>' if target else esc(text)
             lis.append(f'<li><span class="ep-mark" aria-hidden="true">{m["n"]}</span> '
                        f'<span class="visually-hidden">{m["n"]} = </span>{label}</li>')
         legend = (f'<div class="markers"><h3 class="markers__title">{esc(t["markers_title"])}</h3>'
@@ -888,6 +948,247 @@ def page_blocks(lang: str, blocks: BlockSet, chapters: list[Chapter]) -> str:
                   body=body, alt_key=blocks.gallery_key(other))
 
 
+# --------------------------------------------------------------------------- Abschnitte (Sections)
+
+SEC_SHOTS = SHOTS_DATA / "sections"
+SEC_GROUP_ORDER = ("header", "footer", "main", "add")
+
+
+class SectionSet:
+    """Abschnitts-Daten aus content/sections/ (editor_panel.py --sections), Texte aus content/sections/texts.json,
+    Bilder und Markierungen aus content/shots/sections/<section>.json (shots.mjs --sections).
+
+    Eigene (private) Blöcke einer Section – z. B. „Logo“, „Menü“ der Kopfzeile – stehen auf der Abschnitts-Seite als
+    Unterabschnitte mit der Sprungmarke #<block ohne _> (z. B. #header-logo) und ihre Einstellungen als
+    #<block ohne _>-<setting_id> (z. B. #header-logo-logo_height)."""
+
+    def __init__(self, shops: dict, blocks: BlockSet):
+        self.blocks = blocks
+        self.index = json.loads((SECTIONS / "index.json").read_text(encoding="utf-8"))
+        self.texts = json.loads((SECTIONS / "texts.json").read_text(encoding="utf-8"))
+        self.shops = shops
+        self.by_slug = {b["slug"]: b for b in self.index}
+        self.data, self.shots, self.slugs = {}, {}, []
+        for b in self.index:
+            slug = b["slug"]
+            path = SECTIONS / f"{slug}.json"
+            if not path.exists():
+                raise SystemExit(f"content/sections/{slug}.json fehlt (python3 editor_panel.py --sections)")
+            if slug not in self.texts:
+                raise SystemExit(f"content/sections/texts.json: Texte für {slug} fehlen")
+            self.data[slug] = json.loads(path.read_text(encoding="utf-8"))
+            sp = SEC_SHOTS / f"{slug}.json"
+            if sp.exists():
+                self.shots[slug] = json.loads(sp.read_text(encoding="utf-8"))
+            self.slugs.append(slug)
+
+    @staticmethod
+    def gallery_key(lang: str) -> str:
+        return ("" if lang == "en" else "de/") + "docs/sections/"
+
+    def key(self, lang: str, slug: str) -> str:
+        return self.gallery_key(lang) + slug + "/"
+
+    def name(self, lang: str, slug: str) -> str:
+        return self.data[slug][lang]["name"]
+
+    def image(self, lang: str, slug: str, variant: str) -> dict | None:
+        info = self.shots.get(slug, {}).get(lang, {}).get(variant)
+        if info and (ASSETS / "shots" / info["file"]).exists():
+            return info
+        return None
+
+    def group(self, slug: str) -> str:
+        w = self.data[slug]["where"]
+        if w["group"]:
+            return w["group"]
+        return "add" if w["has_preset"] else "main"
+
+    def sub(self, slug: str, block_type: str) -> dict | None:
+        return next((x for x in self.data[slug]["subblocks"] if x["type"] == block_type), None)
+
+    def marker(self, lang: str, key: str, slug: str, m: dict) -> tuple[str, str | None]:
+        """{"setting": id} → Einstellung des Abschnitts; {"block": "_x"} → eigener Block; {"block": "_x", "setting": id} →
+        Einstellung im eigenen Block; {"block": "name"} → Block mit Block-Seite."""
+        t = T[lang]
+        if m.get("block") and not m["block"].startswith("_"):
+            b = m["block"]
+            if b in self.blocks.by_slug:
+                return t["block_marker"].format(name=self.blocks.name(lang, b)), href(key, self.blocks.key(lang, b))
+            return b, None
+        if m.get("block"):
+            sub = self.sub(slug, m["block"])
+            if sub is None:
+                return m["block"], None
+            bname = sub[lang]["name"]
+            if m.get("setting"):
+                st = next((x for x in sub[lang]["settings"] if x.get("id") == m["setting"]), None)
+                if st:
+                    return f'{bname}: {st["label"]}', f'#{sub["anchor"]}-{m["setting"]}'
+            return t["sub_marker"].format(name=bname), f'#{sub["anchor"]}'
+        st = next((x for x in self.data[slug][lang]["settings"] if x.get("id") == m.get("setting")), None)
+        if st:
+            return st["label"], f'#{m["setting"]}'
+        return m.get("setting", ""), None
+
+
+def page_section(lang: str, slug: str, secs: SectionSet, blocks: BlockSet, chapters: list[Chapter]) -> str:
+    t = T[lang]
+    key = secs.key(lang, slug)
+    other = "de" if lang == "en" else "en"
+    data = secs.data[slug]
+    tx = secs.texts[slug][lang]
+    name = data[lang]["name"]
+    where = data["where"]
+    look = look_html(lang, slug, secs, key, name, tx)
+    # Klickweg
+    shot = secs.shots.get(slug, {})
+    tpl = shot.get("template")
+    kind = tpl.split(".")[0] if tpl else (where["templates"][0] if len(where["templates"]) == 1 else None)
+    steps = [t["path_store"], t["path_themes"], t["path_customize"]]
+    if where["group"]:
+        steps.append(t["path_area"].format(area=t["areas"][where["group"]]))
+    else:
+        steps.append(tx.get("page") or (t["page_named"].format(page=EDITOR_PAGE[lang][kind]) if kind in EDITOR_PAGE[lang]
+                                         else t["path_page"]))
+        steps.append(t["path_area"].format(area=t["areas"]["template"]))
+        if where["has_preset"]:
+            steps.append(tx.get("add", t["path_add_section"]))
+            if data[lang].get("category"):
+                steps.append(data[lang]["category"])
+    steps.append(tx.get("preset") or name)
+    path_html = "".join(f'<li><span class="path__t">{esc(s_)}</span></li>' for s_ in steps)
+    notes = []
+    if tx.get("where_note"):
+        notes.append(tx["where_note"])
+    tpl_only = (where.get("enabled_on") or {}).get("templates") or []
+    if not where["has_preset"] and not where["group"] and len(where["templates"]) == 1 and where["templates"][0] in TEMPLATE_NAME[lang]:
+        notes.append(t["note_fixed"].format(tpl=TEMPLATE_NAME[lang][where["templates"][0]]))
+    elif len(tpl_only) == 1 and tpl_only[0] in TEMPLATE_NAME[lang]:
+        notes.append(t["note_only_tpl"].format(tpl=TEMPLATE_NAME[lang][tpl_only[0]]))
+    where_note = "".join(f'<p class="block-page__note">{md_inline(n)}</p>' for n in notes)
+    # Markierungen neben den Feldern
+    markers = shot.get(lang, {}).get("markers", []) if secs.image(lang, slug, "desktop") else []
+    marks = {m["setting"]: m["n"] for m in markers if m.get("setting") and not m.get("block")}
+    nested = [(m["n"], *secs.marker(lang, key, slug, m)) for m in markers
+              if m.get("block") and not m["block"].startswith("_")]
+    nested = [(n, label, url) for n, label, url in nested]
+    subs = data["subblocks"]
+    blocks_note = None
+    if subs:
+        items = []
+        for sub in subs:
+            if sub["parent"]:
+                continue
+            n = next((m["n"] for m in markers if m.get("block") == sub["type"] and not m.get("setting")), None)
+            mk = mark_html(n, lang) + " " if n else ""
+            items.append(f'<li>{mk}<a href="#{sub["anchor"]}">{esc(sub[lang]["name"])}</a></li>')
+        blocks_note = f'<p class="ep__para">{esc(t["blocks_in_section"])}</p><ul class="ep__nested">{"".join(items)}</ul>'
+    panel = render_panel(data, lang, prefix="", level=3, marks=marks, nested=nested, blocks_note=blocks_note)
+    sub_html = []
+    for sub in subs:
+        a = sub["anchor"]
+        sub_marks = {m["setting"]: m["n"] for m in markers if m.get("block") == sub["type"] and m.get("setting")}
+        title = t["sub_title"].format(name=sub[lang]["name"])
+        if sub["parent"]:
+            parent = secs.sub(slug, sub["parent"])
+            title += " – " + t["sub_in"].format(parent=parent[lang]["name"] if parent else sub["parent"])
+        lead = (tx.get("subs") or {}).get(a)
+        sub_html.append(
+            f'<div class="sub-block" id="{a}"><h3 class="sub-block__title" id="{a}--title">{esc(title)}</h3>'
+            + (f'<p class="sub-block__lead">{md_inline(lead)}</p>' if lead else "")
+            + render_panel(sub, lang, prefix=a + "-", level=4, marks=sub_marks) + "</div>")
+    tip_items = tx.get("tips", [])[:3]
+    tips = "".join(f"<li>{md_inline(x)}</li>" for x in tip_items)
+    more = tx.get("more")
+    more_html = ""
+    if more:
+        ch = next((c for c in chapters if c.slug == more[0]), None)
+        if ch is None or (more[1] and more[1] not in ch.ids):
+            raise SystemExit(f"Abschnitt {slug} ({lang}): Verweis {more} gibt es nicht")
+        more_html = f'<p><a class="link-arrow" href="{href(key, ch.key, more[1])}">{esc(more[2])}</a></p>'
+    tips_part = ""
+    if tips or more_html:
+        tips_list = f'<ul class="tips">{tips}</ul>' if tips else ""
+        tips_part = f"""<section class="block-page__part" aria-labelledby="tips-title" id="tips">
+        <h2 id="tips-title">{esc(t['bp_tips'])}</h2>
+        {tips_list}
+        {more_html}
+      </section>"""
+    desktop, mobile = docs_sidebar(lang, key, chapters, None, blocks, None, secs, slug)
+    body = f"""<div class="wrap docs">
+  {desktop}
+  <div class="docs__main">
+    {mobile}
+    <article class="block-page">
+      <p class="label"><a href="{href(key, key_of('docs', lang))}">{esc(t['docs_title'])}</a> · <a href="{href(key, secs.gallery_key(lang))}">{esc(t['sections'])}</a></p>
+      <h1>{esc(name)}</h1>
+      <p class="lead">{md_inline(tx['lead'])}</p>
+      <section class="block-page__part block-page__part--wide" aria-labelledby="look-title" id="look">
+        <h2 id="look-title">{esc(t['bp_look'])}</h2>
+        {look}
+      </section>
+      <section class="block-page__part" aria-labelledby="find-title" id="find">
+        <h2 id="find-title">{esc(t['bp_find'])}</h2>
+        <ol class="path">{path_html}</ol>
+        {where_note}
+      </section>
+      <section class="block-page__part" aria-labelledby="setup-title" id="setup">
+        <h2 id="setup-title">{esc(t['bp_setup'])}</h2>
+        {panel}
+        {"".join(sub_html)}
+      </section>
+      {tips_part}
+    </article>
+  </div>
+</div>
+<dialog id="zoom" class="zoom" aria-labelledby="zoom-title"><h2 id="zoom-title" class="visually-hidden">{esc(t['zoom_title'])}</h2><button type="button" class="zoom__close">{esc(t['close'])}</button><img alt=""></dialog>
+{BLOCK_SCRIPT}"""
+    # Sprungmarken sind Schnittstelle (Info-Texte im Theme verlinken darauf): doppelte ids nicht zulassen
+    ids = re.findall(r'\sid="([^"]+)"', body)
+    dup = {i for i in ids if ids.count(i) > 1}
+    if dup:
+        raise SystemExit(f"Abschnitt {slug} ({lang}): doppelte Sprungmarken {sorted(dup)}")
+    return layout(lang=lang, key=key, page="section", title=name, description=re.sub(r"<[^>]+>", "", md_inline(tx["lead"])),
+                  body=body, alt_key=secs.key(other, slug))
+
+
+def page_sections(lang: str, secs: SectionSet, blocks: BlockSet, chapters: list[Chapter]) -> str:
+    t = T[lang]
+    key = secs.gallery_key(lang)
+    other = "de" if lang == "en" else "en"
+    groups: dict[str, list] = {g: [] for g in SEC_GROUP_ORDER}
+    for slug in secs.slugs:
+        groups[secs.group(slug)].append(slug)
+    parts = []
+    for g, items in groups.items():
+        if not items:
+            continue
+        tiles = []
+        for slug in items:
+            info = secs.image(lang, slug, "thumb")
+            pic = (img_tag(key, info, "", "tile__img") if info else
+                   f'<span class="tile__img tile__img--empty" aria-hidden="true"><span>{esc(t["no_picture"])}</span></span>')
+            tiles.append(f'<li class="tile"><a href="{href(key, secs.key(lang, slug))}">{pic}'
+                         f'<span class="tile__name">{esc(secs.name(lang, slug))}</span></a></li>')
+        gid = "group-" + g
+        parts.append(f'<section class="tiles-group" aria-labelledby="{gid}"><h2 id="{gid}">{esc(t["sec_groups"][g])}</h2>'
+                     f'<ul class="tiles">{"".join(tiles)}</ul></section>')
+    desktop, mobile = docs_sidebar(lang, key, chapters, None, blocks, None, secs, "")
+    body = f"""<div class="wrap docs">
+  {desktop}
+  <div class="docs__main">
+    {mobile}
+    <p class="label"><a href="{href(key, key_of('docs', lang))}">{esc(t['docs_title'])}</a></p>
+    <h1>{esc(t['sections_title'])}</h1>
+    <p class="lead">{esc(t['sections_lead'])}</p>
+    {''.join(parts)}
+  </div>
+</div>"""
+    return layout(lang=lang, key=key, page="sections", title=t["sections_title"], description=t["sections_lead"],
+                  body=body, alt_key=secs.gallery_key(other))
+
+
 # --------------------------------------------------------------------------- Block-Links im Handbuch
 
 def link_blocks(body: str, lang: str, from_key: str, blocks: BlockSet) -> str:
@@ -895,9 +1196,23 @@ def link_blocks(body: str, lang: str, from_key: str, blocks: BlockSet) -> str:
 
     Erkannt werden: erste Zelle einer Tabelle mit Spaltenkopf „Block“ und Namen in Anführungszeichen direkt neben dem
     Wort Block/Blöcke („Block „Gruppe““, „„Spalten“-Block“). Nicht in Überschriften und vorhandenen Links."""
-    qa, qb = ("„", "“") if lang == "de" else ("“", "”")
     word = r"(?:Blocks?|Blöcke[n]?|Blockes)" if lang == "de" else r"(?:[Bb]locks?)"
-    names = sorted(((blocks.name(lang, s), s) for s in blocks.slugs), key=lambda x: -len(x[0]))
+    names = [(blocks.name(lang, s), s) for s in blocks.slugs]
+    return link_names(body, lang, from_key, names, lambda s: blocks.key(lang, s), word, "Block", "-Block")
+
+
+def link_sections(body: str, lang: str, from_key: str, secs: "SectionSet") -> str:
+    """Wie link_blocks für Abschnitte: Abschnitt „Kopfzeile“, „Fußzeile“-Abschnitt, Section „Scroll-Story“,
+    “Header” section; Tabellen mit Spaltenkopf „Abschnitt“/„Section“."""
+    word = r"(?:Abschnitts?|Abschnitte[n]?|Section)" if lang == "de" else r"(?:[Ss]ections?)"
+    names = [(secs.name(lang, s), s) for s in secs.slugs]
+    head = "Abschnitt" if lang == "de" else "Section"
+    return link_names(body, lang, from_key, names, lambda s: secs.key(lang, s), word, head, "-Abschnitt")
+
+
+def link_names(body: str, lang: str, from_key: str, names: list, key_fn, word: str, table_head: str, suffix: str) -> str:
+    qa, qb = ("„", "“") if lang == "de" else ("“", "”")
+    names = sorted(names, key=lambda x: -len(x[0]))
     chunks = re.split(r"(?=<h2[ >])", body)
     out = []
     for chunk in chunks:
@@ -914,7 +1229,7 @@ def link_blocks(body: str, lang: str, from_key: str, blocks: BlockSet) -> str:
         # 1. Tabellen mit Spaltenkopf „Block“
         def table_sub(tm: re.Match) -> str:
             tbl = tm.group(0)
-            if not re.search(r"<th[^>]*>\s*Block\s*</th>", tbl):
+            if not re.search(rf"<th[^>]*>\s*{table_head}\s*</th>", tbl):
                 return tbl
             def cell(cm: re.Match) -> str:
                 txt = html.unescape(cm.group(2))
@@ -922,7 +1237,7 @@ def link_blocks(body: str, lang: str, from_key: str, blocks: BlockSet) -> str:
                 if not slug or slug in done:
                     return cm.group(0)
                 done.add(slug)
-                return f'{cm.group(1)}<a href="{href(from_key, blocks.key(lang, slug))}">{cm.group(2)}</a></td>'
+                return f'{cm.group(1)}<a href="{href(from_key, key_fn(slug))}">{cm.group(2)}</a></td>'
             return re.sub(r"(<tr>\s*<td[^>]*>)([^<]+)</td>", cell, tbl)
         chunk = re.sub(r"<table>.*?</table>", table_sub, chunk, flags=re.S)
         # 2. Fließtext
@@ -930,14 +1245,14 @@ def link_blocks(body: str, lang: str, from_key: str, blocks: BlockSet) -> str:
             if slug in done:
                 continue
             q = re.escape(esc(n).replace("&quot;", '"'))
-            pat = re.compile(rf"({word}\s+(?:<strong>)?){qa}({q}){qb}|{qa}({q}){qb}((?:</strong>)?(?:-Block|\s+{word}))")
+            pat = re.compile(rf"({word}\s+(?:<strong>)?){qa}({q}){qb}|{qa}({q}){qb}((?:</strong>)?(?:{suffix}|\s+{word}))")
             for m in pat.finditer(chunk):
                 if blocked(m.start(), chunk):
                     continue
                 inner = m.group(2) or m.group(3)
                 start = m.start(2) - len(qa) if m.group(2) else m.start(3) - len(qa)
                 end = start + len(qa) + len(inner) + len(qb)
-                link = f'<a href="{href(from_key, blocks.key(lang, slug))}">{qa}{inner}{qb}</a>'
+                link = f'<a href="{href(from_key, key_fn(slug))}">{qa}{inner}{qb}</a>'
                 chunk = chunk[:start] + link + chunk[end:]
                 done.add(slug)
                 break
@@ -951,13 +1266,17 @@ TASKS = {
         ("Startseite gestalten", "Bilder, Texte und Abschnitte der Startseite anpassen.",
          [("Startseite in 4 Schritten", ("getting-started", "startseite")), ("Bild mit Text", ("block", "image-banner")),
           ("Text", ("block", "text")), ("Produkte aus Kollektion", ("block", "product-grid")),
-          ("Abschnitte und Blöcke", ("sections-and-blocks", ""))]),
+          ("Abschnitt", ("section", "custom-section")), ("Abschnitte und Blöcke", ("sections-and-blocks", ""))]),
         ("Farben und Schriften ändern", "Ihre Markenfarben und Schriften für den ganzen Shop.",
          [("Farben", ("getting-started", "farben")), ("Markenfarben", ("getting-started", "markenfarben")),
           ("Schriften", ("getting-started", "schriften")), ("Stile im Vergleich", ("presets", ""))]),
         ("Menü bauen", "Hauptmenü, Mega-Menü und Menü am Handy.",
          [("Menüs anlegen", ("getting-started", "menues")), ("Hauptmenü und Mega-Menü", ("header", "hauptmenue-und-mega-menue")),
-          ("Menü am Handy", ("header", "mobiles-menue"))]),
+          ("Menü am Handy", ("header", "mobiles-menue")), ("Block „Menü“ der Kopfzeile", ("section", "header#header-menu"))]),
+        ("Kopf- und Fußzeile", "Logo, Ankündigungen, Fußzeile und Popup – auf jeder Seite.",
+         [("Kopfzeile", ("section", "header")), ("Logo", ("section", "header#header-logo")),
+          ("Ankündigungsleiste", ("section", "announcement-bar")), ("Fußzeile", ("section", "footer")),
+          ("Popup", ("section", "popup")), ("Alle Abschnitte", ("section", ""))]),
         ("Abo anbieten", "Kundschaft bestellt regelmäßig – automatisch.",
          [("Abo-Plan anlegen", ("subscriptions", "1-abo-plan-anlegen")),
           ("Abo auf der Produktseite", ("subscriptions", "2-kaufoptionen-auf-der-produktseite")),
@@ -967,12 +1286,13 @@ TASKS = {
          [("Aufbau der Produktseite", ("product-page", "aufbau-der-vorlage")),
           ("Produktangaben einrichten", ("product-data", "uebersicht")),
           ("Produktbilder", ("block", "product-media")), ("Kennzahlen", ("block", "product-metrics")),
-          ("Icon mit Text", ("block", "icon-with-text"))],
+          ("Icon mit Text", ("block", "icon-with-text")), ("Abschnitt „Produktempfehlungen“", ("section", "product-recommendations"))],
          "Viele Angaben kommen aus Metafeldern. Ein Metafeld ist ein zusätzliches Feld am Produkt, z. B. für die Tagesdosis."),
         ("Pflichtangaben und Rechtliches", "Hersteller, Grundpreis, Rechtstexte – vor dem Start prüfen.",
          [("Hersteller (GPSR)", ("compliance", "1-hersteller-gpsr")), ("Grundpreis", ("compliance", "3-grundpreis")),
           ("Block „Pflichtangaben“", ("block", "mandatory-info")), ("Block „Produktsicherheit“", ("block", "product-safety")),
           ("Vor dem Start prüfen", ("compliance", "5-vor-dem-start-pruefen")),
+          ("Altersabfrage", ("section", "age-verification")),
           ("Barrierefreiheitserklärung", ("accessibility", "barrierefreiheitserklaerung-anlegen"))]),
         ("Sprachen und Länder", "Shop in mehreren Sprachen, Auswahl von Land und Sprache.",
          [("Land und Sprache", ("header", "land-und-sprache")),
@@ -987,13 +1307,17 @@ TASKS = {
         ("Design your home page", "Change images, texts and sections of your home page.",
          [("Home page in 4 steps", ("getting-started", "home-page")), ("Image with text", ("block", "image-banner")),
           ("Text", ("block", "text")), ("Products from collection", ("block", "product-grid")),
-          ("Sections and blocks", ("sections-and-blocks", ""))]),
+          ("Section", ("section", "custom-section")), ("Sections and blocks", ("sections-and-blocks", ""))]),
         ("Change colors and fonts", "Your brand colors and fonts for the whole store.",
          [("Colors", ("getting-started", "colors")), ("Brand colors", ("getting-started", "brand-colors")),
           ("Fonts", ("getting-started", "fonts")), ("Compare the styles", ("presets", ""))]),
         ("Build your menu", "Main menu, mega menu and the menu on phones.",
          [("Create menus", ("getting-started", "menus")), ("Main menu and mega menu", ("header", "main-menu-and-mega-menu")),
-          ("Menu on phones", ("header", "mobile-menu"))]),
+          ("Menu on phones", ("header", "mobile-menu")), ("Header “Menu” block", ("section", "header#header-menu"))]),
+        ("Header and footer", "Logo, announcements, footer and popup – on every page.",
+         [("Header", ("section", "header")), ("Logo", ("section", "header#header-logo")),
+          ("Announcement bar", ("section", "announcement-bar")), ("Footer", ("section", "footer")),
+          ("Popup", ("section", "popup")), ("All sections", ("section", ""))]),
         ("Offer subscriptions", "Customers order regularly – automatically.",
          [("Create a subscription plan", ("subscriptions", "1-create-a-subscription-plan")),
           ("Subscriptions on the product page", ("subscriptions", "2-purchase-options-on-the-product-page")),
@@ -1003,12 +1327,13 @@ TASKS = {
          [("How the product page is set up", ("product-page", "how-the-template-is-set-up")),
           ("Set up product data", ("product-data", "overview")),
           ("Product media", ("block", "product-media")), ("Key figures", ("block", "product-metrics")),
-          ("Icon with text", ("block", "icon-with-text"))],
+          ("Icon with text", ("block", "icon-with-text")), ("“Product recommendations” section", ("section", "product-recommendations"))],
          "Many facts come from metafields. A metafield is an extra field on a product, for example for the daily dose."),
         ("Mandatory information and legal", "Manufacturer, unit price, policies – check before launch.",
          [("Manufacturer (GPSR)", ("compliance", "1-manufacturer-gpsr")), ("Unit price", ("compliance", "3-unit-price")),
           ("“Mandatory information” block", ("block", "mandatory-info")), ("“Product safety” block", ("block", "product-safety")),
           ("Check before launch", ("compliance", "5-check-before-launch")),
+          ("Age verification", ("section", "age-verification")),
           ("Accessibility statement", ("accessibility", "creating-an-accessibility-statement"))]),
         ("Languages and countries", "Store in several languages, country and language selector.",
          [("Country and language", ("header", "country-and-language")),
@@ -1021,7 +1346,7 @@ TASKS = {
 }
 
 
-def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet) -> str:
+def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet, secs: "SectionSet") -> str:
     t = T[lang]
     key = key_of("docs", lang)
     by_slug = {c.slug: c for c in chapters}
@@ -1035,6 +1360,13 @@ def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet) -> str
                 if frag not in blocks.slugs:
                     raise SystemExit(f"Aufgabe {title}: Block-Seite {frag} gibt es nicht")
                 url = href(key, blocks.key(lang, frag))
+            elif target == "section":
+                slug_, _, anchor = frag.partition("#")
+                if slug_ and slug_ not in secs.slugs:
+                    raise SystemExit(f"Aufgabe {title}: Abschnitts-Seite {slug_} gibt es nicht")
+                if anchor and not any(x["anchor"] == anchor for x in secs.data[slug_]["subblocks"]):
+                    raise SystemExit(f"Aufgabe {title}: Sprungmarke {frag} gibt es nicht")
+                url = href(key, secs.key(lang, slug_) if slug_ else secs.gallery_key(lang), anchor)
             else:
                 ch = by_slug.get(target)
                 if ch is None or (frag and frag not in ch.ids):
@@ -1060,6 +1392,13 @@ def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet) -> str
     gallery = (f'<a class="gallery-card" href="{href(key, blocks.gallery_key(lang))}">{gallery_thumbs}'
                f'<span class="gallery-card__body"><span class="toc-card__title">{esc(t["blocks_title"])}</span>'
                f'<span class="gallery-card__text">{esc(t["blocks_card"].format(n=len(blocks.index)))}</span></span></a>')
+    sthumbs = [secs.image(lang, s_, "thumb") for s_ in ("header", "footer", "product")]
+    sthumbs = [i for i in sthumbs if i]
+    s_imgs = ('<span class="gallery-card__imgs" aria-hidden="true">' + "".join(img_tag(key, i, "") for i in sthumbs)
+              + "</span>") if sthumbs else ""
+    gallery += (f'<a class="gallery-card" href="{href(key, secs.gallery_key(lang))}">{s_imgs}'
+                f'<span class="gallery-card__body"><span class="toc-card__title">{esc(t["sections_title"])}</span>'
+                f'<span class="gallery-card__text">{esc(t["sections_card"].format(n=len(secs.slugs)))}</span></span></a>')
     desktop, mobile = docs_sidebar(lang, key, chapters, None, blocks)
     body = f"""<div class="wrap docs">
   {desktop}
@@ -1079,14 +1418,16 @@ def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet) -> str
                   body=body, alt_key=key_of("docs", "de" if lang == "en" else "en"))
 
 
-def page_chapter(lang: str, ch: Chapter, chapters: list[Chapter], alt: Chapter | None, blocks: BlockSet) -> str:
+def page_chapter(lang: str, ch: Chapter, chapters: list[Chapter], alt: Chapter | None, blocks: BlockSet,
+                 secs: "SectionSet") -> str:
     t = T[lang]
     key = ch.key
     i = chapters.index(ch)
     prev_c = chapters[i - 1] if i > 0 else None
     next_c = chapters[i + 1] if i + 1 < len(chapters) else None
     desktop, mobile = docs_sidebar(lang, key, chapters, ch, blocks)
-    content = ch.html if ch.slug == CHANGELOG_SLUG else link_blocks(ch.html, lang, key, blocks)
+    content = (ch.html if ch.slug == CHANGELOG_SLUG
+               else link_sections(link_blocks(ch.html, lang, key, blocks), lang, key, secs))
     toc = ""
     if len(ch.toc) > 1 and ch.slug != CHANGELOG_SLUG:
         toc = (f'<nav class="on-page" aria-labelledby="on-page-title"><h2 id="on-page-title" class="label">{esc(t["on_page"])}</h2><ul>'
@@ -1259,7 +1600,10 @@ def main() -> None:
         m = re.search(r"^## (\d+\.\d+\.\d+)", log.source, re.M)
         version = m.group(1) if m else version
 
+    global SITE_SECTIONS
     blocks = BlockSet()
+    secs = SectionSet(blocks.shops, blocks)
+    SITE_SECTIONS = secs
     pages: list[tuple[str, str]] = []  # (en_key, de_key) für die Sitemap
     for lang in LANGS:
         other = "de" if lang == "en" else "en"
@@ -1268,12 +1612,15 @@ def main() -> None:
         for c in chapters[lang]:
             render_chapter(c, by_file, lang)
         write(key_of("home", lang), page_home(lang, chapters[lang], version))
-        write(key_of("docs", lang), page_docs_index(lang, chapters[lang], blocks))
+        write(key_of("docs", lang), page_docs_index(lang, chapters[lang], blocks, secs))
+        write(secs.gallery_key(lang), page_sections(lang, secs, blocks, chapters[lang]))
+        for slug in secs.slugs:
+            write(secs.key(lang, slug), page_section(lang, slug, secs, blocks, chapters[lang]))
         write(blocks.gallery_key(lang), page_blocks(lang, blocks, chapters[lang]))
         for slug in blocks.slugs:
             write(blocks.key(lang, slug), page_block(lang, slug, blocks, chapters[lang]))
         for c in chapters[lang]:
-            write(c.key, page_chapter(lang, c, chapters[lang], by_slug[other].get(c.slug), blocks))
+            write(c.key, page_chapter(lang, c, chapters[lang], by_slug[other].get(c.slug), blocks, secs))
         write(key_of("support", lang), page_support(lang))
         write(key_of("legal", lang), page_legal(lang))
         write(key_of("privacy", lang), page_privacy(lang))
@@ -1283,6 +1630,9 @@ def main() -> None:
     pages.append((blocks.gallery_key("en"), blocks.gallery_key("de")))
     for slug in blocks.slugs:
         pages.append((blocks.key("en", slug), blocks.key("de", slug)))
+    pages.append((secs.gallery_key("en"), secs.gallery_key("de")))
+    for slug in secs.slugs:
+        pages.append((secs.key("en", slug), secs.key("de", slug)))
     for c in chapters["en"]:
         if c.slug != CHANGELOG_SLUG and c.slug in by_slug["de"]:
             pages.append((c.key, by_slug["de"][c.slug].key))

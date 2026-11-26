@@ -1,0 +1,152 @@
+{
+ "slug": "popup",
+ "kind": "section",
+ "source": "sections/popup.liquid",
+ "source_sha1": "a6bcdd370ffc",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Popup",
+  "category": "Buttons and promotions",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "If the popup promises a discount, create the matching discount code yourself under Discounts."
+   },
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+   },
+   {
+    "type": "header",
+    "content": "Display timing"
+   },
+   {
+    "type": "select",
+    "id": "pages",
+    "label": "Show on",
+    "default": "all",
+    "options": [
+     {
+      "value": "all",
+      "label": "All pages (except cart)"
+     },
+     {
+      "value": "home",
+      "label": "Home page only"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "delay",
+    "label": "Delay",
+    "default": 15,
+    "min": 5,
+    "max": 60,
+    "step": 5,
+    "unit": "s"
+   },
+   {
+    "type": "range",
+    "id": "frequency",
+    "label": "At most every … days",
+    "info": "After closing, the popup returns in this browser only after this time, and never after a newsletter signup.",
+    "default": 14,
+    "min": 1,
+    "max": 60,
+    "step": 1,
+    "unit": "d"
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   }
+  ]
+ },
+ "de": {
+  "name": "Popup",
+  "category": "Buttons & Aktionen",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Verspricht das Popup einen Rabatt, legen Sie den passenden Rabattcode selbst unter Rabatte an."
+   },
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Bild"
+   },
+   {
+    "type": "header",
+    "content": "Zeitpunkt der Anzeige"
+   },
+   {
+    "type": "select",
+    "id": "pages",
+    "label": "Anzeigen auf",
+    "default": "all",
+    "options": [
+     {
+      "value": "all",
+      "label": "Allen Seiten (außer Warenkorb)"
+     },
+     {
+      "value": "home",
+      "label": "Nur Startseite"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "delay",
+    "label": "Verzögerung",
+    "default": 15,
+    "min": 5,
+    "max": 60,
+    "step": 5,
+    "unit": "s"
+   },
+   {
+    "type": "range",
+    "id": "frequency",
+    "label": "Höchstens alle … Tage",
+    "info": "Nach dem Schließen erscheint das Popup in diesem Browser erst nach dieser Zeit wieder, nach einer Newsletter-Anmeldung nie mehr.",
+    "default": 14,
+    "min": 1,
+    "max": 60,
+    "step": 1,
+    "unit": "d"
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   }
+  ]
+ },
+ "subblocks": [],
+ "theme_blocks": true,
+ "where": {
+  "group": "footer",
+  "templates": [],
+  "demo_disabled": false,
+  "enabled_on": {
+   "groups": [
+    "footer"
+   ]
+  },
+  "has_preset": true
+ }
+}

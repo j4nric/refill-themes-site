@@ -259,5 +259,304 @@
    "a.button",
    "a.button-link"
   ]
+ },
+ "sections": {
+  "header": {
+   "shop": "nordform",
+   "template": "index.json",
+   "section": "header",
+   "hover": {
+    "desktop": ".header-menu__list > li:first-child > .header-menu__trigger"
+   },
+   "union": {
+    "desktop": [
+     "[id$='__announcement-bar']",
+     ".mega.header-panel"
+    ],
+    "mobile": [
+     "[id$='__announcement-bar']"
+    ]
+   },
+   "markers": [
+    {
+     "block": "_header-logo",
+     "sel": ".header-logo"
+    },
+    {
+     "block": "_header-menu",
+     "sel": ".header-menu__list"
+    },
+    {
+     "block": "_header-menu",
+     "setting": "show_counts",
+     "sel": ".mega__count"
+    },
+    {
+     "block": "_header-menu",
+     "setting": "teaser_label",
+     "sel": ".mega__feature > .label"
+    },
+    {
+     "block": "_header-actions",
+     "sel": ".header-actions"
+    },
+    {
+     "setting": "panel_animation",
+     "sel": ".mega__head"
+    }
+   ],
+   "top": true
+  },
+  "announcement-bar": {
+   "shop": "nordform",
+   "template": "index.json",
+   "section": "announcement-bar",
+   "union": {
+    "desktop": [
+     "[id$='__header']"
+    ],
+    "mobile": [
+     "[id$='__header']"
+    ]
+   },
+   "markers": [
+    {
+     "block": "_announcement",
+     "setting": "text",
+     "sel": ".announcement__link"
+    },
+    {
+     "block": "_announcement",
+     "setting": "code",
+     "sel": ".announcement__code"
+    }
+   ],
+   "top": true
+  },
+  "footer": {
+   "shop": "nordform",
+   "template": "index.json",
+   "section": "footer",
+   "markers": [
+    {
+     "setting": "heading_uppercase",
+     "sel": ".footer__heading"
+    },
+    {
+     "block": "_footer-text",
+     "sel": ".footer-text"
+    },
+    {
+     "block": "_footer-menu",
+     "sel": ".footer-menu"
+    },
+    {
+     "block": "_footer-newsletter",
+     "sel": ".footer-newsletter"
+    },
+    {
+     "block": "_footer-social",
+     "sel": ".footer-social"
+    },
+    {
+     "block": "_footer-bottom",
+     "setting": "show_country",
+     "sel": ".footer-bottom__localization"
+    },
+    {
+     "block": "_footer-bottom",
+     "setting": "show_payment_icons",
+     "sel": ".footer-bottom__payment"
+    },
+    {
+     "block": "_footer-bottom",
+     "setting": "show_policies",
+     "sel": ".footer-bottom__policies"
+    }
+   ]
+  },
+  "popup": {
+   "shop": "ostra",
+   "template": "index.json",
+   "section": "popup",
+   "dialog": "dialog.popup",
+   "markers": [
+    {
+     "setting": "image",
+     "sel": ".popup__media"
+    },
+    {
+     "block": "heading",
+     "sel": ".popup__content h1, .popup__content h2, .popup__content h3"
+    },
+    {
+     "block": "newsletter",
+     "sel": ".popup__content form"
+    }
+   ]
+  },
+  "age-verification": {
+   "unavailable": "disabled"
+  },
+  "product": {
+   "shop": "nordform",
+   "template": "product.json",
+   "section": "main",
+   "markers": [
+    {
+     "block": "product-media",
+     "sel": ".gallery"
+    },
+    {
+     "block": "product-title",
+     "sel": ".product-title"
+    },
+    {
+     "block": "product-price",
+     "sel": ".product-price"
+    },
+    {
+     "block": "purchase-options",
+     "sel": ".purchase"
+    },
+    {
+     "block": "buy-buttons",
+     "sel": ".buy"
+    }
+   ]
+  },
+  "product-recommendations": {
+   "shop": "nordform",
+   "template": "product.json",
+   "section": "recommendations",
+   "wait": 2500,
+   "markers": [
+    {
+     "setting": "heading",
+     "sel": "h2"
+    },
+    {
+     "setting": "columns",
+     "sel": ".product-grid__list, ul"
+    }
+   ]
+  },
+  "collection": {
+   "shop": "nordform",
+   "template": "collection.json",
+   "section": "main",
+   "markers": [
+    {
+     "block": "breadcrumbs",
+     "sel": ".breadcrumbs"
+    },
+    {
+     "block": "collection-header",
+     "sel": ".collection-header"
+    },
+    {
+     "block": "collection-nav",
+     "sel": ".collection-nav"
+    },
+    {
+     "block": "collection-products",
+     "sel": ".collection-products, .product-grid__list"
+    }
+   ]
+  },
+  "search": {
+   "shop": "nordform",
+   "template": "search.json",
+   "section": "main",
+   "markers": [
+    {
+     "block": "breadcrumbs",
+     "sel": ".breadcrumbs"
+    },
+    {
+     "block": "search-header",
+     "sel": ".search-header__title"
+    },
+    {
+     "block": "search-results",
+     "sel": ".facets-toolbar"
+    }
+   ]
+  },
+  "cart": {
+   "shop": "nordform",
+   "template": "cart.json",
+   "section": "main",
+   "cart": [
+    "/products/magnesium-bisglycinat",
+    "/products/kreatin-monohydrat"
+   ],
+   "markers": [
+    {
+     "block": "cart-items",
+     "sel": ".cart-items, .cart__items"
+    },
+    {
+     "block": "cart-summary",
+     "sel": ".cart-summary, .cart__summary"
+    }
+   ]
+  },
+  "custom-section": {
+   "shop": "nordform",
+   "template": "index.json",
+   "section": "subscription",
+   "markers": [
+    {
+     "setting": "color_scheme",
+     "sel": ".custom-section"
+    },
+    {
+     "setting": "width",
+     "sel": ".custom-section__content"
+    },
+    {
+     "setting": "decor_motif",
+     "sel": ".section-decor"
+    }
+   ]
+  },
+  "scroll-story": {
+   "shop": "nordform",
+   "template": "page.about.json",
+   "section": "story",
+   "markers": [
+    {
+     "block": "_story-slide",
+     "setting": "label",
+     "sel": ".story-slide__content .label"
+    },
+    {
+     "block": "_story-slide",
+     "setting": "heading",
+     "sel": ".story-slide__content h2, .story-slide__content h3"
+    },
+    {
+     "block": "_story-slide",
+     "setting": "image",
+     "sel": ".story-slide__media"
+    },
+    {
+     "setting": "show_index",
+     "sel": ".story-slide__index, .story-slide__count"
+    }
+   ]
+  },
+  "custom-code": {
+   "shop": "nordform",
+   "template": "page.aktion.json",
+   "section": "live",
+   "markers": [
+    {
+     "setting": "custom_liquid",
+     "sel": ".prose"
+    }
+   ]
+  }
  }
 }

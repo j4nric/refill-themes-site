@@ -8,6 +8,7 @@ Zwei Teile:
        python3 editor_panel.py --theme ../cadence-theme                 # alle Blöcke der Galerie + Block-Liste
        python3 editor_panel.py --theme ../cadence-theme text image      # nur diese (Block-Liste wird immer neu geschrieben)
        python3 editor_panel.py --theme ../cadence-theme --print text de # HTML einer Seitenleiste ausgeben
+       python3 editor_panel.py --theme ../cadence-theme --sections      # alle Sections mit Einstellungen
 
    Liest das {% schema %} aus blocks/<name>.liquid bzw. sections/<name>.liquid, löst alle t:-Schlüssel über
    locales/en.default.schema.json und locales/de.schema.json auf und schreibt das Ergebnis nach
@@ -16,6 +17,9 @@ Zwei Teile:
    Erneut laufen lassen, wenn sich ein Block im Theme ändert – die JSON-Dateien werden dann einfach ersetzt.
    Jedes visible_if wird mit den Standardwerten (Block bzw. Theme-Einstellungen) ausgewertet: Felder, die in der
    Standard-Konfiguration nicht sichtbar sind, bekommen "hidden_by_default" und "hidden_by" (die auslösende Bedingung).
+   Mit --sections: alle Sections mit mindestens einer Einstellung → content/sections/<name>.json, samt ihrer privaten
+   Blöcke („subblocks“, z. B. _header-logo, auch statische wie _footer-bottom) und Fundstellen in den Demo-Vorlagen
+   und Section-Gruppen („where“); Liste in content/sections/index.json.
 
 2. Darstellen (ohne Theme-Repo, nutzt build.py): render_panel(data, lang, prefix="") erzeugt HTML.
    Jede Einstellung bekommt die Sprungmarke <prefix><setting_id> (auf der Block-Seite ohne Präfix,
@@ -345,6 +349,94 @@ def demo_block_index(theme: Path, tr: Translator) -> list[dict]:
     return out
 
 
+SECTIONS_OUT = ROOT / "content" / "sections"
+GROUP_FILES = {"header": "header-group.json", "footer": "footer-group.json"}
+
+
+def private_blocks(theme: Path, kind_folder: str, name: str, schema: dict) -> list[str]:
+    """Private Blöcke („_name“) einer Section bzw. eines Blocks: aus "blocks" im Schema und statische Blöcke
+    ({% content_for 'block', type: '_x' %}), in der Reihenfolge des Schemas, statische zuletzt."""
+    out = [b["type"] for b in schema.get("blocks", []) if b.get("type", "").startswith("_")]
+    src = (theme / kind_folder / f"{name}.liquid").read_text(encoding="utf-8")
+    for m in re.finditer(r"content_for\s+'block',\s*type:\s*'(_[\w-]+)'", src):
+        if m.group(1) not in out:
+            out.append(m.group(1))
+    return out
+
+
+def section_uses(theme: Path) -> dict:
+    """Wo jede Section in den Demo-Vorlagen und Section-Gruppen steht: {typ: [{preset, file, id, disabled}]}."""
+    uses: dict[str, list] = {}
+    for preset in PRESETS:
+        base = theme / "demo" / preset / "files"
+        files = sorted((base / "templates").glob("*.json")) + sorted((base / "sections").glob("*.json"))
+        for f in files:
+            tpl = load_json(f)
+            for sid, sec in tpl.get("sections", {}).items():
+                uses.setdefault(sec["type"], []).append(
+                    {"preset": preset, "file": f"{f.parent.name}/{f.name}", "id": sid, "disabled": bool(sec.get("disabled"))})
+    return uses
+
+
+def extract_section(theme: Path, name: str, tr: Translator, labels: dict, defaults: dict, uses: dict) -> dict:
+    data = extract(theme, name, tr, labels, defaults)
+    schema = read_schema(theme / "sections" / f"{name}.liquid")
+    subs = []
+
+    def add(block_type: str, parent: str | None):
+        if any(x["type"] == block_type for x in subs):
+            return
+        sub = extract(theme, block_type, tr, labels, defaults)
+        sub.update({"type": block_type, "anchor": block_type.lstrip("_"), "parent": parent})
+        subs.append(sub)
+        for child in private_blocks(theme, "blocks", block_type, read_schema(theme / "blocks" / f"{block_type}.liquid")):
+            add(child, block_type)
+
+    for bt in private_blocks(theme, "sections", name, schema):
+        add(bt, None)
+    data["subblocks"] = subs
+    data["theme_blocks"] = any(b.get("type") == "@theme" for b in schema.get("blocks", []))
+    u = uses.get(name, [])
+    groups = sorted({x["file"].split("/")[1].replace("-group.json", "") for x in u if x["file"].startswith("sections/")})
+    data["where"] = {
+        "group": groups[0] if groups else None,
+        "templates": sorted({x["file"].split("/")[1].split(".")[0] for x in u if x["file"].startswith("templates/")}),
+        "demo_disabled": bool(u) and all(x["disabled"] for x in u),
+        "enabled_on": schema.get("enabled_on"),
+        "has_preset": bool(schema.get("presets")),
+    }
+    return data
+
+
+def section_names(theme: Path) -> list[str]:
+    """Sections mit Einstellungen für Händler: mindestens eine Einstellung (Teil-Updates wie *-partial haben keine)."""
+    out = []
+    for f in sorted((theme / "sections").glob("*.liquid")):
+        schema = read_schema(f)
+        if any("id" in s for s in schema.get("settings", [])):
+            out.append(f.stem)
+    return out
+
+
+def write_sections(theme: Path, tr: Translator, labels: dict, defaults: dict, only: list[str] | None = None) -> None:
+    SECTIONS_OUT.mkdir(parents=True, exist_ok=True)
+    uses = section_uses(theme)
+    index = []
+    for name in section_names(theme):
+        schema = read_schema(theme / "sections" / f"{name}.liquid")
+        category = next((p["category"] for p in schema.get("presets", []) if p.get("category")), None)
+        if not only or name in only:
+            data = extract_section(theme, name, tr, labels, defaults, uses)
+            (SECTIONS_OUT / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+            print(f"content/sections/{name}.json: {data['de']['name']} / {data['en']['name']}, "
+                  f"{sum(1 for s in data['en']['settings'] if 'id' in s)} Einstellungen, "
+                  f"{len(data['subblocks'])} eigene Blöcke")
+        index.append({"slug": name, "name": tr.both(schema.get("name", name)),
+                      "category": tr.both(category) if category else None})
+    (SECTIONS_OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"content/sections/index.json: {len(index)} Sections")
+
+
 # --------------------------------------------------------------------------- Darstellen
 
 UI = {
@@ -548,13 +640,14 @@ def field_html(s: dict, lang: str, prefix: str, ids: set[str], h: str, marks: di
 
 
 def render_panel(data: dict, lang: str, prefix: str = "", level: int = 3, marks: dict | None = None,
-                 nested: list | None = None, collapse: bool = True) -> str:
+                 nested: list | None = None, collapse: bool = True, blocks_note: str | None = None) -> str:
     """HTML der Seitenleiste. level = Überschriftenebene des Blocknamens (Felder darunter +1/+2).
 
     marks: {setting_id: Nummer} – Nummer der Markierung im Bild neben dem Feld.
     nested: [(Nummer, Name, URL oder None)] – Unterblöcke, die im Bild markiert sind.
     collapse: Felder, die in der Standard-Konfiguration nicht sichtbar sind, gruppiert in zugeklappten
     <details>-Bereichen unter den sichtbaren Feldern (gruppiert nach der auslösenden Bedingung).
+    blocks_note: HTML statt des Hinweises „Kann weitere Blöcke enthalten“ (Sections mit eigenen Blöcken).
     """
     d = data[lang]
     u = UI[lang]
@@ -596,7 +689,9 @@ def render_panel(data: dict, lang: str, prefix: str = "", level: int = 3, marks:
         title = u["more_if"].format(c=condition_text(g["cond"], lang), n=n)
         more.append(f'<details class="ep__more"><summary>{esc(title)}</summary><div class="ep__more-body">{"".join(g["rows"])}</div></details>')
     nested_html = ""
-    if data.get("accepts_blocks"):
+    if blocks_note is not None:
+        nested_html = blocks_note
+    elif data.get("accepts_blocks"):
         extra = ""
         if nested:
             items = []
@@ -622,17 +717,27 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("names", nargs="*", help="Blöcke/Sections (Dateiname ohne .liquid); leer = Pilot-Blöcke")
     ap.add_argument("--theme", default=str(ROOT.parent / "cadence-theme"), help="Pfad zum Theme-Repo")
+    ap.add_argument("--sections", action="store_true", help="Sections statt Blöcke (content/sections/)")
     ap.add_argument("--print", nargs=2, metavar=("NAME", "LANG"), help="HTML einer Seitenleiste ausgeben")
     args = ap.parse_args()
     theme = Path(args.theme)
     if args.print:
-        print(render_panel(load_data(args.print[0]), args.print[1]))
+        if args.sections:
+            data = json.loads((SECTIONS_OUT / f"{args.print[0]}.json").read_text(encoding="utf-8"))
+        else:
+            data = load_data(args.print[0])
+        print(render_panel(data, args.print[1]))
         return 0
     if not (theme / "locales").is_dir():
         raise SystemExit(f"Theme-Repo nicht gefunden: {theme} (--theme angeben)")
     tr = Translator(theme)
     labels = theme_setting_labels(theme, tr)
     defaults = theme_setting_defaults(theme)
+    if args.sections:
+        write_sections(theme, tr, labels, defaults, args.names or None)
+        if tr.missing:
+            print("Ohne Übersetzung (Schlüsselname gezeigt):", ", ".join(sorted(tr.missing)), file=sys.stderr)
+        return 0
     OUT.mkdir(parents=True, exist_ok=True)
     index = demo_block_index(theme, tr)
     names = args.names or [b["slug"] for b in index]

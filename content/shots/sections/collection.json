@@ -1,0 +1,170 @@
+{
+ "section": "collection",
+ "shop": "nordform",
+ "template": "collection.json",
+ "id": "main",
+ "de": {
+  "desktop": {
+   "file": "de/sections/collection-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 58596,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/collection-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 24314,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/collection.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 16876,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "breadcrumbs",
+    "x": 2,
+    "y": 4.5,
+    "box": [
+     2.5,
+     3.2,
+     94.9,
+     2.7
+    ],
+    "n": 1
+   },
+   {
+    "block": "collection-header",
+    "x": 2,
+    "y": 10.5,
+    "box": [
+     2.5,
+     9.1,
+     94.9,
+     31.4
+    ],
+    "n": 2
+   },
+   {
+    "block": "collection-nav",
+    "x": 2,
+    "y": 45,
+    "box": [
+     2.5,
+     43.6,
+     94.9,
+     4.8
+    ],
+    "n": 3
+   },
+   {
+    "block": "collection-products",
+    "x": 22.8,
+    "y": 62.9,
+    "box": [
+     24,
+     61.5,
+     73.4,
+     396.2
+    ],
+    "n": 4
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/collection-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 65264,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/collection-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 51886,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/collection-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 21840,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/collection.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 14690,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "breadcrumbs",
+    "x": 2,
+    "y": 4.6,
+    "box": [
+     2.5,
+     3.3,
+     94.9,
+     2.7
+    ],
+    "n": 1
+   },
+   {
+    "block": "collection-header",
+    "x": 2,
+    "y": 10.5,
+    "box": [
+     2.5,
+     9.1,
+     94.9,
+     31.4
+    ],
+    "n": 2
+   },
+   {
+    "block": "collection-nav",
+    "x": 2,
+    "y": 45.1,
+    "box": [
+     2.5,
+     43.7,
+     94.9,
+     4.8
+    ],
+    "n": 3
+   },
+   {
+    "block": "collection-products",
+    "x": 22.8,
+    "y": 62.9,
+    "box": [
+     24,
+     61.5,
+     73.4,
+     391.2
+    ],
+    "n": 4
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/collection-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 56730,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

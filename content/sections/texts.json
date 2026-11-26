@@ -1,0 +1,416 @@
+{
+ "header": {
+  "de": {
+   "lead": "Die Kopfzeile oben auf jeder Seite: Logo, Menü, Suche, Konto und Warenkorb. Der Abschnitt selbst regelt Farbschema, Trennlinie, die Animation der aufklappenden Bereiche und das Verhalten beim Scrollen; Logo, Menü und Suche stellen Sie in den drei Blöcken darunter ein.",
+   "tips": [
+    "**„Kopfzeile beim Scrollen“**: „Scrollt mit“, „Immer sichtbar“ oder „Beim Hochscrollen einblenden“ (Standard). Sobald die Kopfzeile klebt, erscheinen „Hintergrund beim Kleben“, „Text beim Kleben“ und „Text und Höhe beim Kleben“.",
+    "Untermenüs, Suche sowie Land und Sprache öffnen sich in derselben Fläche unter der Kopfzeile. Wer „Bewegung reduzieren“ wählt, sieht keine Animation.",
+    "Die Farben der Panels stellen Sie getrennt ein: im Block „Menü“ → „Farbschema des Menüs“, im Block „Suche, Konto, Warenkorb“ → „Farbschema von Suche und Land/Sprache“."
+   ],
+   "more": [
+    "header",
+    "",
+    "Kapitel Kopfzeile und Navigation"
+   ],
+   "subs": {
+    "header-logo": "Logo-Bild und Größe – am besten nach Höhe, getrennt für Desktop und Handy – sowie ein eigenes, kleineres Logo, solange die Kopfzeile klebt.",
+    "header-menu": "Hauptmenü, Mega-Menü und mobiles Menü: welches Menü, wie Untermenüs aussehen, Hervorhebungen und Bildkacheln.",
+    "header-menu-feature": "Eine eigene Spalte im Mega-Menü für ein Angebot, je Menüpunkt (bis zu acht Blöcke im Block „Menü“). Die Einstellungen im Block „Menü“ gelten für Untermenüs ohne eigenen Block.",
+    "header-menu-tile": "Bildkachel mit Titel, Text und Link im mobilen Menü (nicht im Mega-Menü am Desktop). Ohne Bilddatei erscheint eine Textkachel.",
+    "header-actions": "Suche, Konto sowie Land und Sprache – und wie Suche, Konto und Warenkorb in der Kopfzeile erscheinen (Text oder Symbol)."
+   }
+  },
+  "en": {
+   "lead": "The header at the top of every page: logo, menu, search, account and cart. The section itself controls the color scheme, divider line, the animation of opening panels and the behavior on scroll; logo, menu and search are set in the three blocks below.",
+   "tips": [
+    "**“Sticky header”**: “Scrolls with the page”, “Always visible” or “Show when scrolling up” (default). As soon as the header is sticky, “Background when sticky”, “Text color when sticky” and “Text and height when sticky” appear.",
+    "Submenus, search and country/language open in the same panel below the header. Anyone who chooses reduced motion sees no animation.",
+    "Panel colors are set separately: “Menu” block → “Menu color scheme”, “Search, account, cart” block → color scheme of search and country/language."
+   ],
+   "more": [
+    "header",
+    "",
+    "Chapter Header and navigation"
+   ],
+   "subs": {
+    "header-logo": "Logo image and size – best by height, separately for desktop and mobile – plus a separate, smaller logo while the header is sticky.",
+    "header-menu": "Main menu, mega menu and mobile menu: which menu, how submenus look, highlights and image tiles.",
+    "header-menu-feature": "A column of its own in the mega menu for an offer, per menu item (up to eight blocks inside the “Menu” block). The settings in the “Menu” block apply to submenus without a block of their own.",
+    "header-menu-tile": "Image tile with title, text and link in the mobile menu (not in the desktop mega menu). Without an image file it becomes a text tile.",
+    "header-actions": "Search, account, country and language – and how search, account and cart appear in the header (text or icon)."
+   }
+  }
+ },
+ "announcement-bar": {
+  "de": {
+   "lead": "Die Leiste über der Kopfzeile für kurze Hinweise. Jeder Block „Ankündigung“ ist eine Zeile – mit optionalem Link und optionalem Gutscheincode zum Kopieren.",
+   "tips": [
+    "Gutscheincode: erst unter **Rabatte → Rabatt erstellen** anlegen, dann genau denselben Code im Block eintragen. Das Theme zeigt und kopiert den Code nur; ob er gilt, entscheidet der Rabatt in Shopify.",
+    "Mehrere Ankündigungen stehen am Handy in einer wischbaren Leiste; am Desktop brechen sie in eine zweite Zeile um, wenn sie nicht nebeneinander passen.",
+    "Passen Sie Texte wie „Kostenloser Versand ab 49 €“ an Ihre tatsächlichen Bedingungen an oder löschen Sie den Block."
+   ],
+   "more": [
+    "header",
+    "ankuendigungsleiste",
+    "Ankündigungsleiste im Handbuch"
+   ],
+   "subs": {
+    "announcement": "Eine Zeile der Leiste: Text, Link und Gutscheincode."
+   }
+  },
+  "en": {
+   "lead": "The bar above the header for short notices. Each “Announcement” block is one line – with an optional link and an optional discount code to copy.",
+   "tips": [
+    "Discount code: first create it under **Discounts → Create discount**, then enter exactly the same code in the block. The theme only displays and copies the code; whether it applies is up to the discount in Shopify.",
+    "Several announcements form a swipeable bar on phones; on desktop they wrap onto a second line when they don't fit side by side.",
+    "Adjust texts such as “Free shipping over €49” to your actual terms, or delete the block."
+   ],
+   "more": [
+    "header",
+    "announcement-bar",
+    "Announcement bar in the guide"
+   ],
+   "subs": {
+    "announcement": "One line of the bar: text, link and discount code."
+   }
+  }
+ },
+ "footer": {
+  "de": {
+   "lead": "Die Fußzeile unten auf jeder Seite mit Text, Menüs, Newsletter und Social Media (zusammen bis zu acht Blöcke) und der „Unteren Leiste“ mit Land, Sprache, Zahlungssymbolen und Rechtstexten. Im Abschnitt selbst stellen Sie Farbschema und Spaltenüberschriften ein.",
+   "tips": [
+    "Lassen Sie die „Überschrift“ eines Menü-Blocks leer, erscheint der Name des Menüs; neue Menü-Blöcke sind mit dem Shopify-Menü „Footer“ vorbelegt.",
+    "Land und Sprache erscheinen erst, wenn unter **Einstellungen → Märkte** mehr als ein Land bzw. eine Sprache aktiv ist. Welche Länder die Fußzeile anbietet, steuert der Block „Untere Leiste“ – unabhängig von der Kopfzeile.",
+    "„Spaltenüberschriften“ → „Farbe“: Erreicht eine Marken- oder eigene Farbe auf dem Grund der Fußzeile nicht 4,5 : 1, bleibt die Schema-Farbe."
+   ],
+   "more": [
+    "getting-started",
+    "fusszeile",
+    "Fußzeile im Handbuch"
+   ],
+   "subs": {
+    "footer-text": "Eine Spalte mit Überschrift und Text, z. B. über den Shop.",
+    "footer-menu": "Eine Spalte mit einem Menü aus **Onlineshop → Navigation**, z. B. Service oder Rechtliches.",
+    "footer-newsletter": "Anmeldung zum Newsletter mit Überschrift und Text.",
+    "footer-social": "Links zu Ihren Profilen (aus Theme-Einstellungen → „Social Media“) und optional der Knopf „Follow on Shop“. Ohne Links und ohne Shop-Knopf blendet sich der Block aus.",
+    "footer-bottom": "Die Leiste ganz unten: Land und Sprache, Zahlungssymbole, Links zu Rechtstexten. Sie gehört fest zur Fußzeile."
+   }
+  },
+  "en": {
+   "lead": "The footer at the bottom of every page with text, menus, newsletter and social media (up to eight blocks in total) and the “Bottom bar” with country, language, payment icons and policies. In the section itself you set the color scheme and the column headings.",
+   "tips": [
+    "If you leave a menu block's “Heading” empty, the menu name is used; new menu blocks start with the Shopify menu “Footer”.",
+    "Country and language only appear once more than one country or language is active under **Settings → Markets**. Which countries the footer offers is set in the “Bottom bar” block – independently of the header.",
+    "“Column headings” → “Color”: if a brand or custom color doesn't reach 4.5 : 1 on the footer background, the scheme color is used."
+   ],
+   "more": [
+    "getting-started",
+    "footer",
+    "Footer in the guide"
+   ],
+   "subs": {
+    "footer-text": "A column with heading and text, for example about your store.",
+    "footer-menu": "A column with a menu from **Online Store → Navigation**, for example service or legal.",
+    "footer-newsletter": "Newsletter signup with heading and text.",
+    "footer-social": "Links to your profiles (from Theme settings → “Social media”) and optionally the “Follow on Shop” button. Without links and without the Shop button the block hides itself.",
+    "footer-bottom": "The bar at the very bottom: country and language, payment icons, policy links. It is a fixed part of the footer."
+   }
+  }
+ },
+ "popup": {
+  "de": {
+   "lead": "Ein Fenster über der Seite, z. B. für den Newsletter oder eine Aktion. Es erscheint nach einer Verzögerung und höchstens einmal im eingestellten Zeitraum; den Inhalt bauen Sie aus Blöcken wie Überschrift, Text und Newsletter.",
+   "tips": [
+    "Das Popup erscheint nie auf Warenkorb- und Passwortseite und nach einer Newsletter-Anmeldung in diesem Browser nie mehr. Zum Testen ein privates Browserfenster verwenden.",
+    "Verspricht das Popup einen Rabatt, legen Sie den passenden Rabattcode selbst unter **Rabatte** an.",
+    "Ausschalten: Abschnitt „Popup“ in der Fußzeilen-Gruppe mit dem Augen-Symbol ausblenden. Im Editor öffnet die Vorschau das Popup, sobald Sie es in der Seitenleiste anklicken."
+   ],
+   "more": [
+    "faq",
+    "das-popup-erscheint-nicht-mehr",
+    "Das Popup erscheint nicht (mehr)"
+   ],
+   "where_note": "Das Popup gehört in den Bereich „Fußzeile“. Fehlt es, fügen Sie es dort mit „Abschnitt hinzufügen“ hinzu."
+  },
+  "en": {
+   "lead": "A window above the page, for example for the newsletter or a promotion. It appears after a delay and at most once in the set period; you build its content from blocks such as heading, text and newsletter.",
+   "tips": [
+    "The popup never appears on the cart and password pages, and after a newsletter signup never again in that browser. Use a private browser window to test.",
+    "If the popup promises a discount, create the discount code yourself under **Discounts**.",
+    "To turn it off, hide the “Popup” section in the footer group with the eye icon. In the editor, the preview opens the popup as soon as you click it in the sidebar."
+   ],
+   "more": [
+    "faq",
+    "the-popup-does-not-appear-any-more",
+    "The popup does not appear (any more)"
+   ],
+   "where_note": "The popup belongs in the “Footer” area. If it's missing, add it there with “Add section”."
+  }
+ },
+ "age-verification": {
+  "de": {
+   "lead": "Fragt beim ersten Besuch das Alter ab – für Produkte mit Altersgrenze. Der Abschnitt steht in der Fußzeilen-Gruppe und ist in der Vorlage ausgeblendet.",
+   "tips": [
+    "Einschalten: Abschnitt „Altersabfrage“ in der Fußzeile mit dem Augen-Symbol einblenden. In der „Überschrift“ wird `[age]` durch das Mindestalter ersetzt.",
+    "**„Antwort merken (Tage)“**: So lange erscheint die Abfrage in diesem Browser nach einer Bestätigung nicht mehr.",
+    "Die Abfrage lässt sich nicht mit Escape schließen. Sie ist eine Abfrage, keine technische Sperre: Ohne JavaScript erscheint sie nicht. Prüfen Sie, ob für Ihre Produkte eine echte Altersprüfung nötig ist."
+   ],
+   "more": [
+    "compliance",
+    "6-altersabfrage",
+    "Altersabfrage im Handbuch"
+   ],
+   "where_note": "In der Vorlage ist der Abschnitt ausgeblendet: in der Seitenleiste beim Abschnitt auf das Augen-Symbol klicken."
+  },
+  "en": {
+   "lead": "Asks for the visitor's age on the first visit – for age-restricted products. The section sits in the footer group and is hidden in the template.",
+   "tips": [
+    "To turn it on, show the “Age verification” section in the footer with the eye icon. In the “Heading”, `[age]` is replaced by the minimum age.",
+    "**“Remember answer (days)”**: after confirming, the prompt does not appear again in that browser for this many days.",
+    "The prompt cannot be closed with Escape. It is a prompt, not a technical lock: without JavaScript it does not appear. Check whether your products require real age verification."
+   ],
+   "more": [
+    "compliance",
+    "6-age-verification",
+    "Age verification in the guide"
+   ],
+   "where_note": "The section is hidden in the template: click the eye icon next to it in the sidebar."
+  }
+ },
+ "product": {
+  "de": {
+   "lead": "Der Hauptabschnitt der Produktseite: Galerie und Kaufspalte. Jeder Teil – Bilder, Titel, Preis, Kaufoptionen, Beschreibung – ist ein eigener Block; der Abschnitt selbst hat nur Farbschema und Abstand.",
+   "tips": [
+    "Der Abschnitt steht in den Vorlagen `product`, `product.subscription` und `product.bundle`. Beim Hinzufügen zeigt der Picker zuerst die passenden Produkt-Blöcke, alle übrigen unter **„Alle anzeigen“**.",
+    "Produkt-Blöcke zeigen immer das Produkt der Seite. Ein anderes Produkt auf einer beliebigen Seite zeigen Sie mit dem Block [Hervorgehobenes Produkt](../../blocks/featured-product/).",
+    "Galerie und Kaufspalte stehen ab Tablet-Breite (Fenster ab etwa 765 px) nebeneinander, am Handy untereinander."
+   ],
+   "more": [
+    "product-page",
+    "aufbau-der-vorlage",
+    "Aufbau der Produktseite"
+   ]
+  },
+  "en": {
+   "lead": "The main section of the product page: gallery and buy column. Every part – media, title, price, purchase options, description – is a block of its own; the section itself only has color scheme and spacing.",
+   "tips": [
+    "The section is part of the `product`, `product.subscription` and `product.bundle` templates. When you add a block, the picker lists the matching product blocks first; everything else is under **“Show all”**.",
+    "Product blocks always show the product of the page. To show a different product on any page, use the [Featured product](../../blocks/featured-product/) block.",
+    "Gallery and buy column sit side by side from tablet width (windows from about 765 px) and stacked on phones."
+   ],
+   "more": [
+    "product-page",
+    "how-the-template-is-set-up",
+    "How the product page is set up"
+   ]
+  }
+ },
+ "product-recommendations": {
+  "de": {
+   "lead": "Produkte, die zum Produkt der Seite passen – unter der Kaufspalte der Produktseite. Sie wählen ähnliche oder ergänzende Produkte, Anzahl, Spalten und was die Produktkarten zeigen.",
+   "tips": [
+    "„Art der Empfehlung“: „Ähnliche Produkte“ oder „Ergänzende Produkte“. Ergänzende Produkte richten Sie in der App **Search & Discovery** ein.",
+    "Wie jeder Abschnitt hat „Produktempfehlungen“ „Farbschema“, „Abstand oben und unten“, „Breite“ und „Linie über dem Abschnitt“.",
+    "„Grundpreis zeigen“ nur abschalten, wenn er hier nicht nötig ist: In der EU ist er für Waren nach Gewicht, Volumen oder Länge meist Pflicht."
+   ],
+   "more": [
+    "product-page",
+    "aufbau-der-vorlage",
+    "Aufbau der Produktseite"
+   ]
+  },
+  "en": {
+   "lead": "Products that go with the product of the page – below the buy column on the product page. You choose related or complementary products, number, columns and what the product cards show.",
+   "tips": [
+    "“Recommendation type”: related or complementary products. You set up complementary products in the **Search & Discovery** app.",
+    "Like every section, “Product recommendations” has “Color scheme”, “Spacing above and below”, “Width” and “Line above section”.",
+    "Only turn off the unit price where it isn't needed: in the EU it is usually mandatory for goods sold by weight, volume or length."
+   ],
+   "more": [
+    "product-page",
+    "how-the-template-is-set-up",
+    "How the product page is set up"
+   ]
+  }
+ },
+ "collection": {
+  "de": {
+   "lead": "Der Hauptabschnitt der Kollektionsseite mit Brotkrumen, Kopfbereich, Unterkollektionen und Produktliste. Diese Teile sind Blöcke; der Abschnitt selbst hat nur Farbschema und Abstand.",
+   "tips": [
+    "Spalten, Filter, Sortierung und Seitennavigation stellen Sie im Block [Kollektion: Produktliste](../../blocks/collection-products/) ein.",
+    "**Filter** richten Sie in der App **Search & Discovery** ein (Verfügbarkeit, Preis, Produkttyp, Optionen, Metafelder).",
+    "Wie die Produktkarten aussehen, stellen Sie einmal zentral ein: Theme-Einstellungen → „Produktdaten“ → „Produktkarten“."
+   ],
+   "more": [
+    "collections",
+    "kollektionsseite",
+    "Kollektionsseite im Handbuch"
+   ]
+  },
+  "en": {
+   "lead": "The main section of the collection page with breadcrumbs, header, subcollections and product list. These parts are blocks; the section itself only has color scheme and spacing.",
+   "tips": [
+    "Columns, filters, sorting and pagination are set in the [Collection: product list](../../blocks/collection-products/) block.",
+    "Set up **filters** in the **Search & Discovery** app (availability, price, product type, options, metafields).",
+    "The look of product cards is set once for the whole store: Theme settings → “Product data” → “Product cards”."
+   ],
+   "more": [
+    "collections",
+    "collection-page",
+    "Collection page in the guide"
+   ]
+  }
+ },
+ "search": {
+  "de": {
+   "lead": "Der Hauptabschnitt der Suchseite mit den Blöcken „Suche: Kopfbereich“ und „Suche: Ergebnisse“. Der Abschnitt selbst hat nur Farbschema und Abstand.",
+   "tips": [
+    "Filter, Spalten, Kennzahlen und die „Seitennavigation“ (Seitenzahlen, „Mehr laden“, „Automatisch beim Scrollen“) stellen Sie im Block [Suche: Ergebnisse](../../blocks/search-results/) ein.",
+    "Unter **„Keine Treffer“** → **„Vorschläge, wenn leer“** wählen Sie eine Kollektion, aus der bei leerer Suche bis zu vier Produkte erscheinen.",
+    "Die Schnellsuche in der Kopfzeile stellen Sie im Abschnitt [Kopfzeile](../header/#header-actions) ein."
+   ],
+   "more": [
+    "collections",
+    "suchseite",
+    "Suchseite im Handbuch"
+   ]
+  },
+  "en": {
+   "lead": "The main section of the search page with the “Search: header” and “Search: results” blocks. The section itself only has color scheme and spacing.",
+   "tips": [
+    "Filters, columns, key figures and “Pagination” (page numbers, “Load more”, “Automatically on scroll”) are set in the [Search: results](../../blocks/search-results/) block.",
+    "Under **“No results”** → **“Suggestions when empty”**, choose a collection; up to four of its products appear when a search finds nothing.",
+    "Quick search in the header is set in the [Header](../header/#header-actions) section."
+   ],
+   "more": [
+    "collections",
+    "search-page",
+    "Search page in the guide"
+   ]
+  }
+ },
+ "cart": {
+  "de": {
+   "lead": "Der Hauptabschnitt der Warenkorbseite mit den Blöcken „Warenkorb: Positionen“ und „Warenkorb: Übersicht“. Der Abschnitt selbst hat nur Farbschema und Abstand.",
+   "tips": [
+    "Der seitliche Warenkorb (Drawer) ist kein Abschnitt: Er folgt den Theme-Einstellungen unter **„Warenkorb“** und dem „Farbschema des Seitenhintergrunds“.",
+    "Bestellnotiz, dynamische Checkout-Buttons und Geschenkverpackung stellen Sie im Block [Warenkorb: Übersicht](../../blocks/cart-summary/) ein.",
+    "Am Handy steht ab zwei Positionen eine Leiste mit Zwischensumme und „Zur Kasse“ am unteren Rand. Sie hat keine Einstellung."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "warenkorbseite",
+    "Warenkorbseite im Handbuch"
+   ]
+  },
+  "en": {
+   "lead": "The main section of the cart page with the “Cart: items” and “Cart: summary” blocks. The section itself only has color scheme and spacing.",
+   "tips": [
+    "The cart drawer is not a section: it follows the theme settings under **“Cart”** and the “Page background color scheme”.",
+    "Order note, dynamic checkout buttons and gift wrap are set in the [Cart: summary](../../blocks/cart-summary/) block.",
+    "On phones, a bar with subtotal and “Checkout” appears at the bottom from two items on. It has no setting."
+   ],
+   "more": [
+    "cart-and-checkout",
+    "cart-page",
+    "Cart page in the guide"
+   ]
+  }
+ },
+ "custom-section": {
+  "de": {
+   "lead": "Der Abschnitt, aus dem fast jede Seite besteht. Er bestimmt Farbschema, Abstand, Breite, Linie und Sprungmarke, dazu optional ein Linien-Motiv (Dekor) und ein Hintergrundvideo; den Inhalt bilden die Blöcke darin.",
+   "add": "Abschnitt hinzufügen",
+   "tips": [
+    "**„Schmal (Lesebreite)“** setzt den Inhalt mittig in eine gut lesbare Breite, z. B. für eine FAQ. **„Sprungmarke“**: ein Name wie `versand` – ein Link auf `#versand` springt zu diesem Abschnitt, auch von einer anderen Seite aus.",
+    "**Dekor:** Das Motiv verschiebt nichts, fängt keine Klicks ab und ist für Screenreader unsichtbar. Für ruhigen Hintergrund die Farbe „Schema: Linie“ wählen.",
+    "**Hintergrundvideo:** „Überlagerung“ so hoch stellen, dass der Text mindestens 4,5 : 1 Kontrast hat. Bei „Bewegung reduzieren“ bleibt es beim Standbild."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "das-prinzip",
+    "Abschnitte und Blöcke im Handbuch"
+   ],
+   "where_note": "Die Vorlagen unter „Abschnitt hinzufügen“ – von „Leerer Abschnitt“ (Kategorie „Layout“) bis „Bild mit Text“ oder „Häufige Fragen“ – sind alle dieser Abschnitt mit passenden Blöcken.",
+   "preset": "Leerer Abschnitt"
+  },
+  "en": {
+   "lead": "The section almost every page is made of. It sets color scheme, spacing, width, line and anchor, plus an optional line motif (decoration) and a background video; the blocks inside make up the content.",
+   "add": "Add section",
+   "tips": [
+    "**“Narrow (reading width)”** centers the content at a comfortable reading width, e.g. for an FAQ. **“Anchor”**: a name such as `shipping` – a link to `#shipping` jumps to this section, also from another page.",
+    "**Decoration:** the motif never shifts the layout, does not catch clicks and is hidden from screen readers. For a quiet background, use the color “Scheme: line”.",
+    "**Background video:** set “Overlay” high enough for text to reach at least 4.5 : 1 contrast. With reduced motion, only the still image shows."
+   ],
+   "more": [
+    "sections-and-blocks",
+    "the-principle",
+    "Sections and blocks in the guide"
+   ],
+   "where_note": "The templates under “Add section” – from “Empty section” (category “Layout”) to “Image with text” or “FAQ” – are all this section with matching blocks.",
+   "preset": "Empty section"
+  }
+ },
+ "scroll-story": {
+  "de": {
+   "lead": "Folien, die beim Scrollen ineinander übergehen: Die aktuelle Folie bleibt stehen, die nächste blendet darüber ein. Gut für Herkunft, Herstellung oder „So funktioniert das Abo“.",
+   "tips": [
+    "Höchstens sechs Folien und kurze Texte – eine Aussage pro Folie. Jede Folie füllt den Bildschirm; am Handy steht der Text unter dem Bild.",
+    "Steht die Scroll-Story ganz oben auf der Seite, schalten Sie bei der ersten Folie **„Bild sofort laden“** ein (erscheint, sobald ein Bild gewählt ist).",
+    "Die Gruppe „Animation“ erscheint nur, wenn unter Theme-Einstellungen → „Animation“ „Animationen aktivieren“ an ist. Ist sie aus oder „Bewegung reduzieren“ eingestellt, stehen die Folien untereinander."
+   ],
+   "more": [
+    "animation",
+    "section-scroll-story",
+    "Scroll-Story im Handbuch"
+   ],
+   "subs": {
+    "story-slide": "Eine Folie: Bild, kleine Überschrift, Überschrift, Text, optional ein Button und ein eigenes Farbschema. Eine Folie ohne Bild wird zur Textfolie über die ganze Breite."
+   }
+  },
+  "en": {
+   "lead": "Slides that blend into each other as you scroll: the current slide stays in place while the next one fades in over it. Good for origin, production or “How the subscription works”.",
+   "tips": [
+    "Up to six slides and short texts – one statement per slide. Each slide fills the screen; on phones the text sits below the image.",
+    "If the scroll story is at the very top of the page, turn on **“Load image immediately”** for the first slide (shown once an image is chosen).",
+    "The “Animation” group only appears when “Enable animations” is on under Theme settings → “Animation”. If it's off or reduced motion is set, the slides are stacked."
+   ],
+   "more": [
+    "animation",
+    "scroll-story-section",
+    "Scroll story in the guide"
+   ],
+   "subs": {
+    "story-slide": "One slide: image, small heading, heading, text, optionally a button and a color scheme of its own. A slide without an image becomes a full-width text slide."
+   }
+  }
+ },
+ "custom-code": {
+  "de": {
+   "lead": "Ein eigener Abschnitt mit einem Code-Feld für Liquid und HTML, auf allen Vorlagen verfügbar – gedacht für Code-Schnipsel von Apps oder Agenturen, die einen eigenen Abschnitt erwarten.",
+   "tips": [
+    "Code innerhalb eines bestehenden Abschnitts setzen Sie mit dem gleichnamigen Block [Eigenes Liquid](../../blocks/custom-liquid/) ein.",
+    "Fehlerhafter Code kann die Seite stören; prüfen Sie die Seite nach dem Einfügen in der Vorschau.",
+    "Code im Block oder Abschnitt „Eigenes Liquid“ lädt auf jeder Seite, auf der er steht – das kostet Ladezeit."
+   ],
+   "more": [
+    "performance-and-seo",
+    "apps-und-eigener-code",
+    "Apps und eigener Code"
+   ]
+  },
+  "en": {
+   "lead": "A section of its own with a code field for Liquid and HTML, available on all templates – meant for code snippets from apps or agencies that expect a section.",
+   "tips": [
+    "To add code inside an existing section, use the [Custom Liquid](../../blocks/custom-liquid/) block of the same name.",
+    "Faulty code can break the page; check the page in the preview after pasting.",
+    "Code in the “Custom Liquid” block or section loads on every page that contains it – that costs loading time."
+   ],
+   "more": [
+    "performance-and-seo",
+    "apps-and-custom-code",
+    "Apps and custom code"
+   ]
+  }
+ }
+}

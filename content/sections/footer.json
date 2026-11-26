@@ -1,0 +1,725 @@
+{
+ "slug": "footer",
+ "kind": "section",
+ "source": "sections/footer.liquid",
+ "source_sha1": "d307ae7b9df8",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Footer",
+  "category": null,
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   },
+   {
+    "type": "header",
+    "content": "Column headings"
+   },
+   {
+    "type": "select",
+    "id": "heading_color_source",
+    "label": "Color",
+    "info": "“Scheme color” is the color scheme’s secondary text. If a brand or custom color doesn’t reach 4.5 : 1 on the footer background, the scheme color stays.",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Scheme color"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     },
+     {
+      "value": "custom",
+      "label": "Custom color"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "heading_color",
+    "label": "Custom color",
+    "visible_if": [
+     {
+      "setting": "heading_color_source",
+      "label": "Color",
+      "op": "is",
+      "value": "Custom color"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "heading_color_source",
+      "label": "Color",
+      "op": "is",
+      "value": "Custom color"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "heading_font",
+    "label": "Font",
+    "default": "data",
+    "options": [
+     {
+      "value": "data",
+      "label": "Data font"
+     },
+     {
+      "value": "heading",
+      "label": "Heading font"
+     },
+     {
+      "value": "body",
+      "label": "Body font"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "heading_size",
+    "label": "Size",
+    "default": "s",
+    "options": [
+     {
+      "value": "s",
+      "label": "Small"
+     },
+     {
+      "value": "m",
+      "label": "Medium"
+     },
+     {
+      "value": "l",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "heading_bold",
+    "label": "Bold",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "heading_uppercase",
+    "label": "Uppercase",
+    "default": true
+   }
+  ]
+ },
+ "de": {
+  "name": "Fußzeile",
+  "category": null,
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   },
+   {
+    "type": "header",
+    "content": "Spaltenüberschriften"
+   },
+   {
+    "type": "select",
+    "id": "heading_color_source",
+    "label": "Farbe",
+    "info": "„Schema-Farbe“ ist der Sekundärtext des Farbschemas. Erreicht eine Marken- oder eigene Farbe auf dem Grund der Fußzeile nicht 4,5 : 1, bleibt die Schema-Farbe.",
+    "default": "scheme",
+    "options": [
+     {
+      "value": "scheme",
+      "label": "Schema-Farbe"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     },
+     {
+      "value": "custom",
+      "label": "Eigene Farbe"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "heading_color",
+    "label": "Eigene Farbe",
+    "visible_if": [
+     {
+      "setting": "heading_color_source",
+      "label": "Farbe",
+      "op": "is",
+      "value": "Eigene Farbe"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "heading_color_source",
+      "label": "Farbe",
+      "op": "is",
+      "value": "Eigene Farbe"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "heading_font",
+    "label": "Schrift",
+    "default": "data",
+    "options": [
+     {
+      "value": "data",
+      "label": "Daten-Schrift"
+     },
+     {
+      "value": "heading",
+      "label": "Überschriften-Schrift"
+     },
+     {
+      "value": "body",
+      "label": "Fließtext-Schrift"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "heading_size",
+    "label": "Größe",
+    "default": "s",
+    "options": [
+     {
+      "value": "s",
+      "label": "Klein"
+     },
+     {
+      "value": "m",
+      "label": "Mittel"
+     },
+     {
+      "value": "l",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "heading_bold",
+    "label": "Fett",
+    "default": false
+   },
+   {
+    "type": "checkbox",
+    "id": "heading_uppercase",
+    "label": "Versalien",
+    "default": true
+   }
+  ]
+ },
+ "subblocks": [
+  {
+   "slug": "_footer-text",
+   "kind": "block",
+   "source": "blocks/_footer-text.liquid",
+   "source_sha1": "c1e25f5aed0a",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Text",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+     },
+     {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+     }
+    ]
+   },
+   "de": {
+    "name": "Text",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+     },
+     {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+     }
+    ]
+   },
+   "type": "_footer-text",
+   "anchor": "footer-text",
+   "parent": null
+  },
+  {
+   "slug": "_footer-menu",
+   "kind": "block",
+   "source": "blocks/_footer-menu.liquid",
+   "source_sha1": "fe3630c65a9a",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Menu",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Leave empty to use the menu name. Text in double square brackets is highlighted, e.g. [[refill]]."
+     },
+     {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "footer"
+     }
+    ]
+   },
+   "de": {
+    "name": "Menü",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "info": "Leer lassen, um den Namen des Menüs zu verwenden. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+     },
+     {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menü",
+      "default": "footer"
+     }
+    ]
+   },
+   "type": "_footer-menu",
+   "anchor": "footer-menu",
+   "parent": null
+  },
+  {
+   "slug": "_footer-newsletter",
+   "kind": "block",
+   "source": "blocks/_footer-newsletter.liquid",
+   "source_sha1": "177e27f9df40",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Newsletter",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+     },
+     {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]]."
+     }
+    ]
+   },
+   "de": {
+    "name": "Newsletter",
+    "category": null,
+    "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+     },
+     {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+     }
+    ]
+   },
+   "type": "_footer-newsletter",
+   "anchor": "footer-newsletter",
+   "parent": null
+  },
+  {
+   "slug": "_footer-social",
+   "kind": "block",
+   "source": "blocks/_footer-social.liquid",
+   "source_sha1": "bae6b6b5933b",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Social media",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Profile links are set under Theme settings › Social media. Only networks with a link are shown."
+     },
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
+      "default": "Follow us"
+     },
+     {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "icons",
+      "options": [
+       {
+        "value": "icons",
+        "label": "Icons"
+       },
+       {
+        "value": "icons_text",
+        "label": "Icons with names"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_follow_on_shop",
+      "label": "Show Follow on Shop",
+      "info": "Lets customers follow your store in the Shop app. Requires Shop Pay and the Shop channel.",
+      "default": false
+     }
+    ]
+   },
+   "de": {
+    "name": "Social Media",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Die Profil-Links tragen Sie unter Theme-Einstellungen › Social Media ein. Es erscheinen nur Netzwerke mit Link."
+     },
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+      "default": "Folge uns"
+     },
+     {
+      "type": "select",
+      "id": "style",
+      "label": "Darstellung",
+      "default": "icons",
+      "options": [
+       {
+        "value": "icons",
+        "label": "Symbole"
+       },
+       {
+        "value": "icons_text",
+        "label": "Symbole mit Namen"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_follow_on_shop",
+      "label": "„Follow on Shop“ anzeigen",
+      "info": "Kundschaft kann Ihrem Shop in der Shop-App folgen. Voraussetzung sind Shop Pay und der Vertriebskanal Shop.",
+      "default": false
+     }
+    ]
+   },
+   "type": "_footer-social",
+   "anchor": "footer-social",
+   "parent": null
+  },
+  {
+   "slug": "_footer-bottom",
+   "kind": "block",
+   "source": "blocks/_footer-bottom.liquid",
+   "source_sha1": "c20527f560b5",
+   "accepts_blocks": false,
+   "en": {
+    "name": "Bottom bar",
+    "category": null,
+    "settings": [
+     {
+      "type": "checkbox",
+      "id": "show_country",
+      "label": "Show country/region selector",
+      "info": "Shown when more than one country is set up in Markets.",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_language",
+      "label": "Show language selector",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_flags",
+      "label": "Show flags",
+      "info": "Flag of the current country on the button and flags in the country list.",
+      "default": true,
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region selector",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "country_filter",
+      "label": "Countries in the selector",
+      "default": "all",
+      "options": [
+       {
+        "value": "all",
+        "label": "All countries in your markets"
+       },
+       {
+        "value": "include",
+        "label": "Only these countries"
+       },
+       {
+        "value": "exclude",
+        "label": "All except these countries"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region selector",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "country_codes",
+      "label": "Country codes",
+      "info": "ISO codes separated by commas, e.g. DE, AT, CH. With “Only these countries” this order is kept; the current country always appears. Applies to the footer only; the header has its own setting.",
+      "placeholder": "US, CA, GB",
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Show country/region selector",
+        "op": "on"
+       },
+       "and",
+       {
+        "setting": "country_filter",
+        "label": "Countries in the selector",
+        "op": "is_not",
+        "value": "All countries in your markets"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "country_filter",
+        "label": "Countries in the selector",
+        "op": "is_not",
+        "value": "All countries in your markets"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_policies",
+      "label": "Show policy links",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "label": "Show “Powered by Shopify”",
+      "default": false
+     }
+    ]
+   },
+   "de": {
+    "name": "Untere Leiste",
+    "category": null,
+    "settings": [
+     {
+      "type": "checkbox",
+      "id": "show_country",
+      "label": "Auswahl Land/Region anzeigen",
+      "info": "Erscheint, wenn in Markets mehr als ein Land eingerichtet ist.",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_language",
+      "label": "Sprachauswahl anzeigen",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_flags",
+      "label": "Flaggen anzeigen",
+      "info": "Flagge des aktuellen Landes im Knopf und Flaggen in der Länderliste.",
+      "default": true,
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Auswahl Land/Region anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "country_filter",
+      "label": "Länder in der Auswahl",
+      "default": "all",
+      "options": [
+       {
+        "value": "all",
+        "label": "Alle Länder der Märkte"
+       },
+       {
+        "value": "include",
+        "label": "Nur diese Länder"
+       },
+       {
+        "value": "exclude",
+        "label": "Alle außer diesen Ländern"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Auswahl Land/Region anzeigen",
+        "op": "on"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "id": "country_codes",
+      "label": "Ländercodes",
+      "info": "ISO-Codes mit Komma, z. B. DE, AT, CH. Bei „Nur diese Länder“ gilt diese Reihenfolge; das aktuelle Land erscheint immer. Gilt nur für die Fußzeile, die Kopfzeile hat eine eigene Einstellung.",
+      "placeholder": "DE, AT, CH",
+      "visible_if": [
+       {
+        "setting": "show_country",
+        "label": "Auswahl Land/Region anzeigen",
+        "op": "on"
+       },
+       "and",
+       {
+        "setting": "country_filter",
+        "label": "Länder in der Auswahl",
+        "op": "is_not",
+        "value": "Alle Länder der Märkte"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "country_filter",
+        "label": "Länder in der Auswahl",
+        "op": "is_not",
+        "value": "Alle Länder der Märkte"
+       }
+      ]
+     },
+     {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Zahlungssymbole anzeigen",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_policies",
+      "label": "Links zu Rechtstexten anzeigen",
+      "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "label": "„Powered by Shopify“ anzeigen",
+      "default": false
+     }
+    ]
+   },
+   "type": "_footer-bottom",
+   "anchor": "footer-bottom",
+   "parent": null
+  }
+ ],
+ "theme_blocks": false,
+ "where": {
+  "group": "footer",
+  "templates": [],
+  "demo_disabled": false,
+  "enabled_on": null,
+  "has_preset": false
+ }
+}

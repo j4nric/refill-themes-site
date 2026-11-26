@@ -1,0 +1,170 @@
+{
+ "section": "product",
+ "shop": "nordform",
+ "template": "product.json",
+ "id": "main",
+ "de": {
+  "desktop": {
+   "file": "de/sections/product-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 69272,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/product-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 28492,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/product.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 19214,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "product-media",
+    "x": 2,
+    "y": 4.7,
+    "box": [
+     2.5,
+     3.3,
+     53.2,
+     101.3
+    ],
+    "n": 1
+   },
+   {
+    "block": "product-title",
+    "x": 58.2,
+    "y": 4.7,
+    "box": [
+     59.5,
+     3.3,
+     38,
+     10.7
+    ],
+    "n": 2
+   },
+   {
+    "block": "product-price",
+    "x": 58.2,
+    "y": 22.6,
+    "box": [
+     59.5,
+     21.2,
+     38,
+     8.2
+    ],
+    "n": 3
+   },
+   {
+    "block": "purchase-options",
+    "x": 58.2,
+    "y": 60.5,
+    "box": [
+     59.5,
+     59.1,
+     38,
+     50.9
+    ],
+    "n": 4
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/product-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 73746,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/product-desktop.webp",
+   "width": 1581,
+   "height": 1250,
+   "bytes": 67974,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/product-desktop-800.webp",
+   "width": 800,
+   "height": 625,
+   "bytes": 28416,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/product.webp",
+   "width": 640,
+   "height": 480,
+   "bytes": 18206,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "block": "product-media",
+    "x": 2,
+    "y": 4.6,
+    "box": [
+     2.5,
+     3.2,
+     53.2,
+     101.3
+    ],
+    "n": 1
+   },
+   {
+    "block": "product-title",
+    "x": 58.2,
+    "y": 4.6,
+    "box": [
+     59.5,
+     3.2,
+     38,
+     10.7
+    ],
+    "n": 2
+   },
+   {
+    "block": "product-price",
+    "x": 58.2,
+    "y": 22.6,
+    "box": [
+     59.5,
+     21.2,
+     38,
+     8.2
+    ],
+    "n": 3
+   },
+   {
+    "block": "purchase-options",
+    "x": 58.2,
+    "y": 61.4,
+    "box": [
+     59.5,
+     60,
+     38,
+     50.9
+    ],
+    "n": 4
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/product-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 73260,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

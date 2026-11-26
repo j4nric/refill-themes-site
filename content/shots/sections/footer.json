@@ -1,0 +1,248 @@
+{
+ "section": "footer",
+ "shop": "nordform",
+ "template": "index.json",
+ "id": "footer",
+ "de": {
+  "desktop": {
+   "file": "de/sections/footer-desktop.webp",
+   "width": 1581,
+   "height": 656,
+   "bytes": 27838,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/footer-desktop-800.webp",
+   "width": 800,
+   "height": 332,
+   "bytes": 11082,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/footer.webp",
+   "width": 640,
+   "height": 266,
+   "bytes": 7392,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading_uppercase",
+    "x": 2,
+    "y": 13.8,
+    "box": [
+     2.5,
+     12.4,
+     18.1,
+     2.7
+    ],
+    "n": 1
+   },
+   {
+    "block": "_footer-text",
+    "x": 9.3,
+    "y": 15.1,
+    "box": [
+     2.5,
+     12.4,
+     18.1,
+     53
+    ],
+    "n": 2
+   },
+   {
+    "block": "_footer-menu",
+    "x": 21.9,
+    "y": 15.1,
+    "box": [
+     23.2,
+     12.4,
+     18.1,
+     53
+    ],
+    "n": 3
+   },
+   {
+    "block": "_footer-newsletter",
+    "x": 63.2,
+    "y": 15.1,
+    "box": [
+     64.4,
+     12.4,
+     33,
+     53
+    ],
+    "n": 4
+   },
+   {
+    "block": "_footer-bottom",
+    "setting": "show_country",
+    "x": 2,
+    "y": 80.5,
+    "box": [
+     2.5,
+     77.9,
+     7.7,
+     8.4
+    ],
+    "n": 5
+   },
+   {
+    "block": "_footer-bottom",
+    "setting": "show_payment_icons",
+    "x": 75,
+    "y": 83.9,
+    "box": [
+     76.3,
+     81.7,
+     21.2,
+     4.6
+    ],
+    "n": 6
+   },
+   {
+    "block": "_footer-bottom",
+    "setting": "show_policies",
+    "x": 10.3,
+    "y": 93.1,
+    "box": [
+     11.5,
+     90.8,
+     42.1,
+     4.6
+    ],
+    "n": 7
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/footer-mobile.webp",
+   "width": 780,
+   "height": 2146,
+   "bytes": 46452,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/footer-desktop.webp",
+   "width": 1581,
+   "height": 656,
+   "bytes": 26880,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/footer-desktop-800.webp",
+   "width": 800,
+   "height": 332,
+   "bytes": 10402,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/footer.webp",
+   "width": 640,
+   "height": 266,
+   "bytes": 6968,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading_uppercase",
+    "x": 2,
+    "y": 13.8,
+    "box": [
+     2.5,
+     12.4,
+     18.1,
+     2.7
+    ],
+    "n": 1
+   },
+   {
+    "block": "_footer-text",
+    "x": 9.3,
+    "y": 15.1,
+    "box": [
+     2.5,
+     12.4,
+     18.1,
+     53
+    ],
+    "n": 2
+   },
+   {
+    "block": "_footer-menu",
+    "x": 21.9,
+    "y": 15.1,
+    "box": [
+     23.2,
+     12.4,
+     18.1,
+     53
+    ],
+    "n": 3
+   },
+   {
+    "block": "_footer-newsletter",
+    "x": 63.2,
+    "y": 15.1,
+    "box": [
+     64.4,
+     12.4,
+     33,
+     53
+    ],
+    "n": 4
+   },
+   {
+    "block": "_footer-bottom",
+    "setting": "show_country",
+    "x": 2,
+    "y": 80.5,
+    "box": [
+     2.5,
+     77.9,
+     7.2,
+     8.4
+    ],
+    "n": 5
+   },
+   {
+    "block": "_footer-bottom",
+    "setting": "show_payment_icons",
+    "x": 75,
+    "y": 83.9,
+    "box": [
+     76.3,
+     81.7,
+     21.2,
+     4.6
+    ],
+    "n": 6
+   },
+   {
+    "block": "_footer-bottom",
+    "setting": "show_policies",
+    "x": 10.3,
+    "y": 93.1,
+    "box": [
+     11.5,
+     90.8,
+     45.9,
+     4.6
+    ],
+    "n": 7
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/footer-mobile.webp",
+   "width": 780,
+   "height": 2148,
+   "bytes": 45038,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

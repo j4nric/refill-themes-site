@@ -1,0 +1,82 @@
+{
+ "slug": "search",
+ "kind": "section",
+ "source": "sections/search.liquid",
+ "source_sha1": "29b68a42ad53",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Search",
+  "category": null,
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Spacing above and below",
+    "default": "small",
+    "options": [
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   }
+  ]
+ },
+ "de": {
+  "name": "Suche",
+  "category": null,
+  "settings": [
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-1"
+   },
+   {
+    "type": "select",
+    "id": "spacing",
+    "label": "Abstand oben und unten",
+    "default": "small",
+    "options": [
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   }
+  ]
+ },
+ "subblocks": [],
+ "theme_blocks": true,
+ "where": {
+  "group": null,
+  "templates": [
+   "search"
+  ],
+  "demo_disabled": false,
+  "enabled_on": null,
+  "has_preset": false
+ }
+}

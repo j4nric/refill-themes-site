@@ -1,0 +1,122 @@
+{
+ "section": "product-recommendations",
+ "shop": "nordform",
+ "template": "product.json",
+ "id": "recommendations",
+ "de": {
+  "desktop": {
+   "file": "de/sections/product-recommendations-desktop.webp",
+   "width": 1581,
+   "height": 918,
+   "bytes": 57436,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "de/sections/product-recommendations-desktop-800.webp",
+   "width": 800,
+   "height": 465,
+   "bytes": 23626,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "de/sections/thumbs/product-recommendations.webp",
+   "width": 640,
+   "height": 372,
+   "bytes": 17774,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 8.6,
+    "box": [
+     2.5,
+     6.7,
+     94.9,
+     4.6
+    ],
+    "n": 1
+   },
+   {
+    "setting": "columns",
+    "x": 2,
+    "y": 17.6,
+    "box": [
+     2.5,
+     15.7,
+     94.9,
+     84.3
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "de/sections/product-recommendations-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 81010,
+   "quality": 80,
+   "how": "section"
+  }
+ },
+ "en": {
+  "desktop": {
+   "file": "en/sections/product-recommendations-desktop.webp",
+   "width": 1581,
+   "height": 900,
+   "bytes": 53866,
+   "quality": 80,
+   "how": "section"
+  },
+  "desktop_small": {
+   "file": "en/sections/product-recommendations-desktop-800.webp",
+   "width": 800,
+   "height": 455,
+   "bytes": 22702,
+   "quality": 80
+  },
+  "thumb": {
+   "file": "en/sections/thumbs/product-recommendations.webp",
+   "width": 640,
+   "height": 364,
+   "bytes": 16230,
+   "quality": 80
+  },
+  "markers": [
+   {
+    "setting": "heading",
+    "x": 2,
+    "y": 8.8,
+    "box": [
+     2.5,
+     6.9,
+     94.9,
+     4.7
+    ],
+    "n": 1
+   },
+   {
+    "setting": "columns",
+    "x": 2,
+    "y": 18,
+    "box": [
+     2.5,
+     16,
+     94.9,
+     83.9
+    ],
+    "n": 2
+   }
+  ],
+  "mobile": {
+   "file": "en/sections/product-recommendations-mobile.webp",
+   "width": 780,
+   "height": 2800,
+   "bytes": 75656,
+   "quality": 80,
+   "how": "section"
+  }
+ }
+}

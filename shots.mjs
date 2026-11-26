@@ -7,6 +7,8 @@
 //   STOREFRONT_PASSWORD=… node shots.mjs --candidates text --out /tmp/x   # alle Fundstellen eines Blocks zum Aussuchen
 //   STOREFRONT_PASSWORD=… node shots.mjs --discover           # Seitenadressen der Vorlagen neu ermitteln
 //   node shots.mjs --selectors                                # nur zeigen, über welche Klassen jeder Block gefunden wird
+//   STOREFRONT_PASSWORD=… node shots.mjs --sections            # Abschnitte (content/sections/index.json) statt Blöcke
+//   STOREFRONT_PASSWORD=… node shots.mjs --sections --only header,footer
 //   Optionen: --theme <pfad zum Theme-Repo> (Standard ../cadence-theme), --lang de|en, --variant desktop|mobile
 //
 // Fundstelle je Block: shots.config.json → "blocks" (fest), sonst automatisch die erste Fundstelle in einer
@@ -67,6 +69,7 @@ function parseArgs(argv) {
     else if (v === '--lang') a.langs = argv[++i].split(',');
     else if (v === '--variant') a.variants = argv[++i].split(',');
     else if (v === '--selectors') a.selectors = true;
+    else if (v === '--sections') a.sections = true;
     else throw new Error(`Unbekannte Option ${v}`);
   }
   return a;
@@ -722,6 +725,153 @@ function finishMarkers(raw, slug) {
   return list;
 }
 
+// ----------------------------------------------------------------------------- Abschnitte (Sections)
+//
+// Fundstelle je Abschnitt: shots.config.json → "sections" (Shop, Seite über die Vorlage, Abschnitts-ID; Abschnitte
+// der Gruppen Kopf-/Fußzeile tragen die ID aus header-group.json bzw. footer-group.json). Gefunden wird der Abschnitt
+// über #shopify-section-…__<id> (Vorlage wie Gruppe). Zusätze: "union" (weitere Elemente mit ins Bild, je Variante),
+// "hover" (z. B. Mega-Menü öffnen), "top" (am Seitenanfang aufnehmen), "dialog" (Popup öffnen), "wait" (nachladende Abschnitte), "cart", "unavailable".
+// Markierungen: "markers" → {setting} (Einstellung des Abschnitts), {block: "_privat"} bzw. {block, setting}
+// (eigener Block des Abschnitts bzw. Einstellung darin), {block: "öffentlich"} (Block mit eigener Block-Seite).
+// Ausgabe: assets/shots/<lang>/sections/<abschnitt>-desktop.webp …, thumbs/…; Daten in content/shots/sections/.
+
+const SEC_DATA = path.join(DATA_DIR, 'sections');
+const SEC_DIR = path.join(ROOT, 'content', 'sections');
+
+async function grabSection(sh, job, variant, lang) {
+  const vp = VIEWPORTS[variant];
+  if (sh.blocked?.[job.shop]) return { error: `${job.shop} gesperrt (429)` };
+  let page;
+  try {
+    page = await sh.open(job, variant, lang);
+  } catch (e) {
+    if (/gesperrt/.test(e.message)) sh.blocked = { ...(sh.blocked || {}), [job.shop]: true };
+    return { error: e.message.split('\n')[0] };
+  }
+  await unsettle(page);
+  await page.mouse.move(0, vp.height - 1);
+  const sel = `[id^="shopify-section-"][id$="__${job.section}"]`;
+  let el = await page.$(sel);
+  if (!el) return { error: `Abschnitt ${job.section} nicht auf der Seite` };
+  if (job.wait) {
+    await el.scrollIntoViewIfNeeded().catch(() => {});
+    await page.waitForTimeout(job.wait);
+    el = await page.$(sel);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await settle(page, el);
+  if (job.top) {
+    // Kopfzeile, Ankündigungsleiste: am Seitenanfang (klebende Kopfzeile sonst an der Scroll-Position)
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(500);
+  }
+  let png, clip, how = 'section';
+  if (job.dialog) {
+    await page.evaluate(() => window.scrollTo(0, 0));
+    const ok = await page.evaluate((s) => { const d = document.querySelector(s); if (!d) return false; if (!d.open) d.showModal(); return true; }, job.dialog);
+    if (!ok) return { error: `Dialog ${job.dialog} fehlt` };
+    await page.evaluate(async (s) => {
+      const imgs = [...document.querySelector(s).querySelectorAll('img')];
+      imgs.forEach((i) => { i.loading = 'eager'; });
+      await Promise.race([Promise.all(imgs.map((i) => (i.complete ? null : new Promise((r) => { i.onload = i.onerror = r; })))), new Promise((r) => setTimeout(r, 6000))]);
+    }, job.dialog);
+    await page.waitForTimeout(900);
+    clip = { x: 0, y: 0, width: vp.width, height: vp.height };
+    png = await page.screenshot({ clip, animations: 'disabled', type: 'png' });
+    how = 'dialog';
+  } else {
+    if (job.hover?.[variant]) {
+      await page.evaluate(() => window.scrollTo(0, 0));
+      for (let i = 0; i < 3; i++) {
+        // Panel offen? (letztes Element aus "union") – sonst Maus weg und erneut darüberfahren
+        await page.mouse.move(0, vp.height - 1);
+        await page.hover(job.hover[variant]).catch(() => {});
+        await page.waitForTimeout(1200);
+        const last = (job.union?.[variant] || []).slice(-1)[0];
+        const h = last ? await page.$(last) : null;
+        if (!last || (h && await boxOf(page, h))) break;
+      }
+    }
+    let box = await boxOf(page, el);
+    if (!box) return { error: 'Abschnitt ohne Größe (leer oder ausgeblendet)' };
+    for (const u of job.union?.[variant] || []) {
+      const h = await page.$(u);
+      // settle() blendet klebende Elemente aus – die gewünschten wieder zeigen
+      if (h) await h.evaluate((n) => { for (let e = n; e; e = e.parentElement) if (e.hasAttribute('data-shot-hidden')) { e.style.removeProperty('visibility'); e.removeAttribute('data-shot-hidden'); } });
+      const b = h ? await boxOf(page, h) : null;
+      if (!b) continue;
+      const x2 = Math.max(box.x + box.width, b.x + b.width), y2 = Math.max(box.y + box.height, b.y + b.height);
+      box = { ...box, x: Math.min(box.x, b.x), y: Math.min(box.y, b.y) };
+      box.width = x2 - box.x; box.height = y2 - box.y;
+    }
+    clip = clipFor(box, null, vp, 0);
+    png = await page.screenshot({ clip, fullPage: !job.top, animations: 'disabled', type: 'png' });
+  }
+  let markers = null;
+  if (variant === 'desktop' && job.markers?.length) {
+    const root = job.dialog ? await page.$(job.dialog) : el;
+    markers = await measureMarkers(page, root, clip, job.markers.map((m) => ({ ...m })), []);
+  }
+  if (job.dialog) await page.evaluate((s) => document.querySelector(s)?.close(), job.dialog);
+  if (job.hover?.[variant]) await page.mouse.move(0, vp.height - 1);
+  return { png, clip, how, markers };
+}
+
+function finishSectionMarkers(raw) {
+  const placed = [];
+  return (raw || []).map((m, i) => {
+    const out = { ...(m.block ? { block: m.block } : {}), ...(m.setting ? { setting: m.setting } : {}), x: m.x, y: m.y, box: m.box, n: i + 1 };
+    for (let k = 0; k < 6 && placed.some((p) => Math.abs(p.x - out.x) < 3.5 && Math.abs(p.y - out.y) < 5); k++) out.x += 4;
+    out.x = Math.round(Math.min(97, Math.max(2, out.x)) * 10) / 10;
+    out.y = Math.round(Math.min(96, Math.max(3, out.y)) * 10) / 10;
+    placed.push(out);
+    return out;
+  });
+}
+
+async function shootSection(sh, slug, args) {
+  const cfg = CONFIG.sections?.[slug];
+  const dataFile = path.join(SEC_DATA, `${slug}.json`);
+  fs.mkdirSync(SEC_DATA, { recursive: true });
+  if (!cfg) { console.warn(`${slug}: keine Fundstelle in shots.config.json → sections`); return { ok: false, reason: 'keine Fundstelle' }; }
+  if (cfg.unavailable) {
+    fs.writeFileSync(dataFile, JSON.stringify({ section: slug, unavailable: cfg.unavailable }, null, 1) + '\n');
+    console.log(`${slug}: kein Bild (${cfg.unavailable})`);
+    return { ok: true };
+  }
+  const old = fs.existsSync(dataFile) ? JSON.parse(fs.readFileSync(dataFile, 'utf8')) : {};
+  const job = { ...cfg, name: slug };
+  const result = { section: slug, shop: cfg.shop, template: cfg.template, id: cfg.section };
+  for (const lang of args.langs) {
+    const entry = { ...(old[lang] || {}) };
+    for (const variant of args.variants) {
+      const g = await grabSection(sh, job, variant, lang);
+      if (g.error || !g.png) return { ok: false, reason: `${lang} ${variant}: ${g.error}` };
+      const base = path.join(SHOTS, lang, 'sections', slug);
+      const outs = variant === 'desktop'
+        ? [[`${base}-desktop.webp`, 1600, 1250], [`${base}-desktop-800.webp`, 800, 625], [path.join(SHOTS, lang, 'sections', 'thumbs', `${slug}.webp`), 640, 480]]
+        : [[`${base}-mobile.webp`, 780, 2800]];
+      const info = toWebp(g.png, outs);
+      if (!info) return { ok: false, reason: `${lang} ${variant}: Bild ist leer` };
+      const rel = (f) => path.relative(SHOTS, f).split(path.sep).join('/');
+      if (variant === 'desktop') {
+        entry.desktop = { file: rel(outs[0][0]), ...info[0], how: g.how };
+        entry.desktop_small = { file: rel(outs[1][0]), ...info[1] };
+        entry.thumb = { file: rel(outs[2][0]), ...info[2] };
+        entry.markers = finishSectionMarkers(g.markers);
+      } else {
+        entry.mobile = { file: rel(outs[0][0]), ...info[0], how: g.how };
+      }
+      console.log(`  ${slug} ${lang} ${variant}: ${info[0].width}×${info[0].height}, ${Math.round(info[0].bytes / 1024)} KB (${g.how})`
+        + (variant === 'desktop' ? `, ${entry.markers.length}/${(cfg.markers || []).length} Markierungen` : ''));
+    }
+    result[lang] = entry;
+  }
+  for (const lang of ['de', 'en']) if (!result[lang] && old[lang]) result[lang] = old[lang];
+  fs.writeFileSync(dataFile, JSON.stringify(result, null, 1) + '\n');
+  return { ok: true };
+}
+
 // ----------------------------------------------------------------------------- Start
 
 function jobFor(slug, cand) {
@@ -808,6 +958,18 @@ async function main() {
     const index = JSON.parse(fs.readFileSync(path.join(BLOCKS_DIR, 'index.json'), 'utf8'));
     const publicTypes = new Set(index.map((b) => b.slug));
     const sh = new Shooter(browser, theme, templates, pages, publicTypes);
+    if (args.sections) {
+      const secs = JSON.parse(fs.readFileSync(path.join(SEC_DIR, 'index.json'), 'utf8')).map((x) => x.slug)
+        .filter((s) => !args.only || args.only.includes(s));
+      const failed = [];
+      for (const slug of secs) {
+        const r = await shootSection(sh, slug, args);
+        if (!r.ok) { failed.push(`${slug} (${r.reason})`); console.warn(`  ${slug}: ${r.reason}`); }
+      }
+      await sh.closeAll();
+      if (failed.length) console.warn(`Ohne Bild: ${failed.join(', ')}`);
+      return;
+    }
     if (args.candidates) {
       const outDir = path.resolve(args.out || path.join(ROOT, '_candidates'));
       fs.mkdirSync(outDir, { recursive: true });
