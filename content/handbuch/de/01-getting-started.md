@@ -162,4 +162,4 @@ Texte, die Sie selbst in Abschnitten und Blöcken eingeben (Überschriften, Abs�
 
 ## Hilfe
 
-Fragen zum Theme beantwortet der Support unter [support e-mail]. Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite.
+Fragen zum Theme beantwortet der Support unter [support@refill-themes.com](mailto:support@refill-themes.com). Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite.

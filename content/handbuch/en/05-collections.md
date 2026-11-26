@@ -23,6 +23,8 @@ Custom badges and badge colors (see [Badges](#badges)) follow below.
 
 Which key figures a card shows (serving, price per day) is set in each block, e.g. “Collection: product list” → **“Show key figures (serving, servings)”** and **“Show price per day or serving”**. Both switches only appear once the metafields for amount per serving or servings per pack are entered under Theme settings → “Product data”.
 
+You can also turn off individual parts of the card per block: **“Show profile scales (e.g. scent, texture)”**, **“Show unit price”** and **“Show ‘Compare’ checkbox”** (default: on). These switches are available in “Products from collection”, “Collection: product list”, “Search: results” (also for the suggestions on an empty search), “Ingredient: products”, “Recently viewed”, “Product finder” (results on the page) and in the “Product recommendations” section. Profile scales and “Compare” only appear when they are turned on under Theme settings → “Product data” → “Product cards”; the block can then hide them for itself. In the EU a unit price (e.g. “€16.86/100 g”) is usually required wherever a price is shown for goods sold by weight, volume or length – only turn it off where it isn’t needed.
+
 Long product titles take up at most two lines on cards. Headings and titles only hyphenate a word when it doesn't fit on a line by itself.
 
 ### Image motion on hover

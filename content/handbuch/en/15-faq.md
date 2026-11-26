@@ -121,4 +121,4 @@ For sold-out variants, customers can leave their email address (“Buy buttons�
 
 ## Support
 
-For further questions, contact [support e-mail]. Please include your store address (`…myshopify.com`), the theme version and the page concerned, ideally with a screenshot.
+For further questions, contact [support@refill-themes.com](mailto:support@refill-themes.com). Please include your store address (`…myshopify.com`), the theme version and the page concerned, ideally with a screenshot.

@@ -199,5 +199,5 @@ Block **„Anwendung“**: Schritte aus `custom.usage` (Mehrzeiliger Text, eine 
 
 ## Vorbestellung und Swatches
 
-- **Vorbestellung:** Aktivieren Sie bei der Variante „Weiterverkaufen, wenn nicht auf Lager“. Bei Bestand 0 heißt der Knopf „Vorbestellen“. Einen Text wie „Mitte Dezember“ tragen Sie im Varianten- oder Produkt-Metafeld `custom.preorder_date` ein; er erscheint als „Voraussichtlicher Versand: …“.
+- **Vorbestellung:** Aktivieren Sie bei der Variante „Weiterverkaufen, wenn nicht auf Lager“. Bei Bestand 0 heißt der Knopf „Vorbestellen“. Einen Text wie „Mitte Dezember“ tragen Sie im Varianten- oder Produkt-Metafeld `custom.preorder_date` ein; er erscheint als „Voraussichtlicher Versand: …“. Welches Metafeld gelesen wird, legen Sie auf der Produktseite im Block „Kauf-Buttons“ fest und für die Schnellansicht unter **Theme-Einstellungen → „Produktdaten“ → „Metafeld: voraussichtlicher Versand (Schnellansicht)“**.
 - **Farbfelder:** Legen Sie in Shopify für Optionswerte (z. B. Geschmack) Swatches an (Farbe oder Bild). Refill zeigt sie in der Variantenauswahl, auf Karten und in Filtern.

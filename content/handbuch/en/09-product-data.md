@@ -199,5 +199,5 @@ Scales describe properties, not effects. Do not put health or efficacy claims in
 
 ## Pre-order and swatches
 
-- **Pre-order:** turn on “Continue selling when out of stock” for the variant. At zero stock, the button reads “Pre-order”. Enter a text such as “mid-December” in the variant or product metafield `custom.preorder_date`; it appears as “Expected to ship: …”.
+- **Pre-order:** turn on “Continue selling when out of stock” for the variant. At zero stock, the button reads “Pre-order”. Enter a text such as “mid-December” in the variant or product metafield `custom.preorder_date`; it appears as “Expected to ship: …”. Which metafield is read is set on the product page in the “Buy buttons” block and for the quick view under **Theme settings → “Product data” → “Metafield: expected ship date (quick view)”**.
 - **Swatches:** set up swatches (color or image) for option values (e.g. flavor) in Shopify. Refill shows them in the variant picker, on cards and in filters.

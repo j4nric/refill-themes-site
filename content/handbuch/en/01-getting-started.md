@@ -164,4 +164,4 @@ Texts you enter yourself in sections and blocks (headings, paragraphs, button la
 
 ## Help
 
-For questions about the theme, contact support at [support e-mail]. Please include your store address (`…myshopify.com`), the theme version and the page concerned.
+For questions about the theme, contact support at [support@refill-themes.com](mailto:support@refill-themes.com). Please include your store address (`…myshopify.com`), the theme version and the page concerned.

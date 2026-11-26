@@ -74,7 +74,7 @@
     "type": "checkbox",
     "id": "inherit_alignment",
     "label": "Match group alignment",
-    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own.",
+    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
     "default": true
    },
    {
@@ -170,7 +170,7 @@
     "type": "checkbox",
     "id": "inherit_alignment",
     "label": "Ausrichtung wie Gruppe",
-    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen.",
+    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
     "default": true
    },
    {

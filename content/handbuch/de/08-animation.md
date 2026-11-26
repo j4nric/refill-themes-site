@@ -14,16 +14,16 @@ Im Theme-Editor blenden die Effekte nichts aus, damit Sie alle Inhalte sehen und
 
 | Einstellung | Wirkung | Standard |
 |---|---|---|
-| „Animationen aktivieren“ | Hauptschalter für alle Effekte, die Scroll-Story und Seitenübergänge. Aus: alle anderen Einstellungen verschwinden. | an |
+| „Animationen aktivieren“ | Hauptschalter für alle Effekte, die Scroll-Story und Seitenübergänge. Aus: alle anderen Einstellungen verschwinden. Kurze Rückmeldungen beim Öffnen und Schließen (z. B. Warenkorb) bleiben. | an |
 | „Intensität“ | Weg, Dauer und Staffelung aller Effekte: „Dezent“, „Normal“, „Ausdrucksstark“. | Dezent |
 | **Beim Scrollen** | | |
 | „Abschnitte einblenden“ | Inhalte von „Abschnitt“-Sections erscheinen beim Hineinscrollen. **„Art“**: „Aufsteigen“ oder „Nur einblenden“. | an, Aufsteigen |
 | „Produktreihen einfliegen lassen“ | Produktkarten in Rastern kommen gestaffelt von der Seite – beim Scrollen nach unten von rechts, nach oben von links. | aus |
-| „Überschriften aufbauen“ | Große Überschriften erscheinen **„Wortweise“** oder **„Zeilenweise“** (Einstellung „Aufbau“). Der Text bleibt für Suchmaschinen und Screenreader vollständig. | aus |
+| „Text-Animation“ | Texte bauen sich beim ersten Sichtbarwerden auf. „Nur Überschriften“: große Überschriften Wort für Wort bzw. Zeile für Zeile. „Überschriften + Akzent“: auch Profil-Skalen, Zeitleisten, Kennzahlen, Schritte, Vorteile und Text-Hervorhebungen (der Marker folgt dem Scrollen). „Alle Texte“: auch Fließtext und Zitate, absatzweise. | Aus |
+| „Überschriften aufbauen“ (ältere Einstellung) | Ersetzt durch „Text-Animation“; wirkt nur, solange dort „Aus“ gewählt ist. Große Überschriften erscheinen **„Wortweise“** oder **„Zeilenweise“** (Einstellung „Aufbau“). Der Text bleibt für Suchmaschinen und Screenreader vollständig. | aus |
 | „Parallax für Bilder“ | Bilder im Block „Bild mit Text“ und im Block „Bild“ (Einpassen „Fläche füllen“) bewegen sich etwas langsamer als die Seite. | aus |
 | **Rückmeldung und Übergänge** | | |
-| „Linie zum Warenkorb“ | Nach „In den Warenkorb“ läuft eine feine Linie mit einem Punkt vom Button zum Warenkorb in der Kopfzeile. | aus |
-| „Hover und Buttons“ | Buttons geben beim Drücken leicht nach, Sekundär-Buttons füllen sich beim Überfahren, Links in der Fußzeile bekommen eine wachsende Unterstreichung. | aus |
+| „Hover und Buttons“ | Beim Überfahren läuft die Hover-Farbe von Primär- und Sekundär-Buttons von der Seite ein, statt umzuschalten; Buttons geben beim Drücken leicht nach, Links in der Fußzeile bekommen eine wachsende Unterstreichung. Nur mit Maus. Ohne die Einstellung wechseln Buttons beim Überfahren nur die Farbe. | aus |
 | „Seitenübergang“ | „Überblenden“, „Aufsteigen“, „Seitlich schieben“ oder „Kein Übergang“ beim Wechsel zwischen Seiten. | Überblenden |
 
 Einstellungen wie „Art“ oder „Aufbau“ erscheinen erst, wenn der zugehörige Effekt eingeschaltet ist.

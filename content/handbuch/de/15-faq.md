@@ -121,4 +121,4 @@ Bei ausverkauften Varianten können Kunden ihre E-Mail-Adresse hinterlassen (Blo
 
 ## Support
 
-Antworten auf weitere Fragen erhalten Sie unter [support e-mail]. Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite, am besten mit Screenshot.
+Antworten auf weitere Fragen erhalten Sie unter [support@refill-themes.com](mailto:support@refill-themes.com). Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite, am besten mit Screenshot.

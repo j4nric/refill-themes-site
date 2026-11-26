@@ -192,7 +192,7 @@ Without content the block stays hidden. The window closes with ×, Escape or a c
 
 ## Benefit list (USPs)
 
-**“Benefit list (USPs)”** block – short points such as “Ships within 24 hours” or “Lab tested”, e.g. below the buy buttons. **“Layout”**: “Stacked” or “Side by side”.
+**“Benefit list (USPs)”** block – short points such as “Ships within 24 hours” or “Lab tested”, e.g. below the buy buttons. **“Layout”**: “Stacked” or “Side by side”. Side by side, **“Columns”** sets the number of columns: “Automatic” (as many as fit), 2 or 3 – one column on phones. **“Center icon and text”** puts the icon above the text, both centered.
 
 - **Same for every product:** “Benefit” child blocks with **“Text”** and **“Icon”**.
 - **Per product:** metafield `custom.usps` (list of single line texts or multi-line text, one line per benefit). When it's filled, it replaces the child blocks, and the **“Icon”** setting under “Data source” applies to all its entries.

@@ -207,3 +207,5 @@ Buttons such as PayPal, Apple Pay or Shop Pay are turned on separately:
 - Cart page: **“Cart: summary”** block → **“Show dynamic checkout buttons”**.
 
 Which payment methods appear is set under **Settings → Payments**.
+
+**Appearance:** In the **“Buy buttons”** block, **“Style of the “Buy it now” button”** sets how the button without a brand logo looks: **“Outline (like secondary buttons)”** (default, so “Add to cart” stays the most prominent button), **“Filled (like primary buttons)”** or **“Shopify default”**. Corners and height always follow the theme buttons (Theme settings → “Layout” → “Corners” → “Buttons”). Shopify renders branded buttons such as Shop Pay, PayPal, Apple Pay or Google Pay in a closed area: the theme can only adjust their corners and height (in the cart too); colors, font and hover are set by the payment provider.

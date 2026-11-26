@@ -206,3 +206,5 @@ Buttons wie PayPal, Apple Pay oder Shop Pay schalten Sie getrennt ein:
 - Warenkorbseite: Block **„Warenkorb: Übersicht“** → **„Dynamische Checkout-Buttons anzeigen“**.
 
 Welche Zahlungsarten erscheinen, legen Sie unter **Einstellungen → Zahlungen** fest.
+
+**Aussehen:** Im Block **„Kauf-Buttons“** wählen Sie unter **„Stil des Knopfs „Jetzt kaufen““**, wie der Knopf ohne Markenlogo aussieht: **„Umriss (wie Sekundär-Buttons)“** (Standard, damit „In den Warenkorb“ der auffälligste Knopf bleibt), **„Fläche (wie Primär-Buttons)“** oder **„Shopify-Standard“**. Ecken und Höhe folgen in allen Fällen den Theme-Buttons (Theme-Einstellungen → „Layout“ → „Ecken“ → „Buttons“). Gebrandete Knöpfe wie Shop Pay, PayPal, Apple Pay oder Google Pay stellt Shopify in einem abgeschlossenen Bereich dar: Das Theme kann dort nur Ecken und Höhe anpassen (auch im Warenkorb), Farben, Schrift und Hover legt der Zahlungsanbieter fest.

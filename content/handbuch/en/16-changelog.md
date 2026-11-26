@@ -6,6 +6,35 @@ Versions follow semantic versioning. From the first published version on, settin
 
 First complete version of all pages and core features.
 
+### November 25, 2026
+
+Feedback from the theme editor (round W).
+
+**New**
+- **Icons in the “Text” block:** optionally an icon above or to the left of the text – from the icon library, as a custom image or as free text (e.g. “01”, with font size, font, weight and color). **“Icon with text”** offers the same choice and aligns the icon to the top, middle or bottom of the text. See [Sections and blocks](03-sections-and-blocks.md#text).
+- **Group:** horizontal alignment as buttons (left, center, right) like in Text and Heading. **“Use full width”** replaces “Spread / full width” (your setting is kept).
+- **“Match group alignment”** (on by default) in “Text”, “Heading”, “Line art”, “Line animation”, “Counter bar” and “Decoration” (in content): the block takes the alignment of its group; turn it off to choose one of its own. See [Group and columns](03-sections-and-blocks.md#group-and-columns).
+- **Product finder → Answer:** vertical alignment of the choices. **Shoppable image:** products in 2 columns on desktop. **Benefit list:** side by side in 2 or 3 columns, icon and text centered. **Tab:** spacing below (medium by default). **Logo list:** smooth automatic scrolling for long lists (pauses on hover, still with “reduce motion”).
+- **Product cards:** profile scales (e.g. scent, texture), unit price and “Compare” can be turned off per block – in “Products from collection” (also inside tabs), “Collection: product list”, search, “Ingredient: products”, “Recently viewed”, product finder and “Product recommendations”. See [Collections](05-collections.md#product-cards).
+- **“Tile background”** for reels, ingredients in the spotlight, timeline entries, routine steps, counters, benefits in the benefit list and “Icon with text”: “None” (default, as before), “Same as section background” or a custom color – so decoration does not make the text unreadable. See [Sections and blocks](03-sections-and-blocks.md#the-principle).
+- **Buy buttons:** style of the “Buy it now” button – “Outline” (default), “Filled” or “Shopify default”; corners and height like the theme buttons. See [Cart and checkout](07-cart-and-checkout.md#dynamic-checkout-buttons).
+- **Text highlight everywhere:** `[[…]]` now marks words in all headings and text of blocks and sections, not only in heading, text and quote. In alt text and screen reader names the brackets are removed. See [Sections and blocks](03-sections-and-blocks.md#the-principle).
+- Theme setting **“Show “Only visible in the editor” notes”** (Layout → Theme editor, on by default).
+
+**Changed**
+- Without a saved setting, “Buy it now” appears as an outline instead of the Shopify default, so “Add to cart” stays the most prominent button.
+- “Hover and buttons” (Theme settings → “Animation”) now also affects primary buttons such as “Add to cart”: the fill slides in on hover.
+- “Line art”, “Line animation”, “Counter bar” and “Decoration” (in content) blocks created before this update now follow the alignment of their group. If such a block was deliberately aligned differently from its group (e.g. centered line art in a left-aligned group), turn off “Match group alignment”. The templates of the styles have been updated.
+- The demo shops show sample reviews so the stars are visible on cards and the product page.
+
+**Removed**
+- The **“Line to cart”** effect (Theme settings → “Animation”).
+
+**Fixed**
+- Primary buttons (e.g. the cart button in the Pumice style) turned light or white on hover and became unreadable. The fill now always gets slightly darker and the text stays readable.
+- A heading such as `[[Morning routine]]` showed `Morning routine<!--hl-end-->` in the preview.
+- The pause button of a background video only appears when it does something (not when the browser paused the video itself or does not allow it to play).
+
 ### November 24, 2026
 
 **New**

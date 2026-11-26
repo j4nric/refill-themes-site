@@ -71,6 +71,8 @@ Eine eigene Spalte im Mega-Menü für ein Angebot. Block „Menü“ → **„He
 
 Die Auswahlfelder für Produkt und Kollektion bleiben immer sichtbar (Shopify kann sie nicht ausblenden); es zählt nur das Feld, das zum gewählten „Inhalt“ passt.
 
+**Eigene Hervorhebung je Menüpunkt:** Im Block „Menü“ bis zu acht Blöcke **„Hervorhebung“** hinzufügen, jeden mit eigenem Inhalt und eigenen Menüpunkten. Die Einstellungen oben gelten für Untermenüs ohne eigenen Block.
+
 ### Hervorgehobene Menüpunkte
 
 Einzelne Menüpunkte, etwa „Sale“ oder „Neu“, heben Sie farbig hervor. Block „Menü“ → **„Hervorgehobene Menüpunkte“**:

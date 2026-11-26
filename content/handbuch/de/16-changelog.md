@@ -6,6 +6,35 @@ Versionen nach Semantic Versioning. Ab der ersten veröffentlichten Version werd
 
 Erste vollständige Fassung aller Seiten und Kernfunktionen.
 
+### 25. November 2026
+
+Rückmeldungen aus dem Theme-Editor (Runde W).
+
+**Neu**
+- **Icons im Block „Text“:** optional ein Icon über oder links neben dem Text – aus der Icon-Bibliothek, als eigenes Bild oder als Freitext (z. B. „01“, mit Schriftgröße, Schrift, Stärke und Farbe). **„Icon mit Text“** hat dieselbe Auswahl und richtet das Icon oben, mittig oder unten zum Text aus. Siehe [Abschnitte und Blöcke](03-sections-and-blocks.md#text).
+- **Gruppe:** horizontale Ausrichtung als Knöpfe (links, mittig, rechts) wie bei Text und Überschrift. **„Volle Breite nutzen“** ersetzt „Verteilen“ (Ihre Einstellung bleibt erhalten).
+- **„Ausrichtung wie Gruppe“** (Standard an) in „Text“, „Überschrift“, „Linien-Grafik“, „Linien-Animation“, „Zähler-Leiste“ und „Dekor“ (im Inhalt): Der Block übernimmt die Ausrichtung der Gruppe; erst ohne Haken wählen Sie eine eigene. Siehe [Gruppe und Spalten](03-sections-and-blocks.md#gruppe-und-spalten).
+- **Produktfinder → Antwort:** vertikale Ausrichtung der Auswahlfelder. **Bild mit Markierungen:** Produkte am Desktop in 2 Spalten. **Vorteilsliste:** nebeneinander in 2 oder 3 Spalten, Icon und Text zentriert. **Tab:** Abstand nach unten (Standard mittel). **Logo-Leiste:** weiches automatisches Durchlaufen für lange Listen (hält beim Überfahren an, still bei „Bewegung reduzieren“).
+- **Produktkarten:** Profil-Skalen (z. B. Duft, Textur), Grundpreis und „Vergleichen“ lassen sich je Block abschalten – in „Produkte aus Kollektion“ (auch in Tabs), „Kollektion: Produktliste“, Suche, „Inhaltsstoff: Produkte“, „Zuletzt angesehen“, Produktfinder und „Produktempfehlungen“. Siehe [Kollektionen](05-collections.md#produktkarten).
+- **„Kachel-Hintergrund“** für Reels, Inhaltsstoffe im Fokus, Zeitleisten-Einträge, Routine-Schritte, Zähler, Vorteile der Vorteilsliste und „Icon mit Text“: „Keiner“ (Standard, wie bisher), „Wie Sektionshintergrund“ oder eigene Farbe – damit Dekor die Schrift nicht unlesbar macht. Siehe [Abschnitte und Blöcke](03-sections-and-blocks.md#das-prinzip).
+- **Kauf-Buttons:** Stil des Knopfs „Jetzt kaufen“ wählbar – „Umriss“ (Standard), „Fläche“ oder „Shopify-Standard“; Ecken und Höhe wie die Theme-Buttons. Siehe [Warenkorb und Checkout](07-cart-and-checkout.md#dynamische-checkout-buttons).
+- **Text-Hervorhebung überall:** `[[…]]` markiert Wörter jetzt in allen Überschriften und Texten der Blöcke und Abschnitte, nicht nur in Überschrift, Text und Zitat. In Alternativtexten und Namen für Screenreader fallen die Klammern weg. Siehe [Abschnitte und Blöcke](03-sections-and-blocks.md#das-prinzip).
+- Theme-Einstellung **„Hinweise „Nur im Editor sichtbar“ zeigen“** (Layout → Theme-Editor, Standard an).
+
+**Geändert**
+- „Jetzt kaufen“ erscheint ohne eigene Einstellung als Umriss statt im Shopify-Standard, damit „In den Warenkorb“ der auffälligste Knopf bleibt.
+- „Hover und Buttons“ (Theme-Einstellungen → „Animation“) wirkt jetzt auch auf Primär-Buttons wie „In den Warenkorb“: Die Fläche läuft beim Überfahren ein.
+- „Linien-Grafik“, „Linien-Animation“, „Zähler-Leiste“ und „Dekor“ (im Inhalt), die Sie vor diesem Update angelegt haben, folgen jetzt der Ausrichtung der Gruppe. Stand ein solcher Block bewusst anders als seine Gruppe (z. B. eine Linien-Grafik mittig in einer linksbündigen Gruppe), nehmen Sie den Haken „Ausrichtung wie Gruppe“ heraus. Die Vorlagen der Stile sind angepasst.
+- Die Demo-Shops zeigen Beispiel-Bewertungen, damit die Sterne an Karten und Produktseite sichtbar sind.
+
+**Entfernt**
+- Effekt **„Linie zum Warenkorb“** (Theme-Einstellungen → „Animation“).
+
+**Behoben**
+- Primär-Buttons (z. B. Warenkorb im Stil Pumice) wurden beim Überfahren hell bis weiß und unlesbar. Die Fläche wird jetzt immer etwas dunkler, der Text bleibt lesbar.
+- Eine Überschrift wie `[[Morgenroutine]]` zeigte in der Vorschau `Morgenroutine<!--hl-end-->`.
+- Der Knopf zum Anhalten eines Hintergrundvideos steht nur noch da, wenn er etwas bewirkt (nicht, wenn der Browser das Video selbst angehalten hat oder nicht abspielen lässt).
+
 ### 24. November 2026
 
 **Neu**

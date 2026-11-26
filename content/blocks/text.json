@@ -2,7 +2,7 @@
  "slug": "text",
  "kind": "block",
  "source": "blocks/text.liquid",
- "source_sha1": "76fc02d2c211",
+ "source_sha1": "da1e38ac918d",
  "accepts_blocks": false,
  "en": {
   "name": "Text",
@@ -55,7 +55,7 @@
     "type": "checkbox",
     "id": "inherit_alignment",
     "label": "Match group alignment",
-    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own.",
+    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
     "default": true
    },
    {
@@ -87,6 +87,7 @@
     "type": "select",
     "id": "icon_source",
     "label": "Icon source",
+    "info": "Only the fields of the chosen source appear. [Learn more](https://refill-themes.com/docs/blocks/text/#icon_source)",
     "default": "none",
     "options": [
      {
@@ -667,7 +668,7 @@
     "type": "checkbox",
     "id": "inherit_alignment",
     "label": "Ausrichtung wie Gruppe",
-    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen.",
+    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
     "default": true
    },
    {
@@ -699,6 +700,7 @@
     "type": "select",
     "id": "icon_source",
     "label": "Icon-Quelle",
+    "info": "Es erscheinen nur die Felder der gewählten Quelle. [Mehr im Handbuch](https://refill-themes.com/de/docs/blocks/text/#icon_source)",
     "default": "none",
     "options": [
      {

@@ -73,6 +73,8 @@ A dedicated column in the mega menu for a promotion. “Menu” block → **“F
 
 The product and collection pickers always stay visible (Shopify can't hide resource pickers); only the one that matches the selected “Content” is used.
 
+**A different feature per menu item:** add up to eight **“Submenu feature”** blocks inside the “Menu” block, each with its own content and menu items. The settings above apply to submenus without their own block.
+
 ### Highlighted menu items
 
 Make individual items such as “Sale” or “New” stand out. “Menu” block → **“Highlighted menu items”**:

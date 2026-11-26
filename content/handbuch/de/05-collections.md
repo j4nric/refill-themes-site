@@ -23,6 +23,8 @@ Darunter folgen eigene Badges und Badge-Farben (siehe [Badges](#badges)).
 
 Welche Kennzahlen eine Karte zeigt (Portion, Preis pro Tag), stellen Sie im jeweiligen Block ein (z. B. „Kollektion: Produktliste“ → **„Kennzahlen anzeigen (Portion, Portionen)“** und **„Preis pro Tag bzw. Portion anzeigen“**). Beide Schalter erscheinen erst, wenn unter Theme-Einstellungen → „Produktdaten“ die Metafelder für Menge je Portion bzw. Portionen pro Packung eingetragen sind.
 
+Ebenso lassen sich je Block einzelne Teile der Karte abschalten: **„Profil-Skalen zeigen (z. B. Duft, Textur)“**, **„Grundpreis zeigen“** und **„Häkchen ‚Vergleichen‘ zeigen“** (Standard: an). Die Schalter gibt es in „Produkte aus Kollektion“, „Kollektion: Produktliste“, „Suche: Ergebnisse“ (auch für die Vorschläge bei leerer Suche), „Inhaltsstoff: Produkte“, „Zuletzt angesehen“, „Produktfinder“ (Ergebnisse auf der Seite) und im Abschnitt „Produktempfehlungen“. Profil-Skalen und „Vergleichen“ erscheinen nur, wenn sie unter Theme-Einstellungen → „Produktdaten“ → „Produktkarten“ eingeschaltet sind; der Block kann sie dann für sich ausblenden. Den Grundpreis (z. B. „16,86 €/100 g“) verlangt die Preisangabenverordnung bei Waren nach Gewicht, Volumen oder Länge in der Regel überall, wo ein Preis steht – schalten Sie ihn nur ab, wo er nicht nötig ist.
+
 Lange Produkttitel stehen auf Karten in höchstens zwei Zeilen. Überschriften und Titel trennen Wörter nur, wenn ein Wort allein nicht in die Zeile passt.
 
 ### Bildbewegung beim Überfahren

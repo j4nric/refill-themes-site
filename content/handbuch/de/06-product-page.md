@@ -192,7 +192,7 @@ Ohne Inhalt bleibt der Block unsichtbar. Das Fenster schließt mit ×, Escape od
 
 ## Vorteilsliste (USPs)
 
-Block **„Vorteilsliste (USPs)“** – kurze Punkte wie „Versand in 24 h“ oder „Laborgeprüft“, z. B. unter den Kauf-Buttons. **„Anordnung“**: „Untereinander“ oder „Nebeneinander“.
+Block **„Vorteilsliste (USPs)“** – kurze Punkte wie „Versand in 24 h“ oder „Laborgeprüft“, z. B. unter den Kauf-Buttons. **„Anordnung“**: „Untereinander“ oder „Nebeneinander“. Nebeneinander legt **„Spalten“** die Spaltenzahl fest: „Automatisch“ (so viele, wie Platz ist), 2 oder 3 – am Handy steht eine Spalte. **„Icon und Text zentrieren“** stellt das Icon über den Text, beides mittig.
 
 - **Für alle Produkte gleich:** Unterblöcke **„Vorteil“** mit **„Text“** und **„Icon“**.
 - **Je Produkt:** Metafeld `custom.usps` (Liste von einzeiligen Texten oder mehrzeiliger Text, eine Zeile je Vorteil). Ist es befüllt, ersetzt es die Unterblöcke; dann gilt das **„Icon“** im Block unter „Datenquelle“ für alle Einträge.

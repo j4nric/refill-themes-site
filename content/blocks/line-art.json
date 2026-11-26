@@ -2,7 +2,7 @@
  "slug": "line-art",
  "kind": "block",
  "source": "blocks/line-art.liquid",
- "source_sha1": "a796309f418a",
+ "source_sha1": "e4190442a749",
  "accepts_blocks": false,
  "en": {
   "name": "Line art",
@@ -183,6 +183,13 @@
     "unit": "%"
    },
    {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Match group alignment",
+    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
+    "default": true
+   },
+   {
     "type": "select",
     "id": "alignment",
     "label": "Alignment",
@@ -199,6 +206,21 @@
      {
       "value": "end",
       "label": "Right"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Match group alignment",
+      "op": "off"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Match group alignment",
+      "op": "off"
      }
     ]
    },
@@ -426,6 +448,13 @@
     "unit": "%"
    },
    {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Ausrichtung wie Gruppe",
+    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
+    "default": true
+   },
+   {
     "type": "select",
     "id": "alignment",
     "label": "Ausrichtung",
@@ -442,6 +471,21 @@
      {
       "value": "end",
       "label": "Rechts"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Ausrichtung wie Gruppe",
+      "op": "off"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Ausrichtung wie Gruppe",
+      "op": "off"
      }
     ]
    },

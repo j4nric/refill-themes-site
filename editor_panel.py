@@ -62,6 +62,11 @@ class Translator:
     def __init__(self, theme: Path):
         self.locales = {lang: load_json(theme / "locales" / f) for lang, f in LOCALE_FILES.items()}
         self.missing: set[str] = set()
+        # Langfassungen der Info-Texte: im Theme gekürzt und ins Handbuch verlinkt, hier im Nachbau vollständig zeigen
+        self.help = {}
+        for lang in LOCALE_FILES:
+            f = theme / "docs" / "handbuch" / f"settings-help.{lang}.json"
+            self.help[lang] = load_json(f) if f.exists() else {}
 
     def lookup(self, key: str, lang: str):
         node = self.locales[lang]
@@ -82,6 +87,11 @@ class Translator:
             self.missing.add(key)
             return key.rsplit(".", 1)[-1].replace("_", " ").capitalize()
         return found
+
+    def info(self, value, lang: str) -> str:
+        if isinstance(value, str) and value.startswith("t:") and value[2:] in self.help.get(lang, {}):
+            return self.help[lang][value[2:]]
+        return self.t(value, lang)
 
     def both(self, value) -> dict:
         return {lang: self.t(value, lang) for lang in LANGS}
@@ -264,7 +274,7 @@ def extract(theme: Path, name: str, tr: Translator, theme_labels: dict, theme_de
             item["id"] = s["id"]
             item["label"] = tr.t(s.get("label", s["id"]), lang)
             if s.get("info"):
-                item["info"] = tr.t(s["info"], lang)
+                item["info"] = tr.info(s["info"], lang)
             dv = default_value(s, tr, lang)
             if dv is not None:
                 item["default"] = dv

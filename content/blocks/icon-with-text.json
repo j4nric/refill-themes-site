@@ -2,7 +2,7 @@
  "slug": "icon-with-text",
  "kind": "block",
  "source": "blocks/icon-with-text.liquid",
- "source_sha1": "f33662734f74",
+ "source_sha1": "562e7cae5b64",
  "accepts_blocks": false,
  "en": {
   "name": "Icon with text",
@@ -12,6 +12,7 @@
     "type": "select",
     "id": "icon_source",
     "label": "Icon source",
+    "info": "Only the fields of the chosen source appear. [Learn more](https://refill-themes.com/docs/blocks/icon-with-text/#icon_source)",
     "default": "library",
     "options": [
      {
@@ -490,6 +491,51 @@
       "value": "No icon"
      }
     ]
+   },
+   {
+    "type": "select",
+    "id": "tile_background",
+    "label": "Tile background",
+    "info": "Surface behind the tile’s content so decor or a background doesn’t make the text hard to read.",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "scheme",
+      "label": "Same as section background"
+     },
+     {
+      "value": "custom",
+      "label": "Custom color"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "tile_background_color",
+    "label": "Tile color",
+    "info": "Make sure there is enough contrast with the color scheme’s text color.",
+    "default": "#FFFFFF",
+    "visible_if": [
+     {
+      "setting": "tile_background",
+      "label": "Tile background",
+      "op": "is",
+      "value": "Custom color"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "tile_background",
+      "label": "Tile background",
+      "op": "is",
+      "value": "Custom color"
+     }
+    ]
    }
   ]
  },
@@ -501,6 +547,7 @@
     "type": "select",
     "id": "icon_source",
     "label": "Icon-Quelle",
+    "info": "Es erscheinen nur die Felder der gewählten Quelle. [Mehr im Handbuch](https://refill-themes.com/de/docs/blocks/icon-with-text/#icon_source)",
     "default": "library",
     "options": [
      {
@@ -977,6 +1024,51 @@
       "label": "Icon-Quelle",
       "op": "is_not",
       "value": "Kein Icon"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "tile_background",
+    "label": "Kachel-Hintergrund",
+    "info": "Fläche hinter dem Inhalt der Kachel, damit Dekor oder ein Hintergrund die Schrift nicht unlesbar macht.",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keiner"
+     },
+     {
+      "value": "scheme",
+      "label": "Wie Sektionshintergrund"
+     },
+     {
+      "value": "custom",
+      "label": "Eigene Farbe"
+     }
+    ]
+   },
+   {
+    "type": "color",
+    "id": "tile_background_color",
+    "label": "Farbe der Kachel",
+    "info": "Auf genug Kontrast zur Schriftfarbe des Farbschemas achten.",
+    "default": "#FFFFFF",
+    "visible_if": [
+     {
+      "setting": "tile_background",
+      "label": "Kachel-Hintergrund",
+      "op": "is",
+      "value": "Eigene Farbe"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "tile_background",
+      "label": "Kachel-Hintergrund",
+      "op": "is",
+      "value": "Eigene Farbe"
      }
     ]
    }

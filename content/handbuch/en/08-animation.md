@@ -14,16 +14,16 @@ In the theme editor, effects never hide anything, so you can see and edit all co
 
 | Setting | Effect | Default |
 |---|---|---|
-| “Enable animations” | Master switch for all effects, the scroll story and page transitions. When off, the other settings disappear. | on |
+| “Enable animations” | Master switch for all effects, the scroll story and page transitions. When off, the other settings disappear. Short feedback when opening and closing (e.g. the cart) remains. | on |
 | “Intensity” | Distance, duration and staggering of all effects: “Subtle”, “Normal”, “Expressive”. | Subtle |
 | **While scrolling** | | |
 | “Reveal sections” | Content of “Section” sections appears as it scrolls into view. **“Style”**: “Rise” or “Fade only”. | on, Rise |
 | “Fly in product rows” | Product cards in grids arrive one after another from the side – from the right when scrolling down, from the left when scrolling up. | off |
-| “Build up headings” | Large headings appear **“By word”** or **“By line”** (setting “Build-up”). The full text stays available to search engines and screen readers. | off |
+| “Text animation” | Text builds up the first time it scrolls into view. “Headings only”: large headings word by word or line by line. “Headings + accents”: also profile scales, timelines, key figures, steps, benefits and text highlights (the marker follows the scroll). “All text”: also body text and quotes, paragraph by paragraph. | Off |
+| “Build up headings” (older setting) | Replaced by “Text animation” and only applies while “Off” is selected there. Large headings appear **“By word”** or **“By line”** (setting “Build-up”). The full text stays available to search engines and screen readers. | off |
 | “Parallax images” | Images in the “Image with text” block and in the “Image” block (fit “Fill area”) move slightly slower than the page. | off |
 | **Feedback and transitions** | | |
-| “Line to cart” | After “Add to cart”, a fine line with a dot runs from the button to the cart in the header. | off |
-| “Hover and buttons” | Buttons give slightly when pressed, secondary buttons fill on hover, footer links get a growing underline. | off |
+| “Hover and buttons” | On hover, the hover color of primary and secondary buttons slides in from the side instead of switching; buttons give slightly when pressed, footer links get a growing underline. Mouse only. Without this setting, buttons only change color on hover. | off |
 | “Page transition” | “Crossfade”, “Rise”, “Slide” or “No transition” when moving between pages. | Crossfade |
 
 Settings such as “Style” or “Build-up” only appear once their effect is switched on.
