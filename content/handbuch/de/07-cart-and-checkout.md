@@ -71,11 +71,60 @@ Auf der Warenkorbseite steht am Handy ab zwei Positionen eine Leiste mit Zwische
 1. Legen Sie ein Produkt „Geschenkverpackung“ mit Preis an – ohne Versand und ohne Kollektion, damit es nicht in Produktlisten erscheint.
 2. Theme-Editor → Warenkorbseite → Block **„Warenkorb: Übersicht“** → **„Geschenkverpackung (Produkt)“**: dieses Produkt wählen.
 
-Auf der Warenkorbseite erscheint dann ein Schalter „Als Geschenk verpacken (+2,50 €)“, der das Produkt als eigene Position hinzufügt oder entfernt. Für eine Grußkarte schalten Sie **„Bestellnotiz anzeigen“** ein; Kunden schreiben den Text in die Bestellnotiz.
+Auf der Warenkorbseite erscheint dann ein Schalter „Als Geschenk verpacken (+2,50 €)“, der das Produkt als eigene Position hinzufügt oder entfernt. Für eine Grußkarte schalten Sie **„Bestellnotiz anzeigen“** ein; Kunden schreiben den Text in die Bestellnotiz. Geschenkverpackung und Geschenknachricht auch im Drawer: siehe [Geschenkoptionen](#geschenkoptionen).
 
 ### Leerer Warenkorb und Suche ohne Treffer
 
 Im Block **Warenkorb: Positionen** (Warenkorbseite) und im Block **Suche: Ergebnisse** (Suchseite) gibt es die Einstellung **Vorschläge, wenn leer**. Wählen Sie eine Kollektion, zum Beispiel „Bestseller“: Ist der Warenkorb leer oder findet die Suche nichts, zeigt der Shop bis zu vier Produkte daraus unter der Überschrift „Beliebt bei anderen“. Ohne Kollektion bleibt es beim Hinweis mit dem Button zum Sortiment.
+
+## Wunschliefertermin
+
+Kundinnen und Kunden wählen im Warenkorb den Tag, an dem sie die Lieferung wünschen. Das Datumsfeld steht in der Seitenleiste unter den Positionen und auf der Warenkorbseite über „Zur Kasse“. Der Termin geht als Warenkorb-Attribut in die Bestellung und steht dort unter „Zusätzliche Details“, im Format JJJJ-MM-TT. Die Shopify-Kasse ändert sich nicht.
+
+Theme-Einstellungen → **„Warenkorb“** → **„Wunschliefertermin anzeigen“** (Standard aus). Danach erscheinen:
+
+| Einstellung | Wirkung |
+|---|---|
+| **„Name des Attributs“** | So heißt der Termin in der Bestellung (Standard „Delivery date“, auf Deutsch z. B. „Wunschliefertermin“). Ändern Sie den Namen nach dem Start nicht mehr, wenn Lieferschein-Vorlagen oder Apps ihn lesen. |
+| **„Pflichtfeld“** | Siehe unten. |
+| **„Vorlauf (Werktage)“** | Frühester Termin: heute plus diese Zahl an Werktagen (Montag bis Freitag ohne gesperrte Daten), danach der nächste Liefertag. |
+| **„Auswahl bis (Tage ab heute)“** | Wie weit im Voraus ein Termin gewählt werden kann. |
+| **„Keine Lieferung an“** | Wochentage ohne Lieferung: keine, Sonntag, Samstag und Sonntag, Sonntag und Montag oder Samstag bis Montag. |
+| **„Gesperrte Daten“** | Ein Datum pro Zeile im Format JJJJ-MM-TT, z. B. Feiertage (2026-12-25). Diese Tage zählen auch nicht als Werktage. Tragen Sie sie jedes Jahr neu ein. |
+| **„Hinweistext“** | Steht unter dem Feld. Leer: „Der Termin ist ein Wunsch, keine feste Zusage.“ Gesperrte Wochentage und Feiertage ergänzt das Theme automatisch, z. B. „Keine Lieferung an Sonntagen. Auch nicht an Feiertagen.“ |
+
+Wählt jemand einen gesperrten Tag, erscheint am Feld „An diesem Tag wird nicht geliefert. Bitte einen anderen Tag wählen.“ „Zur Kasse“ geht erst mit einem gültigen Tag weiter. Der Termin ist ein Wunsch: Das Theme verspricht keine Zustellung an diesem Tag. Den Versand planen Sie selbst, z. B. mit dem Attribut in der Lieferschein-Vorlage.
+
+**Pflichtfeld:** Ist das Feld Pflicht, blendet das Theme alle Wege zur Kasse aus, die am Feld vorbeiführen:
+
+- die Express-Bezahlknöpfe (z. B. Shop Pay, PayPal) auf der Warenkorbseite,
+- „Jetzt kaufen“ auf der Produktseite, in der Schnellansicht und im Block „Hervorgehobenes Produkt“,
+- „Zur Kasse“ im Hinweis nach dem Hinzufügen (er führt dann zum Warenkorb).
+
+Erzwingen lässt sich der Termin trotzdem nicht, denn die Kasse lässt sich direkt aufrufen. Prüfen Sie Bestellungen ohne Termin deshalb selbst.
+
+## Geschenkoptionen
+
+Kundinnen und Kunden markieren im Warenkorb (Seitenleiste und Warenkorbseite) eine Bestellung als Geschenk. Die Angaben gehen als Warenkorb-Attribute in die Bestellung und stehen dort unter „Zusätzliche Details“. Die Shopify-Kasse ändert sich nicht.
+
+Theme-Einstellungen → **„Warenkorb“** → **„Geschenkoptionen anzeigen“** (Standard aus). Danach schalten Sie die einzelnen Teile ein:
+
+- **Häkchen „Als Geschenk verpacken“:** Ohne Verpackungsprodukt speichert das Häkchen nur „Yes“ als Attribut. Das kostet nichts und ist in jeder Sprache derselbe Wert.
+- **„Verpackungsprodukt“** (optional): Mit Produkt legt das Häkchen die Verpackung als eigene Position mit Preis in den Warenkorb, z. B. „Als Geschenk verpacken (+2,50 €)“. Das Produkt legen Sie an wie unter [Geschenkverpackung](#geschenkverpackung) beschrieben. Ist im Block „Warenkorb: Übersicht“ schon ein Verpackungsprodukt eingetragen, gilt auf der Warenkorbseite dieses.
+- **Feld „Geschenknachricht“** mit **„Höchstzahl Zeichen“** (Standard 200). Ein Zähler unter dem Feld zeigt die geschriebenen Zeichen. Anders als die freie Bestellnotiz hat die Nachricht ein Zeichenlimit und einen festen Namen in der Bestellung.
+- **Häkchen „Preise auf dem Lieferschein ausblenden“:** speichert nur den Wunsch, siehe unten.
+
+Unter **„Name des Attributs“** legen Sie je Angabe fest, wie sie in der Bestellung heißt (Standard „Gift wrap“, „Gift message“, „Hide prices“). Ändern Sie die Namen nach dem Start nicht mehr, wenn Lieferschein-Vorlagen, Flow oder Apps sie lesen. Die Häkchen speichern immer „Yes“. Prüfen Sie in Flow und in der Lieferschein-Vorlage deshalb auf „nicht leer“, nicht auf einen bestimmten Wert.
+
+### Preise auf dem Lieferschein ausblenden
+
+Das Häkchen speichert nur den Wunsch als Attribut. Den Lieferschein erzeugt Shopify aus Ihrer Vorlage; das Theme kann ihn nicht ändern. Damit der Lieferschein den Wunsch befolgt, setzen Sie unter **Einstellungen → Versand und Zustellung → Lieferscheinvorlage** die Preis-Spalten in eine Bedingung, z. B.:
+
+```liquid
+{% if order.attributes["Hide prices"] == blank %} … Preis … {% endif %}
+```
+
+Verwenden Sie den Attributnamen, den Sie eingestellt haben. Die Geschenknachricht drucken Sie dort mit `{{ order.attributes["Gift message"] }}`. Prüfen Sie die Vorlage mit einer Testbestellung.
 
 ## Fortschrittsbalken mit Stufen
 

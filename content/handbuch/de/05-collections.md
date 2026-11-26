@@ -149,6 +149,22 @@ Block **„Kollektionsliste“**: Kollektionen als Kacheln; leer gelassen alle K
 
 Die Vorlage „Suche“ enthält **„Suche: Kopfbereich“** und **„Suche: Ergebnisse“** mit Filtern, Spalten, Kennzahlen und derselben **„Seitennavigation“** wie die Kollektion (Seitenzahlen, „Mehr laden“, „Automatisch beim Scrollen“). Unter **„Keine Treffer“** → **„Vorschläge, wenn leer“** wählen Sie eine Kollektion, aus der bei leerer Suche bis zu vier Produkte erscheinen. Die Schnellsuche in der Kopfzeile beschreibt [Kopfzeile und Navigation](04-header.md#suche).
 
+## Produktvergleich
+
+Kundinnen und Kunden stellen zwei bis vier Produkte nebeneinander: Preis, Grundpreis, Preis pro Tag oder Portion, Werte aus der Datentafel, beliebige Metafelder, Profil, Bewertung, Verfügbarkeit, Abo und „In den Warenkorb“.
+
+1. **Häkchen „Vergleichen“ einschalten:** Theme-Einstellungen → **„Produktdaten“** → **„Häkchen ‚Vergleichen‘ auf Produktkarten“** (Standard aus). Auf der Produktseite fügen Sie den Block **Häkchen „Vergleichen“** hinzu, z. B. unter den Kauf-Buttons. In einzelnen Blöcken mit Produktkarten schalten Sie das Häkchen mit **„Häkchen ‚Vergleichen‘ zeigen“** ab (siehe [Produktkarten](#produktkarten)).
+2. **Vergleichsansicht gestalten:** Theme-Editor → Vorlagen → Suche → **compare**. Der Block **„Produktvergleich“** enthält die Zeilen als Blöcke (**„Vergleichszeile“**): Inhalt wählen, Bezeichnung optional. „Preis pro Tag oder Portion“ nutzt die Portionen-Metafelder aus Theme-Einstellungen → „Produktdaten“ (nur bei Produkten mit einem Preis).
+3. **Seite „Vergleich“ (optional):** Legen Sie eine Seite mit der Vorlage **compare** an. Sie zeigt die aktuelle Auswahl mit dem Knopf „Vergleichen“ und Ihre **„Vorgeschlagenen Vergleiche“**: eine Zeile je Vergleich im Format „Titel | handle-a, handle-b, handle-c“ (2–4 Produkt-Handles). Die Vorschläge sind Links und funktionieren ohne JavaScript. Die Seite eignet sich fürs Menü.
+
+**Gut zu wissen:**
+
+- Die Auswahl gilt für die Sitzung im Browser, höchstens vier Produkte. Eine Leiste am unteren Rand zeigt sie und führt zur Vergleichsansicht.
+- Das Häkchen braucht JavaScript; ohne JavaScript ist es ausgeblendet. Die Vergleichsansicht selbst lädt auch ohne JavaScript.
+- Zeilen ohne Wert bei allen gezeigten Produkten blendet der Shop aus. **„Unterschiede standardmäßig hervorheben“** hinterlegt Zeilen mit unterschiedlichen Werten. Mit **„Schalter ‚Unterschiede hervorheben‘ zeigen“** können Kunden das selbst umschalten; ohne Schalter gilt Ihre Einstellung dauerhaft.
+- Die Vergleichsansicht hat eine eigene Adresse wie `/search?view=compare&type=product&q=handle:a OR handle:b`. Sie können sie selbst verlinken, z. B. aus einem Blogartikel. Suchmaschinen indexieren sie nicht.
+- Es erscheinen nur veröffentlichte Produkte; unbekannte Handles fallen weg.
+
 ## Merkliste
 
 Refill enthält keine eigene Merkliste: Shopify ordnet Wunschlisten in den Regeln für den Theme Store den Apps zu. Für eine Merkliste installieren Sie eine Wunschlisten-App und fügen deren App-Blöcke im Theme-Editor über **„Block hinzufügen“ → „Apps“** ein (z. B. auf der Produktseite).

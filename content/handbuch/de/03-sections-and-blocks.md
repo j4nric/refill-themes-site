@@ -25,11 +25,19 @@ Dieselben vier Layout-Einstellungen haben auch **„Eigenes Liquid“** und **�
 
 Leere Abschnitte – etwa „Zuletzt angesehen“ ohne Verlauf – klappen im Shop ein. Im Editor bleiben sie sichtbar, damit Sie sie finden.
 
-**Hinweise im Editor:** Fehlt einem Block etwas (kein Produkt auf dieser Seite, leeres Metafeld, noch keine Bewertungen, Verlauf von „Zuletzt angesehen“), zeigt der Editor an seiner Stelle einen Hinweis mit orangem Balken und der Marke **„Nur im Editor sichtbar“**. Kundinnen und Kunden sehen ihn nie; im Shop entfällt der Block oder er bleibt leer. Stören die Hinweise beim Gestalten, schalten Sie sie unter **Theme-Einstellungen → „Layout“ → „Theme-Editor“ → „Hinweise „Nur im Editor sichtbar“ zeigen“** aus (Standard an); leere Blöcke bleiben in der Vorschau dann einfach leer.
-
-**Text hervorheben:** Setzen Sie Wörter in doppelte eckige Klammern, um sie wie mit einem Textmarker hervorzuheben: `Nachfüllen statt [[wegwerfen]]`. Das wirkt in allen Überschriften und Texten der Blöcke und Abschnitte – Überschrift, Text, Zitat (auch Autor und Rolle), Labels über Überschriften, Titel und Texte in Akkordeon, FAQ, Tabs, Produktfinder, Routine, Zeitleiste, Rechnern, Tabellen, Aufmachern, Werbekacheln, Fußzeile, Ankündigungsleiste, Laufband, Countdown, Altersabfrage und Produkt-Blöcken. Felder, die es können, nennen die Schreibweise im Hinweis darunter. In Alternativtexten von Bildern und in Namen für Screenreader (z. B. „Name des Karussells“) fallen die Klammern einfach weg. Nicht hervorgehoben werden Knöpfe, das Menü der Kopfzeile (dort gibt es die eigene „Hervorhebung im Untermenü“) und reine Datenfelder (Werte, Spaltenzeilen). Nur vollständige Paare werden markiert; in Rich-Text-Feldern je Absatz ein eigenes Paar setzen. Farbe und Bewegung des Markers: Theme-Einstellungen → „Typografie“ → „Text-Hervorhebung“ und [Animation](08-animation.md).
-
 **Auswählen im Editor:** Klicken Sie in der Seitenleiste auf ein Popup, ein Info-Popup, den Block „Menü“ oder ein „Bild“ im Menü, öffnet die Vorschau es (Mega-Menü am Desktop, Menü am Handy). Gewählte Folien im Karussell und Ankündigungen in der Leiste rücken ins Bild. Effekte aus [Animation](08-animation.md) blenden im Editor keine Inhalte aus.
+
+### Hinweise im Editor
+
+Fehlt einem Block etwas (kein Produkt auf dieser Seite, leeres Metafeld, noch keine Bewertungen, Verlauf von „Zuletzt angesehen“), zeigt der Editor an seiner Stelle einen Hinweis mit orangem Balken und der Marke **„Nur im Editor sichtbar“**. Kundinnen und Kunden sehen ihn nie; im Shop entfällt der Block oder er bleibt leer. Stören die Hinweise beim Gestalten, schalten Sie sie unter **Theme-Einstellungen → „Layout“ → „Theme-Editor“ → „Hinweise „Nur im Editor sichtbar“ zeigen“** aus (Standard an); leere Blöcke bleiben in der Vorschau dann einfach leer.
+
+### Text hervorheben
+
+Setzen Sie Wörter in doppelte eckige Klammern, um sie wie mit einem Textmarker hervorzuheben: `Nachfüllen statt [[wegwerfen]]`. Das wirkt in allen Überschriften und Texten der Blöcke und Abschnitte – Überschrift, Text, Zitat (auch Autor und Rolle), Labels über Überschriften, Titel und Texte in Akkordeon, FAQ, Tabs, Produktfinder, Routine, Zeitleiste, Rechnern, Tabellen, Aufmachern, Werbekacheln, Fußzeile, Ankündigungsleiste, Laufband, Countdown, Altersabfrage und Produkt-Blöcken. Felder, die es können, nennen die Schreibweise im Hinweis darunter. In Alternativtexten von Bildern und in Namen für Screenreader (z. B. „Name des Karussells“) fallen die Klammern einfach weg. Nicht hervorgehoben werden Knöpfe, das Menü der Kopfzeile (dort gibt es die eigene „Hervorhebung im Untermenü“) und reine Datenfelder (Werte, Spaltenzeilen). Nur vollständige Paare werden markiert; in Rich-Text-Feldern je Absatz ein eigenes Paar setzen.
+
+**Farbe des Markers:** Theme-Einstellungen → **„Typografie“** → **„Text-Hervorhebung“** → **„Farbe des Markers“**. Zur Wahl stehen „Schema: Akzent“ (Standard) und die Markenfarben „Hervorhebung“, „Akzent 1“ und „Akzent 2“. Ist die gewählte Markenfarbe leer, gilt der Akzent des Farbschemas. Das Theme mischt die Farbe mit dem Hintergrund des jeweiligen Farbschemas. Der Text darauf bleibt in der Textfarbe und erreicht immer mindestens 4,5 : 1 Kontrast. Dafür nimmt das Theme bei Bedarf weniger Farbe in die Mischung, der Marker wird also heller bzw. gedeckter; notfalls nimmt es die Hinterlegung des Farbschemas. Gleicht der Marker dem Hintergrund fast (z. B. Akzent 1 auf einem Schema mit Akzent-Hintergrund), mischt das Theme ihn etwas dunkler oder heller, damit die Hervorhebung sichtbar bleibt.
+
+**Bewegung des Markers:** siehe [Animation](08-animation.md).
 
 ## Einstellungen erscheinen, wenn sie relevant sind
 

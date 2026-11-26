@@ -149,6 +149,22 @@ The first chip, “All”, links to the current collection. If you use a differe
 
 The “Search” template contains **“Search: header”** and **“Search: results”** with filters, columns, key figures and the same **“Pagination”** as collections (page numbers, “Load more”, “Automatically on scroll”). Under **“No results”** → **“Suggestions when empty”**, choose a collection; up to four of its products appear when a search finds nothing. Quick search in the header is covered in [Header and navigation](04-header.md#search).
 
+## Product comparison
+
+Customers put two to four products side by side: price, unit price, price per day or serving, data table values, any metafields, profile, rating, availability, subscription and “Add to cart”.
+
+1. **Turn on the “Compare” checkbox:** Theme settings → **“Product data”** → **“‘Compare’ checkbox on product cards”** (off by default). On the product page, add the **“Compare checkbox”** block, e.g. below the buy buttons. In individual blocks with product cards you can turn the checkbox off with **“Show ‘Compare’ checkbox”** (see [Product cards](#product-cards)).
+2. **Design the comparison view:** Theme editor → Templates → Search → **compare**. The **“Product comparison”** block contains the rows as blocks (**“Comparison row”**): choose the content, the label is optional. “Price per day or serving” uses the serving metafields from Theme settings → “Product data” (only for products with one price).
+3. **“Compare” page (optional):** Create a page with the **compare** template. It shows the current selection with a “Compare” button and your **“Suggested comparisons”**: one comparison per line in the format “Title | handle-a, handle-b, handle-c” (2–4 product handles). The suggestions are links and work without JavaScript. The page works well in the menu.
+
+**Good to know:**
+
+- The selection is kept for the browser session, up to four products. A bar at the bottom shows it and leads to the comparison view.
+- The checkbox needs JavaScript; without JavaScript it is hidden. The comparison view itself also loads without JavaScript.
+- Rows without a value for all shown products are hidden. **“Highlight differences by default”** gives rows with differing values a background. With **“Show ‘Highlight differences’ switch”**, customers can toggle this themselves; without the switch, your setting always applies.
+- The comparison view has its own address like `/search?view=compare&type=product&q=handle:a OR handle:b`. You can link to it yourself, e.g. from a blog post. Search engines don’t index it.
+- Only published products are shown; unknown handles are dropped.
+
 ## Wishlist
 
 Refill has no built-in wishlist: Shopify's Theme Store rules treat wishlists as app functionality. For a wishlist, install a wishlist app and add its app blocks in the theme editor under **“Add block” → “Apps”** (for example on the product page).

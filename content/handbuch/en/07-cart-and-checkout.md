@@ -72,11 +72,60 @@ On the cart page on phones, a bar with the subtotal and **“Checkout”** stick
 1. Create a “Gift wrap” product with a price – with no shipping and in no collection, so it does not show up in product lists.
 2. Theme editor → cart page → **“Cart: summary”** block → **“Gift wrap (product)”**: select this product.
 
-The cart page then shows a toggle “Gift wrap (+€2.50)” that adds or removes the product as its own item. For a gift message, turn on **“Show order note”**; customers write the message in the order note.
+The cart page then shows a toggle “Gift wrap (+€2.50)” that adds or removes the product as its own item. For a gift message, turn on **“Show order note”**; customers write the message in the order note. For gift wrap and a gift message in the drawer too, see [Gift options](#gift-options).
 
 ### Empty cart and search without results
 
 The **Cart: items** block (cart page) and the **Search: results** block (search page) have a setting **Suggestions when empty**. Pick a collection, for example “Bestsellers”: when the cart is empty or a search finds nothing, the store shows up to four products from it under “Popular right now”. Without a collection, only the message and the button to all products appear.
+
+## Preferred delivery date
+
+Customers choose the day they would like their delivery in the cart. The date field sits below the items in the drawer and above “Checkout” on the cart page. The date is saved to the order as a cart attribute and appears there under “Additional details”, in the format YYYY-MM-DD. Shopify checkout is not changed.
+
+Theme settings → **“Cart”** → **“Show preferred delivery date”** (off by default). Then these settings appear:
+
+| Setting | Effect |
+|---|---|
+| **“Attribute name”** | How the date is named on the order (default “Delivery date”). Don’t change the name after launch if packing slip templates or apps read it. |
+| **“Required”** | See below. |
+| **“Lead time (working days)”** | Earliest date: today plus this many working days (Monday to Friday, excluding blocked dates), then the next delivery day. |
+| **“Latest date (days from today)”** | How far ahead customers can choose a date. |
+| **“No deliveries on”** | Weekdays without delivery: none, Sunday, Saturday and Sunday, Sunday and Monday, or Saturday to Monday. |
+| **“Blocked dates”** | One date per line as YYYY-MM-DD, e.g. public holidays (2026-12-25). These days don’t count as working days either. Enter them again every year. |
+| **“Note”** | Shown below the field. Empty: “This is a preference, not a guaranteed delivery date.” The theme adds blocked weekdays and holidays automatically, e.g. “No deliveries on Sundays. No deliveries on public holidays either.” |
+
+If someone picks a blocked day, the field shows “There are no deliveries on this day. Please choose another date.” “Checkout” only continues with a valid day. The date is a preference: the theme does not promise delivery on that day. You plan shipping yourself, e.g. with the attribute in your packing slip template.
+
+**Required:** If the field is required, the theme hides every way to checkout that bypasses the field:
+
+- the express checkout buttons (e.g. Shop Pay, PayPal) on the cart page,
+- “Buy it now” on the product page, in quick view and in the “Featured product” block,
+- “Checkout” in the notice after adding (it then leads to the cart).
+
+The date still cannot be enforced, because checkout can be opened directly. So check orders without a date yourself.
+
+## Gift options
+
+Customers mark an order as a gift in the cart (drawer and cart page). The choices are saved to the order as cart attributes and appear there under “Additional details”. Shopify checkout is not changed.
+
+Theme settings → **“Cart”** → **“Show gift options”** (off by default). Then turn on the individual parts:
+
+- **“Gift wrap” checkbox:** Without a gift wrap product, the checkbox only saves “Yes” as an attribute. It is free and the value is the same in every language.
+- **“Gift wrap product”** (optional): With a product, the checkbox adds the gift wrap to the cart as its own line item with a price, e.g. “Gift wrap (+€2.50)”. Create the product as described under [Gift wrap](#gift-wrap). If a gift wrap product is already set in the “Cart: summary” block, that one applies on the cart page.
+- **“Gift message” field** with **“Maximum characters”** (default 200). A counter below the field shows the characters written. Unlike the free-form order note, the message has a character limit and a fixed name on the order.
+- **“Hide prices on the packing slip” checkbox:** only saves the request, see below.
+
+Under **“Attribute name”** you set how each choice is named on the order (defaults “Gift wrap”, “Gift message”, “Hide prices”). Don’t change the names after launch if packing slip templates, Flow or apps read them. The checkboxes always save “Yes”. So in Flow and in the packing slip template, check for “not empty”, not for a specific value.
+
+### Hide prices on the packing slip
+
+The checkbox only saves the request as an attribute. Shopify creates the packing slip from your template; the theme cannot change it. For the packing slip to follow the request, go to **Settings → Shipping and delivery → Packing slip template** and wrap the price columns in a condition, e.g.:
+
+```liquid
+{% if order.attributes["Hide prices"] == blank %} … price … {% endif %}
+```
+
+Use the attribute name you have set. You can print the gift message there with `{{ order.attributes["Gift message"] }}`. Check the template with a test order.
 
 ## Progress bar with tiers
 

@@ -25,11 +25,19 @@ The same four layout settings are available in **“Custom Liquid”** and **“
 
 Empty sections – for example “Recently viewed” without a history – collapse in the store. In the editor they stay visible so you can find them.
 
-**Notes in the editor:** When a block is missing something (no product on this page, empty metafield, no reviews yet, history of “Recently viewed”), the editor shows a note in its place with an orange bar and the label **“Only visible in the editor”**. Customers never see it; in the store the block is hidden or stays empty. If the notes get in the way while designing, turn them off under **Theme settings → “Layout” → “Theme editor” → “Show “Only visible in the editor” notes”** (on by default); empty blocks then simply stay empty in the preview.
-
-**Highlighting text:** Put words in double square brackets to highlight them like with a marker pen: `Refill instead of [[throwing away]]`. This works in all headings and text of blocks and sections – heading, text, quote (including author and role), labels above headings, titles and text in accordion, FAQ, tabs, product finder, routine, timeline, calculators, tables, banners, promo tiles, footer, announcement bar, marquee, countdown, age verification and product blocks. Fields that support it mention the notation in the hint below. In image alt text and in names for screen readers (e.g. “Carousel name”) the brackets are simply removed. Buttons, the header menu (which has its own “Highlight in submenu”) and pure data fields (values, table rows) are not highlighted. Only complete pairs are marked; in rich text fields use one pair per paragraph. Marker color and motion: Theme settings → “Typography” → “Text highlight” and [Animation](08-animation.md).
-
 **Selecting in the editor:** When you click a popup, an info popup, the “Menu” block or an “Image” in the menu in the sidebar, the preview opens it (mega menu on desktop, menu on phones). Selected carousel slides and announcements in the bar scroll into view. Effects from [Animation](08-animation.md) never hide content in the editor.
+
+### Notes in the editor
+
+When a block is missing something (no product on this page, empty metafield, no reviews yet, history of “Recently viewed”), the editor shows a note in its place with an orange bar and the label **“Only visible in the editor”**. Customers never see it; in the store the block is hidden or stays empty. If the notes get in the way while designing, turn them off under **Theme settings → “Layout” → “Theme editor” → “Show “Only visible in the editor” notes”** (on by default); empty blocks then simply stay empty in the preview.
+
+### Highlighting text
+
+Put words in double square brackets to highlight them like with a marker pen: `Refill instead of [[throwing away]]`. This works in all headings and text of blocks and sections – heading, text, quote (including author and role), labels above headings, titles and text in accordion, FAQ, tabs, product finder, routine, timeline, calculators, tables, banners, promo tiles, footer, announcement bar, marquee, countdown, age verification and product blocks. Fields that support it mention the notation in the hint below. In image alt text and in names for screen readers (e.g. “Carousel name”) the brackets are simply removed. Buttons, the header menu (which has its own “Highlight in submenu”) and pure data fields (values, table rows) are not highlighted. Only complete pairs are marked; in rich text fields use one pair per paragraph.
+
+**Marker color:** Theme settings → **“Typography”** → **“Text highlight”** → **“Marker color”**. You can choose “Scheme: accent” (default) or the brand colors “Highlight”, “Accent 1” and “Accent 2”. If the chosen brand color is empty, the color scheme’s accent is used. The theme blends the color with the background of each color scheme. Text on it keeps the text color and always reaches a contrast of at least 4.5 : 1. To get there, the theme uses less color in the blend where needed, so the marker gets lighter or more muted; as a last resort it uses the color scheme’s selection color. If the marker is almost the same as the background (e.g. accent 1 on a scheme with an accent background), the theme blends it a little darker or lighter so the highlight stays visible.
+
+**Marker motion:** see [Animation](08-animation.md).
 
 ## Settings appear when relevant
 
