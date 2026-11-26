@@ -98,7 +98,20 @@ T = {
         "blocks_title": "Blocks",
         "blocks_lead": "All blocks you see in the demo stores. Click a block to see what it looks like and how to set it up.",
         "blocks_card": "{n} blocks with pictures from the demo stores",
-        "coming": "Coming soon",
+        "shot_zoom": "Show larger",
+        "zoom_title": "Enlarged picture",
+        "close": "Close",
+        "markers_title": "Marked in the picture",
+        "markers_intro": "The numbers in the computer picture show where each setting appears.",
+        "block_marker": "{name} (own block)",
+        "unavail_account": "Only signed-in customers with at least one order see this block. It shows their last order with its items and a button that adds everything to the cart again. Guests don’t see it – that’s why there is no picture here.",
+        "unavail_devstore": "The demo stores show a page from Shopify instead of the theme’s password page. That’s why there is no picture here.",
+        "no_picture": "No picture",
+        "note_product": "This block shows data of the current product and only works on product pages. For a product on other pages, use [Featured product]({fp}).",
+        "note_template": "This block belongs to the “{tpl}” template. Elsewhere it shows nothing or only a note in the editor.",
+        "alt_desktop": "“{name}” on a computer, example from the demo store {shop}.",
+        "alt_mobile": "“{name}” on a phone.",
+        "page_named": "Choose the page at the top: “{page}”",
         "other": "Other",
         "tasks_title": "What do you want to do?",
         "lookup_title": "Look it up",
@@ -144,7 +157,20 @@ T = {
         "blocks_title": "Blöcke",
         "blocks_lead": "Alle Blöcke, die Sie in den Demo-Shops sehen. Klicken Sie auf einen Block: Sie sehen, wie er aussieht und wie Sie ihn einstellen.",
         "blocks_card": "{n} Blöcke mit Bildern aus den Demo-Shops",
-        "coming": "Folgt",
+        "shot_zoom": "Größer anzeigen",
+        "zoom_title": "Bild vergrößert",
+        "close": "Schließen",
+        "markers_title": "Im Bild markiert",
+        "markers_intro": "Die Nummern im Computer-Bild zeigen, wo welche Einstellung wirkt.",
+        "block_marker": "{name} (eigener Block)",
+        "unavail_account": "Diesen Block sieht nur angemeldete Kundschaft mit mindestens einer Bestellung. Er zeigt die letzte Bestellung mit ihren Artikeln und einen Knopf, der alles erneut in den Warenkorb legt. Gäste sehen ihn nicht – darum gibt es hier kein Bild.",
+        "unavail_devstore": "Die Demo-Shops zeigen statt der Passwortseite des Themes eine Seite von Shopify. Darum gibt es hier kein Bild.",
+        "no_picture": "Kein Bild",
+        "note_product": "Dieser Block zeigt Daten des aktuellen Produkts und wirkt nur auf Produktseiten. Für ein Produkt auf anderen Seiten nehmen Sie [Hervorgehobenes Produkt]({fp}).",
+        "note_template": "Dieser Block gehört zur Vorlage „{tpl}“. An anderer Stelle zeigt er nichts oder nur einen Hinweis im Editor.",
+        "alt_desktop": "„{name}“ am Computer, Beispiel aus dem Demo-Shop {shop}.",
+        "alt_mobile": "„{name}“ am Handy.",
+        "page_named": "Oben die Seite wählen: „{page}“",
         "other": "Weitere",
         "tasks_title": "Was möchten Sie tun?",
         "lookup_title": "Nachschlagen",
@@ -164,6 +190,22 @@ T = {
         "home_desc": "Refill ist ein Shopify-Theme für Produkte, die Kunden regelmäßig nachkaufen: Nahrungsergänzung, Tee, Kaffee und Gewürze, Naturkosmetik, Tiernahrung. Abo, Packungsgrößen, „Erneut bestellen“ und klare Produktangaben sind eingebaut.",
     },
 }
+
+# Seite im Editor (Auswahl oben) je Vorlagenart; Vorlage der Blöcke „Seitenvorlagen“.
+EDITOR_PAGE = {
+    "en": {"index": "Home page", "product": "Products › Default product", "collection": "Collections › Default collection",
+           "list-collections": "Collections list", "article": "Blog posts › Default blog post", "blog": "Blogs › Default blog",
+           "page": "Pages › Default page", "cart": "Cart", "search": "Search", "password": "Password", "404": "404 page"},
+    "de": {"index": "Startseite", "product": "Produkte › Standardprodukt", "collection": "Kollektionen › Standardkollektion",
+           "list-collections": "Kollektionsliste", "article": "Blogbeiträge › Standard-Blogbeitrag", "blog": "Blogs › Standardblog",
+           "page": "Seiten › Standardseite", "cart": "Warenkorb", "search": "Suche", "password": "Passwort", "404": "404-Seite"},
+}
+TEMPLATE_NAME = {
+    "en": {"cart": "Cart", "collection": "Collection", "search": "Search", "article": "Blog post", "page": "Page", "password": "Password"},
+    "de": {"cart": "Warenkorb", "collection": "Kollektion", "search": "Suche", "article": "Beitrag", "page": "Seite", "password": "Passwort"},
+}
+# Blöcke ohne Bild: Vorlage für den Klickweg
+FALLBACK_TEMPLATE = {"reorder": "index.json", "password-form": "password.json"}
 
 # Seitenpaare (en-Schlüssel, de-Schlüssel); Schlüssel = Pfad relativ zur Wurzel mit „/“ am Ende.
 PAIRS = {
@@ -523,14 +565,14 @@ def docs_sidebar(lang: str, key: str, chapters: list[Chapter], current: Chapter 
         items.append(f'<li><a href="{href(key, c.key)}"{aria}><span class="data">{c.number:02d}</span> {esc(c.title)}</a></li>')
     lst = "<ol class=\"chapter-list\">" + "".join(items) + "</ol>"
     blk = ""
-    if blocks is not None and blocks.pilots:
+    if blocks is not None and blocks.slugs:
         gkey = blocks.gallery_key(lang)
         aria = ' aria-current="page"' if current_block == "" else ""
-        b_items = [f'<li><a href="{href(key, gkey)}"{aria}><span class="data" aria-hidden="true">▦</span> {esc(t["all_blocks"])}</a></li>']
-        for slug in blocks.pilots:
-            aria = ' aria-current="page"' if current_block == slug else ""
-            b_items.append(f'<li><a href="{href(key, blocks.key(lang, slug))}"{aria}><span class="data" aria-hidden="true">□</span> '
-                           f'{esc(blocks.name(lang, slug))}</a></li>')
+        b_items = [f'<li><a href="{href(key, gkey)}"{aria}><span class="data" aria-hidden="true">▦</span> '
+                   f'{esc(t["all_blocks"])} <span class="data docs-nav__count">{len(blocks.slugs)}</span></a></li>']
+        if current_block:
+            b_items.append(f'<li><a href="{href(key, blocks.key(lang, current_block))}" aria-current="page">'
+                           f'<span class="data" aria-hidden="true">□</span> {esc(blocks.name(lang, current_block))}</a></li>')
         blk = f'<p class="label docs-nav__sub">{esc(t["blocks"])}</p><ul class="chapter-list">{"".join(b_items)}</ul>'
     desktop = (f'<nav class="docs-nav docs-nav--wide" aria-label="{esc(t["docs_title"])}"><p class="label">{esc(t["chapters"])}</p>'
                f'{lst}{blk}</nav>')
@@ -543,23 +585,33 @@ def docs_sidebar(lang: str, key: str, chapters: list[Chapter], current: Chapter 
 
 # --------------------------------------------------------------------------- Blöcke
 
+SHOTS_DATA = ROOT / "content" / "shots"
+
+
 class BlockSet:
-    """Block-Daten aus content/blocks/ (editor_panel.py), Texte aus texts.json, Bilder aus content/shots.json."""
+    """Block-Daten aus content/blocks/ (editor_panel.py), Texte aus texts.json, Bilder und Markierungen aus
+    content/shots/<block>.json (shots.mjs). Jeder Block der Galerie (index.json) bekommt eine Block-Seite."""
 
     def __init__(self):
         self.index = json.loads((BLOCKS / "index.json").read_text(encoding="utf-8"))
         self.texts = json.loads((BLOCKS / "texts.json").read_text(encoding="utf-8"))
-        self.shots = json.loads(SHOTS_MANIFEST.read_text(encoding="utf-8")) if SHOTS_MANIFEST.exists() else {}
         self.shops = json.loads(SHOTS_CONFIG.read_text(encoding="utf-8"))["shops"]
         self.by_slug = {b["slug"]: b for b in self.index}
         self.data = {}
-        self.pilots = []
-        for slug in self.texts:
+        self.shots = {}
+        self.slugs = []
+        for b in self.index:
+            slug = b["slug"]
             path = BLOCKS / f"{slug}.json"
             if not path.exists():
-                raise SystemExit(f"content/blocks/texts.json nennt {slug}, aber content/blocks/{slug}.json fehlt (editor_panel.py)")
+                raise SystemExit(f"content/blocks/{slug}.json fehlt (python3 editor_panel.py --theme ../cadence-theme)")
+            if slug not in self.texts:
+                raise SystemExit(f"content/blocks/texts.json: Texte für {slug} fehlen")
             self.data[slug] = json.loads(path.read_text(encoding="utf-8"))
-            self.pilots.append(slug)
+            sp = SHOTS_DATA / f"{slug}.json"
+            if sp.exists():
+                self.shots[slug] = json.loads(sp.read_text(encoding="utf-8"))
+            self.slugs.append(slug)
 
     @staticmethod
     def gallery_key(lang: str) -> str:
@@ -573,24 +625,136 @@ class BlockSet:
             return self.data[slug][lang]["name"]
         return self.by_slug[slug]["name"][lang]
 
-    def shot(self, lang: str, rel: str) -> dict | None:
-        info = self.shots.get(rel)
-        if info and (ASSETS / "shots" / rel).exists():
+    def image(self, lang: str, slug: str, variant: str) -> dict | None:
+        """Bild (desktop, desktop_small, mobile, thumb) mit Datei, Breite, Höhe – nur wenn die Datei existiert."""
+        info = self.shots.get(slug, {}).get(lang, {}).get(variant)
+        if info and (ASSETS / "shots" / info["file"]).exists():
             return info
         return None
 
-    def pilot_shots(self, lang: str, slug: str) -> dict:
-        out = {}
-        for rel, info in self.shots.items():
-            if info.get("block") == slug and info.get("lang") == lang and "/thumbs/" not in rel and (ASSETS / "shots" / rel).exists():
-                out[info["variant"]] = (rel, info)
-        return out
+    def template(self, slug: str) -> str | None:
+        return self.shots.get(slug, {}).get("template") or FALLBACK_TEMPLATE.get(slug)
 
 
-def img_tag(key: str, rel: str, info: dict, alt: str, cls: str = "", sizes: str = "") -> str:
+def img_tag(key: str, info: dict, alt: str, cls: str = "", sizes: str = "", small: dict | None = None,
+            lazy: bool = True) -> str:
     c = f' class="{cls}"' if cls else ""
-    return (f'<img{c} src="{href(key, "assets/shots/" + rel)}" width="{info["width"]}" height="{info["height"]}" '
-            f'alt="{esc(alt)}" loading="lazy" decoding="async">')
+    src = href(key, "assets/shots/" + info["file"])
+    srcset = ""
+    if small and small["width"] < info["width"]:
+        srcset = (f' srcset="{href(key, "assets/shots/" + small["file"])} {small["width"]}w, {src} {info["width"]}w"'
+                  f' sizes="{sizes or "100vw"}"')
+        src = href(key, "assets/shots/" + small["file"])
+    load = ' loading="lazy"' if lazy else ""
+    return (f'<img{c} src="{src}"{srcset} width="{info["width"]}" height="{info["height"]}" '
+            f'alt="{esc(alt)}"{load} decoding="async">')
+
+
+# Kleines, optionales Skript der Block-Seite (die Seite funktioniert ohne):
+# 1. Sprungmarke auf ein Feld in einem zugeklappten Bereich → Bereich öffnen und hinscrollen.
+# 2. Klick auf ein Bild → größer in einem <dialog> (Escape schließt, Fokus zurück); ohne Skript öffnet der Link das Bild.
+BLOCK_SCRIPT = """<script>
+(function () {
+  function reveal(hash) {
+    if (!hash || hash.length < 2) return;
+    var el;
+    try { el = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (e) { return; }
+    if (!el) return;
+    var opened = false;
+    for (var d = el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) {
+      if (!d.open) { d.open = true; opened = true; }
+    }
+    if (opened) el.scrollIntoView();
+  }
+  window.addEventListener('hashchange', function () { reveal(location.hash); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (a) setTimeout(function () { reveal(a.getAttribute('href')); }, 0);
+  });
+  reveal(location.hash);
+  var dlg = document.getElementById('zoom');
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+  var img = dlg.querySelector('img'), last = null;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-zoom]');
+    if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    e.preventDefault();
+    last = a;
+    img.src = a.getAttribute('href');
+    img.alt = a.querySelector('img').alt;
+    dlg.showModal();
+  });
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg || e.target.closest('.zoom__close')) dlg.close();
+  });
+  dlg.addEventListener('close', function () { img.removeAttribute('src'); if (last) last.focus(); });
+})();
+</script>"""
+
+
+def marker_label(m: dict, data: dict, lang: str, blocks: BlockSet) -> str:
+    if m.get("setting"):
+        s = next((x for x in data[lang]["settings"] if x.get("id") == m["setting"]), None)
+        return s["label"] if s else m["setting"]
+    return T[lang]["block_marker"].format(name=blocks.name(lang, m["block"]) if m["block"] in blocks.by_slug else m["block"])
+
+
+def look_html(lang: str, slug: str, blocks: BlockSet, key: str, name: str, tx: dict) -> str:
+    t = T[lang]
+    shot = blocks.shots.get(slug, {})
+    if shot.get("unavailable"):
+        return f'<p class="notice">{esc(t["unavail_" + shot["unavailable"]])}</p>'
+    desk = blocks.image(lang, slug, "desktop")
+    mob = blocks.image(lang, slug, "mobile")
+    if not desk and not mob:
+        return f'<p class="notice">{esc(t["shot_missing"])}</p>'
+    data = blocks.data[slug]
+    shop = blocks.shops.get(shot.get("shop"), {}).get("name", "")
+    markers = shot.get(lang, {}).get("markers", []) if desk else []
+    ids = {s_["id"] for s_ in data[lang]["settings"] if "id" in s_}
+    zoom_sr = f'<span class="visually-hidden"> ({esc(t["shot_zoom"])})</span>'
+    parts = []
+    if desk:
+        alt = tx.get("alt_desktop") or t["alt_desktop"].format(name=name, shop=shop)
+        small = blocks.image(lang, slug, "desktop_small")
+        dots = []
+        for m in markers:
+            target = (f'#{m["setting"]}' if m.get("setting") in ids
+                      else href(key, blocks.key(lang, m["block"])) if m.get("block") in blocks.by_slug else None)
+            style = f'left:{m["x"]}%;top:{m["y"]}%'
+            if target:
+                dots.append(f'<a class="mk" href="{target}" style="{style}" tabindex="-1" aria-hidden="true">{m["n"]}</a>')
+            else:
+                dots.append(f'<span class="mk" style="{style}" aria-hidden="true">{m["n"]}</span>')
+        big = href(key, "assets/shots/" + desk["file"])
+        parts.append(
+            f'<figure class="shot shot--desktop"><div class="shot__frame">'
+            f'<a class="shot__zoom" href="{big}" data-zoom>{img_tag(key, desk, alt, sizes="(min-width: 1100px) 860px, 100vw", small=small, lazy=False)}{zoom_sr}</a>'
+            f'{"".join(dots)}</div>'
+            f'<figcaption class="label">{esc(t["shot_desktop"])}</figcaption></figure>')
+    side = []
+    if mob:
+        alt = tx.get("alt_mobile") or t["alt_mobile"].format(name=name)
+        big = href(key, "assets/shots/" + mob["file"])
+        side.append(f'<figure class="shot shot--mobile"><a class="shot__zoom" href="{big}" data-zoom>'
+                    f'{img_tag(key, mob, alt, sizes="260px")}{zoom_sr}</a>'
+                    f'<figcaption class="label">{esc(t["shot_mobile"])}</figcaption></figure>')
+    legend = ""
+    if markers:
+        lis = []
+        for m in markers:
+            label = esc(marker_label(m, data, lang, blocks))
+            if m.get("setting") in ids:
+                label = f'<a href="#{m["setting"]}">{label}</a>'
+            elif m.get("block") in blocks.by_slug:
+                label = f'<a href="{href(key, blocks.key(lang, m["block"]))}">{label}</a>'
+            lis.append(f'<li><span class="ep-mark" aria-hidden="true">{m["n"]}</span> '
+                       f'<span class="visually-hidden">{m["n"]} = </span>{label}</li>')
+        legend = (f'<div class="markers"><h3 class="markers__title">{esc(t["markers_title"])}</h3>'
+                  f'<p class="markers__intro">{esc(t["markers_intro"])}</p><ol class="markers__list">{"".join(lis)}</ol></div>')
+    side_html = f'<div class="shots__side">{"".join(side)}{legend}</div>' if (side or legend) else ""
+    return (f'<div class="shots">{"".join(parts)}{side_html}</div>'
+            f'<p class="shots__source">{esc(t["shot_source"].format(shop=shop))}</p>')
 
 
 def page_block(lang: str, slug: str, blocks: BlockSet, chapters: list[Chapter]) -> str:
@@ -600,35 +764,36 @@ def page_block(lang: str, slug: str, blocks: BlockSet, chapters: list[Chapter]) 
     data = blocks.data[slug]
     tx = blocks.texts[slug][lang]
     name = data[lang]["name"]
-    # Bilder
-    shots = blocks.pilot_shots(lang, slug)
-    look = ""
-    if shots:
-        shop = blocks.shops.get(next(iter(shots.values()))[1]["shop"], {}).get("name", "")
-        figs = []
-        for variant in ("desktop", "mobile"):
-            if variant in shots:
-                rel, info = shots[variant]
-                alt = tx.get(f"alt_{variant}") or tx.get("alt", name)
-                figs.append(f'<figure class="shot shot--{variant}">{img_tag(key, rel, info, alt)}'
-                            f'<figcaption class="label">{esc(t["shot_" + variant])}</figcaption></figure>')
-        look = (f'<div class="shots">{"".join(figs)}</div>'
-                f'<p class="shots__source">{esc(t["shot_source"].format(shop=shop))}</p>')
-    else:
-        look = f'<p class="notice">{esc(t["shot_missing"])}</p>'
+    look = look_html(lang, slug, blocks, key, name, tx)
     # Klickweg
     category = data[lang].get("category")
-    steps = [t["path_store"], t["path_themes"], t["path_customize"], tx.get("page", t["path_page"]),
-             tx.get("add", t["path_add_block"])]
+    tpl = blocks.template(slug)
+    kind = tpl.split(".")[0] if tpl else None
+    page_step = tx.get("page") or (t["page_named"].format(page=EDITOR_PAGE[lang][kind]) if kind in EDITOR_PAGE[lang] else t["path_page"])
+    steps = [t["path_store"], t["path_themes"], t["path_customize"], page_step, tx.get("add", t["path_add_block"])]
     if category:
         steps.append(category)
     steps.append(name)
     path_html = "".join(f'<li><span class="path__t">{esc(s_)}</span></li>' for s_ in steps)
-    where_note = f'<p class="block-page__note">{md_inline(tx["where_note"])}</p>' if tx.get("where_note") else ""
-    tips = "".join(f"<li>{md_inline(x)}</li>" for x in tx.get("tips", [])[:3])
-    panel = render_panel(data, lang, prefix="", level=3)
+    note = tx.get("where_note")
+    cat_en = blocks.data[slug]["en"].get("category") or ""
+    if not note and cat_en.startswith("Product:") and slug != "featured-product":
+        note = t["note_product"].format(fp=href(key, blocks.key(lang, "featured-product")))
+    elif not note and cat_en == "Page templates" and kind in TEMPLATE_NAME[lang]:
+        note = t["note_template"].format(tpl=TEMPLATE_NAME[lang][kind])
+    where_note = f'<p class="block-page__note">{md_inline(note)}</p>' if note else ""
+    tip_items = tx.get("tips", [])[:3]
+    tips = "".join(f"<li>{md_inline(x)}</li>" for x in tip_items)
+    # Markierungen neben den Feldern
+    shot = blocks.shots.get(slug, {})
+    markers = shot.get(lang, {}).get("markers", []) if blocks.image(lang, slug, "desktop") else []
+    marks = {m["setting"]: m["n"] for m in markers if m.get("setting")}
+    nested = [(m["n"], blocks.name(lang, m["block"]) if m["block"] in blocks.by_slug else m["block"],
+               href(key, blocks.key(lang, m["block"])) if m["block"] in blocks.by_slug else None)
+              for m in markers if m.get("block")]
+    panel = render_panel(data, lang, prefix="", level=3, marks=marks, nested=nested)
     # Kollision: ids der Seite und ids der Einstellungen
-    page_ids = {"main", "look", "find", "setup", "tips", "look-title", "find-title", "setup-title", "tips-title"}
+    page_ids = {"main", "look", "find", "setup", "tips", "look-title", "find-title", "setup-title", "tips-title", "zoom", "zoom-title"}
     clash = page_ids & {s_["id"] for s_ in data[lang]["settings"] if "id" in s_}
     if clash:
         raise SystemExit(f"{slug}: Einstellungs-ids {clash} kollidieren mit Sprungmarken der Seite")
@@ -637,8 +802,16 @@ def page_block(lang: str, slug: str, blocks: BlockSet, chapters: list[Chapter]) 
     if more:
         ch = next((c for c in chapters if c.slug == more[0]), None)
         if ch is None or (more[1] and more[1] not in ch.ids):
-            raise SystemExit(f"{slug}: Verweis {more} gibt es nicht")
+            raise SystemExit(f"{slug} ({lang}): Verweis {more} gibt es nicht")
         more_html = f'<p><a class="link-arrow" href="{href(key, ch.key, more[1])}">{esc(more[2])}</a></p>'
+    tips_part = ""
+    if tips or more_html:
+        tips_list = f'<ul class="tips">{tips}</ul>' if tips else ""
+        tips_part = f"""<section class="block-page__part" aria-labelledby="tips-title" id="tips">
+        <h2 id="tips-title">{esc(t['bp_tips'])}</h2>
+        {tips_list}
+        {more_html}
+      </section>"""
     desktop, mobile = docs_sidebar(lang, key, chapters, None, blocks, slug)
     body = f"""<div class="wrap docs">
   {desktop}
@@ -648,7 +821,7 @@ def page_block(lang: str, slug: str, blocks: BlockSet, chapters: list[Chapter]) 
       <p class="label"><a href="{href(key, key_of('docs', lang))}">{esc(t['docs_title'])}</a> · <a href="{href(key, blocks.gallery_key(lang))}">{esc(t['blocks'])}</a></p>
       <h1>{esc(name)}</h1>
       <p class="lead">{md_inline(tx['lead'])}</p>
-      <section class="block-page__part" aria-labelledby="look-title" id="look">
+      <section class="block-page__part block-page__part--wide" aria-labelledby="look-title" id="look">
         <h2 id="look-title">{esc(t['bp_look'])}</h2>
         {look}
       </section>
@@ -661,14 +834,12 @@ def page_block(lang: str, slug: str, blocks: BlockSet, chapters: list[Chapter]) 
         <h2 id="setup-title">{esc(t['bp_setup'])}</h2>
         {panel}
       </section>
-      <section class="block-page__part" aria-labelledby="tips-title" id="tips">
-        <h2 id="tips-title">{esc(t['bp_tips'])}</h2>
-        <ul class="tips">{tips}</ul>
-        {more_html}
-      </section>
+      {tips_part}
     </article>
   </div>
-</div>"""
+</div>
+<dialog id="zoom" class="zoom" aria-labelledby="zoom-title"><h2 id="zoom-title" class="visually-hidden">{esc(t['zoom_title'])}</h2><button type="button" class="zoom__close">{esc(t['close'])}</button><img alt=""></dialog>
+{BLOCK_SCRIPT}"""
     return layout(lang=lang, key=key, page="block", title=name, description=re.sub(r"<[^>]+>", "", md_inline(tx["lead"])),
                   body=body, alt_key=blocks.key(other, slug))
 
@@ -684,18 +855,14 @@ def page_blocks(lang: str, blocks: BlockSet, chapters: list[Chapter]) -> str:
     parts = []
     for gi, (cat, items) in enumerate(groups.items()):
         tiles = []
-        for b in sorted(items, key=lambda x: (x["slug"] not in blocks.pilots, blocks.name(lang, x["slug"]).lower())):
+        for b in sorted(items, key=lambda x: blocks.name(lang, x["slug"]).lower()):
             slug = b["slug"]
-            rel = f"{lang}/thumbs/{slug}.webp"
-            info = blocks.shot(lang, rel)
-            pic = img_tag(key, rel, info, "", "tile__img") if info else '<span class="tile__img tile__img--empty" aria-hidden="true"></span>'
+            info = blocks.image(lang, slug, "thumb")
+            pic = (img_tag(key, info, "", "tile__img") if info else
+                   f'<span class="tile__img tile__img--empty" aria-hidden="true"><span>{esc(t["no_picture"])}</span></span>')
             nm = esc(blocks.name(lang, slug))
-            if slug in blocks.pilots:
-                tiles.append(f'<li class="tile tile--ready"><a href="{href(key, blocks.key(lang, slug))}">{pic}'
-                             f'<span class="tile__name">{nm}</span></a></li>')
-            else:
-                tiles.append(f'<li class="tile">{pic}<span class="tile__name">{nm}</span>'
-                             f'<span class="badge">{esc(t["coming"])}</span></li>')
+            tiles.append(f'<li class="tile"><a href="{href(key, blocks.key(lang, slug))}">{pic}'
+                         f'<span class="tile__name">{nm}</span></a></li>')
         gid = "cat-" + slugify(cat)
         parts.append(f'<section class="tiles-group" aria-labelledby="{gid}"><h2 id="{gid}">{esc(cat)}</h2>'
                      f'<ul class="tiles">{"".join(tiles)}</ul></section>')
@@ -714,12 +881,70 @@ def page_blocks(lang: str, blocks: BlockSet, chapters: list[Chapter]) -> str:
                   body=body, alt_key=blocks.gallery_key(other))
 
 
+# --------------------------------------------------------------------------- Block-Links im Handbuch
+
+def link_blocks(body: str, lang: str, from_key: str, blocks: BlockSet) -> str:
+    """Erwähnungen von Blöcken im Kapitel auf die Block-Seite verlinken – je Abschnitt (h2) nur das erste Vorkommen.
+
+    Erkannt werden: erste Zelle einer Tabelle mit Spaltenkopf „Block“ und Namen in Anführungszeichen direkt neben dem
+    Wort Block/Blöcke („Block „Gruppe““, „„Spalten“-Block“). Nicht in Überschriften und vorhandenen Links."""
+    qa, qb = ("„", "“") if lang == "de" else ("“", "”")
+    word = r"(?:Blocks?|Blöcke[n]?|Blockes)" if lang == "de" else r"(?:[Bb]locks?)"
+    names = sorted(((blocks.name(lang, s), s) for s in blocks.slugs), key=lambda x: -len(x[0]))
+    chunks = re.split(r"(?=<h2[ >])", body)
+    out = []
+    for chunk in chunks:
+        done: set[str] = set()
+        # Bereiche, in denen nicht verlinkt wird
+        def blocked(pos: int, text: str) -> bool:
+            for tag in ("a", "h1", "h2", "h3", "h4", "code"):
+                o = text.rfind(f"<{tag}", 0, pos)
+                if o >= 0 and (o + len(tag) + 1 < len(text)) and text[o + len(tag) + 1] in " >":
+                    c = text.rfind(f"</{tag}>", 0, pos)
+                    if c < o:
+                        return True
+            return False
+        # 1. Tabellen mit Spaltenkopf „Block“
+        def table_sub(tm: re.Match) -> str:
+            tbl = tm.group(0)
+            if not re.search(r"<th[^>]*>\s*Block\s*</th>", tbl):
+                return tbl
+            def cell(cm: re.Match) -> str:
+                txt = html.unescape(cm.group(2))
+                slug = next((s for n, s in names if n == txt), None)
+                if not slug or slug in done:
+                    return cm.group(0)
+                done.add(slug)
+                return f'{cm.group(1)}<a href="{href(from_key, blocks.key(lang, slug))}">{cm.group(2)}</a></td>'
+            return re.sub(r"(<tr>\s*<td[^>]*>)([^<]+)</td>", cell, tbl)
+        chunk = re.sub(r"<table>.*?</table>", table_sub, chunk, flags=re.S)
+        # 2. Fließtext
+        for n, slug in names:
+            if slug in done:
+                continue
+            q = re.escape(esc(n).replace("&quot;", '"'))
+            pat = re.compile(rf"({word}\s+(?:<strong>)?){qa}({q}){qb}|{qa}({q}){qb}((?:</strong>)?(?:-Block|\s+{word}))")
+            for m in pat.finditer(chunk):
+                if blocked(m.start(), chunk):
+                    continue
+                inner = m.group(2) or m.group(3)
+                start = m.start(2) - len(qa) if m.group(2) else m.start(3) - len(qa)
+                end = start + len(qa) + len(inner) + len(qb)
+                link = f'<a href="{href(from_key, blocks.key(lang, slug))}">{qa}{inner}{qb}</a>'
+                chunk = chunk[:start] + link + chunk[end:]
+                done.add(slug)
+                break
+        out.append(chunk)
+    return "".join(out)
+
+
 # Aufgaben-Kacheln der Einstiegsseite: (Titel, Satz, [(Linktext, Ziel)]); Ziel = ("kapitel", "id") oder ("block", slug)
 TASKS = {
     "de": [
         ("Startseite gestalten", "Bilder, Texte und Abschnitte der Startseite anpassen.",
          [("Startseite in 4 Schritten", ("getting-started", "startseite")), ("Bild mit Text", ("block", "image-banner")),
-          ("Text", ("block", "text")), ("Abschnitte und Blöcke", ("sections-and-blocks", ""))]),
+          ("Text", ("block", "text")), ("Produkte aus Kollektion", ("block", "product-grid")),
+          ("Abschnitte und Blöcke", ("sections-and-blocks", ""))]),
         ("Farben und Schriften ändern", "Ihre Markenfarben und Schriften für den ganzen Shop.",
          [("Farben", ("getting-started", "farben")), ("Markenfarben", ("getting-started", "markenfarben")),
           ("Schriften", ("getting-started", "schriften")), ("Stile im Vergleich", ("presets", ""))]),
@@ -729,14 +954,17 @@ TASKS = {
         ("Abo anbieten", "Kundschaft bestellt regelmäßig – automatisch.",
          [("Abo-Plan anlegen", ("subscriptions", "1-abo-plan-anlegen")),
           ("Abo auf der Produktseite", ("subscriptions", "2-kaufoptionen-auf-der-produktseite")),
+          ("Block „Kaufoptionen“", ("block", "purchase-options")),
           ("Abo ist nicht sichtbar", ("faq", "das-abo-ist-nicht-sichtbar"))]),
         ("Produktseite anpassen", "Bilder, Preis, Kaufknopf und Produktangaben.",
          [("Aufbau der Produktseite", ("product-page", "aufbau-der-vorlage")),
           ("Produktangaben einrichten", ("product-data", "uebersicht")),
+          ("Produktbilder", ("block", "product-media")), ("Kennzahlen", ("block", "product-metrics")),
           ("Icon mit Text", ("block", "icon-with-text"))],
          "Viele Angaben kommen aus Metafeldern. Ein Metafeld ist ein zusätzliches Feld am Produkt, z. B. für die Tagesdosis."),
         ("Pflichtangaben und Rechtliches", "Hersteller, Grundpreis, Rechtstexte – vor dem Start prüfen.",
          [("Hersteller (GPSR)", ("compliance", "1-hersteller-gpsr")), ("Grundpreis", ("compliance", "3-grundpreis")),
+          ("Block „Pflichtangaben“", ("block", "mandatory-info")), ("Block „Produktsicherheit“", ("block", "product-safety")),
           ("Vor dem Start prüfen", ("compliance", "5-vor-dem-start-pruefen")),
           ("Barrierefreiheitserklärung", ("accessibility", "barrierefreiheitserklaerung-anlegen"))]),
         ("Sprachen und Länder", "Shop in mehreren Sprachen, Auswahl von Land und Sprache.",
@@ -751,7 +979,8 @@ TASKS = {
     "en": [
         ("Design your home page", "Change images, texts and sections of your home page.",
          [("Home page in 4 steps", ("getting-started", "home-page")), ("Image with text", ("block", "image-banner")),
-          ("Text", ("block", "text")), ("Sections and blocks", ("sections-and-blocks", ""))]),
+          ("Text", ("block", "text")), ("Products from collection", ("block", "product-grid")),
+          ("Sections and blocks", ("sections-and-blocks", ""))]),
         ("Change colors and fonts", "Your brand colors and fonts for the whole store.",
          [("Colors", ("getting-started", "colors")), ("Brand colors", ("getting-started", "brand-colors")),
           ("Fonts", ("getting-started", "fonts")), ("Compare the styles", ("presets", ""))]),
@@ -761,14 +990,17 @@ TASKS = {
         ("Offer subscriptions", "Customers order regularly – automatically.",
          [("Create a subscription plan", ("subscriptions", "1-create-a-subscription-plan")),
           ("Subscriptions on the product page", ("subscriptions", "2-purchase-options-on-the-product-page")),
+          ("“Purchase options” block", ("block", "purchase-options")),
           ("Subscription not visible", ("faq", "the-subscription-is-not-visible"))]),
         ("Customize the product page", "Images, price, buy button and product facts.",
          [("How the product page is set up", ("product-page", "how-the-template-is-set-up")),
           ("Set up product data", ("product-data", "overview")),
+          ("Product media", ("block", "product-media")), ("Key figures", ("block", "product-metrics")),
           ("Icon with text", ("block", "icon-with-text"))],
          "Many facts come from metafields. A metafield is an extra field on a product, for example for the daily dose."),
         ("Mandatory information and legal", "Manufacturer, unit price, policies – check before launch.",
          [("Manufacturer (GPSR)", ("compliance", "1-manufacturer-gpsr")), ("Unit price", ("compliance", "3-unit-price")),
+          ("“Mandatory information” block", ("block", "mandatory-info")), ("“Product safety” block", ("block", "product-safety")),
           ("Check before launch", ("compliance", "5-check-before-launch")),
           ("Accessibility statement", ("accessibility", "creating-an-accessibility-statement"))]),
         ("Languages and countries", "Store in several languages, country and language selector.",
@@ -793,7 +1025,7 @@ def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet) -> str
         lis = []
         for label, (target, frag) in links:
             if target == "block":
-                if frag not in blocks.pilots:
+                if frag not in blocks.slugs:
                     raise SystemExit(f"Aufgabe {title}: Block-Seite {frag} gibt es nicht")
                 url = href(key, blocks.key(lang, frag))
             else:
@@ -813,11 +1045,11 @@ def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet) -> str
         for c in chapters
     )
     gallery_thumbs = ""
-    thumbs = [(s, blocks.shot(lang, f"{lang}/thumbs/{s}.webp")) for s in blocks.pilots]
-    thumbs = [(s, i) for s, i in thumbs if i]
+    thumbs = [blocks.image(lang, s, "thumb") for s in ("image-banner", "icon-with-text", "product-media", "text")]
+    thumbs = [i for i in thumbs if i]
     if thumbs:
         gallery_thumbs = '<span class="gallery-card__imgs" aria-hidden="true">' + "".join(
-            img_tag(key, f"{lang}/thumbs/{s}.webp", i, "") for s, i in thumbs[:3]) + "</span>"
+            img_tag(key, i, "") for i in thumbs[:3]) + "</span>"
     gallery = (f'<a class="gallery-card" href="{href(key, blocks.gallery_key(lang))}">{gallery_thumbs}'
                f'<span class="gallery-card__body"><span class="toc-card__title">{esc(t["blocks_title"])}</span>'
                f'<span class="gallery-card__text">{esc(t["blocks_card"].format(n=len(blocks.index)))}</span></span></a>')
@@ -840,13 +1072,14 @@ def page_docs_index(lang: str, chapters: list[Chapter], blocks: BlockSet) -> str
                   body=body, alt_key=key_of("docs", "de" if lang == "en" else "en"))
 
 
-def page_chapter(lang: str, ch: Chapter, chapters: list[Chapter], alt: Chapter | None) -> str:
+def page_chapter(lang: str, ch: Chapter, chapters: list[Chapter], alt: Chapter | None, blocks: BlockSet) -> str:
     t = T[lang]
     key = ch.key
     i = chapters.index(ch)
     prev_c = chapters[i - 1] if i > 0 else None
     next_c = chapters[i + 1] if i + 1 < len(chapters) else None
-    desktop, mobile = docs_sidebar(lang, key, chapters, ch)
+    desktop, mobile = docs_sidebar(lang, key, chapters, ch, blocks)
+    content = ch.html if ch.slug == CHANGELOG_SLUG else link_blocks(ch.html, lang, key, blocks)
     toc = ""
     if len(ch.toc) > 1 and ch.slug != CHANGELOG_SLUG:
         toc = (f'<nav class="on-page" aria-labelledby="on-page-title"><h2 id="on-page-title" class="label">{esc(t["on_page"])}</h2><ul>'
@@ -867,7 +1100,7 @@ def page_chapter(lang: str, ch: Chapter, chapters: list[Chapter], alt: Chapter |
       <p class="label"><a href="{href(key, key_of('docs', lang))}">{esc(t['docs_title'])}</a> · {ch.number:02d}</p>
       <h1>{esc(ch.title)}</h1>
       {toc}
-      {ch.html}
+      {content}
     </article>
     {pager}
   </div>
@@ -1030,10 +1263,10 @@ def main() -> None:
         write(key_of("home", lang), page_home(lang, chapters[lang], version))
         write(key_of("docs", lang), page_docs_index(lang, chapters[lang], blocks))
         write(blocks.gallery_key(lang), page_blocks(lang, blocks, chapters[lang]))
-        for slug in blocks.pilots:
+        for slug in blocks.slugs:
             write(blocks.key(lang, slug), page_block(lang, slug, blocks, chapters[lang]))
         for c in chapters[lang]:
-            write(c.key, page_chapter(lang, c, chapters[lang], by_slug[other].get(c.slug)))
+            write(c.key, page_chapter(lang, c, chapters[lang], by_slug[other].get(c.slug), blocks))
         write(key_of("support", lang), page_support(lang))
         write(key_of("legal", lang), page_legal(lang))
         write(key_of("privacy", lang), page_privacy(lang))
@@ -1041,7 +1274,7 @@ def main() -> None:
     for name, (en_key, de_key) in PAIRS.items():
         pages.append((en_key, de_key))
     pages.append((blocks.gallery_key("en"), blocks.gallery_key("de")))
-    for slug in blocks.pilots:
+    for slug in blocks.slugs:
         pages.append((blocks.key("en", slug), blocks.key("de", slug)))
     for c in chapters["en"]:
         if c.slug != CHANGELOG_SLUG and c.slug in by_slug["de"]:

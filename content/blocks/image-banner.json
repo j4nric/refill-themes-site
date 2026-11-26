@@ -2,7 +2,7 @@
  "slug": "image-banner",
  "kind": "block",
  "source": "blocks/image-banner.liquid",
- "source_sha1": "169dfdc767ba",
+ "source_sha1": "0b0b65ade11e",
  "accepts_blocks": true,
  "en": {
   "name": "Image with text",
@@ -24,6 +24,14 @@
       "label": "Image",
       "op": "filled"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "image",
+      "label": "Image",
+      "op": "filled"
+     }
     ]
    },
    {
@@ -33,6 +41,20 @@
     "info": "Turn on only for the first large image on the page.",
     "default": false,
     "visible_if": [
+     {
+      "setting": "image",
+      "label": "Image",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "video",
+      "label": "Video instead of image",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "image",
       "label": "Image",
@@ -272,6 +294,14 @@
       "label": "Own color scheme for the text panel",
       "op": "on"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Own color scheme for the text panel",
+      "op": "on"
+     }
     ]
    },
    {
@@ -342,6 +372,14 @@
       "label": "Bild",
       "op": "filled"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "image",
+      "label": "Bild",
+      "op": "filled"
+     }
     ]
    },
    {
@@ -351,6 +389,20 @@
     "info": "Nur für das erste große Bild der Seite einschalten.",
     "default": false,
     "visible_if": [
+     {
+      "setting": "image",
+      "label": "Bild",
+      "op": "filled"
+     },
+     "or",
+     {
+      "setting": "video",
+      "label": "Video statt Bild",
+      "op": "filled"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "image",
       "label": "Bild",
@@ -585,6 +637,14 @@
     "label": "Farbschema der Textfläche",
     "default": "scheme-2",
     "visible_if": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Eigenes Farbschema für die Textfläche",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "use_color_scheme",
       "label": "Eigenes Farbschema für die Textfläche",

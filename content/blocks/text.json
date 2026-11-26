@@ -2,7 +2,7 @@
  "slug": "text",
  "kind": "block",
  "source": "blocks/text.liquid",
- "source_sha1": "35db574c47ca",
+ "source_sha1": "76fc02d2c211",
  "accepts_blocks": false,
  "en": {
   "name": "Text",
@@ -52,10 +52,32 @@
     ]
    },
    {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Match group alignment",
+    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own.",
+    "default": true
+   },
+   {
     "type": "text_alignment",
     "id": "alignment",
     "label": "Alignment",
-    "default": "left"
+    "default": "left",
+    "visible_if": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Match group alignment",
+      "op": "off"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Match group alignment",
+      "op": "off"
+     }
+    ]
    },
    {
     "type": "header",
@@ -171,6 +193,15 @@
       "op": "is",
       "value": "Icon library"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Icon library"
+     }
     ]
    },
    {
@@ -179,6 +210,15 @@
     "label": "Icon image",
     "info": "Fitted into the icon size. A square SVG or PNG with a transparent background works best.",
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Custom image"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon source",
@@ -194,6 +234,15 @@
     "info": "A short character, number or emoji on one line, e.g. “01” or “★”. Treated as decoration and not read out by screen readers.",
     "default": "01",
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon source",
@@ -236,6 +285,15 @@
       "op": "is",
       "value": "Free text"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
     ]
    },
    {
@@ -264,6 +322,15 @@
       "op": "is",
       "value": "Free text"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
     ]
    },
    {
@@ -286,6 +353,15 @@
      }
     ],
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon source",
@@ -352,6 +428,22 @@
       "op": "is",
       "value": "Free text"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Icon library"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
     ]
    },
    {
@@ -378,6 +470,15 @@
       "label": "Icon source",
       "op": "is_not",
       "value": "Custom image"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_color",
+      "label": "Icon color",
+      "op": "is",
+      "value": "Custom color"
      }
     ]
    },
@@ -418,6 +519,22 @@
       "op": "is",
       "value": "Custom image"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Icon library"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Custom image"
+     }
     ]
    },
    {
@@ -436,6 +553,15 @@
      }
     ],
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is_not",
+      "value": "No icon"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon source",
@@ -476,6 +602,15 @@
       "label": "Icon position",
       "op": "is",
       "value": "Left of the text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is_not",
+      "value": "No icon"
      }
     ]
    }
@@ -529,10 +664,32 @@
     ]
    },
    {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Ausrichtung wie Gruppe",
+    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen.",
+    "default": true
+   },
+   {
     "type": "text_alignment",
     "id": "alignment",
     "label": "Ausrichtung",
-    "default": "left"
+    "default": "left",
+    "visible_if": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Ausrichtung wie Gruppe",
+      "op": "off"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "inherit_alignment",
+      "label": "Ausrichtung wie Gruppe",
+      "op": "off"
+     }
+    ]
    },
    {
     "type": "header",
@@ -648,6 +805,15 @@
       "op": "is",
       "value": "Icon-Bibliothek"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Icon-Bibliothek"
+     }
     ]
    },
    {
@@ -656,6 +822,15 @@
     "label": "Bild für das Icon",
     "info": "Wird in die Icon-Größe eingepasst. Am besten eignet sich ein quadratisches SVG oder PNG mit transparentem Hintergrund.",
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Eigenes Bild"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon-Quelle",
@@ -671,6 +846,15 @@
     "info": "Ein kurzes Zeichen, eine Zahl oder ein Emoji in einer Zeile, z. B. „01“ oder „★“. Gilt als Schmuck und wird von Screenreadern nicht vorgelesen.",
     "default": "01",
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon-Quelle",
@@ -713,6 +897,15 @@
       "op": "is",
       "value": "Freitext"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
     ]
    },
    {
@@ -741,6 +934,15 @@
       "op": "is",
       "value": "Freitext"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
     ]
    },
    {
@@ -763,6 +965,15 @@
      }
     ],
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon-Quelle",
@@ -829,6 +1040,22 @@
       "op": "is",
       "value": "Freitext"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Icon-Bibliothek"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
     ]
    },
    {
@@ -855,6 +1082,15 @@
       "label": "Icon-Quelle",
       "op": "is_not",
       "value": "Eigenes Bild"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_color",
+      "label": "Icon-Farbe",
+      "op": "is",
+      "value": "Eigene Farbe"
      }
     ]
    },
@@ -895,6 +1131,22 @@
       "op": "is",
       "value": "Eigenes Bild"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Icon-Bibliothek"
+     },
+     "or",
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Eigenes Bild"
+     }
     ]
    },
    {
@@ -913,6 +1165,15 @@
      }
     ],
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is_not",
+      "value": "Kein Icon"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon-Quelle",
@@ -953,6 +1214,15 @@
       "label": "Position des Icons",
       "op": "is",
       "value": "Links neben dem Text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is_not",
+      "value": "Kein Icon"
      }
     ]
    }

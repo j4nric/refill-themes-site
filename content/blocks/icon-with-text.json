@@ -132,6 +132,15 @@
       "op": "is",
       "value": "Custom image"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Custom image"
+     }
     ]
    },
    {
@@ -141,6 +150,15 @@
     "info": "A short character, number or emoji on one line, e.g. “01” or “★”. Treated as decoration and not read out by screen readers.",
     "default": "01",
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon source",
@@ -183,6 +201,15 @@
       "op": "is",
       "value": "Free text"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
     ]
    },
    {
@@ -211,6 +238,15 @@
       "op": "is",
       "value": "Free text"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
     ]
    },
    {
@@ -233,6 +269,15 @@
      }
     ],
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon source",
+      "op": "is",
+      "value": "Free text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon source",
@@ -325,6 +370,15 @@
       "label": "Icon source",
       "op": "is_not",
       "value": "Custom image"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_color",
+      "label": "Icon color",
+      "op": "is",
+      "value": "Custom color"
      }
     ]
    },
@@ -567,6 +621,15 @@
       "op": "is",
       "value": "Eigenes Bild"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Eigenes Bild"
+     }
     ]
    },
    {
@@ -576,6 +639,15 @@
     "info": "Ein kurzes Zeichen, eine Zahl oder ein Emoji in einer Zeile, z. B. „01“ oder „★“. Gilt als Schmuck und wird von Screenreadern nicht vorgelesen.",
     "default": "01",
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon-Quelle",
@@ -618,6 +690,15 @@
       "op": "is",
       "value": "Freitext"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
     ]
    },
    {
@@ -646,6 +727,15 @@
       "op": "is",
       "value": "Freitext"
      }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
     ]
    },
    {
@@ -668,6 +758,15 @@
      }
     ],
     "visible_if": [
+     {
+      "setting": "icon_source",
+      "label": "Icon-Quelle",
+      "op": "is",
+      "value": "Freitext"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
      {
       "setting": "icon_source",
       "label": "Icon-Quelle",
@@ -760,6 +859,15 @@
       "label": "Icon-Quelle",
       "op": "is_not",
       "value": "Eigenes Bild"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "icon_color",
+      "label": "Icon-Farbe",
+      "op": "is",
+      "value": "Eigene Farbe"
      }
     ]
    },

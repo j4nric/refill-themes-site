@@ -1,21 +1,30 @@
 #!/usr/bin/env node
-// Screenshots von Blöcken aus den Demo-Shops für das Handbuch (Block-Seiten und Block-Galerie).
+// Screenshots der Blöcke aus den Demo-Shops für das Handbuch (Block-Seiten, Block-Galerie) samt Markierungen.
 //
-//   STOREFRONT_PASSWORD=… node shots.mjs                      # Pilot-Blöcke (shots.config.json → "pilots")
-//   STOREFRONT_PASSWORD=… node shots.mjs --only text          # nur diese Pilot-Blöcke (Komma-Liste)
-//   STOREFRONT_PASSWORD=… node shots.mjs --gallery            # Vorschaubilder aller Blöcke der Galerie
+//   STOREFRONT_PASSWORD=… node shots.mjs                      # alle Blöcke der Galerie (content/blocks/index.json)
+//   STOREFRONT_PASSWORD=… node shots.mjs --only text,heading  # nur diese Blöcke
+//   STOREFRONT_PASSWORD=… node shots.mjs --only text --variant desktop --lang de   # schneller Probelauf
 //   STOREFRONT_PASSWORD=… node shots.mjs --candidates text --out /tmp/x   # alle Fundstellen eines Blocks zum Aussuchen
 //   STOREFRONT_PASSWORD=… node shots.mjs --discover           # Seitenadressen der Vorlagen neu ermitteln
-//   Optionen: --theme <pfad zum Theme-Repo> (Standard ../cadence-theme), --lang de|en (Standard beide)
+//   node shots.mjs --selectors                                # nur zeigen, über welche Klassen jeder Block gefunden wird
+//   Optionen: --theme <pfad zum Theme-Repo> (Standard ../cadence-theme), --lang de|en, --variant desktop|mobile
 //
-// Ablauf: Welche Seite eine Vorlage (z. B. page.about.json) zeigt, ermittelt --discover über die Sitemap des Shops
-// (Abschnitts-IDs der Seite = Abschnitte der Vorlage) und speichert es in content/shots-pages.json. Shopify rendert
-// Abschnitte als #shopify-section-template--<nr>__<abschnitt-id>. Blöcke tragen im Shop keine ID: Der Block wird über
-// die Klasse seines äußersten Elements (aus blocks/<name>.liquid) und seine Position unter den gleichartigen Blöcken des
-// Abschnitts (Reihenfolge in der Vorlage) gefunden. Seiten werden mit ?noskip geladen (kein content-visibility),
-// Bewegung reduziert, Bilder abgewartet; fixierte Elemente (Kopfzeile, Popups) ausgeblendet.
-// Ausgabe: assets/shots/<de|en>/<block>-<shop>-<desktop|mobile>.webp (Pilot) bzw. assets/shots/<de|en>/thumbs/<block>.webp
-// (Galerie), Maße und Quelle in content/shots.json. WebP über Python/Pillow, unter 150 KB je Bild.
+// Fundstelle je Block: shots.config.json → "blocks" (fest), sonst automatisch die erste Fundstelle in einer
+// Demo-Vorlage mit bekannter Seite (Reihenfolge "prefer"); klappt sie nicht, die nächste.
+// Seiten zu Vorlagen: --discover über die Sitemap → content/shots-pages.json ("pages" in der Konfiguration hat Vorrang).
+// Shopify rendert Abschnitte als #shopify-section-template--<nr>__<abschnitt-id>. Blöcke tragen im Shop keine ID:
+// Der Block wird über die Klassen seines äußersten Elements gefunden (aus blocks/<name>.liquid; reicht der Block
+// block.shopify_attributes an ein Snippet weiter, aus dem Snippet) und über seine Position unter den gleichartigen
+// Blöcken des Abschnitts. Elemente mit display: contents oder ohne eigene Größe: Bereich über die Kinder.
+// Ist ein Block klein (< minHeight), wird ein Ausschnitt drumherum aufgenommen und der Block gestrichelt markiert.
+//
+// Markierungen: Beim Bild „Computer“ werden die Teile des Blocks vermessen (Überschrift, Text, Bild, Knopf … bzw. die
+// Unterblöcke) und als Prozent-Koordinaten gespeichert. Zuordnung Einstellung → CSS-Selektor: shots.config.json →
+// "markers"; sonst Heuristik (erstes h1–h6 → Überschrift, .prose/p → Text, img → Bild, a.button → Knopf, Icon).
+//
+// Ausgabe je Block und Sprache: assets/shots/<de|en>/<block>-desktop.webp (bis 1600 px breit),
+// <block>-desktop-800.webp, <block>-mobile.webp (780 px), thumbs/<block>.webp (Galerie, 640 px); jedes Bild < 200 KB.
+// Daten (Größen, Quelle, Markierungen): content/shots/<block>.json. WebP über Python/Pillow.
 //
 // Das Passwort kommt nur aus der Umgebungsvariable STOREFRONT_PASSWORD und wird nirgends ausgegeben.
 
@@ -31,29 +40,33 @@ const { chromium } = require('playwright');
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, 'shots.config.json'), 'utf8'));
 const PAGES_FILE = path.join(ROOT, 'content', 'shots-pages.json');
-const MANIFEST_FILE = path.join(ROOT, 'content', 'shots.json');
+const DATA_DIR = path.join(ROOT, 'content', 'shots');
+const BLOCKS_DIR = path.join(ROOT, 'content', 'blocks');
 const SHOTS = path.join(ROOT, 'assets', 'shots');
-const MAX_BYTES = 150 * 1024;
+const MAX_BYTES = 200 * 1024;
 const VIEWPORTS = {
-  desktop: { width: 1280, height: 900, deviceScaleFactor: 1, maxHeight: 1100, maxWidth: 1400 },
-  mobile: { width: 390, height: 844, deviceScaleFactor: 2, maxHeight: 1500, maxWidth: 780 },
+  desktop: { width: 1280, height: 900, deviceScaleFactor: 1.25, maxHeight: 1000 },
+  mobile: { width: 390, height: 844, deviceScaleFactor: 2, maxHeight: 1400 },
 };
-const THUMB = { width: 640, maxHeight: 480 };
+const MIN_HEIGHT = { desktop: 110, mobile: 90 };
+const CONTEXT_HEIGHT = { desktop: 260, mobile: 220 };
 
 // ----------------------------------------------------------------------------- Argumente
 
 function parseArgs(argv) {
-  const a = { theme: path.join(ROOT, '..', 'cadence-theme'), only: null, gallery: false, candidates: null, out: null,
-    discover: false, langs: ['de', 'en'] };
+  const a = { theme: path.join(ROOT, '..', 'cadence-theme'), only: null, candidates: null, out: null,
+    discover: false, langs: ['de', 'en'], variants: ['desktop', 'mobile'] };
   for (let i = 0; i < argv.length; i++) {
     const v = argv[i];
     if (v === '--theme') a.theme = argv[++i];
     else if (v === '--only') a.only = argv[++i].split(',');
-    else if (v === '--gallery') a.gallery = true;
+    else if (v === '--gallery') { /* früher eigener Lauf; Vorschaubilder entstehen jetzt aus dem Computer-Bild */ }
     else if (v === '--candidates') a.candidates = argv[++i];
     else if (v === '--out') a.out = argv[++i];
     else if (v === '--discover') a.discover = true;
     else if (v === '--lang') a.langs = argv[++i].split(',');
+    else if (v === '--variant') a.variants = argv[++i].split(',');
+    else if (v === '--selectors') a.selectors = true;
     else throw new Error(`Unbekannte Option ${v}`);
   }
   return a;
@@ -92,22 +105,86 @@ function sectionBlocks(section) {
   return list;
 }
 
-// Klassen des äußersten Elements eines Blocks (Tags mit block.shopify_attributes), erste feste Klasse je Tag.
-const classCache = {};
-function rootClasses(theme, type) {
-  if (classCache[type]) return classCache[type];
+function stripLiquidDocs(src) {
+  return src.split(/\{%-?\s*schema\s*-?%\}/)[0]
+    .replace(/\{%-?\s*doc\s*-?%\}[\s\S]*?\{%-?\s*enddoc\s*-?%\}/g, '')
+    .replace(/\{%-?\s*comment\s*-?%\}[\s\S]*?\{%-?\s*endcomment\s*-?%\}/g, '');
+}
+
+// Ganzer HTML-Tag um Position i (Liquid im Tag wird übersprungen).
+function tagAt(src, i) {
+  const start = src.lastIndexOf('<', i);
+  let j = i;
+  while (j < src.length) {
+    if (src.startsWith('{{', j) || src.startsWith('{%', j)) {
+      const end = src.indexOf(src[j + 1] === '{' ? '}}' : '%}', j + 2);
+      if (end < 0) break;
+      j = end + 2;
+      continue;
+    }
+    if (src[j] === '>') break;
+    j++;
+  }
+  return src.slice(start, j + 1);
+}
+
+function selectorOfTag(tag, src = '') {
+  const m = tag.match(/\bclass="([^"]*)"/);
+  if (m) {
+    let cls = m[1];
+    // class="{{ classes }}": erste feste Zeichenkette aus „assign classes = '…'“
+    const v = cls.trim().match(/^\{\{-?\s*(\w+)\s*-?\}\}$/);
+    if (v) cls = src.match(new RegExp(`assign\\s+${v[1]}\\s*=\\s*'([^']*)'`))?.[1] || '';
+    // Bedingte Teile: direkt an eine Klasse angehängt → Klasse unbrauchbar („@“), sonst einfach weg.
+    // Liquid-Ausgaben ebenso („banner--{{ x }}“ fällt heraus).
+    const stat = cls.replace(/(\S?)(\{%-?\s*(?:if|unless|case)\b[\s\S]*?-?%\})([\s\S]*?)\{%-?\s*end(?:if|unless|case)\s*-?%\}/g,
+      (all, pre, open, inner) => (pre && !/^\s/.test(inner) ? pre + '@' : pre + ' '))
+      .replace(/\{[{%][\s\S]*?[}%]\}/g, '@').trim().split(/\s+/).filter((c) => /^[a-z][\w-]*[a-z0-9]$/.test(c));
+    if (stat.length) return stat.map((c) => '.' + c).join('');
+  }
+  const p = tag.match(/data-partial="([\w-]+)"/);
+  if (p) return `[data-partial="${p[1]}"]`;
+  const t = tag.match(/^<([a-z][\w]*-[\w-]*)/);
+  if (t) return t[1];
+  return null;
+}
+
+// CSS-Selektoren des äußersten Elements eines Blocks.
+const selCache = {};
+function rootSelectors(theme, type) {
+  if (selCache[type]) return selCache[type];
   const file = path.join(theme, 'blocks', `${type}.liquid`);
-  const src = fs.existsSync(file) ? fs.readFileSync(file, 'utf8').split('{% schema %}')[0] : '';
-  const classes = new Set();
+  const src = fs.existsSync(file) ? stripLiquidDocs(fs.readFileSync(file, 'utf8')) : '';
+  const sels = new Set();
   let i = -1;
   while ((i = src.indexOf('block.shopify_attributes', i + 1)) >= 0) {
-    const tag = src.slice(src.lastIndexOf('<', i), i);
-    const m = tag.match(/class="([^"]*)"/);
-    const first = m && m[1].replace(/\{[{%][\s\S]*?[}%]\}/g, ' ').trim().split(/\s+/)[0];
-    if (first && /^[a-z][\w-]*$/.test(first)) classes.add(first);
+    const open = src.lastIndexOf('{%', i);
+    const close = src.lastIndexOf('%}', i);
+    if (open > close) {
+      // {% render 'snippet', … attributes: block.shopify_attributes %} → im Snippet nach {{ attributes }} suchen
+      const tagEnd = src.indexOf('%}', i);
+      const call = src.slice(open, tagEnd);
+      const sn = call.match(/render\s+'([\w-]+)'/);
+      if (!sn) continue;
+      const sfile = path.join(theme, 'snippets', `${sn[1]}.liquid`);
+      if (!fs.existsSync(sfile)) continue;
+      const ssrc = stripLiquidDocs(fs.readFileSync(sfile, 'utf8'));
+      for (const m of ssrc.matchAll(/\{\{-?\s*attributes\s*-?\}\}/g)) {
+        const sel = selectorOfTag(tagAt(ssrc, m.index), ssrc);
+        if (sel) sels.add(sel);
+      }
+      continue;
+    }
+    const sel = selectorOfTag(tagAt(src, i), src);
+    if (sel) sels.add(sel);
   }
-  classCache[type] = [...classes];
-  return classCache[type];
+  selCache[type] = CONFIG.selectors?.[type] || [...sels];
+  return selCache[type];
+}
+
+function blockData(slug) {
+  const f = path.join(BLOCKS_DIR, `${slug}.json`);
+  return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null;
 }
 
 // ----------------------------------------------------------------------------- Shop
@@ -173,7 +250,6 @@ async function discover(browser, theme, templates) {
         if (ids.size) seen.push({ path: u, ids, classes });
       }));
     }
-    // Seite → passendste Vorlage gleicher Art (Abschnitts-IDs + Klassen der Blöcke), dann je Vorlage die kürzeste Adresse.
     const kindOf = (file) => file.split('.')[0];
     const kindOfPath = (u) => (u === '/' ? 'index' : u === '/cart' ? 'cart' : u === '/collections' ? 'list-collections'
       : u.startsWith('/search') ? 'search' : /^\/products\//.test(u) ? 'product' : /^\/collections\//.test(u) ? 'collection'
@@ -183,7 +259,8 @@ async function discover(browser, theme, templates) {
     for (const [file, tpl] of Object.entries(templates[shop])) {
       const secs = Object.entries(tpl.sections || {}).filter(([, s]) => !s.disabled);
       const types = new Set(secs.flatMap(([, s]) => sectionBlocks(s).map((b) => b.type)));
-      fingerprint[file] = { ids: secs.map(([id]) => id), classes: [...types].map((t) => rootClasses(theme, t)).filter((c) => c.length) };
+      fingerprint[file] = { ids: secs.map(([id]) => id),
+        classes: [...types].map((t) => rootSelectors(theme, t).map((s) => s.match(/^\.([\w-]+)/)?.[1]).filter(Boolean)).filter((c) => c.length) };
     }
     const assigned = {};
     for (const s of seen) {
@@ -201,7 +278,6 @@ async function discover(browser, theme, templates) {
       if (!cur || best.score > cur.score || (best.score === cur.score && s.path.length < cur.path.length)) assigned[best.file] = { ...best, path: s.path };
     }
     result[shop] = Object.fromEntries(Object.entries(assigned).sort().map(([f, a]) => [f, a.path]));
-    // Feste Zuordnungen aus der Konfiguration haben Vorrang.
     Object.assign(result[shop], CONFIG.pages?.[shop] || {});
     console.log(`${shop}: ${Object.keys(result[shop]).length} Vorlagen zugeordnet, ${seen.length} Seiten gelesen`);
     await context.close();
@@ -210,10 +286,41 @@ async function discover(browser, theme, templates) {
   return result;
 }
 
-// ----------------------------------------------------------------------------- Aufnahme
+// ----------------------------------------------------------------------------- Im Browser
+
+// Wird in die Seite gegeben: Größe eines Elements; ohne eigene Box (display: contents, 0 Höhe) über die Kinder.
+const BOX_FN = `(function boxOf(n) {
+  const cs = getComputedStyle(n);
+  if (cs.display === 'none' || cs.visibility === 'hidden') return null;
+  const r = n.getBoundingClientRect();
+  if (cs.display !== 'contents' && r.width > 1 && r.height > 1) {
+    const fixed = cs.position === 'fixed';
+    return { x: r.left + (fixed ? 0 : scrollX), y: r.top + (fixed ? 0 : scrollY), width: r.width, height: r.height, fixed };
+  }
+  let u = null;
+  for (const c of n.children) {
+    const b = boxOf(c);
+    if (!b) continue;
+    if (!u) { u = { ...b }; continue; }
+    const x2 = Math.max(u.x + u.width, b.x + b.width), y2 = Math.max(u.y + u.height, b.y + b.height);
+    u.x = Math.min(u.x, b.x); u.y = Math.min(u.y, b.y); u.width = x2 - u.x; u.height = y2 - u.y;
+  }
+  return u;
+})`;
+
+async function boxOf(page, handle) {
+  return page.evaluate(([fn, n]) => (0, eval)(fn)(n), [BOX_FN, handle]);
+}
 
 async function preparePage(page, url) {
-  await page.goto(url, { waitUntil: 'load', timeout: 90000 });
+  await page.waitForTimeout(800);  // Shops schonen: Shopify sperrt bei zu vielen Abrufen (429, „Just a moment…“)
+  for (let i = 0; ; i++) {
+    const res = await page.goto(url, { waitUntil: 'load', timeout: 90000 });
+    if (!res || res.status() !== 429) break;
+    if (i >= 2) throw new Error(`gesperrt (429): ${url}`);
+    console.warn(`  429 bei ${url} – warte`);
+    await page.waitForTimeout(15000 * (i + 1));
+  }
   await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
   await page.evaluate(async () => {
     document.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
@@ -221,26 +328,31 @@ async function preparePage(page, url) {
   });
 }
 
-// Findet das Element: Abschnitt, dann ggf. Block (Typ, n-ter gleichartiger Block im Abschnitt).
+// Findet den Block: Abschnitt, dann n-ter gleichartiger Block im Abschnitt.
 async function locate(page, theme, sectionId, blocks, blockId) {
   const sectionSel = `[id^="shopify-section-template--"][id$="__${sectionId}"]`;
   const section = await page.$(sectionSel);
   if (!section) return { error: `Abschnitt ${sectionId} nicht auf der Seite` };
-  if (!blockId) return { handle: section, how: 'section' };
+  if (!blockId) return { handle: section, how: 'section', section };
   const block = blocks.find((b) => b.id === blockId);
-  if (!block) return { error: `Block ${blockId} nicht in der Vorlage` };
-  const same = blocks.filter((b) => b.type === block.type);
+  if (!block) return { error: `Block ${blockId} nicht in der Vorlage`, section };
+  const sels = rootSelectors(theme, block.type);
+  if (!sels.length) return { error: `kein Selektor für ${block.type}`, section };
+  // Andere Blocktypen mit denselben Klassen (z. B. „Pflichtangaben“ und „Produktsicherheit“: .disclosure.legal)
+  // zählen mit: Position unter allen Blöcken des Abschnitts, deren Selektoren sich überschneiden.
+  // Ein Selektor eines anderen Typs trifft auch, wenn er alle Klassen eines unserer Selektoren enthält (.disclosure.legal ⊇ .disclosure).
+  const parts = (x) => x.match(/[.#]?[\w-]+|\[[^\]]+\]/g) || [];
+  const covers = (other, mine) => parts(mine).every((p) => parts(other).includes(p));
+  const same = blocks.filter((b) => b.type === block.type
+    || rootSelectors(theme, b.type).some((x) => sels.some((m) => covers(x, m))));
   const nth = same.indexOf(block);
-  const classes = rootClasses(theme, block.type);
-  if (!classes.length) return { error: `keine Klasse für ${block.type}`, section };
-  const handle = await section.evaluateHandle((root, { classes, nth }) => {
-    const sel = classes.map((c) => '.' + CSS.escape(c)).join(',');
-    const all = [...root.querySelectorAll(sel)];
+  const handle = await section.evaluateHandle((root, { sels, nth }) => {
+    const all = [...root.querySelectorAll(sels.join(','))];
     const outer = all.filter((el) => !all.some((o) => o !== el && o.contains(el)));
     return outer[nth] || null;
-  }, { classes, nth });
+  }, { sels, nth });
   const el = handle.asElement();
-  if (!el) return { error: `Block ${blockId} (${block.type}, Nr. ${nth + 1}) nicht gefunden`, section };
+  if (!el) return { error: `Block ${blockId} (${block.type}, Nr. ${nth + 1}) nicht gefunden (${sels.join(' | ')})`, section };
   return { handle: el, how: 'block', section };
 }
 
@@ -253,74 +365,179 @@ async function settle(page, el) {
       Promise.all(imgs.map((i) => (i.complete ? null : new Promise((r) => { i.onload = i.onerror = r; })))),
       new Promise((r) => setTimeout(r, 8000)),
     ]);
-    // Fixierte Elemente (Kopfzeile, Popups, Hinweise) verdecken sonst den Ausschnitt.
     for (const e of document.querySelectorAll('body *')) {
       const pos = getComputedStyle(e).position;
-      if ((pos === 'fixed' || pos === 'sticky') && !e.contains(node) && !node.contains(e)) e.style.setProperty('visibility', 'hidden', 'important');
+      if ((pos === 'fixed' || pos === 'sticky') && !e.contains(node) && !node.contains(e)) {
+        e.style.setProperty('visibility', 'hidden', 'important');
+        e.setAttribute('data-shot-hidden', '');
+      }
     }
     document.querySelectorAll('dialog[open]').forEach((d) => d.close());
   }, el);
-  await page.waitForTimeout(700);
+  await page.waitForTimeout(600);
 }
 
-async function highlight(page, els) {
-  await page.evaluate((nodes) => {
+// Vor der nächsten Aufnahme auf derselben Seite: ausgeblendete Elemente wieder zeigen
+async function unsettle(page) {
+  await page.evaluate(() => document.querySelectorAll('[data-shot-hidden]').forEach((e) => {
+    e.style.removeProperty('visibility');
+    e.removeAttribute('data-shot-hidden');
+  }));
+}
+
+async function setHighlight(page, els, on) {
+  await page.evaluate(({ nodes, on }) => {
     for (const n of nodes) {
-      n.style.setProperty('outline', '3px dashed #1f4fd1', 'important');
-      n.style.setProperty('outline-offset', '4px', 'important');
+      if (on) {
+        n.style.setProperty('outline', '3px dashed #1f4fd1', 'important');
+        n.style.setProperty('outline-offset', '4px', 'important');
+      } else {
+        n.style.removeProperty('outline');
+        n.style.removeProperty('outline-offset');
+      }
     }
-  }, els);
+  }, { nodes: els, on });
 }
 
-async function capture(page, el, vp, pad = 8) {
-  const box = await page.evaluate((node) => {
-    const r = node.getBoundingClientRect();
-    return { x: r.left + scrollX, y: r.top + scrollY, width: r.width, height: r.height };
-  }, el);
-  if (!box.width || !box.height) return null;
-  const clip = {
-    x: Math.max(0, Math.floor(box.x - pad)),
-    y: Math.max(0, Math.floor(box.y - pad)),
-    width: Math.min(Math.ceil(box.width + 2 * pad), vp.width),
-    height: Math.min(Math.ceil(box.height + 2 * pad), vp.maxHeight),
-  };
-  if (clip.x + clip.width > vp.width) clip.x = Math.max(0, vp.width - clip.width);
-  return page.screenshot({ clip, fullPage: true, animations: 'disabled', type: 'png' });
+// Kleinster Vorfahre (bis zum Abschnitt), der hoch genug ist, damit man sieht, wo der Block steht.
+async function contextOf(page, el, section, minH) {
+  const h = await page.evaluateHandle(([fn, node, sec, minH]) => {
+    const boxOf = (0, eval)(fn);
+    let n = node.parentElement;
+    while (n && n !== sec) {
+      const b = boxOf(n);
+      if (b && b.height >= minH && b.width >= 300) return n;
+      n = n.parentElement;
+    }
+    return sec;
+  }, [BOX_FN, el, section, minH]);
+  return h.asElement();
+}
+
+// Ausschnitt: Zielbereich + Rand; ist er zu hoch, ein Fenster um den Block (focus).
+function clipFor(box, focus, vp, pad, maxH = vp.maxHeight) {
+  let x = Math.max(0, Math.floor(box.x - pad));
+  let w = Math.min(Math.ceil(box.width + 2 * pad), vp.width);
+  if (x + w > vp.width) x = Math.max(0, vp.width - w);
+  let y = Math.max(0, Math.floor(box.y - pad));
+  let h = Math.ceil(box.height + 2 * pad);
+  if (h > maxH) {
+    h = maxH;
+    if (focus) {
+      const want = focus.y - Math.max(0, (maxH - focus.height) / 2);
+      y = Math.max(y, Math.min(Math.floor(want), Math.floor(box.y + box.height + pad - h)));
+    }
+  }
+  return { x, y, width: w, height: h };
+}
+
+// Markierungen: Teile des Blocks vermessen. specs: [{setting|block, sel?, child?}]
+async function measureMarkers(page, root, clip, specs, childHandles) {
+  return page.evaluate(([fn, root, clip, specs, children]) => {
+    const boxOf = (0, eval)(fn);
+    const inChild = (el) => children.some((c) => c && c !== el && c.contains(el));
+    const out = [];
+    for (const s of specs) {
+      let b = null;
+      if (s.child !== undefined) {
+        const c = children[s.child];
+        b = c ? boxOf(c) : null;
+      } else {
+        for (const el of root.querySelectorAll(s.sel)) {
+          if (inChild(el)) continue;
+          const bb = boxOf(el);
+          if (bb && bb.width >= 6 && bb.height >= 6) { b = bb; break; }
+        }
+        if (!b && root.matches(s.sel)) b = boxOf(root);
+      }
+      if (!b) continue;
+      // Punkt links vor den Anfang des Teils (verdeckt so kaum Text), auf Höhe der ersten Zeile.
+      const top = b.y + Math.min(14, b.height / 2);
+      if (top < clip.y || top > clip.y + clip.height || b.x + b.width < clip.x || b.x > clip.x + clip.width) continue;
+      const left = b.x - 16 >= clip.x + 12 ? b.x - 16 : b.x + Math.min(16, b.width / 2);
+      const pct = (v, o, len) => Math.round((v - o) / len * 1000) / 10;
+      out.push({ ...s, x: pct(left, clip.x, clip.width), y: pct(top, clip.y, clip.height),
+        box: [pct(b.x, clip.x, clip.width), pct(b.y, clip.y, clip.height), pct(b.width, 0, clip.width), pct(b.height, 0, clip.height)] });
+    }
+    return out;
+  }, [BOX_FN, root, clip, specs, childHandles]);
 }
 
 const PY_WEBP = `
-import io, sys
+import io, json, sys
 from PIL import Image, ImageStat
-out, max_w, max_h, limit = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])
+spec = json.loads(sys.argv[1])
 im = Image.open(io.BytesIO(sys.stdin.buffer.read())).convert("RGB")
-if im.width > max_w:
-    im = im.resize((max_w, round(im.height * max_w / im.width)), Image.LANCZOS)
-if max_h and im.height > max_h:
-    im = im.crop((0, 0, im.width, max_h))
-if ImageStat.Stat(im.convert("L")).stddev[0] < 6:  # leere Fläche (Block nicht gerendert)
-    print(0, 0, 0, 0)
-    sys.exit(0)
-for q in (82, 76, 70, 64, 58, 50, 42):
-    buf = io.BytesIO()
-    im.save(buf, "WEBP", quality=q, method=6)
-    if buf.tell() <= limit:
-        break
-open(out, "wb").write(buf.getvalue())
-print(im.width, im.height, buf.tell(), q)
+if ImageStat.Stat(im.convert("L")).stddev[0] < 5:  # leere Fläche (Block nicht gerendert)
+    print(json.dumps(None)); sys.exit(0)
+res = []
+for out, max_w, max_h, limit in spec:
+    img = im
+    if img.width > max_w:
+        img = img.resize((max_w, round(img.height * max_w / img.width)), Image.LANCZOS)
+    if max_h and img.height > max_h:
+        img = img.crop((0, 0, img.width, max_h))
+    for q in (80, 74, 68, 62, 56, 50, 44, 38):
+        buf = io.BytesIO()
+        img.save(buf, "WEBP", quality=q, method=6)
+        if buf.tell() <= limit:
+            break
+    open(out, "wb").write(buf.getvalue())
+    res.append({"width": img.width, "height": img.height, "bytes": buf.tell(), "quality": q})
+print(json.dumps(res))
 `;
 
-function toWebp(png, out, maxW, maxH) {
-  fs.mkdirSync(path.dirname(out), { recursive: true });
-  const r = spawnSync('python3', ['-c', PY_WEBP, out, String(maxW), String(maxH || 0), String(MAX_BYTES)], { input: png });
+// outputs: [[datei, maxBreite, maxHöhe]] → [{width, height, bytes}] oder null bei leerem Bild
+function toWebp(png, outputs) {
+  for (const [f] of outputs) fs.mkdirSync(path.dirname(f), { recursive: true });
+  const spec = JSON.stringify(outputs.map(([f, w, h]) => [f, w, h || 0, MAX_BYTES]));
+  const r = spawnSync('python3', ['-c', PY_WEBP, spec], { input: png, maxBuffer: 1 << 26 });
   if (r.status !== 0) throw new Error('WebP-Umwandlung: ' + r.stderr.toString());
-  const [w, h, bytes, q] = r.stdout.toString().trim().split(/\s+/).map(Number);
-  if (!w) return null;
-  return { width: w, height: h, bytes, quality: q };
+  return JSON.parse(r.stdout.toString());
 }
 
-// ----------------------------------------------------------------------------- Aufträge
+// ----------------------------------------------------------------------------- Markierungs-Spezifikation
 
-function occurrences(templates, type) {
+const HEUR = [
+  { kind: 'heading', sel: 'h1, h2, h3, h4, h5, h6', ids: /^(heading|title|headline)$|heading|title/, types: ['text', 'inline_richtext', 'richtext', 'textarea'] },
+  { kind: 'text', sel: '.prose, .rte, p', ids: /^(text|body|content|description|message|subheading|caption|answer)$|text$/, types: ['richtext', 'inline_richtext', 'textarea', 'text'] },
+  { kind: 'icon', sel: '.icon, svg', ids: /^(icon|icon_source)$/, types: ['select', 'image_picker'] },
+  { kind: 'image', sel: 'img', ids: /image|logo|photo|picture/, types: ['image_picker'] },
+  { kind: 'button', sel: 'a.button, .button, button[type="submit"]', ids: /button|link_label|^label$|cta/, types: ['text', 'inline_richtext'] },
+];
+
+function markerSpecs(slug, templateBlocks, blockId) {
+  if (CONFIG.markers?.[slug]) return CONFIG.markers[slug].map((m) => ({ ...m }));
+  const data = blockData(slug);
+  const settings = (data?.en?.settings || []).filter((s) => s.id);
+  const used = new Set();
+  const specs = [];
+  for (const h of HEUR) {
+    const s = settings.find((x) => !used.has(x.id) && h.types.includes(x.type) && h.ids.test(x.id)
+      && !(h.kind === 'text' && /button|label|link|alt|placeholder|icon_text/.test(x.id)));
+    if (!s) continue;
+    used.add(s.id);
+    specs.push({ setting: s.id, sel: h.sel });
+  }
+  return specs;
+}
+
+function nestedSpecs(blocks, blockId, publicTypes) {
+  // Direkte Unterblöcke (mit eigener Block-Seite), höchstens 4, je Typ einmal.
+  const out = [];
+  const seen = new Set();
+  for (const b of blocks.filter((x) => x.parent === blockId)) {
+    if (!publicTypes.has(b.type) || seen.has(b.type) || out.length >= 4) continue;
+    seen.add(b.type);
+    out.push(b);
+  }
+  return out;
+}
+
+// ----------------------------------------------------------------------------- Aufnahme eines Blocks
+
+function occurrences(templates, type, pages) {
+  const prefer = CONFIG.prefer || ['index.json'];
   const out = [];
   for (const [shop, files] of Object.entries(templates)) {
     for (const [file, tpl] of Object.entries(files)) {
@@ -330,126 +547,292 @@ function occurrences(templates, type) {
       }
     }
   }
-  return out;
+  const rank = (o) => { const i = prefer.indexOf(o.template); return i < 0 ? prefer.length : i; };
+  return out.filter((o) => pages[o.shop]?.[o.template]).sort((a, b) => rank(a) - rank(b));
 }
 
-async function shoot(browser, theme, templates, pages, jobs, manifest) {
-  // Nach Shop, Sprache, Breite und Seite gruppieren: jede Seite nur einmal laden.
-  const groups = new Map();
-  for (const j of jobs) {
-    const pagePath = pages[j.shop]?.[j.template];
-    if (!pagePath) { console.warn(`  ${j.name}: keine Seite für ${j.shop}/${j.template} (--discover oder "pages" in shots.config.json)`); continue; }
-    const key = [j.shop, j.lang, j.variant, pagePath].join(' ');
-    if (!groups.has(key)) groups.set(key, { ...j, pagePath, jobs: [] });
-    groups.get(key).jobs.push(j);
+class Shooter {
+  constructor(browser, theme, templates, pages, publicTypes) {
+    Object.assign(this, { browser, theme, templates, pages, publicTypes, contexts: {}, pagesOpen: {} });
   }
-  const contexts = {};
-  for (const g of groups.values()) {
-    const vp = VIEWPORTS[g.variant];
-    const ctxKey = g.shop + g.variant + g.lang;
-    if (!contexts[ctxKey]) {
-      contexts[ctxKey] = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, deviceScaleFactor: vp.deviceScaleFactor,
-        reducedMotion: 'reduce', locale: g.lang === 'de' ? 'de-DE' : 'en-US', isMobile: g.variant === 'mobile', hasTouch: g.variant === 'mobile' });
-      await unlock(contexts[ctxKey], 'https://' + CONFIG.shops[g.shop].domain);
+
+  async context(shop, variant, lang, locked = true) {
+    const key = [shop, variant, lang, locked].join(' ');
+    if (!this.contexts[key]) {
+      const vp = VIEWPORTS[variant];
+      const ctx = await this.browser.newContext({ viewport: { width: vp.width, height: vp.height }, deviceScaleFactor: vp.deviceScaleFactor,
+        reducedMotion: 'reduce', locale: lang === 'de' ? 'de-DE' : 'en-US', isMobile: variant === 'mobile', hasTouch: variant === 'mobile' });
+      if (locked) await unlock(ctx, 'https://' + CONFIG.shops[shop].domain);
+      this.contexts[key] = ctx;
     }
-    const page = await contexts[ctxKey].newPage();
-    const url = 'https://' + CONFIG.shops[g.shop].domain + withNoskip(langPath(g.pagePath, g.lang));
+    return this.contexts[key];
+  }
+
+  // Seite laden (wiederverwenden, wenn dieselbe Adresse schon offen ist und nichts vorbereitet werden muss)
+  async open(job, variant, lang) {
+    const locked = job.unlock !== false;
+    const ctx = await this.context(job.shop, variant, lang, locked);
+    const base = 'https://' + CONFIG.shops[job.shop].domain;
+    const pth = job.path || this.pages[job.shop][job.template];
+    const url = base + withNoskip(langPath(pth, lang));
+    const key = [job.shop, variant, lang, locked].join(' ');
+    const cur = this.pagesOpen[key];
+    if (cur && cur.url === url && !job.visit && !job.scroll && !(job.cart && !this.cartFilled?.[key])) return cur.page;
+    if (cur) await cur.page.close();
+    if (job.cart && !this.cartFilled?.[key]) {
+      // Warenkorb-Blöcke: vorher Produkte in den Warenkorb legen – wie Kundschaft über das Formular der Produktseite
+      const p = await ctx.newPage();
+      for (const pth of job.cart) {
+        await p.goto(base + pth, { waitUntil: 'load', timeout: 90000 });
+        // Klick auf „In den Warenkorb“ (das Theme legt per JavaScript in den Warenkorb, ohne Seitenwechsel)
+        await p.locator('form[action*="/cart/add"] [type="submit"]:visible').first().click({ timeout: 15000 }).catch(() => {});
+        await p.waitForTimeout(2500);
+      }
+      await p.close();
+      this.cartFilled = { ...(this.cartFilled || {}), [key]: true };
+    }
+    if (job.visit) {
+      // z. B. „Zuletzt angesehen“: vorher einige Produkte besuchen (localStorage)
+      const p = await ctx.newPage();
+      for (const v of job.visit) await p.goto(base + langPath(v, lang), { waitUntil: 'load', timeout: 90000 }).catch(() => {});
+      await p.waitForTimeout(500);
+      await p.close();
+    }
+    const page = await ctx.newPage();
+    await preparePage(page, url);
+    this.pagesOpen[key] = { url, page };
+    return page;
+  }
+
+  async closeAll() {
+    for (const c of Object.values(this.contexts)) await c.close();
+  }
+
+  // Ein Bild aufnehmen. Ergebnis: {png, clip, how, markers?} oder {error}
+  async grab(job, variant, lang, withMarkers) {
+    const vp = VIEWPORTS[variant];
+    let page;
+    if (this.blocked?.[job.shop]) return { error: `${job.shop} gesperrt (429)` };
     try {
-      await preparePage(page, url);
+      page = await this.open(job, variant, lang);
     } catch (e) {
-      console.warn(`  ${url}: ${e.message.split('\n')[0]}`);
-      await page.close();
-      continue;
+      if (/gesperrt/.test(e.message)) this.blocked = { ...(this.blocked || {}), [job.shop]: true };
+      return { error: e.message.split('\n')[0] };
     }
-    for (const j of g.jobs) {
-      const tpl = templates[j.shop][j.template];
-      const blocks = sectionBlocks(tpl.sections[j.section]);
-      let found = await locate(page, theme, j.section, blocks, j.scope === 'section' ? null : j.block);
-      let target = found.handle;
-      let how = found.how;
-      if (target && j.scope === 'parent') {
-        const parentId = blocks.find((b) => b.id === j.block)?.parent;
-        const marks = [];
-        for (const b of blocks.filter((b) => b.type === blocks.find((x) => x.id === j.block).type && b.parent === parentId)) {
-          const f = await locate(page, theme, j.section, blocks, b.id);
-          if (f.handle) marks.push(f.handle);
-        }
-        const p = parentId ? await locate(page, theme, j.section, blocks, parentId) : { handle: found.section, how: 'section' };
-        if (p.handle) { if (j.highlight !== false) await highlight(page, marks); target = p.handle; how = 'parent'; }
-      }
-      if (!target && found.section && j.fallback !== false) { target = found.section; how = 'section'; }
-      if (target && how === 'block' && j.minHeight) {
-        const h = await target.evaluate((n) => n.getBoundingClientRect().height);
-        if (h < j.minHeight && found.section) { await highlight(page, [target]); target = found.section; how = 'section'; }
-      }
-      if (j.scope === 'section' && j.block) {
-        const b = await locate(page, theme, j.section, blocks, j.block);
-        if (b.handle && j.highlight) await highlight(page, [b.handle]);
-      }
-      if (!target) { console.warn(`  ${j.name}: ${found.error}`); continue; }
-      await settle(page, target);
-      const png = await capture(page, target, vp, how === 'section' ? 0 : 8);
-      if (!png) { console.warn(`  ${j.name}: Element ohne Größe (${url})`); continue; }
-      const outRel = j.out;
-      const info = j.thumb ? toWebp(png, path.join(SHOTS, outRel), THUMB.width, THUMB.maxHeight)
-        : toWebp(png, path.join(SHOTS, outRel), vp.maxWidth, 0);
-      if (!info) { console.warn(`  ${j.name}: Bild ist leer (${url}) – nicht gespeichert`); continue; }
-      manifest[outRel] = { width: info.width, height: info.height, block: j.name, shop: j.shop, lang: j.lang,
-        variant: j.variant, template: j.template, section: j.section, found: how };
-      console.log(`  ${outRel}: ${info.width}×${info.height}, ${Math.round(info.bytes / 1024)} KB (${how})`);
+    await unsettle(page);
+    const tpl = this.templates[job.shop][job.template];
+    const blocks = sectionBlocks(tpl.sections[job.section]);
+    let found = await locate(page, this.theme, job.section, blocks, job.block);
+    if (!found.handle) return { error: found.error };
+    const blockEl = found.handle;
+    let target = blockEl;
+    let how = 'block';
+    let focus = null;
+    const marks = [];
+    if (job.open) await blockEl.evaluate((n) => (n.matches('details') ? n : n.querySelector('details'))?.setAttribute('open', ''));
+    if (job.addClass?.[variant]) await blockEl.evaluate((n, c) => n.classList.add(c), job.addClass[variant]);
+    if (job.scroll) {
+      await page.evaluate((y) => window.scrollTo(0, y), job.scroll);
+      await page.waitForTimeout(1200);
     }
-    await page.close();
+    let bbox = await boxOf(page, blockEl);
+    if (!bbox) return { error: 'Block ohne Größe (unsichtbar oder leer)' };
+    if (job.scope === 'section') {
+      target = found.section; how = 'section';
+      if (job.highlight) marks.push(blockEl);
+      focus = bbox;
+    } else if (job.scope === 'parent') {
+      const parentId = blocks.find((b) => b.id === job.block)?.parent;
+      const type = blocks.find((b) => b.id === job.block).type;
+      for (const b of blocks.filter((b) => b.type === type && b.parent === parentId)) {
+        const f = await locate(page, this.theme, job.section, blocks, b.id);
+        if (f.handle) marks.push(f.handle);
+      }
+      const p = parentId ? await locate(page, this.theme, job.section, blocks, parentId) : { handle: found.section };
+      if (p.handle) { target = p.handle; how = 'parent'; }
+      if (job.highlight === false) marks.length = 0;
+      focus = bbox;
+    } else if (!bbox.fixed && (bbox.height < (job.minHeight || MIN_HEIGHT[variant]) || bbox.width < 160)) {
+      target = await contextOf(page, blockEl, found.section, CONTEXT_HEIGHT[variant]);
+      how = 'context';
+      marks.push(blockEl);
+      focus = bbox;
+    }
+    await settle(page, target);
+    if (marks.length) await setHighlight(page, marks, true);
+    bbox = await boxOf(page, blockEl);
+    let box = await boxOf(page, target);
+    if (!box) return { error: 'Element ohne Größe' };
+    if (focus) focus = bbox;
+    let png;
+    let clip;
+    if (box.fixed) {
+      // Fixierte Leiste (z. B. Kaufleiste): Ausschnitt des Fensters, etwas Seite darüber als Zusammenhang
+      const above = variant === 'desktop' ? 180 : 160;
+      clip = { x: 0, y: Math.max(0, Math.floor(box.y - above)), width: vp.width, height: 0 };
+      clip.height = Math.min(vp.height, Math.ceil(box.y + box.height + 8)) - clip.y;
+      await setHighlight(page, [blockEl], false);
+      png = await page.screenshot({ clip, animations: 'disabled', type: 'png' });
+      how = 'fixed';
+    } else {
+      // Kleiner Block in großem Umfeld: nur ein Fenster um den Block
+      const maxH = how === 'context' ? Math.min(vp.maxHeight, Math.max(bbox.height + 380, 460)) : vp.maxHeight;
+      clip = clipFor(box, focus, vp, how === 'section' ? 0 : 8, maxH);
+      png = await page.screenshot({ clip, fullPage: true, animations: 'disabled', type: 'png' });
+    }
+    let markers = null;
+    if (withMarkers) {
+      const specs = markerSpecs(job.name, blocks, job.block);
+      const kids = nestedSpecs(blocks, job.block, this.publicTypes);
+      const kidHandles = [];
+      for (const k of kids) {
+        const f = await locate(page, this.theme, job.section, blocks, k.id);
+        kidHandles.push(f.handle || null);
+      }
+      kids.forEach((k, i) => specs.push({ block: k.type, child: i }));
+      // Fixierte Leiste: Teile darin sind nicht selbst fixiert, boxOf liefert für sie Seitenkoordinaten.
+      const sy = box.fixed ? await page.evaluate(() => scrollY) : 0;
+      const mclip = { ...clip, y: clip.y + sy };
+      markers = await measureMarkers(page, blockEl, mclip, specs, kidHandles);
+    }
+    if (marks.length) await setHighlight(page, marks, false);
+    return { png, clip, how, markers };
   }
-  for (const c of Object.values(contexts)) await c.close();
+}
+
+// Markierungen aufräumen: nummerieren (Reihenfolge der Einstellungen, dann Unterblöcke), zu nahe Punkte verschieben.
+function finishMarkers(raw, slug) {
+  if (!raw) return [];
+  const data = blockData(slug);
+  const order = (data?.en?.settings || []).filter((s) => s.id).map((s) => s.id);
+  const list = raw.map((m) => ({ ...(m.setting ? { setting: m.setting } : { block: m.block }), x: m.x, y: m.y, box: m.box }));
+  list.sort((a, b) => {
+    const ia = a.setting ? order.indexOf(a.setting) : 1000;
+    const ib = b.setting ? order.indexOf(b.setting) : 1000;
+    return ia - ib || a.y - b.y;
+  });
+  const placed = [];
+  list.forEach((m, i) => {
+    m.n = i + 1;
+    for (let k = 0; k < 6 && placed.some((p) => Math.abs(p.x - m.x) < 3.5 && Math.abs(p.y - m.y) < 5); k++) m.x += 4;
+    m.x = Math.round(Math.min(97, Math.max(2, m.x)) * 10) / 10;
+    m.y = Math.round(Math.min(96, Math.max(3, m.y)) * 10) / 10;
+    placed.push(m);
+  });
+  return list;
 }
 
 // ----------------------------------------------------------------------------- Start
+
+function jobFor(slug, cand) {
+  const cfg = CONFIG.blocks?.[slug] || {};
+  return { scope: 'block', ...cand, ...cfg, name: slug };
+}
+
+
+async function shootBlock(sh, slug, cands, args) {
+  const dataFile = path.join(DATA_DIR, `${slug}.json`);
+  const old = fs.existsSync(dataFile) ? JSON.parse(fs.readFileSync(dataFile, 'utf8')) : {};
+  const cfg = CONFIG.blocks?.[slug] || {};
+  if (cfg.unavailable) {
+    fs.writeFileSync(dataFile, JSON.stringify({ block: slug, unavailable: cfg.unavailable }, null, 1) + '\n');
+    console.log(`${slug}: kein Bild (${cfg.unavailable})`);
+    return { ok: false, reason: cfg.unavailable };
+  }
+  // Feste Fundstelle zuerst, dann die übrigen (mit den Zusatz-Einstellungen der Konfiguration)
+  const { shop, template, section, block, ...extra } = cfg;
+  const auto = cands.filter((c) => !(c.shop === shop && c.template === template && c.section === section && c.block === block))
+    .map((c) => ({ scope: 'block', ...c, ...extra, name: slug }));
+  const list = (cfg.template ? [jobFor(slug, {})] : []).concat(auto)
+    .filter((j) => !sh.blocked?.[j.shop]);
+  if (!list.length) { console.warn(`${slug}: keine Fundstelle auf einer bekannten Seite`); return { ok: false, reason: 'keine Fundstelle' }; }
+  let lastErr = '';
+  for (const job of list.slice(0, 4)) {
+    const result = { block: slug, shop: job.shop, template: job.template, section: job.section, id: job.block };
+    let ok = true;
+    for (const lang of args.langs) {
+      const entry = { ...(old[lang] || {}) };
+      for (const variant of args.variants) {
+        const g = await sh.grab(job, variant, lang, variant === 'desktop');
+        if (g.error || !g.png) { ok = false; lastErr = `${job.shop}/${job.template}#${job.section}/${job.block} ${lang} ${variant}: ${g.error}`; break; }
+        const base = path.join(SHOTS, lang, slug);
+        const outs = variant === 'desktop'
+          ? [[`${base}-desktop.webp`, 1600, 1250], [`${base}-desktop-800.webp`, 800, 625], [path.join(SHOTS, lang, 'thumbs', `${slug}.webp`), 640, 480]]
+          : [[`${base}-mobile.webp`, 780, 2800]];
+        const info = toWebp(g.png, outs);
+        if (!info) { ok = false; lastErr = `${lang} ${variant}: Bild ist leer`; break; }
+        const rel = (f) => path.relative(SHOTS, f).split(path.sep).join('/');
+        if (variant === 'desktop') {
+          entry.desktop = { file: rel(outs[0][0]), ...info[0], how: g.how };
+          entry.desktop_small = { file: rel(outs[1][0]), ...info[1] };
+          entry.thumb = { file: rel(outs[2][0]), ...info[2] };
+          entry.markers = finishMarkers(g.markers, slug);
+        } else {
+          entry.mobile = { file: rel(outs[0][0]), ...info[0], how: g.how };
+        }
+        const i0 = info[0];
+        console.log(`  ${slug} ${lang} ${variant}: ${i0.width}×${i0.height}, ${Math.round(i0.bytes / 1024)} KB (${g.how})`
+          + (variant === 'desktop' ? `, ${entry.markers.length} Markierungen` : ''));
+      }
+      if (!ok) break;
+      result[lang] = entry;
+    }
+    if (ok) {
+      for (const lang of ['de', 'en']) if (!result[lang] && old[lang]) result[lang] = old[lang];
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+      fs.writeFileSync(dataFile, JSON.stringify(result, null, 1) + '\n');
+      return { ok: true };
+    }
+    console.warn(`  ${slug}: ${lastErr} – nächste Fundstelle`);
+  }
+  return { ok: false, reason: lastErr };
+}
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const theme = path.resolve(args.theme);
   if (!fs.existsSync(path.join(theme, 'blocks'))) throw new Error(`Theme-Repo nicht gefunden: ${theme} (--theme)`);
   const templates = loadTemplates(theme);
+  if (args.selectors) {
+    // Nur ausgeben, wie jeder Block im Shop gefunden wird (ohne Browser)
+    const index = JSON.parse(fs.readFileSync(path.join(BLOCKS_DIR, 'index.json'), 'utf8'));
+    for (const b of index) console.log(b.slug.padEnd(24), rootSelectors(theme, b.slug).join(' | ') || '–');
+    return;
+  }
   const browser = await chromium.launch();
   try {
     let pages = fs.existsSync(PAGES_FILE) ? JSON.parse(fs.readFileSync(PAGES_FILE, 'utf8')) : null;
     if (args.discover || !pages) pages = await discover(browser, theme, templates);
-    if (args.discover && !args.gallery && !args.candidates && !args.only) return;
-    const manifest = fs.existsSync(MANIFEST_FILE) ? JSON.parse(fs.readFileSync(MANIFEST_FILE, 'utf8')) : {};
-    const jobs = [];
+    for (const [shop, extra] of Object.entries(CONFIG.pages || {})) pages[shop] = { ...(pages[shop] || {}), ...extra };
+    if (args.discover && !args.candidates && !args.only) return;
+    const index = JSON.parse(fs.readFileSync(path.join(BLOCKS_DIR, 'index.json'), 'utf8'));
+    const publicTypes = new Set(index.map((b) => b.slug));
+    const sh = new Shooter(browser, theme, templates, pages, publicTypes);
     if (args.candidates) {
       const outDir = path.resolve(args.out || path.join(ROOT, '_candidates'));
-      occurrences(templates, args.candidates).forEach((o, i) => {
-        jobs.push({ ...o, name: args.candidates, lang: 'de', variant: 'desktop', scope: 'block', thumb: true,
-          out: path.relative(SHOTS, path.join(outDir, `${args.candidates}-${String(i).padStart(2, '0')}-${o.shop}-${o.template}-${o.section}-${o.block}.webp`)) });
-      });
-      await shoot(browser, theme, templates, pages, jobs, {});
+      fs.mkdirSync(outDir, { recursive: true });
+      for (const [i, o] of occurrences(templates, args.candidates, pages).entries()) {
+        const g = await sh.grab({ ...o, name: args.candidates, scope: 'block' }, 'desktop', 'de', false);
+        if (g.error) { console.warn(`  ${o.shop}/${o.template}#${o.section}/${o.block}: ${g.error}`); continue; }
+        const f = path.join(outDir, `${args.candidates}-${String(i).padStart(2, '0')}-${o.shop}-${o.template}-${o.section}-${o.block}.webp`);
+        toWebp(g.png, [[f, 800, 900]]);
+        console.log('  ' + f);
+      }
+      await sh.closeAll();
       return;
     }
-    if (args.gallery) {
-      const index = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'blocks', 'index.json'), 'utf8'));
-      const prefer = CONFIG.gallery_prefer || ['index.json'];
-      for (const b of index) {
-        const pick = CONFIG.pilots[b.slug] || CONFIG.gallery?.[b.slug] || occurrences(templates, b.slug)
-          .filter((o) => pages[o.shop]?.[o.template])
-          .sort((x, y) => (prefer.indexOf(y.template) >= 0) - (prefer.indexOf(x.template) >= 0))[0];
-        if (!pick) { console.warn(`  ${b.slug}: keine Fundstelle auf einer bekannten Seite`); continue; }
-        for (const lang of args.langs) {
-          jobs.push({ ...pick, scope: pick.scope === 'parent' ? 'parent' : 'block', name: b.slug, lang, variant: 'desktop',
-            thumb: true, minHeight: 90, out: `${lang}/thumbs/${b.slug}.webp` });
-        }
-      }
-    } else {
-      for (const [name, p] of Object.entries(CONFIG.pilots)) {
-        if (args.only && !args.only.includes(name)) continue;
-        for (const lang of args.langs) for (const variant of ['desktop', 'mobile']) {
-          jobs.push({ ...p, name, lang, variant, out: `${lang}/${name}-${p.shop}-${variant}.webp` });
-        }
-      }
+    const slugs = index.map((b) => b.slug).filter((s) => !args.only || args.only.includes(s));
+    // Nach erster Fundstelle sortieren: gleiche Seiten nacheinander (Seite wird wiederverwendet)
+    const plan = slugs.map((s) => ({ slug: s, cands: occurrences(templates, s, pages) }));
+    const keyOf = (p) => { const c = CONFIG.blocks?.[p.slug]?.template ? CONFIG.blocks[p.slug] : p.cands[0] || {}; return `${c.shop} ${c.template}`; };
+    plan.sort((a, b) => keyOf(a).localeCompare(keyOf(b)));
+    const failed = [];
+    for (const p of plan) {
+      const r = await shootBlock(sh, p.slug, p.cands, args);
+      if (!r.ok) failed.push(`${p.slug} (${r.reason})`);
     }
-    await shoot(browser, theme, templates, pages, jobs, manifest);
-    const sorted = Object.fromEntries(Object.entries(manifest).sort(([a], [b]) => a.localeCompare(b)));
-    fs.writeFileSync(MANIFEST_FILE, JSON.stringify(sorted, null, 1) + '\n');
+    await sh.closeAll();
+    if (failed.length) console.warn(`Ohne Bild: ${failed.join(', ')}`);
   } finally {
     await browser.close();
   }

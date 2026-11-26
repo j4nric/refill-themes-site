@@ -19,20 +19,27 @@
  "pages": {
   "nordform": {
    "product.json": "/products/magnesium-bisglycinat",
-   "404.json": "/pages/gibt-es-nicht"
+   "404.json": "/pages/gibt-es-nicht",
+   "article.json": "/blogs/news/magnesium-formen",
+   "collection.json": "/collections/nahrungsergaenzung",
+   "password.json": "/password"
   },
   "kessel-und-blatt": {
    "product.json": "/products/darjeeling-ff",
    "page.faq.json": "/pages/faq",
    "page.json": "/pages/versand",
-   "404.json": "/pages/gibt-es-nicht"
+   "404.json": "/pages/gibt-es-nicht",
+   "article.json": "/blogs/news/tee-richtig-zubereiten",
+   "password.json": "/password"
   },
   "ostra": {
    "product.json": "/products/reinigungsgel-aloe",
-   "404.json": "/pages/gibt-es-nicht"
+   "404.json": "/pages/gibt-es-nicht",
+   "article.json": "/blogs/news/inci-lesen",
+   "password.json": "/password"
   }
  },
- "pilots": {
+ "blocks": {
   "image-banner": {
    "shop": "kessel-und-blatt",
    "template": "page.about.json",
@@ -55,10 +62,202 @@
    "block": "c-1",
    "scope": "section",
    "highlight": true
+  },
+  "password-form": {
+   "unavailable": "devstore"
+  },
+  "sticky-buy-bar": {
+   "shop": "nordform",
+   "template": "product.json",
+   "section": "main",
+   "block": "sticky-buy-bar",
+   "scroll": 2600,
+   "addClass": {
+    "desktop": "sticky-buy--desktop"
+   }
+  },
+  "recently-viewed": {
+   "shop": "nordform",
+   "template": "product.json",
+   "section": "recent",
+   "block": "recently-viewed",
+   "visit": [
+    "/products/kreatin-monohydrat",
+    "/products/vitamin-d3-k2-tropfen",
+    "/products/set-basis",
+    "/products/magnesium-bisglycinat"
+   ]
+  },
+  "reorder": {
+   "unavailable": "account"
+  },
+  "product-safety": {
+   "shop": "nordform",
+   "template": "product.json",
+   "section": "main",
+   "block": "product-safety",
+   "open": true
+  },
+  "cart-summary": {
+   "shop": "nordform",
+   "template": "cart.json",
+   "section": "main",
+   "block": "cart-summary",
+   "cart": [
+    "/products/magnesium-bisglycinat",
+    "/products/kreatin-monohydrat"
+   ]
+  },
+  "cart-items": {
+   "shop": "nordform",
+   "template": "cart.json",
+   "section": "main",
+   "block": "cart-items",
+   "cart": [
+    "/products/magnesium-bisglycinat",
+    "/products/kreatin-monohydrat"
+   ]
   }
  },
- "gallery": {},
- "gallery_prefer": [
-  "index.json"
- ]
+ "prefer": [
+  "index.json",
+  "product.json",
+  "collection.json",
+  "article.json",
+  "page.json"
+ ],
+ "markers": {
+  "product-title": [
+   {
+    "setting": "show_vendor",
+    "sel": ".product-title__vendor-link, .label"
+   },
+   {
+    "setting": "show_subtitle",
+    "sel": ".product-title__subtitle"
+   }
+  ],
+  "product-price": [
+   {
+    "setting": "compare_color_source",
+    "sel": ".product-price__compare"
+   },
+   {
+    "setting": "show_tax_note",
+    "sel": ".product-price__note"
+   }
+  ],
+  "product-rating": [
+   {
+    "setting": "show_value",
+    "sel": ".product-rating__link, .product-rating"
+   }
+  ],
+  "buy-buttons": [
+   {
+    "setting": "show_quantity",
+    "sel": ".quantity"
+   },
+   {
+    "setting": "show_inventory",
+    "sel": ".buy__stock"
+   },
+   {
+    "setting": "show_dynamic_checkout",
+    "sel": ".buy__dynamic"
+   }
+  ],
+  "purchase-options": [
+   {
+    "setting": "match_supply",
+    "sel": ".option-row__fit, .option-row"
+   },
+   {
+    "setting": "show_timeline",
+    "sel": ".timeline"
+   }
+  ],
+  "quote": [
+   {
+    "setting": "text",
+    "sel": ".quote__text"
+   },
+   {
+    "setting": "author",
+    "sel": ".quote__author"
+   }
+  ],
+  "badge": [
+   {
+    "setting": "text",
+    "sel": ".badge-block"
+   }
+  ],
+  "contact-form": [
+   {
+    "setting": "heading",
+    "sel": ".contact__heading"
+   },
+   {
+    "setting": "show_phone",
+    "sel": "input[type=tel]"
+   }
+  ],
+  "collection-list": [
+   {
+    "setting": "heading",
+    "sel": ".collection-list__heading"
+   },
+   {
+    "setting": "collections",
+    "sel": ".collection-list__grid"
+   }
+  ],
+  "product-grid": [
+   {
+    "setting": "collection",
+    "sel": ".product-grid__list"
+   }
+  ],
+  "featured-product": [
+   {
+    "setting": "show_media",
+    "sel": ".gallery"
+   },
+   {
+    "setting": "show_title",
+    "sel": ".product-title"
+   },
+   {
+    "setting": "show_price",
+    "sel": ".product-price"
+   },
+   {
+    "setting": "show_picker",
+    "sel": ".picker"
+   },
+   {
+    "setting": "show_purchase_options",
+    "sel": ".purchase"
+   }
+  ],
+  "variant-picker": [
+   {
+    "setting": "style",
+    "sel": "fieldset, [role=radiogroup], .picker > *"
+   }
+  ],
+  "product-media": [
+   {
+    "setting": "layout",
+    "sel": "img"
+   }
+  ]
+ },
+ "selectors": {
+  "button": [
+   "a.button",
+   "a.button-link"
+  ]
+ }
 }

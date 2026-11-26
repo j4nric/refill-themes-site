@@ -5,8 +5,8 @@ Zwei Teile:
 
 1. Einlesen (braucht das Theme-Repo, nur lokal):
 
-       python3 editor_panel.py --theme ../cadence-theme                 # Pilot-Blöcke + Block-Liste
-       python3 editor_panel.py --theme ../cadence-theme text image      # nur diese
+       python3 editor_panel.py --theme ../cadence-theme                 # alle Blöcke der Galerie + Block-Liste
+       python3 editor_panel.py --theme ../cadence-theme text image      # nur diese (Block-Liste wird immer neu geschrieben)
        python3 editor_panel.py --theme ../cadence-theme --print text de # HTML einer Seitenleiste ausgeben
 
    Liest das {% schema %} aus blocks/<name>.liquid bzw. sections/<name>.liquid, löst alle t:-Schlüssel über
@@ -14,10 +14,15 @@ Zwei Teile:
    content/blocks/<name>.json (beide Sprachen). Außerdem content/blocks/index.json: alle öffentlichen Blöcke,
    die in den Demo-Vorlagen (demo/<preset>/files/templates/*.json) vorkommen, mit Namen und Kategorie.
    Erneut laufen lassen, wenn sich ein Block im Theme ändert – die JSON-Dateien werden dann einfach ersetzt.
+   Jedes visible_if wird mit den Standardwerten (Block bzw. Theme-Einstellungen) ausgewertet: Felder, die in der
+   Standard-Konfiguration nicht sichtbar sind, bekommen "hidden_by_default" und "hidden_by" (die auslösende Bedingung).
 
 2. Darstellen (ohne Theme-Repo, nutzt build.py): render_panel(data, lang, prefix="") erzeugt HTML.
    Jede Einstellung bekommt die Sprungmarke <prefix><setting_id> (auf der Block-Seite ohne Präfix,
    z. B. #layout; eingebettet woanders mit Präfix, z. B. #image-banner-layout).
+   Sichtbar sind die Felder der Standard-Konfiguration; bedingte Felder stehen darunter in zugeklappten <details>
+   („Weitere Felder, wenn „Icon-Quelle“ auf „Eigenes Bild“ steht“), gruppiert nach der auslösenden Einstellung und
+   ihrem Wert. Nummern der Markierungen im Bild (marks) stehen neben dem Feld.
 """
 from __future__ import annotations
 
@@ -31,7 +36,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "content" / "blocks"
-PILOTS = ("image-banner", "text", "icon-with-text")
 LANGS = ("en", "de")
 LOCALE_FILES = {"en": "en.default.schema.json", "de": "de.schema.json"}
 PRESETS = ("refill", "mortar", "pumice")
@@ -145,6 +149,76 @@ def theme_setting_labels(theme: Path, tr: Translator) -> dict:
     return labels
 
 
+def theme_setting_defaults(theme: Path) -> dict:
+    path = theme / "config" / "settings_schema.json"
+    out = {}
+    if path.exists():
+        for group in load_json(path):
+            for s in group.get("settings", []):
+                if "id" in s:
+                    out[s["id"]] = s.get("default")
+    return out
+
+
+def raw_default(s: dict | None):
+    if s is None:
+        return None
+    if "default" in s:
+        return s["default"]
+    if s.get("type") == "checkbox":
+        return False
+    if s.get("type") in ("select", "radio") and s.get("options"):
+        return s["options"][0]["value"]
+    return None
+
+
+def eval_visible(expr: str, by_id: dict, theme_defaults: dict) -> tuple[bool | None, list]:
+    """visible_if mit den Standardwerten auswerten (Block-Standard bzw. Theme-Standard).
+
+    Ergebnis: (sichtbar?, Liste der Teilergebnisse je Bedingung); (None, []) = nicht lesbar."""
+    body = re.sub(r"^\{\{\s*|\s*\}\}$", "", expr.strip())
+    parts = re.split(r"\s+(and|or)\s+", body)
+    values = []
+    for i, part in enumerate(parts):
+        if i % 2:
+            values.append(part)
+            continue
+        m = CMP.match(part.strip())
+        if not m:
+            return None, []
+        ref, op, val = m.group("ref"), m.group("op"), m.group("val")
+        sid = ref.rsplit(".", 1)[-1]
+        cur = theme_defaults.get(sid) if ref.startswith("settings.") else raw_default(by_id.get(sid))
+        blank = cur is None or cur == "" or cur == []
+        if op is None:
+            res = bool(cur) and not blank
+        else:
+            val = val.strip()
+            if val == "blank":
+                res = blank if op == "==" else not blank
+            elif val in ("true", "false"):
+                res = (bool(cur) == (val == "true")) == (op == "==")
+            elif val[:1] in "'\"":
+                raw = val[1:-1]
+                res = (str(cur) == raw) if op == "==" else (str(cur) != raw) if op == "!=" else None
+                if op == "contains":
+                    res = raw in (cur or "")
+            else:
+                try:
+                    a, b = float(cur or 0), float(val)
+                except (TypeError, ValueError):
+                    return None, []
+                res = {"==": a == b, "!=": a != b, ">": a > b, "<": a < b, ">=": a >= b, "<=": a <= b}[op]
+            if res is None:
+                return None, []
+        values.append(res)
+    # Liquid wertet and/or von rechts nach links aus.
+    result = values[-1]
+    for k in range(len(values) - 2, 0, -2):
+        result = (values[k - 1] and result) if values[k] == "and" else (values[k - 1] or result)
+    return bool(result), values[0::2]
+
+
 def default_value(s: dict, tr: Translator, lang: str):
     d = s.get("default")
     if d is None:
@@ -156,7 +230,7 @@ def default_value(s: dict, tr: Translator, lang: str):
     return d
 
 
-def extract(theme: Path, name: str, tr: Translator, theme_labels: dict) -> dict:
+def extract(theme: Path, name: str, tr: Translator, theme_labels: dict, theme_defaults: dict | None = None) -> dict:
     for kind, folder in (("block", "blocks"), ("section", "sections")):
         path = theme / folder / f"{name}.liquid"
         if path.exists():
@@ -208,6 +282,17 @@ def extract(theme: Path, name: str, tr: Translator, theme_labels: dict) -> dict:
                 item["visible_if"] = [c if isinstance(c, str) else {**c, "label": c["label"][lang],
                                                                      **({"value": c["value"][lang]} if "value" in c else {})}
                                       for c in parsed] if parsed is not None else s["visible_if"]
+                shown, atoms = eval_visible(s["visible_if"], by_id, theme_defaults or {})
+                # In der Standard-Konfiguration ausgeblendet → auf der Block-Seite zugeklappt, gruppiert nach der
+                # auslösenden Bedingung: bei „und“ die erste nicht erfüllte, bei „oder“ alle zusammen.
+                if shown is False and isinstance(item["visible_if"], list):
+                    item["hidden_by_default"] = True
+                    vi = item["visible_if"]
+                    if "or" in vi:
+                        item["hidden_by"] = vi
+                    else:
+                        k = next((i for i, ok in enumerate(atoms) if not ok), 0)
+                        item["hidden_by"] = [vi[2 * k]]
             items.append(item)
         data[lang] = {
             "name": tr.t(schema.get("name", name), lang),
@@ -264,8 +349,9 @@ UI = {
         "what": {"product": "product", "collection": "collection", "page": "page", "blog": "blog",
                  "link_list": "menu", "product_list": "products", "collection_list": "collections",
                  "metaobject": "entry", "font_picker": "font"},
-        "back": "Back", "q": ("“", "”"), "panel_note": "Shown with default values.",
+        "back": "Back", "q": ("“", "”"), "panel_note": "Shown with default values. Fields that only appear after another setting is changed are folded away below.",
         "nested": "Can contain other blocks (for example heading, text, button).",
+        "more_if": "More fields when {c} ({n})", "mark": "Marker",
     },
     "de": {
         "default": "Standard:", "empty": "leer", "on": "An", "off": "Aus", "select": "Auswählen",
@@ -278,8 +364,9 @@ UI = {
         "what": {"product": "Produkt", "collection": "Kollektion", "page": "Seite", "blog": "Blog",
                  "link_list": "Menü", "product_list": "Produkte", "collection_list": "Kollektionen",
                  "metaobject": "Eintrag", "font_picker": "Schrift"},
-        "back": "Zurück", "q": ("„", "“"), "panel_note": "Angezeigt mit den Standardwerten.",
+        "back": "Zurück", "q": ("„", "“"), "panel_note": "Angezeigt mit den Standardwerten. Felder, die erst nach einer anderen Einstellung erscheinen, sind unten eingeklappt.",
         "nested": "Kann weitere Blöcke enthalten (zum Beispiel Überschrift, Text, Button).",
+        "more_if": "Weitere Felder, wenn {c} ({n})", "mark": "Markierung",
     },
 }
 
@@ -426,39 +513,93 @@ def control_html(item: dict, lang: str) -> str:
     return f'<div class="ep-input{" ep-input--tall" if tall else ""}">{tools}{val}</div>'
 
 
-def render_panel(data: dict, lang: str, prefix: str = "", level: int = 3) -> str:
-    """HTML der Seitenleiste. level = Überschriftenebene des Blocknamens (Felder darunter +1/+2)."""
+def condition_text(cond: list | str, lang: str) -> str:
+    """Bedingung als reiner Text ohne „Nur sichtbar, “ (für die Überschrift eines zugeklappten Bereichs)."""
+    html_ = condition_html(cond, lang, "", set())
+    text = html.unescape(re.sub(r"<[^>]+>", "", html_))
+    return text[len(UI[lang]["only_if"]):].rstrip(".")
+
+
+def mark_html(n: int, lang: str) -> str:
+    return (f'<span class="ep-mark"><span class="visually-hidden">{esc(UI[lang]["mark"])} </span>{n}</span>')
+
+
+def field_html(s: dict, lang: str, prefix: str, ids: set[str], h: str, marks: dict, show_cond: bool = True) -> str:
+    mark = mark_html(marks[s["id"]], lang) + " " if s["id"] in marks else ""
+    parts = [f'<div class="ep__field{" has-mark" if mark else ""}" id="{esc(prefix + s["id"])}">',
+             f'<{h} class="ep__label">{mark}{esc(s["label"])}</{h}>',
+             control_html(s, lang)]
+    if s.get("info"):
+        parts.append(f'<p class="ep__info">{info_html(s["info"])}</p>')
+    if s.get("visible_if") and show_cond:
+        parts.append(f'<p class="ep__cond">{condition_html(s["visible_if"], lang, prefix, ids)}</p>')
+    parts.append("</div>")
+    return "".join(parts)
+
+
+def render_panel(data: dict, lang: str, prefix: str = "", level: int = 3, marks: dict | None = None,
+                 nested: list | None = None, collapse: bool = True) -> str:
+    """HTML der Seitenleiste. level = Überschriftenebene des Blocknamens (Felder darunter +1/+2).
+
+    marks: {setting_id: Nummer} – Nummer der Markierung im Bild neben dem Feld.
+    nested: [(Nummer, Name, URL oder None)] – Unterblöcke, die im Bild markiert sind.
+    collapse: Felder, die in der Standard-Konfiguration nicht sichtbar sind, gruppiert in zugeklappten
+    <details>-Bereichen unter den sichtbaren Feldern (gruppiert nach der auslösenden Bedingung).
+    """
     d = data[lang]
     u = UI[lang]
+    marks = marks or {}
     h_title, h1, h2 = (f"h{min(level + i, 6)}" for i in range(3))
     ids = {s["id"] for s in d["settings"] if "id" in s}
-    rows = []
-    in_group = False
+    rows: list[str] = []
+    groups: dict[str, dict] = {}
+    header = None          # aktuelle Gruppen-Überschrift (Text)
+    header_pending = None  # Überschrift, die erst mit dem ersten sichtbaren Feld ausgegeben wird
     for s in d["settings"]:
         t = s["type"]
         if t == "header":
-            in_group = True
-            rows.append(f'<{h1} class="ep__group">{esc(s["content"])}</{h1}>')
+            header = s["content"]
+            header_pending = f'<{h1} class="ep__group">{esc(s["content"])}</{h1}>'
             continue
         if t == "paragraph":
+            if header_pending:
+                rows.append(header_pending)
+                header_pending = None
             rows.append(f'<p class="ep__para">{info_html(s["content"])}</p>')
             continue
-        h = h2 if in_group else h1
-        parts = [f'<div class="ep__field" id="{esc(prefix + s["id"])}">',
-                 f'<{h} class="ep__label">{esc(s["label"])}</{h}>',
-                 control_html(s, lang)]
-        if s.get("info"):
-            parts.append(f'<p class="ep__info">{info_html(s["info"])}</p>')
-        if s.get("visible_if"):
-            parts.append(f'<p class="ep__cond">{condition_html(s["visible_if"], lang, prefix, ids)}</p>')
-        parts.append("</div>")
-        rows.append("".join(parts))
-    nested = f'<p class="ep__para">{esc(u["nested"])}</p>' if data.get("accepts_blocks") else ""
+        h = h2 if header else h1
+        if collapse and s.get("hidden_by_default") and s.get("hidden_by"):
+            key = json.dumps(s["hidden_by"], ensure_ascii=False, sort_keys=True)
+            g = groups.setdefault(key, {"cond": s["hidden_by"], "rows": [], "header": None})
+            if header and g["header"] != header:
+                g["header"] = header
+                g["rows"].append(f'<{h1} class="ep__group">{esc(header)}</{h1}>')
+            g["rows"].append(field_html(s, lang, prefix, ids, h, marks, show_cond=s["visible_if"] != s["hidden_by"]))
+            continue
+        if header_pending:
+            rows.append(header_pending)
+            header_pending = None
+        rows.append(field_html(s, lang, prefix, ids, h, marks))
+    more = []
+    for g in groups.values():
+        n = sum(1 for r in g["rows"] if r.startswith('<div class="ep__field'))
+        title = u["more_if"].format(c=condition_text(g["cond"], lang), n=n)
+        more.append(f'<details class="ep__more"><summary>{esc(title)}</summary><div class="ep__more-body">{"".join(g["rows"])}</div></details>')
+    nested_html = ""
+    if data.get("accepts_blocks"):
+        extra = ""
+        if nested:
+            items = []
+            for n, name, url in nested:
+                label = f'<a href="{esc(url)}">{esc(name)}</a>' if url else esc(name)
+                items.append(f"<li>{mark_html(n, lang)} {label}</li>")
+            extra = f'<ul class="ep__nested">{"".join(items)}</ul>'
+        nested_html = f'<p class="ep__para">{esc(u["nested"])}</p>{extra}'
     return (f'<div class="ep" lang="{lang}">'
             f'<div class="ep__head"><span class="ep__back" aria-hidden="true"></span>'
             f'<{h_title} class="ep__title">{esc(d["name"])}</{h_title}></div>'
             f'<p class="ep__note">{esc(u["panel_note"])}</p>'
-            f'<div class="ep__body">{"".join(rows)}{nested}</div></div>')
+            f'<div class="ep__body">{"".join(rows)}{"".join(more)}{nested_html}</div></div>')
 
 
 def load_data(slug: str) -> dict:
@@ -481,14 +622,15 @@ def main() -> int:
         raise SystemExit(f"Theme-Repo nicht gefunden: {theme} (--theme angeben)")
     tr = Translator(theme)
     labels = theme_setting_labels(theme, tr)
+    defaults = theme_setting_defaults(theme)
     OUT.mkdir(parents=True, exist_ok=True)
-    names = args.names or list(PILOTS)
+    index = demo_block_index(theme, tr)
+    names = args.names or [b["slug"] for b in index]
     for name in names:
-        data = extract(theme, name, tr, labels)
+        data = extract(theme, name, tr, labels, defaults)
         (OUT / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print(f"content/blocks/{name}.json: {data['de']['name']} / {data['en']['name']}, "
               f"{sum(1 for s in data['en']['settings'] if 'id' in s)} Einstellungen")
-    index = demo_block_index(theme, tr)
     (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"content/blocks/index.json: {len(index)} Blöcke aus den Demo-Vorlagen")
     if tr.missing:
