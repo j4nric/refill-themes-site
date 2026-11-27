@@ -6,6 +6,18 @@ Versions follow semantic versioning. From version 1.0.0 on, settings and block t
 
 First complete version of all pages and core features.
 
+### November 27, 2026 – merchant feedback
+
+**Changed**
+- **Announcement bar on mobile:** text, arrow, discount code and copy button are centered, also when the announcement wraps; the code no longer starts indented on a new line, and the arrow never wraps on its own. Code and button are slightly narrower, so an announcement with a code usually fits on two lines. Several announcements can be swiped endlessly – after the last one comes the first again and vice versa – and two small arrows on the left and right do the same (usable without a swipe gesture). No automatic movement. On desktop the bar is unchanged.
+- **Theme editor, “Show “Only visible in the editor” notes” turned off:** blocks without content (e.g. “Purchase options” for a product without subscription plans, “Info pop-up” without content, “Key figures” without values) no longer leave an empty gap in the preview – it looks like the store. The purchase options note “Appears when the product has subscription plans” now follows this setting too.
+- **Nordform demo:** shorter announcement “Subscription week: 5% extra on first delivery”.
+### November 27, 2026 – Change subscriptions in the cart, translated plan names
+
+**New**
+- **Cart: “Change subscription”.** Subscription items offer the same choice as “Switch to subscription” below the plan name: another delivery frequency or back to a one-time purchase, with “Apply”. See [Subscriptions in the cart](10-subscriptions.md#6-subscriptions-in-the-cart).
+- **Theme settings → Product data → “Name subscription plans with theme text”** (off by default): shows plan names in the page language, e.g. “Every 3 weeks · 15% off”, instead of the subscription app's name. Checkout and order confirmation keep showing the app's name; how to translate it is described under [Plan names in your store's language](10-subscriptions.md#plan-names-in-your-stores-language).
+
 ### November 27, 2026
 
 Editor experience and backward compatibility (independent review of November 27).

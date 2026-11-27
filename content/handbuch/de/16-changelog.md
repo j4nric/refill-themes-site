@@ -6,6 +6,18 @@ Versionen nach Semantic Versioning. Ab Version 1.0.0 werden Einstellungen und Bl
 
 Erste vollständige Fassung aller Seiten und Kernfunktionen.
 
+### 27. November 2026 – Händler-Rückmeldungen
+
+**Geändert**
+- **Ankündigungsleiste am Handy:** Text, Pfeil, Gutscheincode und Kopierknopf stehen mittig, auch wenn die Meldung umbricht; der Code beginnt in einer neuen Zeile nicht mehr eingerückt, der Pfeil bricht nie allein um. Code und Knopf sind etwas schmaler, damit eine Meldung mit Code meist in zwei Zeilen passt. Mehrere Meldungen lassen sich endlos wischen – nach der letzten kommt wieder die erste und umgekehrt –, zwei kleine Pfeile links und rechts blättern ebenso (auch ohne Wischgeste bedienbar). Keine automatische Bewegung. Am Desktop bleibt die Leiste unverändert.
+- **Theme-Editor, „Hinweise „Nur im Editor sichtbar“ zeigen“ aus:** Blöcke ohne Inhalt (z. B. „Kaufoptionen“ bei einem Produkt ohne Abo-Pläne, „Info-Popup“ ohne Inhalt, „Kennzahlen“ ohne Werte) lassen keinen leeren Abstand mehr in der Vorschau – sie sieht aus wie der Shop. Der Hinweis „Erscheint, wenn das Produkt Abo-Pläne hat“ der Kaufoptionen folgt jetzt ebenfalls dieser Einstellung.
+- **Demo Nordform:** kürzere Ankündigung „Abo-Woche: 5 % extra aufs erste Abo“.
+### 27. November 2026 – Abo im Warenkorb ändern, Plannamen übersetzen
+
+**Neu**
+- **Warenkorb: „Abo ändern“.** Abo-Positionen bieten unter dem Plannamen dieselbe Auswahl wie „Als Abo bestellen“: anderer Lieferrhythmus oder zurück zum Einmalkauf, mit „Übernehmen“. Siehe [Abo im Warenkorb](10-subscriptions.md#6-abo-im-warenkorb).
+- **Theme-Einstellungen → Produktdaten → „Abo-Pläne mit eigenem Text benennen“** (standardmäßig aus): zeigt Plannamen in der Sprache der Seite, z. B. „Alle 3 Wochen · 15 % Rabatt“, statt des Namens aus der Abo-App. Checkout und Bestellbestätigung zeigen weiter den App-Namen; wie Sie ihn übersetzen, steht unter [Plannamen in der Sprache des Shops](10-subscriptions.md#plannamen-in-der-sprache-des-shops).
+
 ### 27. November 2026
 
 Editor-Erlebnis und Abwärtskompatibilität (unabhängiges Review vom 27. November).

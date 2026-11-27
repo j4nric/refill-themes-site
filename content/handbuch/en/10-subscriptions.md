@@ -11,6 +11,27 @@ Refill works with any subscription app that uses Shopify **selling plans**, for 
 
 **Naming delivery intervals:** the delivery timeline reads the interval from the plan's first option or its name. It recognizes a number plus day, week or month, e.g. “30 days”, “Every 2 weeks”, “1 month”, “Alle 2 Wochen”. A month counts as 30 days. Without a recognizable interval, the timeline is hidden; the subscription still works.
 
+### Plan names in your store's language
+
+Plan names come from the subscription app. “Shopify Subscriptions” creates them in your admin language, e.g. “Deliver every 3 weeks, 15% off”, and translates them into your store's languages itself – but only if the language was already active when the plan was saved. If your German pages show English plan names, there are two ways:
+
+**A. Name them in the theme (storefront):** **Theme settings → “Product data” → “Name subscription plans with theme text”** (off by default). The theme then builds the name from the plan's interval and discount in the page language, e.g. “Every 3 weeks · 15% off”, in German “Alle 3 Wochen · 15 % Rabatt”. This applies to purchase options, quick view, product cards, the sticky buy bar, “Frequently bought together”, the calculators and the cart.
+- If the theme cannot recognize the interval reliably (e.g. “Monthly box” without a number, “every thirteen days”) or the plan has no recurring deliveries (pre-order, try before you buy), the app's name stays.
+- Discount: percentage or fixed amount. With a fixed price or two price stages (“first delivery −20%, then −10%”) the name shows only the interval; the line shows the price anyway.
+- Extras in the plan name such as “cancel anytime” are dropped. That is why the setting is off by default.
+- **Checkout, order confirmation, customer accounts and emails always show the app's name.** Shopify renders these pages, not the theme.
+
+**B. Translate in the app (everywhere, including checkout and order confirmation):**
+1. Under **Settings → Languages**, check that all your store languages are active or published.
+2. Open **Apps → Subscriptions → Plans** and the plan (the subscription group, e.g. “Spar-Abo”).
+3. Click **Save** without changing anything. Shopify Subscriptions then generates translations of the plan names for all supported languages (including German, English, French, Italian, Spanish, Dutch, Danish, Swedish, Finnish, Polish, Czech, Portuguese). This can take a few minutes; check it in your store with the language selector. You need this for plans created before March 20, 2024, imported from another store, or saved before a language was added.
+4. Your own wording (if the export offers “Selling plans”; not stated explicitly in Shopify Help): **Settings → Languages → Export**, choose “Selling plans”, fill in the “Translated content” column of the CSV file and read it back in under **Settings → Languages → Import**. Note: saving the plan in the app again overwrites imported plan name translations.
+5. According to merchant reports, the “Translate & Adapt” app does not list subscription plans as translatable content; technically, plan and group names are translatable resources (types `SELLING_PLAN` with `name`, `option1`–`option3`, `description` and `SELLING_PLAN_GROUP` with `name`, `option1`–`option3`), so other translation apps can edit them through the Shopify API.
+
+Sources: Shopify Help “Translations for subscription plans” (help.shopify.com/en/manual/products/purchase-options/shopify-subscriptions/translate-subscription-plans), Shopify Help “Translating and localizing your store” (help.shopify.com/en/manual/markets/languages/translate), Admin API `TranslatableResourceType` (shopify.dev/docs/api/admin-graphql/latest/enums/TranslatableResourceType). As of November 27, 2026.
+
+With way B the names are already right; you don't need the theme setting.
+
 ## 2. Purchase options on the product page
 
 The **“Purchase options”** block is included in all product templates. It only appears for products with subscription plans.
@@ -69,6 +90,7 @@ If **“Quick add on product cards”** is on:
 
 - Subscription items show the plan name and, below it, a short delivery timeline with the next dates and what they mean, e.g. “Today – Ordered · Dec 26 – Delivery 2 · Jan 25 – Delivery 3”. The dates are counted from the order date, as on the product page (without a recognizable interval the timeline is left out).
 - The price without the subscription is struck through next to the subscription price, so the saving stays visible.
+- **Change subscription:** below the plan name of a subscription item, “Change subscription” opens the same list as the switch to a subscription, with all plans of the variant and “One-time purchase” (not for products sold only as a subscription); the current plan is selected, and “Apply” switches. Without JavaScript, “Change subscription” leads to the product page.
 - Items **without** a subscription whose product has a plan offer a switch: short, with an icon, “Subscribe and save 10%” or “Switch to subscription”. With one plan for the variant, one click moves the item to it (only screen readers hear the plan name). With several plans the hint opens a list of the plans with plan name and saving (the first is selected; long names wrap and stay fully readable on phones), and “Apply” switches; if the savings differ, the hint reads “Subscribe and save up to 15%”. Without JavaScript it leads to the product page.
 - Dynamic checkout buttons (PayPal, Apple Pay, Shop Pay) are hidden on product pages with subscriptions because they cannot handle subscriptions.
 
@@ -136,4 +158,5 @@ Settings: **Heading** (empty: “Subscribe or buy once?”), **Text**, **Let cus
 | Purchase options do not appear | Assign the plan to the product in the subscription app; check that the product template contains the “Purchase options” block. |
 | No delivery timeline | Turn on “Show delivery timeline”; name the interval in the plan name or first option as a number plus day/week/month. |
 | No price per day for subscriptions | Fill in the servings metafields, see [Product data](09-product-data.md). |
+| English plan names on German pages | Save the plan in the subscription app without changes (generates the translations) or turn on “Name subscription plans with theme text”, see [Plan names in your store's language](#plan-names-in-your-stores-language). Only the first way changes checkout and order confirmation. |
 | “Manage subscriptions” link missing | Turn on customer accounts, add the link to the “Customer account main menu” (section 7), sign in as a customer. |

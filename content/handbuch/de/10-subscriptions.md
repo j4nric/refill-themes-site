@@ -11,6 +11,27 @@ Refill arbeitet mit jeder Abo-App, die Shopify **Selling Plans** nutzt, zum Beis
 
 **Benennung der Lieferintervalle:** Die Lieferzeitleiste liest das Intervall aus der ersten Option bzw. dem Namen des Plans. Erkannt werden eine Zahl plus Tag, Woche oder Monat, z. B. „30 Tage“, „Alle 2 Wochen“, „1 Monat“, „Every 2 weeks“. Monate zählen 30 Tage. Ohne erkennbares Intervall entfällt die Zeitleiste; das Abo funktioniert trotzdem.
 
+### Plannamen in der Sprache des Shops
+
+Die Namen der Pläne kommen aus der Abo-App. „Shopify Subscriptions“ legt sie in der Sprache des Admins an, z. B. „Deliver every 3 weeks, 15% off“, und übersetzt sie selbst in die Sprachen Ihres Shops – aber nur, wenn die Sprache beim Speichern des Plans schon im Shop aktiv war. Stehen auf Ihrer deutschen Seite englische Plannamen, haben Sie zwei Wege:
+
+**A. Im Theme benennen (Storefront):** **Theme-Einstellungen → „Produktdaten“ → „Abo-Pläne mit eigenem Text benennen“** (standardmäßig aus). Das Theme setzt den Namen dann aus Intervall und Rabatt des Plans in der Sprache der Seite zusammen, z. B. „Alle 3 Wochen · 15 % Rabatt“, auf Englisch „Every 3 weeks · 15% off“. Das gilt für Kaufoptionen, Schnellansicht, Produktkarten, fixierte Kaufleiste, „Häufig zusammen gekauft“, Rechner und Warenkorb.
+- Erkennt das Theme das Intervall nicht sicher (z. B. „Monatsabo“ ohne Zahl, „alle dreizehn Tage“) oder liefert der Plan nicht wiederkehrend (Vorbestellung, Testkauf), bleibt der Name aus der App.
+- Rabatt: Prozent oder fester Betrag. Bei einem Festpreis oder zwei Preisstufen („erste Lieferung −20 %, danach −10 %“) zeigt der Name nur das Intervall; den Preis zeigt die Zeile ohnehin.
+- Zusätze im Plannamen wie „jederzeit kündbar“ entfallen dabei. Deshalb ist die Einstellung standardmäßig aus.
+- **Checkout, Bestellbestätigung, Kundenkonto und E-Mails zeigen immer den Namen aus der App.** Diese Seiten rendert Shopify, nicht das Theme.
+
+**B. In der App übersetzen (überall, auch Checkout und Bestellbestätigung):**
+1. Prüfen Sie unter **Einstellungen → Sprachen**, dass alle Sprachen Ihres Shops aktiv bzw. veröffentlicht sind.
+2. Öffnen Sie **Apps → Subscriptions → Pläne** und den Plan (die Abo-Gruppe, z. B. „Spar-Abo“).
+3. Klicken Sie ohne Änderung auf **Speichern**. Shopify Subscriptions erzeugt dann die Übersetzungen der Plannamen für alle unterstützten Sprachen (u. a. Deutsch, Englisch, Französisch, Italienisch, Spanisch, Niederländisch, Dänisch, Schwedisch, Finnisch, Polnisch, Tschechisch, Portugiesisch). Das kann einige Minuten dauern; prüfen Sie es im Shop mit der Sprachauswahl. Nötig ist das für Pläne, die vor dem 20. März 2024 angelegt, aus einem anderen Shop importiert oder vor dem Hinzufügen einer Sprache gespeichert wurden.
+4. Eigene Formulierungen (wenn der Export den Inhalt „Selling plans“ anbietet; in Shopifys Hilfe nicht ausdrücklich genannt): **Einstellungen → Sprachen → Exportieren**, Inhalt „Selling plans“ (Verkaufspläne) wählen, in der CSV-Datei die Spalte „Translated content“ ausfüllen und unter **Einstellungen → Sprachen → Importieren** wieder einlesen. Achtung: Erneutes Speichern des Plans in der App überschreibt importierte Übersetzungen der Plannamen.
+5. Die App „Translate & Adapt“ führt Abo-Pläne laut Händlerberichten nicht als übersetzbaren Inhalt; technisch sind Plan- und Gruppennamen übersetzbare Ressourcen (Typen `SELLING_PLAN` mit `name`, `option1`–`option3`, `description` und `SELLING_PLAN_GROUP` mit `name`, `option1`–`option3`), andere Übersetzungs-Apps können sie also über die Shopify-Schnittstelle bearbeiten.
+
+Quellen: Shopify-Hilfe „Translations for subscription plans“ (help.shopify.com/en/manual/products/purchase-options/shopify-subscriptions/translate-subscription-plans), Shopify-Hilfe „Übersetzungen exportieren und importieren“ (help.shopify.com/de/manual/markets/languages/translate), Admin-API `TranslatableResourceType` (shopify.dev/docs/api/admin-graphql/latest/enums/TranslatableResourceType). Stand 27.11.2026.
+
+Mit Weg B sind die Namen schon richtig; die Theme-Einstellung brauchen Sie dann nicht.
+
 ## 2. Kaufoptionen auf der Produktseite
 
 Der Block **„Kaufoptionen“** ist in allen Produktvorlagen enthalten. Er erscheint nur bei Produkten mit Abo-Plänen.
@@ -69,6 +90,7 @@ Ist **„Schnellkauf auf Produktkarten“** aktiv, gilt:
 
 - Abo-Positionen zeigen den Namen des Plans und darunter eine kurze Lieferzeitleiste mit den nächsten Terminen und ihrer Bedeutung, z. B. „Heute – Bestellt · 26.12. – 2. Lieferung · 25.1. – 3. Lieferung“. Die Termine rechnen wie auf der Produktseite ab dem Bestelltag (ohne erkennbares Intervall entfällt die Leiste).
 - Der Preis ohne Abo steht durchgestrichen neben dem Abo-Preis, damit die Ersparnis sichtbar bleibt.
+- **Abo ändern:** Unter dem Plannamen einer Abo-Position öffnet „Abo ändern“ dieselbe Liste wie beim Wechsel zum Abo, mit allen Plänen der Variante und „Einmalkauf“ (nicht bei Produkten, die es nur im Abo gibt); der aktuelle Plan ist gewählt, „Übernehmen“ stellt um. Ohne JavaScript führt „Abo ändern“ zur Produktseite.
 - Positionen **ohne** Abo, deren Produkt einen Plan hat, bieten einen Wechsel an: kurz mit Symbol „Im Abo 10 % sparen“ bzw. „Als Abo bestellen“. Hat die Variante einen Plan, stellt ein Klick die Position darauf um (den Plannamen hören nur Screenreader). Bei mehreren Plänen öffnet der Hinweis eine Liste der Pläne mit Planname und Ersparnis (der erste ist gewählt, lange Namen brechen um und bleiben am Handy ganz lesbar), „Übernehmen“ stellt um; unterscheiden sich die Ersparnisse, heißt der Hinweis „Im Abo bis zu 15 % sparen“. Ohne JavaScript führt er zur Produktseite.
 - Dynamische Checkout-Buttons (PayPal, Apple Pay, Shop Pay) sind auf Produktseiten mit Abo ausgeblendet, weil sie Abos nicht abbilden.
 
@@ -136,4 +158,5 @@ Einstellungen: **Überschrift** (leer: „Abo oder Einzelkauf?“), **Text**, **
 | Kaufoptionen erscheinen nicht | Plan in der Abo-App dem Produkt zuordnen; Block „Kaufoptionen“ in der Produktvorlage prüfen. |
 | Keine Lieferzeitleiste | „Lieferzeitleiste anzeigen“ aktivieren; Intervall im Plan-Namen bzw. der ersten Option als Zahl plus Tag/Woche/Monat benennen. |
 | Preis pro Tag fehlt im Abo | Portionen-Metafelder befüllen, siehe [Produktdaten](09-product-data.md). |
+| Plannamen englisch auf der deutschen Seite | Plan in der Abo-App ohne Änderung speichern (erzeugt die Übersetzungen) oder „Abo-Pläne mit eigenem Text benennen“ einschalten, siehe [Plannamen in der Sprache des Shops](#plannamen-in-der-sprache-des-shops). Checkout und Bestellbestätigung ändert nur der erste Weg. |
 | Link „Abos verwalten“ fehlt | Kundenkonten aktivieren, Link im Menü „Customer account main menu“ eintragen (Abschnitt 7), als Kunde anmelden. |

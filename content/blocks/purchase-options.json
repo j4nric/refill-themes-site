@@ -2,7 +2,7 @@
  "slug": "purchase-options",
  "kind": "block",
  "source": "blocks/purchase-options.liquid",
- "source_sha1": "3a9a5e9cd647",
+ "source_sha1": "cf816379a187",
  "accepts_blocks": false,
  "en": {
   "name": "Purchase options",

@@ -2,7 +2,7 @@
  "slug": "savings-calculator",
  "kind": "block",
  "source": "blocks/savings-calculator.liquid",
- "source_sha1": "905de38efb2b",
+ "source_sha1": "37900b19df5b",
  "accepts_blocks": false,
  "en": {
   "name": "Savings calculator",

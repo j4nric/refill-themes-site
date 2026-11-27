@@ -2,7 +2,7 @@
  "slug": "announcement-bar",
  "kind": "section",
  "source": "sections/announcement-bar.liquid",
- "source_sha1": "096afd63f742",
+ "source_sha1": "2ea1181ca208",
  "accepts_blocks": true,
  "en": {
   "name": "Announcement bar",
@@ -33,7 +33,7 @@
    "slug": "_announcement",
    "kind": "block",
    "source": "blocks/_announcement.liquid",
-   "source_sha1": "b71a89f733be",
+   "source_sha1": "545f90c2dc03",
    "accepts_blocks": false,
    "en": {
     "name": "Announcement",
