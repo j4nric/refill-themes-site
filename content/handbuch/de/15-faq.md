@@ -125,4 +125,4 @@ Der Theme-Editor verschiebt Blöcke per Ziehen nur innerhalb ihres Eltern-Elemen
 
 ## Support
 
-Antworten auf weitere Fragen erhalten Sie unter [support@refill-themes.com](mailto:support@refill-themes.com). Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite, am besten mit Screenshot.
+Weitere Fragen stellen Sie über das [Support-Formular](https://refillthemes.freshdesk.com/support/tickets/new). Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite, am besten mit Screenshot. Wir antworten innerhalb von 2 Werktagen. Was der Support umfasst, steht in der [Support-Richtlinie](17-support.md#support-richtlinie).

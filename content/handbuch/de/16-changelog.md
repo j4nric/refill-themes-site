@@ -21,6 +21,7 @@ Editor-Erlebnis und Abwärtskompatibilität (unabhängiges Review vom 27. Novemb
 - **Kachel-Hintergrund mit eigener Farbe:** Die Schrift in der Kachel wird automatisch Schwarz oder Weiß, je nachdem, was besser lesbar ist.
 
 **Geändert**
+- **Konto in der Kopfzeile:** Shopifys Konto-Komponente steht jetzt auch für abgemeldete Besucher sofort in der Kopfzeile (bisher erst beim ersten Zeigen, Fokussieren oder Antippen). Aussehen und Bedienung bleiben gleich; Shopify lädt seine Anmelde-Skripte dafür schon beim Seitenaufruf. Wer das bisherige Verhalten möchte, setzt im Block „Suche, Konto, Warenkorb“ den Haken **„Konto erst bei Bedarf laden“**. Siehe [Konto, Warenkorb](04-header.md#konto-warenkorb).
 - **Editor:** „Icon mit Text“ mit Überschriften Icon, Inhalt, Anordnung und Kachel; „Bild mit Markierungen“ sagt durchgehend „Legende“ („Spalten der Legende“ erscheint nur, wo es wirkt); Dekor blendet Motiv, Strichstärke, Spiegeln und Wiederholungen bei eigener Grafik aus; Gruppe „Nebeneinander“ mit „Volle Breite nutzen“ behandelt die ausgeblendete Ausrichtung als „links“. Info-Texte nennen wieder, dass ein Pflicht-Liefertermin die Express-Bezahlknöpfe und „Jetzt kaufen“ ausblendet, was „Hover und Buttons“ tut, wie das Karussell automatisch weiterblättert und dass die Sprachwahl in der Ankündigungsleiste die Section „Ankündigungsleiste“ braucht.
 
 **Nachgetragen (seit 25./26. November, bisher nicht genannt)**

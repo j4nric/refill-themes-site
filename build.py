@@ -54,6 +54,7 @@ OUT = ROOT / "_site"
 DOMAIN = "refill-themes.com"
 BASE_URL = f"https://{DOMAIN}/"
 SUPPORT_MAIL = "support@refill-themes.com"
+SUPPORT_FORM = "https://refillthemes.freshdesk.com/support/tickets/new"  # Freshdesk, auch theme_support_url im Theme
 LANGS = ("en", "de")
 CHANGELOG_SLUG = "changelog"
 YEAR = date.today().year
@@ -1470,48 +1471,57 @@ def page_simple(lang: str, page: str, title: str, description: str, inner: str) 
 
 def page_support(lang: str) -> str:
     key = key_of("support", lang)
+    prefix = "" if lang == "en" else "de/"
     docs = href(key, key_of("docs", lang))
-    faq = href(key, ("" if lang == "en" else "de/") + "docs/faq/")
+    faq = href(key, prefix + "docs/faq/")
     changelog = href(key, key_of("changelog", lang))
+    policy_id = "support-policy" if lang == "en" else "support-richtlinie"
+    code_id = "custom-code-and-custom-liquid" if lang == "en" else "eigener-code-und-eigenes-liquid"
+    policy = href(key, prefix + "docs/support/", policy_id)
+    code = href(key, prefix + "docs/support/", code_id)
     mail = f'<a href="mailto:{SUPPORT_MAIL}">{SUPPORT_MAIL}</a>'
     if lang == "en":
-        title, desc = "Support", "Questions about the Refill theme? Write to support@refill-themes.com – with your store address, theme version and a screenshot."
-        inner = f"""<p class="lead">Questions about Refill, something not working as described? Write to us – we are happy to help.</p>
+        title, desc = "Support", "Questions about the Refill theme? Submit a support request using our form – we reply within 2 business days."
+        inner = f"""<p class="lead">Questions about Refill, something not working as described? Submit a support request – we reply within 2 business days.</p>
 <div class="contact">
-  <p class="label">E-mail</p>
-  <p class="contact__mail">{mail}</p>
+  <p class="label">Support form</p>
+  <p class="actions contact__actions"><a class="button" href="{SUPPORT_FORM}" rel="noopener">Submit a support request</a></p>
+  <p class="contact__alt">If the form does not load: {mail}</p>
 </div>
 <h2 id="what-to-include">What to include in your request</h2>
 <ul>
-  <li><strong>Store address</strong> – your <code>…myshopify.com</code> address (not only your own domain).</li>
-  <li><strong>Theme version</strong> – for example <span class="data">0.9.0</span>. Changes per version are listed in the <a href="{changelog}">changelog</a>.</li>
-  <li><strong>The page concerned</strong> – a link to the product, collection or page where it happens.</li>
-  <li><strong>A screenshot</strong> or short screen recording, ideally with the theme editor open on the block or section concerned.</li>
-  <li>What you expected and what happened instead. If it only happens on phones or in one browser, please say so.</li>
+  <li><strong>Store URL</strong> – your <code>…myshopify.com</code> address (not only your own domain).</li>
+  <li><strong>Theme and version</strong> – for example <span class="data">Refill 0.9.0</span>. Changes per version are listed in the <a href="{changelog}">changelog</a>.</li>
+  <li><strong>Description</strong> – what you expected and what happened instead, with a link to the page concerned. If it only happens on phones or in one browser, please say so.</li>
+  <li><strong>Screenshots</strong> or a short screen recording, ideally with the theme editor open on the block or section concerned.</li>
 </ul>
-<p>Please do not send passwords or staff account access by e-mail. If we need access to your store, we will ask for it as a collaborator request.</p>
-<h2 id="response-time">When you will hear back</h2>
-<p>We answer requests in the order they arrive, on working days. Complete information (above) saves a round of questions.</p>
+<p>Please do not send passwords or staff account access. If we need access to your store, we will ask for it as a collaborator request.</p>
+<h2 id="support-policy">Support policy</h2>
+<p>Support covers questions about settings and features, bugs in the theme and updates. Customizations, third-party apps and code you changed yourself are not included. We reply within <strong>2 business days</strong> (Monday to Friday), in English or German.</p>
+<p><a class="link-arrow" href="{policy}">Read the full support policy</a></p>
+<p>Adding your own code, for example in “Custom Liquid”? Duplicate the theme first. Support does not cover the code itself; for code changes we recommend a Shopify Partner. See <a href="{code}">Custom code and “Custom Liquid”</a>.</p>
 <h2 id="before-you-write">Before you write</h2>
 <p>Many questions are answered in the <a href="{docs}">merchant guide</a>. A good place to start is the <a href="{faq}">FAQ</a> – for example when a block does not appear or a metafield shows no value.</p>"""
     else:
-        title, desc = "Support", "Fragen zum Theme Refill? Schreiben Sie an support@refill-themes.com – mit Shop-Adresse, Theme-Version und Screenshot."
-        inner = f"""<p class="lead">Fragen zu Refill, oder etwas funktioniert nicht wie beschrieben? Schreiben Sie uns – wir helfen gern.</p>
+        title, desc = "Support", "Fragen zum Theme Refill? Stellen Sie eine Support-Anfrage über unser Formular – wir antworten innerhalb von 2 Werktagen."
+        inner = f"""<p class="lead">Fragen zu Refill, oder etwas funktioniert nicht wie beschrieben? Stellen Sie eine Support-Anfrage – wir antworten innerhalb von 2 Werktagen.</p>
 <div class="contact">
-  <p class="label">E-Mail</p>
-  <p class="contact__mail">{mail}</p>
+  <p class="label">Support-Formular</p>
+  <p class="actions contact__actions"><a class="button" href="{SUPPORT_FORM}" rel="noopener">Support-Anfrage stellen</a></p>
+  <p class="contact__alt">Falls das Formular nicht lädt: {mail}</p>
 </div>
 <h2 id="was-in-die-anfrage-gehoert">Was in Ihre Anfrage gehört</h2>
 <ul>
-  <li><strong>Shop-Adresse</strong> – Ihre Adresse <code>…myshopify.com</code> (nicht nur die eigene Domain).</li>
-  <li><strong>Theme-Version</strong> – zum Beispiel <span class="data">0.9.0</span>. Was sich je Version geändert hat, steht im <a href="{changelog}">Änderungsprotokoll</a>.</li>
-  <li><strong>Die betroffene Seite</strong> – ein Link auf das Produkt, die Kollektion oder Seite, auf der es auftritt.</li>
-  <li><strong>Ein Screenshot</strong> oder eine kurze Bildschirmaufnahme, am besten mit geöffnetem Theme-Editor beim betroffenen Block oder Abschnitt.</li>
-  <li>Was Sie erwartet haben und was stattdessen passiert ist. Wenn es nur am Handy oder in einem Browser auftritt, schreiben Sie das bitte dazu.</li>
+  <li><strong>Shop-URL</strong> – Ihre Adresse <code>…myshopify.com</code> (nicht nur die eigene Domain).</li>
+  <li><strong>Theme und Version</strong> – zum Beispiel <span class="data">Refill 0.9.0</span>. Was sich je Version geändert hat, steht im <a href="{changelog}">Änderungsprotokoll</a>.</li>
+  <li><strong>Beschreibung</strong> – was Sie erwartet haben und was stattdessen passiert ist, mit Link auf die betroffene Seite. Wenn es nur am Handy oder in einem Browser auftritt, schreiben Sie das bitte dazu.</li>
+  <li><strong>Screenshots</strong> oder eine kurze Bildschirmaufnahme, am besten mit geöffnetem Theme-Editor beim betroffenen Block oder Abschnitt.</li>
 </ul>
-<p>Bitte senden Sie keine Passwörter oder Zugänge zu Mitarbeiterkonten per E-Mail. Brauchen wir Zugriff auf Ihren Shop, fragen wir über eine Mitarbeiteranfrage (Collaborator) an.</p>
-<h2 id="wann-sie-antwort-bekommen">Wann Sie Antwort bekommen</h2>
-<p>Wir beantworten Anfragen in der Reihenfolge ihres Eingangs, an Werktagen. Vollständige Angaben (oben) ersparen eine Rückfrage.</p>
+<p>Bitte senden Sie keine Passwörter oder Zugänge zu Mitarbeiterkonten. Brauchen wir Zugriff auf Ihren Shop, fragen wir über eine Mitarbeiteranfrage (Collaborator) an.</p>
+<h2 id="support-richtlinie">Support-Richtlinie</h2>
+<p>Der Support umfasst Fragen zu Einstellungen und Funktionen, Fehler im Theme und Updates. Individuelle Anpassungen, Apps von Drittanbietern und selbst geänderter Code sind nicht enthalten. Wir antworten innerhalb von <strong>2 Werktagen</strong> (Montag bis Freitag), auf Deutsch oder Englisch.</p>
+<p><a class="link-arrow" href="{policy}">Zur vollständigen Support-Richtlinie</a></p>
+<p>Sie fügen eigenen Code ein, zum Beispiel in „Eigenes Liquid“? Duplizieren Sie vorher das Theme. Den Code selbst deckt der Support nicht ab; für Code-Anpassungen empfehlen wir einen Shopify-Partner. Siehe <a href="{code}">Eigener Code und „Eigenes Liquid“</a>.</p>
 <h2 id="bevor-sie-schreiben">Bevor Sie schreiben</h2>
 <p>Viele Fragen beantwortet das <a href="{docs}">Händler-Handbuch</a>. Ein guter Einstieg sind die <a href="{faq}">häufigen Fragen</a> – zum Beispiel, wenn ein Block nicht erscheint oder ein Metafeld keinen Wert zeigt.</p>"""
     return page_simple(lang, "support", title, desc, inner)

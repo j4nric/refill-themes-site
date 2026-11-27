@@ -44,7 +44,7 @@ Die Vorlage enthält den Seiteninhalt und den Abschnitt „Inhaltsstoffe A–Z�
 
 > **Warum ein Handle statt einer Auswahlliste?** Der Shopify Theme Store erlaubt Auswahlfelder für Metaobjekte nur bei Shopifys Standard-Definitionen. „Inhaltsstoff“ ist eine eigene Definition, deshalb tragen Sie den Handle als Text ein.
 
-**Grenze von „Inhaltsstoff: Produkte“:** Der Block durchsucht höchstens 50 Produkte der gewählten Kollektion (leer: alle Produkte). Bei größeren Sortimenten wählen Sie unter **„Produkte aus Kollektion“** eine passende Kollektion, z. B. „Mineralstoffe“.
+**Grenze von „Inhaltsstoff: Produkte“:** Der Block durchsucht höchstens 250 Produkte der gewählten Kollektion (leer: alle Produkte). Bei größeren Sortimenten wählen Sie unter **„Produkte aus Kollektion“** eine passende Kollektion, z. B. „Mineralstoffe“.
 
 ## Inhaltsstoffe mit Produkten verknüpfen
 
@@ -62,4 +62,4 @@ Haben Sie in den Blöcken andere Metafelder eingetragen, passen Sie im Block „
 | A–Z-Liste leer, Editor zeigt „Noch keine Inhaltsstoffe angelegt“ | Keine Einträge, Typ-Handle nicht `ingredient` oder Storefront-Zugriff aus. |
 | Einträge im Admin vorhanden, im Shop unsichtbar | Status „Entwurf“ – auf „Aktiv“ stellen. |
 | Namen ohne Links | „Webseiten“ für das Metaobjekt nicht aktiviert oder Eintrag im Status „Entwurf“. |
-| „Inhaltsstoff: Produkte“ findet keine Produkte | Produkt-Metafeld oder Datentafel-Zeilen verweisen nicht auf den Eintrag; Produkt liegt außerhalb der ersten 50 der Kollektion. |
+| „Inhaltsstoff: Produkte“ findet keine Produkte | Produkt-Metafeld oder Datentafel-Zeilen verweisen nicht auf den Eintrag; Produkt liegt außerhalb der ersten 250 der Kollektion. |

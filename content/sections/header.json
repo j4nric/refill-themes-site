@@ -2809,7 +2809,7 @@
    "slug": "_header-actions",
    "kind": "block",
    "source": "blocks/_header-actions.liquid",
-   "source_sha1": "975581fc163c",
+   "source_sha1": "5918a1e4a417",
    "accepts_blocks": false,
    "en": {
     "name": "Search, account, cart",
@@ -2826,6 +2826,20 @@
       "id": "show_account",
       "label": "Show account",
       "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "account_lazy",
+      "label": "Load account on demand",
+      "info": "For signed-out visitors, loads on first hover, focus or tap. Saves Shopify’s sign-in scripts on page load.",
+      "default": false,
+      "visible_if": [
+       {
+        "setting": "show_account",
+        "label": "Show account",
+        "op": "on"
+       }
+      ]
      },
      {
       "type": "header",
@@ -3179,6 +3193,20 @@
       "id": "show_account",
       "label": "Konto anzeigen",
       "default": true
+     },
+     {
+      "type": "checkbox",
+      "id": "account_lazy",
+      "label": "Konto erst bei Bedarf laden",
+      "info": "Für abgemeldete Besucher erst beim Zeigen, Fokussieren oder Antippen. Spart Shopifys Anmelde-Skripte beim Seitenaufruf.",
+      "default": false,
+      "visible_if": [
+       {
+        "setting": "show_account",
+        "label": "Konto anzeigen",
+        "op": "on"
+       }
+      ]
      },
      {
       "type": "header",

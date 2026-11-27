@@ -125,4 +125,4 @@ The theme editor only moves blocks by dragging within their current parent. Add 
 
 ## Support
 
-For further questions, contact [support@refill-themes.com](mailto:support@refill-themes.com). Please include your store address (`…myshopify.com`), the theme version and the page concerned, ideally with a screenshot.
+For further questions, use the [support form](https://refillthemes.freshdesk.com/support/tickets/new). Please include your store address (`…myshopify.com`), the theme version and the page concerned, ideally with a screenshot. We reply within 2 business days. What support covers is described in the [support policy](17-support.md#support-policy).

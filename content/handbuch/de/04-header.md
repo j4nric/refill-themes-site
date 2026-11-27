@@ -153,6 +153,7 @@ In der „Unteren Leiste“ der Fußzeile stehen Land und Sprache als zwei dezen
 ## Konto, Warenkorb
 
 - **„Konto anzeigen“**: Shopifys Konto-Komponente mit Anmeldung (auch „Mit Shop anmelden“) und den Links des Menüs **„Customer account main menu“**. Einen Link zum Abo-Portal fügen Sie dort hinzu, siehe [Abo](10-subscriptions.md). Voraussetzung: **Einstellungen → Kundenkonten** aktiv.
+  **„Konto erst bei Bedarf laden“** (Standard aus): Für abgemeldete Besucher steht zunächst ein gleich aussehender Link; Shopifys Komponente kommt erst beim ersten Zeigen, Fokussieren oder Antippen. Das spart beim Seitenaufruf Shopifys Anmelde-Skripte (Anmeldung mit Shop). Angemeldete Kundinnen und Kunden sehen die Komponente immer sofort. Shopify erwartet die Komponente sichtbar in der Kopfzeile – im Zweifel ausgeschaltet lassen.
 - **Warenkorb**: öffnet den Warenkorb als seitliches Fenster, siehe [Warenkorb und Kasse](07-cart-and-checkout.md).
 
 **„Darstellung“** (Block „Suche, Konto, Warenkorb“): für **„Suche“**, **„Konto“** und **„Warenkorb“** je **„Text“** (Standard, Wort in Versalien), **„Symbol“** oder **„Symbol und Text“**. Gilt ab 990 px Fensterbreite; am Handy stehen immer die Symbole. Screenreader lesen in jeder Darstellung den Namen vor, beim Warenkorb mit Anzahl („Warenkorb, 2 Artikel“). Angemeldete Kundinnen und Kunden sehen beim Konto ihre Initiale bzw. ihr Profilbild (von Shopify).

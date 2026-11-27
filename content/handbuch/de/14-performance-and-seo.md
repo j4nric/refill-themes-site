@@ -28,7 +28,7 @@ Warenkorb, Kasse und Konto werden nie vorab geladen. Im Theme-Editor ist die Fun
 
 ## Apps und eigener Code
 
-Jede App, die Skripte in den Shop einbindet, kostet Ladezeit. Deaktivieren Sie App-Einbettungen, die Sie nicht nutzen (Theme-Editor → **App-Einbettungen**). Code im Block oder Abschnitt **„Eigenes Liquid“** lädt auf jeder Seite, auf der er steht.
+Jede App, die Skripte in den Shop einbindet, kostet Ladezeit. Deaktivieren Sie App-Einbettungen, die Sie nicht nutzen (Theme-Editor → **App-Einbettungen**). Code im Block oder Abschnitt **„Eigenes Liquid“** lädt auf jeder Seite, auf der er steht. Testen Sie Code in einer Kopie des Themes, siehe [Eigener Code und „Eigenes Liquid“](17-support.md#eigener-code-und-eigenes-liquid).
 
 Auch der Knopf **„Follow on Shop“** (Fußzeile, Block „Social Media“) lädt Shopify-Module, die den ersten Bildaufbau am Handy verzögern können, und setzt Cookies von shop.app. Der Knopf ist deshalb standardmäßig aus; schalten Sie **„„Follow on Shop“ anzeigen“** nur ein, wenn Sie die Shop-App nutzen.
 

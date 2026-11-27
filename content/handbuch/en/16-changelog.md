@@ -21,6 +21,7 @@ Editor experience and backward compatibility (independent review of November 27)
 - **Tile background with a custom color:** the text in the tile automatically turns black or white, whichever is easier to read.
 
 **Changed**
+- **Account in the header:** Shopify’s account component now appears in the header right away for signed-out visitors too (previously only on first hover, focus or tap). Look and behavior stay the same; Shopify now loads its sign-in scripts with the page. To keep the previous behavior, check **“Load account on demand”** in the “Search, account, cart” block. See [Account, cart](04-header.md#account-cart).
 - **Editor:** “Icon with text” has the headings Icon, Content, Arrangement and Tile; “Shoppable image” consistently says “legend” (“Legend columns” only appears where it has an effect); decoration hides motif, stroke width, mirroring and repeats for your own graphic; a “Side by side” group with “Use full width” treats the hidden alignment as “left”. Info texts again say that a required delivery date hides express checkout buttons and “Buy it now”, what “Hover and buttons” does, how the carousel advances automatically and that the language selector in the announcement bar needs the “Announcement bar” section.
 
 **Added to the record (since November 25/26, not listed before)**

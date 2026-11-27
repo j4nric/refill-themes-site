@@ -303,7 +303,8 @@ main:focus-visible { outline: none; }
 /* Einfache Seiten */
 .simple { padding-top: var(--space-12); }
 .contact { margin-top: var(--space-8); border-top: var(--rule-heavy) solid var(--color-ink); padding-top: var(--space-3); }
-.contact__mail { font-size: var(--text-xl); margin-top: var(--space-1) !important; font-weight: 600; }
+.contact__actions { margin-top: var(--space-3) !important; }
+.contact__alt { margin-top: var(--space-3) !important; color: var(--color-ink-soft); font-size: var(--text-sm); }
 .placeholder {
   border: var(--rule-hair) dashed var(--color-notice); padding: var(--space-4) var(--space-5);
   background: repeating-linear-gradient(-45deg, transparent 0 8px, color-mix(in srgb, var(--color-notice) 6%, transparent) 8px 9px);

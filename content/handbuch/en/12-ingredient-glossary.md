@@ -44,7 +44,7 @@ The template contains the page content and an “Ingredients A–Z” section wi
 
 > **Why a handle instead of a picker?** The Shopify Theme Store only allows metaobject pickers for Shopify's standard definitions. “Ingredient” is a custom definition, so you enter the handle as text.
 
-**Limit of “Ingredient: products”:** the block searches up to 50 products of the selected collection (empty: all products). For larger catalogs, choose a suitable collection under **“Products from collection”**, e.g. “Minerals”.
+**Limit of “Ingredient: products”:** the block searches up to 250 products of the selected collection (empty: all products). For larger catalogs, choose a suitable collection under **“Products from collection”**, e.g. “Minerals”.
 
 ## Linking ingredients to products
 
@@ -62,4 +62,4 @@ If you entered different metafields in the blocks, adjust **“Metafield: key in
 | A–Z list empty, editor shows “No ingredients yet” | No entries, type handle is not `ingredient`, or storefront access is off. |
 | Entries exist in the admin but not in the store | Status is “Draft” – set it to “Active”. |
 | Names without links | “Web pages” not turned on for the metaobject, or entry still in “Draft”. |
-| “Ingredient: products” finds no products | Neither the product metafield nor facts table rows reference the entry; the product is outside the first 50 of the collection. |
+| “Ingredient: products” finds no products | Neither the product metafield nor facts table rows reference the entry; the product is outside the first 250 of the collection. |

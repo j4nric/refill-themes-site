@@ -87,6 +87,8 @@ There are also sections with a fixed purpose that only appear in their template:
 
 **“Custom Liquid” section** (category “Page templates”): a section of its own with a code field (Liquid and HTML), available on all templates, with color scheme, spacing, width and line like other sections. Meant for code snippets from apps or agencies that expect a section. To add code inside an existing section, use the block of the same name. Faulty code can break the page; check the page in the preview after pasting.
 
+> **Before you add code:** duplicate the theme (Online Store → Themes → **“…” → “Duplicate”**) and test the code in the copy. Refill supports adding code in “Custom Liquid”, but support does not cover the code itself. For code customizations, we recommend a Shopify Partner. See [Custom code and “Custom Liquid”](17-support.md#custom-code-and-custom-liquid).
+
 ## Group and columns
 
 **“Group”** combines blocks. In the picker it appears as **“Group: stacked”** and **“Group: side by side”** (search: “Group”).
@@ -272,7 +274,7 @@ The three product categories show data of the current product and only work on p
 | Blog post: content | Article | Content of a post. |
 | Page: content | Page | Title and text of a Shopify page. |
 | Password page: form | Password | Logo (own image, otherwise the logo from Settings → Brand, otherwise the store name), heading, message and password field. |
-| Custom Liquid | all | Code from apps or agencies; faulty code can break the page. |
+| Custom Liquid | all | Code from apps or agencies; faulty code can break the page. Duplicate the theme first, see [Custom code](17-support.md#custom-code-and-custom-liquid). |
 
 ### No longer in the picker
 

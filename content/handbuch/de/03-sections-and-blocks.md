@@ -88,6 +88,8 @@ Dazu kommen Abschnitte mit festen Aufgaben, die nur in ihrer Vorlage stehen: **�
 
 **Abschnitt „Eigenes Liquid“** (Kategorie „Seitenvorlagen“): ein eigener Abschnitt mit einem Code-Feld (Liquid und HTML), auf allen Vorlagen verfügbar, mit Farbschema, Abstand, Breite und Linie wie andere Abschnitte. Gedacht für Code-Schnipsel von Apps oder Agenturen, die einen eigenen Abschnitt erwarten. Code innerhalb eines bestehenden Abschnitts setzen Sie mit dem gleichnamigen Block ein. Fehlerhafter Code kann die Seite stören; prüfen Sie die Seite nach dem Einfügen in der Vorschau.
 
+> **Vor dem Einfügen von Code:** Duplizieren Sie das Theme (Onlineshop → Themes → **„…“ → „Duplizieren“**) und testen Sie den Code in der Kopie. Refill unterstützt das Einfügen von Code in „Eigenes Liquid“, der Support deckt den Code selbst aber nicht ab. Für Code-Anpassungen empfehlen wir einen Shopify-Partner. Siehe [Eigener Code und „Eigenes Liquid“](17-support.md#eigener-code-und-eigenes-liquid).
+
 ## Gruppe und Spalten
 
 **„Gruppe“** fasst Blöcke zusammen. Im Picker gibt es sie als **„Gruppe: untereinander“** und **„Gruppe: nebeneinander“** (Suche: „Gruppe“).
@@ -273,7 +275,7 @@ Die drei Produkt-Kategorien zeigen Daten des aktuellen Produkts und wirken nur a
 | Blogbeitrag: Inhalt | Beitrag | Inhalt eines Beitrags. |
 | Seite: Inhalt | Seite | Titel und Text einer Shopify-Seite. |
 | Passwortseite: Formular | Passwort | Logo (eigenes Bild, sonst Logo aus Einstellungen → Marke, sonst Shopname), Überschrift, Nachricht und Passwortfeld. |
-| Eigenes Liquid | alle | Code von Apps oder Agenturen; fehlerhafter Code kann die Seite stören. |
+| Eigenes Liquid | alle | Code von Apps oder Agenturen; fehlerhafter Code kann die Seite stören. Vorher Theme duplizieren, siehe [Eigener Code](17-support.md#eigener-code-und-eigenes-liquid). |
 
 ### Nicht mehr im Picker
 

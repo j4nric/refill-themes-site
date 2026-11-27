@@ -23,6 +23,7 @@ This guide covers version 0.9.0. All labels in quotation marks appear exactly li
 | [Performance and SEO](14-performance-and-seo.md) | Loading pages ahead, images, structured data |
 | [FAQ](15-faq.md) | Troubleshooting |
 | [Changelog](16-changelog.md) | Versions |
+| [Support](17-support.md) | Support requests, support policy, custom code |
 
 ## 1. Install the theme
 
@@ -168,4 +169,4 @@ Texts you enter yourself in sections and blocks (headings, paragraphs, button la
 
 ## Help
 
-For questions about the theme, contact support at [support@refill-themes.com](mailto:support@refill-themes.com). Please include your store address (`…myshopify.com`), the theme version and the page concerned.
+For questions about the theme, contact support using the [support form](https://refillthemes.freshdesk.com/support/tickets/new). Please include your store address (`…myshopify.com`), the theme version and the page concerned. What support covers and how quickly we reply is described in the [support policy](17-support.md#support-policy).

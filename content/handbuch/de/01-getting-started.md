@@ -23,6 +23,7 @@ Dieses Handbuch beschreibt Version 0.9.0. Alle Bezeichnungen in Anführungszeich
 | [Ladezeit und SEO](14-performance-and-seo.md) | Seiten vorab laden, Bilder, strukturierte Daten |
 | [Häufige Fragen](15-faq.md) | Fehlerbehebung |
 | [Änderungsprotokoll](16-changelog.md) | Versionen |
+| [Support](17-support.md) | Support-Anfrage, Support-Richtlinie, eigener Code |
 
 ## 1. Theme installieren
 
@@ -166,4 +167,4 @@ Texte, die Sie selbst in Abschnitten und Blöcken eingeben (Überschriften, Abs�
 
 ## Hilfe
 
-Fragen zum Theme beantwortet der Support unter [support@refill-themes.com](mailto:support@refill-themes.com). Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite.
+Fragen zum Theme beantwortet der Support über das [Support-Formular](https://refillthemes.freshdesk.com/support/tickets/new). Bitte nennen Sie Shop-Adresse (`…myshopify.com`), Theme-Version und die betroffene Seite. Was der Support umfasst und wie schnell wir antworten, steht in der [Support-Richtlinie](17-support.md#support-richtlinie).

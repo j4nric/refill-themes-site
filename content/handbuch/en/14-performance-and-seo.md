@@ -28,7 +28,7 @@ Cart, checkout and account pages are never loaded ahead. The feature is off in t
 
 ## Apps and custom code
 
-Every app that adds scripts to your store costs loading time. Turn off app embeds you do not use (theme editor → **App embeds**). Code in the **“Custom Liquid”** block or section loads on every page that contains it.
+Every app that adds scripts to your store costs loading time. Turn off app embeds you do not use (theme editor → **App embeds**). Code in the **“Custom Liquid”** block or section loads on every page that contains it. Test code in a copy of the theme, see [Custom code and “Custom Liquid”](17-support.md#custom-code-and-custom-liquid).
 
 The **Follow on Shop** button (footer, “Social media” block) also loads Shopify modules that can delay the first paint on phones, and it sets cookies from shop.app. That's why it is off by default; only turn on **“Show Follow on Shop”** if you use the Shop app.
 

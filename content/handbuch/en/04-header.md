@@ -155,6 +155,7 @@ The footer's “Bottom bar” shows country and language as two subtle buttons, 
 ## Account, cart
 
 - **“Show account”**: Shopify's account component with sign-in (including “Sign in with Shop”) and the links of the **“Customer account main menu”**. Add a link to your subscription portal there, see [Subscriptions](10-subscriptions.md). Requires **Settings → Customer accounts** to be turned on.
+  **“Load account on demand”** (off by default): signed-out visitors first see an identical link; Shopify’s component loads on the first hover, focus or tap. This saves Shopify’s sign-in scripts (Sign in with Shop) on page load. Signed-in customers always get the component right away. Shopify expects the component to be visible in the header – if in doubt, leave it off.
 - **Cart**: opens the cart drawer, see [Cart and checkout](07-cart-and-checkout.md).
 
 **“Display”** (“Search, account, cart” block): for **“Search”**, **“Account”** and **“Cart”** choose **“Text”** (default, uppercase word), **“Icon”** or **“Icon and text”**. Applies from a window width of 990 px; on mobile the icons are always used. Screen readers announce the name in every style, for the cart including the count (“Cart, 2 items”).
