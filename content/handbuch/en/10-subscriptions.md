@@ -158,5 +158,5 @@ Settings: **Heading** (empty: “Subscribe or buy once?”), **Text**, **Let cus
 | Purchase options do not appear | Assign the plan to the product in the subscription app; check that the product template contains the “Purchase options” block. |
 | No delivery timeline | Turn on “Show delivery timeline”; name the interval in the plan name or first option as a number plus day/week/month. |
 | No price per day for subscriptions | Fill in the servings metafields, see [Product data](09-product-data.md). |
-| English plan names on German pages | Save the plan in the subscription app without changes (generates the translations) or turn on “Name subscription plans with theme text”, see [Plan names in your store's language](#plan-names-in-your-stores-language). Only the first way changes checkout and order confirmation. |
+| English plan names on German pages | Save the plan in the subscription app without changes (generates the translations) or turn on “Name subscription plans with theme text”, see [Plan names in your store's language](#plan-names-in-your-store-s-language). Only the first way changes checkout and order confirmation. |
 | “Manage subscriptions” link missing | Turn on customer accounts, add the link to the “Customer account main menu” (section 7), sign in as a customer. |

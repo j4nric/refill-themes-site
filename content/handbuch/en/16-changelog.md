@@ -16,7 +16,7 @@ First complete version of all pages and core features.
 
 **New**
 - **Cart: “Change subscription”.** Subscription items offer the same choice as “Switch to subscription” below the plan name: another delivery frequency or back to a one-time purchase, with “Apply”. See [Subscriptions in the cart](10-subscriptions.md#6-subscriptions-in-the-cart).
-- **Theme settings → Product data → “Name subscription plans with theme text”** (off by default): shows plan names in the page language, e.g. “Every 3 weeks · 15% off”, instead of the subscription app's name. Checkout and order confirmation keep showing the app's name; how to translate it is described under [Plan names in your store's language](10-subscriptions.md#plan-names-in-your-stores-language).
+- **Theme settings → Product data → “Name subscription plans with theme text”** (off by default): shows plan names in the page language, e.g. “Every 3 weeks · 15% off”, instead of the subscription app's name. Checkout and order confirmation keep showing the app's name; how to translate it is described under [Plan names in your store's language](10-subscriptions.md#plan-names-in-your-store-s-language).
 
 ### November 27, 2026
 
