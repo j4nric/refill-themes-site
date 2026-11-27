@@ -850,8 +850,8 @@
    "lead": "Ein Bild mit nummerierten Punkten. Ein Klick auf einen Punkt zeigt das Produkt dazu.",
    "tips": [
     "Die Position jedes Punkts stellen Sie mit „Waagerecht“ und „Senkrecht“ in Prozent ein.",
-    "Am Handy steht statt der Karten eine nummerierte Liste unter dem Bild.",
-    "„Alle Produkte in den Warenkorb“ listet die Produkte unter dem Bild mit einem Knopf für alle."
+    "Mit „Legende anzeigen“ steht am Handy eine nummerierte Liste unter dem Bild; am Desktop erscheint sie bei der Anordnung „2 Spalten“ oder „3 Spalten“ neben dem Bild.",
+    "„Alle Produkte in den Warenkorb“ listet die Produkte unter dem Bild mit Häkchen und einem Knopf für alle."
    ],
    "more": [
     "sections-and-blocks",
@@ -863,8 +863,8 @@
    "lead": "An image with numbered dots. Clicking a dot shows the matching product.",
    "tips": [
     "Set each dot’s position with “Horizontal” and “Vertical” in percent.",
-    "On phones a numbered list below the image replaces the cards.",
-    "“Add all products to cart” lists the products below the image with one button for all."
+    "With “Show legend”, phones show a numbered list below the image; on desktop it sits next to the image with the “2 columns” or “3 columns” layout.",
+    "“Add all products to cart” lists the products below the image with checkboxes and one button for all."
    ],
    "more": [
     "sections-and-blocks",
