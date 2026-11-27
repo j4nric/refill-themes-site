@@ -96,7 +96,7 @@
     "type": "checkbox",
     "id": "show_metrics",
     "label": "Show key figures (serving, servings)",
-    "info": "Uses the metafields set in theme settings → Product data. Price per day has its own switch.",
+    "info": "Uses the metafields set in theme settings › Product data. Price per day has its own switch.",
     "default": true,
     "visible_if": [
      {
@@ -271,7 +271,7 @@
     "type": "checkbox",
     "id": "show_metrics",
     "label": "Kennzahlen anzeigen (Portion, Portionen)",
-    "info": "Nutzt die Metafelder aus Theme-Einstellungen → Produktdaten. Der Preis pro Tag hat einen eigenen Schalter.",
+    "info": "Nutzt die Metafelder aus Theme-Einstellungen › Produktdaten. Der Preis pro Tag hat einen eigenen Schalter.",
     "default": true,
     "visible_if": [
      {

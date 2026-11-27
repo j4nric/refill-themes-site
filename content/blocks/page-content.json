@@ -10,7 +10,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Shows the page title and text. Edit the text under Online Store → Pages."
+    "content": "Shows the page title and text. Edit the text under Online Store › Pages."
    },
    {
     "type": "checkbox",
@@ -26,7 +26,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Zeigt Titel und Text der Seite. Den Text bearbeiten Sie unter Onlineshop → Seiten."
+    "content": "Zeigt Titel und Text der Seite. Den Text bearbeiten Sie unter Onlineshop › Seiten."
    },
    {
     "type": "checkbox",

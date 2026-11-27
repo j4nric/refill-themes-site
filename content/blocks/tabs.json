@@ -53,7 +53,7 @@
    {
     "type": "select",
     "id": "gap",
-    "label": "Abstand zwischen Reitern und Inhalt",
+    "label": "Abstand zwischen Tabs und Inhalt",
     "default": "6",
     "options": [
      {

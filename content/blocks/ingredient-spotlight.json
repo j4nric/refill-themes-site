@@ -29,7 +29,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafield: ingredients (list of metaobjects)",
-    "info": "Format namespace.key. Find it under Settings → Custom data.",
+    "info": "Format namespace.key. Find it under Settings › Custom data.",
     "default": "custom.key_ingredients"
    },
    {
@@ -63,7 +63,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafeld: Inhaltsstoffe (Liste von Metaobjekten)",
-    "info": "Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten.",
+    "info": "Format namespace.schlüssel. Zu finden unter Einstellungen › Benutzerdefinierte Daten.",
     "default": "custom.key_ingredients"
    },
    {

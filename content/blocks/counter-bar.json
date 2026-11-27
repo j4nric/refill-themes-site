@@ -2,7 +2,7 @@
  "slug": "counter-bar",
  "kind": "block",
  "source": "blocks/counter-bar.liquid",
- "source_sha1": "fc0e83ceb7a8",
+ "source_sha1": "5876da5e9ffe",
  "accepts_blocks": true,
  "en": {
   "name": "Counter bar",
@@ -55,8 +55,8 @@
    {
     "type": "checkbox",
     "id": "inherit_alignment",
-    "label": "Match group alignment",
-    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
+    "label": "Use group alignment",
+    "info": "Only inside a group: the block follows its alignment. Outside a group, or with this off, the block’s own alignment below applies. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
     "default": true
    },
    {
@@ -72,21 +72,10 @@
      {
       "value": "center",
       "label": "Center"
-     }
-    ],
-    "visible_if": [
+     },
      {
-      "setting": "inherit_alignment",
-      "label": "Match group alignment",
-      "op": "off"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Match group alignment",
-      "op": "off"
+      "value": "end",
+      "label": "End"
      }
     ]
    },
@@ -172,8 +161,8 @@
    {
     "type": "checkbox",
     "id": "inherit_alignment",
-    "label": "Ausrichtung wie Gruppe",
-    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
+    "label": "Ausrichtung der Gruppe übernehmen",
+    "info": "Nur in einer Gruppe: Der Block folgt ihrer Ausrichtung. Außerhalb einer Gruppe und ohne Haken gilt die eigene Ausrichtung darunter. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
     "default": true
    },
    {
@@ -189,21 +178,10 @@
      {
       "value": "center",
       "label": "Mittig"
-     }
-    ],
-    "visible_if": [
+     },
      {
-      "setting": "inherit_alignment",
-      "label": "Ausrichtung wie Gruppe",
-      "op": "off"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Ausrichtung wie Gruppe",
-      "op": "off"
+      "value": "end",
+      "label": "Am Ende"
      }
     ]
    },

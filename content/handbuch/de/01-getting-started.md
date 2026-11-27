@@ -40,7 +40,7 @@ Arbeiten Sie zuerst in der unveröffentlichten Kopie. Veröffentlichen Sie das T
 ### Logo und Favicon
 
 1. Theme-Editor → Abschnitt **„Kopfzeile“** → Block **„Logo“**.
-2. Unter **„Logo-Bild“** Ihr Logo hochladen, mit **„Logo-Breite“** die Größe einstellen. Ohne Bild erscheint der Shop-Name.
+2. Unter **„Logo-Bild“** Ihr Logo hochladen, mit **„Logo-Höhe Desktop“** (ab 990 px Fensterbreite) und **„Logo-Höhe Handy“** (darunter, also auch auf Tablets) die Größe einstellen; die Breite folgt dem Seitenverhältnis. Steht **„Logo-Größe nach“** auf „Breite (bisher)“, gilt stattdessen **„Logo-Breite“**. Ohne Bild erscheint der Shop-Name.
 3. **Theme-Einstellungen** (Zahnrad-Symbol) → **„Layout“** → **„Favicon“**: quadratisches Bild, mindestens 180 × 180 px. Das Favicon erscheint im Browser-Tab, in Lesezeichen und im Verlauf (32 × 32 px) sowie auf dem Startbildschirm von Handys. Einfache Formen bleiben in dieser Größe am besten erkennbar.
 4. Optional im Block „Logo“ unter **„Beim Scrollen“**: **„Logo-Größe beim Kleben“** und **„Eigenes Logo beim Kleben“**, siehe [Kopfzeile und Navigation](04-header.md#logo-und-verhalten-beim-scrollen).
 
@@ -116,7 +116,11 @@ Wie der Tertiär-Button aussieht, legen Sie unter **Theme-Einstellungen → „B
 
 Bilder und Hervorhebungen im Mega-Menü, Bildkacheln im mobilen Menü, die Suche, Land und Sprache sowie das Verhalten der Kopfzeile beim Scrollen beschreibt [Kopfzeile und Navigation](04-header.md).
 
-Unter **Theme-Einstellungen → „Layout“** blenden Sie mit **Button „Nach oben“ anzeigen** auf langen Seiten einen Button zum Seitenanfang ein. Darunter: **„Farbe“** („Schema: Umriss“ wie bisher, „Schema: Akzent“ oder eine Markenfarbe als Fläche mit schwarzer oder weißer Schrift), **„Schrift“** (Daten-, Überschriften- oder Fließtext-Schrift; nur die Daten-Schrift steht in Versalien), **„Fett“** und **„Größe“** (S, M, L).
+### Button „Nach oben“
+
+Unter **Theme-Einstellungen → „Layout“** blenden Sie mit **Button „Nach oben“ anzeigen** auf langen Seiten einen Button zum Seitenanfang ein. Darunter: **„Darstellung“** („Symbol“: ein Quadrat mit Pfeil, Tippfläche mindestens 44 px, verdeckt am wenigsten Inhalt; „Symbol und Text“; oder „Symbol am Handy, Symbol und Text am Desktop“ – Screenreader lesen in jedem Fall „Nach oben“ vor), **„Farbe“** („Schema: Umriss“ wie bisher, „Schema: Akzent“ oder eine Markenfarbe als Fläche mit schwarzer oder weißer Schrift), **„Schrift“** (Daten-, Überschriften- oder Fließtext-Schrift; nur die Daten-Schrift steht in Versalien), **„Fett“** und **„Größe“** (S, M, L).
+
+Der Button weicht fixierten Leisten aus: Er steht über der fixierten Kaufleiste, der Vergleichsleiste und dem Cookie-Banner, solange diese sichtbar sind. Auf der Produktseite am Handy erscheint er erst zusammen mit der fixierten Kaufleiste (über ihr), damit er im Kaufbereich keine Preise verdeckt.
 
 ### Ankündigungsleiste
 
@@ -142,13 +146,13 @@ Im Abschnitt **„Fußzeile“** selbst stellen Sie unter **„Spaltenüberschri
 ### Social Media und „Follow on Shop“
 
 1. Theme-Einstellungen → **„Social Media“**: vollständige Profil-Adressen eintragen, z. B. `https://www.instagram.com/ihrshop` (Instagram, Facebook, TikTok, YouTube, X). Leere Felder übernehmen die Links aus **Einstellungen → Marke**, falls dort welche stehen.
-2. Der Fußzeilen-Block **„Social Media“** zeigt nur Netzwerke mit Link, als Symbole (Name für Screenreader) oder unter **„Darstellung“** als **„Symbole mit Namen“**. Ohne Links und ohne Shop-Knopf blendet er sich aus.
+2. Der Fußzeilen-Block **„Social Media“** zeigt nur Netzwerke mit Link, als Icons (Name für Screenreader) oder unter **„Darstellung“** als **„Icons mit Namen“**. Ohne Links und ohne Shop-Knopf blendet er sich aus.
 3. Die Profile gehen außerdem als `sameAs` in die strukturierten Daten des Shops (Startseite) ein, das X-Profil als `twitter:site`.
 4. Die Einstellung **„Follow on Shop“ anzeigen** (Standard aus) zeigt den Knopf, mit dem Kundschaft Ihrem Shop in der Shop-App folgt. Shopify legt Aussehen und Farben fest. Voraussetzung sind **Shop Pay** und der Vertriebskanal **Shop**.
 
 ### Anrede der Kundschaft
 
-**Theme-Einstellungen → „Sprache und Texte“ → „Anrede der Kundschaft“** legt fest, wie die Texte des Themes Ihre Kundschaft ansprechen: **„Persönlich (du)“** (Standard) oder **„Förmlich (Sie)“**. Die Einstellung gilt für alle Sprachen mit Höflichkeitsform – Deutsch (du/Sie), Französisch (tu/vous), Italienisch (tu/Lei), Spanisch (tú/usted). Englisch bleibt unverändert. Betroffen sind Sätze wie „Dein Warenkorb ist leer.“ / „Ihr Warenkorb ist leer.“, Bestätigungen nach Kontaktformular, Newsletter und Kommentar, Hinweise bei Suche, Lieferzeitleiste und Verfügbarkeits-Benachrichtigung.
+**Theme-Einstellungen → „Sprache und Texte“ → „Anrede der Kundschaft“** legt fest, wie die Texte des Themes Ihre Kundschaft ansprechen: **„Persönlich (du)“** (Standard) oder **„Förmlich (Sie)“**. Die Einstellung gilt für alle Sprachen des Themes mit Höflichkeitsform – Deutsch (du/Sie), Französisch (tu/vous), Italienisch (tu/Lei), Spanisch (tú/usted), Niederländisch (je/u), Polnisch, Tschechisch (ty/vy) und Portugiesisch. Englisch und die nordischen Sprachen (Dänisch, Finnisch, Schwedisch) bleiben unverändert. Betroffen sind Sätze wie „Dein Warenkorb ist leer.“ / „Ihr Warenkorb ist leer.“, Bestätigungen nach Kontaktformular, Newsletter und Kommentar, Hinweise bei Suche, Lieferzeitleiste und Verfügbarkeits-Benachrichtigung.
 
 Texte, die Sie selbst in Abschnitten und Blöcken eingeben (Überschriften, Absätze, Button-Beschriftungen), ändert die Einstellung nicht. Einige Vorlagen und neue Blöcke starten mit Beispieltexten in der Du-Form, etwa „Abo nach deinem Takt“, „10 % auf deine erste Bestellung“, „Stell dein Set zusammen“, „Das könnte dir auch gefallen“ oder „Bist du mindestens 18 Jahre alt?“. Passen Sie diese bei förmlicher Anrede im Editor an. Passen Sie Shop-Texte unter Onlineshop → Themes → … → **Standard-Theme-Inhalte bearbeiten** an, finden Sie die förmlichen Fassungen dort unter **„Sections › Formal“**.
 

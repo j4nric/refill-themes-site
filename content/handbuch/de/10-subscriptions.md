@@ -52,7 +52,7 @@ Bei gewähltem Abo zeigt die Zeitleiste „Nächste Lieferungen“ als Punkte au
 |---|---|---|
 | Heute | „Heute – Bestellt“ | – |
 | Erste Lieferung | „bis 25.11. – Bei dir“ | dasselbe Datum wie im Block „Lieferdatum“ (Bestellschluss, Bearbeitungszeit, Laufzeit, Lieferzeit des Produkts), siehe [Produktseite](06-product-page.md#lieferdatum) |
-| Folgelieferungen | „24.12. – 2. Lieferung“, „23.1. – 3. Lieferung“ | Intervall des gewählten Plans |
+| Folgelieferungen | „26.12. – 2. Lieferung“, „25.1. – 3. Lieferung“ | Bestelltag plus Intervall des gewählten Plans – wie die Abo-App die Folgebestellungen auslöst und genauso wie im Warenkorb |
 
 Darunter steht „Danach alle 30 Tage. Ändern oder kündigen im Kundenkonto.“ Steht kein Block „Lieferdatum“ auf der Seite, zählt die Zeitleiste die Lieferungen ab heute. Die Termine sind eine Vorschau aus dem Intervall des Plans; maßgeblich sind die Termine der Abo-App. Ohne JavaScript zeigt die Zeitleiste die Termine ab heute.
 
@@ -67,9 +67,9 @@ Ist **„Schnellkauf auf Produktkarten“** aktiv, gilt:
 
 ## 6. Abo im Warenkorb
 
-- Abo-Positionen zeigen den Namen des Plans und darunter eine kurze Lieferzeitleiste mit den nächsten Terminen, z. B. „Heute · 21.12. · 20.01.“ (aus dem Intervall des Plans; ohne erkennbares Intervall entfällt sie).
+- Abo-Positionen zeigen den Namen des Plans und darunter eine kurze Lieferzeitleiste mit den nächsten Terminen und ihrer Bedeutung, z. B. „Heute – Bestellt · 26.12. – 2. Lieferung · 25.1. – 3. Lieferung“. Die Termine rechnen wie auf der Produktseite ab dem Bestelltag (ohne erkennbares Intervall entfällt die Leiste).
 - Der Preis ohne Abo steht durchgestrichen neben dem Abo-Preis, damit die Ersparnis sichtbar bleibt.
-- Positionen **ohne** Abo, deren Produkt einen Plan hat, bieten einen Wechsel an: „Im Abo 10 % sparen (Spar-Abo)“ bzw. „Als Abo bestellen: Spar-Abo“. Ein Klick stellt die Position auf den ersten Plan um.
+- Positionen **ohne** Abo, deren Produkt einen Plan hat, bieten einen Wechsel an: kurz mit Symbol „Im Abo 10 % sparen“ bzw. „Als Abo bestellen“. Hat die Variante einen Plan, stellt ein Klick die Position darauf um (den Plannamen hören nur Screenreader). Bei mehreren Plänen öffnet der Hinweis eine Liste der Pläne mit Planname und Ersparnis (der erste ist gewählt, lange Namen brechen um und bleiben am Handy ganz lesbar), „Übernehmen“ stellt um; unterscheiden sich die Ersparnisse, heißt der Hinweis „Im Abo bis zu 15 % sparen“. Ohne JavaScript führt er zur Produktseite.
 - Dynamische Checkout-Buttons (PayPal, Apple Pay, Shop Pay) sind auf Produktseiten mit Abo ausgeblendet, weil sie Abos nicht abbilden.
 
 ## 7. Kundenportal verlinken

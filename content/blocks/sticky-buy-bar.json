@@ -2,7 +2,7 @@
  "slug": "sticky-buy-bar",
  "kind": "block",
  "source": "blocks/sticky-buy-bar.liquid",
- "source_sha1": "4621d870b711",
+ "source_sha1": "fee2c463ad7a",
  "accepts_blocks": false,
  "en": {
   "name": "Sticky buy bar",

@@ -76,6 +76,35 @@ Der Block **„Linien-Grafik“** und die Gruppe **„Dekor“** jedes Abschnitt
 - Aktuelle Browser (Chrome, Edge, Safari ab 26) bewegen die Motive ohne zusätzliches Skript. Andere Browser laden ein kleines Skript nach, das nur rechnet, solange ein Motiv sichtbar ist.
 - Die Einstellungen unter „Theme-Einstellungen → Animation“ gelten hier nicht: Wer ein Scroll-Verhalten wählt, hat die Bewegung bewusst eingeschaltet.
 
+### Welcher Block wofür
+
+Drei Blöcke nutzen dieselben 13 Motive:
+
+- **„Linien-Grafik“** steht im Inhalt wie ein Bild (z. B. unter einer Überschrift oder zwischen Spalten) und nimmt Platz ein.
+- **„Dekor“** liegt frei über oder hinter dem Bereich, in dem es steht, und verschiebt nichts – oder steht mit „Im Inhalt“ wie eine Linien-Grafik im Fluss. Es kann statt eines Motivs eine eigene Grafik zeigen.
+- **„Linien-Animation“** zeigt Wellenlinien, die beim Scrollen seitlich wandern (eigene Bewegung, keine Motivauswahl).
+
+Für ein Motiv hinter einem ganzen Abschnitt genügt die Gruppe **„Dekor“** des Abschnitts (siehe [Abschnitte und Blöcke](03-sections-and-blocks.md#das-prinzip)).
+
+### Block „Dekor“
+
+Der Block **„Dekor“** (Kategorie „Medien“) setzt ein Linien-Motiv oder eine eigene Grafik in einen Abschnitt, eine Gruppe oder eine Spalte. Er ist rein schmückend: Screenreader überspringen ihn, und er fängt keine Klicks ab.
+
+| Einstellung | Wirkung |
+|---|---|
+| **„Motiv“** | Eines der Linien-Motive. Ausgeblendet, sobald eine eigene Grafik gewählt ist. |
+| **„Eigene Grafik“** | SVG oder PNG aus „Dateien“, ersetzt das Motiv. **„Grafik in der gewählten Farbe zeigen“** färbt sie in „Farbe“ ein (für einfarbige Grafiken mit transparentem Hintergrund). Strichstärke, Spiegeln und Wiederholungen wirken auf eigene Grafiken nicht und sind dann ausgeblendet; von den Bewegungen wirken nur „Mitlaufen“ und „Drehen“, die übrigen stehen still. |
+| **„Platzierung“** | **„Frei“**: Das Dekor liegt über oder hinter dem Bereich, in dem der Block steht (Abschnitt, Gruppe oder Spalte), und verschiebt nichts. Die Position setzen **„Waagerecht“** und **„Senkrecht“** in Prozent dieses Bereichs; was über den Rand ragt, wird abgeschnitten. **„Im Inhalt“**: Das Dekor nimmt Platz ein wie eine Linien-Grafik und steht zwischen den anderen Blöcken. |
+| **„Ebene“** | Nur bei „Frei“: **„Hinter dem Inhalt“** (Standard) oder **„Vor dem Inhalt“**. Vor dem Inhalt kann es Text überdecken – sparsam und mit geringer „Deckkraft“ einsetzen. |
+| **„Ausrichtung der Gruppe übernehmen“**, **„Ausrichtung“** | Nur bei „Im Inhalt“, wie unter [Gruppe und Spalten](03-sections-and-blocks.md#gruppe-und-spalten). |
+| **„Größe“**, **„Größe am Handy“** | Breite in Prozent des Bereichs. „Handy“ heißt hier: Fenster schmaler als 750 px, unabhängig von der Spaltenbreite. |
+| **„Drehung“** | −180° bis 180°. |
+| **„Anzeigen auf“** | „Allen Geräten“, „Nur Desktop“ (ab 750 px Fensterbreite) oder „Nur Handy“. Im Theme-Editor steht in der anderen Vorschau ein Hinweis „Nur im Editor sichtbar“ an der Stelle des Dekors, damit der Block auffindbar bleibt. |
+| **„Farbe“**, **„Strichstärke“**, **„Deckkraft“**, **„Spiegeln“**, **„Wiederholungen nebeneinander“** | Aussehen wie bei der Linien-Grafik; die Strichstärke frei in px. |
+| **„Beim Scrollen“**, **„Geschwindigkeit“** | Bewegung wie oben; bei „Bewegung reduzieren“ steht das Dekor still. |
+
+In erzwungenen Farben („Hoher Kontrast“) entfällt frei platziertes Dekor, weil es hinter oder über Text läge.
+
 ## Weitere Bewegung im Theme
 
 Diese Effekte stellen Sie dort ein, wo sie wirken. Auch für sie gilt „Bewegung reduzieren“.
@@ -86,7 +115,7 @@ Diese Effekte stellen Sie dort ein, wo sie wirken. Auch für sie gilt „Bewegun
 | Zoom und Zweitbild beim Überfahren von Produktkarten | Theme-Einstellungen → „Produktdaten“ → „Produktkarten“, siehe [Kollektionen](05-collections.md#bildbewegung-beim-überfahren) |
 | Vollbild-Galerie | Block „Produktbilder“ → „Vollbild beim Klick auf ein Bild“, siehe [Produktseite](06-product-page.md#vollbild) |
 | Rollende Zahlen in der Datentafel | Block „Datentafel“ → „Zahlen beim ersten Sichtbarwerden einrollen“ |
-| Laufband | Block „Laufband“ (mit Pause-Button) |
+| Laufband | Block „Laufband“ (mit Pause-Button). Den Knopf zeigen Laufband und durchlaufende Logo-Leiste als Symbol (Standard) oder Text: Theme-Einstellungen → „Animation“ → „Laufband“ → „Schalter zum Anhalten“ |
 | Linien-Motive beim Scrollen | Block „Linien-Grafik“ und Abschnitt → „Dekor“, siehe oben |
 | Hintergrundvideo (mit Pause-Knopf) | Abschnitt → „Hintergrund“ und Block „Bild mit Text“ → „Video statt Bild“, siehe [Abschnitte und Blöcke](03-sections-and-blocks.md#das-prinzip) |
 

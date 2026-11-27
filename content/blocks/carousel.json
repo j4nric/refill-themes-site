@@ -2,7 +2,7 @@
  "slug": "carousel",
  "kind": "block",
  "source": "blocks/carousel.liquid",
- "source_sha1": "b7024323adf7",
+ "source_sha1": "8bb081814515",
  "accepts_blocks": true,
  "en": {
   "name": "Carousel",
@@ -35,7 +35,7 @@
     "type": "select",
     "id": "controls_position",
     "label": "Controls position",
-    "info": "“On the slides” places the arrows and counter in the bottom corner of the slider (about 150 × 44 px) and suits images. For slides with text, product cards or videos with their own controls at the bottom, choose “Below the slides”. “On the slides, mobile only” applies while the carousel is narrower than 750 px, so also in narrow columns on desktop.",
+    "info": "“On the slides” places the arrows and counter in the bottom corner of the carousel (about 150 × 44 px) and suits images. For slides with text, product cards or videos with their own controls at the bottom, choose “Below the slides”. “On the slides, mobile only” applies while the carousel is narrower than 750 px, so also in narrow columns on desktop.",
     "default": "below",
     "options": [
      {
@@ -60,7 +60,7 @@
     "type": "select",
     "id": "autoplay",
     "label": "Advance automatically",
-    "info": "By time: loops, with a pause button; pauses while the pointer or focus is on the carousel. On scroll: slides change with scroll depth while the carousel passes through the window. Both stop as soon as visitors browse themselves and are off for reduced motion.",
+    "info": "By time: loops, with a pause button; pauses while the pointer or focus is on the carousel. On scroll: slides change with scroll depth while the carousel passes through the window. Both stop as soon as visitors browse themselves and are off for reduced motion. [Learn more](https://refill-themes.com/docs/blocks/carousel/#autoplay)",
     "default": "off",
     "options": [
      {
@@ -80,7 +80,7 @@
    {
     "type": "range",
     "id": "autoplay_seconds",
-    "label": "Time per page",
+    "label": "Time per slide",
     "default": 6,
     "min": 3,
     "max": 12,
@@ -211,7 +211,7 @@
     "type": "select",
     "id": "autoplay",
     "label": "Weiterblättern",
-    "info": "Nach Zeit: in Schleife, mit Knopf zum Anhalten; hält, solange Mauszeiger oder Fokus auf dem Karussell liegen. Beim Scrollen: Die Folien wechseln mit der Scrolltiefe, während das Karussell durch das Fenster läuft. Beides endet, sobald Besucher selbst blättern, und entfällt bei „Bewegung reduzieren“.",
+    "info": "Nach Zeit: in Schleife, mit Knopf zum Anhalten; hält, solange Mauszeiger oder Fokus auf dem Karussell liegen. Beim Scrollen: Die Folien wechseln mit der Scrolltiefe, während das Karussell durch das Fenster läuft. Beides endet, sobald Besucher selbst blättern, und entfällt bei „Bewegung reduzieren“. [Mehr im Handbuch](https://refill-themes.com/de/docs/blocks/carousel/#autoplay)",
     "default": "off",
     "options": [
      {
@@ -231,7 +231,7 @@
    {
     "type": "range",
     "id": "autoplay_seconds",
-    "label": "Zeit je Seite",
+    "label": "Zeit je Folie",
     "default": 6,
     "min": 3,
     "max": 12,

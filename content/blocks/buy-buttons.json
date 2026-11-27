@@ -115,8 +115,8 @@
    {
     "type": "select",
     "id": "dynamic_checkout_style",
-    "label": "Stil des Knopfs „Jetzt kaufen“",
-    "info": "Gilt für den Knopf ohne Markenlogo. Gebrandete Knöpfe (Shop Pay, PayPal, Apple Pay, Google Pay) übernehmen nur Ecken und Höhe der Theme-Buttons; Farben und Hover legt der Anbieter fest.",
+    "label": "Stil des Buttons „Jetzt kaufen“",
+    "info": "Gilt für den Button ohne Markenlogo. Gebrandete Buttons (Shop Pay, PayPal, Apple Pay, Google Pay) übernehmen nur Ecken und Höhe der Theme-Buttons; Farben und Hover legt der Anbieter fest.",
     "default": "secondary",
     "options": [
      {

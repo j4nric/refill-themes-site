@@ -122,7 +122,7 @@ Bei ausverkauften Varianten und bei Vorbestellungen blendet sich die Zeile aus. 
 
 ## Häufig zusammen gekauft
 
-Der Block **„Häufig zusammen gekauft“** (Kategorie „Produkt: Kauf“) zeigt das Produkt der Seite mit bis zu drei Ergänzungen. Jede Zeile hat ein Kontrollkästchen, Bild, Titel und Preis, darunter stehen der Gesamtpreis und **„Alle hinzufügen“** bzw. **„Auswahl hinzufügen“**. Ein Klick legt alles mit einem Schritt in den Warenkorb, der sich danach öffnet.
+Der Block **„Häufig zusammen gekauft“** (Kategorie „Produkt: Kauf“) zeigt das Produkt der Seite mit bis zu drei Ergänzungen. Jede Zeile hat ein Kontrollkästchen, Bild und Titel (beide verlinkt), eine kompakte Variantenwahl und rechts unten den Preis, darunter stehen der Gesamtpreis und **„Alle hinzufügen“** bzw. **„Auswahl hinzufügen“**. Ein Klick legt alles mit einem Schritt in den Warenkorb, der sich danach öffnet.
 
 | Einstellung | Wirkung |
 |---|---|
@@ -174,8 +174,10 @@ Ein Link oder Button öffnet ein Fenster mit Zusatzinformationen – etwa eine G
 | Einstellung | Wirkung |
 |---|---|
 | „Art“ | „Allgemein“, „Dosiertabelle“ oder „Größentabelle“ – setzt Beschriftung und Symbol, solange „Beschriftung“ leer ist. |
-| „Beschriftung“, „Titel im Fenster“ | Text des Links und Überschrift im Fenster (leer = Beschriftung). |
+| „Beschriftung“, „Überschrift im Fenster“ | Text des Links und Überschrift im Fenster (leer = Beschriftung). |
 | „Darstellung“ | „Textlink“ oder „Button“; „Symbol zeigen“. |
+| „Beschriftung“, „Titel im Fenster“ | Text des Links und Überschrift im Fenster (leer = Beschriftung). |
+| „Darstellung“ | „Textlink“ oder „Button“; „Icon zeigen“. |
 | „Quelle“ | „Text“, „Seite“ oder „Produkt-Metafeld“. |
 | „Text“ | nur bei Quelle „Text“: formatierter Text ohne Tabellen. |
 | „Seite“ | Shopify-Seite, deren Inhalt im Fenster erscheint. |

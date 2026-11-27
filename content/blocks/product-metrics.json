@@ -2,7 +2,7 @@
  "slug": "product-metrics",
  "kind": "block",
  "source": "blocks/product-metrics.liquid",
- "source_sha1": "922787fbbf3a",
+ "source_sha1": "e175dbf3f8db",
  "accepts_blocks": false,
  "en": {
   "name": "Key figures",
@@ -10,7 +10,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Serving, servings and price per day or serving come from the metafields in Theme settings → Product data. Add up to two more figures here, also connected to a metafield. A value like “3/5” is shown as a scale."
+    "content": "Serving, servings and price per day or serving come from the metafields in Theme settings › Product data. Add up to two more figures here, also connected to a metafield. A value like “3/5” is shown as a scale."
    },
    {
     "type": "checkbox",
@@ -104,7 +104,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Portion, Portionen und Preis pro Tag bzw. Portion kommen aus den Metafeldern unter Theme-Einstellungen → Produktdaten. Hier lassen sich bis zu zwei weitere Werte ergänzen, auch verbunden mit einem Metafeld. Ein Wert wie „3/5“ erscheint als Skala."
+    "content": "Portion, Portionen und Preis pro Tag bzw. Portion kommen aus den Metafeldern unter Theme-Einstellungen › Produktdaten. Hier lassen sich bis zu zwei weitere Werte ergänzen, auch verbunden mit einem Metafeld. Ein Wert wie „3/5“ erscheint als Skala."
    },
    {
     "type": "checkbox",

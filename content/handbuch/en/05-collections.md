@@ -84,6 +84,8 @@ The `collection` template contains breadcrumbs, **“Collection: header”** (ti
 
 Next to a filter sidebar, cards never get narrower than about 200 px; if space is tight, the grid shows one column fewer than you set.
 
+On phones (list narrower than 900 px) the **“Filter”** and **“Sort by”** buttons sit side by side in one row, with the product count centered below; “Filter” opens the filters in a panel. From 900 px the filters are a sidebar on the left, the count on the left and sorting on the right above the list.
+
 **Filters** are set up in the **Search & Discovery** app (availability, price, product type, options, metafields). Color values with swatches appear as swatches.
 
 ### Default sorting
@@ -118,6 +120,7 @@ Good to know:
 - If the position is higher than the number of products, the tile goes at the end.
 - With a link, the whole tile is clickable. Without heading, text and image it stays hidden in the store; the editor shows a hint.
 - Like “Add to cart” on product cards, the button sits below the tile area: same height, same style and in line with the card buttons in the same row.
+- Keep button labels short: in one column on a phone (390 px) about 18 characters fit on one line, e.g. “About subscriptions”. Longer labels wrap balanced and centered.
 - If a 2-column tile lands in the last column of a row, the next product card moves into the gap. On phones, a tile that stands alone in its row is at least half the grid width tall.
 
 ## Subcollections

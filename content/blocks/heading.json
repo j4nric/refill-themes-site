@@ -2,7 +2,7 @@
  "slug": "heading",
  "kind": "block",
  "source": "blocks/heading.liquid",
- "source_sha1": "cc38a57950e4",
+ "source_sha1": "f65454efe3a2",
  "accepts_blocks": false,
  "en": {
   "name": "Heading",
@@ -73,30 +73,15 @@
    {
     "type": "checkbox",
     "id": "inherit_alignment",
-    "label": "Match group alignment",
-    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
+    "label": "Use group alignment",
+    "info": "Only inside a group: the block follows its alignment. Outside a group, or with this off, the block’s own alignment below applies. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
     "default": true
    },
    {
     "type": "text_alignment",
     "id": "alignment",
     "label": "Alignment",
-    "default": "left",
-    "visible_if": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Match group alignment",
-      "op": "off"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Match group alignment",
-      "op": "off"
-     }
-    ]
+    "default": "left"
    }
   ]
  },
@@ -169,30 +154,15 @@
    {
     "type": "checkbox",
     "id": "inherit_alignment",
-    "label": "Ausrichtung wie Gruppe",
-    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
+    "label": "Ausrichtung der Gruppe übernehmen",
+    "info": "Nur in einer Gruppe: Der Block folgt ihrer Ausrichtung. Außerhalb einer Gruppe und ohne Haken gilt die eigene Ausrichtung darunter. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
     "default": true
    },
    {
     "type": "text_alignment",
     "id": "alignment",
     "label": "Ausrichtung",
-    "default": "left",
-    "visible_if": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Ausrichtung wie Gruppe",
-      "op": "off"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Ausrichtung wie Gruppe",
-      "op": "off"
-     }
-    ]
+    "default": "left"
    }
   ]
  }

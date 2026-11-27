@@ -2,7 +2,7 @@
  "slug": "profile-scales",
  "kind": "block",
  "source": "blocks/profile-scales.liquid",
- "source_sha1": "4f1fcb342380",
+ "source_sha1": "dfe2d55d29af",
  "accepts_blocks": true,
  "en": {
   "name": "Profile scales",
@@ -63,6 +63,27 @@
      {
       "value": "bar",
       "label": "Bar"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "scale_width",
+    "label": "Scale width",
+    "info": "Automatic: dots narrow, segments and bar full width. With dots, the first and last dot always sit above the end labels.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatic"
+     },
+     {
+      "value": "narrow",
+      "label": "Narrow"
+     },
+     {
+      "value": "full",
+      "label": "Full width"
      }
     ]
    },
@@ -169,6 +190,27 @@
      {
       "value": "bar",
       "label": "Balken"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "scale_width",
+    "label": "Skalenbreite",
+    "info": "Automatisch: Punkte schmal, Kästchen und Balken über die ganze Breite. Bei Punkten stehen der erste und der letzte Punkt immer über den Beschriftungen der Enden.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Automatisch"
+     },
+     {
+      "value": "narrow",
+      "label": "Schmal"
+     },
+     {
+      "value": "full",
+      "label": "Volle Breite"
      }
     ]
    },

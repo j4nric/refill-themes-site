@@ -42,7 +42,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafield: content",
-    "info": "Format namespace.key, e.g. custom.usage. Find it under Settings → Custom data. If it is empty, the text above is shown."
+    "info": "Format namespace.key, e.g. custom.usage. Find it under Settings › Custom data. If it is empty, the text above is shown."
    }
   ]
  },
@@ -84,7 +84,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafeld: Inhalt",
-    "info": "Format namespace.schlüssel, z. B. custom.usage. Zu finden unter Einstellungen → Benutzerdefinierte Daten. Ist es leer, erscheint der Text oben."
+    "info": "Format namespace.schlüssel, z. B. custom.usage. Zu finden unter Einstellungen › Benutzerdefinierte Daten. Ist es leer, erscheint der Text oben."
    }
   ]
  }

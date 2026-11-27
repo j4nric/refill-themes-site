@@ -2,7 +2,7 @@
  "slug": "comparison-table",
  "kind": "block",
  "source": "blocks/comparison-table.liquid",
- "source_sha1": "3c4be74658a1",
+ "source_sha1": "f4d72483c61d",
  "accepts_blocks": false,
  "en": {
   "name": "Comparison table",

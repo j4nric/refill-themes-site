@@ -57,7 +57,7 @@
    "en": "Layout",
    "de": "Layout"
   },
-  "demo_uses": 59
+  "demo_uses": 63
  },
  {
   "slug": "bundle-builder",
@@ -93,7 +93,7 @@
    "en": "Buttons and promotions",
    "de": "Buttons & Aktionen"
   },
-  "demo_uses": 63
+  "demo_uses": 65
  },
  {
   "slug": "buy-buttons",
@@ -201,7 +201,7 @@
    "en": "Layout",
    "de": "Layout"
   },
-  "demo_uses": 44
+  "demo_uses": 45
  },
  {
   "slug": "comparison-table",
@@ -357,7 +357,7 @@
    "en": "Layout",
    "de": "Layout"
   },
-  "demo_uses": 113
+  "demo_uses": 114
  },
  {
   "slug": "heading",
@@ -369,7 +369,7 @@
    "en": "Text",
    "de": "Text"
   },
-  "demo_uses": 104
+  "demo_uses": 107
  },
  {
   "slug": "icon-with-text",
@@ -393,7 +393,7 @@
    "en": "Media",
    "de": "Medien"
   },
-  "demo_uses": 7
+  "demo_uses": 9
  },
  {
   "slug": "image-banner",
@@ -405,7 +405,7 @@
    "en": "Media",
    "de": "Medien"
   },
-  "demo_uses": 5
+  "demo_uses": 6
  },
  {
   "slug": "image-hotspots",
@@ -489,7 +489,7 @@
    "en": "Media",
    "de": "Medien"
   },
-  "demo_uses": 3
+  "demo_uses": 4
  },
  {
   "slug": "logo-list",
@@ -573,7 +573,7 @@
    "en": "Page templates",
    "de": "Seitenvorlagen"
   },
-  "demo_uses": 30
+  "demo_uses": 31
  },
  {
   "slug": "password-form",
@@ -942,7 +942,7 @@
    "en": "Text",
    "de": "Text"
   },
-  "demo_uses": 77
+  "demo_uses": 79
  },
  {
   "slug": "timeline",

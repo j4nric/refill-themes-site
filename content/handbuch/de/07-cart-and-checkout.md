@@ -14,7 +14,7 @@ Der Drawer folgt den Theme-Einstellungen unter **„Warenkorb“** und dem **„
 
 ## Warenkorb nach dem Hinzufügen
 
-Theme-Einstellungen → **„Warenkorb“** → **„Warenkorb nach dem Hinzufügen“**:
+Theme-Einstellungen → **„Warenkorb“** → **„Warenkorbtyp“** legt fest, was nach dem Hinzufügen passiert:
 
 | Auswahl | Nach „In den Warenkorb“ | Warenkorb-Symbol |
 |---|---|---|
@@ -33,7 +33,7 @@ Theme-Einstellungen → **„Warenkorb“** → **„Anzahl im Warenkorb“**. D
 | **„Automatisch“** (Standard, wie bisher) | „WARENKORB (2)“ neben Text, Blase am Symbol (Handy) | „WARENKORB (2)“; Seite: Label „2 Artikel“ rechts |
 | **„In Klammern (2)“** | „(2)“ hinter Wort bzw. Symbol | „Warenkorb (2)“ |
 | **„Blase mit Zahl“** | farbige Blase am Symbol bzw. hinter dem Wort | Blase hinter „Warenkorb“ |
-| **„Punkt ohne Zahl“** | Punkt am Symbol bzw. hinter dem Wort | Punkt hinter „Warenkorb“ |
+| **„Punkt ohne Zahl“** | Punkt am Symbol bzw. hinter dem Wort | Blase mit Zahl hinter „Warenkorb“ (ein Punkt im Titel wirkte wie ein Fehlerhinweis) |
 | **„Nur Zahl“** | „2“ hinter Wort bzw. Symbol | „Warenkorb 2“ |
 
 **„Farbe von Blase und Punkt“** (bei „Automatisch“, „Blase“ und „Punkt“): „Schema: Akzent“ (Standard), „Schema: Text“ oder eine der Markenfarben; die Zahl darauf ist automatisch Schwarz oder Weiß. Die Rundung folgt „Ecken“ (eckig, leicht gerundet oder rund). Ein leerer Warenkorb zeigt in der Kopfzeile keine Anzahl. Screenreader hören „Warenkorb, 2 Artikel“.
@@ -114,6 +114,8 @@ Theme-Einstellungen → **„Warenkorb“** → **„Geschenkoptionen anzeigen�
 - **Feld „Geschenknachricht“** mit **„Höchstzahl Zeichen“** (Standard 200). Ein Zähler unter dem Feld zeigt die geschriebenen Zeichen. Anders als die freie Bestellnotiz hat die Nachricht ein Zeichenlimit und einen festen Namen in der Bestellung.
 - **Häkchen „Preise auf dem Lieferschein ausblenden“:** speichert nur den Wunsch, siehe unten.
 
+Im Warenkorb stehen die Geschenkoptionen in einer aufklappbaren Zeile „Geschenkoptionen“. Sie ist zu, solange nichts gewählt ist, und offen, sobald Verpackung, Nachricht oder „Preise ausblenden“ gesetzt sind.
+
 Unter **„Name des Attributs“** legen Sie je Angabe fest, wie sie in der Bestellung heißt (Standard „Gift wrap“, „Gift message“, „Hide prices“). Ändern Sie die Namen nach dem Start nicht mehr, wenn Lieferschein-Vorlagen, Flow oder Apps sie lesen. Die Häkchen speichern immer „Yes“. Prüfen Sie in Flow und in der Lieferschein-Vorlage deshalb auf „nicht leer“, nicht auf einen bestimmten Wert.
 
 ### Preise auf dem Lieferschein ausblenden
@@ -135,8 +137,8 @@ Der Balken zeigt, wie viel bis zum nächsten Vorteil fehlt – etwa Gratisversan
 | Einstellung | Bedeutung |
 |---|---|
 | „Schwelle für kostenlosen Versand“ | Stufe 1, Betrag in Shop-Währung, z. B. `49`. `0` = aus. |
-| „Stufe 2: Schwelle“, „Stufe 2: Vorteil“ | z. B. `75` und „Gratis-Probe“. Stufe 2 erscheint, sobald Stufe 1 über 0 liegt; „Vorteil“, sobald die eigene Schwelle über 0 liegt. |
-| „Stufe 3: Schwelle“, „Stufe 3: Vorteil“ | z. B. `100` und „10 % Rabatt“. Stufe 3 erscheint, sobald Stufe 2 über 0 liegt. |
+| „Schwelle der höheren Stufe“, „Vorteil der höheren Stufe“ | z. B. `75` und „Gratis-Probe“. Stufe 2 erscheint, sobald Stufe 1 über 0 liegt; „Vorteil“, sobald die eigene Schwelle über 0 liegt. |
+| „Schwelle der höchsten Stufe“, „Vorteil der höchsten Stufe“ | z. B. `100` und „10 % Rabatt“. Stufe 3 erscheint, sobald Stufe 2 über 0 liegt. |
 
 Standard aller Schwellen ist `0` (aus). Eine eingetragene Schwelle bleibt immer sichtbar.
 

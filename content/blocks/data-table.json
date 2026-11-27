@@ -200,7 +200,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafield: rows (list of metaobjects)",
-    "info": "Format namespace.key. Find it under Settings → Custom data.",
+    "info": "Format namespace.key. Find it under Settings › Custom data.",
     "default": "custom.data_table"
    },
    {
@@ -405,7 +405,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafeld: Zeilen (Liste von Metaobjekten)",
-    "info": "Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten.",
+    "info": "Format namespace.schlüssel. Zu finden unter Einstellungen › Benutzerdefinierte Daten.",
     "default": "custom.data_table"
    },
    {

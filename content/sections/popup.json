@@ -2,7 +2,7 @@
  "slug": "popup",
  "kind": "section",
  "source": "sections/popup.liquid",
- "source_sha1": "a6bcdd370ffc",
+ "source_sha1": "ce3ead80c3ab",
  "accepts_blocks": true,
  "en": {
   "name": "Popup",

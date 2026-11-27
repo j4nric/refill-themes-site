@@ -102,7 +102,7 @@ Image tiles with a heading, text and link – for categories or a promotion:
 
 These images only appear in the mobile menu, not in the desktop mega menu. An “Image” without an image file appears as a text tile with heading and text.
 
-**“Country and language in menu”** controls what appears at the end of the mobile menu: “Country and language”, “Country/region only”, “Language only” or “Off”.
+**“Country and language in menu”** controls what appears at the end of the mobile menu: “Country and language”, “Country/region only”, “Language only” or “Off”. If country and language sit in the announcement bar, the mobile menu is the only place to choose them below 990 px – don’t choose “Off” then.
 
 ## Search
 
@@ -169,7 +169,7 @@ The **“Announcement bar”** section sits above the header. Each **“Announce
 |---|---|
 | “Text” | The notice, e.g. “Free shipping over €49”. |
 | “Link” | Turns the line into a link, with an arrow. |
-| “Discount code” | Shows the code as a tag with a **“Copy”** button. After a click the button reads “Copied”; shoppers paste the code at checkout. |
+| “Discount code” | Shows the code as a tag with a copy icon (screen readers: “Copy discount code …”). After a click a check mark appears; shoppers paste the code at checkout. |
 
 **Set up a discount code:**
 

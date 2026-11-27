@@ -2,7 +2,7 @@
  "slug": "group",
  "kind": "block",
  "source": "blocks/group.liquid",
- "source_sha1": "6c6e4fcabba0",
+ "source_sha1": "abcf5d306e14",
  "accepts_blocks": true,
  "en": {
   "name": "Group",
@@ -36,7 +36,7 @@
     "type": "text_alignment",
     "id": "alignment",
     "label": "Horizontal alignment",
-    "info": "Applies to blocks in the group with “Match group alignment” turned on.",
+    "info": "Aligns all blocks in the group. Blocks with “Use group alignment” turned off can differ.",
     "default": "left",
     "visible_if": [
      {
@@ -224,7 +224,7 @@
     "type": "text_alignment",
     "id": "alignment",
     "label": "Horizontale Ausrichtung",
-    "info": "Gilt für Blöcke in der Gruppe, bei denen „Ausrichtung wie Gruppe“ an ist.",
+    "info": "Richtet alle Blöcke der Gruppe aus. Blöcke, bei denen „Ausrichtung der Gruppe übernehmen“ aus ist, können abweichen.",
     "default": "left",
     "visible_if": [
      {

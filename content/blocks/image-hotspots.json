@@ -2,7 +2,7 @@
  "slug": "image-hotspots",
  "kind": "block",
  "source": "blocks/image-hotspots.liquid",
- "source_sha1": "0b1901bd4ac5",
+ "source_sha1": "a602cbddc914",
  "accepts_blocks": true,
  "en": {
   "name": "Shoppable image",
@@ -142,6 +142,13 @@
     ]
    },
    {
+    "type": "checkbox",
+    "id": "show_legend",
+    "label": "Show legend",
+    "info": "Numbered list for the image: below it on phones, on desktop only with a column layout. Off: dots open their card on the image everywhere – useful when “Add all products to cart” shows the same products.",
+    "default": true
+   },
+   {
     "type": "select",
     "id": "layout",
     "label": "Layout",
@@ -154,19 +161,26 @@
      },
      {
       "value": "columns_2",
-      "label": "2 columns: image and list"
+      "label": "2 columns: image and legend"
      },
      {
       "value": "columns_3",
-      "label": "3 columns: image across two, list"
+      "label": "3 columns: image across two, legend"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_legend",
+      "label": "Show legend",
+      "op": "on"
      }
     ]
    },
    {
     "type": "select",
     "id": "list_columns",
-    "label": "Product list columns",
-    "info": "Applies to the list below or next to the image and to “Add all products to cart”. One column on phones.",
+    "label": "Legend columns",
+    "info": "Applies to the legend next to the image and to the “Add all products to cart” list. One column on phones.",
     "default": "1",
     "options": [
      {
@@ -180,6 +194,47 @@
      {
       "value": "3",
       "label": "3 columns"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     },
+     "or",
+     {
+      "setting": "show_legend",
+      "label": "Show legend",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is_not",
+      "value": "Image, card at marker"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     },
+     "or",
+     {
+      "setting": "show_legend",
+      "label": "Show legend",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "layout",
+      "label": "Layout",
+      "op": "is_not",
+      "value": "Image, card at marker"
      }
     ]
    },
@@ -425,6 +480,13 @@
     ]
    },
    {
+    "type": "checkbox",
+    "id": "show_legend",
+    "label": "Legende anzeigen",
+    "info": "Nummerierte Liste zum Bild: am Handy darunter, am Desktop nur bei einer Anordnung mit Spalten. Aus: Punkte öffnen überall ihre Karte am Bild – sinnvoll, wenn „Alle Produkte in den Warenkorb“ dieselben Produkte zeigt.",
+    "default": true
+   },
+   {
     "type": "select",
     "id": "layout",
     "label": "Anordnung",
@@ -437,19 +499,26 @@
      },
      {
       "value": "columns_2",
-      "label": "2 Spalten: Bild und Liste"
+      "label": "2 Spalten: Bild und Legende"
      },
      {
       "value": "columns_3",
-      "label": "3 Spalten: Bild über zwei, Liste"
+      "label": "3 Spalten: Bild über zwei, Legende"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_legend",
+      "label": "Legende anzeigen",
+      "op": "on"
      }
     ]
    },
    {
     "type": "select",
     "id": "list_columns",
-    "label": "Spalten der Produktliste",
-    "info": "Gilt für die Liste unter oder neben dem Bild und für „Alle Produkte in den Warenkorb“. Am Handy eine Spalte.",
+    "label": "Spalten der Legende",
+    "info": "Gilt für die Legende neben dem Bild und für die Liste „Alle Produkte in den Warenkorb“. Am Handy eine Spalte.",
     "default": "1",
     "options": [
      {
@@ -463,6 +532,47 @@
      {
       "value": "3",
       "label": "3 Spalten"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     },
+     "or",
+     {
+      "setting": "show_legend",
+      "label": "Legende anzeigen",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is_not",
+      "value": "Bild, Karte am Punkt"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     },
+     "or",
+     {
+      "setting": "show_legend",
+      "label": "Legende anzeigen",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "layout",
+      "label": "Anordnung",
+      "op": "is_not",
+      "value": "Bild, Karte am Punkt"
      }
     ]
    },

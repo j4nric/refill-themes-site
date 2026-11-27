@@ -2,7 +2,7 @@
  "slug": "collection-list",
  "kind": "block",
  "source": "blocks/collection-list.liquid",
- "source_sha1": "3a3027983418",
+ "source_sha1": "f9492364b719",
  "accepts_blocks": false,
  "en": {
   "name": "Collection list",

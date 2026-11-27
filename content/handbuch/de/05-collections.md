@@ -84,6 +84,8 @@ Block **„Kollektion: Produktliste“**:
 
 Neben einer Filterleiste werden Karten nie schmaler als etwa 200 px; bei wenig Platz zeigt das Raster dann eine Spalte weniger als eingestellt.
 
+Am Handy (Liste schmaler als 900 px) stehen die Knöpfe **„Filter“** und **„Sortieren nach“** nebeneinander in einer Zeile, darunter mittig die Zahl der Produkte; „Filter“ öffnet die Filter in einem Panel. Ab 900 px stehen die Filter als Seitenleiste links, die Zahl links und die Sortierung rechts über der Liste.
+
 **Filter** richten Sie in der App **Search & Discovery** ein (Verfügbarkeit, Preis, Produkttyp, Optionen, Metafelder). Farbwerte mit Swatches erscheinen als Farbfelder.
 
 ### Standard-Sortierung
@@ -118,6 +120,7 @@ Gut zu wissen:
 - Ist die Position größer als die Zahl der Produkte, steht die Kachel am Ende.
 - Mit Link ist die ganze Kachel klickbar. Ohne Überschrift, Text und Bild bleibt sie im Shop unsichtbar; im Editor erscheint ein Hinweis.
 - Der Knopf steht wie „In den Warenkorb“ der Produktkarten unter der Fläche: gleiche Höhe, gleicher Stil und auf einer Linie mit den Knöpfen der Karten in derselben Reihe.
+- Kurze Knopftexte wählen: In einer Spalte am Handy (390 px) passen rund 18 Zeichen in eine Zeile, z. B. „Mehr zum Abo“. Längere Texte brechen ausgewogen und zentriert um.
 - Fällt eine Kachel mit 2 Spalten in die letzte Spalte einer Reihe, rückt die nächste Produktkarte in die Lücke. Am Handy hat eine Kachel, die allein in ihrer Reihe steht, mindestens die halbe Rasterbreite als Höhe.
 
 ## Unterkollektionen

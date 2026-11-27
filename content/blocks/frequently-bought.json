@@ -2,7 +2,7 @@
  "slug": "frequently-bought",
  "kind": "block",
  "source": "blocks/frequently-bought.liquid",
- "source_sha1": "3759c3518152",
+ "source_sha1": "91387a6beac5",
  "accepts_blocks": false,
  "en": {
   "name": "Often bought together",
@@ -13,7 +13,7 @@
     "id": "heading",
     "label": "Heading",
     "info": "Text in double square brackets is highlighted, e.g. [[refill]].",
-    "default": "Frequently bought together"
+    "default": "Pairs well with"
    },
    {
     "type": "text",
@@ -107,7 +107,7 @@
     "id": "heading",
     "label": "Überschrift",
     "info": "Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
-    "default": "Häufig zusammen gekauft"
+    "default": "Passt gut dazu"
    },
    {
     "type": "text",

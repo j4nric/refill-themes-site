@@ -55,7 +55,7 @@
     "type": "checkbox",
     "id": "show_subtitle",
     "label": "Show subtitle",
-    "info": "Uses the metafield set in Theme settings → Product data.",
+    "info": "Uses the metafield set in Theme settings › Product data.",
     "default": true,
     "visible_if": [
      {
@@ -118,7 +118,7 @@
     "type": "checkbox",
     "id": "show_subtitle",
     "label": "Unterzeile anzeigen",
-    "info": "Nutzt das Metafeld aus Theme-Einstellungen → Produktdaten.",
+    "info": "Nutzt das Metafeld aus Theme-Einstellungen › Produktdaten.",
     "default": true,
     "visible_if": [
      {

@@ -2,7 +2,7 @@
  "slug": "image",
  "kind": "block",
  "source": "blocks/image.liquid",
- "source_sha1": "ae9a9455f5a1",
+ "source_sha1": "2c0fc3aee225",
  "accepts_blocks": false,
  "en": {
   "name": "Image",

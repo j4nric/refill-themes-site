@@ -19,7 +19,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafield",
-    "info": "Format namespace.key, e.g. custom.care (Settings → Custom data). If empty, the text below is shown."
+    "info": "Format namespace.key, e.g. custom.care (Settings › Custom data). If empty, the text below is shown."
    },
    {
     "type": "select",
@@ -114,7 +114,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafeld",
-    "info": "Format namespace.schlüssel, z. B. custom.care (Einstellungen → Benutzerdefinierte Daten). Ist es leer, erscheint der Text unten."
+    "info": "Format namespace.schlüssel, z. B. custom.care (Einstellungen › Benutzerdefinierte Daten). Ist es leer, erscheint der Text unten."
    },
    {
     "type": "select",

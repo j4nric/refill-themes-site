@@ -52,7 +52,7 @@ With a subscription selected, the timeline shows “Next deliveries” as points
 |---|---|---|
 | Today | “Today – Ordered” | – |
 | First delivery | “by Nov 25 – With you” | The same date as the “Delivery date” block (cut-off, processing time, transit time, product delivery time), see [Product page](06-product-page.md#delivery-date) |
-| Following deliveries | “Dec 24 – Delivery 2”, “Jan 23 – Delivery 3” | The selected plan's interval |
+| Following deliveries | “Dec 26 – Delivery 2”, “Jan 25 – Delivery 3” | Order date plus the selected plan's interval – the way the subscription app triggers follow-up orders, and the same as in the cart |
 
 Below it reads “Then every 30 days. Change or cancel in your account.” If there's no “Delivery date” block on the page, the timeline counts deliveries from today. The dates are a preview based on the plan's interval; the dates in your subscription app are binding. Without JavaScript the timeline shows the dates counted from today.
 
@@ -67,9 +67,9 @@ If **“Quick add on product cards”** is on:
 
 ## 6. Subscriptions in the cart
 
-- Subscription items show the plan name and, below it, a short delivery timeline with the next dates, e.g. “Today · Dec 21 · Jan 20” (from the plan's interval; without a recognizable interval it is left out).
+- Subscription items show the plan name and, below it, a short delivery timeline with the next dates and what they mean, e.g. “Today – Ordered · Dec 26 – Delivery 2 · Jan 25 – Delivery 3”. The dates are counted from the order date, as on the product page (without a recognizable interval the timeline is left out).
 - The price without the subscription is struck through next to the subscription price, so the saving stays visible.
-- Items **without** a subscription whose product has a plan offer a switch: “Subscribe and save 10 % (Subscribe & save)” or “Switch to subscription: Subscribe & save”. One click moves the item to the first plan.
+- Items **without** a subscription whose product has a plan offer a switch: short, with an icon, “Subscribe and save 10%” or “Switch to subscription”. With one plan for the variant, one click moves the item to it (only screen readers hear the plan name). With several plans the hint opens a list of the plans with plan name and saving (the first is selected; long names wrap and stay fully readable on phones), and “Apply” switches; if the savings differ, the hint reads “Subscribe and save up to 15%”. Without JavaScript it leads to the product page.
 - Dynamic checkout buttons (PayPal, Apple Pay, Shop Pay) are hidden on product pages with subscriptions because they cannot handle subscriptions.
 
 ## 7. Link the customer portal

@@ -36,7 +36,7 @@
     "type": "select",
     "id": "direction",
     "label": "Direction",
-    "info": "Automatic: a width in a “Side by side” group, otherwise a height.",
+    "info": "Automatic: a width in a “Side by side” group, otherwise a height. “Horizontal (width)” only works in a “Side by side” group.",
     "default": "auto",
     "options": [
      {
@@ -87,7 +87,7 @@
     "type": "select",
     "id": "direction",
     "label": "Richtung",
-    "info": "Automatisch: in einer Gruppe „Nebeneinander“ als Breite, sonst als Höhe.",
+    "info": "Automatisch: in einer Gruppe „Nebeneinander“ als Breite, sonst als Höhe. „Horizontal (Breite)“ wirkt nur in einer Gruppe „Nebeneinander“.",
     "default": "auto",
     "options": [
      {

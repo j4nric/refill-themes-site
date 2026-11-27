@@ -42,7 +42,7 @@ Work in the unpublished copy first. Publish the theme once you have completed th
 ### Logo and favicon
 
 1. Theme editor → **“Header”** section → **“Logo”** block.
-2. Upload your logo under **“Logo image”** and set its size with **“Logo width”**. Without an image, the store name is shown.
+2. Upload your logo under **“Logo image”** and set its size with **“Logo height on desktop”** (from a window width of 990 px) and **“Logo height on mobile”** (below that, including tablets); the width follows the aspect ratio. If **“Size logo by”** is set to “Width (previous)”, **“Logo width”** applies instead. Without an image, the store name is shown.
 3. **Theme settings** (gear icon) → **“Layout”** → **“Favicon”**: square image, at least 180 × 180 px. The favicon appears in the browser tab, bookmarks and history (32 × 32 px) and on phone home screens. Simple shapes stay recognizable best at that size.
 4. Optional, in the “Logo” block under **“On scroll”**: **“Logo size when sticky”** and **“Separate logo when sticky”**, see [Header and navigation](04-header.md#logo-and-scroll-behavior).
 
@@ -118,7 +118,11 @@ Set how the tertiary button looks under **Theme settings → “Buttons”**: **
 
 Images and featured content in the mega menu, image tiles in the mobile menu, search, country and language, and how the header behaves on scroll are covered in [Header and navigation](04-header.md).
 
-Under **Theme settings → “Layout”**, **Show “Back to top” button** adds a button that returns to the top of long pages. Below it: **“Color”** (“Scheme: outline” as before, “Scheme: accent” or a brand color as a fill with black or white text), **“Font”** (data, heading or body font; only the data font is set in uppercase), **“Bold”** and **“Size”** (S, M, L).
+### “Back to top” button
+
+Under **Theme settings → “Layout”**, **Show “Back to top” button** adds a button that returns to the top of long pages. Below it: **“Display”** (“Icon”: a square with an arrow, tap target at least 44 px, covers the least content; “Icon and text”; or “Icon on phones, icon and text on desktop” – screen readers always announce “Back to top”), **“Color”** (“Scheme: outline” as before, “Scheme: accent” or a brand color as a fill with black or white text), **“Font”** (data, heading or body font; only the data font is set in uppercase), **“Bold”** and **“Size”** (S, M, L).
+
+The button moves out of the way of fixed bars: it sits above the sticky buy bar, the compare bar and the cookie banner while they are visible. On the product page on phones, it only appears together with the sticky buy bar (above it), so it never covers prices in the buy area.
 
 ### Announcement bar
 
@@ -150,7 +154,7 @@ In the **“Footer”** section itself, **“Column headings”** controls how t
 
 ### Customer address form
 
-**Theme settings → “Language and text” → “Customer address form”** sets how the theme’s texts address your customers: **“Informal (du/tu)”** (default) or **“Formal (Sie/vous/Lei/usted)”**. It applies to every language with a polite form – German (du/Sie), French (tu/vous), Italian (tu/Lei), Spanish (tú/usted). English is unaffected. It covers sentences such as “Dein Warenkorb ist leer.” / “Ihr Warenkorb ist leer.”, the confirmations after the contact form, newsletter sign-up and comments, and the messages in search, the delivery timeline and back-in-stock alerts.
+**Theme settings → “Language and text” → “Customer address form”** sets how the theme’s texts address your customers: **“Informal (du/tu)”** (default) or **“Formal (Sie/vous/Lei/usted)”**. It applies to every theme language with a polite form – German (du/Sie), French (tu/vous), Italian (tu/Lei), Spanish (tú/usted), Dutch (je/u), Polish, Czech (ty/vy) and Portuguese. English and the Nordic languages (Danish, Finnish, Swedish) are unaffected. It covers sentences such as “Dein Warenkorb ist leer.” / “Ihr Warenkorb ist leer.”, the confirmations after the contact form, newsletter sign-up and comments, and the messages in search, the delivery timeline and back-in-stock alerts.
 
 Texts you enter yourself in sections and blocks (headings, paragraphs, button labels) are not changed. Some templates and new blocks start with sample texts in the informal form, for example “Abo nach deinem Takt”, “10 % auf deine erste Bestellung”, “Stell dein Set zusammen”, “Das könnte dir auch gefallen” or “Bist du mindestens 18 Jahre alt?”. Adjust them in the editor if you use the formal form. If you edit storefront texts under Online Store → Themes → … → **Edit default theme content**, the formal versions are listed under **“Sections › Formal”**.
 

@@ -1,12 +1,99 @@
 # Änderungsprotokoll
 
-Versionen nach Semantic Versioning. Ab der ersten veröffentlichten Version werden Einstellungen und Block-Typen nicht umbenannt oder entfernt, nur ergänzt – Ihre Anpassungen bleiben bei Updates erhalten.
+Versionen nach Semantic Versioning. Ab Version 1.0.0 werden Einstellungen und Block-Typen nicht mehr umbenannt, entfernt oder in ihrer Bedeutung geändert, nur ergänzt – Ihre Anpassungen bleiben bei Updates erhalten. Bis dahin steht jede Änderung, die das Aussehen eines bestehenden Shops verändern kann, hier unter **„Bitte prüfen“** bzw. **„Geändert“**, mit dem Schritt, der das bisherige Aussehen zurückholt.
 
 ## 0.9.0 – November 2026
 
 Erste vollständige Fassung aller Seiten und Kernfunktionen.
 
+### 27. November 2026
+
+Editor-Erlebnis und Abwärtskompatibilität (unabhängiges Review vom 27. November).
+
+**Bitte prüfen**
+- **Ausrichtung von Text, Überschrift, Linien-Grafik, Linien-Animation, Zähler-Leiste und Dekor (im Inhalt):** Die Einstellung heißt jetzt **„Ausrichtung der Gruppe übernehmen“** und wirkt nur noch, wenn der Block in einer Gruppe steht. Blöcke direkt im Abschnitt, in Spalten, Tabs oder Karussell zeigen wieder ihre eigene Ausrichtung – so wie vor dem 25. November. Eine Überschrift, die Sie früher mittig gestellt hatten, steht dort also wieder mittig. **In einer Gruppe** folgen diese Blöcke weiter der Gruppe, auch wenn sie vor dem 25. November angelegt wurden. Stand ein solcher Block bewusst anders als seine Gruppe (z. B. eine mittige Überschrift oder eine mittige Linien-Grafik in einer linksbündigen Gruppe), nehmen Sie den Haken „Ausrichtung der Gruppe übernehmen“ heraus; Ihre eigene Ausrichtung ist gespeichert und gilt dann wieder. Die eigene Ausrichtung ist jetzt immer sichtbar. Siehe [Gruppe und Spalten](03-sections-and-blocks.md#gruppe-und-spalten).
+- **Linke Gruppe in einer mittigen oder rechten Gruppe:** Mehrzeiliger Text darin steht jetzt links (vorher erbte er die Mitte der äußeren Gruppe).
+
+**Neu**
+- **Zähler-Leiste:** eigene Ausrichtung auch „Am Ende“.
+- **Laufband:** Geschwindigkeit „Schnell“ wie bei der Logo-Leiste.
+- **Dekor:** Mit „Nur Desktop“ oder „Nur Handy“ zeigt der Theme-Editor in der anderen Vorschau einen Hinweis statt nichts. Neuer Handbuch-Abschnitt [Block „Dekor“](08-animation.md#linien-grafik-und-dekor).
+- **Kachel-Hintergrund mit eigener Farbe:** Die Schrift in der Kachel wird automatisch Schwarz oder Weiß, je nachdem, was besser lesbar ist.
+
+**Geändert**
+- **Editor:** „Icon mit Text“ mit Überschriften Icon, Inhalt, Anordnung und Kachel; „Bild mit Markierungen“ sagt durchgehend „Legende“ („Spalten der Legende“ erscheint nur, wo es wirkt); Dekor blendet Motiv, Strichstärke, Spiegeln und Wiederholungen bei eigener Grafik aus; Gruppe „Nebeneinander“ mit „Volle Breite nutzen“ behandelt die ausgeblendete Ausrichtung als „links“. Info-Texte nennen wieder, dass ein Pflicht-Liefertermin die Express-Bezahlknöpfe und „Jetzt kaufen“ ausblendet, was „Hover und Buttons“ tut, wie das Karussell automatisch weiterblättert und dass die Sprachwahl in der Ankündigungsleiste die Section „Ankündigungsleiste“ braucht.
+
+**Nachgetragen (seit 25./26. November, bisher nicht genannt)**
+- **Scroll-Story:** Ohne eigene Einstellung wechseln die Folien jetzt „auf einmal“ statt fließend, und die Seite rastet auf ganzen Folien ein. Wer das bisherige Verhalten möchte, wählt im Abschnitt unter „Wechsel“ „Mit dem Scrollen“ und nimmt „An Folien einrasten“ heraus.
+- **Tabs:** Der Abstand unter dem Text und zwischen Blöcken im Tab ist größer (Standard „mittel“ statt „klein“); einstellbar je Tab unter „Abstand nach unten“.
+- **Leerraum in einer Gruppe „Nebeneinander“:** wird automatisch zum waagerechten Abstand (vorher Höhe). Für die alte Wirkung „Richtung“ auf „Vertikal (Höhe)“ stellen.
+
 ### 26. November 2026
+
+Prüfdurchgang der Demo-Shops (Handy und Desktop, Chrome und Safari).
+
+**Geändert**
+- **Warenkorb:** Die kurze Lieferzeitleiste bei Abo-Positionen benennt die Punkte („Bestellt“, „2. Lieferung“, „3. Lieferung“) und rechnet wie die Produktseite ab dem Bestelltag. Bei mehreren Abo-Plänen stehen die Pläne als Liste untereinander, Intervall und Rabatt bleiben am Handy ganz lesbar. Siehe [Abo](10-subscriptions.md#6-abo-im-warenkorb).
+- **Lieferzeitleiste der Produktseite:** 2. und 3. Lieferung ab dem Bestelltag plus Intervall (vorher ab der ersten Ankunft) – dieselben Termine wie im Warenkorb.
+- **Button „Nach oben“:** auf der Produktseite am Handy erst zusammen mit der fixierten Kaufleiste, damit er im Kaufbereich keine Preise verdeckt.
+- **Tabs:** Passen die Reiter nicht in die Breite, laufen sie am Rand in einem Verlauf aus – man sieht, dass die Leiste weiterscrollt.
+- **Seitennavigation** (Zurück, Seitenzahlen, Weiter) jetzt überall gestaltet: Schnellbestellung, Blog, Kommentare.
+- **Zahlen mit Einheit** („300 ml“, „etwa 15 g“) brechen in Kaufleiste, Vergleichstabelle, Kennzahlen und Warenkorb nicht mehr um.
+- **Filter am Handy:** „Ergebnisse anzeigen“ und „Alle zurücksetzen“ einzeilig; passen sie nicht nebeneinander, steht der Link darunter.
+- **Video-Reels:** Weniger Reels als Plätze je Ansicht stehen mittig statt mit leerer Spalte.
+- **Suche:** In Safari kein zweites Löschsymbol neben dem Schließen-Kreuz; Einfügefeld der Schnellbestellung mit 16 px (kein Zoom auf dem iPhone).
+
+Rückmeldungen vom Handy (Runde Z, Warenkorb und Produktlisten mit Häkchen).
+
+**Neu**
+- **Bild mit Markierungen:** **„Legende anzeigen“** (Standard an). Aus: keine nummerierte Liste, die Punkte öffnen ihre Karte auch am Handy am Bild. Siehe [Abschnitte und Blöcke](03-sections-and-blocks.md).
+- **Warenkorb:** Bietet ein Produkt mehrere Abo-Pläne, wählt man den Plan vor dem Wechsel aus (kompakte Auswahl mit Ersparnis, „Übernehmen“). Siehe [Abo](10-subscriptions.md#6-abo-im-warenkorb).
+
+**Geändert**
+- **„Häufig zusammen gekauft“ und „Alle Produkte in den Warenkorb“:** größere Bilder, Bild und Titel führen zum Produkt, Preis unten rechts, kompaktere Variantenwahl.
+- **Bild mit Markierungen:** Legende ohne „Ansehen“ – der ganze Eintrag ist ein Link.
+
+Rückmeldungen vom Handy (Runde Y2, Kollektion und Produktseite).
+
+**Neu**
+- **Profil-Skalen:** **„Skalenbreite“** (Automatisch, Schmal, Volle Breite). Punkte verteilen sich über die Skala, der erste und der letzte Punkt stehen über den Beschriftungen der Enden („Mild“ – „Herb“). Siehe [Produktdaten](09-product-data.md#profil-skalen).
+
+**Geändert**
+- **Kollektion am Handy:** „Filter“ und „Sortieren nach“ stehen nebeneinander, darunter mittig die Zahl der Produkte. Auf großen Bildschirmen unverändert.
+- **Brecher-Kachel:** lange Knopftexte brechen ausgewogen und zentriert um.
+- **Abholung im Geschäft:** „Abholbereit in“ mit Linie und mehr Abstand zur Zeile darüber; Text und Abholzeit laufen als ein Absatz.
+- **Fixierte Kaufleiste:** mehr Innenabstand unten (auch für den sicheren Bereich des iPhones).
+Rückmeldungen vom Handy (Runde Y, Abstände und Darstellung).
+
+**Geändert**
+- **Hintergrundvideo:** Startet der Browser das Video nicht von selbst (z. B. iPhone im Stromsparmodus), erscheint der Knopf als Abspielknopf und startet es per Tippen. Der eigene Start-Knopf von iOS über dem Video ist ausgeblendet. Siehe [Abschnitte und Blöcke](03-sections-and-blocks.md#das-prinzip).
+- **Tabs:** Auf Touch-Geräten verdeckt keine Scrollleiste mehr den Balken unter dem gewählten Reiter; die Reiterleiste bleibt wischbar.
+- **Seiteninhalt und Blogbeitrag:** Zwischenüberschriften im Text bleiben am Handy kleiner als der Seitentitel.
+- **Aufzählungen in mittig ausgerichtetem Text** stehen linksbündig; die Liste als Ganzes bleibt mittig.
+Rückmeldungen vom Handy (Runde Y, Warenkorb, Ankündigung, Laufband).
+
+**Neu**
+- **Laufband und Logo-Leiste:** Der Pause-Knopf ist jetzt ein Symbol; Theme-Einstellungen → „Animation“ → „Laufband“ → „Schalter zum Anhalten“ (Symbol oder Text).
+
+**Behoben**
+- **Laufband und Logo-Leiste** liefen nach „Anhalten“ und „Abspielen“ nicht weiter.
+- **Ankündigungsleiste** ließ sich am Handy senkrecht verschieben. Mit Gutscheincode ist sie wieder zwei- statt dreizeilig: „Kopieren“ ist ein Symbol.
+
+**Geändert**
+- **Warenkorb:** Bei „Punkt ohne Zahl“ steht hinter „Warenkorb“ (Drawer, Warenkorbseite) jetzt eine Blase mit der Anzahl. Der Abo-Hinweis ist kurz mit Symbol („Als Abo bestellen“), die Geschenkoptionen sind aufklappbar.
+Rückmeldungen vom Handy (Runde Y, Listen und kleine Blöcke).
+
+**Neu**
+- **Logo-Leiste:** **„Ausrichtung“** links, mittig (Standard) oder rechts.
+- **Icon mit Text:** Richtung **„Icon neben Überschrift, Text darunter“**.
+
+**Geändert**
+- **Set zusammenstellen** und **Schnellbestellliste:** am Handy eine kompakte Zeile Bild – Name und Preis – Menge mit größerem Bild; die Schnellbestellliste zeigt den Preis nur einmal (auch bei Gutschein-Nennwerten).
+- **Termine:** Uhrzeit auf einer Linie mit dem Datum; im Kalender ist der ganze Tag mit Termin antippbar und springt zum Eintrag.
+
+**Behoben**
+- **Schnellbestellliste** mit Quelle Kollektion: Fehlermeldung „not paginateable“ statt der Seitennavigation.
+- **Logo-Leiste:** Logos am iPhone nicht mittig.
 
 Rückmeldungen aus dem Theme-Editor (Runde X, Editor-Komfort).
 
@@ -46,7 +133,7 @@ Rückmeldungen aus dem Theme-Editor (Runde W).
 **Geändert**
 - „Jetzt kaufen“ erscheint ohne eigene Einstellung als Umriss statt im Shopify-Standard, damit „In den Warenkorb“ der auffälligste Knopf bleibt.
 - „Hover und Buttons“ (Theme-Einstellungen → „Animation“) wirkt jetzt auch auf Primär-Buttons wie „In den Warenkorb“: Die Fläche läuft beim Überfahren ein.
-- „Linien-Grafik“, „Linien-Animation“, „Zähler-Leiste“ und „Dekor“ (im Inhalt), die Sie vor diesem Update angelegt haben, folgen jetzt der Ausrichtung der Gruppe. Stand ein solcher Block bewusst anders als seine Gruppe (z. B. eine Linien-Grafik mittig in einer linksbündigen Gruppe), nehmen Sie den Haken „Ausrichtung wie Gruppe“ heraus. Die Vorlagen der Stile sind angepasst.
+- „Linien-Grafik“, „Linien-Animation“, „Zähler-Leiste“ und „Dekor“ (im Inhalt), die Sie vor diesem Update angelegt haben, folgen jetzt der Ausrichtung der Gruppe. Stand ein solcher Block bewusst anders als seine Gruppe (z. B. eine Linien-Grafik mittig in einer linksbündigen Gruppe), nehmen Sie den Haken „Ausrichtung wie Gruppe“ heraus. Die Vorlagen der Stile sind angepasst. (Seit 27. November gilt das nur noch in Gruppen, siehe dort.)
 - Die Demo-Shops zeigen Beispiel-Bewertungen, damit die Sterne an Karten und Produktseite sichtbar sind.
 
 **Entfernt**

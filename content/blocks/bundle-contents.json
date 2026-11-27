@@ -22,14 +22,14 @@
     "type": "text",
     "id": "reference_metafield",
     "label": "Metafield: products in the bundle",
-    "info": "Variant metafield in the format namespace.key. Find it under Settings → Custom data → Variants.",
+    "info": "Variant metafield in the format namespace.key. Find it under Settings › Custom data › Variants.",
     "default": "custom.component_reference"
    },
    {
     "type": "text",
     "id": "quantity_metafield",
     "label": "Metafield: quantities",
-    "info": "Variant metafield in the format namespace.key. Find it under Settings → Custom data → Variants.",
+    "info": "Variant metafield in the format namespace.key. Find it under Settings › Custom data › Variants.",
     "default": "custom.component_quantities"
    }
   ]
@@ -52,14 +52,14 @@
     "type": "text",
     "id": "reference_metafield",
     "label": "Metafeld: Produkte im Bundle",
-    "info": "Varianten-Metafeld im Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten → Varianten.",
+    "info": "Varianten-Metafeld im Format namespace.schlüssel. Zu finden unter Einstellungen › Benutzerdefinierte Daten › Varianten.",
     "default": "custom.component_reference"
    },
    {
     "type": "text",
     "id": "quantity_metafield",
     "label": "Metafeld: Mengen",
-    "info": "Varianten-Metafeld im Format namespace.schlüssel. Zu finden unter Einstellungen → Benutzerdefinierte Daten → Varianten.",
+    "info": "Varianten-Metafeld im Format namespace.schlüssel. Zu finden unter Einstellungen › Benutzerdefinierte Daten › Varianten.",
     "default": "custom.component_quantities"
    }
   ]

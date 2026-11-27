@@ -27,7 +27,7 @@
     "type": "text",
     "id": "parent_metafield",
     "label": "Metafield: parent collection",
-    "info": "Product metafield of type collection, format namespace.key. Create the definition in Settings → Custom data → Products.",
+    "info": "Product metafield of type collection, format namespace.key. Create the definition in Settings › Custom data › Products.",
     "default": "custom.breadcrumb_collection"
    }
   ]
@@ -55,7 +55,7 @@
     "type": "text",
     "id": "parent_metafield",
     "label": "Metafeld: Eltern-Kollektion",
-    "info": "Produkt-Metafeld vom Typ Kollektion, Format namespace.schlüssel. Definition anlegen unter Einstellungen → Benutzerdefinierte Daten → Produkte.",
+    "info": "Produkt-Metafeld vom Typ Kollektion, Format namespace.schlüssel. Definition anlegen unter Einstellungen › Benutzerdefinierte Daten › Produkte.",
     "default": "custom.breadcrumb_collection"
    }
   ]

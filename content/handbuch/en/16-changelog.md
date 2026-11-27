@@ -1,12 +1,99 @@
 # Changelog
 
-Versions follow semantic versioning. From the first published version on, settings and block types are never renamed or removed, only added – your customizations are kept when you update.
+Versions follow semantic versioning. From version 1.0.0 on, settings and block types are never renamed, removed or changed in meaning, only added – your customizations are kept when you update. Until then, every change that can alter the look of an existing store is listed here under **“Please check”** or **“Changed”**, with the step that restores the previous look.
 
 ## 0.9.0 – November 2026
 
 First complete version of all pages and core features.
 
+### November 27, 2026
+
+Editor experience and backward compatibility (independent review of November 27).
+
+**Please check**
+- **Alignment of text, heading, line art, line animation, counter bar and decoration (in content):** the setting is now called **“Use group alignment”** and only has an effect when the block sits in a group. Blocks directly in a section, in columns, tabs or a carousel show their own alignment again – as before November 25. A heading you had centered earlier is centered there again. **Inside a group** these blocks keep following the group, even if they were created before November 25. If such a block was deliberately aligned differently from its group (e.g. a centered heading or centered line art in a left-aligned group), uncheck “Use group alignment”; your own alignment is saved and applies again. The block’s own alignment is now always visible. See [Group and columns](03-sections-and-blocks.md#group-and-columns).
+- **Left group inside a centered or right group:** multi-line text in it now sits on the left (it used to inherit the outer group’s centering).
+
+**New**
+- **Counter bar:** own alignment can also be “End”.
+- **Scrolling text:** speed “Fast”, as in the logo list.
+- **Decoration:** with “Desktop only” or “Mobile only”, the theme editor shows a note in the other preview instead of nothing. New manual section [“Decoration” block](08-animation.md#line-art-and-decoration).
+- **Tile background with a custom color:** the text in the tile automatically turns black or white, whichever is easier to read.
+
+**Changed**
+- **Editor:** “Icon with text” has the headings Icon, Content, Arrangement and Tile; “Shoppable image” consistently says “legend” (“Legend columns” only appears where it has an effect); decoration hides motif, stroke width, mirroring and repeats for your own graphic; a “Side by side” group with “Use full width” treats the hidden alignment as “left”. Info texts again say that a required delivery date hides express checkout buttons and “Buy it now”, what “Hover and buttons” does, how the carousel advances automatically and that the language selector in the announcement bar needs the “Announcement bar” section.
+
+**Added to the record (since November 25/26, not listed before)**
+- **Scroll story:** without a setting of their own, slides now switch “at once” instead of smoothly, and the page snaps to whole slides. For the previous behavior, choose “With scrolling” under “Slide change” in the section and uncheck “Snap to slides”.
+- **Tabs:** the space below the text and between blocks in a tab is larger (default “medium” instead of “small”); adjustable per tab under “Bottom spacing”.
+- **Spacer in a “Side by side” group:** automatically becomes horizontal space (previously height). For the old effect, set “Direction” to “Vertical (height)”.
+
 ### November 26, 2026
+
+Review of the demo stores (phone and desktop, Chrome and Safari).
+
+**Changed**
+- **Cart:** the short delivery timeline of subscription items names its points (“Ordered”, “Delivery 2”, “Delivery 3”) and counts from the order date, like the product page. With several subscription plans, the plans are listed one below the other; interval and discount stay fully readable on phones. See [Subscriptions](10-subscriptions.md#6-subscriptions-in-the-cart).
+- **Product page delivery timeline:** deliveries 2 and 3 are the order date plus the interval (before: from the first arrival) – the same dates as in the cart.
+- **“Back to top” button:** on the product page on phones it only appears together with the sticky buy bar, so it never covers prices in the buy area.
+- **Tabs:** if the tabs don't fit the width, they fade out at the edge – it's clear the bar scrolls.
+- **Pagination** (previous, page numbers, next) is now styled everywhere: quick order, blog, comments.
+- **Numbers with units** (“300 ml”, “about 15 g”) no longer break in the sticky buy bar, comparison table, key figures and cart.
+- **Filters on phones:** “Show results” and “Clear all” on one line each; if they don't fit side by side, the link moves below.
+- **Video reels:** fewer reels than slots per view are centered instead of leaving an empty column.
+- **Search:** no second clear icon next to the close cross in Safari; the quick order paste field uses 16 px (no zoom on iPhone).
+
+Feedback from phones (round Z, cart and product lists with checkboxes).
+
+**New**
+- **Shoppable image:** **“Show legend”** (on by default). Off: no numbered list, markers open their card on the image, on phones too. See [Sections and blocks](03-sections-and-blocks.md).
+- **Cart:** if a product has several subscription plans, customers pick the plan before switching (compact choice with saving, “Apply”). See [Subscriptions](10-subscriptions.md#6-subscriptions-in-the-cart).
+
+**Changed**
+- **“Often bought together” and “Add all products to cart”:** larger images, image and title lead to the product, price at the bottom right, more compact variant choice.
+- **Shoppable image:** legend without “View” – the whole entry is a link.
+
+Feedback from phones (round Y2, collection and product page).
+
+**New**
+- **Profile scales:** **“Scale width”** (Automatic, Narrow, Full width). Dots spread across the scale, so the first and last dot sit above the end labels (“Mild” – “Brisk”). See [Product data](09-product-data.md#profile-scales).
+
+**Changed**
+- **Collection on phones:** “Filter” and “Sort by” sit side by side, the product count centered below. Unchanged on large screens.
+- **Promo tile:** long button labels wrap balanced and centered.
+- **Pickup in store:** “Ready for pickup at” gets a rule and more space to the line above; text and pickup time run as one paragraph.
+- **Sticky buy bar:** more padding at the bottom (including the iPhone safe area).
+Feedback from mobile (round Y, spacing and display).
+
+**Changed**
+- **Background video:** If the browser does not start the video on its own (e.g. an iPhone in Low Power Mode), the button appears as a play button and starts it with a tap. The iOS start button over the video is hidden. See [Sections and blocks](03-sections-and-blocks.md#the-principle).
+- **Tabs:** On touch devices, the scrollbar no longer covers the bar under the selected tab; the tab row can still be swiped.
+- **Page content and blog post:** Subheadings in the text stay smaller than the page title on phones.
+- **Lists in centered text** are left-aligned; the list as a whole stays centered.
+Feedback from mobile (round Y, cart, announcement, scrolling text).
+
+**New**
+- **Scrolling text and logo list:** the pause button is now an icon; Theme settings → “Animation” → “Scrolling text” → “Pause button” (icon or text).
+
+**Fixed**
+- **Scrolling text and logo list** did not resume after “Pause” and “Play”.
+- **Announcement bar** could be scrolled vertically on phones. With a discount code it is back to two lines instead of three: “Copy” is an icon.
+
+**Changed**
+- **Cart:** with “Dot without number” the title “Cart” (drawer, cart page) now shows a bubble with the count. The subscription hint is short with an icon (“Switch to subscription”), gift options are collapsible.
+Feedback from mobile (round Y, lists and small blocks).
+
+**New**
+- **Logo list:** **“Alignment”** left, center (default) or right.
+- **Icon with text:** direction **“Icon beside heading, text below”**.
+
+**Changed**
+- **Build a set** and **Quick order list:** on mobile a compact row image – name and price – quantity with a larger image; the quick order list shows the price only once (also for gift card denominations).
+- **Events:** the time sits on one line with the date; in the calendar the whole day with an event is tappable and jumps to the entry.
+
+**Fixed**
+- **Quick order list** with source collection: error “not paginateable” instead of the page navigation.
+- **Logo list:** logos not centered on iPhone.
 
 Feedback from the theme editor (round X, editor comfort).
 
@@ -46,7 +133,7 @@ Feedback from the theme editor (round W).
 **Changed**
 - Without a saved setting, “Buy it now” appears as an outline instead of the Shopify default, so “Add to cart” stays the most prominent button.
 - “Hover and buttons” (Theme settings → “Animation”) now also affects primary buttons such as “Add to cart”: the fill slides in on hover.
-- “Line art”, “Line animation”, “Counter bar” and “Decoration” (in content) blocks created before this update now follow the alignment of their group. If such a block was deliberately aligned differently from its group (e.g. centered line art in a left-aligned group), turn off “Match group alignment”. The templates of the styles have been updated.
+- “Line art”, “Line animation”, “Counter bar” and “Decoration” (in content) blocks created before this update now follow the alignment of their group. If such a block was deliberately aligned differently from its group (e.g. centered line art in a left-aligned group), turn off “Match group alignment”. The templates of the styles have been updated. (Since November 27 this only applies inside groups, see there.)
 - The demo shops show sample reviews so the stars are visible on cards and the product page.
 
 **Removed**

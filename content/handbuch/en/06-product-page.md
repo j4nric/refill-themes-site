@@ -122,7 +122,7 @@ The line is hidden for sold-out variants and pre-orders. Without JavaScript it r
 
 ## Often bought together
 
-The **“Often bought together”** block (category “Product: buying”) shows the product on the page with up to three add-ons. Each row has a checkbox, image, title and price; below are the total and **“Add all”** or **“Add selected”**. One click adds everything in a single step and opens the cart.
+The **“Often bought together”** block (category “Product: buying”) shows the product on the page with up to three add-ons. Each row has a checkbox, image and title (both linked), a compact variant choice and the price at the bottom right; below are the total and **“Add all”** or **“Add selected”**. One click adds everything in a single step and opens the cart.
 
 | Setting | Effect |
 |---|---|
@@ -174,7 +174,7 @@ A link or button opens a window with extra information – a size chart, a dosag
 | Setting | Effect |
 |---|---|
 | “Type” | “General”, “Dosage table” or “Size chart” – sets the label and icon while “Label” is empty. |
-| “Label”, “Window title” | Link text and heading in the window (empty = label). |
+| “Label”, “Window heading” | Link text and heading in the window (empty = label). |
 | “Appearance” | “Text link” or “Button”; “Show icon”. |
 | “Source” | “Text”, “Page” or “Product metafield”. |
 | “Text” | Only with source “Text”: formatted text without tables. |

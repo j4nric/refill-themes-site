@@ -2,7 +2,7 @@
  "slug": "line-art",
  "kind": "block",
  "source": "blocks/line-art.liquid",
- "source_sha1": "e4190442a749",
+ "source_sha1": "f386d84b9b9c",
  "accepts_blocks": false,
  "en": {
   "name": "Line art",
@@ -10,7 +10,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Decorative line motif, e.g. next to images, between columns or under a heading. Scroll motion needs no extra script. With “Reduce motion” the motif stays still and fully drawn."
+    "content": "Decorative line motif, e.g. next to images, between columns or under a heading. Scroll motion needs no extra script. With “Reduce motion” the motif stays still and fully drawn. Freely over or behind the content: “Decoration” block. Moving wave lines: “Line animation”."
    },
    {
     "type": "select",
@@ -185,8 +185,8 @@
    {
     "type": "checkbox",
     "id": "inherit_alignment",
-    "label": "Match group alignment",
-    "info": "Uses the alignment of the group or section. Turn off to choose an alignment of its own. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
+    "label": "Use group alignment",
+    "info": "Only inside a group: the block follows its alignment. Outside a group, or with this off, the block’s own alignment below applies. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
     "default": true
    },
    {
@@ -206,21 +206,6 @@
      {
       "value": "end",
       "label": "Right"
-     }
-    ],
-    "visible_if": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Match group alignment",
-      "op": "off"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Match group alignment",
-      "op": "off"
      }
     ]
    },
@@ -275,7 +260,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Dekoratives Linien-Motiv, z. B. neben Bildern, zwischen Spalten oder unter einer Überschrift. Die Bewegung beim Scrollen braucht kein zusätzliches Skript. Bei „Bewegung reduzieren“ steht das Motiv fertig gezeichnet still."
+    "content": "Dekoratives Linien-Motiv, z. B. neben Bildern, zwischen Spalten oder unter einer Überschrift. Die Bewegung beim Scrollen braucht kein zusätzliches Skript. Bei „Bewegung reduzieren“ steht das Motiv fertig gezeichnet still. Frei über oder hinter dem Inhalt: Block „Dekor“. Wandernde Wellenlinien: „Linien-Animation“."
    },
    {
     "type": "select",
@@ -450,8 +435,8 @@
    {
     "type": "checkbox",
     "id": "inherit_alignment",
-    "label": "Ausrichtung wie Gruppe",
-    "info": "Übernimmt die Ausrichtung der Gruppe oder des Abschnitts. Ohne Haken lässt sich eine eigene Ausrichtung wählen. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
+    "label": "Ausrichtung der Gruppe übernehmen",
+    "info": "Nur in einer Gruppe: Der Block folgt ihrer Ausrichtung. Außerhalb einer Gruppe und ohne Haken gilt die eigene Ausrichtung darunter. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
     "default": true
    },
    {
@@ -471,21 +456,6 @@
      {
       "value": "end",
       "label": "Rechts"
-     }
-    ],
-    "visible_if": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Ausrichtung wie Gruppe",
-      "op": "off"
-     }
-    ],
-    "hidden_by_default": true,
-    "hidden_by": [
-     {
-      "setting": "inherit_alignment",
-      "label": "Ausrichtung wie Gruppe",
-      "op": "off"
      }
     ]
    },

@@ -466,11 +466,11 @@
       "options": [
        {
         "value": "icons",
-        "label": "Symbole"
+        "label": "Icons"
        },
        {
         "value": "icons_text",
-        "label": "Symbole mit Namen"
+        "label": "Icons mit Namen"
        }
       ]
      },

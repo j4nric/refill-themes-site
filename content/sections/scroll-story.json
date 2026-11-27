@@ -319,7 +319,7 @@
    "slug": "_story-slide",
    "kind": "block",
    "source": "blocks/_story-slide.liquid",
-   "source_sha1": "8500edf120a0",
+   "source_sha1": "113cddd3c843",
    "accepts_blocks": false,
    "en": {
     "name": "Slide",

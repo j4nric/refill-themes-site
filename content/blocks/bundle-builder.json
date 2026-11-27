@@ -2,7 +2,7 @@
  "slug": "bundle-builder",
  "kind": "block",
  "source": "blocks/bundle-builder.liquid",
- "source_sha1": "4093ac290f3d",
+ "source_sha1": "4fab3b107680",
  "accepts_blocks": false,
  "en": {
   "name": "Build a set",

@@ -79,7 +79,7 @@ Einzelne Menüpunkte, etwa „Sale“ oder „Neu“, heben Sie farbig hervor. B
 
 - **„Menüpunkte“**: Titel oder Handles, durch Komma getrennt, z. B. `Sale, Neu`. Gilt auf allen Ebenen, am Desktop und im mobilen Menü.
 - **„Farbe der Hervorhebung“**: „Akzent des Farbschemas“, eine Markenfarbe oder „Eigene Farbe“ (Standard; dann **„Farbe“**, leer = Akzentfarbe des Farbschemas).
-- **„Stil der Hervorhebung“**: „Farbe“ (Standard: der Text steht in der Farbe), „Unterstrichen“, „Gestrichelt unterstrichen“ oder „Fett“. Bei den drei letzten bleibt der Text in der Textfarbe, die Linie hat die gewählte Farbe. So unterscheiden Kundinnen und Kunden hervorgehobene Punkte von der aktuellen Seite, die beim Link-Stil „Text“ ebenfalls in der Akzentfarbe steht.
+- **„Stil hervorgehobener Menüpunkte“**: „Farbe“ (Standard: der Text steht in der Farbe), „Unterstrichen“, „Gestrichelt unterstrichen“ oder „Fett“. Bei den drei letzten bleibt der Text in der Textfarbe, die Linie hat die gewählte Farbe. So unterscheiden Kundinnen und Kunden hervorgehobene Punkte von der aktuellen Seite, die beim Link-Stil „Text“ ebenfalls in der Akzentfarbe steht.
 - **„Badge-Text“**: optional, z. B. „Neu“; erscheint als kleines Badge mit Rahmen neben dem Menüpunkt.
 
 ### Darstellung am Desktop
@@ -100,7 +100,7 @@ Bildkacheln mit Titel, Text und Link, z. B. für Kategorien oder eine Aktion:
 
 Die Bilder erscheinen nur im mobilen Menü, nicht im Mega-Menü am Desktop. Ein „Bild“ ohne Bilddatei erscheint als Textkachel mit Titel und Text.
 
-**„Land und Sprache im Menü“** legt fest, was am Ende des mobilen Menüs steht: „Land und Sprache“, „Nur Land/Region“, „Nur Sprache“ oder „Aus“.
+**„Land und Sprache im Menü“** legt fest, was am Ende des mobilen Menüs steht: „Land und Sprache“, „Nur Land/Region“, „Nur Sprache“ oder „Aus“. Stehen Land und Sprache in der Ankündigungsleiste, ist das mobile Menü unter 990 px Breite der einzige Ort für die Auswahl – dann nicht „Aus“ wählen.
 
 ## Suche
 
@@ -167,7 +167,7 @@ Abschnitt **„Ankündigungsleiste“** über der Kopfzeile. Jeder Block **„An
 |---|---|
 | „Text“ | Hinweis, z. B. „Kostenloser Versand ab 49 €“. |
 | „Link“ | macht die Zeile zum Link, mit Pfeil. |
-| „Gutscheincode“ | zeigt den Code als Marke mit dem Knopf **„Kopieren“**. Nach dem Klick steht „Kopiert“ im Knopf; Kundinnen und Kunden fügen den Code an der Kasse ein. |
+| „Gutscheincode“ | zeigt den Code als Marke mit einem Kopieren-Symbol (Screenreader: „Gutscheincode … kopieren“). Nach dem Klick erscheint ein Haken; Kundinnen und Kunden fügen den Code an der Kasse ein. |
 
 **Gutscheincode einrichten:**
 

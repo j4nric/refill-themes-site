@@ -33,7 +33,7 @@
    "slug": "_announcement",
    "kind": "block",
    "source": "blocks/_announcement.liquid",
-   "source_sha1": "4b9066b8ffb2",
+   "source_sha1": "b71a89f733be",
    "accepts_blocks": false,
    "en": {
     "name": "Announcement",

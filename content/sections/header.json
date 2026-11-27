@@ -2,7 +2,7 @@
  "slug": "header",
  "kind": "section",
  "source": "sections/header.liquid",
- "source_sha1": "784550bbb305",
+ "source_sha1": "1ec0943cfe1a",
  "accepts_blocks": true,
  "en": {
   "name": "Header",
@@ -473,7 +473,7 @@
    "slug": "_header-logo",
    "kind": "block",
    "source": "blocks/_header-logo.liquid",
-   "source_sha1": "cf28b8a20f39",
+   "source_sha1": "435639f8b9c3",
    "accepts_blocks": false,
    "en": {
     "name": "Logo",
@@ -524,6 +524,7 @@
       "type": "range",
       "id": "logo_height_mobile",
       "label": "Logo height on mobile",
+      "info": "Below a window width of 990 px, including tablets.",
       "default": 28,
       "min": 16,
       "max": 80,
@@ -673,6 +674,7 @@
       "type": "range",
       "id": "logo_height_mobile",
       "label": "Logo-Höhe Handy",
+      "info": "Unter 990 px Fensterbreite, also auch auf Tablets.",
       "default": 28,
       "min": 16,
       "max": 80,
@@ -2219,7 +2221,7 @@
      {
       "type": "select",
       "id": "highlight_style",
-      "label": "Stil der Hervorhebung",
+      "label": "Stil hervorgehobener Menüpunkte",
       "info": "Unterstrichen, gestrichelt oder fett unterscheidet hervorgehobene Menüpunkte von der aktuellen Seite. Die Linie hat die gewählte Farbe, der Text bleibt in der Textfarbe.",
       "default": "color",
       "options": [
@@ -2807,7 +2809,7 @@
    "slug": "_header-actions",
    "kind": "block",
    "source": "blocks/_header-actions.liquid",
-   "source_sha1": "13008df78dc5",
+   "source_sha1": "975581fc163c",
    "accepts_blocks": false,
    "en": {
     "name": "Search, account, cart",
@@ -2978,7 +2980,7 @@
       "type": "select",
       "id": "localization_style",
       "label": "Style",
-      "info": "Default: one button with short codes that opens country and language side by side. “In the announcement bar” needs the “Announcement bar” section in the header; if it is missing or hidden, the default style is shown. On mobile the selection is always in the mobile menu.",
+      "info": "Default: one button with short codes that opens country and language side by side. “In the announcement bar” needs the “Announcement bar” section in the header; if it is missing or hidden, the default style is shown. On mobile the selection is always in the mobile menu. [Learn more](https://refill-themes.com/docs/sections/header/#header-actions-localization_style)",
       "default": "dropdown",
       "options": [
        {
@@ -3331,7 +3333,7 @@
       "type": "select",
       "id": "localization_style",
       "label": "Darstellung",
-      "info": "Standard: ein Knopf mit Kürzeln, Land und Sprache nebeneinander in einer Liste. „In der Ankündigungsleiste“ braucht die Section „Ankündigungsleiste“ in der Kopfzeile; fehlt sie oder ist sie ausgeblendet, erscheint die Standard-Darstellung. Am Handy steht die Auswahl immer im mobilen Menü.",
+      "info": "Standard: ein Knopf mit Kürzeln, Land und Sprache nebeneinander in einer Liste. „In der Ankündigungsleiste“ braucht die Section „Ankündigungsleiste“ in der Kopfzeile; fehlt sie oder ist sie ausgeblendet, erscheint die Standard-Darstellung. Am Handy steht die Auswahl immer im mobilen Menü. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections/header/#header-actions-localization_style)",
       "default": "dropdown",
       "options": [
        {

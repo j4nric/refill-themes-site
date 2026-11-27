@@ -76,6 +76,35 @@ The **“Line art”** block and every section’s **“Decoration”** group sh
 - Current browsers (Chrome, Edge, Safari 26 and later) animate the motifs without an extra script. Other browsers load a small script that only works while a motif is visible.
 - The settings under “Theme settings → Animation” do not apply here: choosing a scroll behavior switches the motion on deliberately.
 
+### Which block to use
+
+Three blocks use the same 13 motifs:
+
+- **“Line art”** sits in the content like an image (for example under a heading or between columns) and takes up space.
+- **“Decoration”** lies freely over or behind the area it is placed in and shifts nothing – or, with “In content”, sits in the flow like line art. Instead of a motif it can show your own graphic.
+- **“Line animation”** shows wave lines that move sideways while scrolling (its own motion, no motif choice).
+
+For a motif behind a whole section, the section’s **“Decoration”** group is enough (see [Sections and blocks](03-sections-and-blocks.md#the-principle)).
+
+### “Decoration” block
+
+The **“Decoration”** block (category “Media”) places a line motif or your own graphic in a section, group or column. It is purely decorative: screen readers skip it and it does not catch clicks.
+
+| Setting | Effect |
+|---|---|
+| **“Motif”** | One of the line motifs. Hidden as soon as an own graphic is selected. |
+| **“Own graphic”** | SVG or PNG from “Files”, replaces the motif. **“Show graphic in the selected color”** tints it in “Color” (for single-color graphics with a transparent background). Stroke width, mirroring and repeats have no effect on own graphics and are hidden then; of the motions only “Drift” and “Rotate” apply, the others stay still. |
+| **“Placement”** | **“Free”**: the decoration lies over or behind the area the block sits in (section, group or column) and shifts nothing. **“Horizontal”** and **“Vertical”** set the position in percent of that area; anything reaching past the edge is cut off. **“In content”**: the decoration takes up space like line art and sits between the other blocks. |
+| **“Layer”** | “Free” only: **“Behind the content”** (default) or **“In front of the content”**. In front it can cover text – use it sparingly and with low “Opacity”. |
+| **“Use group alignment”**, **“Alignment”** | “In content” only, as described under [Group and columns](03-sections-and-blocks.md#group-and-columns). |
+| **“Size”**, **“Size on mobile”** | Width in percent of the area. “Mobile” here means a window narrower than 750 px, regardless of the column width. |
+| **“Rotation”** | −180° to 180°. |
+| **“Show on”** | “All devices”, “Desktop only” (window 750 px wide or more) or “Mobile only”. In the theme editor, the other preview shows an “Only visible in the editor” note in place of the decoration, so the block stays easy to find. |
+| **“Color”**, **“Stroke width”**, **“Opacity”**, **“Mirror”**, **“Repeats side by side”** | Look as with line art; the stroke width is set freely in px. |
+| **“On scroll”**, **“Speed”** | Motion as above; with reduced motion the decoration stays still. |
+
+In forced colors (“High contrast”), freely placed decoration is left out because it would sit behind or over text.
+
 ## Other motion in the theme
 
 These effects are set where they take effect. Reduced motion applies to them as well.
@@ -86,7 +115,7 @@ These effects are set where they take effect. Reduced motion applies to them as 
 | Zoom and second image on product cards | Theme settings → “Product data” → “Product cards”, see [Collections](05-collections.md#image-motion-on-hover) |
 | Full-screen gallery | “Product media” block → “Full screen on image click”, see [Product page](06-product-page.md#full-screen) |
 | Rolling numbers in the facts table | “Facts table” block → “Roll in numbers when first visible” |
-| Scrolling text | “Scrolling text” block (with a pause button) |
+| Scrolling text | “Scrolling text” block (with a pause button). Scrolling text and the scrolling logo list show the button as an icon (default) or text: Theme settings → “Animation” → “Scrolling text” → “Pause button” |
 | Line motifs on scroll | “Line art” block and Section → “Decoration”, see above |
 | Background video (with pause button) | Section → “Background” and “Image with text” block → “Video instead of image”, see [Sections and blocks](03-sections-and-blocks.md#the-principle) |
 

@@ -42,7 +42,7 @@
    {
     "type": "text",
     "id": "heading",
-    "label": "Window title",
+    "label": "Window heading",
     "info": "Empty = label."
    },
    {
@@ -173,7 +173,7 @@
     "type": "select",
     "id": "kind",
     "label": "Art",
-    "info": "Bestimmt Beschriftung und Symbol, wenn unten kein eigener Text steht.",
+    "info": "Bestimmt Beschriftung und Icon, wenn unten kein eigener Text steht.",
     "default": "info",
     "options": [
      {
@@ -203,7 +203,7 @@
    {
     "type": "text",
     "id": "heading",
-    "label": "Titel im Fenster",
+    "label": "Überschrift im Fenster",
     "info": "Leer = Beschriftung."
    },
    {
@@ -229,7 +229,7 @@
    {
     "type": "checkbox",
     "id": "show_icon",
-    "label": "Symbol zeigen",
+    "label": "Icon zeigen",
     "default": true
    },
    {

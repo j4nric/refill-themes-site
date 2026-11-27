@@ -2,7 +2,7 @@
  "slug": "image-banner",
  "kind": "block",
  "source": "blocks/image-banner.liquid",
- "source_sha1": "8bd567c61eb6",
+ "source_sha1": "0c6b28e6b5d7",
  "accepts_blocks": true,
  "en": {
   "name": "Image with text",

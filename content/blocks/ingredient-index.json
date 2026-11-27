@@ -10,7 +10,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Lists all ingredients from A to Z. For a page per ingredient, turn on “Web pages” under Settings → Custom data → Metaobjects → Ingredient. Up to 250 entries."
+    "content": "Lists all ingredients from A to Z. For a page per ingredient, turn on “Web pages” under Settings › Custom data › Metaobjects › Ingredient. Up to 250 entries."
    },
    {
     "type": "text",
@@ -26,7 +26,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Listet alle Inhaltsstoffe von A bis Z. Für eigene Seiten je Inhaltsstoff unter Einstellungen → Benutzerdefinierte Daten → Metaobjekte → Inhaltsstoff „Webseiten“ aktivieren. Bis zu 250 Einträge."
+    "content": "Listet alle Inhaltsstoffe von A bis Z. Für eigene Seiten je Inhaltsstoff unter Einstellungen › Benutzerdefinierte Daten › Metaobjekte › Inhaltsstoff „Webseiten“ aktivieren. Bis zu 250 Einträge."
    },
    {
     "type": "text",

@@ -71,7 +71,7 @@
    {
     "type": "select",
     "id": "layout",
-    "label": "Layout",
+    "label": "Anordnung",
     "info": "„Karte daneben“ stellt die Karte rechts neben Suche und Liste, sobald der Platz reicht (ab etwa 900 px).",
     "default": "stacked",
     "options": [

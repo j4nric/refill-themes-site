@@ -2,7 +2,7 @@
  "slug": "marquee",
  "kind": "block",
  "source": "blocks/marquee.liquid",
- "source_sha1": "dff273a34969",
+ "source_sha1": "fc57cc66cbdb",
  "accepts_blocks": false,
  "en": {
   "name": "Scrolling text",
@@ -19,6 +19,7 @@
     "type": "select",
     "id": "speed",
     "label": "Speed",
+    "info": "Pause button: Theme settings › Animation › Scrolling text.",
     "default": "slow",
     "options": [
      {
@@ -28,6 +29,10 @@
      {
       "value": "normal",
       "label": "Normal"
+     },
+     {
+      "value": "fast",
+      "label": "Fast"
      }
     ]
    }
@@ -48,6 +53,7 @@
     "type": "select",
     "id": "speed",
     "label": "Geschwindigkeit",
+    "info": "Schalter zum Anhalten: Theme-Einstellungen › Animation › Laufband.",
     "default": "slow",
     "options": [
      {
@@ -57,6 +63,10 @@
      {
       "value": "normal",
       "label": "Normal"
+     },
+     {
+      "value": "fast",
+      "label": "Schnell"
      }
     ]
    }

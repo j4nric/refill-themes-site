@@ -14,7 +14,7 @@ The drawer follows the theme settings under **“Cart”** and the **“Page bac
 
 ## Cart after adding
 
-Theme settings → **“Cart”** → **“Cart after adding”**:
+Theme settings → **“Cart”** → **“Cart type”** sets what happens after adding:
 
 | Option | After “Add to cart” | Cart icon |
 |---|---|---|
@@ -34,7 +34,7 @@ Theme settings → **“Cart”** → **“Cart count”**. The style applies to
 | **“Automatic”** (default, as before) | “CART (2)” next to text, bubble on the icon (mobile) | “CART (2)”; page: label “2 items” on the right |
 | **“In brackets (2)”** | “(2)” after the word or icon | “Cart (2)” |
 | **“Bubble with number”** | colored bubble on the icon or after the word | bubble after “Cart” |
-| **“Dot without number”** | dot on the icon or after the word | dot after “Cart” |
+| **“Dot without number”** | dot on the icon or after the word | bubble with number after “Cart” (a dot in the title looked like an error marker) |
 | **“Number only”** | “2” after the word or icon | “Cart 2” |
 
 **“Bubble and dot color”** (for “Automatic”, “Bubble” and “Dot”): “Scheme: accent” (default), “Scheme: text” or one of the brand colors; the number on it is automatically black or white. The rounding follows “Corners”. An empty cart shows no count in the header. Screen readers hear “Cart, 2 items”.
@@ -115,6 +115,8 @@ Theme settings → **“Cart”** → **“Show gift options”** (off by defaul
 - **“Gift message” field** with **“Maximum characters”** (default 200). A counter below the field shows the characters written. Unlike the free-form order note, the message has a character limit and a fixed name on the order.
 - **“Hide prices on the packing slip” checkbox:** only saves the request, see below.
 
+In the cart the gift options sit in a collapsible row “Gift options”. It is closed while nothing is chosen and open as soon as wrapping, a message or “Hide prices” is set.
+
 Under **“Attribute name”** you set how each choice is named on the order (defaults “Gift wrap”, “Gift message”, “Hide prices”). Don’t change the names after launch if packing slip templates, Flow or apps read them. The checkboxes always save “Yes”. So in Flow and in the packing slip template, check for “not empty”, not for a specific value.
 
 ### Hide prices on the packing slip
@@ -136,8 +138,8 @@ The bar shows how much is left until the next reward – for example free shippi
 | Setting | Meaning |
 |---|---|
 | “Free shipping threshold” | Tier 1, amount in your store currency, e.g. `49`. `0` = off. |
-| “Tier 2: threshold”, “Tier 2: reward” | E.g. `75` and “Free sample”. Tier 2 appears once tier 1 is above 0; “reward” once its own threshold is above 0. |
-| “Tier 3: threshold”, “Tier 3: reward” | E.g. `100` and “10% off”. Tier 3 appears once tier 2 is above 0. |
+| “Higher tier threshold”, “Higher tier reward” | E.g. `75` and “Free sample”. Tier 2 appears once tier 1 is above 0; “reward” once its own threshold is above 0. |
+| “Highest tier threshold”, “Highest tier reward” | E.g. `100` and “10% off”. Tier 3 appears once tier 2 is above 0. |
 
 All thresholds default to `0` (off). A threshold you have entered always stays visible.
 

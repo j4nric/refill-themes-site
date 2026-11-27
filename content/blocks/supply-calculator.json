@@ -10,7 +10,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Customers enter their usage and see how long a pack lasts, plus the matching subscription interval. Uses “Servings per pack” and “Servings per day” (Theme settings → Product data). Hidden without these values."
+    "content": "Customers enter their usage and see how long a pack lasts, plus the matching subscription interval. Uses “Servings per pack” and “Servings per day” (Theme settings › Product data). Hidden without these values."
    },
    {
     "type": "text",
@@ -62,7 +62,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Kunden geben ihren Verbrauch ein und sehen, wie lange eine Packung reicht, dazu das passende Abo-Intervall. Rechnet mit „Portionen pro Packung“ und „Portionen pro Tag“ (Theme-Einstellungen → Produktdaten). Ohne diese Angaben ausgeblendet."
+    "content": "Kunden geben ihren Verbrauch ein und sehen, wie lange eine Packung reicht, dazu das passende Abo-Intervall. Rechnet mit „Portionen pro Packung“ und „Portionen pro Tag“ (Theme-Einstellungen › Produktdaten). Ohne diese Angaben ausgeblendet."
    },
    {
     "type": "text",

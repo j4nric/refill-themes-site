@@ -175,7 +175,7 @@ Values are numbers with a comma or point (half steps fill half a box) or fractio
 
 **Without a metafield:** add entries under **“Property”** in the block – **“Label”**, **“Value”** (0–10, half steps), **“Steps”**, **“Left label (low)”** and **“Right label (high)”**. These entries apply to all products using the template that have no metafield values. A filled metafield takes priority; the editor points this out.
 
-**Settings:** “Heading”, **“Style”** (boxes, dots – round or square depending on “Corners” –, bar), **“Show value as number (3/5)”**, “Note” (e.g. “Rated by our tasting team”) and **“Product”** – empty means the product of the page; with a selected product the block works on any page, e.g. next to “Featured product”.
+**Settings:** “Heading”, **“Style”** (boxes, dots – round or square depending on “Corners” –, bar), **“Scale width”** (“Automatic”: dots narrow, boxes and bar full width; “Narrow”: scale and end labels at most about 190 px wide; “Full width”), **“Show value as number (3/5)”**, “Note” (e.g. “Rated by our tasting team”) and **“Product”** – empty means the product of the page; with a selected product the block works on any page, e.g. next to “Featured product”. Dots spread across the whole scale: the first and last dot always sit above the end labels (“Mild” – “Brisk”). In narrow columns (e.g. two columns in the buy column) “Narrow” keeps the scale compact and readable.
 
 **On product cards:** theme settings → “Product data” → “Product cards” → **“Show profile scales on product cards”**: up to three properties from the same metafield as one-line scales below the key figures (collections, search, product lists).
 

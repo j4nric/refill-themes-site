@@ -2,7 +2,7 @@
  "slug": "video-reels",
  "kind": "block",
  "source": "blocks/video-reels.liquid",
- "source_sha1": "62d5ab07ce10",
+ "source_sha1": "6ca366293017",
  "accepts_blocks": true,
  "en": {
   "name": "Video reels",

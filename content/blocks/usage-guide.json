@@ -52,7 +52,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafield: steps",
-    "info": "Multi-line text, one step per line. Format namespace.key, found under Settings → Custom data.",
+    "info": "Multi-line text, one step per line. Format namespace.key, found under Settings › Custom data.",
     "default": "custom.usage"
    }
   ]
@@ -105,7 +105,7 @@
     "type": "text",
     "id": "metafield",
     "label": "Metafeld: Schritte",
-    "info": "Mehrzeiliger Text, ein Schritt pro Zeile. Format namespace.schlüssel, zu finden unter Einstellungen → Benutzerdefinierte Daten.",
+    "info": "Mehrzeiliger Text, ein Schritt pro Zeile. Format namespace.schlüssel, zu finden unter Einstellungen › Benutzerdefinierte Daten.",
     "default": "custom.usage"
    }
   ]

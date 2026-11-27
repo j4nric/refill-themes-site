@@ -2,7 +2,7 @@
  "slug": "pickup-availability",
  "kind": "block",
  "source": "blocks/pickup-availability.liquid",
- "source_sha1": "6f7f21a0ede3",
+ "source_sha1": "969e50a22112",
  "accepts_blocks": false,
  "en": {
   "name": "Pickup availability",
@@ -10,7 +10,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Only appears when local pickup is turned on under Settings → Shipping and delivery."
+    "content": "Only appears when local pickup is turned on under Settings › Shipping and delivery."
    },
    {
     "type": "checkbox",
@@ -33,7 +33,7 @@
   "settings": [
    {
     "type": "paragraph",
-    "content": "Erscheint nur, wenn Abholung unter Einstellungen → Versand und Zustellung aktiviert ist."
+    "content": "Erscheint nur, wenn Abholung unter Einstellungen › Versand und Zustellung aktiviert ist."
    },
    {
     "type": "checkbox",

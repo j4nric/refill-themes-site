@@ -25,7 +25,7 @@
     "type": "select",
     "id": "compare_color_source",
     "label": "Compare-at price color",
-    "info": "“Same as theme setting” follows Theme settings → Brand colors → Prices.",
+    "info": "“Same as theme setting” follows Theme settings › Brand colors › Prices.",
     "default": "custom",
     "options": [
      {
@@ -95,7 +95,7 @@
     "type": "select",
     "id": "compare_color_source",
     "label": "Farbe des Streichpreises",
-    "info": "„Wie Theme-Einstellung“ folgt Theme-Einstellungen → Markenfarben → Preise.",
+    "info": "„Wie Theme-Einstellung“ folgt Theme-Einstellungen › Markenfarben › Preise.",
     "default": "custom",
     "options": [
      {

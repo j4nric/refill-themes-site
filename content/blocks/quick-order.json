@@ -2,7 +2,7 @@
  "slug": "quick-order",
  "kind": "block",
  "source": "blocks/quick-order.liquid",
- "source_sha1": "431f63e626c3",
+ "source_sha1": "84a3fd28c37e",
  "accepts_blocks": false,
  "en": {
   "name": "Quick order list",

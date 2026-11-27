@@ -2,7 +2,7 @@
  "slug": "logo-list",
  "kind": "block",
  "source": "blocks/logo-list.liquid",
- "source_sha1": "93e9a70ef10d",
+ "source_sha1": "5d97f1af5a0b",
  "accepts_blocks": true,
  "en": {
   "name": "Logo list",
@@ -21,6 +21,13 @@
     "label": "Single color in text color",
     "info": "For logos with a transparent background (PNG, SVG). Otherwise grayscale.",
     "default": false
+   },
+   {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Alignment",
+    "info": "Also applies inside a group; the logo list does not follow the group’s alignment. No effect while scrolling automatically.",
+    "default": "center"
    },
    {
     "type": "range",
@@ -43,6 +50,7 @@
     "type": "select",
     "id": "scroll_speed",
     "label": "Speed",
+    "info": "Pause button: Theme settings › Animation › Scrolling text.",
     "default": "slow",
     "options": [
      {
@@ -95,6 +103,13 @@
     "default": false
    },
    {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Ausrichtung",
+    "info": "Gilt auch in einer Gruppe; die Logo-Leiste folgt deren Ausrichtung nicht. Ohne Wirkung beim automatischen Durchlaufen.",
+    "default": "center"
+   },
+   {
     "type": "range",
     "id": "logo_height",
     "label": "Logohöhe",
@@ -115,6 +130,7 @@
     "type": "select",
     "id": "scroll_speed",
     "label": "Geschwindigkeit",
+    "info": "Schalter zum Anhalten: Theme-Einstellungen › Animation › Laufband.",
     "default": "slow",
     "options": [
      {

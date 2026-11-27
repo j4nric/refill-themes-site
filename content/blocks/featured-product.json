@@ -2,7 +2,7 @@
  "slug": "featured-product",
  "kind": "block",
  "source": "blocks/featured-product.liquid",
- "source_sha1": "a288d3b76aac",
+ "source_sha1": "b20766e0135e",
  "accepts_blocks": true,
  "en": {
   "name": "Featured product",
