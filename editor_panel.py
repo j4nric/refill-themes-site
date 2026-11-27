@@ -13,7 +13,8 @@ Zwei Teile:
    Liest das {% schema %} aus blocks/<name>.liquid bzw. sections/<name>.liquid, löst alle t:-Schlüssel über
    locales/en.default.schema.json und locales/de.schema.json auf und schreibt das Ergebnis nach
    content/blocks/<name>.json (beide Sprachen). Außerdem content/blocks/index.json: alle öffentlichen Blöcke,
-   die in den Demo-Vorlagen (demo/<preset>/files/templates/*.json) vorkommen, mit Namen und Kategorie.
+   die in den Demo-Vorlagen (demo/<preset>/files/templates/**/*.json) vorkommen oder ein Preset haben (im Editor
+   hinzufügbar, auch ohne Demo-Nutzung, z. B. „Dekor“), mit Namen, Kategorie und Zahl der Demo-Fundstellen.
    Erneut laufen lassen, wenn sich ein Block im Theme ändert – die JSON-Dateien werden dann einfach ersetzt.
    Jedes visible_if wird mit den Standardwerten (Block bzw. Theme-Einstellungen) ausgewertet: Felder, die in der
    Standard-Konfiguration nicht sichtbar sind, bekommen "hidden_by_default" und "hidden_by" (die auslösende Bedingung).
@@ -317,10 +318,12 @@ def extract(theme: Path, name: str, tr: Translator, theme_labels: dict, theme_de
 
 
 def demo_block_index(theme: Path, tr: Translator) -> list[dict]:
-    """Alle öffentlichen Blöcke (ohne „_“), die in einer Demo-Vorlage sichtbar vorkommen."""
+    """Alle öffentlichen Blöcke (ohne „_“): die in einer Demo-Vorlage sichtbar vorkommen (auch metaobject/*.json)
+    und alle mit Preset (im Editor unter „Block hinzufügen“), auch ohne Demo-Nutzung (demo_uses 0, z. B. „Dekor“)."""
     uses: dict[str, list] = {}
     for preset in PRESETS:
-        for f in sorted((theme / "demo" / preset / "files" / "templates").glob("*.json")):
+        tpl_dir = theme / "demo" / preset / "files" / "templates"
+        for f in sorted(tpl_dir.rglob("*.json")):
             tpl = load_json(f)
             for sid, sec in tpl.get("sections", {}).items():
                 if sec.get("disabled"):
@@ -330,12 +333,13 @@ def demo_block_index(theme: Path, tr: Translator) -> list[dict]:
                     for bid, b in (blocks or {}).items():
                         if b.get("disabled"):
                             continue
-                        uses.setdefault(b["type"], []).append(f"{preset}/{f.name}#{sid}/{bid}")
+                        uses.setdefault(b["type"], []).append(f"{preset}/{f.relative_to(tpl_dir)}#{sid}/{bid}")
                         walk(b.get("blocks"))
 
                 walk(sec.get("blocks"))
+    with_preset = {f.stem for f in (theme / "blocks").glob("*.liquid") if read_schema(f).get("presets")}
     out = []
-    for slug in sorted(uses):
+    for slug in sorted(set(uses) | with_preset):
         if slug.startswith("_") or not (theme / "blocks" / f"{slug}.liquid").exists():
             continue
         schema = read_schema(theme / "blocks" / f"{slug}.liquid")
@@ -344,7 +348,7 @@ def demo_block_index(theme: Path, tr: Translator) -> list[dict]:
             "slug": slug,
             "name": tr.both(schema.get("name", slug)),
             "category": tr.both(category) if category else None,
-            "demo_uses": len(uses[slug]),
+            "demo_uses": len(uses.get(slug, [])),
         })
     return out
 
@@ -747,7 +751,8 @@ def main() -> int:
         print(f"content/blocks/{name}.json: {data['de']['name']} / {data['en']['name']}, "
               f"{sum(1 for s in data['en']['settings'] if 'id' in s)} Einstellungen")
     (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"content/blocks/index.json: {len(index)} Blöcke aus den Demo-Vorlagen")
+    print(f"content/blocks/index.json: {len(index)} Blöcke, davon ohne Demo-Nutzung: "
+          f"{', '.join(b['slug'] for b in index if not b['demo_uses']) or 'keine'}")
     if tr.missing:
         print("Ohne Übersetzung (Schlüsselname gezeigt):", ", ".join(sorted(tr.missing)), file=sys.stderr)
     return 0

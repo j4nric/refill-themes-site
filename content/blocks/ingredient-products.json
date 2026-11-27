@@ -1,0 +1,243 @@
+{
+ "slug": "ingredient-products",
+ "kind": "block",
+ "source": "blocks/ingredient-products.liquid",
+ "source_sha1": "c711ff71aa04",
+ "accepts_blocks": false,
+ "en": {
+  "name": "Ingredient: products",
+  "category": "Ingredients",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "info": "[name] is replaced by the ingredient name. Text in double square brackets is highlighted, e.g. [[refill]].",
+    "default": "Contained in"
+   },
+   {
+    "type": "text",
+    "id": "ingredient_handle",
+    "label": "Ingredient handle",
+    "info": "Only needed outside ingredient pages. Handle of the entry under Content › Metaobjects › Ingredient, for example magnesium, darjeeling or shea-butter."
+   },
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Products from collection",
+    "info": "Empty: all products. Up to 250 products are searched."
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Number of products",
+    "default": 8,
+    "min": 2,
+    "max": 12,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Show profile scales (e.g. scent, texture)",
+    "info": "Only when “Show profile scales on product cards” is on in theme settings.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Show profile scales on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Show unit price",
+    "info": "Price per unit of measure, e.g. €16.86/100 g. Usually required in the EU for goods sold by weight, volume or length: only turn off if it isn’t needed here.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Show “Compare” checkbox",
+    "info": "Only when the “Compare” checkbox is on in theme settings (product cards).",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Data source (change only for custom metafields)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.key. Find it under Settings › Custom data."
+   },
+   {
+    "type": "text",
+    "id": "key_metafield",
+    "label": "Metafield: key ingredients",
+    "default": "custom.key_ingredients"
+   },
+   {
+    "type": "text",
+    "id": "facts_metafield",
+    "label": "Metafield: facts table",
+    "default": "custom.data_table"
+   },
+   {
+    "type": "text",
+    "id": "text_metafield",
+    "label": "Metafield: ingredient list (text, optional)",
+    "info": "E.g. custom.inci. A product also matches if this list contains the search term of the ingredient (not case-sensitive). Empty: not used."
+   },
+   {
+    "type": "text",
+    "id": "match_field",
+    "label": "Ingredient field with the search term",
+    "info": "Key of a text field in the ingredient metaobject, e.g. inci_name with “Butyrospermum Parkii Butter”. Empty or without value: the name of the ingredient.",
+    "default": "inci_name"
+   }
+  ]
+ },
+ "de": {
+  "name": "Inhaltsstoff: Produkte",
+  "category": "Inhaltsstoffe",
+  "settings": [
+   {
+    "type": "text",
+    "id": "heading",
+    "label": "Überschrift",
+    "info": "[name] wird durch den Namen des Inhaltsstoffs ersetzt. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]].",
+    "default": "Enthalten in"
+   },
+   {
+    "type": "text",
+    "id": "ingredient_handle",
+    "label": "Handle des Inhaltsstoffs",
+    "info": "Nur außerhalb von Inhaltsstoff-Seiten nötig. Handle des Eintrags unter Inhalt › Metaobjekte › Inhaltsstoff, z. B. magnesium, darjeeling oder shea-butter."
+   },
+   {
+    "type": "collection",
+    "id": "collection",
+    "label": "Produkte aus Kollektion",
+    "info": "Leer: alle Produkte. Durchsucht werden höchstens 250 Produkte."
+   },
+   {
+    "type": "range",
+    "id": "limit",
+    "label": "Anzahl Produkte",
+    "default": 8,
+    "min": 2,
+    "max": 12,
+    "step": 1
+   },
+   {
+    "type": "checkbox",
+    "id": "show_profile",
+    "label": "Profil-Skalen zeigen (z. B. Duft, Textur)",
+    "info": "Nur wenn „Profil-Skalen in Produktkarten zeigen“ in den Theme-Einstellungen aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Profil-Skalen in Produktkarten zeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_unit_price",
+    "label": "Grundpreis zeigen",
+    "info": "Preis je Mengeneinheit, z. B. 16,86 €/100 g. In der EU für Waren nach Gewicht, Volumen oder Länge meist Pflicht: nur abschalten, wenn er hier nicht nötig ist.",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_compare",
+    "label": "Häkchen „Vergleichen“ zeigen",
+    "info": "Nur wenn das Häkchen „Vergleichen“ in den Theme-Einstellungen (Produktkarten) aktiv ist.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Datenquelle (nur bei eigenen Metafeldern ändern)"
+   },
+   {
+    "type": "paragraph",
+    "content": "Format namespace.schlüssel. Zu finden unter Einstellungen › Benutzerdefinierte Daten."
+   },
+   {
+    "type": "text",
+    "id": "key_metafield",
+    "label": "Metafeld: Hauptinhaltsstoffe",
+    "default": "custom.key_ingredients"
+   },
+   {
+    "type": "text",
+    "id": "facts_metafield",
+    "label": "Metafeld: Datentafel",
+    "default": "custom.data_table"
+   },
+   {
+    "type": "text",
+    "id": "text_metafield",
+    "label": "Metafeld: Zutatenliste (Text, optional)",
+    "info": "Z. B. custom.inci. Ein Produkt passt auch, wenn diese Liste den Suchbegriff des Inhaltsstoffs enthält (Groß-/Kleinschreibung egal). Leer: nicht verwendet."
+   },
+   {
+    "type": "text",
+    "id": "match_field",
+    "label": "Feld des Inhaltsstoffs mit dem Suchbegriff",
+    "info": "Schlüssel eines Textfelds im Metaobjekt Inhaltsstoff, z. B. inci_name mit „Butyrospermum Parkii Butter“. Leer oder ohne Wert: der Name des Inhaltsstoffs.",
+    "default": "inci_name"
+   }
+  ]
+ }
+}

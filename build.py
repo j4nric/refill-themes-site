@@ -109,6 +109,7 @@ T = {
         "block_marker": "{name} (own block)",
         "unavail_account": "Only signed-in customers with at least one order see this block. It shows their last order with its items and a button that adds everything to the cart again. Guests don’t see it – that’s why there is no picture here.",
         "unavail_devstore": "The demo stores show a page from Shopify instead of the theme’s password page. That’s why there is no picture here.",
+        "unavail_nodemo": "The demo stores don’t use this block – that’s why there is no picture here. Add it in the theme editor and look at it in the preview.",
         "no_picture": "No picture",
         "note_product": "This block shows data of the current product and only works on product pages. For a product on other pages, use [Featured product]({fp}).",
         "note_template": "This block belongs to the “{tpl}” template. Elsewhere it shows nothing or only a note in the editor.",
@@ -186,6 +187,7 @@ T = {
         "block_marker": "{name} (eigener Block)",
         "unavail_account": "Diesen Block sieht nur angemeldete Kundschaft mit mindestens einer Bestellung. Er zeigt die letzte Bestellung mit ihren Artikeln und einen Knopf, der alles erneut in den Warenkorb legt. Gäste sehen ihn nicht – darum gibt es hier kein Bild.",
         "unavail_devstore": "Die Demo-Shops zeigen statt der Passwortseite des Themes eine Seite von Shopify. Darum gibt es hier kein Bild.",
+        "unavail_nodemo": "Die Demo-Shops verwenden diesen Block nicht – darum gibt es hier kein Bild. Fügen Sie ihn im Theme-Editor hinzu und sehen Sie ihn sich in der Vorschau an.",
         "no_picture": "Kein Bild",
         "note_product": "Dieser Block zeigt Daten des aktuellen Produkts und wirkt nur auf Produktseiten. Für ein Produkt auf anderen Seiten nehmen Sie [Hervorgehobenes Produkt]({fp}).",
         "note_template": "Dieser Block gehört zur Vorlage „{tpl}“. An anderer Stelle zeigt er nichts oder nur einen Hinweis im Editor.",
@@ -770,6 +772,8 @@ def look_html(lang: str, slug: str, blocks, key: str, name: str, tx: dict) -> st
     shot = blocks.shots.get(slug, {})
     if shot.get("unavailable"):
         return f'<p class="notice">{esc(t["unavail_" + shot["unavailable"]])}</p>'
+    if not sec and not shot and blocks.by_slug[slug].get("demo_uses") == 0:
+        return f'<p class="notice">{esc(t["unavail_nodemo"])}</p>'
     desk = blocks.image(lang, slug, "desktop")
     mob = blocks.image(lang, slug, "mobile")
     if not desk and not mob:

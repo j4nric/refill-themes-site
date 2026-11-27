@@ -93,7 +93,7 @@
    "en": "Buttons and promotions",
    "de": "Buttons & Aktionen"
   },
-  "demo_uses": 65
+  "demo_uses": 67
  },
  {
   "slug": "buy-buttons",
@@ -276,6 +276,18 @@
   "demo_uses": 11
  },
  {
+  "slug": "decor",
+  "name": {
+   "en": "Decoration",
+   "de": "Dekor"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  },
+  "demo_uses": 0
+ },
+ {
   "slug": "delivery-estimate",
   "name": {
    "en": "Delivery date",
@@ -357,7 +369,7 @@
    "en": "Layout",
    "de": "Layout"
   },
-  "demo_uses": 114
+  "demo_uses": 115
  },
  {
   "slug": "heading",
@@ -444,6 +456,18 @@
   "demo_uses": 3
  },
  {
+  "slug": "ingredient-products",
+  "name": {
+   "en": "Ingredient: products",
+   "de": "Inhaltsstoff: Produkte"
+  },
+  "category": {
+   "en": "Ingredients",
+   "de": "Inhaltsstoffe"
+  },
+  "demo_uses": 3
+ },
+ {
   "slug": "ingredient-profile",
   "name": {
    "en": "Ingredient: profile",
@@ -453,7 +477,7 @@
    "en": "Ingredients",
    "de": "Inhaltsstoffe"
   },
-  "demo_uses": 2
+  "demo_uses": 5
  },
  {
   "slug": "ingredient-spotlight",

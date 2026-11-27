@@ -553,6 +553,34 @@
    ]
   }
  },
+ "decor": {
+  "de": {
+   "lead": "Ein Linien-Motiv oder eine eigene Grafik als Schmuck in einem Abschnitt, einer Gruppe oder einer Spalte. Rein dekorativ: Screenreader überspringen den Block, er fängt keine Klicks ab.",
+   "tips": [
+    "„Platzierung“: Mit „Frei“ liegt das Dekor über oder hinter dem Bereich und verschiebt nichts; die Position setzen „Waagerecht“ und „Senkrecht“. Mit „Im Inhalt“ nimmt es Platz ein wie eine Linien-Grafik.",
+    "„Ebene“ gilt nur bei „Frei“. „Vor dem Inhalt“ kann Text überdecken – sparsam und mit geringer „Deckkraft“ einsetzen.",
+    "„Eigene Grafik“ (SVG oder PNG) ersetzt das Motiv. Mit „Anzeigen auf“ zeigen Sie das Dekor nur am Desktop oder nur am Handy; im Editor steht in der anderen Vorschau ein Hinweis an seiner Stelle."
+   ],
+   "more": [
+    "animation",
+    "block-dekor",
+    "Block „Dekor“ im Detail"
+   ]
+  },
+  "en": {
+   "lead": "A line motif or your own graphic as decoration in a section, group or column. Purely decorative: screen readers skip the block and it does not catch clicks.",
+   "tips": [
+    "“Placement”: with “Free” the decoration lies over or behind the area and shifts nothing; “Horizontal” and “Vertical” set the position. With “In content” it takes up space like line art.",
+    "“Layer” applies to “Free” only. “In front of the content” can cover text – use it sparingly and with low “Opacity”.",
+    "“Own graphic” (SVG or PNG) replaces the motif. With “Show on” you show the decoration on desktop only or on mobile only; in the editor, the other preview shows a note in its place."
+   ],
+   "more": [
+    "animation",
+    "decoration-block",
+    "The “Decoration” block in detail"
+   ]
+  }
+ },
  "delivery-estimate": {
   "de": {
    "lead": "Eine Zeile wie „Voraussichtlich geliefert bis Mi., 25.11.“.",
@@ -920,6 +948,36 @@
     "ingredient-glossary",
     "step-3-create-the-az-overview-page",
     "Create the overview page"
+   ]
+  }
+ },
+ "ingredient-products": {
+  "de": {
+   "lead": "Produkte, die einen bestimmten Inhaltsstoff enthalten – z. B. auf seiner Lexikon-Seite.",
+   "page": "Oben die Seite wählen: „Metaobjekte › Inhaltsstoff“",
+   "tips": [
+    "Auf Inhaltsstoff-Seiten nimmt der Block den Eintrag der Seite. Anderswo tragen Sie den Handle ein, z. B. magnesium.",
+    "In der Überschrift wird [name] durch den Namen des Inhaltsstoffs ersetzt.",
+    "Der Block durchsucht nur eine begrenzte Zahl Produkte. Bei großem Sortiment wählen Sie unter „Produkte aus Kollektion“ eine passende Kollektion, z. B. „Mineralstoffe“."
+   ],
+   "more": [
+    "ingredient-glossary",
+    "inhaltsstoffe-mit-produkten-verknuepfen",
+    "Inhaltsstoffe mit Produkten verknüpfen"
+   ]
+  },
+  "en": {
+   "lead": "Products that contain a given ingredient – e.g. on its glossary page.",
+   "page": "Choose the page at the top: “Metaobjects › Ingredient”",
+   "tips": [
+    "On ingredient pages the block uses that page’s entry. Elsewhere, enter the handle, e.g. magnesium.",
+    "In the heading, [name] is replaced by the ingredient’s name.",
+    "The block searches only a limited number of products. For a large range, pick a suitable collection under “Products from collection”, e.g. “Minerals”."
+   ],
+   "more": [
+    "ingredient-glossary",
+    "linking-ingredients-to-products",
+    "Linking ingredients to products"
    ]
   }
  },

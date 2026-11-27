@@ -33,7 +33,7 @@ Beim Push auf `main` baut `.github/workflows/pages.yml` die Seite, prüft die Li
 | `content/shots/sections/<section>.json` | Bilder und Markierungen der Abschnitte (`shots.mjs --sections`), Bilder in `assets/shots/<de\|en>/sections/` |
 
 Adressen: Englisch ist Hauptsprache (`/`), Deutsch unter `/de/`. Handbuch-Einstieg „Was möchten Sie tun?“ `/docs/`,
-Block-Galerie `/docs/blocks/`, Block-Seiten `/docs/blocks/<block>/` für alle 86 Blöcke, Abschnitts-Galerie `/docs/sections/`,
+Block-Galerie `/docs/blocks/`, Block-Seiten `/docs/blocks/<block>/` für alle 88 Blöcke, Abschnitts-Galerie `/docs/sections/`,
 Abschnitts-Seiten `/docs/sections/<section>/` für 13 Abschnitte (jeweils auch unter `/de/`), Kapitel `/docs/<kapitel>/` bzw.
 `/de/docs/<kapitel>/` (Kapitelname = Dateiname ohne Nummer), Änderungsprotokoll `/changelog/` bzw. `/de/changelog/`
 (aus `16-changelog.md`), Support `/support/`, Datenschutz `/privacy/` bzw. `/de/datenschutz/`, Impressum
@@ -52,7 +52,8 @@ um; `check_links.py` meldet Sprungmarken, die es nicht gibt.
 
 ## Block-Seiten: Editor-Nachbau und Screenshots
 
-Jeder Block der Galerie (`content/blocks/index.json`, alle öffentlichen Blöcke aus den Demo-Vorlagen) hat eine
+Jeder Block der Galerie (`content/blocks/index.json`: alle öffentlichen Blöcke aus den Demo-Vorlagen, auch
+`templates/metaobject/`, und alle mit Preset, auch ohne Demo-Nutzung wie „Dekor“) hat eine
 Block-Seite in en und de, immer mit demselben Aufbau:
 
 1. **So sieht es aus** – über die volle Inhaltsbreite: Computer-Bild groß (srcset 800/1600 px), darunter Handy-Bild und
@@ -70,6 +71,9 @@ Block-Seite in en und de, immer mit demselben Aufbau:
 
 Blöcke ohne Bild: „Erneut bestellen“ (nur für angemeldete Kundschaft mit Bestellung) und „Passwortseite: Formular“
 (die Demo-Shops zeigen unter `/password` die Seite von Shopify, nicht die des Themes) – dort steht ein Hinweis.
+Blöcke ohne Demo-Nutzung (`demo_uses` 0, z. B. „Dekor“) bekommen ohne `content/shots/<block>.json` den Hinweis
+„Die Demo-Shops verwenden diesen Block nicht“; sonst fehlt nur das Bild („Bilder folgen.“). Die Galerie zeigt für
+Blöcke ohne Bild eine schraffierte Kachel „Kein Bild“.
 
 **Editor-Nachbau** – nach jeder Änderung eines Blocks im Theme neu erzeugen (braucht das Theme-Repo daneben):
 
@@ -193,4 +197,5 @@ setzt das voraus.
 - Bild für den Abschnitt „Altersabfrage“: In allen Demo-Shops ist er ausgeblendet; die Seite zeigt einen Hinweis.
 - Der Warenkorb-Drawer ist kein Abschnitt (Theme-Einstellungen → „Warenkorb“) und hat darum keine Abschnitts-Seite;
   die Seite „Warenkorb“ verweist darauf.
-- Bilder für „Erneut bestellen“ (braucht ein Kundenkonto mit Bestellung) und „Passwortseite: Formular“.
+- Bilder für „Erneut bestellen“ (braucht ein Kundenkonto mit Bestellung), „Passwortseite: Formular“ und
+  „Inhaltsstoff: Produkte“ (steht nur in der Metaobjekt-Vorlage „Inhaltsstoff“); „Dekor“ kommt in keiner Demo vor.
