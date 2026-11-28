@@ -6,6 +6,105 @@ Versionen nach Semantic Versioning. Ab Version 1.0.0 werden Einstellungen und Bl
 
 Erste vollständige Fassung aller Seiten und Kernfunktionen.
 
+### 27. November 2026 – Akzente
+
+**Neu**
+- **Akzente für Überschrift, Text und Button:** Neue Gruppe **„Akzent“** in den drei Blöcken – ein fertig gestaltetes Linien-Motiv ohne eigenen Block. Bei Überschrift und Text z. B. ein Kreis um ein mit `[[…]]` markiertes Wort oder ein Schwung darunter, außerdem unter, über, neben, in der Ecke oder hinter dem Text; beim Button ein Pfeil, der auf ihn zeigt, oder Funkeln beim Überfahren. Animation (Zeichnen, Schweben, Pulsieren, Leicht wackeln) einmal beim Sichtbarwerden, beim Überfahren oder dauerhaft; bei „Bewegung reduzieren“ steht das Motiv still. Standard „Kein Akzent“ – bestehende Blöcke bleiben unverändert. Siehe [Akzente](08-animation.md#akzente).
+
+**Geändert**
+- **Block „Dekor“ heißt jetzt „Freies Dekor“** (für Fortgeschrittene: frei platzierte Motive und eigene Grafiken). Einstellungen und gespeicherte Blöcke bleiben unverändert.
+
+**Demo-Shops**
+- **Nordform:** Kreis um „buying new“ in „Refill instead of buying new“, Pfeil am Button „View offer“ der Abo-Woche.
+- **Kessel & Blatt:** Schwung unter „origin“ im Aufmacher, schwebender Brief an „The harvest letter“.
+- **OSTRA:** Kreis um „the bottles“, Brief über „News from the bathroom“, Funkeln beim Überfahren von „Discover the range“.
+### 27. November 2026 – Kompakte Produktkarten
+
+**Neu**
+- **„Variantenwahl auf der Karte“** in allen Blöcken mit Produktkarten („Produkte aus Kollektion“, auch in Tabs, „Kollektion: Produktliste“, „Suche: Ergebnisse“, „Inhaltsstoff: Produkte“, „Zuletzt angesehen“, „Produktfinder“, Abschnitt „Produktempfehlungen“; Standard an = wie bisher). Aus: Die Karten zeigen keine Optionszeilen und sind kompakter; „In den Warenkorb“ öffnet bei mehreren Varianten die Schnellansicht mit der Variantenauswahl, bei einer Variante legt er direkt in den Warenkorb. Siehe [Kompakte Karten](05-collections.md#kompakte-karten-ohne-variantenwahl).
+
+**Geändert**
+- **Theme-Einstellung „Varianten auf der Karte wählen“ aus:** Der Knopf auf Karten mit mehreren Varianten heißt jetzt „In den Warenkorb“ statt „Optionen wählen“ und öffnet wie bisher die Schnellansicht. Bei Produkten nur im Abo mit Optionszeilen bleibt „Optionen wählen“.
+### 27. November 2026 – Text-Animation
+
+**Neu**
+- **„Geschwindigkeit der Textanimation“** (Theme-Einstellungen → „Animation“): „Langsam“, „Normal“ (Standard, bisheriges Tempo) oder „Schnell“ für alle Text-Animationen – Überschriften, Akzente, Fließtext und Marker, überall gleich. Siehe [Theme-Einstellungen → Animation](08-animation.md#theme-einstellungen--animation).
+- **Zeitleiste: „Animationsgeschwindigkeit der Einträge“** – „Schnell“, „Wie Theme-Einstellung“ (Standard), „Langsam“ oder „Sehr langsam“ für Linie, Punkt und Text der Einträge.
+
+**Behoben**
+- **Blogbeitrag:** Mit „Alle Texte“ erschien der Beitragstext langsamer als anderswo – die Absätze warteten aufeinander, gezählt ab dem Anfang des Beitrags, und Absätze weiter unten waren schon fertig, bevor man sie sah. Jetzt erscheint jeder Absatz, sobald er selbst ins Bild kommt, im selben Tempo wie jeder andere Text.
+
+**Bitte prüfen**
+- **Mehr Überschriften bauen sich auf** (Text-Animation ab „Nur Überschriften“): Es gilt eine Regel für alle Seiten – was beim Laden schon zu sehen ist, bleibt ruhig, was später ins Bild scrollt, baut sich auf ([Was sich aufbaut](08-animation.md#was-sich-aufbaut)). Neu dabei sind Überschriften auf Produkt- und Kollektionsseiten außerhalb von „Abschnitt“-Sections (z. B. Rechner, Zeitleiste, „Passt dazu“), Überschriften der Ebene „H3“ und die kleine Überschrift (Label) über einer Überschrift, die bisher erst mit „Alle Texte“ einblendete. Text und Akzente starten jetzt an derselben Stelle wie die Überschrift (etwas früher als bisher). Wer weniger Bewegung möchte, wählt „Text-Animation“ → „Aus“ oder eine langsamere bzw. schnellere „Geschwindigkeit der Textanimation“.
+### 27. November 2026 – Kleinigkeiten und Einstellungen (Händler-Rückmeldung)
+
+**Neu**
+- **Kollektion: Kopfbereich** mit mehr Layout: Bild rechts, links, über dem Text oder **als Hintergrund** (mit Überlagerung in der Hintergrundfarbe des Farbschemas, 65–95 %, damit der Text lesbar bleibt), Textausrichtung, Höhe (Nach Inhalt, Klein, Mittel, Groß), eigenes Farbschema, Anzahl der Produkte und ein eigenes Bild als Ersatz oder statt des Kollektionsbilds. Siehe [Kopfbereich gestalten](05-collections.md#kopfbereich-gestalten).
+- **Countdown:** Einstellung **„Ausrichtung“** (links, mittig, rechts) mit „Ausrichtung der Gruppe übernehmen“ wie bei Überschrift und Text.
+- **Vergleichstabelle** und **Produktvergleich:** **„Spaltenabstand“** und **„Zeilenabstand“**.
+- **Ausverkaufte Produkte** in Rastern zeigen mit eingeschaltetem Schnellkauf einen grauen, gesperrten Knopf **„Ausverkauft“** statt keinem Knopf; die Karten einer Reihe bleiben gleich hoch.
+
+**Behoben**
+- **Wunschliefertermin am Handy (iPhone):** Das Datumsfeld ragte rechts aus dem Warenkorb. Es bleibt jetzt in der Box, der Wert steht wie in anderen Feldern links.
+
+**Geändert**
+- **Variantenwahl „Bilder (Variantenbilder)“** (Hervorgehobenes Produkt, Produktseite): Die Bildkacheln stehen in einem Raster mit etwas kleinerem Abstand; am Handy vier Bilder in einer Zeile, gleich groß. Am Desktop bleiben die Kacheln so groß wie bisher.
+### 27. November 2026 – Section „Durchblick“
+
+**Neu**
+- **Section „Durchblick“** (Kategorie „Medien“, Vorlagen „Durchblick: Bild“ und „Durchblick: Muster“): ein Fenster auf einen Hintergrund – Bild, Video, Farbe oder Muster aus den Farben eines Schemas. Beim Scrollen bleibt der Hintergrund stehen oder läuft langsamer mit (Parallax), die Seite gleitet darüber; auch auf dem iPhone, ohne JavaScript. Höhe, Breite (randlos, mit Rand, Seitenbreite), Form (rechteckig, abgerundet, Bogen), Überlagerung und Farbschema für den Text einstellbar. Inhalte setzen Sie als „Platzierter Inhalt“ an eine von neun Stellen oder frei per x/y ins Fenster, am Handy wahlweise untereinander. Bei „Bewegung reduzieren“ steht der Hintergrund still. Siehe [Section „Durchblick“](08-animation.md#section-durchblick).
+
+**Demo-Shops**
+- **OSTRA:** Startseite mit einem „Durchblick“ auf die Nachfüllstation nach dem Abschnitt „Three steps to a full bottle“.
+### 27. November 2026 – Gleich hohe Produktzeilen
+
+**Geändert**
+- **Produktzeilen in Set, „Häufig zusammen gekauft“, „Alle Produkte in den Warenkorb“ (Bild mit Markierungen), Schnellbestellliste (Handy) und „Erneut bestellen“** haben jetzt einen gemeinsamen Aufbau und sind alle gleich hoch: Name, darunter die Varianten, darunter Preis und Grundpreis in einer Zeile. Varianten stehen als Schalter in einer Zeile und sind mit einem Klick gewählt (vorher eine Zeile je Option mit Stift zum Aufklappen); mehrere Optionen nebeneinander, bei wenig Platz waagerecht wischbar mit Verlauf am Rand. Produkte ohne Wahl zeigen dort den Variantennamen (z. B. „500 g“). Bei mehr als zwei Optionen oder sehr vielen bzw. langen Werten erscheint stattdessen eine Auswahlliste mit allen Kombinationen. Die Produktkarte und die Schnellansicht behalten ihre Optionszeilen. Siehe [Set zusammenstellen](07-cart-and-checkout.md#set-zusammenstellen).
+- **„Häufig zusammen gekauft“** und „Alle Produkte in den Warenkorb“ zeigen den Grundpreis neben dem Preis.
+
+**Neu**
+- **„Darstellung“** im Block „Set zusammenstellen“ und bei „Bild mit Markierungen“ (für „Alle Produkte in den Warenkorb“): **Zeilen** (Standard, wie bisher) oder **Kacheln** – Bild, Name (zwei Zeilen), Preis, Varianten und Menge untereinander, alle Kacheln gleich hoch, Spalten nach verfügbarer Breite (am Handy und in drei Spalten zwei nebeneinander).
+
+**Behoben**
+- **Bild mit Markierungen, „Alle Produkte in den Warenkorb“ in einer Spalte:** Das Stift-Symbol zum Wechseln der Variante stand mitten in der Zeile statt direkt hinter dem Variantennamen. Mit den neuen Schaltern gibt es das Symbol dort nicht mehr.
+
+**Demo-Shops**
+- **OSTRA:** „Everything on the shelf“ auf der Startseite zeigt die Produkte als Kacheln. Nordform (Set auf der Abo-Seite) bleibt bei Zeilen.
+### 28. November 2026 – Scrollleisten, Ankündigung, Kopfzeile
+
+**Neu**
+- **Ankündigungsleiste → „Wechsel“:** „Seitlich (wischen)“ (Standard, wie bisher) oder **„Vertikal (überblenden nach oben)“** – eine Meldung auf allen Bildschirmbreiten, die nächste kommt von unten. Wahlweise **„Automatisch wechseln“** mit **„Zeit je Meldung“** (3–10 s) und Knopf zum Anhalten; hält, solange Mauszeiger oder Fokus auf der Leiste liegen, und entfällt bei „Bewegung reduzieren“. Pfeile und waagerechtes Wischen am Handy wechseln ebenso. Siehe [Ankündigungsleiste](04-header.md#ankündigungsleiste).
+- **Karussell → „Fortschrittsanzeige“:** „Keine“ (Standard), „Leiste“ oder „Punkte“ – dezent unter den Folien.
+- **Suche, Konto, Warenkorb → „Abstand zwischen den Aktionen“** (0–48 px, Standard 20 px wie bisher).
+
+**Geändert**
+- **Karussell:** Die Scrollleiste des Browsers ist ausgeblendet (Pfeile, Wischen, Trackpad und Tastatur bleiben). Ohne JavaScript bleibt sie.
+- **Warenkorb-Drawer:** nur noch eine Scrollleiste – die Liste der Positionen scrollt mit einer schmalen, dezenten Leiste; der Drawer selbst scrollt nicht mehr. Dieselbe Leiste im mobilen Menü und im Filter.
+- **Untermenüs „Liste wie Auswahlfelder“ und „Nach Inhalt, unter dem Menüpunkt“:** sitzen jetzt direkt unter dem Menüpunkt statt unter der Kopfzeile; beim Überfahren schließt nichts mehr auf dem Weg ins Untermenü.
+
+**Behoben**
+- **Mega-Menü „Nach Inhalt, unter dem Menüpunkt“** ragte auf kleinen Desktops (etwa 1024–1280 px) rechts aus dem Fenster und schnitt die Hervorhebungsspalte ab. Es bleibt jetzt im Fenster (rechts bündig, wenn ab dem Menüpunkt kein Platz ist), die Spalten werden bei Bedarf schmaler. Auch die Liste von Land/Sprache hält jetzt den Seitenrand ein.
+
+### 27. November 2026 – Linien-Motive
+
+**Neu**
+- **14 neue Linien-Motive** für „Linien-Grafik“, „Dekor“ und die Dekor-Ebene des Abschnitts: Kreis um ein Wort, Doppelte Unterstreichung, Zickzack-Linie, Funkeln (drei Sterne), Häkchen im Kreis, Lupe, Herz, Geschenk, Sprechblase, **Brief** (für Newsletter und Kontakt), Kalenderblatt mit Häkchen, Paket mit Bewegungslinien, Füllstand (die Linie im Glas steigt beim Zeichnen) und Uhr. Die Auswahl „Motiv“ ist jetzt nach Zweck geordnet: Hervorheben, Hinweisen, Stimmung, Kommunikation, Struktur, Abo und Nachfüllen. Siehe [Motive nach Zweck](08-animation.md#motive-nach-zweck).
+
+**Behoben**
+- **„Pfad mit Punkten“ mit „Punkt läuft entlang“:** Der Punkt lief am Ende etwas über den letzten Kreis hinaus; er bleibt jetzt genau in dessen Mitte stehen.
+
+**Geändert**
+- **Glattere Kurven:** „Geschwungener Pfeil“ hat eine gleichmäßig gerundete Schleife ohne Dellen, die Pfeilspitze folgt der Richtung am Linienende. „Dampf-Kringel“ rollen sich ohne Knick ein (vorher setzte die Einrollung rückwärts an), „Höhenlinien“ laufen ohne kleine Ecken. Form und Größe bleiben sonst gleich.
+
+### 27. November 2026 – Endlos-Wischen, Demo-Inhalte
+
+**Behoben**
+- **Ankündigungsleiste am Handy (iPhone):** Nach der letzten Meldung blieb die Leiste beim ersten Wischen manchmal stehen und ging erst beim zweiten Wischen zur ersten Meldung. Der unsichtbare Sprung von der Kopie auf die Meldung wartet jetzt, bis die Leiste wirklich ruht (Finger gelöst, Meldung eingerastet). Ohne sichtbare Bewegung, auch mit „Bewegung reduzieren“.
+
+**Demo-Shops**
+- **Nordform:** Der Countdown der Abo-Woche (Startseite und Aktionsseite) läuft einmalig bis 31.12.2026, 23:59 Uhr, statt jede Woche neu zu starten; die Aktionsbedingungen nennen dieses Datum. Englische Ankündigung kürzer: „Subscription week: extra 5% off“.
+- **OSTRA:** Logo-Leiste „Gelesen in“ mit erfundenen Zeitschriften von Startseite und „Über uns“ entfernt. Die Hervorhebung „So funktioniert Nachfüllen“ im Mega-Menü zeigt jetzt die Pumpflasche mit Nachfüllbeutel.
+
 ### 27. November 2026 – Händler-Rückmeldungen
 
 **Geändert**

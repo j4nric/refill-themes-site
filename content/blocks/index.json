@@ -93,7 +93,7 @@
    "en": "Buttons and promotions",
    "de": "Buttons & Aktionen"
   },
-  "demo_uses": 67
+  "demo_uses": 68
  },
  {
   "slug": "buy-buttons",
@@ -278,8 +278,8 @@
  {
   "slug": "decor",
   "name": {
-   "en": "Decoration",
-   "de": "Dekor"
+   "en": "Free decoration",
+   "de": "Freies Dekor"
   },
   "category": {
    "en": "Media",
@@ -381,7 +381,7 @@
    "en": "Text",
    "de": "Text"
   },
-  "demo_uses": 107
+  "demo_uses": 108
  },
  {
   "slug": "icon-with-text",
@@ -405,7 +405,7 @@
    "en": "Media",
    "de": "Medien"
   },
-  "demo_uses": 10
+  "demo_uses": 11
  },
  {
   "slug": "image-banner",
@@ -525,7 +525,7 @@
    "en": "Media",
    "de": "Medien"
   },
-  "demo_uses": 2
+  "demo_uses": 0
  },
  {
   "slug": "mandatory-info",
@@ -966,7 +966,7 @@
    "en": "Text",
    "de": "Text"
   },
-  "demo_uses": 79
+  "demo_uses": 80
  },
  {
   "slug": "timeline",

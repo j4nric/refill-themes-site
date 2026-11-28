@@ -1,0 +1,1477 @@
+{
+ "slug": "window",
+ "kind": "section",
+ "source": "sections/window.liquid",
+ "source_sha1": "0d0ad5fb2101",
+ "accepts_blocks": true,
+ "en": {
+  "name": "Window view",
+  "category": "Media",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "A window onto a background: as visitors scroll, the image stays put or moves more slowly while the page glides over it. Add content as “Placed content” and position it freely in the window."
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme (text and overlay)",
+    "info": "Text color and overlay color. Choose a light scheme for light images and a dark one for dark images.",
+    "default": "scheme-4"
+   },
+   {
+    "type": "range",
+    "id": "overlay",
+    "label": "Overlay",
+    "info": "Background color of the color scheme laid over the background. Set it high enough for the text to read easily (at least 4.5:1), or choose a panel behind the text in the content block.",
+    "default": 40,
+    "min": 0,
+    "max": 90,
+    "step": 5,
+    "unit": "%"
+   },
+   {
+    "type": "header",
+    "content": "Background"
+   },
+   {
+    "type": "select",
+    "id": "background",
+    "label": "Type",
+    "default": "image",
+    "options": [
+     {
+      "value": "image",
+      "label": "Image"
+     },
+     {
+      "value": "video",
+      "label": "Video"
+     },
+     {
+      "value": "color",
+      "label": "Color"
+     },
+     {
+      "value": "pattern",
+      "label": "Pattern"
+     }
+    ]
+   },
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image",
+    "info": "Landscape, at least 1600 px wide. With video: still shown before playback and with Reduce motion.",
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Image"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "video",
+    "id": "video",
+    "label": "Video",
+    "info": "Muted and looped, starts only once visible. A pause button appears at the bottom.",
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Video"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Image position",
+    "info": "Which part stays visible when the image is cropped. A focal point set in Shopify (Content › Files › image) takes priority.",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Center"
+     },
+     {
+      "value": "top",
+      "label": "Top"
+     },
+     {
+      "value": "bottom",
+      "label": "Bottom"
+     },
+     {
+      "value": "left",
+      "label": "Left"
+     },
+     {
+      "value": "right",
+      "label": "Right"
+     },
+     {
+      "value": "left top",
+      "label": "Top left"
+     },
+     {
+      "value": "right top",
+      "label": "Top right"
+     },
+     {
+      "value": "left bottom",
+      "label": "Bottom left"
+     },
+     {
+      "value": "right bottom",
+      "label": "Bottom right"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Image"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "priority",
+    "label": "Load immediately (section at the top)",
+    "info": "Only turn on when the section is on the first screen. Its content then appears without animation.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Image"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pattern",
+    "label": "Pattern",
+    "default": "dots",
+    "options": [
+     {
+      "value": "dots",
+      "label": "Dots"
+     },
+     {
+      "value": "grid",
+      "label": "Grid"
+     },
+     {
+      "value": "lines",
+      "label": "Lines"
+     },
+     {
+      "value": "diagonal",
+      "label": "Diagonal lines"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pattern_size",
+    "label": "Pattern size",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pattern_color",
+    "label": "Pattern color",
+    "default": "rule",
+    "options": [
+     {
+      "value": "rule",
+      "label": "Scheme: line"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Scheme: secondary text"
+     },
+     {
+      "value": "signal",
+      "label": "Scheme: accent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ]
+   },
+   {
+    "type": "color_scheme",
+    "id": "background_scheme",
+    "label": "Background color scheme",
+    "info": "Background color (gradients too) and the pattern’s colors.",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Color"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Color"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Type",
+      "op": "is",
+      "value": "Pattern"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Motion"
+   },
+   {
+    "type": "select",
+    "id": "motion",
+    "label": "On scroll",
+    "info": "With Reduce motion (operating system or accessibility panel) the background stays still in the window. Where the browser can’t do parallax, it looks like “Fixed”.",
+    "default": "fixed",
+    "options": [
+     {
+      "value": "fixed",
+      "label": "Fixed (page glides over it)"
+     },
+     {
+      "value": "parallax_slow",
+      "label": "Parallax: moves slowly"
+     },
+     {
+      "value": "parallax_fast",
+      "label": "Parallax: moves faster"
+     },
+     {
+      "value": "none",
+      "label": "None (scrolls along)"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Window"
+   },
+   {
+    "type": "select",
+    "id": "height",
+    "label": "Height",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     },
+     {
+      "value": "full",
+      "label": "Full screen"
+     },
+     {
+      "value": "auto",
+      "label": "Fit content"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "frame",
+    "label": "Width",
+    "info": "“With margin” leaves space to the page edge all around – the window sits within the page.",
+    "default": "inset",
+    "options": [
+     {
+      "value": "full",
+      "label": "Full width (edge to edge)"
+     },
+     {
+      "value": "inset",
+      "label": "With margin"
+     },
+     {
+      "value": "page",
+      "label": "Page width"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "shape",
+    "label": "Shape",
+    "default": "rect",
+    "options": [
+     {
+      "value": "rect",
+      "label": "Rectangle"
+     },
+     {
+      "value": "rounded",
+      "label": "Rounded"
+     },
+     {
+      "value": "arch",
+      "label": "Arch"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "padding",
+    "label": "Padding",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "mobile_layout",
+    "label": "On mobile",
+    "info": "Stacked: all content in sidebar order, full width. Placed freely: same position as on desktop, with “Width on mobile”.",
+    "default": "stacked",
+    "options": [
+     {
+      "value": "stacked",
+      "label": "Stacked"
+     },
+     {
+      "value": "free",
+      "label": "Placed freely"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Anchor",
+    "info": "Name without # or spaces, e.g. shipping. A button or link to #shipping jumps here."
+   }
+  ]
+ },
+ "de": {
+  "name": "Durchblick",
+  "category": "Medien",
+  "settings": [
+   {
+    "type": "paragraph",
+    "content": "Ein Fenster auf einen Hintergrund: Beim Scrollen steht das Bild fest oder läuft langsamer mit, die Seite gleitet darüber. Inhalte fügen Sie als „Platzierter Inhalt“ hinzu und setzen sie frei ins Fenster."
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema (Text und Überlagerung)",
+    "info": "Textfarbe und Farbe der Überlagerung. Auf hellen Bildern ein helles, auf dunklen ein dunkles Schema wählen.",
+    "default": "scheme-4"
+   },
+   {
+    "type": "range",
+    "id": "overlay",
+    "label": "Überlagerung",
+    "info": "Hintergrundfarbe des Farbschemas über dem Hintergrund. So hoch stellen, dass der Text gut lesbar ist (mindestens 4,5 : 1), oder beim Inhalt eine Fläche hinter dem Text wählen.",
+    "default": 40,
+    "min": 0,
+    "max": 90,
+    "step": 5,
+    "unit": "%"
+   },
+   {
+    "type": "header",
+    "content": "Hintergrund"
+   },
+   {
+    "type": "select",
+    "id": "background",
+    "label": "Art",
+    "default": "image",
+    "options": [
+     {
+      "value": "image",
+      "label": "Bild"
+     },
+     {
+      "value": "video",
+      "label": "Video"
+     },
+     {
+      "value": "color",
+      "label": "Farbe"
+     },
+     {
+      "value": "pattern",
+      "label": "Muster"
+     }
+    ]
+   },
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Bild",
+    "info": "Querformat ab 1600 px Breite. Mit Video: Standbild vor dem Start und bei „Bewegung reduzieren“.",
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Bild"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "video",
+    "id": "video",
+    "label": "Video",
+    "info": "Stumm in Schleife, startet erst im sichtbaren Bereich. Unten erscheint ein Knopf zum Anhalten.",
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Video"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Bildausrichtung",
+    "info": "Welcher Teil sichtbar bleibt, wenn das Bild beschnitten wird. Ein Fokuspunkt aus Shopify (Inhalte › Dateien › Bild) hat Vorrang.",
+    "default": "center",
+    "options": [
+     {
+      "value": "center",
+      "label": "Mitte"
+     },
+     {
+      "value": "top",
+      "label": "Oben"
+     },
+     {
+      "value": "bottom",
+      "label": "Unten"
+     },
+     {
+      "value": "left",
+      "label": "Links"
+     },
+     {
+      "value": "right",
+      "label": "Rechts"
+     },
+     {
+      "value": "left top",
+      "label": "Oben links"
+     },
+     {
+      "value": "right top",
+      "label": "Oben rechts"
+     },
+     {
+      "value": "left bottom",
+      "label": "Unten links"
+     },
+     {
+      "value": "right bottom",
+      "label": "Unten rechts"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Bild"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "priority",
+    "label": "Sofort laden (Abschnitt ganz oben)",
+    "info": "Nur einschalten, wenn der Abschnitt im ersten Bildschirm steht. Die Inhalte erscheinen dann ohne Animation.",
+    "default": false,
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Bild"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Video"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pattern",
+    "label": "Muster",
+    "default": "dots",
+    "options": [
+     {
+      "value": "dots",
+      "label": "Punkte"
+     },
+     {
+      "value": "grid",
+      "label": "Raster"
+     },
+     {
+      "value": "lines",
+      "label": "Linien"
+     },
+     {
+      "value": "diagonal",
+      "label": "Schraffur"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pattern_size",
+    "label": "Größe des Musters",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "pattern_color",
+    "label": "Farbe des Musters",
+    "default": "rule",
+    "options": [
+     {
+      "value": "rule",
+      "label": "Schema: Linie"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Schema: Sekundärtext"
+     },
+     {
+      "value": "signal",
+      "label": "Schema: Akzent"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ]
+   },
+   {
+    "type": "color_scheme",
+    "id": "background_scheme",
+    "label": "Farbschema des Hintergrunds",
+    "info": "Hintergrundfarbe (auch Verlauf) und Farben des Musters.",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Farbe"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Farbe"
+     },
+     "or",
+     {
+      "setting": "background",
+      "label": "Art",
+      "op": "is",
+      "value": "Muster"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Bewegung"
+   },
+   {
+    "type": "select",
+    "id": "motion",
+    "label": "Beim Scrollen",
+    "info": "Bei „Bewegung reduzieren“ (Betriebssystem oder Bedienhilfen-Panel) steht der Hintergrund still im Fenster. Kann der Browser Parallax nicht, wirkt es wie „Fest“.",
+    "default": "fixed",
+    "options": [
+     {
+      "value": "fixed",
+      "label": "Fest (Seite gleitet darüber)"
+     },
+     {
+      "value": "parallax_slow",
+      "label": "Parallax: läuft langsam mit"
+     },
+     {
+      "value": "parallax_fast",
+      "label": "Parallax: läuft schneller mit"
+     },
+     {
+      "value": "none",
+      "label": "Ohne (scrollt mit)"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Fenster"
+   },
+   {
+    "type": "select",
+    "id": "height",
+    "label": "Höhe",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     },
+     {
+      "value": "full",
+      "label": "Bildschirmhöhe"
+     },
+     {
+      "value": "auto",
+      "label": "Nach Inhalt"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "frame",
+    "label": "Breite",
+    "info": "„Mit Rand“ lässt rundum Abstand zum Seitenrand – das Fenster sitzt in der Seite.",
+    "default": "inset",
+    "options": [
+     {
+      "value": "full",
+      "label": "Volle Breite (randlos)"
+     },
+     {
+      "value": "inset",
+      "label": "Mit Rand"
+     },
+     {
+      "value": "page",
+      "label": "Seitenbreite"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "shape",
+    "label": "Form",
+    "default": "rect",
+    "options": [
+     {
+      "value": "rect",
+      "label": "Rechteckig"
+     },
+     {
+      "value": "rounded",
+      "label": "Abgerundet"
+     },
+     {
+      "value": "arch",
+      "label": "Bogen"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "padding",
+    "label": "Innenabstand",
+    "default": "medium",
+    "options": [
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "mobile_layout",
+    "label": "Am Handy",
+    "info": "Untereinander: alle Inhalte in der Reihenfolge der Seitenleiste, volle Breite. Frei platziert: Position wie am Desktop, mit „Breite am Handy“.",
+    "default": "stacked",
+    "options": [
+     {
+      "value": "stacked",
+      "label": "Untereinander"
+     },
+     {
+      "value": "free",
+      "label": "Frei platziert"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "anchor",
+    "label": "Sprungmarke",
+    "info": "Name ohne # und Leerzeichen, z. B. versand. Ein Knopf oder Link mit #versand springt hierher."
+   }
+  ]
+ },
+ "subblocks": [
+  {
+   "slug": "_window-item",
+   "kind": "block",
+   "source": "blocks/_window-item.liquid",
+   "source_sha1": "08ea2ef48cad",
+   "accepts_blocks": true,
+   "en": {
+    "name": "Placed content",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Add a heading, text, button or image and place the group in the window. Screen readers follow the sidebar order."
+     },
+     {
+      "type": "header",
+      "content": "Position and size"
+     },
+     {
+      "type": "select",
+      "id": "placement",
+      "label": "Position",
+      "default": "anchor",
+      "options": [
+       {
+        "value": "anchor",
+        "label": "On the grid (9 points)"
+       },
+       {
+        "value": "free",
+        "label": "Free (x/y)"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "anchor",
+      "label": "Spot in the window",
+      "default": "middle_left",
+      "options": [
+       {
+        "value": "top_left",
+        "label": "Top left"
+       },
+       {
+        "value": "top_center",
+        "label": "Top"
+       },
+       {
+        "value": "top_right",
+        "label": "Top right"
+       },
+       {
+        "value": "middle_left",
+        "label": "Left"
+       },
+       {
+        "value": "middle_center",
+        "label": "Center"
+       },
+       {
+        "value": "middle_right",
+        "label": "Right"
+       },
+       {
+        "value": "bottom_left",
+        "label": "Bottom left"
+       },
+       {
+        "value": "bottom_center",
+        "label": "Bottom"
+       },
+       {
+        "value": "bottom_right",
+        "label": "Bottom right"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "On the grid (9 points)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "x",
+      "label": "Horizontal",
+      "info": "0% = left or top, 100% = right or bottom. The content always stays inside the window.",
+      "default": 10,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "visible_if": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Free (x/y)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Free (x/y)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "y",
+      "label": "Vertical",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "visible_if": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Free (x/y)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Free (x/y)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "width",
+      "label": "Width",
+      "default": 50,
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%"
+     },
+     {
+      "type": "range",
+      "id": "width_mobile",
+      "label": "Width on mobile",
+      "info": "Only with “On mobile: Placed freely” in the section.",
+      "default": 90,
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "%"
+     },
+     {
+      "type": "header",
+      "content": "Appearance"
+     },
+     {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Horizontal alignment",
+      "default": "left"
+     },
+     {
+      "type": "select",
+      "id": "gap",
+      "label": "Spacing between blocks",
+      "default": "4",
+      "options": [
+       {
+        "value": "2",
+        "label": "Extra small"
+       },
+       {
+        "value": "4",
+        "label": "Small"
+       },
+       {
+        "value": "6",
+        "label": "Medium"
+       },
+       {
+        "value": "8",
+        "label": "Large"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "panel",
+      "label": "Panel behind the text",
+      "info": "“Solid” guarantees contrast, even on busy images.",
+      "default": "none",
+      "options": [
+       {
+        "value": "none",
+        "label": "None"
+       },
+       {
+        "value": "solid",
+        "label": "Solid"
+       },
+       {
+        "value": "soft",
+        "label": "Translucent"
+       }
+      ]
+     },
+     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Panel color scheme",
+      "default": "scheme-1",
+      "visible_if": [
+       {
+        "setting": "panel",
+        "label": "Panel behind the text",
+        "op": "is_not",
+        "value": "None"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "panel",
+        "label": "Panel behind the text",
+        "op": "is_not",
+        "value": "None"
+       }
+      ]
+     }
+    ]
+   },
+   "de": {
+    "name": "Platzierter Inhalt",
+    "category": null,
+    "settings": [
+     {
+      "type": "paragraph",
+      "content": "Fügen Sie Überschrift, Text, Button oder Bild hinzu und setzen Sie die Gruppe ins Fenster. Screenreader lesen in der Reihenfolge der Seitenleiste."
+     },
+     {
+      "type": "header",
+      "content": "Position und Größe"
+     },
+     {
+      "type": "select",
+      "id": "placement",
+      "label": "Position",
+      "default": "anchor",
+      "options": [
+       {
+        "value": "anchor",
+        "label": "Am Raster (9 Punkte)"
+       },
+       {
+        "value": "free",
+        "label": "Frei (x/y)"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "anchor",
+      "label": "Stelle im Fenster",
+      "default": "middle_left",
+      "options": [
+       {
+        "value": "top_left",
+        "label": "Oben links"
+       },
+       {
+        "value": "top_center",
+        "label": "Oben"
+       },
+       {
+        "value": "top_right",
+        "label": "Oben rechts"
+       },
+       {
+        "value": "middle_left",
+        "label": "Links"
+       },
+       {
+        "value": "middle_center",
+        "label": "Mitte"
+       },
+       {
+        "value": "middle_right",
+        "label": "Rechts"
+       },
+       {
+        "value": "bottom_left",
+        "label": "Unten links"
+       },
+       {
+        "value": "bottom_center",
+        "label": "Unten"
+       },
+       {
+        "value": "bottom_right",
+        "label": "Unten rechts"
+       }
+      ],
+      "visible_if": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Am Raster (9 Punkte)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "x",
+      "label": "Waagerecht",
+      "info": "0 % = links bzw. oben, 100 % = rechts bzw. unten. Der Inhalt bleibt ganz im Fenster.",
+      "default": 10,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "visible_if": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Frei (x/y)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Frei (x/y)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "y",
+      "label": "Senkrecht",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "visible_if": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Frei (x/y)"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "placement",
+        "label": "Position",
+        "op": "is",
+        "value": "Frei (x/y)"
+       }
+      ]
+     },
+     {
+      "type": "range",
+      "id": "width",
+      "label": "Breite",
+      "default": 50,
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%"
+     },
+     {
+      "type": "range",
+      "id": "width_mobile",
+      "label": "Breite am Handy",
+      "info": "Nur mit „Am Handy: Frei platziert“ im Abschnitt.",
+      "default": 90,
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "%"
+     },
+     {
+      "type": "header",
+      "content": "Darstellung"
+     },
+     {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Horizontale Ausrichtung",
+      "default": "left"
+     },
+     {
+      "type": "select",
+      "id": "gap",
+      "label": "Abstand zwischen Blöcken",
+      "default": "4",
+      "options": [
+       {
+        "value": "2",
+        "label": "Sehr klein"
+       },
+       {
+        "value": "4",
+        "label": "Klein"
+       },
+       {
+        "value": "6",
+        "label": "Mittel"
+       },
+       {
+        "value": "8",
+        "label": "Groß"
+       }
+      ]
+     },
+     {
+      "type": "select",
+      "id": "panel",
+      "label": "Fläche hinter dem Text",
+      "info": "„Deckend“ sorgt sicher für Kontrast, auch auf unruhigen Bildern.",
+      "default": "none",
+      "options": [
+       {
+        "value": "none",
+        "label": "Keine"
+       },
+       {
+        "value": "solid",
+        "label": "Deckend"
+       },
+       {
+        "value": "soft",
+        "label": "Durchscheinend"
+       }
+      ]
+     },
+     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Farbschema der Fläche",
+      "default": "scheme-1",
+      "visible_if": [
+       {
+        "setting": "panel",
+        "label": "Fläche hinter dem Text",
+        "op": "is_not",
+        "value": "Keine"
+       }
+      ],
+      "hidden_by_default": true,
+      "hidden_by": [
+       {
+        "setting": "panel",
+        "label": "Fläche hinter dem Text",
+        "op": "is_not",
+        "value": "Keine"
+       }
+      ]
+     }
+    ]
+   },
+   "type": "_window-item",
+   "anchor": "window-item",
+   "parent": null
+  }
+ ],
+ "theme_blocks": false,
+ "where": {
+  "group": null,
+  "templates": [
+   "index"
+  ],
+  "demo_disabled": false,
+  "enabled_on": null,
+  "has_preset": true
+ }
+}

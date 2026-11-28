@@ -563,8 +563,8 @@
    ],
    "more": [
     "animation",
-    "block-dekor",
-    "Block „Dekor“ im Detail"
+    "block-freies-dekor",
+    "Block „Freies Dekor“ im Detail"
    ]
   },
   "en": {
@@ -576,8 +576,8 @@
    ],
    "more": [
     "animation",
-    "decoration-block",
-    "The “Decoration” block in detail"
+    "free-decoration-block",
+    "The “Free decoration” block in detail"
    ]
   }
  },

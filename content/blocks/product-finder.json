@@ -2,7 +2,7 @@
  "slug": "product-finder",
  "kind": "block",
  "source": "blocks/product-finder.liquid",
- "source_sha1": "1d8d7cefb76c",
+ "source_sha1": "f34ee1650928",
  "accepts_blocks": true,
  "en": {
   "name": "Product finder",
@@ -180,6 +180,36 @@
      {
       "setting": null,
       "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_variant_picker",
+    "label": "Variant selection on the card",
+    "info": "Off: more compact cards without option rows. “Add to cart” then opens a selection dialog for products with several variants; with a single variant the button adds straight to the cart.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "After the last question",
+      "op": "is",
+      "value": "Show products here"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Choose variants on the card",
       "op": "on"
      }
     ],
@@ -371,6 +401,36 @@
      {
       "setting": null,
       "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_variant_picker",
+    "label": "Variantenwahl auf der Karte",
+    "info": "Aus: kompaktere Karten ohne Optionszeilen. „In den Warenkorb“ öffnet dann bei mehreren Varianten eine Auswahl im Dialog; bei nur einer Variante legt der Knopf direkt in den Warenkorb.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "result_mode",
+      "label": "Nach der letzten Frage",
+      "op": "is",
+      "value": "Produkte hier anzeigen"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Varianten auf der Karte wählen",
       "op": "on"
      }
     ],

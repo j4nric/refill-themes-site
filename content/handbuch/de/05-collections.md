@@ -15,7 +15,9 @@ Produktkarten erscheinen überall, wo Produkte in einem Raster stehen: Kollektio
 | „Titel beim Überfahren unterstreichen“ | Unterstreicht den Produkttitel, sobald die Maus über der Karte steht. | an |
 | „Titelfarbe beim Überfahren“ | „Akzent“, „Text“ (keine Farbänderung) oder „Sekundärtext“ aus dem Farbschema der Karte, oder eine Markenfarbe. | Akzent |
 | **Kaufen auf Produktkarten** | | |
-| „Schnellkauf auf Produktkarten“ | Knopf „In den Warenkorb“ bzw. „Optionen wählen“ auf der Karte. | an |
+| „Schnellkauf auf Produktkarten“ | Knopf „In den Warenkorb“ auf der Karte. | an |
+| „Varianten auf der Karte wählen“ | Geschmack, Farbe oder Packungsgröße direkt auf der Karte wählen. Aus: kompakte Karten, „In den Warenkorb“ öffnet eine Auswahl im Dialog (siehe [Kompakte Karten](#kompakte-karten-ohne-variantenwahl)). | an |
+| „Schnellkauf auf Produktkarten“ | Knopf „In den Warenkorb“ bzw. „Optionen wählen“ auf der Karte; ausverkaufte Produkte zeigen an derselben Stelle einen grauen, gesperrten Knopf „Ausverkauft“. | an |
 | „Varianten auf der Karte wählen“ | Geschmack, Farbe oder Packungsgröße direkt auf der Karte wählen. | an |
 | „Bevorzugte Option für Karten“, „Optionen für Packungsgrößen“ | Reihenfolge und Darstellung der Optionszeilen, siehe unten. | – |
 
@@ -23,7 +25,7 @@ Darunter folgen eigene Badges und Badge-Farben (siehe [Badges](#badges)).
 
 Welche Kennzahlen eine Karte zeigt (Portion, Preis pro Tag), stellen Sie im jeweiligen Block ein (z. B. „Kollektion: Produktliste“ → **„Kennzahlen anzeigen (Portion, Portionen)“** und **„Preis pro Tag bzw. Portion anzeigen“**). Beide Schalter erscheinen erst, wenn unter Theme-Einstellungen → „Produktdaten“ die Metafelder für Menge je Portion bzw. Portionen pro Packung eingetragen sind.
 
-Ebenso lassen sich je Block einzelne Teile der Karte abschalten: **„Profil-Skalen zeigen (z. B. Duft, Textur)“**, **„Grundpreis zeigen“** und **„Häkchen ‚Vergleichen‘ zeigen“** (Standard: an). Die Schalter gibt es in „Produkte aus Kollektion“, „Kollektion: Produktliste“, „Suche: Ergebnisse“ (auch für die Vorschläge bei leerer Suche), „Inhaltsstoff: Produkte“, „Zuletzt angesehen“, „Produktfinder“ (Ergebnisse auf der Seite) und im Abschnitt „Produktempfehlungen“. Profil-Skalen und „Vergleichen“ erscheinen nur, wenn sie unter Theme-Einstellungen → „Produktdaten“ → „Produktkarten“ eingeschaltet sind; der Block kann sie dann für sich ausblenden. Den Grundpreis (z. B. „16,86 €/100 g“) verlangt die Preisangabenverordnung bei Waren nach Gewicht, Volumen oder Länge in der Regel überall, wo ein Preis steht – schalten Sie ihn nur ab, wo er nicht nötig ist.
+Ebenso lassen sich je Block einzelne Teile der Karte abschalten: **„Profil-Skalen zeigen (z. B. Duft, Textur)“**, **„Grundpreis zeigen“**, **„Häkchen ‚Vergleichen‘ zeigen“** und **„Variantenwahl auf der Karte“** (Standard: an, siehe [Kompakte Karten](#kompakte-karten-ohne-variantenwahl)). Die Schalter gibt es in „Produkte aus Kollektion“, „Kollektion: Produktliste“, „Suche: Ergebnisse“ (auch für die Vorschläge bei leerer Suche), „Inhaltsstoff: Produkte“, „Zuletzt angesehen“, „Produktfinder“ (Ergebnisse auf der Seite) und im Abschnitt „Produktempfehlungen“. Profil-Skalen und „Vergleichen“ erscheinen nur, wenn sie unter Theme-Einstellungen → „Produktdaten“ → „Produktkarten“ eingeschaltet sind; der Block kann sie dann für sich ausblenden. Den Grundpreis (z. B. „16,86 €/100 g“) verlangt die Preisangabenverordnung bei Waren nach Gewicht, Volumen oder Länge in der Regel überall, wo ein Preis steht – schalten Sie ihn nur ab, wo er nicht nötig ist.
 
 Lange Produkttitel stehen auf Karten in höchstens zwei Zeilen. Überschriften und Titel trennen Wörter nur, wenn ein Wort allein nicht in die Zeile passt.
 
@@ -62,6 +64,16 @@ So steuern Sie die Zeilen (gilt für alle vier Stellen):
 
 Ohne JavaScript entfallen die Zeilen auf der Karte, und der Knopf führt auf die Produktseite.
 
+### Kompakte Karten ohne Variantenwahl
+
+Wo die Optionszeilen zu viel Platz brauchen – etwa in einer schmalen Reihe auf der Startseite oder bei den Empfehlungen –, schalten Sie im Block **„Variantenwahl auf der Karte“** aus (Standard: an). Den Schalter gibt es in denselben Blöcken wie „Grundpreis zeigen“: „Produkte aus Kollektion“ (auch in Tabs), „Kollektion: Produktliste“, „Suche: Ergebnisse“, „Inhaltsstoff: Produkte“, „Zuletzt angesehen“, „Produktfinder“ (Ergebnisse auf der Seite) und im Abschnitt „Produktempfehlungen“. Er erscheint nur, wenn „Varianten auf der Karte wählen“ in den Theme-Einstellungen an ist; ist es dort aus, verhalten sich alle Karten so wie hier beschrieben.
+
+- Die Karte zeigt keine Optionszeilen und ist dadurch kürzer. Farbfelder (falls „Farbfelder anzeigen“ an ist) bleiben als kleine Vorschau.
+- **„In den Warenkorb“** öffnet bei Produkten mit mehreren Varianten die **Schnellansicht** als Dialog: Bild, Preis, dieselben Optionszeilen, Abo-Auswahl und Menge. Der Fokus springt in den Dialog auf die erste Optionszeile; Escape, das × oder ein Klick daneben schließen ihn, danach steht der Fokus wieder auf dem Knopf der Karte. Nach dem Hinzufügen schließt sich der Dialog und der Warenkorb öffnet sich.
+- Bei Produkten mit nur einer Variante legt der Knopf direkt in den Warenkorb.
+- Ohne JavaScript führt der Knopf auf die Produktseite.
+- Der Knopf erscheint nur mit „Schnellkauf auf Produktkarten“.
+
 ### Badges
 
 Karten zeigen automatisch „Ausverkauft“, „Angebot“ und „Abo −10 %“, dazu bis zu zwei eigene Badges aus dem Produkt-Tag `badge:…` oder einem Metafeld (siehe [Produktdaten](09-product-data.md#badges-auf-produktkarten)).
@@ -71,6 +83,20 @@ Eigene Farben für bestimmte Badges: **Theme-Einstellungen → „Produktdaten�
 ## Kollektionsseite
 
 Die Vorlage `collection` enthält Brotkrumen, **„Kollektion: Kopfbereich“** (Titel, Beschreibung, Kollektionsbild – **„Kollektionsbild anzeigen“**, Standard an), **„Unterkollektionen“** und **„Kollektion: Produktliste“**.
+
+### Kopfbereich gestalten
+
+Block **„Kollektion: Kopfbereich“** (Standard wie bisher: Text links, Bild rechts):
+
+| Einstellung | Wirkung |
+|---|---|
+| „Anzahl der Produkte anzeigen“ | Zeile „12 Produkte“ unter der Beschreibung (Standard aus). |
+| „Bildquelle“ | „Kollektionsbild (sonst eigenes Bild)“ oder „Immer eigenes Bild“; **„Eigenes Bild“** springt bei Kollektionen ohne Bild ein. |
+| „Bildposition“ | Rechts oder links neben dem Text, über dem Text oder **„Als Hintergrund hinter dem Text“**. |
+| „Deckkraft der Überlagerung“ | Nur beim Hintergrund: Fläche in der Hintergrundfarbe des Farbschemas zwischen Bild und Text, 65–95 % (Standard 75 %). Ab 65 % bleibt der Text auch auf sehr hellen oder dunklen Bildern lesbar. |
+| „Textausrichtung“ | Links, mittig oder rechts. |
+| „Höhe“ | „Nach Inhalt“ (Standard) oder Klein / Mittel / Groß – Mindesthöhe von Bild bzw. Kopf je nach Bildschirmhöhe. |
+| „Eigenes Farbschema“ | Kopf als Fläche im gewählten Schema; beim Hintergrund bestimmt es auch Überlagerung und Textfarbe. |
 
 ### Produktliste
 
@@ -167,6 +193,7 @@ Kundinnen und Kunden stellen zwei bis vier Produkte nebeneinander: Preis, Grundp
 - Zeilen ohne Wert bei allen gezeigten Produkten blendet der Shop aus. **„Unterschiede standardmäßig hervorheben“** hinterlegt Zeilen mit unterschiedlichen Werten. Mit **„Schalter ‚Unterschiede hervorheben‘ zeigen“** können Kunden das selbst umschalten; ohne Schalter gilt Ihre Einstellung dauerhaft.
 - Die Vergleichsansicht hat eine eigene Adresse wie `/search?view=compare&type=product&q=handle:a OR handle:b`. Sie können sie selbst verlinken, z. B. aus einem Blogartikel. Suchmaschinen indexieren sie nicht.
 - Es erscheinen nur veröffentlichte Produkte; unbekannte Handles fallen weg.
+- **„Spaltenabstand“** und **„Zeilenabstand“** (Bereich „Gestaltung“) stellen den Abstand zwischen den Zellen ein; „Standard“ wird am Handy etwas enger. Dieselben Einstellungen hat der Block **„Vergleichstabelle“**.
 
 ## Merkliste
 

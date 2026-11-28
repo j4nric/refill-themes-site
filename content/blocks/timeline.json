@@ -2,7 +2,7 @@
  "slug": "timeline",
  "kind": "block",
  "source": "blocks/timeline.liquid",
- "source_sha1": "191330e016cf",
+ "source_sha1": "5b5820ae924b",
  "accepts_blocks": true,
  "en": {
   "name": "Timeline",
@@ -51,6 +51,86 @@
     "id": "note",
     "label": "Note",
     "info": "Optional, e.g. “Deliveries on working days”. Text in double square brackets is highlighted, e.g. [[refill]]."
+   },
+   {
+    "type": "select",
+    "id": "animation_speed",
+    "label": "Entry animation speed",
+    "info": "How long the line, dot and text of each entry take to appear, and the pause between entries. Applies with text animation “Headings + accents” or “All text”.",
+    "default": "theme",
+    "options": [
+     {
+      "value": "theme",
+      "label": "Same as theme setting"
+     },
+     {
+      "value": "fast",
+      "label": "Fast"
+     },
+     {
+      "value": "slow",
+      "label": "Slow"
+     },
+     {
+      "value": "very_slow",
+      "label": "Very slow"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text animation",
+      "op": "is",
+      "value": "accent"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text animation",
+      "op": "is",
+      "value": "all"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text animation",
+      "op": "is",
+      "value": "accent"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Enable animations",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text animation",
+      "op": "is",
+      "value": "all"
+     }
+    ]
    }
   ]
  },
@@ -101,6 +181,86 @@
     "id": "note",
     "label": "Hinweis",
     "info": "Optional, z. B. „Lieferung an Werktagen“. Text in doppelten eckigen Klammern wird hervorgehoben, z. B. [[nachfüllen]]."
+   },
+   {
+    "type": "select",
+    "id": "animation_speed",
+    "label": "Animationsgeschwindigkeit der Einträge",
+    "info": "Dauer und Abstand, mit denen Linie, Punkt und Text der Einträge nacheinander erscheinen. Wirkt mit Text-Animation „Überschriften + Akzent“ oder „Alle Texte“.",
+    "default": "theme",
+    "options": [
+     {
+      "value": "theme",
+      "label": "Wie Theme-Einstellung"
+     },
+     {
+      "value": "fast",
+      "label": "Schnell"
+     },
+     {
+      "value": "slow",
+      "label": "Langsam"
+     },
+     {
+      "value": "very_slow",
+      "label": "Sehr langsam"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text-Animation",
+      "op": "is",
+      "value": "accent"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text-Animation",
+      "op": "is",
+      "value": "all"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text-Animation",
+      "op": "is",
+      "value": "accent"
+     },
+     "or",
+     {
+      "setting": null,
+      "label": "Animationen aktivieren",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": null,
+      "label": "Text-Animation",
+      "op": "is",
+      "value": "all"
+     }
+    ]
    }
   ]
  }

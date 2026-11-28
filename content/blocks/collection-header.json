@@ -2,7 +2,7 @@
  "slug": "collection-header",
  "kind": "block",
  "source": "blocks/collection-header.liquid",
- "source_sha1": "613e75d6b87b",
+ "source_sha1": "d0ac11632e69",
  "accepts_blocks": false,
  "en": {
   "name": "Collection: header",
@@ -16,9 +16,179 @@
    },
    {
     "type": "checkbox",
+    "id": "show_count",
+    "label": "Show product count",
+    "default": false
+   },
+   {
+    "type": "checkbox",
     "id": "show_image",
     "label": "Show collection image",
     "default": true
+   },
+   {
+    "type": "select",
+    "id": "image_source",
+    "label": "Image source",
+    "default": "collection",
+    "options": [
+     {
+      "value": "collection",
+      "label": "Collection image (otherwise custom image)"
+     },
+     {
+      "value": "custom",
+      "label": "Always custom image"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Show collection image",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Custom image",
+    "info": "Used when a collection has no image of its own, or replaces it with “Always custom image”.",
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Show collection image",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Image position",
+    "default": "right",
+    "options": [
+     {
+      "value": "right",
+      "label": "Right of the text"
+     },
+     {
+      "value": "left",
+      "label": "Left of the text"
+     },
+     {
+      "value": "top",
+      "label": "Above the text"
+     },
+     {
+      "value": "background",
+      "label": "As background behind the text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Show collection image",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "overlay_opacity",
+    "label": "Overlay opacity",
+    "info": "Layer in the color scheme’s background color between image and text. From 65% on, text stays readable even on very light or dark images.",
+    "default": 75,
+    "min": 65,
+    "max": 95,
+    "step": 5,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Show collection image",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "image_position",
+      "label": "Image position",
+      "op": "is",
+      "value": "As background behind the text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "image_position",
+      "label": "Image position",
+      "op": "is",
+      "value": "As background behind the text"
+     }
+    ]
+   },
+   {
+    "type": "text_alignment",
+    "id": "text_alignment",
+    "label": "Text alignment",
+    "default": "left"
+   },
+   {
+    "type": "select",
+    "id": "height",
+    "label": "Height",
+    "info": "Minimum height of the image or header, based on screen height. “Fit content” follows the text and the image’s aspect ratio.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Fit content"
+     },
+     {
+      "value": "small",
+      "label": "Small"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "large",
+      "label": "Large"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "use_color_scheme",
+    "label": "Own color scheme",
+    "info": "Header as a panel in the chosen scheme. With the image as background, the scheme also sets the overlay and text color.",
+    "default": false
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color scheme",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Own color scheme",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Own color scheme",
+      "op": "on"
+     }
+    ]
    }
   ]
  },
@@ -34,9 +204,179 @@
    },
    {
     "type": "checkbox",
+    "id": "show_count",
+    "label": "Anzahl der Produkte anzeigen",
+    "default": false
+   },
+   {
+    "type": "checkbox",
     "id": "show_image",
     "label": "Kollektionsbild anzeigen",
     "default": true
+   },
+   {
+    "type": "select",
+    "id": "image_source",
+    "label": "Bildquelle",
+    "default": "collection",
+    "options": [
+     {
+      "value": "collection",
+      "label": "Kollektionsbild (sonst eigenes Bild)"
+     },
+     {
+      "value": "custom",
+      "label": "Immer eigenes Bild"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Kollektionsbild anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Eigenes Bild",
+    "info": "Springt ein, wenn eine Kollektion kein eigenes Bild hat, oder ersetzt es bei „Immer eigenes Bild“.",
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Kollektionsbild anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "select",
+    "id": "image_position",
+    "label": "Bildposition",
+    "default": "right",
+    "options": [
+     {
+      "value": "right",
+      "label": "Rechts neben dem Text"
+     },
+     {
+      "value": "left",
+      "label": "Links neben dem Text"
+     },
+     {
+      "value": "top",
+      "label": "Über dem Text"
+     },
+     {
+      "value": "background",
+      "label": "Als Hintergrund hinter dem Text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Kollektionsbild anzeigen",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "overlay_opacity",
+    "label": "Deckkraft der Überlagerung",
+    "info": "Fläche in der Hintergrundfarbe des Farbschemas zwischen Bild und Text. Ab 65 % bleibt der Text auch auf sehr hellen oder dunklen Bildern gut lesbar.",
+    "default": 75,
+    "min": 65,
+    "max": 95,
+    "step": 5,
+    "unit": "%",
+    "visible_if": [
+     {
+      "setting": "show_image",
+      "label": "Kollektionsbild anzeigen",
+      "op": "on"
+     },
+     "and",
+     {
+      "setting": "image_position",
+      "label": "Bildposition",
+      "op": "is",
+      "value": "Als Hintergrund hinter dem Text"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "image_position",
+      "label": "Bildposition",
+      "op": "is",
+      "value": "Als Hintergrund hinter dem Text"
+     }
+    ]
+   },
+   {
+    "type": "text_alignment",
+    "id": "text_alignment",
+    "label": "Textausrichtung",
+    "default": "left"
+   },
+   {
+    "type": "select",
+    "id": "height",
+    "label": "Höhe",
+    "info": "Mindesthöhe von Bild bzw. Kopfbereich, je nach Bildschirmhöhe. „Nach Inhalt“ richtet sich nach Text und Seitenverhältnis des Bilds.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Nach Inhalt"
+     },
+     {
+      "value": "small",
+      "label": "Klein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "large",
+      "label": "Groß"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "use_color_scheme",
+    "label": "Eigenes Farbschema",
+    "info": "Kopfbereich als Fläche im gewählten Schema. Beim Bild als Hintergrund bestimmt das Schema auch Überlagerung und Textfarbe.",
+    "default": false
+   },
+   {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Farbschema",
+    "default": "scheme-2",
+    "visible_if": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Eigenes Farbschema",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "use_color_scheme",
+      "label": "Eigenes Farbschema",
+      "op": "on"
+     }
+    ]
    }
   ]
  }

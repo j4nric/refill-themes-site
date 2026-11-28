@@ -2,7 +2,7 @@
  "slug": "announcement-bar",
  "kind": "section",
  "source": "sections/announcement-bar.liquid",
- "source_sha1": "2ea1181ca208",
+ "source_sha1": "c50ab53196ff",
  "accepts_blocks": true,
  "en": {
   "name": "Announcement bar",
@@ -13,6 +13,80 @@
     "id": "color_scheme",
     "label": "Color scheme",
     "default": "scheme-4"
+   },
+   {
+    "type": "select",
+    "id": "transition",
+    "label": "Transition",
+    "info": "Sideways: swipeable on phones, all messages side by side on desktop. Vertical: one message at every width, the next one comes in from below; arrows and swiping change it too.",
+    "default": "horizontal",
+    "options": [
+     {
+      "value": "horizontal",
+      "label": "Sideways (swipe)"
+     },
+     {
+      "value": "vertical",
+      "label": "Vertical (fade upwards)"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "Change automatically",
+    "info": "With a pause button; holds while the pointer or focus is on the bar. Off with reduced motion.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "transition",
+      "label": "Transition",
+      "op": "is",
+      "value": "Vertical (fade upwards)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "transition",
+      "label": "Transition",
+      "op": "is",
+      "value": "Vertical (fade upwards)"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "autoplay_seconds",
+    "label": "Time per message",
+    "default": 5,
+    "min": 3,
+    "max": 10,
+    "step": 1,
+    "unit": "s",
+    "visible_if": [
+     {
+      "setting": "transition",
+      "label": "Transition",
+      "op": "is",
+      "value": "Vertical (fade upwards)"
+     },
+     "and",
+     {
+      "setting": "autoplay",
+      "label": "Change automatically",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "transition",
+      "label": "Transition",
+      "op": "is",
+      "value": "Vertical (fade upwards)"
+     }
+    ]
    }
   ]
  },
@@ -25,6 +99,80 @@
     "id": "color_scheme",
     "label": "Farbschema",
     "default": "scheme-4"
+   },
+   {
+    "type": "select",
+    "id": "transition",
+    "label": "Wechsel",
+    "info": "Seitlich: am Handy wischbar, am Desktop alle Meldungen nebeneinander. Vertikal: auf allen Breiten eine Meldung, die nächste kommt von unten; Pfeile und Wischen wechseln ebenso.",
+    "default": "horizontal",
+    "options": [
+     {
+      "value": "horizontal",
+      "label": "Seitlich (wischen)"
+     },
+     {
+      "value": "vertical",
+      "label": "Vertikal (überblenden nach oben)"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "Automatisch wechseln",
+    "info": "Mit Knopf zum Anhalten; hält, solange Mauszeiger oder Fokus auf der Leiste liegen. Entfällt bei „Bewegung reduzieren“.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "transition",
+      "label": "Wechsel",
+      "op": "is",
+      "value": "Vertikal (überblenden nach oben)"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "transition",
+      "label": "Wechsel",
+      "op": "is",
+      "value": "Vertikal (überblenden nach oben)"
+     }
+    ]
+   },
+   {
+    "type": "range",
+    "id": "autoplay_seconds",
+    "label": "Zeit je Meldung",
+    "default": 5,
+    "min": 3,
+    "max": 10,
+    "step": 1,
+    "unit": "s",
+    "visible_if": [
+     {
+      "setting": "transition",
+      "label": "Wechsel",
+      "op": "is",
+      "value": "Vertikal (überblenden nach oben)"
+     },
+     "and",
+     {
+      "setting": "autoplay",
+      "label": "Automatisch wechseln",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "transition",
+      "label": "Wechsel",
+      "op": "is",
+      "value": "Vertikal (überblenden nach oben)"
+     }
+    ]
    }
   ]
  },

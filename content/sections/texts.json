@@ -412,5 +412,25 @@
     "Apps and custom code"
    ]
   }
+ },
+ "window": {
+  "de": {
+   "lead": "„Durchblick“ wirkt wie ein Fenster auf einen Hintergrund: Das Bild (oder Video, Farbe, Muster) bleibt beim Scrollen stehen oder läuft langsamer mit, während die Seite darüber gleitet. Im Fenster platzieren Sie Überschrift, Text, Button und mehr frei.",
+   "tips": [
+    "**„Bewegung“**: „Fest“ (Standard), „Parallax langsam“, „Parallax schnell“ oder „Ohne“. Bei „Bewegung reduzieren“ steht der Hintergrund still.",
+    "**„Fenster“**: Breite „Mit Rand“ ergibt den Fenster-Effekt; Form rechteckig, abgerundet oder Bogen; Höhe von klein bis Bildschirmhöhe.",
+    "Im Block „Platzierter Inhalt“ wählen Sie die Position am 9-Punkt-Raster oder frei in Prozent. Am Handy stehen die Inhalte standardmäßig untereinander.",
+    "Für lesbaren Text die Überlagerung erhöhen oder „Fläche hinter dem Text“ auf „deckend“ stellen (Kontrast mindestens 4,5 : 1)."
+   ]
+  },
+  "en": {
+   "lead": "“Window view” works like a window onto a background: the image (or video, colour, pattern) stays put or moves more slowly while the page scrolls over it. Inside the window you place a heading, text, button and more freely.",
+   "tips": [
+    "**“Motion”**: “Fixed” (default), “Parallax slow”, “Parallax fast” or “None”. With “Reduce motion” the background stays still.",
+    "**“Window”**: the width “With margin” creates the window effect; shape rectangular, rounded or arch; height from small to full screen.",
+    "In the “Placed content” block, choose the position on the 9-point grid or freely in percent. On phones the content stacks by default.",
+    "For readable text, raise the overlay or set “Surface behind the text” to “solid” (contrast at least 4.5:1)."
+   ]
+  }
  }
 }

@@ -94,7 +94,7 @@ Block **„Variantenauswahl“**:
 
 | Einstellung | Wirkung |
 |---|---|
-| „Stil“ | „Kacheln“, „Zeilen“ oder „Bilder (Variantenbilder)“ – Bildkacheln für Optionen, deren Varianten eigene Bilder haben. |
+| „Stil“ | „Kacheln“, „Zeilen“ oder „Bilder (Variantenbilder)“ – Bildkacheln für Optionen, deren Varianten eigene Bilder haben; am Handy vier Bilder je Zeile. |
 | „Größe“ | Klein, Mittel, Groß (Trefferfläche immer mindestens 44 px). |
 | „Kacheln ohne Rahmen“ | Fläche statt Rahmen; nicht bei „Zeilen“. |
 | „Bei Farbfeldern nur das Feld zeigen“ | Nur das Farbfeld, der Name erscheint beim Überfahren und über der Auswahl; nur sichtbar, wenn „Farbfelder anzeigen“ in den Theme-Einstellungen an ist. |
@@ -122,7 +122,7 @@ Bei ausverkauften Varianten und bei Vorbestellungen blendet sich die Zeile aus. 
 
 ## Häufig zusammen gekauft
 
-Der Block **„Häufig zusammen gekauft“** (Kategorie „Produkt: Kauf“) zeigt das Produkt der Seite mit bis zu drei Ergänzungen. Jede Zeile hat ein Kontrollkästchen, Bild und Titel (beide verlinkt), eine kompakte Variantenwahl und rechts unten den Preis, darunter stehen der Gesamtpreis und **„Alle hinzufügen“** bzw. **„Auswahl hinzufügen“**. Ein Klick legt alles mit einem Schritt in den Warenkorb, der sich danach öffnet.
+Der Block **„Häufig zusammen gekauft“** (Kategorie „Produkt: Kauf“) zeigt das Produkt der Seite mit bis zu drei Ergänzungen. Jede Zeile hat ein Kontrollkästchen, Bild und Titel (beide verlinkt), darunter die Varianten als Schalter in einer Zeile (ab drei Optionen eine Auswahlliste, ohne Wahl der Variantenname) und darunter Preis und Grundpreis – alle Zeilen gleich hoch wie im [Set](07-cart-and-checkout.md#set-zusammenstellen); darunter stehen der Gesamtpreis und **„Alle hinzufügen“** bzw. **„Auswahl hinzufügen“**. Ein Klick legt alles mit einem Schritt in den Warenkorb, der sich danach öffnet.
 
 | Einstellung | Wirkung |
 |---|---|

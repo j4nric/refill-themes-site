@@ -2,7 +2,7 @@
  "slug": "countdown",
  "kind": "block",
  "source": "blocks/countdown.liquid",
- "source_sha1": "08e005b4d0b2",
+ "source_sha1": "9ad2c1dad093",
  "accepts_blocks": false,
  "en": {
   "name": "Countdown",
@@ -205,6 +205,23 @@
       "op": "empty"
      }
     ]
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Use group alignment",
+    "info": "Only inside a group: the block follows its alignment. Outside a group, or with this off, the block’s own alignment below applies. [Learn more](https://refill-themes.com/docs/sections-and-blocks/#group-and-columns)",
+    "default": true
+   },
+   {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Alignment",
+    "default": "left"
    }
   ]
  },
@@ -409,6 +426,23 @@
       "op": "empty"
      }
     ]
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "checkbox",
+    "id": "inherit_alignment",
+    "label": "Ausrichtung der Gruppe übernehmen",
+    "info": "Nur in einer Gruppe: Der Block folgt ihrer Ausrichtung. Außerhalb einer Gruppe und ohne Haken gilt die eigene Ausrichtung darunter. [Mehr im Handbuch](https://refill-themes.com/de/docs/sections-and-blocks/#gruppe-und-spalten)",
+    "default": true
+   },
+   {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "Ausrichtung",
+    "default": "left"
    }
   ]
  }

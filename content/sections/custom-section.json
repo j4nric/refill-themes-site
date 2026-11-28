@@ -2,7 +2,7 @@
  "slug": "custom-section",
  "kind": "section",
  "source": "sections/custom-section.liquid",
- "source_sha1": "7b23da2f7bd7",
+ "source_sha1": "c45310cdfc48",
  "accepts_blocks": true,
  "en": {
   "name": "Section",
@@ -89,32 +89,56 @@
       "label": "None"
      },
      {
-      "value": "waves",
-      "label": "Waves"
-     },
-     {
-      "value": "cycle",
-      "label": "Cycle (arrow ring)"
-     },
-     {
-      "value": "contours",
-      "label": "Contour lines"
-     },
-     {
-      "value": "path_dots",
-      "label": "Path with dots"
-     },
-     {
-      "value": "connector",
-      "label": "Connector line"
+      "value": "circle_mark",
+      "label": "Circle around a word"
      },
      {
       "value": "swash",
       "label": "Swash (underline)"
      },
      {
+      "value": "double_underline",
+      "label": "Double underline"
+     },
+     {
+      "value": "zigzag",
+      "label": "Zigzag line"
+     },
+     {
+      "value": "sparkle",
+      "label": "Sparkle (three stars)"
+     },
+     {
       "value": "corners",
       "label": "Frame corners"
+     },
+     {
+      "value": "arrow",
+      "label": "Curved arrow"
+     },
+     {
+      "value": "check",
+      "label": "Check mark in a circle"
+     },
+     {
+      "value": "magnifier",
+      "label": "Magnifying glass"
+     },
+     {
+      "value": "heart",
+      "label": "Heart"
+     },
+     {
+      "value": "gift",
+      "label": "Gift (box with bow)"
+     },
+     {
+      "value": "waves",
+      "label": "Waves"
+     },
+     {
+      "value": "contours",
+      "label": "Contour lines"
      },
      {
       "value": "branch",
@@ -129,16 +153,48 @@
       "label": "Drop with ripples"
      },
      {
-      "value": "scale",
-      "label": "Measuring scale"
-     },
-     {
       "value": "orbit",
       "label": "Orbit"
      },
      {
-      "value": "arrow",
-      "label": "Curved arrow"
+      "value": "speech",
+      "label": "Speech bubble"
+     },
+     {
+      "value": "letter",
+      "label": "Letter (envelope)"
+     },
+     {
+      "value": "path_dots",
+      "label": "Path with dots"
+     },
+     {
+      "value": "connector",
+      "label": "Connector line"
+     },
+     {
+      "value": "scale",
+      "label": "Measuring scale"
+     },
+     {
+      "value": "cycle",
+      "label": "Cycle (arrow ring)"
+     },
+     {
+      "value": "calendar",
+      "label": "Calendar page with check mark"
+     },
+     {
+      "value": "parcel",
+      "label": "Parcel with motion lines"
+     },
+     {
+      "value": "fill_level",
+      "label": "Fill level (jar filling up)"
+     },
+     {
+      "value": "clock",
+      "label": "Clock"
      }
     ]
    },
@@ -655,32 +711,56 @@
       "label": "Keins"
      },
      {
-      "value": "waves",
-      "label": "Wellen"
-     },
-     {
-      "value": "cycle",
-      "label": "Kreislauf (Pfeilring)"
-     },
-     {
-      "value": "contours",
-      "label": "Höhenlinien"
-     },
-     {
-      "value": "path_dots",
-      "label": "Pfad mit Punkten"
-     },
-     {
-      "value": "connector",
-      "label": "Verbindungslinie"
+      "value": "circle_mark",
+      "label": "Kreis um ein Wort"
      },
      {
       "value": "swash",
       "label": "Schwung (Unterstreichung)"
      },
      {
+      "value": "double_underline",
+      "label": "Doppelte Unterstreichung"
+     },
+     {
+      "value": "zigzag",
+      "label": "Zickzack-Linie"
+     },
+     {
+      "value": "sparkle",
+      "label": "Funkeln (drei Sterne)"
+     },
+     {
       "value": "corners",
       "label": "Rahmen-Ecken"
+     },
+     {
+      "value": "arrow",
+      "label": "Geschwungener Pfeil"
+     },
+     {
+      "value": "check",
+      "label": "Häkchen im Kreis"
+     },
+     {
+      "value": "magnifier",
+      "label": "Lupe"
+     },
+     {
+      "value": "heart",
+      "label": "Herz"
+     },
+     {
+      "value": "gift",
+      "label": "Geschenk (Paket mit Schleife)"
+     },
+     {
+      "value": "waves",
+      "label": "Wellen"
+     },
+     {
+      "value": "contours",
+      "label": "Höhenlinien"
      },
      {
       "value": "branch",
@@ -695,16 +775,48 @@
       "label": "Tropfen mit Ringen"
      },
      {
-      "value": "scale",
-      "label": "Messlinien (Skala)"
-     },
-     {
       "value": "orbit",
       "label": "Orbit"
      },
      {
-      "value": "arrow",
-      "label": "Geschwungener Pfeil"
+      "value": "speech",
+      "label": "Sprechblase"
+     },
+     {
+      "value": "letter",
+      "label": "Brief (Umschlag)"
+     },
+     {
+      "value": "path_dots",
+      "label": "Pfad mit Punkten"
+     },
+     {
+      "value": "connector",
+      "label": "Verbindungslinie"
+     },
+     {
+      "value": "scale",
+      "label": "Messlinien (Skala)"
+     },
+     {
+      "value": "cycle",
+      "label": "Kreislauf (Pfeilring)"
+     },
+     {
+      "value": "calendar",
+      "label": "Kalenderblatt mit Häkchen"
+     },
+     {
+      "value": "parcel",
+      "label": "Paket mit Bewegungslinien"
+     },
+     {
+      "value": "fill_level",
+      "label": "Füllstand (Glas, das sich füllt)"
+     },
+     {
+      "value": "clock",
+      "label": "Uhr"
      }
     ]
    },

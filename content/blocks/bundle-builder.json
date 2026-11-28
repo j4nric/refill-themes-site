@@ -2,7 +2,7 @@
  "slug": "bundle-builder",
  "kind": "block",
  "source": "blocks/bundle-builder.liquid",
- "source_sha1": "4fab3b107680",
+ "source_sha1": "44a279cee662",
  "accepts_blocks": false,
  "en": {
   "name": "Build a set",
@@ -35,6 +35,23 @@
       "setting": "collection",
       "label": "Collection",
       "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "list_style",
+    "label": "Display",
+    "info": "Rows: rows of equal height, variants as buttons (a dropdown from three options). Tiles: image, name, price and variants stacked, columns adapt to the width.",
+    "default": "rows",
+    "options": [
+     {
+      "value": "rows",
+      "label": "Rows"
+     },
+     {
+      "value": "tiles",
+      "label": "Tiles"
      }
     ]
    },
@@ -194,6 +211,23 @@
       "setting": "collection",
       "label": "Kollektion",
       "op": "filled"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "list_style",
+    "label": "Darstellung",
+    "info": "Zeilen: gleich hohe Zeilen, Varianten als Schalter (ab drei Optionen als Auswahlliste). Kacheln: Bild, Name, Preis und Varianten untereinander, Spalten nach Breite.",
+    "default": "rows",
+    "options": [
+     {
+      "value": "rows",
+      "label": "Zeilen"
+     },
+     {
+      "value": "tiles",
+      "label": "Kacheln"
      }
     ]
    },

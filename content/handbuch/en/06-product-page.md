@@ -94,7 +94,7 @@ Without reviews (or with 0 reviews) the block stays hidden; the editor shows a h
 
 | Setting | Effect |
 |---|---|
-| “Style” | “Tiles”, “Rows” or “Images (variant images)” – image tiles for options whose variants have their own images. |
+| “Style” | “Tiles”, “Rows” or “Images (variant images)” – image tiles for options whose variants have their own images; four images per row on phones. |
 | “Size” | Small, medium, large (the tap target is always at least 44 px). |
 | “Tiles without border” | A filled area instead of an outline; not with “Rows”. |
 | “Show swatch only” | Just the swatch; the name shows on hover and above the picker. Only visible when “Show color swatches” is on in theme settings. |
@@ -122,7 +122,7 @@ The line is hidden for sold-out variants and pre-orders. Without JavaScript it r
 
 ## Often bought together
 
-The **“Often bought together”** block (category “Product: buying”) shows the product on the page with up to three add-ons. Each row has a checkbox, image and title (both linked), a compact variant choice and the price at the bottom right; below are the total and **“Add all”** or **“Add selected”**. One click adds everything in a single step and opens the cart.
+The **“Often bought together”** block (category “Product: buying”) shows the product on the page with up to three add-ons. Each row has a checkbox, image and title (both linked), below it the variants as buttons in one row (a dropdown from three options, the variant name when there is no choice) and below that price and unit price – all rows the same height as in [Build a set](07-cart-and-checkout.md#build-a-set); below are the total and **“Add all”** or **“Add selected”**. One click adds everything in a single step and opens the cart.
 
 | Setting | Effect |
 |---|---|

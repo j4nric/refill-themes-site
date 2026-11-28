@@ -15,7 +15,9 @@ Product cards appear wherever products sit in a grid: collections, search, “Pr
 | “Underline title on hover” | Underlines the product title as soon as the mouse is over the card. | on |
 | “Title color on hover” | “Accent”, “Text” (no color change) or “Secondary text” from the card's color scheme, or a brand color. | Accent |
 | **Buying from product cards** | | |
-| “Quick add on product cards” | “Add to cart” or “Choose options” button on the card. | on |
+| “Quick add on product cards” | “Add to cart” button on the card. | on |
+| “Choose variants on the card” | Pick flavor, color or pack size right on the card. Off: compact cards, “Add to cart” opens a selection dialog (see [Compact cards](#compact-cards-without-variant-selection)). | on |
+| “Quick add on product cards” | “Add to cart” or “Choose options” button on the card; sold-out products show a grey, disabled “Sold out” button in the same place. | on |
 | “Choose variants on the card” | Pick flavor, color or pack size right on the card. | on |
 | “Preferred option for cards”, “Pack size options” | Order and display of the option rows, see below. | – |
 
@@ -23,7 +25,7 @@ Custom badges and badge colors (see [Badges](#badges)) follow below.
 
 Which key figures a card shows (serving, price per day) is set in each block, e.g. “Collection: product list” → **“Show key figures (serving, servings)”** and **“Show price per day or serving”**. Both switches only appear once the metafields for amount per serving or servings per pack are entered under Theme settings → “Product data”.
 
-You can also turn off individual parts of the card per block: **“Show profile scales (e.g. scent, texture)”**, **“Show unit price”** and **“Show ‘Compare’ checkbox”** (default: on). These switches are available in “Products from collection”, “Collection: product list”, “Search: results” (also for the suggestions on an empty search), “Ingredient: products”, “Recently viewed”, “Product finder” (results on the page) and in the “Product recommendations” section. Profile scales and “Compare” only appear when they are turned on under Theme settings → “Product data” → “Product cards”; the block can then hide them for itself. In the EU a unit price (e.g. “€16.86/100 g”) is usually required wherever a price is shown for goods sold by weight, volume or length – only turn it off where it isn’t needed.
+You can also turn off individual parts of the card per block: **“Show profile scales (e.g. scent, texture)”**, **“Show unit price”**, **“Show ‘Compare’ checkbox”** and **“Variant selection on the card”** (default: on, see [Compact cards](#compact-cards-without-variant-selection)). These switches are available in “Products from collection”, “Collection: product list”, “Search: results” (also for the suggestions on an empty search), “Ingredient: products”, “Recently viewed”, “Product finder” (results on the page) and in the “Product recommendations” section. Profile scales and “Compare” only appear when they are turned on under Theme settings → “Product data” → “Product cards”; the block can then hide them for itself. In the EU a unit price (e.g. “€16.86/100 g”) is usually required wherever a price is shown for goods sold by weight, volume or length – only turn it off where it isn’t needed.
 
 Long product titles take up at most two lines on cards. Headings and titles only hyphenate a word when it doesn't fit on a line by itself.
 
@@ -62,6 +64,16 @@ How to control the rows (applies to all four places):
 
 Without JavaScript, the rows on the card are hidden and the button links to the product page.
 
+### Compact cards without variant selection
+
+Where the option rows take up too much room – say, in a narrow row on the home page or in recommendations – turn off **“Variant selection on the card”** in the block (default: on). The switch is available in the same blocks as “Show unit price”: “Products from collection” (also inside tabs), “Collection: product list”, “Search: results”, “Ingredient: products”, “Recently viewed”, “Product finder” (results on the page) and in the “Product recommendations” section. It only appears when “Choose variants on the card” is on in theme settings; if it is off there, all cards behave as described here.
+
+- The card shows no option rows and is shorter. Swatches (if “Show color swatches” is on) stay as a small preview.
+- For products with several variants, **“Add to cart”** opens **quick view** as a dialog: image, price, the same option rows, subscription choice and quantity. Focus moves into the dialog to the first option row; Escape, the × or a click outside close it, and focus returns to the card’s button. After adding, the dialog closes and the cart opens.
+- For products with a single variant, the button adds straight to the cart.
+- Without JavaScript, the button links to the product page.
+- The button only appears with “Quick add on product cards”.
+
 ### Badges
 
 Cards show “Sold out”, “Sale” and “Subscribe −10%” automatically, plus up to two custom badges from a `badge:…` product tag or a metafield (see [Product data](09-product-data.md#badges-on-product-cards)).
@@ -71,6 +83,20 @@ To give specific badges their own colors: **Theme settings → “Product data�
 ## Collection page
 
 The `collection` template contains breadcrumbs, **“Collection: header”** (title, description and collection image – **“Show collection image”**, on by default), **“Subcollections”** and **“Collection: product list”**.
+
+### Designing the header
+
+Block **“Collection: header”** (default as before: text left, image right):
+
+| Setting | Effect |
+|---|---|
+| “Show product count” | Line “12 products” below the description (off by default). |
+| “Image source” | “Collection image (otherwise custom image)” or “Always custom image”; **“Custom image”** is used for collections without an image. |
+| “Image position” | Right or left of the text, above the text or **“As background behind the text”**. |
+| “Overlay opacity” | Background only: a layer in the color scheme’s background color between image and text, 65–95% (default 75%). From 65% on, text stays readable even on very light or dark images. |
+| “Text alignment” | Left, center or right. |
+| “Height” | “Fit content” (default) or Small / Medium / Large – minimum height of the image or header, based on screen height. |
+| “Own color scheme” | Header as a panel in the chosen scheme; with the background image it also sets the overlay and text color. |
 
 ### Product list
 
@@ -165,6 +191,7 @@ Customers put two to four products side by side: price, unit price, price per da
 - The selection is kept for the browser session, up to four products. A bar at the bottom shows it and leads to the comparison view.
 - The checkbox needs JavaScript; without JavaScript it is hidden. The comparison view itself also loads without JavaScript.
 - Rows without a value for all shown products are hidden. **“Highlight differences by default”** gives rows with differing values a background. With **“Show ‘Highlight differences’ switch”**, customers can toggle this themselves; without the switch, your setting always applies.
+- **“Column spacing”** and **“Row spacing”** (section “Design”) set the space between the cells; “Default” gets a little tighter on phones. The **“Comparison table”** block has the same settings.
 - The comparison view has its own address like `/search?view=compare&type=product&q=handle:a OR handle:b`. You can link to it yourself, e.g. from a blog post. Search engines don’t index it.
 - Only published products are shown; unknown handles are dropped.
 

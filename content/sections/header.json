@@ -783,7 +783,7 @@
    "slug": "_header-menu",
    "kind": "block",
    "source": "blocks/_header-menu.liquid",
-   "source_sha1": "97b348b37e70",
+   "source_sha1": "c50f72f23037",
    "accepts_blocks": true,
    "en": {
     "name": "Menu",
@@ -2809,7 +2809,7 @@
    "slug": "_header-actions",
    "kind": "block",
    "source": "blocks/_header-actions.liquid",
-   "source_sha1": "5918a1e4a417",
+   "source_sha1": "aef5dfb88fe4",
    "accepts_blocks": false,
    "en": {
     "name": "Search, account, cart",
@@ -2844,6 +2844,17 @@
      {
       "type": "header",
       "content": "Display"
+     },
+     {
+      "type": "range",
+      "id": "actions_gap",
+      "label": "Spacing between actions",
+      "info": "Search, account and cart from 990 px wide. On phones the spacing only grows above the 20 px default (icons have large tap areas there).",
+      "default": 20,
+      "min": 0,
+      "max": 48,
+      "step": 4,
+      "unit": "px"
      },
      {
       "type": "select",
@@ -3211,6 +3222,17 @@
      {
       "type": "header",
       "content": "Darstellung"
+     },
+     {
+      "type": "range",
+      "id": "actions_gap",
+      "label": "Abstand zwischen den Aktionen",
+      "info": "Suche, Konto und Warenkorb ab 990 px Breite. Am Handy wächst der Abstand nur über den Standard von 20 px hinaus (die Symbole haben dort große Tippflächen).",
+      "default": 20,
+      "min": 0,
+      "max": 48,
+      "step": 4,
+      "unit": "px"
      },
      {
       "type": "select",

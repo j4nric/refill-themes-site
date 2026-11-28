@@ -213,7 +213,9 @@ Kunden wählen aus einer Kollektion mehrere Produkte und legen sie gemeinsam in 
    - **„Angebotstext“** – beschreibt den Rabatt
 4. Legen Sie unter **Rabatte** einen passenden **automatischen Rabatt** an, z. B. 10 % auf Produkte dieser Kollektion ab 3 Artikeln. Das Theme gewährt selbst keinen Rabatt – der Angebotstext muss zur Rabattregel passen.
 
-Produkte mit mehreren verfügbaren Varianten erhalten im Set je Option eine Zeile mit Stift wie auf den Produktkarten (siehe [Varianten auf der Karte](05-collections.md#varianten-auf-der-karte)); Werte, die es nicht mehr gibt, sind gesperrt. Ohne JavaScript steht dort eine einfache Auswahlliste. Bereits vorhandene Positionen im Warenkorb bleiben erhalten. Ist die Mindestanzahl mit den Einstellungen nicht erreichbar, zeigt der Editor einen Hinweis.
+Jedes Produkt steht in einer Zeile mit fester Höhe: Bild, Name, darunter die Varianten, darunter Preis und Grundpreis, rechts die Menge (am Handy neben dem Preis). Produkte mit mehreren verfügbaren Varianten zeigen ihre Werte als Schalter in einer Zeile – ein Klick wählt, mehrere Optionen stehen nebeneinander, bei wenig Platz lässt sich die Leiste waagerecht wischen (ein Verlauf am Rand zeigt das an). Werte, die es nicht mehr gibt, sind gesperrt, Kombinationen, die es nicht gibt, durchgestrichen. Bei **mehr als zwei Optionen** oder vielen bzw. langen Werten (zusammen mehr als etwa 42 Zeichen, gezählt mit Innenabstand) steht stattdessen eine Auswahlliste mit allen Kombinationen, etwa „Vanille / 500 g“. Produkte ohne Wahl zeigen an derselben Stelle den Variantennamen („500 g“). Ohne JavaScript steht immer die Auswahlliste.
+
+**„Darstellung“:** **„Zeilen“** (Standard, oben) oder **„Kacheln“** – je Produkt eine Kachel mit Bild (4 : 3), Name in zwei Zeilen, Preis, festem Platz für zwei Optionen und der Menge über die ganze Breite. Alle Kacheln einer Reihe sind gleich hoch; die Spaltenzahl richtet sich nach der Breite (mindestens etwa 144 px je Kachel: am Handy und in einem Drittel der Seite zwei, in der halben Seite drei). Kacheln brauchen mehr Höhe als Zeilen – gut für wenige Produkte mit aussagekräftigen Bildern. Bereits vorhandene Positionen im Warenkorb bleiben erhalten. Ist die Mindestanzahl mit den Einstellungen nicht erreichbar, zeigt der Editor einen Hinweis.
 
 ## Mengenstaffel
 
@@ -247,7 +249,7 @@ Der Block liest die Varianten-Metafelder **„Metafeld: Produkte im Bundle“** 
 
 ## Erneut bestellen
 
-Der Block **„Erneut bestellen“** zeigt angemeldeten Kunden ihre letzte Bestellung (**„Angezeigte Positionen“**) und legt alle verfügbaren Positionen mit einem Klick erneut in den Warenkorb. Für Gäste und Kunden ohne Bestellung blendet er sich aus. Voraussetzung: Kundenkonten sind aktiviert.
+Der Block **„Erneut bestellen“** zeigt angemeldeten Kunden ihre letzte Bestellung (**„Angezeigte Positionen“**) und legt alle verfügbaren Positionen mit einem Klick erneut in den Warenkorb. Für Gäste und Kunden ohne Bestellung blendet er sich aus. Voraussetzung: Kundenkonten sind aktiviert. Die Positionen stehen im selben Zeilenformat wie im Set: Bild, Name, darunter die Variante, darunter Menge und Hinweise wie „Ausverkauft“.
 
 ## Dynamische Checkout-Buttons
 

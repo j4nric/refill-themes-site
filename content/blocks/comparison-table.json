@@ -2,7 +2,7 @@
  "slug": "comparison-table",
  "kind": "block",
  "source": "blocks/comparison-table.liquid",
- "source_sha1": "f4d72483c61d",
+ "source_sha1": "38eba901a073",
  "accepts_blocks": false,
  "en": {
   "name": "Comparison table",
@@ -35,6 +35,75 @@
     "label": "Rows",
     "info": "One row per line: Feature | Value 1 | Value 2. yes/no become ✓ and –.",
     "default": "Free shipping | yes | no\nPersonal advice | yes | no\n30-day returns | yes | no"
+   },
+   {
+    "type": "header",
+    "content": "Design"
+   },
+   {
+    "type": "select",
+    "id": "column_gap",
+    "label": "Column spacing",
+    "info": "Space between the table’s columns or rows. “Default” gets a little tighter in narrow columns (phones).",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Default"
+     },
+     {
+      "value": "1",
+      "label": "Extra small"
+     },
+     {
+      "value": "2",
+      "label": "Small"
+     },
+     {
+      "value": "4",
+      "label": "Medium"
+     },
+     {
+      "value": "6",
+      "label": "Large"
+     },
+     {
+      "value": "8",
+      "label": "Extra large"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "row_gap",
+    "label": "Row spacing",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Default"
+     },
+     {
+      "value": "1",
+      "label": "Extra small"
+     },
+     {
+      "value": "2",
+      "label": "Small"
+     },
+     {
+      "value": "4",
+      "label": "Medium"
+     },
+     {
+      "value": "6",
+      "label": "Large"
+     },
+     {
+      "value": "8",
+      "label": "Extra large"
+     }
+    ]
    }
   ]
  },
@@ -69,6 +138,75 @@
     "label": "Zeilen",
     "info": "Eine Zeile je Merkmal: Merkmal | Wert 1 | Wert 2. ja/nein werden zu ✓ und –.",
     "default": "Kostenloser Versand | ja | nein\nPersönliche Beratung | ja | nein\nRückgabe in 30 Tagen | ja | nein"
+   },
+   {
+    "type": "header",
+    "content": "Gestaltung"
+   },
+   {
+    "type": "select",
+    "id": "column_gap",
+    "label": "Spaltenabstand",
+    "info": "Abstand zwischen den Spalten bzw. Zeilen der Tabelle. „Standard“ wird in schmalen Spalten (Handy) etwas enger.",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Standard"
+     },
+     {
+      "value": "1",
+      "label": "Sehr klein"
+     },
+     {
+      "value": "2",
+      "label": "Klein"
+     },
+     {
+      "value": "4",
+      "label": "Mittel"
+     },
+     {
+      "value": "6",
+      "label": "Groß"
+     },
+     {
+      "value": "8",
+      "label": "Sehr groß"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "row_gap",
+    "label": "Zeilenabstand",
+    "default": "auto",
+    "options": [
+     {
+      "value": "auto",
+      "label": "Standard"
+     },
+     {
+      "value": "1",
+      "label": "Sehr klein"
+     },
+     {
+      "value": "2",
+      "label": "Klein"
+     },
+     {
+      "value": "4",
+      "label": "Mittel"
+     },
+     {
+      "value": "6",
+      "label": "Groß"
+     },
+     {
+      "value": "8",
+      "label": "Sehr groß"
+     }
+    ]
    }
   ]
  }

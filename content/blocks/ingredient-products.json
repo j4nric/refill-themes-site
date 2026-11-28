@@ -2,7 +2,7 @@
  "slug": "ingredient-products",
  "kind": "block",
  "source": "blocks/ingredient-products.liquid",
- "source_sha1": "c711ff71aa04",
+ "source_sha1": "f29e0c036adb",
  "accepts_blocks": false,
  "en": {
   "name": "Ingredient: products",
@@ -83,6 +83,20 @@
      {
       "setting": null,
       "label": "“Compare” checkbox on product cards",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_variant_picker",
+    "label": "Variant selection on the card",
+    "info": "Off: more compact cards without option rows. “Add to cart” then opens a selection dialog for products with several variants; with a single variant the button adds straight to the cart.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Choose variants on the card",
       "op": "on"
      }
     ]
@@ -201,6 +215,20 @@
      {
       "setting": null,
       "label": "Häkchen „Vergleichen“ auf Produktkarten",
+      "op": "on"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "show_variant_picker",
+    "label": "Variantenwahl auf der Karte",
+    "info": "Aus: kompaktere Karten ohne Optionszeilen. „In den Warenkorb“ öffnet dann bei mehreren Varianten eine Auswahl im Dialog; bei nur einer Variante legt der Knopf direkt in den Warenkorb.",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": null,
+      "label": "Varianten auf der Karte wählen",
       "op": "on"
      }
     ]

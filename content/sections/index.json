@@ -123,5 +123,16 @@
    "de": "Suche"
   },
   "category": null
+ },
+ {
+  "slug": "window",
+  "name": {
+   "en": "Window view",
+   "de": "Durchblick"
+  },
+  "category": {
+   "en": "Media",
+   "de": "Medien"
+  }
  }
 ]

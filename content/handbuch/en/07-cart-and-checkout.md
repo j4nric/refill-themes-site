@@ -214,7 +214,9 @@ Customers choose several products from a collection and add them to the cart tog
    - **“Offer text”** – describes the discount
 4. Under **Discounts**, create a matching **automatic discount**, e.g. 10 % on products in this collection from 3 items. The theme does not apply any discount itself – the offer text must match the discount rule.
 
-Products with several available variants get one row per option with a pencil, as on product cards (see [Variants on the card](05-collections.md#variants-on-the-card)); values that are sold out entirely are disabled. Without JavaScript, a plain dropdown appears instead. Items already in the cart are kept. If the minimum cannot be reached with the settings, the editor shows a note.
+Each product sits in a row of fixed height: image, name, below it the variants, below that price and unit price, quantity on the right (next to the price on mobile). Products with several available variants show their values as buttons in one row – one click chooses, several options sit side by side, and when space is short the row can be swiped sideways (a fade at the edge shows this). Values that are sold out entirely are disabled, combinations that don’t exist are struck through. With **more than two options** or many or long values (together more than about 42 characters, counted with padding) a dropdown with all combinations appears instead, e.g. “Vanilla / 500 g”. Products without a choice show the variant name in the same place (“500 g”). Without JavaScript the dropdown is always shown.
+
+**“Display”:** **“Rows”** (default, above) or **“Tiles”** – one tile per product with image (4 : 3), name on two lines, price, a fixed area for two options and the quantity across the full width. All tiles in a row are the same height; the number of columns follows the width (at least about 144 px per tile: two on mobile and in a third of the page, three in half the page). Tiles need more height than rows – good for a few products with strong images. Items already in the cart are kept. If the minimum cannot be reached with the settings, the editor shows a note.
 
 ## Quantity tiers
 
@@ -248,7 +250,7 @@ The block reads the variant metafields **“Metafield: products in the bundle”
 
 ## Reorder
 
-The **“Reorder”** block shows signed-in customers their last order (**“Items shown”**) and adds all available items back to the cart with one click. It is hidden for guests and customers without orders. Requirement: customer accounts are turned on.
+The **“Reorder”** block shows signed-in customers their last order (**“Items shown”**) and adds all available items back to the cart with one click. It is hidden for guests and customers without orders. Requirement: customer accounts are turned on. Items use the same row format as in a set: image, name, below it the variant, below that quantity and notes such as “Sold out”.
 
 ## Dynamic checkout buttons
 

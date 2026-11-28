@@ -6,6 +6,105 @@ Versions follow semantic versioning. From version 1.0.0 on, settings and block t
 
 First complete version of all pages and core features.
 
+### November 27, 2026 – accents
+
+**New**
+- **Accents for headings, text and buttons:** a new **“Accent”** group in all three blocks – a ready-made line motif without a separate block. On headings and text, e.g. a circle around a word marked with `[[…]]` or a swash underneath, or below, above, beside, in a corner or behind the text; on buttons an arrow pointing at the button or a sparkle on hover. Animation (draw, float, pulse, wiggle gently) once when it comes into view, on hover or continuously; with “Reduce motion” the motif stays still. Default “No accent” – existing blocks stay unchanged. See [Accents](08-animation.md#accents).
+
+**Changed**
+- **The “Decoration” block is now called “Free decoration”** (for advanced use: freely placed motifs and your own graphics). Settings and saved blocks are unchanged.
+
+**Demo stores**
+- **Nordform:** circle around “buying new” in “Refill instead of buying new”, arrow at the “View offer” button of the subscription week.
+- **Kessel & Blatt:** swash under “origin” in the hero, floating letter on “The harvest letter”.
+- **OSTRA:** circle around “the bottles”, letter above “News from the bathroom”, sparkle on hover on “Discover the range”.
+### November 27, 2026 – compact product cards
+
+**New**
+- **“Variant selection on the card”** in every block with product cards (“Products from collection”, also inside tabs, “Collection: product list”, “Search: results”, “Ingredient: products”, “Recently viewed”, “Product finder”, “Product recommendations” section; default on = as before). Off: cards show no option rows and are more compact; for products with several variants “Add to cart” opens quick view with the variant selection, with a single variant it adds straight to the cart. See [Compact cards](05-collections.md#compact-cards-without-variant-selection).
+
+**Changed**
+- **Theme setting “Choose variants on the card” off:** the button on cards with several variants now reads “Add to cart” instead of “Choose options” and opens quick view as before. Subscription-only products with option rows keep “Choose options”.
+### November 27, 2026 – text animation
+
+**New**
+- **“Text animation speed”** (Theme settings → “Animation”): “Slow”, “Normal” (default, previous pace) or “Fast” for all text animations – headings, accents, body text and highlights, the same everywhere. See [Theme settings → Animation](08-animation.md#theme-settings--animation).
+- **Timeline: “Entry animation speed”** – “Fast”, “Same as theme setting” (default), “Slow” or “Very slow” for the line, dot and text of the entries.
+
+**Fixed**
+- **Blog post:** With “All text”, the post body appeared more slowly than elsewhere – paragraphs waited for each other, counted from the start of the post, and paragraphs further down had already finished before you saw them. Now each paragraph appears as soon as it scrolls into view itself, at the same pace as any other text.
+
+**Please check**
+- **More headings build up** (text animation from “Headings only”): one rule now applies on every page – what is visible when the page loads stays still, what scrolls into view later builds up ([What builds up](08-animation.md#what-builds-up)). Newly included are headings on product and collection pages outside “Section” sections (e.g. calculators, timeline, “You might also like”), headings at level “H3”, and the small heading (label) above a heading, which used to fade in only with “All text”. Text and accents now start at the same point as the heading (slightly earlier than before). For less motion, choose “Text animation” → “Off”, or a slower or faster “Text animation speed”.
+### November 27, 2026 – details and settings (merchant feedback)
+
+**New**
+- **Collection: header** with more layout options: image right, left, above the text or **as background** (with an overlay in the color scheme’s background color, 65–95%, so the text stays readable), text alignment, height (Fit content, Small, Medium, Large), own color scheme, product count and a custom image as fallback for or instead of the collection image. See [Designing the header](05-collections.md#designing-the-header).
+- **Countdown:** **“Alignment”** setting (left, center, right) with “Use group alignment”, like Heading and Text.
+- **Comparison table** and **Product comparison:** **“Column spacing”** and **“Row spacing”**.
+- **Sold-out products** in grids show a grey, disabled **“Sold out”** button instead of no button when quick add is on; cards in a row keep the same height.
+
+**Fixed**
+- **Preferred delivery date on phones (iPhone):** the date field stuck out of the cart on the right. It now stays inside the box, and the value sits on the left like in other fields.
+
+**Changed**
+- **Variant picker “Images (variant images)”** (Featured product, product page): the image tiles sit in a grid with slightly less spacing; on phones four images per row, all the same size. On desktop the tiles keep their size.
+### November 27, 2026 – “Window view” section
+
+**New**
+- **“Window view” section** (category “Media”, presets “Window view: image” and “Window view: pattern”): a window onto a background – image, video, color or a pattern in a scheme’s colors. As visitors scroll, the background stays put or moves more slowly (parallax) while the page glides over it; on iPhone too, without JavaScript. Height, width (edge to edge, with margin, page width), shape (rectangle, rounded, arch), overlay and the text color scheme are adjustable. Place content as “Placed content” at one of nine spots or freely by x/y; on mobile it can stack. With Reduce motion the background stays still. See [“Window view” section](08-animation.md#window-view-section).
+
+**Demo stores**
+- **OSTRA:** home page with a “Window view” onto the refill station after the “Three steps to a full bottle” section.
+### November 27, 2026 – product rows of equal height
+
+**Changed**
+- **Product rows in Build a set, “Often bought together”, “Add all products to cart” (Shoppable image), the quick order list (mobile) and “Reorder”** now share one layout and are all the same height: name, below it the variants, below that price and unit price on one line. Variants appear as buttons in one row and are chosen with one click (before: one row per option with a pencil to expand); several options side by side, swipeable sideways with a fade at the edge when space is short. Products without a choice show the variant name there (e.g. “500 g”). With more than two options or very many or long values, a dropdown with all combinations appears instead. Product cards and quick view keep their option rows. See [Build a set](07-cart-and-checkout.md#build-a-set).
+- **“Often bought together”** and “Add all products to cart” show the unit price next to the price.
+
+**New**
+- **“Display”** in the “Build a set” block and in “Shoppable image” (for “Add all products to cart”): **Rows** (default, as before) or **Tiles** – image, name (two lines), price, variants and quantity stacked, all tiles the same height, columns adapt to the available width (two side by side on mobile and in three columns).
+
+**Fixed**
+- **Shoppable image, “Add all products to cart” in one column:** the pencil icon for changing the variant sat in the middle of the row instead of right after the variant name. With the new buttons the icon is no longer used there.
+
+**Demo stores**
+- **OSTRA:** “Everything on the shelf” on the home page shows the products as tiles. Nordform (set on the subscription page) stays with rows.
+### November 28, 2026 – scrollbars, announcement bar, header
+
+**New**
+- **Announcement bar → “Transition”:** “Sideways (swipe)” (default, as before) or **“Vertical (fade upwards)”** – one message at every screen width, the next one comes in from below. Optionally **“Change automatically”** with **“Time per message”** (3–10 s) and a pause button; it holds while the pointer or focus is on the bar and is off with “Reduce motion”. Arrows and horizontal swiping on phones change it too. See [Announcement bar](04-header.md#announcement-bar).
+- **Carousel → “Progress indicator”:** “None” (default), “Bar” or “Dots” – subtle, below the slides.
+- **Search, account, cart → “Spacing between actions”** (0–48 px, default 20 px as before).
+
+**Changed**
+- **Carousel:** the browser scrollbar is hidden (arrows, swiping, trackpad and keyboard still work). Without JavaScript it stays.
+- **Cart drawer:** only one scrollbar – the list of items scrolls with a slim, subtle bar; the drawer itself no longer scrolls. The same bar is used in the mobile menu and the filters.
+- **Submenus “List like dropdowns” and “Fit content, below the menu item”:** now sit right below the menu item instead of below the header; on hover nothing closes on the way into the submenu.
+
+**Fixed**
+- **Mega menu “Fit content, below the menu item”** stuck out of the window on the right on small desktops (about 1024–1280 px) and cut off the featured column. It now stays inside the window (aligned right when there is no room from the menu item on), and the columns get narrower if needed. The country/language list now also keeps the page margin.
+
+### November 27, 2026 – line motifs
+
+**New**
+- **14 new line motifs** for “Line art”, “Decoration” and the section’s decoration layer: Circle around a word, Double underline, Zigzag line, Sparkle (three stars), Check mark in a circle, Magnifying glass, Heart, Gift, Speech bubble, **Letter** (for newsletter and contact), Calendar page with check mark, Parcel with motion lines, Fill level (the line in the jar rises while drawing) and Clock. The “Motif” list is now ordered by purpose: highlight, point out, mood, communication, structure, subscription and refills. See [Motifs by purpose](08-animation.md#motifs-by-purpose).
+
+**Fixed**
+- **“Path with dots” with “Dot travels along”:** at the end the dot moved slightly past the last circle; it now stops exactly in its center.
+
+**Changed**
+- **Smoother curves:** “Curved arrow” has an evenly rounded loop without dents, and the arrowhead follows the direction at the end of the line. “Steam curls” curl up without a kink (the curl used to start backwards), “Contour lines” run without small corners. Shape and size stay the same otherwise.
+
+### November 27, 2026 – endless swiping, demo content
+
+**Fixed**
+- **Announcement bar on mobile (iPhone):** after the last announcement, the first swipe sometimes left the bar where it was, and only the second swipe moved on to the first announcement. The invisible jump from the copy to the announcement now waits until the bar is really at rest (finger lifted, announcement snapped into place). No visible movement, also with “Reduce motion”.
+
+**Demo stores**
+- **Nordform:** the subscription week countdown (home page and campaign page) now runs once until December 31, 2026, 11:59 pm instead of restarting every week; the campaign terms name this date. Shorter English announcement: “Subscription week: extra 5% off”.
+- **OSTRA:** removed the “Featured in” logo bar with invented magazines from the home page and the About page. The “How refilling works” highlight in the mega menu now shows the pump bottle with the refill pouch.
+
 ### November 27, 2026 – merchant feedback
 
 **Changed**

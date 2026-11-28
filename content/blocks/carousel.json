@@ -2,7 +2,7 @@
  "slug": "carousel",
  "kind": "block",
  "source": "blocks/carousel.liquid",
- "source_sha1": "8bb081814515",
+ "source_sha1": "683f7382ed15",
  "accepts_blocks": true,
  "en": {
   "name": "Carousel",
@@ -49,6 +49,27 @@
      {
       "value": "overlay_mobile",
       "label": "On the slides, mobile only"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "progress",
+    "label": "Progress indicator",
+    "info": "The browser scrollbar is hidden; arrows, swiping and the keyboard still work. A bar or dots below the slides show subtly where you are.",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "None"
+     },
+     {
+      "value": "bar",
+      "label": "Bar"
+     },
+     {
+      "value": "dots",
+      "label": "Dots"
      }
     ]
    },
@@ -200,6 +221,27 @@
      {
       "value": "overlay_mobile",
       "label": "Auf den Folien, nur am Handy"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "progress",
+    "label": "Fortschrittsanzeige",
+    "info": "Die Scrollleiste des Browsers ist ausgeblendet; Pfeile, Wischen und Tastatur bleiben. Leiste oder Punkte zeigen dezent unter den Folien, wo man gerade ist.",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "Keine"
+     },
+     {
+      "value": "bar",
+      "label": "Leiste"
+     },
+     {
+      "value": "dots",
+      "label": "Punkte"
      }
     ]
    },

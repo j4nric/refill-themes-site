@@ -51,7 +51,7 @@ The sticky colors **“Background when sticky”** and **“Text when sticky”*
 |---|---|
 | “Open submenus on hover” | Off: submenus open on click only. |
 | “Submenu style” | **“Automatic”** (default): submenus with a single level appear as a list like the dropdowns; the mega menu stays for submenus with a third level, with “Images on links” or with a featured column. **“Classic: mega menu”**: always the mega menu. **“List like dropdowns”**: always the list (a third level is indented below). The list is a card right below the menu item: rows with a fill on hover, the current page in bold with a check mark, “Show all” at the end. Arrow keys move through the rows. “Width”, “Columns” and the image settings apply to the mega menu only; the animation (“Header” section) applies to both. The mobile menu stays the same. |
-| “Width” | “Full page” or “Fit content, below the menu item” (a narrower panel with a border that stays inside the window). |
+| “Width” | “Full page” or “Fit content, below the menu item” (a narrower panel with a border right below the menu item; if it doesn't fit there, it ends at the right page margin and the columns get narrower if needed). |
 | “Columns” | “Automatic” or 2–5 columns. |
 | “Third level in the mega menu” | “Always visible” (default) or “Expand on hover”: third-level links appear below their second-level link when the mouse points at it or it is reached with the Tab key; a small arrow next to the title marks them. On touch devices they stay visible. |
 | “Submenu text size” | “Small”, “Medium” (default) or “Large” for second-level links in the mega menu and in the list. “Small” helps with long names. Words that are too long break with hyphenation. |
@@ -158,7 +158,7 @@ The footer's “Bottom bar” shows country and language as two subtle buttons, 
   **“Load account on demand”** (off by default): signed-out visitors first see an identical link; Shopify’s component loads on the first hover, focus or tap. This saves Shopify’s sign-in scripts (Sign in with Shop) on page load. Signed-in customers always get the component right away. Shopify expects the component to be visible in the header – if in doubt, leave it off.
 - **Cart**: opens the cart drawer, see [Cart and checkout](07-cart-and-checkout.md).
 
-**“Display”** (“Search, account, cart” block): for **“Search”**, **“Account”** and **“Cart”** choose **“Text”** (default, uppercase word), **“Icon”** or **“Icon and text”**. Applies from a window width of 990 px; on mobile the icons are always used. Screen readers announce the name in every style, for the cart including the count (“Cart, 2 items”).
+**“Display”** (“Search, account, cart” block): for **“Search”**, **“Account”** and **“Cart”** choose **“Text”** (default, uppercase word), **“Icon”** or **“Icon and text”**. Applies from a window width of 990 px; on mobile the icons are always used. **“Spacing between actions”** (0–48 px, default 20 px) sets the space between search, account and cart from 990 px; on phones it only grows beyond the default, because the icons have large tap areas there. Screen readers announce the name in every style, for the cart including the count (“Cart, 2 items”).
 
 How the **cart count** looks – in brackets, as a bubble, as a dot or as a plain number – is set under Theme settings → **“Cart”** → **“Cart count”**, see [Cart and checkout](07-cart-and-checkout.md#cart-count).
 
@@ -181,5 +181,7 @@ The **“Announcement bar”** section sits above the header. Each **“Announce
 The theme only displays and copies the code; whether it applies is up to the discount in Shopify. There is intentionally no discount field in the cart: themes in the Shopify Theme Store aren't allowed to add one, and shoppers enter codes at checkout. Without JavaScript the code can still be selected; only the button is missing.
 
 Several announcements form a swipeable bar on phones; on desktop they wrap onto a second line when they don't fit side by side.
+
+**“Transition”** (“Announcement bar” section): **“Sideways (swipe)”** is the behavior described above. **“Vertical (fade upwards)”** shows one message at every width; the next one comes in from below while the old one leaves upwards. Small arrows to the left and right of the message go forward and back, and on phones a horizontal swipe does the same (vertical swiping still scrolls the page). With **“Change automatically”** (on by default) the message changes after **“Time per message”** (3–10 s, default 5 s); a button pauses it (required for accessibility), as do the pointer or keyboard focus on the bar. With “Reduce motion” nothing changes by itself, and arrows and swiping change without movement. Screen readers only announce changes someone triggers. The bar is as tall as the longest message, so nothing jumps.
 
 Adjust texts such as “Free shipping over €49” to your actual terms, or delete the block.

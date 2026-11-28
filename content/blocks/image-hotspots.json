@@ -2,7 +2,7 @@
  "slug": "image-hotspots",
  "kind": "block",
  "source": "blocks/image-hotspots.liquid",
- "source_sha1": "a602cbddc914",
+ "source_sha1": "7f01eeb5c371",
  "accepts_blocks": true,
  "en": {
   "name": "Shoppable image",
@@ -272,6 +272,38 @@
     "label": "Add all products to cart",
     "info": "Lists the products of the markers below the image with checkboxes, options, total price and one button. Sold-out products are shown but cannot be selected.",
     "default": false
+   },
+   {
+    "type": "select",
+    "id": "look_style",
+    "label": "Display",
+    "info": "Display of the product list. Tiles: columns adapt to the width, “Legend columns” then does not apply to this list.",
+    "default": "rows",
+    "options": [
+     {
+      "value": "rows",
+      "label": "Rows"
+     },
+     {
+      "value": "tiles",
+      "label": "Tiles"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Add all products to cart",
+      "op": "on"
+     }
+    ]
    },
    {
     "type": "text",
@@ -610,6 +642,38 @@
     "label": "Alle Produkte in den Warenkorb",
     "info": "Listet die Produkte der Markierungen unter dem Bild mit Häkchen, Auswahl, Gesamtpreis und einem Knopf. Ausverkaufte Produkte stehen dabei, sind aber nicht wählbar.",
     "default": false
+   },
+   {
+    "type": "select",
+    "id": "look_style",
+    "label": "Darstellung",
+    "info": "Darstellung der Produktliste. Kacheln: Spalten nach Breite, „Spalten der Legende“ gilt dann nicht für diese Liste.",
+    "default": "rows",
+    "options": [
+     {
+      "value": "rows",
+      "label": "Zeilen"
+     },
+     {
+      "value": "tiles",
+      "label": "Kacheln"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "look_add",
+      "label": "Alle Produkte in den Warenkorb",
+      "op": "on"
+     }
+    ]
    },
    {
     "type": "text",

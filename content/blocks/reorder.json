@@ -2,7 +2,7 @@
  "slug": "reorder",
  "kind": "block",
  "source": "blocks/reorder.liquid",
- "source_sha1": "a14de16b9618",
+ "source_sha1": "9f2949cf7fde",
  "accepts_blocks": false,
  "en": {
   "name": "Reorder",

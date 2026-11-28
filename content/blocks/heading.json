@@ -2,7 +2,7 @@
  "slug": "heading",
  "kind": "block",
  "source": "blocks/heading.liquid",
- "source_sha1": "f65454efe3a2",
+ "source_sha1": "07edd7e84760",
  "accepts_blocks": false,
  "en": {
   "name": "Heading",
@@ -82,6 +82,438 @@
     "id": "alignment",
     "label": "Alignment",
     "default": "left"
+   },
+   {
+    "type": "header",
+    "content": "Accent"
+   },
+   {
+    "type": "select",
+    "id": "accent_motif",
+    "label": "Motif",
+    "info": "Ready-made line motif on this block. For headings and text, the highlight motifs work best (the first six: circle around a word, swash, double underline, zigzag, sparkle, frame corners); for buttons, the arrow. Freely placed motifs and your own graphics: “Free decoration” block.",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "No accent"
+     },
+     {
+      "value": "circle_mark",
+      "label": "Circle around a word"
+     },
+     {
+      "value": "swash",
+      "label": "Swash (underline)"
+     },
+     {
+      "value": "double_underline",
+      "label": "Double underline"
+     },
+     {
+      "value": "zigzag",
+      "label": "Zigzag line"
+     },
+     {
+      "value": "sparkle",
+      "label": "Sparkle (three stars)"
+     },
+     {
+      "value": "corners",
+      "label": "Frame corners"
+     },
+     {
+      "value": "arrow",
+      "label": "Curved arrow"
+     },
+     {
+      "value": "check",
+      "label": "Check mark in a circle"
+     },
+     {
+      "value": "magnifier",
+      "label": "Magnifying glass"
+     },
+     {
+      "value": "heart",
+      "label": "Heart"
+     },
+     {
+      "value": "gift",
+      "label": "Gift (box with bow)"
+     },
+     {
+      "value": "waves",
+      "label": "Waves"
+     },
+     {
+      "value": "contours",
+      "label": "Contour lines"
+     },
+     {
+      "value": "branch",
+      "label": "Branch with leaf veins"
+     },
+     {
+      "value": "steam",
+      "label": "Steam curls"
+     },
+     {
+      "value": "drops",
+      "label": "Drop with ripples"
+     },
+     {
+      "value": "orbit",
+      "label": "Orbit"
+     },
+     {
+      "value": "speech",
+      "label": "Speech bubble"
+     },
+     {
+      "value": "letter",
+      "label": "Letter (envelope)"
+     },
+     {
+      "value": "path_dots",
+      "label": "Path with dots"
+     },
+     {
+      "value": "connector",
+      "label": "Connector line"
+     },
+     {
+      "value": "scale",
+      "label": "Measuring scale"
+     },
+     {
+      "value": "cycle",
+      "label": "Cycle (arrow ring)"
+     },
+     {
+      "value": "calendar",
+      "label": "Calendar page with check mark"
+     },
+     {
+      "value": "parcel",
+      "label": "Parcel with motion lines"
+     },
+     {
+      "value": "fill_level",
+      "label": "Fill level (jar filling up)"
+     },
+     {
+      "value": "clock",
+      "label": "Clock"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_position",
+    "label": "Position",
+    "info": "“At the marked word”: put a word in double square brackets, e.g. [[refill]] – the motif replaces the marker there. Without a marked word it sits below the text. Left and right swap in right-to-left languages.",
+    "default": "word",
+    "options": [
+     {
+      "value": "word",
+      "label": "At the marked word"
+     },
+     {
+      "value": "below",
+      "label": "Below the text"
+     },
+     {
+      "value": "above",
+      "label": "Above the text"
+     },
+     {
+      "value": "start",
+      "label": "Left"
+     },
+     {
+      "value": "end",
+      "label": "Right"
+     },
+     {
+      "value": "corner_top_end",
+      "label": "Top right corner"
+     },
+     {
+      "value": "corner_bottom_start",
+      "label": "Bottom left corner"
+     },
+     {
+      "value": "behind",
+      "label": "Behind the text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_size",
+    "label": "Size",
+    "default": "m",
+    "options": [
+     {
+      "value": "s",
+      "label": "Small"
+     },
+     {
+      "value": "m",
+      "label": "Medium"
+     },
+     {
+      "value": "l",
+      "label": "Large"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_color",
+    "label": "Color",
+    "default": "signal",
+    "options": [
+     {
+      "value": "signal",
+      "label": "Scheme: accent"
+     },
+     {
+      "value": "scheme",
+      "label": "Scheme: text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Scheme: secondary text"
+     },
+     {
+      "value": "rule",
+      "label": "Scheme: line"
+     },
+     {
+      "value": "accent_1",
+      "label": "Brand color: accent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Brand color: accent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Brand color: promotion / sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Brand color: highlight"
+     },
+     {
+      "value": "success",
+      "label": "Brand color: success / seal"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_stroke",
+    "label": "Line weight",
+    "default": "medium",
+    "options": [
+     {
+      "value": "fine",
+      "label": "Fine"
+     },
+     {
+      "value": "medium",
+      "label": "Medium"
+     },
+     {
+      "value": "heavy",
+      "label": "Bold"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_animation",
+    "label": "Animation",
+    "info": "With “Reduce motion” the motif stays still and fully drawn.",
+    "default": "draw",
+    "options": [
+     {
+      "value": "draw",
+      "label": "Draw"
+     },
+     {
+      "value": "float",
+      "label": "Float"
+     },
+     {
+      "value": "pulse",
+      "label": "Pulse"
+     },
+     {
+      "value": "wiggle",
+      "label": "Wiggle gently"
+     },
+     {
+      "value": "none",
+      "label": "None"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_trigger",
+    "label": "Play",
+    "info": "Continuous loops – use sparingly, at most one such spot per view.",
+    "default": "visible",
+    "options": [
+     {
+      "value": "visible",
+      "label": "Once when it comes into view"
+     },
+     {
+      "value": "hover",
+      "label": "On mouse hover"
+     },
+     {
+      "value": "always",
+      "label": "On page load (about 5 s)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     },
+     "and",
+     {
+      "setting": "accent_animation",
+      "label": "Animation",
+      "op": "is_not",
+      "value": "None"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "accent_mobile",
+    "label": "Show on phones",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motif",
+      "op": "is_not",
+      "value": "No accent"
+     }
+    ]
    }
   ]
  },
@@ -163,6 +595,438 @@
     "id": "alignment",
     "label": "Ausrichtung",
     "default": "left"
+   },
+   {
+    "type": "header",
+    "content": "Akzent"
+   },
+   {
+    "type": "select",
+    "id": "accent_motif",
+    "label": "Motiv",
+    "info": "Fertig gestaltetes Linien-Motiv an diesem Block. Für Überschrift und Text passen die Motive zum Hervorheben (die ersten sechs: Kreis um ein Wort, Schwung, Doppelte Unterstreichung, Zickzack, Funkeln, Rahmen-Ecken), für Buttons der Pfeil. Frei platzierte Motive und eigene Grafiken: Block „Freies Dekor“.",
+    "default": "none",
+    "options": [
+     {
+      "value": "none",
+      "label": "Kein Akzent"
+     },
+     {
+      "value": "circle_mark",
+      "label": "Kreis um ein Wort"
+     },
+     {
+      "value": "swash",
+      "label": "Schwung (Unterstreichung)"
+     },
+     {
+      "value": "double_underline",
+      "label": "Doppelte Unterstreichung"
+     },
+     {
+      "value": "zigzag",
+      "label": "Zickzack-Linie"
+     },
+     {
+      "value": "sparkle",
+      "label": "Funkeln (drei Sterne)"
+     },
+     {
+      "value": "corners",
+      "label": "Rahmen-Ecken"
+     },
+     {
+      "value": "arrow",
+      "label": "Geschwungener Pfeil"
+     },
+     {
+      "value": "check",
+      "label": "Häkchen im Kreis"
+     },
+     {
+      "value": "magnifier",
+      "label": "Lupe"
+     },
+     {
+      "value": "heart",
+      "label": "Herz"
+     },
+     {
+      "value": "gift",
+      "label": "Geschenk (Paket mit Schleife)"
+     },
+     {
+      "value": "waves",
+      "label": "Wellen"
+     },
+     {
+      "value": "contours",
+      "label": "Höhenlinien"
+     },
+     {
+      "value": "branch",
+      "label": "Zweig mit Blattadern"
+     },
+     {
+      "value": "steam",
+      "label": "Dampf-Kringel"
+     },
+     {
+      "value": "drops",
+      "label": "Tropfen mit Ringen"
+     },
+     {
+      "value": "orbit",
+      "label": "Orbit"
+     },
+     {
+      "value": "speech",
+      "label": "Sprechblase"
+     },
+     {
+      "value": "letter",
+      "label": "Brief (Umschlag)"
+     },
+     {
+      "value": "path_dots",
+      "label": "Pfad mit Punkten"
+     },
+     {
+      "value": "connector",
+      "label": "Verbindungslinie"
+     },
+     {
+      "value": "scale",
+      "label": "Messlinien (Skala)"
+     },
+     {
+      "value": "cycle",
+      "label": "Kreislauf (Pfeilring)"
+     },
+     {
+      "value": "calendar",
+      "label": "Kalenderblatt mit Häkchen"
+     },
+     {
+      "value": "parcel",
+      "label": "Paket mit Bewegungslinien"
+     },
+     {
+      "value": "fill_level",
+      "label": "Füllstand (Glas, das sich füllt)"
+     },
+     {
+      "value": "clock",
+      "label": "Uhr"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_position",
+    "label": "Position",
+    "info": "„Am markierten Wort“: Wort im Text in doppelte eckige Klammern setzen, z. B. [[nachfüllen]] – das Motiv ersetzt dort den Marker. Ohne Markierung steht es unter dem Text. In Rechts-nach-links-Sprachen tauschen links und rechts.",
+    "default": "word",
+    "options": [
+     {
+      "value": "word",
+      "label": "Am markierten Wort"
+     },
+     {
+      "value": "below",
+      "label": "Unter dem Text"
+     },
+     {
+      "value": "above",
+      "label": "Über dem Text"
+     },
+     {
+      "value": "start",
+      "label": "Links"
+     },
+     {
+      "value": "end",
+      "label": "Rechts"
+     },
+     {
+      "value": "corner_top_end",
+      "label": "Ecke oben rechts"
+     },
+     {
+      "value": "corner_bottom_start",
+      "label": "Ecke unten links"
+     },
+     {
+      "value": "behind",
+      "label": "Hinter dem Text"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_size",
+    "label": "Größe",
+    "default": "m",
+    "options": [
+     {
+      "value": "s",
+      "label": "Klein"
+     },
+     {
+      "value": "m",
+      "label": "Mittel"
+     },
+     {
+      "value": "l",
+      "label": "Groß"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_color",
+    "label": "Farbe",
+    "default": "signal",
+    "options": [
+     {
+      "value": "signal",
+      "label": "Schema: Akzent"
+     },
+     {
+      "value": "scheme",
+      "label": "Schema: Text"
+     },
+     {
+      "value": "ink_soft",
+      "label": "Schema: Sekundärtext"
+     },
+     {
+      "value": "rule",
+      "label": "Schema: Linie"
+     },
+     {
+      "value": "accent_1",
+      "label": "Markenfarbe: Akzent 1"
+     },
+     {
+      "value": "accent_2",
+      "label": "Markenfarbe: Akzent 2"
+     },
+     {
+      "value": "sale",
+      "label": "Markenfarbe: Aktion / Sale"
+     },
+     {
+      "value": "highlight",
+      "label": "Markenfarbe: Hervorhebung"
+     },
+     {
+      "value": "success",
+      "label": "Markenfarbe: Erfolg / Siegel"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_stroke",
+    "label": "Strichstärke",
+    "default": "medium",
+    "options": [
+     {
+      "value": "fine",
+      "label": "Fein"
+     },
+     {
+      "value": "medium",
+      "label": "Mittel"
+     },
+     {
+      "value": "heavy",
+      "label": "Kräftig"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_animation",
+    "label": "Animation",
+    "info": "Bei „Bewegung reduzieren“ steht das Motiv fertig gezeichnet still.",
+    "default": "draw",
+    "options": [
+     {
+      "value": "draw",
+      "label": "Zeichnen"
+     },
+     {
+      "value": "float",
+      "label": "Schweben"
+     },
+     {
+      "value": "pulse",
+      "label": "Pulsieren"
+     },
+     {
+      "value": "wiggle",
+      "label": "Leicht wackeln"
+     },
+     {
+      "value": "none",
+      "label": "Ohne"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ]
+   },
+   {
+    "type": "select",
+    "id": "accent_trigger",
+    "label": "Abspielen",
+    "info": "Dauerhaft läuft in Schleife – sparsam einsetzen, höchstens eine solche Stelle je Ansicht.",
+    "default": "visible",
+    "options": [
+     {
+      "value": "visible",
+      "label": "Einmal beim Sichtbarwerden"
+     },
+     {
+      "value": "hover",
+      "label": "Beim Überfahren mit der Maus"
+     },
+     {
+      "value": "always",
+      "label": "Beim Laden (ca. 5 s)"
+     }
+    ],
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     },
+     "and",
+     {
+      "setting": "accent_animation",
+      "label": "Animation",
+      "op": "is_not",
+      "value": "Ohne"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ]
+   },
+   {
+    "type": "checkbox",
+    "id": "accent_mobile",
+    "label": "Am Handy zeigen",
+    "default": true,
+    "visible_if": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ],
+    "hidden_by_default": true,
+    "hidden_by": [
+     {
+      "setting": "accent_motif",
+      "label": "Motiv",
+      "op": "is_not",
+      "value": "Kein Akzent"
+     }
+    ]
    }
   ]
  }
